@@ -196,10 +196,16 @@ function setupLogic() {
       return; // compile/runtime error already shown
     }
     const cleanedLines = lastRunOutput
-    // Keep ONLY lines that are not compiler "fluff" (no leading '>')
+      .split('\n')
+      .map(line =>
+        line.replace(/\x1b\[[0-9;]*m/g, '').trim()
+      )
+      .filter(line => line); // drop empty lines
+
+    // 2) Drop compiler "fluff" lines (starting with '>')
     const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
 
-    // Student-visible output is all non-fluff lines joined
+    // 3) Join what's left
     const studentOut = studentLines.join('\n') + (studentLines.length ? '\n' : '');
 
     const expected = currentLesson.expectedOutput.trim();
