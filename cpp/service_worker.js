@@ -8,7 +8,7 @@ const expectedCaches = [CACHE_NAME];
 
 const cdn = 'https://cdnjs.cloudflare.com/ajax/libs';
 
-self.addEventListener('install', event => {
+/*self.addEventListener('install', event => {
   event.waitUntil(
     caches.open('v1').then(async cache => {
       const urls = [
@@ -29,7 +29,7 @@ self.addEventListener('install', event => {
       }
     })
   );
-});
+});*/
 
 self.addEventListener('activate', event => {
   // delete any caches that aren't in expectedCaches
