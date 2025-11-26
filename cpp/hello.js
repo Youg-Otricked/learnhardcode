@@ -79,12 +79,42 @@ if (navigator.serviceWorker) {
 // ========== Lesson + editor + UI logic ==========
 
 let api;
-let editor;             
+let runHarnessFile = null;
+let submitHarnessFile = null;
+let editor;
 let currentLesson = null;
 let lastRunOutput = '';
 let nextLessonId = null;
 let buttons = document.getElementsByClassName('ans');
-let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, showButtons;
+let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, showButtons;
+let correct = null;
+let prevLessonId = null;
+
+// Helper to run with a chosen harness (or none)
+async function runWithHarness(harnessFile, label) {
+  const studentSource = editor.getValue();
+  outEl.textContent = (label || 'Building & running') + '...\n';
+  lastRunOutput = '';
+
+  let fullSource = studentSource;
+
+  if (harnessFile) {
+    try {
+      const harness = await fetch(harnessFile).then(r => r.text());
+      fullSource = studentSource + '\n\n' + harness;
+    } catch (e) {
+      outEl.textContent += '\nError loading harness: ' + e.message + '\n';
+      throw e;
+    }
+  }
+
+  try {
+    api.compileLinkRun(fullSource);
+  } catch (err) {
+    outEl.textContent += '\nError: ' + err.message + '\n';
+    throw err;
+  }
+}
 
 async function loadLesson(lessonFile) {
   const res = await fetch(lessonFile);
@@ -95,26 +125,33 @@ async function loadLesson(lessonFile) {
   titleEl.textContent = lesson.title || '';
   descEl.textContent = lesson.description || '';
   if (editor) editor.setValue(lesson.starterCode || '');
+
+  runHarnessFile    = lesson.runHarness    || null;
+  submitHarnessFile = lesson.submitHarness || null;
+
   showButtons = lesson.showButtons;
   outEl.textContent = '';
   lastRunOutput = '';
   nextLessonId = lesson.nextLesson || null;
-  document.getElementById("b1").textContent = lesson.b1t
-  document.getElementById("b2").textContent = lesson.b2t
-  document.getElementById("b3").textContent = lesson.b3t
-  document.getElementById("b4").textContent = lesson.b4t
-  correct = lesson.correct || null
+
+  document.getElementById('b1').textContent = lesson.b1t;
+  document.getElementById('b2').textContent = lesson.b2t;
+  document.getElementById('b3').textContent = lesson.b3t;
+  document.getElementById('b4').textContent = lesson.b4t;
+
+  correct = lesson.correct || null;
   prevLessonId = lesson.previous || null;
-  nextBtn.style.display = 'none'; // hide until pass
-  const buttons = document.querySelectorAll('.ans');
+
+  nextBtn.style.display = 'none';
+  const btns = document.querySelectorAll('.ans');
   if (prevBtn) prevBtn.style.display = prevLessonId ? 'inline-block' : 'none';
 
   if (showButtons) {
-    buttons.forEach(button => {
-      button.style.display = 'block'; // Or 'inline-block', 'flex', etc., depending on your layout
+    btns.forEach(button => {
+      button.style.display = 'block';
     });
   } else {
-    buttons.forEach(button => {
+    btns.forEach(button => {
       button.style.display = 'none';
     });
   }
@@ -127,7 +164,7 @@ function setupLogic() {
   runBtn  = document.getElementById('run');
   checkBtn = document.getElementById('check-stdout');
   nextBtn  = document.getElementById('next-lesson');
-  prevBtn = document.getElementById('prev-lesson');
+  prevBtn  = document.getElementById('prev-lesson');
   api = new WorkerAPI();
 
   api.onWrite = (text) => {
@@ -135,30 +172,37 @@ function setupLogic() {
     outEl.textContent += text;
   };
 
-  runBtn.addEventListener('click', () => {
-    const source = editor.getValue();
-    outEl.textContent = 'Building & running...\n';
-    lastRunOutput = '';
+  // RUN: quick run with runHarness (or no harness)
+  runBtn.addEventListener('click', async () => {
     try {
-      api.compileLinkRun(source);
-    } catch (err) {
-      outEl.textContent += '\nError: ' + err.message + '\n';
+      await runWithHarness(runHarnessFile, 'Running');
+    } catch (_) {
+      // errors already printed
     }
   });
 
-  checkBtn.addEventListener('click', () => {
+  // CHECK: run with submitHarness (or runHarness), then compare stdout
+  checkBtn.addEventListener('click', async () => {
     if (!currentLesson || !currentLesson.expectedOutput) {
-        outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
-        return;
+      outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
+      return;
+    }
+
+    const harnessToUse = submitHarnessFile || runHarnessFile;
+
+    try {
+      await runWithHarness(harnessToUse, 'Submitting');
+    } catch (_) {
+      return; // compile/runtime error already shown
     }
 
     // Split output, strip ANSI color codes
     const cleanedLines = lastRunOutput
-        .split('\n')
-        .map(line =>
-        line.replace(/\x1b\[[0-9;]*m/g, '').trim() // remove colors + trim
-        )
-        .filter(line => line); // drop empty lines
+      .split('\n')
+      .map(line =>
+        line.replace(/\x1b\[[0-9;]*m/g, '').trim()
+      )
+      .filter(line => line); // drop empty lines
 
     // Keep ONLY lines that are not compiler "fluff" (no leading '>')
     const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
@@ -170,33 +214,34 @@ function setupLogic() {
     const actual   = studentOut.trim();
 
     if (actual === expected) {
-        outEl.textContent += '\n[PASS] Output matches expected.\n';
-        if (nextLessonId) nextBtn.style.display = 'inline-block';
+      outEl.textContent += '\n[PASS] Output matches expected.\n';
+      if (nextLessonId) nextBtn.style.display = 'inline-block';
     } else {
-        outEl.textContent += '\n[FAIL] Output does not match.\n';
-        outEl.textContent += '\nExpected:\n' + expected;
-        outEl.textContent += '\n\nGot:\n' + actual + '\n';
+      outEl.textContent += '\n[FAIL] Output does not match.\n';
+      outEl.textContent += '\nExpected:\n' + expected;
+      outEl.textContent += '\n\nGot:\n' + actual + '\n';
     }
-    });
+  });
 
   nextBtn.addEventListener('click', () => {
     if (!nextLessonId) return;
-    let url = new URL(window.location.href);
+    const url = new URL(window.location.href);
     url.searchParams.set('lesson', nextLessonId);
     window.location.href = url.toString();
   });
+
   prevBtn.addEventListener('click', () => {
     if (!prevLessonId) return;
-    let url = new URL(window.location.href);
+    const url = new URL(window.location.href);
     url.searchParams.set('lesson', prevLessonId);
     window.location.href = url.toString();
-  })
-  let params = new URLSearchParams(location.search);
-  let lessonFile = params.get('lesson') || 'lesson1.json';
+  });
+
+  const params = new URLSearchParams(location.search);
+  const lessonFile = params.get('lesson') || 'lesson1.json';
   loadLesson(lessonFile).catch(err => {
     outEl.textContent = 'Failed to load lesson: ' + err.message;
   });
-  
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -216,12 +261,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLogic();
   });
 });
+
 function btn(bn) {
   if (bn === correct) {
-    alert("Correct")
+    alert('Correct');
     outEl.textContent += '\n[PASS].\n';
     if (nextLessonId) nextBtn.style.display = 'inline-block';
   } else {
-    alert("Incorrect")
+    alert('Incorrect');
   }
 }
