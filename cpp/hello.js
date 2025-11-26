@@ -198,11 +198,11 @@ function setupLogic() {
 
     // Split output, strip ANSI color codes
     const cleanedLines = lastRunOutput
-      .split('\n')
-      .map(line =>
-        line.replace(/\x1b\[[0-9;]*m/g, '').trim()
-      )
-      .filter(line => line); // drop empty lines
+    .split('\n')
+    .map(line =>
+      line.replace(/\x1b\[[0-9;]*m/g, '').trim() // remove colors + trim
+    )
+    .filter(line => line); // drop empty lines
 
     // Keep ONLY lines that are not compiler "fluff" (no leading '>')
     const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
