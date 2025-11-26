@@ -1,0 +1,17 @@
+{
+  "id": "lesson18.json",
+  "title": "A new type of lesson",
+  "description": "So far, the flow has been simple: write code, run it, and match the exact output. That works for tiny programs, but it doesn’t scale when we start writing **functions.**\nFrom this point on, you’ll start seeing somthing new:\n## Unit Tests:\n\nYou write _only the function_ the lesson asks for **(no main())**.\nWhen you click Run, a hidden test harness calls your function with a few sample inputs.\nmWhen you click Submit, the harness runs many more tests, including tricky edge cases.\nThink of it like shipping your code to real users: Run is your quick local check, Submit is the full test suite.\nThe function lessons will ramp up in difficulty, but the tests will always tell you _exactly_ how your function is behaving.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson19.json",
+  "previous": "lesson17.json",
+  "showButtons": true,
+  "correct": "b1",
+  "b1t": "Continue",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+}

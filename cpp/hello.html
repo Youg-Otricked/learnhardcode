@@ -9,8 +9,9 @@
     <title>C++ Playground</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="hello.css?v=123">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
-    <script src="hello.js" defer></script>     <!-- your UI wiring -->
+    <script src="hello.js?v=136" defer></script>     <!-- your UI wiring -->
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                     <p id="expected-stdout"></p>
                 </label>
                 <button id="check-stdout">Submit</button>
-                <span id="check-result"></span>
+                <button id="check-result" style="display:none">Check Result</button>
                 </div>
         </div>
     </div>

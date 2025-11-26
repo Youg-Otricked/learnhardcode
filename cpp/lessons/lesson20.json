@@ -1,0 +1,18 @@
+{
+  "id": "lesson16.json",
+  "title": "Defining functions",
+  "description": "Define a function `int add(int a, int b)` that returns the sum of `a` and `b`.\n\nYou do **not** need a `main()` function – just implement `add`.",
+  "starterCode": "int add(int a, int b) {\n    // TODO: return the sum of a and b\n}\n",
+  "expectedOutput": "[PASS]\n",
+  "mustContain": "[PASS]",   
+  "nextLesson": "lesson17.json",
+  "previous": "lesson15.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "harness_add_run.cpp",
+  "submitHarness": "harness_add_submit.cpp"
+}

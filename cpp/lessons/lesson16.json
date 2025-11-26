@@ -1,0 +1,17 @@
+{
+  "id": "lesson16.json",
+  "title": "Printing variables.",
+  "description": "Print the variable x",
+  "starterCode": "#include <iostream>\n\nint main() {\n    int x = 7;\n    //Don't touch above this line.\n    \n    //Don't touch below this line.\n    return 0;",
+  "expectedOutput": "7",
+  "nextLesson": "lesson17.json",
+  "previous": "lesson15.json",
+  "showButtons": false,
+  "correct": "b3",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+}
