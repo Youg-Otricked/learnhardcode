@@ -1,0 +1,17 @@
+{
+  "id": "lesson13.json",
+  "title": "(Slightly) Advanced Types (string and void)",
+  "description": "There are a few more types in C++, and i will talk about two more here. The basic form of string is defined in std::string, so to make  a string variable you use type std::stiring, like std::string x;. You probably know what string is, and if not, let me explain it. String is a, well, string of charecters, and they are enclosed in \"\".  You have been couting strings when you have not ben using escape squences or variales. void is type of nothing. if you cout it it creates an error. \n\n Your task is to define a variable with the value \"this is a string\", and print it to console, followed by a newline charecter",
+  "starterCode": "#include <iostream>\n\nint main() {\n    //Don't touch above this line\n\n    //Don't touch below this line.\n    return 0;\n}",
+  "expectedOutput": "this is a string\n",
+  "nextLesson": "lesson14.json",
+  "previous": "lesson12.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+}
