@@ -1,0 +1,17 @@
+{
+  "id": "lesson14.json",
+  "title": "Escape sequence quiz",
+  "description": "Answer the following question:\n\nWhat is the equivilent of this. \\ta\\nb\\t\\tc\\t\\tc\\nn",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson15.json",
+  "previous": "lesson13.json",
+  "showButtons": true,
+  "correct": "b3",
+  "b1t": "tab a newline b tab tab c tab tab c newline newline",
+  "b2t": "\\ta newline b t tab c tab tab newline n",
+  "b3t": "tab a newline b tab tab c tab tab c newline n",
+  "b4t": "tab newline b tab tab c tab tab c newline n",
+  "runHarness": null,
+  "submitHarness": null
+}

@@ -1,0 +1,17 @@
+{
+  "id": "lesson15.json",
+  "title": "A new type of lesson",
+  "description": "So far, you probably have noticed that the flow is pretty simple. Write code, run code, output happens, submit output. However, this will not work forever. Now that we are getting into functions, we will be doing somthing different: Unit Tests. what will happen, is that once you write your function, but only the function, you submit, and a test harness is ran along with your function, running your function with various edge cases to determine if it pases, then when you submit, it will re run, but with mroe test cases, to simulate submiting your code to the masses and edge cases being tested. The lessons for the entire function section will exponintaly ramp up in dificulty, just remeber that.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson16.json",
+  "previous": "lesson14.json",
+  "showButtons": true,
+  "correct": "b1",
+  "b1t": "Continue",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+}

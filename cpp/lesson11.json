@@ -1,0 +1,17 @@
+{
+  "id": "lesson11.json",
+  "title": "Constants",
+  "description": "A Contsant is a variable that cannot be changed for any reason. You define/initilize a constant with const normalvardecleration; so somthing like const int MAX = 100;. No, i did not just have a seizure or hit caps lock, in C++, there are a few naming conventions. You typically name variables in snake case, and make it so you dont need comments to understand you variables. Make them have descriptive name, eg: bad names: const int users = 1001;, int thisThing = 2;. good names: const int MAX_USERS = 1001;, int number_of_transactions = 2;. see the diference that that simple change made?.\n\nAnswer the following question: Which variable is a constant that follows correct naming conventions.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson12.json",
+  "previous": "lesson10.json",
+  "showButtons": true,
+  "correct": "b1",
+  "b1t": "const int NUM_LEGS = 2;",
+  "b2t": "const int my_hamburgers = 5;",
+  "b3t": "const int NUMBER_OF = 1;",
+  "b4t": "int NUMBER_OF_FRIENDS = 4;",
+  "runHarness": null,
+  "submitHarness": null
+}
