@@ -195,7 +195,7 @@ function setupLogic() {
     } catch (_) {
       return; // compile/runtime error already shown
     }
-
+    const cleanedLines = lastRunOutput
     // Keep ONLY lines that are not compiler "fluff" (no leading '>')
     const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
 
