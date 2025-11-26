@@ -1,0 +1,15 @@
+{
+  "id": "lesson9.json",
+  "title": "Playground",
+  "description": "Congrats! You have finished the section on very basic programs in C++, wiht std::cout. My challlenge for you in this lesson is to write a program that prints \"Learned cout!\" with no newline to console from scratch.",
+  "starterCode": "//Write your code here.",
+  "expectedOutput": "Learned cout!",
+  "nextLesson": "lesson10.json",
+  "previous": "lesson8.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

@@ -1,0 +1,15 @@
+{
+  "id": "lesson8.json",
+  "title": "std::cin",
+  "description": "In C++, you can also recive input from the user with std::cin >> variable; Sadly, my setup cannot do input, so you must try that with your own console and c++ compiler. Answer the question:\n\nHow do you take user input",
+  "starterCode": "#include <iostream>\n\nint main() {\n    int v;\n    std::cin >> v;//this would send anything the user types to v if its an int otherwise it would raise an error. this program will fail if you run it on this site, but not anywhere else.\n    return 0; \n}",
+  "expectedOutput": "",
+  "nextLesson": "lesson9.json",
+  "previous": "lesson7.json",
+  "showButtons": true,
+  "correct": "b3",
+  "b1t": "With well writen documation and github issues",
+  "b2t": "std::cout",
+  "b3t": "std::cin",
+  "b4t": "You don't."
+}

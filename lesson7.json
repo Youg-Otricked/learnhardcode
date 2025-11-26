@@ -1,0 +1,15 @@
+{
+  "id": "lesson7.json",
+  "title": "Comments",
+  "description": "In C++, to comment, you type //yourcommentgoes ehre. comments are ignored, and are used to explain code most of the time. to make a multi line comment, you put /* on the first line, and */ on the end. \n\n Comment out all lines with errors in the code.",
+  "starterCode": "#include <iostream>\nintmain()\nint main() {\n    std::cut << \"world\"; \n    std::cout << \"Hello\" << '\\n';\n   return 0;\n}",
+  "expectedOutput": "Hello\n",
+  "nextLesson": "lesson8.json",
+  "previous": "lesson6.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

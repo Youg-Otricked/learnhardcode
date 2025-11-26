@@ -1,0 +1,15 @@
+{
+  "id": "lesson6.json",
+  "title": "(basic) Data types[pt3]",
+  "description": "In C++, there are a handfull of datatypes. After carfully reading the code on the write, answer the following question:\n\nHow do you represent a int in C++ (just the number, not how to define a varible with it)",
+  "starterCode": "/*DO NOT RUN THIS CODE\nthis is an example.\nThe weird stuff before the numbers are variable definitions. the actual values are what is past the equals sign. do not worry about the rst for now.*/\n\n//data type int stands for integer. Integers are any 32/64 bit non-floating-point numbers\nint x = 4294967295;\n\n//double is a 64-bit floating point number. double is double the size of int.\ndouble y = 3.141592653;\n\n//whenever you could use float you probably could use double, but here is how they are reprsented\nfloat z = 3.1415f;\n\n//char is  single ascii charecter, escape sequence, or 4 bit unicode charecter. chars are always enclosed in single quotes ('')\nchar a = 'b';\nchar b = '.';\nchar c = '\\n';\nchar d = \\u00A5; //this is the unicode for the yen symbol. you preface all 4 bit unicode with \\u\n\n//booleans are true or false\nbool z = false;",
+  "expectedOutput": "",
+  "nextLesson": "lesson7.json",
+  "previous": "lesson5.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "'3'",
+  "b2t": "3",
+  "b3t": "1111.0f",
+  "b4t": "11.213"
+}

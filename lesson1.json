@@ -1,0 +1,15 @@
+{
+  "id": "lesson1.json",
+  "title": "Hello World",
+  "description": "C++ is one of the most famous programing languages, and for good reason. It is one of tha fastest languages, with manual memory managment, OOP, static typing and so much more. In the next few lessons, you will understand what the following code does, but for now, fix the  code to output 'Hello, World!' exactly.",
+  "starterCode": "#include <iostream>\n\nint main() {\n    std::cout << \"World, Hello.\" << '\\n';\n    return 0;\n}\n",
+  "expectedOutput": "Hello, World!\n",
+  "nextLesson": "lesson2.json",
+  "previous": null,
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

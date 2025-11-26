@@ -1,0 +1,15 @@
+{
+  "id": "lesson10.json",
+  "title": "Variables",
+  "description": "All a variable is is a location in memory that you give a name to that stores data. how you define a variable is: datatype name; or datatype name = value; where datatype is a datatype(EG char) name is the name you want the variable to have, and value is the data you want to store. For example int z = 123;. Your challenge is to make a char called z with data \\t (This is the escape sequence for tab), and a variable num with the value 17. Remember, to output a variable with cout you just put the variable name after <<. Sorry for the hard first lesson.",
+  "starterCode": "#include <iostream>\n\nint main() {\n    //Do not edit above this line\n\n    //Do not edit below this line.\n    std::cout << z;\n    std::cout <<  num;\n    return 0;\n}\n",
+  "expectedOutput": "\t17",
+  "nextLesson": "lesson11.json",
+  "previous": "lesson9.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

@@ -1,0 +1,15 @@
+{
+  "id": "lesson2.json",
+  "title": "Main",
+  "description": "In C++, all programs start with the main() function. I will explain functions in a later lesson. All you need to know is the program starts on the first line of that function. Answer the question with the buttons bellow:\n\nWhere do all programs start in C++",
+  "starterCode": "#include <iostream>\n\nint main() {\n    //program starts here.\n    return 0;\n}\n",
+  "expectedOutput": "",
+  "nextLesson": "lesson3.json",
+  "previous": "lesson1.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "The first line of code",
+  "b2t": "At the first line of code in the main function.",
+  "b3t": "At the first compile time",
+  "b4t": "Wherever you want it to start"
+}
