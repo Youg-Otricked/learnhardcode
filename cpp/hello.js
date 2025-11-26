@@ -218,19 +218,19 @@ function setupLogic() {
   nextBtn.addEventListener('click', () => {
     if (!nextLessonId) return;
     const url = new URL(window.location.href);
-    url.searchParams.set('cpp/lesson', nextLessonId);
+    url.searchParams.set('lesson', nextLessonId);
     window.location.href = url.toString();
   });
 
   prevBtn.addEventListener('click', () => {
     if (!prevLessonId) return;
     const url = new URL(window.location.href);
-    url.searchParams.set('cpp/lesson', prevLessonId);
+    url.searchParams.set('lesson', prevLessonId);
     window.location.href = url.toString();
   });
 
   const params = new URLSearchParams(location.search);
-  const lessonFile = params.get('cpp/lesson') || 'cpp/lesson1.json';
+  const lessonFile = params.get('lesson') || 'lesson1.json';
   loadLesson(lessonFile).catch(err => {
     outEl.textContent = 'Failed to load lesson: ' + err.message;
   });
