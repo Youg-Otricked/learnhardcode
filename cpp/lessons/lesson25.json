@@ -1,1 +1,19 @@
-//will be on a function + helper function
+
+{
+  "id": "lesson25.json",
+  "title": "ABS",
+  "description": "In this lesson, you will create a funciton called abs, that takes one in argument, a. The function should return the absoulute value of a. Use the helper you wrote last lesson to determien if it is negative, and then multiply by -1 if it is. and do nothing if it is not.",
+  "starterCode": "bool IsNegative(int a) {\n    if (a < 0) {\n        return true;\n    }\n    return false;\n}\n//Write the function here.",
+  "expectedOutput": "[PASS]",
+  "mustContain": "[PASS]",   
+  "nextLesson": "lesson26.json",
+  "previous": "lesson24.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "harnesses/harness_abs_run.cpp",
+  "submitHarness": "harnesses/harness_abs_submit.cpp"
+}
