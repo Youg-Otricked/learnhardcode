@@ -5,14 +5,14 @@
   "starterCode": "//Write your function here.",
   "expectedOutput": "[PASS]\n",
   "mustContain": "[PASS]",   
-  "nextLesson": "lesson22.json",
-  "previous": "lesson20.json",
+  "nextLesson": "lesson22.json?v=7",
+  "previous": "lesson20.json?v=7",
   "showButtons": false,
   "correct": "nobns",
   "b1t": "",
   "b2t": "",
   "b3t": "",
   "b4t": "",
-  "runHarness": "harnesses/harness_even_run.cpp",
-  "submitHarness": "harnesses/harness_even_submit.cpp"
+  "runHarness": "harnesses/harness_even_run.cpp?v=7",
+  "submitHarness": "harnesses/harness_even_submit.cpp?v=7"
 }

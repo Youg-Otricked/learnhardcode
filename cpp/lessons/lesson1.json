@@ -4,7 +4,7 @@
   "description": "C++ is one of the most famous programing languages, and for good reason. It is one of tha fastest languages, with manual memory managment, OOP, static typing and so much more. In the next few lessons, you will understand what the following code does, but for now, fix the  code to output 'Hello, World!' exactly.",
   "starterCode": "#include <iostream>\n\nint main() {\n    std::cout << \"World, Hello.\" << '\\n';\n    return 0;\n}\n",
   "expectedOutput": "Hello, World!\n",
-  "nextLesson": "lesson2.json",
+  "nextLesson": "lesson2.json?v=7",
   "previous": null,
   "showButtons": false,
   "correct": "nobns",
