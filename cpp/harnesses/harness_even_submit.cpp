@@ -28,7 +28,7 @@ int main() {
             all_ok = false;
         } else {
             ttlc ++;
-            std::cout << "------------------------" << '\n' << "[SUCCESS] (" << ttlc << "/4) " << c.a << "is" <<  c.expected << '\n';
+            std::cout << "------------------------" << '\n' << "[SUCCESS] (" << ttlc << "/4) " << c.a << " is " <<  c.expected << '\n';
         }
     }
 
