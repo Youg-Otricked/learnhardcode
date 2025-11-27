@@ -1,1 +1,19 @@
-//will be on switch statements
+
+{
+  "id": "lesson26.json",
+  "title": "Switch",
+  "description": "In C++, There is another type of control flow, it is called a switch statment. A switch is equivelent to a long chain of if els if..... else. How you write switch is: switch(variable) { case valuea:\n        code\n        break;\n    case valueb:\n        code\n        break;\n    ...\n case default:\n        code\n        break;\n}. Each case is equivelent to a if/else fi statment, and the default is eqquivelent to an else. In the lesson, your challenge is to write a switch statment on var s that prints a for 1, b for 2, and c for 3, and d for all other values. Do not put a \\n after each value",
+  "starterCode": "#include <iostream>\n\nint main() {\n    int sar[5] = {1, 2, 3, 6, 99};\n    for (auto s : sar) {\n        //Don't touch above this line.\n        //Write your switch statement here.\n        //Don't touch below this line\n    return 0;\n}",
+  "expectedOutput": "abcdd",
+  "mustContain": "",   
+  "nextLesson": "lesson27.json",
+  "previous": "lesson25.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+}
