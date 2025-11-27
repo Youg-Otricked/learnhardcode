@@ -1,1 +1,18 @@
-//wrapup function section.
+{
+  "id": "lesson27.json",
+  "title": "Function playground",
+  "description": "Congrats, You have finished the functions section of this C++ course! This is a playground lesson where you can practice what you have learned about functions. When you feel ready to proceed, write the main function, and have it print to console \"I know functions in C++!\".",
+  "starterCode": "",
+  "expectedOutput": "I know functions in C++!",
+  "mustContain": "",   
+  "nextLesson": "lesson28.json",
+  "previous": "lesson26.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+}
