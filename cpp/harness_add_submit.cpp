@@ -19,11 +19,11 @@ int main() {
         if (got != c.expected) {
             std::cout << "[FAIL] add(" << c.a << ", " << c.b
                       << ") expected " << c.expected
-                      << " got " << got << "\n" << "(" << ttlc + 1 << "/3)";
+                      << " got " << got << "\n" << "(" << ttlc + 1 << "/3)" << '\n';
             all_ok = false;
         } else {
             ttlc ++;
-            std::cout << "------------------------" << '\n' << "(" << ttlc << "/3) " << c.a << " + " << c.b << " = " <<  c.expected;
+            std::cout << "------------------------" << '\n' << "(" << ttlc << "/3) " << c.a << " + " << c.b << " = " <<  c.expected << '\n';
         }
     }
 
