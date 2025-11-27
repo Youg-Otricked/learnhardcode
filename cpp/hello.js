@@ -67,14 +67,7 @@ class WorkerAPI {
   }
 }
 
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('./service_worker.js')
-    .then(reg => {
-      console.log('Registration succeeded. Scope is ' + reg.scope);
-    }).catch(error => {
-      console.log('Registration failed with ' + error);
-    });
-}
+
 
 // ========== Lesson + editor + UI logic ==========
 let checkResultBtn;
