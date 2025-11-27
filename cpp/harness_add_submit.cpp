@@ -13,14 +13,17 @@ int main() {
     };
 
     bool all_ok = true;
-
+    int ttlc = 0;
     for (auto c : cases) {
         int got = add(c.a, c.b);
         if (got != c.expected) {
             std::cout << "[FAIL] add(" << c.a << ", " << c.b
                       << ") expected " << c.expected
-                      << " got " << got << "\n";
+                      << " got " << got << "\n" << "(" << ttlc + 1 << "/3)";
             all_ok = false;
+        } else {
+            ttlc++
+            std::cout << "------------------------" << '\n' << "(" << ttlc << "/3) " << c.a << " + " << c.b << " = " <<  c.expected;
         }
     }
 
