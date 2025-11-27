@@ -1,7 +1,7 @@
 
 {
   "id": "lesson24.json",
-  "title": "Greet",
+  "title": "Helper",
   "description": "In this lesson, you will create a function called IsNegative that takes one int argument, a. The function should return a bool that is true if the argument is negative, and false if the argument is positive. I suggest putting std::cout s in you code to help debug.",
   "starterCode": "//Write the funciton here.",
   "expectedOutput": "[PASS]",
