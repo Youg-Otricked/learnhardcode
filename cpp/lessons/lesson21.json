@@ -1,0 +1,18 @@
+{
+  "id": "lesson21.json",
+  "title": "Basic control flow",
+  "description": "Control flow is the act of changing how a program executes based on conditions. In C++, you can use `if`, `else if`, and `else` statements to control the programs flow. How if statments work is: if (condition) {runcode}. condition is any thingg that evaluates to true. This is a good time to exlpain logical operators. In C++, the logical operators avalible are ||(OR), &&(AND), and !(NOT). These operators can be used to combine multiple conditions or to negate a condition. For example, you can use the `&&` operator to check if two conditions are true at the same time. || outputs true if either condition is true, and ! oputs the inverse of the input, so !true = false, or !(true || (false && true)) = false, because false && true evaluates to false, true or false evaluates to true, and !true evaluates to false. After an if statment, you can put either else if, else, or nothing. Elsei s used like: if (condition) {\n} else {\n    //do this\n}. Else is used when you wannt somthing to happen If the if statment doesnt run. Else if is the same as if, but you put it after an else. like if{}else if{}else. you cna put any number of else-if statments in a row.\n\nYour challenge is to implement a function called 'IsEven'. this function will take one argument, a integer, and return a string. This string will be 'Even' if the value is even, 'Odd' if the alue is odd, and 'Zero' if the value is 0. \n\n\nRemember, you can use the modulo ('%') operator to get the remainder of a division, and std::string to make a string variable/return type.",
+  "starterCode": "//Write your function here.",
+  "expectedOutput": "[PASS]\n",
+  "mustContain": "[PASS]",   
+  "nextLesson": "lesson22.json",
+  "previous": "lesson20.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "harnesses/harness_even_run.cpp",
+  "submitHarness": "harnesses/harness_even_submit.cpp"
+}
