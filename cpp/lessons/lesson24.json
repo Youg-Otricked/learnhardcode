@@ -1,1 +1,19 @@
-//write helper function for lesson25.json
+
+{
+  "id": "lesson24.json",
+  "title": "Greet",
+  "description": "In this lesson, you will create a function called IsNegative that takes one int argument, a. The function should return a bool that is true if the argument is negative, and false if the argument is positive. I suggest putting std::cout s in you code to help debug.",
+  "starterCode": "//Write the funciton here.",
+  "expectedOutput": "[PASS]",
+  "mustContain": "[PASS]",   
+  "nextLesson": "lesson25.json",
+  "previous": "lesson23.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "harnesses/harness_neg_run.cpp",
+  "submitHarness": "harnesses/harness_neg_submit.cpp"
+}
