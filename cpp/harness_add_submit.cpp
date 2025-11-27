@@ -23,7 +23,7 @@ int main() {
             all_ok = false;
         } else {
             ttlc ++;
-            std::cout << "------------------------" << '\n' << "(" << ttlc << "/3) " << c.a << " + " << c.b << " = " <<  c.expected << '\n';
+            std::cout << "------------------------" << '\n' << "[SUCCESS] (" << ttlc << "/3) " << c.a << " + " << c.b << " = " <<  c.expected << '\n';
         }
     }
 
