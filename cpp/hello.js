@@ -149,7 +149,7 @@ function setupLogic() {
 
     if (suiteFile) {
       const suite = await fetch(suiteFile).then(r => r.text());
-      fullSource = studentSource + '\n\n' + suite;
+      fullSource = suite + '\n\n' + studentSource;
     }
 
     try {
