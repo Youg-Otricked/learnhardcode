@@ -22,7 +22,7 @@ int main() {
                       << " got " << got << "\n" << "(" << ttlc + 1 << "/3)";
             all_ok = false;
         } else {
-            ttlc++
+            ttlc ++;
             std::cout << "------------------------" << '\n' << "(" << ttlc << "/3) " << c.a << " + " << c.b << " = " <<  c.expected;
         }
     }
