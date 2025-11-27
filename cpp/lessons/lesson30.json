@@ -1,13 +1,13 @@
 
 {
-  "id": "lesson29.json",
+  "id": "lesson30.json",
   "title": "For loops",
   "description": "In C++, there is another type of loop called a for loop. It is often used when the number of iterations is known beforehand. you make a for loop by writing for (type init = value; condition; increment init) {code}\n\nMake a for loop that exits after 5 iterations and prints 'hello from cbit' every time.",
   "starterCode": "#include <iostream>\nint main() {\n    return 0;\n}",
   "expectedOutput": "hello from cbithello from cbithello from cbithello from cbithello from cbit",
   "mustContain": "",   
-  "nextLesson": "lesson30.json",
-  "previous": "lesson28.json",
+  "nextLesson": "lesson31.json",
+  "previous": "lesson29.json",
   "showButtons": false,
   "correct": "nobns",
   "b1t": "",
