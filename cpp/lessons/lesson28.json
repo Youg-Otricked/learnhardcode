@@ -2,8 +2,8 @@
 {
   "id": "lesson28.json",
   "title": "While loops",
-  "description": "Now that you have learned all of the more basic C++, let's put some theme into this course. For the rest of this course, you will be coding for a fictional company, __BitFoundry systems__, working on a project called **_CBit OS_**.\nIn CPP, you can make a while loop like this: While(condition) {do this}. when the condition is false ,the loop stops.\n\nCBit OS's main loop of passing files has failed!. Write a while loop that runs tilll the variable i > 10 and adds one to i at the begining of each cycle, and then prints i without a newline.",
-  "starterCode": "int main() {\n    int[5] is = {1, 5, 0, 3, 9}\n    for (int i : is) {\n        // Write your while loop here. Do not touch below or above this line.\n    }\n    return 0;\n}",
+  "description": "Now that you have learned all of the more basic C++, let's put some theme into this course. For the rest of this course, you will be coding for a fictional company, __BitFoundry systems__, working on a project called **_CBit OS_**.\nIn CPP, you can make a while loop like this: While(condition) {do this}. when the condition is false ,the loop stops.\n\nCBit OS's main loop of passing files has failed!. Write a while loop that runs tilll the variable isnt < 10 and adds one to i at the begining of each cycle, and then prints i without a newline.",
+  "starterCode": "#include <iostream>\nint main() {\n    int is[5] = {1, 5, 0, 3, 9}\n    for (int i : is) {\n        // Write your while loop here. Do not touch below or above this line.\n    }\n    return 0;\n}",
   "expectedOutput": "2345678910678910123456789104567891010",
   "mustContain": "",   
   "nextLesson": "lesson29.json",
