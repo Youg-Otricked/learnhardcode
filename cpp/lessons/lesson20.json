@@ -13,6 +13,6 @@
   "b2t": "",
   "b3t": "",
   "b4t": "",
-  "runHarness": "harness_add_run.cpp",
-  "submitHarness": "harness_add_submit.cpp"
+  "runHarness": "harnesses/harness_add_run.cpp",
+  "submitHarness": "harnesses/harness_add_submit.cpp?v=2"
 }
