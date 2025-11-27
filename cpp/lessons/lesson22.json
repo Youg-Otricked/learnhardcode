@@ -1,5 +1,5 @@
 {
-  "id": "lesson21.json",
+  "id": "lesson22.json",
   "title": "Printing != Returning",
   "description": "Remember, in  a function, writing to console != returning. Returning returns a value, not write to console. you store those values by puting a variable on the outside of the function call.\n\nYour assignment is to implement a function called 'Multiply' that takes two integer arguments and returns the value of them multiplyed together. then, write code the declares a variable x, and calls your funciton with the arguments 3, and 4 and stores the output in x",
   "starterCode": "//Write your function here.\n//do not touch below this line\nint main() {\n    std::cout << Multiply(3, 4) << '\\n';\n    //meanwhile, if you just printed the output, you couldn't use it again, like this.\n    std::cout << Multiply(x, x);\n    return 0;\n}",
