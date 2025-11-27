@@ -1,0 +1,19 @@
+
+{
+  "id": "lesson29.json",
+  "title": "While loops",
+  "description": "In C++, you can exit a loop early using the following: break;. You can skip the current iteration with continue;.\n\nSombody at the CBit OS team let a _Frontend Dev_ near the main C++ code! Fix the code so that the loop exits after one iteration.",
+  "starterCode": "#include <iostream>\nint main() {\n    while(true) {\n        std::cout << 00101101;\n        //replace this line withotu editing anythign else\n    }\n    return 0;\n}",
+  "expectedOutput": "00101101",
+  "mustContain": "",   
+  "nextLesson": "lesson30.json",
+  "previous": "lesson28.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+}
