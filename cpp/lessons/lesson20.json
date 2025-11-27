@@ -5,14 +5,14 @@
   "starterCode": "int add(int a, int b) {\n    // TODO: return the sum of a and b\n}\n",
   "expectedOutput": "[PASS]\n",
   "mustContain": "[PASS]",   
-  "nextLesson": "lesson21.json",
-  "previous": "lesson19.json",
+  "nextLesson": "lesson21.json?v=7",
+  "previous": "lesson19.json?v=7",
   "showButtons": false,
   "correct": "nobns",
   "b1t": "",
   "b2t": "",
   "b3t": "",
   "b4t": "",
-  "runHarness": "harnesses/harness_add_run.cpp",
-  "submitHarness": "harnesses/harness_add_submit.cpp?v=2"
+  "runHarness": "harnesses/harness_add_run.cpp?v=7",
+  "submitHarness": "harnesses/harness_add_submit.cpp?v=7"
 }
