@@ -1,0 +1,20 @@
+
+{
+  "id": "lesson35.json",
+  "title": "LOOPS",
+  "description": "Congrats! You have learned loops!. As a refresher, loops are used to repete a section of code multiple times. Use this playground bellow to practice! Once you are ready, Make the main func and a loop that prints \"I know loops in C++!\\n\" 5 times, to sink in the knowledge. From know on, all of the harder lessons will have a solution file, but remember, loding one resetts your lessons-in-a-row streak!",
+  "starterCode": "//practice makes perfect\n\n",
+  "expectedOutput": "I know loops in C++!\nI know loops in C++!\nI know loops in C++!\nI know loops in C++!\nI know loops in C++!\n",
+  "mustContain": "",   
+  "nextLesson": "lesson36.json",
+  "previous": "lesson34.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+} 
