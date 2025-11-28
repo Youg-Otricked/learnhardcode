@@ -113,6 +113,7 @@ async function loadLesson(lessonFile) {
   if (!res.ok) throw new Error('Failed to load lesson ' + path);
   const lesson = await res.json();
   currentLesson = lesson;
+  localStorage.setItem('cpp_current_lesson', lessonFile);
 
   titleEl.textContent = lesson.title || '';
   descEl.innerHTML = marked.parse(lesson.description) || '';
@@ -307,8 +308,13 @@ function setupLogic() {
     window.location.href = url.toString();
   });
 
+
   let params = new URLSearchParams(location.search);
-  let lessonFile = params.get('lesson') || 'lesson1.json';
+  let lessonFileFromUrl = params.get('lesson');
+  let lastLesson = localStorage.getItem('cpp_current_lesson');
+
+  let lessonFile = lessonFileFromUrl || lastLesson || 'lesson1.json';
+
   loadLesson(lessonFile).catch(err => {
     outEl.textContent = 'Failed to load lesson: ' + err.message;
   });
