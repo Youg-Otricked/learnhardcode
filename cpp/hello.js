@@ -1,3 +1,4 @@
+const { use } = require("react");
 
 
 class WorkerAPI {
@@ -73,6 +74,7 @@ class WorkerAPI {
 let checkResultBtn;
 let loadSolutionBtn;
 let api;
+let useSolution = false;
 let editor;             
 let currentLesson = null;
 let lastRunOutput = '';
@@ -223,11 +225,18 @@ function setupLogic() {
     if (passed) {
       outEl.textContent += '\n[PASS] Output matches expected.\n';
       lessonsInRow += 1;
+      if (useSolution) {
+        lessonsInRow = 0;
+        outEl.textContent += '\n(Note: Streak reset due to loading solution.)\n';
+      }
       saveStreak();
       updateStreakUI();
       if (nextLessonId) nextBtn.style.display = 'inline-block';
     } else {
-      outEl.textContent += '\n[FAIL] Output does not match.\n';
+      lessonsInRow = 0;
+      saveStreak();
+      updateStreakUI();
+      outEl.textContent += '\n[FAIL] Output does not match. (streak reset)\n';
       if (mustContain) {
         outEl.textContent += '\nExpected to contain:\n' + mustContain;
       } else {
@@ -244,6 +253,7 @@ function setupLogic() {
     submitCheck();
 
     // Restore normal controls
+    useSolution = false;
     runBtn.style.display = 'inline-block';
     checkBtn.style.display = 'inline-block';
     if (prevBtn && prevLessonId) prevBtn.style.display = 'inline-block';
@@ -271,6 +281,7 @@ function setupLogic() {
       return;
     }
     try {
+      useSolution = true;
       const sol = await fetch(solutionFile).then(r => r.text());
       editor.setValue(sol);
       lessonsInRow = 0;
