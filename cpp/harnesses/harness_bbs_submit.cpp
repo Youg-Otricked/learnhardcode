@@ -39,7 +39,7 @@ int main() {
         BubbleSort(arr, 9);
 
         if (!equal_arr(arr, expect, 5)) {
-            std::cout << "[FAIL] case 4\n";
+            std::cout << "[FAIL] case 3\n";
             return 1;
         }
     }
@@ -50,11 +50,11 @@ int main() {
         BubbleSort(arr, 4);
 
         if (!equal_arr(arr, expect, 4)) {
-            std::cout << "[FAIL] case 2\n";
+            std::cout << "[FAIL] case 4\n";
             return 1;
         }
     }
 
-    std::cout << "[PASS]\n";
+    std::cout << "[PASS](4/4), \n";
     return 0;
 }

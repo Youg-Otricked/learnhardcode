@@ -5,7 +5,7 @@
   "description": "_Honerable mention: you can make an array with signifigantly more dimentions. you can add as many as you want, but it gets harder to manage init andlook at_\n\nThere is a sorting algorithm called bubble sort. How it works is that if the value on the right is greater than the current element, swap them, and run this on the entire array till infinity until no swaps are preformed on an iteration. You can use somthing called the terenary(?) operator as a small if/else statment. How it works is you type condition ? valueiftrue : valueiffalse;\n\nThe CBit OS team wants to sort users files by size! Create a functin called BubbleSort that takes a single argument, an array, and returns the array but sorted. _Note, You cannot use a normal for each in this function, because when passing an array ot a funtion it degrades to a pointer to the first element in memory. instead, use size to determine the max size of the array.. Use a temp variable to store the value of the dat your swaping, and a variable to remember the next position in the array. By the way, this lesson is hard, so there is a solution file. BE WARY, it will reset your lessons streak._",
   "starterCode": "void BubbleSort(int arr[], int len) {\n    // TODO: sort arr in-place\n}\n",
   "expectedOutput": "[]",
-  "mustContain": "[PASS]\n",   
+  "mustContain": "[PASS]",   
   "nextLesson": "lesson35.json",
   "previous": "lesson33.json",
   "showButtons": false,
@@ -16,5 +16,5 @@
   "b4t": "",
   "runHarness": "harnesses/harness_bbs_run.cpp",
   "submitHarness": "harnesses/harness_bbs_submit.cpp",
-  "solution": "solutions/lesson1.cpp"
+  "solution": "solutions/lesson34.cpp"
 } 
