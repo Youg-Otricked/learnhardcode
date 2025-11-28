@@ -1,0 +1,19 @@
+
+{
+  "id": "lesson32.json",
+  "title": "Sizeof & Arrays",
+  "description": "In C++, you can find the size in memory of a datatype or variable usin the sizeof() function. For example, sizeof(int) will return the size in bytes of integers. Arrays are collections of values of a datatype with a set size, for example an array defined as int arr[5]; would be a array of 5 integers. You can find a value in an array with its position by doing arrayname[index] where index 0 = 1st item, 2 = 2nd... etc. to initilize an array, you can either maker an array and manually set each value with array[location] = value; or make an arra like this; datatype name[size] = {values};\nFor example, int arrint[5] = {1, 3, 2, 6, 99};\n\nbecause of arrays elements all being the same datatype, you can find the size of an array by deviding the size of the array(in bytes) by the size of the first element/any elemtent.\n\nThe CBit OS team wants to implement a new feature for users directorys to tell them how many items are in each directory. The directory will be represented as an array named homeDir",
+  "starterCode": "#include <iostream>\nint main() {\n    int i[11] = {1, 2, 3, 4, 91, 23, 7, 8, 11, 2, 999};\n\n    //write you loop here\n    return 0;\n}",
+  "expectedOutput": "234564566656",
+  "mustContain": "",   
+  "nextLesson": "lesson33.json",
+  "previous": "lesson31.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+} 
