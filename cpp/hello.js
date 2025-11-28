@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function btn(bn) {
   if (bn === correct) {
-    lessonsInRow += 0;
+    lessonsInRow += 1;
     saveStreak();
     updateStreakUI();
     alert("Correct");
@@ -346,9 +346,10 @@ function btn(bn) {
     outEl.textContent += '\n[PASS].\n';
     if (nextLessonId) nextBtn.style.display = 'inline-block';
   } else {
-    alert("Incorrect");
     lessonsInRow = 0;
     saveStreak();
     updateStreakUI();
+    alert("Incorrect");
+    
   }
 }
