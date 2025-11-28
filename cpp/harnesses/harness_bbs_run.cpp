@@ -17,7 +17,7 @@ int main() {
         BubbleSort(arr, 5);
 
         if (!equal_arr(arr, expect, 5)) {
-            std::cout << "[FAIL] case 1\n";
+            std::cout << "[FAIL] case 1\n" << "Expected 1 2 3 4 5" << "Got " << arr << '\n';
             return 1;
         }
     }
@@ -28,7 +28,7 @@ int main() {
         BubbleSort(arr, 4);
 
         if (!equal_arr(arr, expect, 4)) {
-            std::cout << "[FAIL] case 2\n";
+            std::cout << "[FAIL] case 2\n" << "Expected -1 0 7 10" << "Got " << arr << '\n';
             return 1;
         }
     }
