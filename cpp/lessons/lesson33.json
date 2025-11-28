@@ -1,0 +1,19 @@
+
+{
+  "id": "lesson33.json",
+  "title": "Foreach Loops & grids",
+  "description": "In C++, a foreach loop is a foor loop, with somthing special. you can make a for each loop with for (typeofarray element : arrayname) { //thiscode will run for every item in the  array }\nGrids are arrays of arrays. you define grids with datatype name[sizeofouterarray(rows)][sizeofinnerarray(columns)] = {{values},{values}...};\n\nOur CBit OS devs realized that there can be nested directorys, so the need you to fix the bug. Iterate thorugh the nested array(grid) homeDir and print every element. _You may need to use multiple foreach loops_",
+  "starterCode": "#include <iostream>\nint main() {\n    int i[4][3] = {{1, 2, 3}, {4, 9, 11}, {32, 21, 67}, {11, 44, 55}};\n\n    //write you loop here\n    return 0;\n}",
+  "expectedOutput": "1234911322167114455",
+  "mustContain": "",   
+  "nextLesson": "lesson34.json",
+  "previous": "lesson32.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": null,
+  "submitHarness": null
+} 
