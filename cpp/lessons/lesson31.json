@@ -4,7 +4,7 @@
   "title": "Do while",
   "description": "A do while loop is just a while loop, but it guarantees that the code inside the loop will run at least once. This is because the condition is checked only after the block is executed. You write it like: \n do {code} while (condition);\n\nMake a do while loop that runs while i is less than 5, incremnts i; and prints i every time.",
   "starterCode": "#include <iostream>\nint main() {\n    int is[5] = {1, 3, 5, 5, 4};\n\n    for (int i : is) {\n        //write you loop here\n        }\n    return 0;\n}",
-  "expectedOutput": "234564566656",
+  "expectedOutput": "234545665",
   "mustContain": "",   
   "nextLesson": "lesson32.json",
   "previous": "lesson30.json",
