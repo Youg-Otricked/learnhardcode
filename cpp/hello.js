@@ -113,8 +113,7 @@ async function loadLesson(lessonFile) {
   if (!res.ok) throw new Error('Failed to load lesson ' + path);
   const lesson = await res.json();
   currentLesson = lesson;
-  localStorage.setItem('cpp_current_lesson', lessonFile);
-
+  
   titleEl.textContent = lesson.title || '';
   descEl.innerHTML = marked.parse(lesson.description) || '';
   if (editor) editor.setValue(lesson.starterCode || '');
@@ -232,6 +231,10 @@ function setupLogic() {
       }
       saveStreak();
       updateStreakUI();
+      const params = new URLSearchParams(location.search);
+      const lessonFileFromUrl = params.get('lesson') || 'lesson1.json';
+      localStorage.setItem('cpp_current_lesson', lessonFileFromUrl);
+
       if (nextLessonId) nextBtn.style.display = 'inline-block';
     } else {
       lessonsInRow = 0;
