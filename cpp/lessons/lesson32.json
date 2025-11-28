@@ -15,5 +15,6 @@
   "b3t": "",
   "b4t": "",
   "runHarness": null,
-  "submitHarness": null
+  "submitHarness": null,
+  "isSolution": true
 } 
