@@ -1,4 +1,4 @@
-import { Fd, File, Directory, PreopenDirectory, WASI, strace } from "./wasi/index";
+import { Fd, File, Directory, PreopenDirectory, WASI, strace } from "./wasi/index.js";
 export async function initInterpreter() {
     console.time("init");
     // Build the filesystem needed for Miri to work
