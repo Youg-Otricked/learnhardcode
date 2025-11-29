@@ -128,7 +128,7 @@ async function runWithSuite(suiteFile, label) {
   if (suiteFile) {
     const suite = await fetch(suiteFile).then(r => r.text());
     // adjust order if you design Rust harnesses differently
-    fullSource = suite + '\n\n' + studentSource;
+    fullSource = suite + '\n\n' + studentSource + "\nmain();";
   }
 
   try {
