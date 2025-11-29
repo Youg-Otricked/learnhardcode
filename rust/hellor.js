@@ -134,9 +134,9 @@ async function runWithSuite(suiteFile, label) {
   try {
     const result = await rubriRunner.run(fullSource, true);
     console.log('Rubri result:', result);
-    const stdout = result.stdout || '';
-    const stderr = result.stderr || '';
-    lastRunOutput = stdout + (stderr || '');
+
+// result is a string with all output (warnings + prints)
+    lastRunOutput = String(result);
     outEl.textContent += lastRunOutput;
   } catch (err) {
     outEl.textContent += '\nError: ' + err.message + '\n';
