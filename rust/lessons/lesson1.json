@@ -1,0 +1,15 @@
+{
+  "id": "lesson1.json",
+  "title": "Hello, Rust!",
+  "description": "Welcome to Rust! Rust is a fast, safe systems programming language.\n\nFor now, you don't need to understand everything. Just fix the code below so it prints exactly:\n\n`Hello, Rust!`\n\non its own line.\n\nIn Rust, printing is usually done with the `println!` macro.",
+  "starterCode": "fn main() {\n    println!(\"Rust, Hello!\");\n}\n",
+  "expectedOutput": "Hello, Rust!\n",
+  "nextLesson": "lesson2.json",
+  "previous": null,
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}
