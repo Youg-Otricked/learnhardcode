@@ -9,10 +9,10 @@ class RubriRunner {
     this.pending = new Map();
 
     this.worker.addEventListener('message', (e) => {
-      console.log('Worker message:', e.data);
+      console.log('Worker message:', e.data); // <-- add this
       const data = e.data;
       if (data.loaded) {
-        // initial "loaded" message, ignore
+        console.log('Rubri worker loaded');
         return;
       }
       const { id, result } = data;
@@ -20,6 +20,8 @@ class RubriRunner {
       if (cb) {
         this.pending.delete(id);
         cb(result);
+      } else {
+        console.warn('No pending callback for id', id);
       }
     });
   }
@@ -28,6 +30,7 @@ class RubriRunner {
     return new Promise((resolve) => {
       const id = this.nextId++;
       this.pending.set(id, resolve);
+      console.log('Posting to worker:', { id, printLast }); // debug
       this.worker.postMessage({ id, code, printLast });
     });
   }
