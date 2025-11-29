@@ -11,7 +11,7 @@ int main() {
         std::cout << "[FAIL] makeDir(\"Funny\", \"FunnyVirus.exe\", \"BananaDuck.txt\") should return Funny contents are: FunnyVirus.exe, BananaDuck.txt\n";
         return 1;
     }
-    if (makeDir("Code", "Code.cpp", "harness_ov_run.cpp", "igmail.cs") != "Code contents are: Code.cpp, igmail.cs") {
+    if (makeDir("Code", "Code.cpp", "harness_ov_run.cpp", "igmail.cs") != "Code contents are: Code.cpp, harness_ov_run.cpp, igmail.cs") {
         std::cout << "[FAIL] makeDir(\"Code\", \"Code.cpp\", \"harness_ov_run.cpp\", \"igmail.cs\") should return Code contents are: Code.cpp, igmail.cs\n";
         return 1;
     }
