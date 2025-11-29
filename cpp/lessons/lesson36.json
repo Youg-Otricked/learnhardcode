@@ -14,7 +14,7 @@
   "b2t": "",
   "b3t": "",
   "b4t": "",
-  "runHarness": "",
-  "submitHarness": "harnesses/harness_ov_run.cpp",
-  "solution": "harnesses/harness_ov_submit.cpp"
+  "runHarness": "harnesses/harness_ov_run.cpp",
+  "submitHarness": "harnesses/harness_ov_submit.cpp",
+  "solution": ""
 } 
