@@ -9,6 +9,7 @@ class RubriRunner {
     this.pending = new Map();
 
     this.worker.addEventListener('message', (e) => {
+      console.log('Worker message:', e.data);
       const data = e.data;
       if (data.loaded) {
         // initial "loaded" message, ignore
@@ -129,6 +130,7 @@ async function runWithSuite(suiteFile, label) {
 
   try {
     const result = await rubriRunner.run(fullSource, true);
+    console.log('Rubri result:', result);
     const stdout = result.stdout || '';
     const stderr = result.stderr || '';
     lastRunOutput = stdout + (stderr || '');
