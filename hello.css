@@ -74,7 +74,7 @@ pre {
     --border: #3a3f4b;
     --text: #c7cbd4;
     --muted: #9aa1ab;
-    --accent: #61dafb;
+    --accent: #ffffff;
     /* caret/highlight */
 }
 
@@ -124,8 +124,19 @@ body {
 .ans:hover {
     background-color: #0a7fb5; /* nicer hover */
 }
-.code-box button {
+
+.cpp {
     background-color: #086692;
+    width: 150px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;              /* remove default button border */
+    color: #fff;               /* make text visible */
+    font: inherit;         
+    cursor: pointer;           /* pointer on hover */
+}
+.rust {
+    background-color: #2f241c;
     width: 150px;
     height: 20px;
     border-radius: 5px;
