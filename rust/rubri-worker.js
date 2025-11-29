@@ -1,13 +1,14 @@
+// rubri-worker.js
 import { initInterpreter } from "./rubri-interpreter.js";
+
 (async () => {
-    // Build main Interpreter
-    const interpreter = await initInterpreter();
-    // When code is received run it
-    addEventListener("message", async (event) => {
-        const { code, printLast } = event.data;
-        const result = await interpreter.run(code, printLast);
-        postMessage({ result });
-    });
-    // Send a message when finished loading
-    postMessage({ loaded: true });
+  const interpreter = await initInterpreter();
+
+  addEventListener("message", async (event) => {
+    const { id, code, printLast } = event.data;
+    const result = await interpreter.run(code, printLast);
+    postMessage({ id, result });  // include id so RubriRunner can match
+  });
+
+  postMessage({ loaded: true });
 })();
