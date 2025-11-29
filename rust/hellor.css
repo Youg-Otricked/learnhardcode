@@ -1,0 +1,83 @@
+:root {
+  --bg:         #1b1a17;
+  --panel:      #26231f;
+  --border:     #3a322b;
+  --text:       #f3e9dc;
+  --muted:      #b7a99a;
+  --accent:     #c76b29;  /* main rust orange */
+  --accent2:    #e3893a;  /* brighter hover */
+  --link:       #f2a365;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.box {
+  flex: 1;
+  padding: 12px;
+  box-sizing: border-box;
+  background: var(--panel);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.text-box {
+  background: #2c241e;
+}
+
+.code-box {
+  background: var(--panel);
+}
+
+h1, h2, h3 {
+  color: var(--accent2);
+  margin-top: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  border: 1px solid var(--border);
+  background-color: #2f241c;
+  color: var(--text);
+  font: inherit;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3b2a1f;
+}
+
+#editor {
+  border: 1px solid var(--border);
+}
+
+/* Output area */
+#out {
+  background: #211d18;
+  border: 1px solid var(--border);
+  padding: 8px;
+  white-space: pre-wrap;
+}
+
+/* Streak / muted text */
+#streak {
+  color: var(--muted);
+}
