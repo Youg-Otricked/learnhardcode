@@ -1,11 +1,11 @@
 
 {
   "id": "lesson36.json",
-  "title": "LOOPS",
-  "description": "Congrats! You have learned loops!. As a refresher, loops are used to repete a section of code multiple times. Use this playground bellow to practice! Once you are ready, Make the main func and a loop that prints \"I know loops in C++!\\n\" 5 times, to sink in the knowledge. From know on, all of the harder lessons will have a solution file, but remember, loding one resetts your lessons-in-a-row streak!",
-  "starterCode": "//practice makes perfect\n\n",
-  "expectedOutput": "I know loops in C++!\nI know loops in C++!\nI know loops in C++!\nI know loops in C++!\nI know loops in C++!\n",
-  "mustContain": "",   
+  "title": "Overloaded functions",
+  "description": "An overloaded function is when a function has multiple definitions/declerations. They have the same name, but different arguments. For example, a function called \"Add\". You could make one functio nthats signiture is int Add(int a, int b), and one that is int Add(int a, int b, int c), and then it would call the firts one if you used Add(1, 3) and the second if you used Add(9, 1, 4). \n\nThe CBit OS team needs you to write a function that creates a directory from files! The problem is, the team doesnt know the number of files, there could be 2, 3, or 4. You must write an overloaded function, makeDir that returnes a string thats contents are: \"Dirname contents are: item1, item2, item3, item4\". The arguments passed will be the name of the directory(Dirname), item1, item2. For the second one, it will also have item3, and item4 forthe 3rd one. The order of arguments will be dirname, item1, item2.... the array should be an array of strings, same for the arguments.",
+  "starterCode": "//Write makeDir here.\n\n",
+  "expectedOutput": "[]",
+  "mustContain": "[PASS]",   
   "nextLesson": "lesson37.json",
   "previous": "lesson35.json",
   "showButtons": false,
@@ -15,6 +15,6 @@
   "b3t": "",
   "b4t": "",
   "runHarness": "",
-  "submitHarness": "",
-  "solution": ""
+  "submitHarness": "harnesses/harness_ov_run.cpp",
+  "solution": "harnesses/harness_ov_submit.cpp"
 } 
