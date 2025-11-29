@@ -1,5 +1,5 @@
 // rubri-worker.js
-import { initInterpreter } from "./rubri-interpreter.js";
+import { initInterpreter } from "./rubri-runtime.js";
 
 (async () => {
   const interpreter = await initInterpreter();
