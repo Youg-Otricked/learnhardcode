@@ -134,3 +134,12 @@ body {
     font: inherit;         
     cursor: pointer;           /* pointer on hover */
 }
+#out {
+  background-color: #1b1c22;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  border: 1px solid var(--border);
+}

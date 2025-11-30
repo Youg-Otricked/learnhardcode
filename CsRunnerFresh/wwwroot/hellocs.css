@@ -1,0 +1,120 @@
+:root {
+  --bg:        #1e1f24;
+  --panel:     #252835;
+  --border:    #3a3f4b;
+  --text:      #d7dae0;
+  --muted:     #9aa1ab;
+  --accent:    #9b4f96;  /* C#-ish purple accent */
+  --accent-alt:#c586c0;  /* lighter purple for hover/active */
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.box {
+  flex: 1;
+  padding: 12px;
+  overflow: auto;
+  box-sizing: border-box;
+  background: var(--panel);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.text-box {
+  background: #2b2f3c; /* slight contrast for text / description */
+}
+
+.code-box {
+  background: var(--panel);
+}
+
+/* Code editor area (Monaco or textarea overlay) */
+.code-editor {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  resize: none;
+  outline: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Answer buttons in the text pane */
+.text-box .ans {
+  width: 600px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: var(--accent);
+  border: none;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.text-box .ans:hover {
+  background-color: var(--accent-alt);
+  transform: translateY(-1px);
+}
+
+/* Run / check / nav buttons in the code pane */
+.code-box button {
+  background-color: var(--accent);
+  width: 150px;
+  height: 28px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.code-box button:hover {
+  background-color: var(--accent-alt);
+  transform: translateY(-1px);
+}
+
+/* Optional subtle header / labels styling */
+h1, h2, h3 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+p, li {
+  color: var(--muted);
+}
+
+/* Output area */
+#out {
+  background-color: #1b1c22;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  border: 1px solid var(--border);
+}
