@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rust Playground</title>
+    <title>C# Playground</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="hellor.css?v=123">
+    <link rel="stylesheet" href="hellocs.css?v=123">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
-    <script src="hellor.js" defer></script>     <!-- your UI wiring -->
+    <script src="hellocs.js?v=137" defer></script>     <!-- your UI wiring -->
 </head>
 
 <body>
@@ -42,6 +42,32 @@
                 </div>
         </div>
     </div>
+    <div id="app"></div> 
+    <script src="CsRunnerFresh/bin/Release/net8.0/publish/wwwroot/_framework/blazor.webassembly.js"></script>
+<script>
+  if (!window.dotnetReady) {
+    window.dotnetReady = Blazor.start().then(() => {
+      console.log("C# WASM runtime started");
+    });
+  }
+
+  async function runCSharpCode(sourceCode, harnessSource = "") {
+    await window.dotnetReady;
+
+    const fullSource = harnessSource
+      ? harnessSource + "\n\n" + sourceCode
+      : sourceCode;
+
+    const result = await DotNet.invokeMethodAsync(
+      'CsRunner',
+      'RunUserCode',
+      fullSource
+    );
+
+    return result;
+  }
+</script>
 </body>
+
 
 </html>
