@@ -1,7 +1,7 @@
 {
   "id": "lesson44.json",
   "title": "Recursion [1]",
-  "description": "Yes, that. This is the part where I’m supposed to say “IYKYK” while every CS major in a 25 mile radius feels a sense of impending doom.\n\nBut recursion is actually **kind of** simple: it’s when a function calls **itself** with a different argument.\n\nCBit OS needs a new math feature: **factorials**.\n\nThe factorial of a number `n` (written `n!`) is:\n- `n * (n - 1) * (n - 2) * ... * 2 * 1`\n- Example: `4! = 4 * 3 * 2 * 1 = 24`\n- Special cases: `0! = 1` and `1! = 1`\n\nYour task: write a function `int factorial(int a);` that returns the factorial of `a` **using recursion**.\n\nHint:\n- You need a **base case** for when `a` is 0 or 1.\n- For other values, `factorial(a)` should return `a * factorial(a - 1)`.",
+  "description": "Yes, that. This is the part where I’m supposed to say “IYKYK” while every CS major in a 25 mile radius feels a sense of impending doom.\n\nBut recursion is actually **kind of** simple: it’s when a function calls **itself** with a different argument.\n\nCBit OS needs a new math feature: **factorials**.\n\nThe factorial of a number `n` (written `n!`) is:\n- `n * (n - 1) * (n - 2) * ... * 2 * 1`\n- Example: `4! = 4 * 3 * 2 * 1 = 24`\n- Special cases: `0! = 1` and `1! = 1`\n\nYour task: write a function `int factorial(int a);` that returns the factorial of `a` **using recursion**.",
   "starterCode": "// Write your recursive function here\n",
   "expectedOutput": "Not",
   "mustContain": "[PASS]",
@@ -15,5 +15,6 @@
   "b4t": "",
   "runHarness": "harnesses/harness_run_fl.cpp",
   "submitHarness": "harnesses/harness_submit_fl.cpp",
-  "solution": "solutions/solution44.cpp"
+  "solution": "solutions/solution44.cpp",
+  "hint": "I know this is very hard. You need a base case for when a is 0 or 1.\n- For other values, factorial(a) should return a * factorial(a - 1)."
 }
