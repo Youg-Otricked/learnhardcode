@@ -145,3 +145,13 @@ body {
     font: inherit;         
     cursor: pointer;           /* pointer on hover */
 }
+.cs {
+    background-color: #9b4f96;
+    width: 150px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;              /* remove default button border */
+    color: #fff;               /* make text visible */
+    font: inherit;         
+    cursor: pointer;           /* pointer on hover */
+}

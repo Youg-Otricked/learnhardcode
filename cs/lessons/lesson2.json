@@ -1,0 +1,15 @@
+{
+  "id": "lesson2.json",
+  "title": "scary namespace + classes",
+  "description": "Now, in the last lesson, you probably saw the mess that scares most people from C#. class+namespace. It is actually prety simple. Think of a namespace as a compartment in your code. You use namespaces to organize your code, and they are basically required in c #. all you do is after writing using System;(this just makes everythig easier), write \n```\nnamespace NAMSPACENAME\n{\n}\n```\nThen, class. These are actually necesary. Think off the, like classes in a video game. One class has your main function. this is how all programs start and hwere they strat. this class you typically call `Program`. Then, you can create classes with diferent functions or feilds onl those classes can access, and you can creat somthing called **Objects** that can access those functions. you make a class with\n```\nclass CLASSNAME\n{\n}\n```\nRemember, everything inside{} is indented one aditional space from eveything else in that blocks indent.\n\nSomebody deleted our bootup classes and namespaces! Add the classes and namspaces to make hte code run.",
+  "starterCode": "using System;\npublic static int Main()\n{\n    Console.WriteLine(\"Booting....\");\n    return 0;\n}",
+  "expectedOutput": "Booting....\n",
+  "nextLesson": "lesson3.json",
+  "previous": "lesson1.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

@@ -1,0 +1,19 @@
+{
+  "id": "lesson43.json",
+  "title": "MMM review.",
+  "description": "How would you define a int pointer called p to the adress of x",
+  "starterCode": "",
+  "expectedOutput": "",
+  "mustContain": "",
+  "nextLesson": "lesson44.json",
+  "previous": "lesson42.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "int p = & x",
+  "b2t": "int *p = &x",
+  "b3t": "int *p = x",
+  "b4t": "int p = x",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+}

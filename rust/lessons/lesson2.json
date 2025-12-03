@@ -1,0 +1,15 @@
+{
+  "id": "lesson2.json",
+  "title": "fn main()",
+  "description": "In Rust, all programs start in the function main.(fn main() {}) where the code goes in the brakets, like this. \nfn main() {\n    //code here\n}\n\n## Assingment:\nA python dev forgot about main functions existing when writing our bootup system. \nFix the code by adding the main function.\n\n\n_Remember. All code in a function is indented._",
+  "starterCode": "println!(\"Welcome to Verdigris\");\nprintln!(\"> user-c4fc9ccdbce4030b10a71bd0\");",
+  "expectedOutput": "Welcome to Verdigris\n> user-c4fc9ccdbce4030b10a71bd0\n",
+  "nextLesson": "lesson3.json",
+  "previous": "lesson2.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

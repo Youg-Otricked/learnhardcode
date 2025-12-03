@@ -15,6 +15,7 @@ html, body {
   background: var(--bg);
   color: var(--text);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
 }
 
 .container {
@@ -23,24 +24,36 @@ html, body {
 }
 
 .box {
-  flex: 1;
+  flex: 1 1 0px; 
   padding: 12px;
   box-sizing: border-box;
   background: var(--panel);
   box-shadow: inset 0 0 0 1px var(--border);
+  min-width: 0; 
+  overflow-y: auto; 
 }
 
 .text-box {
   background: #2c241e;
+  
+  /* The aggressive breaking properties: */
+  word-wrap: break-word;
+  flex: 0 0 40%;   /* about 40% of width */
+  max-width: 40%;
 }
-
 .code-box {
   background: var(--panel);
+  flex: 1 0 60%;   /* about 40% of width */
+  max-width: 60%;
 }
-
+.text-box .ans {
+  margin: 0 auto; 
+  width: fit-content;
+}
 h1, h2, h3 {
   color: var(--accent2);
   margin-top: 0;
+  overflow-wrap: break-word;
 }
 
 a {

@@ -33,12 +33,17 @@ body {
 .text-box {
     background-color: #3e4451;
     /* Slightly different background for text box */
+    word-wrap: break-word;
+    flex: 0 0 40%;   /* about 40% of width */
+    max-width: 40%;
 }
 
 .code-box {
     font-size: 14px;
     background-color: #282c34;
     /* Code box background */
+    flex: 1 0 60%;   /* about 40% of width */
+    max-width: 60%;
 }
 
 .code-editor {
@@ -110,7 +115,9 @@ body {
     background: var(--panel);
 }
 .text-box .ans {
-    width: 600px;
+    margin: 0 auto; 
+    text-align: center;
+    width: fit-content;
     height: 30px;
     border-radius: 20px;
     background-color: #086692;

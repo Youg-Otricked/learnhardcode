@@ -1,0 +1,19 @@
+{
+  "id": "lesson45.json",
+  "title": "Recursion [2]",
+  "description": "This will be significantly easier.\n\nCBit OS needs another math functino. they need you to create a function called sumTo(int a, int save)(save will always be 0. it is to be used to recurse) that is like factorial but for addition. so sumto 9 = 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1. but for 0 the output is just 0.",
+  "starterCode": "#include <iostream>\n//Don't touch above this line.\n// Write your recursive function here\n//Don't touch below this line\n\nint main() {\n    if (sumTo(9, 0) != 45) {\n        std::cout << \"FAIL\";\n    } else {\n        std::cout << \"[PASS]\";\n    }\n}",
+  "expectedOutput": "Not",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson46.json",
+  "previous": "lesson44.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+}

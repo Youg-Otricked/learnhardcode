@@ -1,0 +1,15 @@
+{
+  "id": "lesson3.json",
+  "title": "println!()",
+  "description": "An important standerd library macro(i will explain later) is **println!()**.\nprintln!() prints to console. \nYou just type println!() and inside you put what you want to print.\n When printing a variable, all you do is put a variable inside(once again, i will explain variables later), or quotes and text inside the quotes if you are printing normal text. \nThe ! specifices its a macro. println is not anything, \nprintln!() is a mcaro(and more importantly output).\n\nThe Verdigris OS test release exposed a \"bug\". Somebody **Deleted** the bootup code. Write the main functino, and inside make it print \"> user-default00001\"",
+  "starterCode": "//Write your code here.",
+  "expectedOutput": "> user-default00001\n",
+  "nextLesson": "lesson4.json",
+  "previous": "lesson2.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

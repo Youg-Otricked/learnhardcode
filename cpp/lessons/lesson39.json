@@ -1,0 +1,20 @@
+
+{
+  "id": "lesson39.json",
+  "title": "& and pass by value VS pass by reference",
+  "description": "_I promise I will cover more about memory soon._\n\nRight now, when you pass a variable to a function in C++, it is passed **by value**. That means the function receives a **copy** of the value, not the original variable. Changing the parameter inside the function does **not** change the original.\n\nRun the code below **without editing it**:\n\n- It prints the address of `DirSize` in `main`, and then the address of `DirSize` inside `IncrementDirSize`.\n- It also prints the directory size inside the function and then again in `main`.\n\nYou should see:\n\n- The two addresses are **different** → the function has its own copy.\n- The final `DirSize` in `main` is still `17` → changes inside the function didn’t affect it.\n\n---\n\n**Your task:** change the function so that it takes `DirSize` **by reference** instead of by value.\n\nYou only need to edit the function’s parameter list. Add `&` to the type of `DirSize` (for example, `int& DirSize`) so the function works with the original variable.\n\nWhen you’re done:\n\n- The two addresses should be **the same**.\n- The final `DirSize` printed in `main` should be updated to `22`.\n",
+  "starterCode": "#include <iostream>\nvoid IncrementDirSize(int DirSize, int Val) {\n    std::cout << &DirSize << '\\n';\n    DirSize += Val;\n    std::cout << DirSize << \" \";\n}\nint main() {\n    int DirSize = 17;\n    std::cout << &DirSize << '\\n';\n    IncrementDirSize(DirSize, 5);\n    std::cout << DirSize; //as you see, if you make no edits, it will produce different output.\n}",
+  "expectedOutput": "Not right now.",
+  "mustContain": "22 22",   
+  "nextLesson": "lesson40.json",
+  "previous": "lesson38.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+} 
