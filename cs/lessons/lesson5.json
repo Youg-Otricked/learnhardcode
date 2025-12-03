@@ -1,0 +1,15 @@
+{
+  "id": "lesson5.json",
+  "title": "Playground",
+  "description": "Now you nkow the very basics, Congrats! This lesson purely exists so you can practice befor moving on. Select an answer once you are done for the question. What is a core paradigm of C#",
+  "starterCode": "",
+  "expectedOutput": "Chronoshard has started.\n",
+  "nextLesson": "lesson5.json",
+  "previous": "lesson3.json",
+  "showButtons": true,
+  "correct": "b4",
+  "b1t": "Functional programing",
+  "b2t": "None",
+  "b3t": "DSA",
+  "b4t": "OOP"
+}

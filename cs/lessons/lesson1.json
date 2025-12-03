@@ -1,0 +1,15 @@
+{
+  "id": "lesson1.json",
+  "title": "Hello C#",
+  "description": "## In this course, you will be learning C# for a fictional company, **Aurora Anvil Studios** on their latest flagship game, Chronoshard.\nSoon, you will understand everything the code below does. For now, just do what the assingment says\n\n# Assignment:\n#### The Chronoshard team needs a welcome message. replace the //Text goes here so it says \"Opening Chronoshard!\"",
+  "starterCode": "using System;\n\nnamespace Chronoshard\n{\n    class Boot\n    {\n        public static int Main()\n        {\n            Console.WriteLine(\"//Text goes here\");\n            return 0;\n        }\n    }\n}",
+  "expectedOutput": "Opening Chronoshard!\n",
+  "nextLesson": "lesson2.json?v=1",
+  "previous": null,
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

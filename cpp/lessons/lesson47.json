@@ -1,0 +1,19 @@
+{
+  "id": "lesson47.json",
+  "title": "Templates [2]: Reusing add with many types",
+  "description": "In the last lesson, you wrote a generic add function that added two numbers, but of ANY type(as long as they were numbers.) but with that, their is one problem, because we used only ONE template, there was only one possible set if each type, so it could only be int, int, or double double. what we CAN do is make a 2nd template and make one arg use a different template(you put the second templete **somwhere** in the first template definition, otherwise you get an error.) ,that way we can have int int, or int double...\nThen, because no mater what we select, it will onlt output one of the types, meaning somtimes we could get a int output from int + double, which is SAD and BAD and BOOOO, so instead of making a normal return type, we can use return type auto so it will return the  bigger(more acurate type) so int double will return double, if the output is a double.",
+  "starterCode": "#include <iostream>\n//don't touch above his line\ntemplate <typename T>\nT add(T left, T right) {\n    return left + right;\n    //TODO make a second temple, B and make the right argument use it instead of T, and make return type auto.\n}\n//dont touch below this\nbool allok = true;\ntemplate <typename T, typename B, typename C>\nvoid check_add(T a, B b, C expected, const char* label) {\n    auto result = add(a, b);\n    if (result == expected) {\n        std::cout << \"PASS: \" << label << \" == \" << expected << \"\\n\";\n    } else {\n        allok = false;\n        std::cout << \"FAIL: \" << label << \" was \" << result\n                  << \", expected \" << expected << \"\\n\";\n    }\n}\n\nint main() {\n    check_add<int>(2, 3, 5, \"add(2, 3)\");\n    check_add<double>(1.5, 2.5f, 4.0, \"add(1.5, 2.5f)\");\n    check_add<long>(100, 20.99, 120.99, \"add(100, 20.99)\");\n    if (allok) { \n        std::cout << \"[PASS]\";\n    }\n}",
+  "expectedOutput": "PASS: add(2, 3) == 5\nPASS: add(1.5, 2.5) == 4\nPASS: add(100L, 200L) == 300\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson48.json",
+  "previous": "lesson46.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "solutions/solutionTemplates2.cpp"
+}

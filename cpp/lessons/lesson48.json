@@ -1,0 +1,19 @@
+{
+  "id": "lesson48.json",
+  "title": "Templates [3]: maxOf for int, float, and double",
+  "description": "CBit OS wants a generic math helper: a function that can find the **maximum** of two values, no matter if they are `int`, `float`, or `double`.\n\nInstead of writing three different functions, we’ll use a **function template**.\n\nA template is like a recipe the compiler uses to create a real function for each type you use. For example:\n\n```cpp\n// not the final code, just an example\n\ntemplate <typename T>\nT add(T left, T right) {\n    return left + right;\n}\n```\n\nThe compiler can use that to make `add(int, int)`, `add(double, double)`, and so on.\n\nIn this lesson, your job is to write a function template named `maxOf` that:\n\n- Has the form `template <typename T>`\n- Takes two parameters of type `T`\n- Returns the **larger** of the two values\n\nUse the `>` operator inside your function. We’ll test it with `int`, `float`, and `double`.\n",
+  "starterCode": "// TODO: write a function template named maxOf that:\n// - starts with: template <typename T>\n// - takes two parameters of type T\n// - returns the larger of the two values",
+  "expectedOutput": "PASS: maxOf(3, 7) == 7\nPASS: maxOf(2.5f, 1.5f) == 2.5\nPASS: maxOf(4.0, 4.5) == 4.5\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson49.json",
+  "previous": "lesson47.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "harnesses/runTemplates3.cpp",
+  "submitHarness": "harnesses/submitTemplates3.cpp",
+  "solution": "solutions/solutionTemplates3.cpp"
+}

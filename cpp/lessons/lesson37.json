@@ -1,0 +1,20 @@
+
+{
+  "id": "lesson37.json",
+  "title": "Typedef",
+  "description": "A typedef in C++ is where you rename a function to somthing else. Let's say we have a function Addition(). then, you can use the typedef keyword on the function like this. typedef Addition Add;. this will make the adition function now called add. You can also use typedef on types, like typedef USER_ID int; so now you can use USER_ID as int. \n\nThe CBit OS team needs a quick and easy way to make an array of ten ints, so they need you to make that and define it as ProcessHistory.",
+  "starterCode": "#include <iostream>\n#include <type_traits>\n\n// write your typedef here\n\n// Don't touch below this line\n\nint main() {\n    std::cout << (std::is_same<ProcessHistory, int[10]>::value != 1 ? \"You defined ProcessHistory, but it either is not an array, or is not of ten ints\" : \"Correct!\");\n}",
+  "expectedOutput": "Correct!",
+  "mustContain": "",   
+  "nextLesson": "lesson38.json",
+  "previous": "lesson36.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+} 

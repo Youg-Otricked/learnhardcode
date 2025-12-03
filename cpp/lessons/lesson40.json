@@ -1,0 +1,19 @@
+{
+  "id": "lesson40.json",
+  "title": "CBit OS: First Pointers With * and &",
+  "description": "So far you've seen that every variable in our OS lives **somewhere** in memory, and `&` lets us get its **address**. Now we’ll take the next step: a **pointer**.\n\nA pointer is a variable that stores an **address** instead of a normal value. In C++ we use:\n\n- `int* p;` to say: \"`p` is a pointer to an `int`\"\n- `*p` to say: \"go to the address stored in `p` and use the value there\"\n\nIn this lesson:\n\n1. **Run the code without changing it**:\n   - Notice that `value` prints a normal number.\n   - `&value` and `ptr` both print an address (they should look similar).\n   - `*ptr` prints the same number as `value`.\n\n2. Then follow the instructions in the comments.\n\nYour job is to make sure that when we change memory through the pointer, the original `value` in CBit OS changes too.\n\nRemember:\n\n- `&value` → \"where is `value` in memory?\" (address)\n- `int* ptr` → `ptr` stores an address\n- `*ptr` → \"go to that address and use the **value** there\"",
+  "starterCode": "#include <iostream>\n\nint main() {\n    int value = 10;               // a normal int in memory\n    int* ptr = &value;            // ptr stores the address of value\n\n    std::cout << \"value: \" << value << '\\n';\n    std::cout << \"&value: \" << &value << '\\n';\n    std::cout << \"ptr:   \" << ptr << '\\n';\n    std::cout << \"*ptr:  \" << *ptr << '\\n';\n\n    // TODO 1: Using only ptr and *ptr, change the value in memory to 42.\n    // Hint: think about how you would assign to value, but through the pointer.\n\n    // TODO 2: After you change it, print the value again directly:\n    // std::cout << \"value after: \" << value << '\\n';\n\n    return 0;\n}\n",
+  "expectedOutput": "Not enforced for this lesson.",
+  "mustContain": "value after: 42",
+  "nextLesson": "lesson41.json",
+  "previous": "lesson39.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+}

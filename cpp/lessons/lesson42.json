@@ -1,0 +1,19 @@
+{
+  "id": "lesson42.json",
+  "title": "Heap Allocation with new and delete",
+  "description": "C++ has two places to allocate memory:\n\n- The **stack**: automatic space for local variables inside functions.\n- The **heap**: a big warehouse where we can request memory at runtime.\n\nOn the heap we use:\n\n- `new` to **reserve** memory.\n- `delete` to **give it back**.\n\nIn C++:\n\n- `int* p = new int;` asks the heap for space for one `int` and returns its address.\n- `*p` lets us use that `int`.\n- `delete p;` tells CBit OS we're done with that memory.\n- After `delete`, it's good practice to set `p = nullptr;` so we don't accidentally use it.\n\nIn this lesson:\n\n1. Run the code as-is and see that `heapValue` starts as `nullptr`.\n2. Your job is to:\n   - Use `new` to allocate an `int` on the heap.\n   - Store its address in `heapValue`.\n   - Write the value `512` into the allocated memory using `*heapValue`.\n   - Print the value on the heap.\n   - Properly free the memory with `delete` and set `heapValue` back to `nullptr`.\n\nThis is the basic heap lifecycle in CBit OS:\n\n> allocate with `new` → use via pointer → `delete` when done → set pointer to `nullptr`.\n",
+  "starterCode": "#include <iostream>\n\nint main() {\n    int* heapValue = nullptr; // no heap memory yet for this value\n\n    // TODO 1: Use `new` to allocate space for one int on the heap.\n    // Store the address in heapValue.\n\n    // TODO 2: Using *heapValue, store the value 512 in the allocated memory.\n\n    // TODO 3: Print the value stored on the heap in the format:\n    // \"Heap value: heapvalue\" followed by a newline.\n\n    // TODO 4: Properly free the memory with delete, then set heapValue to nullptr.\n\n    return 0;\n}\n",
+  "expectedOutput": "Not",
+  "mustContain": "Heap value: 512",
+  "nextLesson": "lesson43.json",
+  "previous": "lesson41.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+}

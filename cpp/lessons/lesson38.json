@@ -1,0 +1,20 @@
+
+{
+  "id": "lesson38.json",
+  "title": "& in expresions",
+  "description": "### In all computers, memory is stored as a list of adresses.\nIn C++ you can access these with the \"Adress of\" operator, &. You puy & before a variable, and it returns the position of it in memory, which is the memory **_Adress_**. \n\nThe CBit OS team wants to check that their operating system doesn't manage to fail at storing memory adresses.\n\nYou must fix the code so it outputs the adress of x insteado f x. _We will cover more on memory in the future._",
+  "starterCode": "#include <iostream>\nint main() {\n    int x = 999;\n    std::cout << x;\n}",
+  "expectedOutput": "ThisIsntUsed",
+  "mustContain": "0x",   
+  "nextLesson": "lesson39.json",
+  "previous": "lesson37.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+} 

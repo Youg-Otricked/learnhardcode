@@ -1,9 +1,9 @@
 {
   "id": "lesson1.json",
   "title": "Hello, Rust!",
-  "description": "Welcome to Rust! Rust is a fast, safe systems programming language.\n\nFor now, you don't need to understand everything. Just fix the code below so it prints exactly:\n\n`Hello, Rust!`\n\non its own line.\n\nIn Rust, printing is usually done with the `println!` macro.",
-  "starterCode": "fn main() {\n    println!(\"Rust, Hello!\");\n}\n",
-  "expectedOutput": "Hello, Rust!\n",
+  "description": "Welcome to Rust! Rust is a fast, safe systems programming language.\nIn this course, you will be working for the fictional os company, **_Oxideworks labs_ on their new project, _Verdigris OS_**.\nYou will understand the code below soon, but for now, complete the assignemnt\n\n### Assignment:\nReplace the text in the println! macro with \"Hello, Welcome to Verdigris!\"",
+  "starterCode": "fn main() {\n    println!(\"Hello!\");\n}\n",
+  "expectedOutput": "Hello, Welcome to Verdigris!\n",
   "nextLesson": "lesson2.json",
   "previous": null,
   "showButtons": false,

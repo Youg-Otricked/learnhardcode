@@ -1,0 +1,15 @@
+{
+  "id": "lesson4.json",
+  "title": "Console.WriteLine",
+  "description": "In C#, you write to console with System.Console.WriteLine, however, if you write using System; at the top of the file, you can just write Console.WriteLine. Then, write after in parenphases, you write what you what to print, so for example, Console.WriteLine(\"Hello, World!\");\nWrite all The code to output \"Chronoshard has started.\"",
+  "starterCode": "",
+  "expectedOutput": "Chronoshard has started.\n",
+  "nextLesson": "lesson5.json",
+  "previous": "lesson3.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

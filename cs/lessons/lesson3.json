@@ -1,0 +1,15 @@
+{
+  "id": "lesson3.json",
+  "title": "main function",
+  "description": "In all C# programs, it all starts with the main function. Inside your main class (most of the itme called Program) you wirte the following: public static int Main(string args[]) {//code goes here}. Other than the //code goes here comment. that doesnt do anything. now, that function signatue looks complecated, but it is actualy simple. Public means that the program and other classes/functions can accesses it. Static is complex, but basically static functions can only acces static functions, and vis verca for non statci functions. int means it reutrns an integer, main means this is the main function. String args is for omcannd line arguments, don't wory about it. Make sure that the final line in that function is always return 0;, that way you can tell if it errord or not.\nSOMBODY DID IT AGAIN. Now we also need to re-write the Main function. you can ignore the string args part _Yes, you **Can** ignore the indenting and formating of brkets. **Don't.** It creates un readable and un editable spahgeti code._\n\n\n###### Thank god layoffs are coming around.",
+  "starterCode": "using System;\nConsole.WriteLine(\"Booting....\");",
+  "expectedOutput": "Booting....\n",
+  "nextLesson": "lesson4.json",
+  "previous": "lesson2.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}

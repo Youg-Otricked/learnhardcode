@@ -1,0 +1,19 @@
+{
+  "id": "lesson41.json",
+  "title": "nullptr and Safe Pointers",
+  "description": "Our OS now uses **pointers**: variables that store **addresses** instead of normal values. But sometimes, a pointer should **not** point anywhere yet. Maybe a process isn’t loaded, or a file isn’t open.\n\nFor that, C++ gives us a special value: `nullptr`.\n\n- `int* p = nullptr;` means: **p points to nothing** right now.\n- Before we use a pointer, we should **check** if it’s `nullptr`.\n\nIn CBit OS terms:\n\n- A pointer is like a **label on your desk** that tells you which memory box you’re using.\n- `nullptr` means: “this label isn’t attached to any box yet.”\n- Trying to use `*p` when `p` is `nullptr` is like opening an invisible box… it crashes the OS.\n\nIn this lesson:\n\n1. Run the code as-is and read the output.\n2. Notice that:\n   - `processMemory` starts as `nullptr`.\n   - We check `if (processMemory == nullptr)` before using it.\n3. Your job is to **add one more check** before we use `*processMemory` the second time.\n\n**Task:**\n\n- Follow the TODO comment.\n- Only print `*processMemory` if it is **not** `nullptr`.\n\nThis is the basic safety rule of pointers in CBit OS:\n\n> Always check `nullptr` before you dereference (`*`) a pointer.\n\nNOTE: You can make a pointer to a pointer by storing the address of another pointer.\nEach extra * means “follow one more level of indirection.”\n\nExample:\n\n`int c = 5;`\n- `int* pa = &c;     // pa points to c`\n- `int** pb = &pa;   // pb points to pa`\n- `int*** pc = &pb;  // pc points to pb`\n\n- `int b = ***pc;    // follow pc → pb → pa → c`\n\nHere:\n\npc is a pointer to a pointer to a pointer to int\n- ***pc gets you all the way back to the int value (c)\n\n(Sorry about the text dump, MMM is hard to explain or do)",
+  "starterCode": "#include <iostream>\n\nint main() {\n    int* processMemory = nullptr; // this process doesn't have memory yet\n\n    // First check: we don't try to use processMemory if it is nullptr\n    if (processMemory == nullptr) {\n        std::cout << \"No memory assigned to process yet.\\n\";\n    }\n\n    // Now we assign some memory on the stack for this example\n    int localProcessValue = 256;\n    processMemory = &localProcessValue; // processMemory now points to valid memory\n\n    // We know processMemory is not nullptr here, so this is safe\n    std::cout << \"Process memory value: \" << *processMemory << \"\\n\";\n\n    // TODO: Add a safety check here before using *processMemory again.\n    // If processMemory is not nullptr, print:\n    // \"Safe to use pointer: \" followed by *processMemory and a newline.\n\n    return 0;\n}\n",
+  "expectedOutput": "Not enforced for this lesson.",
+  "mustContain": "Safe to use pointer: 256",
+  "nextLesson": "lesson42.json",
+  "previous": "lesson40.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+}

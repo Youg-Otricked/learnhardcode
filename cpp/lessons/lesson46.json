@@ -1,0 +1,19 @@
+{
+  "id": "lesson46.json",
+  "title": "Templates [1]: Generic add",
+  "description": "CBit OS wants a math helper that can add two values, whether they are `int` or `double`, without writing separate functions for each type.\n\nFor that, we use a **function template**.\n\nA template is like a recipe the compiler uses to create real functions for each type you call it with.\n\nFor example:\n\n```cpp\n// template <typename T>\nfuncition that adds here```\n\nThe compiler can use that to make `add(int, int)`, `add(double, double)`, and more.\n\n**Your task:**\n\nWrite a function template named `add` that:\n\n- Starts with `template <typename T>`\n- Takes two parameters of type `T`\n- Returns their sum using `+`\n\nWe will test it with `int` and `double` values.",
+  "starterCode": "// TODO: write a function template named add that:\n// - starts with: template <typename T>\n// - takes two parameters of type T\n// - returns left + right\n\n",
+  "expectedOutput": "PASS: add(2, 3) == 5\nPASS: add(1.5, 2.5) == 4\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson47.json",
+  "previous": "lesson45.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "harnesses/runTemplates1.cpp",
+  "submitHarness": "harnesses/submitTemplates1.cpp",
+  "solution": "solutions/solutionTemplates1.cpp"
+}
