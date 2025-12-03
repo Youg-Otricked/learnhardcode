@@ -1,0 +1,20 @@
+{
+  "id": "lesson49.json",
+  "title": "Structs [1]",
+  "description": "In C++, you can make somthing called a struct. a struct is a user defined list of types with a name and fields, the format is\nstuct sname {\n    type name;\n    type name;\n    ...\n};\n\nYou access struct feilds with .s, so lets say we have a member of a struct called case named c1. We would access the name value with c1.name.\n\n# Assignment:\nDefine the point struct that has an integer x and y.",
+  "starterCode": "#include <iostream>\n//don't touch above this\n// TODO: Write the point struct.\n//don't touch below this\nint main() {\n    point p1 = {1, 9};\n    point p2 = {8, 21};\nstd::cout << p1.x << p1.y << p2.x << p2.y << '\\n';\n    std::cout << \"[PASS]\";\n}",
+  "expectedOutput": "PASS: maxOf(3, 7) == 7\nPASS: maxOf(2.5f, 1.5f) == 2.5\nPASS: maxOf(4.0, 4.5) == 4.5\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson50.json",
+  "previous": "lesson48.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "You can define multiple feilds of the same type in a struct via type name, name2"
+}

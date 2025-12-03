@@ -1,0 +1,20 @@
+{
+  "id": "lesson52.json",
+  "title": "Enums [2]",
+  "description": "Make a func checkState function that takes an enum variable and returns nothing, switches on the var on the status enum, and on ok prints \"All good\", on ERROR prints \"ERROR:\" and on TIMEOUT prints \"Timeout error\".",
+  "starterCode": "#include <iostream>\nenum status {\n    OK = 0,\n    ERROR = 1,\n    TIMEOUT = 2\n};\n//dont touch above this line\n//make checkStatus here\n//don't touch below this line.\nint main() {\n    status a = OK;\n    status b = ERROR;\n    status c = TIMEOUT;\n   checkStatus(a);\n    checkStatus(b);\n    checkStatus(c);\n    std::cout << \"[PASS]\";\n}",
+  "expectedOutput": "PASS: maxOf(3, 7) == 7\nPASS: maxOf(2.5f, 1.5f) == 2.5\nPASS: maxOf(4.0, 4.5) == 4.5\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson53.json",
+  "previous": "lesson51.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "You can make a switch on a enum with switch(enumvar) and each case is an enumstate. You can return nothign on a function with ret type null"
+}

@@ -94,3 +94,35 @@ button:hover {
 #streak {
   color: var(--muted);
 }
+.hint {
+  margin-top: 8px;
+  border: 1px solid #3a3f4b;
+  border-radius: 4px;
+  background: #2a2d37;
+}
+
+.hint-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 6px 8px;
+  border: none;
+  background: #333744;
+  color: #c7cbd4;
+  font: inherit;
+  cursor: pointer;
+}
+
+.hint-toggle:hover {
+  background: #3a3f4b;
+}
+
+.hint-body {
+  display: none;            /* hidden by default */
+  padding: 8px;
+  border-top: 1px solid #3a3f4b;
+}
+
+/* optional: when open add a class and show */
+.hint.open .hint-body {
+  display: block;
+}

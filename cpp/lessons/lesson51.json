@@ -1,0 +1,19 @@
+{
+  "id": "lesson51.json",
+  "title": "Enums [1]",
+  "description": "An enum is basically a name to integer conversion you can use in if statments. you define an enum with  \nenum name = {\n    name = 1,//you can use any number\n    name = 2,\n    ...\n};, then check if somthing is equal to a value via just writing if varofenumtype == enumvalue. you should make enum values allcaps.\n\nCBit OS needs a enum to define all our status codes!. make the status enum, with the bindings OK = 0, ERROR = 1, and TIMEOUT = 2.",
+  "starterCode": "#include <iostream>\n//dont touch above this line\n//make status here\n//don't touch below this line.\nint main() {\n    status a = OK;\n    status b = ERROR;\n    status c = TIMEOUT;\n    if (c == 2) {\n        std::cout << \"[PASS]\";\n    } else {\n        std::cout << \"[ERROR]\";\n    }\n}",
+  "expectedOutput": "PASS: maxOf(3, 7) == 7\nPASS: maxOf(2.5f, 1.5f) == 2.5\nPASS: maxOf(4.0, 4.5) == 4.5\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson52.json",
+  "previous": "lesson50.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": ""
+}

@@ -1,0 +1,20 @@
+{
+  "id": "lesson50.json",
+  "title": "Structs [2]",
+  "description": "Using our struct from last lesson, make a function make_point(int x, int y) that returns a point struct.",
+  "starterCode": "#include <iostream>\nstruct point {\n    int x, y;\n};\n//don't touch above this\n//make it here\n//don't touch below this.\nint main() {\n    point p1 = make_point(9, 11);\n    point p2 = make_point(0, 0);\n    std::cout << p1.x << p1.y << p2.x << p2.y;\n    std::cout << \"[PASS]\";\n}",
+  "expectedOutput": "PASS: maxOf(3, 7) == 7\nPASS: maxOf(2.5f, 1.5f) == 2.5\nPASS: maxOf(4.0, 4.5) == 4.5\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson51.json",
+  "previous": "lesson49.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "You can make an item of a struct by doing either structname varname; and then varname.structfeilname = value; for each field, or structname varname = {varfields in order}. You can return any type fro ma struct by making the return type that name.\nAn advanced thing(try making the varibale then returning it first) is C++ is smart, so if you define the return type, you can just write return {structfieldsdef}; and it will work. As you probably have noticed, you cannot return multiple values from a function in c++, however, you can return an enum and use that as multiple values."
+}

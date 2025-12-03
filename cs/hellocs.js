@@ -68,6 +68,7 @@ let correct = null;
 let prevLessonId = null;
 let showDebugCheckbox;
 let rawOutput='';
+let hintBody = null;
 // streak
 let lessonsInRow = 0;
 let streakEl = null;
@@ -117,7 +118,7 @@ async function loadLesson(lessonFile) {
   mustContain       = lesson.mustContain     || null;
   correct           = lesson.correct         || null;
   prevLessonId      = lesson.previous        || null;
-
+  lessonhint        = lesson.hint || null;
   document.getElementById("b1").textContent = lesson.b1t;
   document.getElementById("b2").textContent = lesson.b2t;
   document.getElementById("b3").textContent = lesson.b3t;
@@ -136,6 +137,7 @@ async function loadLesson(lessonFile) {
       button.style.display = 'none';
     });
   }
+  hintBody.textContent = lessonhint;
 }
 
 function setupLogic() {
@@ -256,7 +258,16 @@ function setupLogic() {
       appendOutput('\n\nGot:\n' + actual + '\n');
     }
   }
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".hint-toggle");
+    if (!btn) return;
 
+    const hint = btn.closest(".hint");
+    hint.classList.toggle("open");
+
+    const open = hint.classList.contains("open");
+    btn.textContent = open ? "Hide hint ▴" : "Show hint ▾";
+  });
   checkResultBtn.addEventListener('click', () => {
     submitCheck();
 

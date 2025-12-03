@@ -84,7 +84,7 @@ let buttons = document.getElementsByClassName('ans');
 let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, showButtons, mustContain;
 let correct = null;
 let prevLessonId = null;
-
+let hintBody = null;
 // streak
 let lessonsInRow = 0;
 let streakEl = null;
@@ -121,7 +121,7 @@ async function loadLesson(lessonFile) {
   showButtons = lesson.showButtons;
   outEl.textContent = '';
   lastRunOutput = '';
-
+  lessonhint        = lesson.hint || null;
   nextLessonId      = lesson.nextLesson      || null;
   runHarnessFile    = lesson.runHarness      || null;
   submitHarnessFile = lesson.submitHarness   || null;
@@ -148,6 +148,7 @@ async function loadLesson(lessonFile) {
       button.style.display = 'none';
     });
   }
+  hintBody.textContent = lessonhint;
 }
 
 function setupLogic() {
@@ -161,7 +162,8 @@ function setupLogic() {
   checkResultBtn = document.getElementById('check-result');
   loadSolutionBtn = document.getElementById('load-solution');
   streakEl = document.getElementById('streak');
-
+  hintBody = document.querySelector(".hint-body");
+  
   api = new WorkerAPI();
 
   api.onWrite = (text) => {
@@ -252,7 +254,16 @@ function setupLogic() {
       updateStreakUI();
     }
   }
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".hint-toggle");
+    if (!btn) return;
 
+    const hint = btn.closest(".hint");
+    hint.classList.toggle("open");
+
+    const open = hint.classList.contains("open");
+    btn.textContent = open ? "Hide hint ▴" : "Show hint ▾";
+  });
   checkResultBtn.addEventListener('click', () => {
     submitCheck();
 
