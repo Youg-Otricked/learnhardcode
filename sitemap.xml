@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://learnhardcode.dpdns.org/</loc>
+	</url>
+	<url>
+		<loc>https://learnhardcode.dpdns.org/cpp/hello.html?lesson=lesson1.json</loc>
+	</url>
+	<url>
+		<loc>https://learnhardcode.dpdns.org/cs/hellocs.html?lesson=lesson1.json</loc>
+	</url>
+	<url>
+		<loc>https://learnhardcode.dpdns.org/rust/hellor.html?lesson=lesson1.json</loc>
+	</url>
+</urlset>
