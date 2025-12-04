@@ -1,0 +1,20 @@
+{
+  "id": "lesson57.json",
+  "title": "OOP [4] – Encapsulation",
+  "description": "Encapsulation means **hiding the internal details** of a class and exposing only a clean interface.\n\nWe use:\n- `private` for data that outside code should not touch directly.\n- `public` methods to control how that data is read or changed.\n\nExample:\n\n```cpp\nclass BankAccount {\nprivate:\n    int balance; // hidden\n\npublic:\n    BankAccount(int start) : balance(start) {}\n\n    void deposit(int amount) {\n        balance += amount;\n    }\n\n    int getBalance() const {\n        return balance;\n    }\n};\n```\n\nOutside code can call `deposit` and `getBalance`, but cannot directly change `balance`.\n\n---\n\n## Your task\n\nCBit OS is making a minigame!. They need a small `Health` class that encapsulates a hit point value.\n\n- Make a class `Health`.\n- It should have a **private** `int` field named `hp`.\n- It should have a constructor that takes an `int` and sets `hp`.\n- It should have a **public** method `takeDamage(int amount)` that subtracts `amount` from `hp`.\n- It should have a **public** method `get()` that returns the current `hp` as an `int`.\n\nImplement `Health` so that the tests in `main` pass.\n",
+  "starterCode": "#include <iostream>\n\n// define the Health class here\n\nint main() {\n    Health h(100);\n    h.takeDamage(30);\n\n    if (h.get() != 70) {\n        std::cout << \"[FAIL] hp should be 70 after damage\\\\n\";\n        return 0;\n    }\n\n    h.takeDamage(10);\n    if (h.get() != 60) {\n        std::cout << \"[FAIL] hp should be 60 after more damage\\\\n\";\n        return 0;\n    }\n\n    std::cout << \"[PASS]\\\\n\";\n}\n",
+  "expectedOutput": "[PASS]\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson58.json",
+  "previous": "lesson56.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "Make `hp` private. Use `takeDamage` to change it, and `get` to read it. The constructor should set `hp` from its parameter."
+}
