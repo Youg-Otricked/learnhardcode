@@ -1,0 +1,20 @@
+{
+  "id": "lesson53.json",
+  "title": "OOP [1]",
+  "description": "One key (and very difficult) feature of C++ is **Object-Oriented Programming (OOP)**.\n\nObject-Oriented Programming is a paradigm where you define *classes*. Classes are groups of data and functions. You can think of them like `struct`s with more features.\n\nIn this lesson, we’ll focus on making fields in a class (non-methods).\n\nYou define a class like this:\n\n- class ClassName {\n-     public: // we’ll explain this later\n-         type name;\n-         // other fields...\n- };\n\nCBit OS needs a `User` class, and they want you to create it. The class should have:\n\n- a `name` field (string)\n- a `userid` field (`int`)\n- a `status` field (string) that defaults to `\"guest\"`.\n",
+  "starterCode": "#include <iostream>\n#include <string>\n//don't touch above this\n//make the User class here.\n//don't touch below this\nint main() {\n    User a;\n    a.name = \"Bob\";\n    a.userid = 90909;\n    if (a.status == \"guest\") {\n        std::cout << \"[PASS]\";\n    } else {\n        std::cout << \"[FAIL]\";\n  }\n}",
+  "expectedOutput": "PASS: maxOf(3, 7) == 7\nPASS: maxOf(2.5f, 1.5f) == 2.5\nPASS: maxOf(4.0, 4.5) == 4.5\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson54.json",
+  "previous": "lesson52.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "You can also make default values by declaring a field via type name = value;. Remember that the fields for this need to be inside the public: section."
+}
