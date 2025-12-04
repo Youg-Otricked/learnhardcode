@@ -1,0 +1,20 @@
+{
+  "id": "final1.json",
+  "title": "OOP [Final] – Putting It All Together",
+  "description": "Time to put all the OOP pieces together: **encapsulation**, **inheritance**, **virtual & override**, `final`, `::`, and **namespaces**.\n\n### Encapsulation\n\nEncapsulation means **hiding the internal details** of a class and exposing only a clean interface.\n\n- Use `private` for data that outside code shouldn’t touch directly.\n- Use `public` methods to control how that data is read or changed.\n\n```cpp\nclass BankAccount {\nprivate:\n    int balance; // hidden details\n\npublic:\n    BankAccount(int start) : balance(start) {}\n\n    void deposit(int amount) {\n        balance += amount;\n    }\n\n    int getBalance() const {\n        return balance;\n    }\n};\n```\n\n### Inheritance and overriding\n\nInheritance lets you make a **base class** and then more specific **derived classes**.\n\n```cpp\nclass Animal {\npublic:\n    virtual void speak() {\n        std::cout << \"...\";\n    }\n};\n\nclass Dog : public Animal {\npublic:\n    void speak() override {\n        std::cout << \"woof\";\n    }\n};\n```\n\n- `virtual` on the base method means: choose the function at **runtime**.\n- `override` on the derived method says: this must match a virtual function from the base.\n\nYou can also stop inheritance or overriding with `final`:\n\n```cpp\nclass Cat final : public Animal {\npublic:\n    void speak() override final {\n        std::cout << \"meow\";\n    }\n};\n```\n\n### Scope and `::`\n\nThe scope resolution operator `::` says **“look in this scope for this name”**.\n\n- `MyNamespace::Thing` – use `Thing` from `MyNamespace`.\n- `ClassName::method` – define a method outside the class body.\n\n### Namespaces\n\nNamespaces group related code and avoid name collisions.\n\n```cpp\nnamespace game {\n    class Player {\n    public:\n        void jump();\n    };\n}\n\nvoid game::Player::jump() {\n    std::cout << \"jump!\";\n}\n```\n\nYou can use the class with `game::Player`.\n\n---\n\n## Your task\n\nCBit OS wants a tiny **logger system** with a base class and a derived class, using namespaces and virtual methods.\n\n1. Put everything inside a namespace called `cbit`.\n2. Make a base class `Logger` with:\n   - a **protected** `std::string` field `name`.\n   - a constructor that takes a `std::string` and stores it in `name`.\n   - a `virtual void log(const std::string& message)` method.\n3. Make a derived class `ConsoleLogger` that **inherits publicly** from `Logger` and:\n   - has a constructor that passes the `name` to the base `Logger` constructor.\n   - overrides `log` to print in this format:\n\n   ```\n   [name] message\\n\n   ```\n\n   (with the actual `name` and `message` values).\n\nIn `main`, we will:\n\n- create a `cbit::ConsoleLogger` and call `log` through a `Logger*` pointer,\n- check that the output is correct.\n\nImplement `Logger` and `ConsoleLogger` so the tests pass.\n",
+  "starterCode": "#include <iostream>\n#include <string>\n\n// define your classes in this namespace\nnamespace cbit {\n\n// TODO: Logger (base class)\n// TODO: ConsoleLogger (derived class)\n\n}\n\n// don't touch below this\nint main() {\n    using namespace cbit;\n\n    ConsoleLogger logger(\"SYSTEM\");\n\n    // call through base-class pointer to test virtual / override\n    Logger* basePtr = &logger;\n    basePtr->log(\"Boot complete\");\n\n    // expected output: [SYSTEM] Boot complete\\n\n    // very simple check for this substring\n    std::cout << \"[TEST DONE]\\n\";\n}\n",
+  "expectedOutput": "[SYSTEM] Boot complete\n[TEST DONE]\n",
+  "mustContain": "Boot complete",
+  "nextLesson": "final2.json",
+  "previous": "lesson62.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "Remember: put the classes inside `namespace cbit { ... }`. Use `protected` for `name` so the child can see it. The `ConsoleLogger` constructor should call the base `Logger` constructor using a member initializer list."
+}

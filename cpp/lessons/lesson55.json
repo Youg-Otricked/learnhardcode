@@ -1,0 +1,20 @@
+{
+  "id": "lesson55.json",
+  "title": "OOP [3] – Methods",
+  "description": "Now that you’ve seen **fields** in a class, it’s time to give our classes some behavior using **methods** (also called *member functions*).\n\nA method is just a function that lives *inside* a class. It can use the class’s fields directly.\n\nFor example:\n\n```cpp\nclass User {\npublic:\n    std::string name;\n    int userid;\n\n    void introduce() {\n        std::cout << \"Hi, I'm \" << name << \" and my id is \" << userid << \"\\n\";\n    }\n};\n```\n\nIn `main` you can create a `User` object and call its method:\n\n```cpp\nUser u;\nu.name = \"Alice\";\nu.userid = 42;\nu.introduce(); // calls the introduce() method on u\n```\n\nThe method can directly read and write the fields of that object.\n\n---\n\n## Your task\n\nCBit OS wants a `Counter` class.\n\n- It should have one **public** field: an `int` named `value`, defaulting to `0`.\n- It should have one **public** method named `increment` that increases `value` by 1.\n- It should have one **public** method named `print` that prints `value` followed by a newline using `std::cout`.\n\nImplement the `Counter` class so that the tests in `main` pass.\n",
+  "starterCode": "#include <iostream>\n// don't touch above this\n\n// define the Counter class here\n\n// don't touch below this\nint main() {\n    Counter c;\n    if (c.value != 0) {\n        std::cout << \"[FAIL] value should start at 0\\n\";\n        return 0;\n    }\n\n    c.increment();\n    c.increment();\n    c.print(); // should print 2\n\n    std::cout << \"[PASS]\\n\";\n}\n",
+  "expectedOutput": "[PASS]\n",
+  "mustContain": "[PASS]",
+  "nextLesson": "lesson56.json",
+  "previous": "lesson54.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "Remember: methods go inside the class, usually under `public:`. To change a field, just assign to it inside the method, like `field = value + 1;`. When using a value that has the same name as you method, like `a = a + 1` you use this->, like this `this->a = a + 1`"
+}

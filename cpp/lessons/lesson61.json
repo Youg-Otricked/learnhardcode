@@ -1,0 +1,20 @@
+{
+  "id": "lesson61.json",
+  "title": "OOP [Final-6] – Polymorphism",
+  "description": "Polymorphism means **one interface, many forms**. In C++, we usually get it with:\n\n- a base class that has `virtual` methods\n- derived classes that `override` those methods\n- using a **base pointer or reference** to call the method\n\n```cpp\nclass Animal {\npublic:\n    virtual void speak() {\n        std::cout << \"...\\n\";\n    }\n};\n\nclass Dog : public Animal {\npublic:\n    void speak() override {\n        std::cout << \"woof\\n\";\n    }\n};\n\nclass Cat : public Animal {\npublic:\n    void speak() override {\n        std::cout << \"meow\\n\";\n    }\n};\n\nvoid makeSpeak(Animal& a) {\n    a.speak(); // calls Dog::speak or Cat::speak depending on the actual object\n}\n```\n\nEven though `makeSpeak` only knows about `Animal&`, the **actual object type** decides which `speak` runs.\n\n---\n\n## Your task\n\nCBit OS has a small drawing system. They want to store different shapes but draw them using a base-class pointer.\n\n- Make a base class `Shape` with a **public virtual** method `void draw()` that prints `\"Shape\\n\"`.\n- Make a class `Circle` that **inherits publicly** from `Shape` and overrides `draw` to print `\"Circle\\n\"`.\n- Make a class `Square` that **inherits publicly** from `Shape` and overrides `draw` to print `\"Square\\n\"`.\n\n`main` will store pointers to `Shape` but actually point them at `Circle` and `Square` objects. Polymorphism should make the correct `draw` run.\n",
+  "starterCode": "#include <iostream>\n\n// define Shape, Circle, and Square here\n\nint main() {\n    Circle c;\n    Square s;\n\n    Shape* shapes[2];\n    shapes[0] = &c;\n    shapes[1] = &s;\n\n    for (int i = 0; i < 2; i++) {\n        shapes[i]->draw();\n    }\n}\n",
+  "expectedOutput": "Circle\nSquare\n",
+  "mustContain": "Square",
+  "nextLesson": "lesson62.json",
+  "previous": "lesson60.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "Remember: `virtual` goes on the base class method. In `Circle` and `Square`, use `void draw() override` so calls through `Shape*` pick the right function."
+}
