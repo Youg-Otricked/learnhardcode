@@ -1,0 +1,20 @@
+{
+  "id": "lesson54.json",
+  "title": "OOP [2]",
+ "description": "Now it is time to cover `public:` and `private:`.\n\nPublic and private fields and methods are very important. `public` means **anything** that has access to the object can access that field or method. `private` means **only** methods of *this* class (and friends) can access it.\n\nYou declare them like this:\n\n```cpp\nclass Example {\n    public:\n        int x;      // public field\n\n    private:\n        int thisthing;     // private field\n};\n```\n\nFool around and practice in the playground (the more OOP practice, the better), then answer:\n\n## How would you make a private field `ip` in a class?\n",
+  "starterCode": "",
+  "expectedOutput": "",
+  "mustContain": "",
+  "nextLesson": "lesson55.json",
+  "previous": "lesson53.json",
+  "showButtons": true,
+  "correct": "b4",
+  "b1t": "public:\n    string ip;",
+  "b2t": "private:\n    string t.ip;",
+  "b3t": "public:\n    string >ip;",
+  "b4t": "private:\n    string ip;",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": ""
+}
