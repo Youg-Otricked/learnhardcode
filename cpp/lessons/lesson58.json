@@ -1,6 +1,6 @@
 {
   "id": "lesson58.json",
-  "title": "OOP [5] – Inheritance & Redefining Methods",
+  "title": "OOP [6] – Inheritance & Redefining Methods",
   "description": "Inheritance lets you create a **base class** and then more specific **derived classes**.\n\n```cpp\nclass Animal {\npublic:\n    void speak() {\n        std::cout << \"...\";\n    }\n};\n\nclass Dog : public Animal {\npublic:\n    void speak() { // redefines speak\n        std::cout << \"woof\";\n    }\n};\n```\n\nHere, `Dog` **inherits** from `Animal`. Both have a `speak` method, but the `Dog` version prints something different.\n\n(In this lesson we ignore `virtual` and `override` for the moment and just focus on class relationships.)\n\n---\n\n## Your task\n\nCBit OS has a base class `Device` and wants a more specific `Keyboard` class.\n\n- Make a base class `Device` with a **public** method `void identify()` that prints `\"Unknown device\\\\n\"`.\n- Make a class `Keyboard` that **inherits publicly** from `Device`.\n- In `Keyboard`, define a **public** method `void identify()` that prints `\"Keyboard device\\\\n\"`.\n\nImplement `Device` and `Keyboard` so that `main` prints the expected output.\n",
   "starterCode": "#include <iostream>\n\n// define Device and Keyboard here\n\nint main() {\n    Device generic;\n    Keyboard kb;\n\n    generic.identify();\n    kb.identify();\n}\n",
   "expectedOutput": "Unknown device\nKeyboard device\n",
