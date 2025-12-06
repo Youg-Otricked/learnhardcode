@@ -2,7 +2,7 @@
 console.log("hellocs.js running");
 console.log('wasmRunner.js loaded');
 
-import { dotnet } from "./_framework/dotnet.js"; // or "./wwwroot/_framework/dotnet.js" if needed
+//import { dotnet } from "./_framework/dotnet.js"; // or "./wwwroot/_framework/dotnet.js" if needed
 
 let exportsPromise = null;
 
