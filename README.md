@@ -16,6 +16,6 @@ I could not find a SINGLE in browser course for learning C++, and C# that was fr
 - ⭐ Star the repo if it helped you
 - Share it with a friend learning C++, C#, or Rust
 
-## Contirbuting.
+## Contributing
 If you have any ideas on courses for languages you cnat find anywhere else, or a way to make a course on a languiage that basically nobody has, es[ecially for free, and want to help this project, simply **Fork this repo, and make a pull request,**
 Either if you find bugsi n lessons or feel like there should be more lessons on a section that is COMPLETE or want to add a new language, do this.
