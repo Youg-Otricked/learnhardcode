@@ -2,7 +2,7 @@
   "id": "lesson12.json",
   "title": "Decleration vs Assignment vs Initilization",
   "description": "This is somthing that beginners commonly mix up. Decleration is creating a new empty variable, eg int hunger;, Assignment is setting/changing the value of an existing variable, eg pancakes = 3;. Notice that there was no type in that statment, that is because that was assignment. Assignment ASSIGNS a value to an existing variable. Initilization is creatign a variable with a value already in it. This is what you do most of the time, eg char pound = '#';. \n\n Your task is to declare a variable char x, and initilize a variable y with value 7.",
-  "starterCode": "#include <iostream>\n\nint main() {\n    //Don't touch above this line\n\n    //Don't touch below this line.\n    x = '\\t'\n    std::cout << x << '\\n' << y << '\\n';\n    return 0;\n}",
+  "starterCode": "#include <iostream>\n\nint main() {\n    //Don't touch above this line\n\n    //Don't touch below this line.\n    x = '\\t';\n    std::cout << x << '\\n' << y << '\\n';\n    return 0;\n}",
   "expectedOutput": "\t\n7\n",
   "nextLesson": "lesson13.json?v=7",
   "previous": "lesson11.json?v=7",
