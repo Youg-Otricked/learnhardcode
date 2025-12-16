@@ -204,7 +204,7 @@ function setupLogic() {
   
 
   function submitCheck() {
-    if (!currentLesson || !currentLesson.expectedOutput) {
+    if (!currentLesson || (!currentLesson.expectedOutput && !currentLesson.mustContain)) {
       appendOutput('\nNo expectedOutput defined for this lesson.\n');
       return;
     }
