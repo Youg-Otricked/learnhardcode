@@ -15,6 +15,6 @@
   "b4t": "",
   "runHarness": "",
   "submitHarness": "",
-  "solutionFile": "solutions/lesson8.cs",
+  "solution": "solutions/lesson8.cs",
   "hint": "Remember: string interpolation uses a `$` before the quotes, and `{variableName}` inside the string."
 }
