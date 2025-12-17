@@ -3,10 +3,11 @@
   "title": "Lesson Title Here",
   "description": "Lesson description in **Markdown** here.",
   "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n class Program\n {\n public static int Main(string[] args)\n {\n // code goes here\n return 0;\n }\n }\n}",
-  "expectedOutput": "lesson12.json",
+  "expectedOutput": "",
   "nextLesson": "lesson10.json",
-  "previous": "",
+  "previous": "lesson12.json",
   "showButtons": false,
+  "mustContain": "",
   "correct": "",
   "b1t": "",
   "b2t": "",
@@ -14,5 +15,6 @@
   "b4t": "",
   "runHarness": "",
   "submitHarness": "",
-  "solutionFile": "solution.cs"
+  "solutionFile": "solution.cs",
+  "hint": ""
 }
