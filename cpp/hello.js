@@ -148,7 +148,7 @@ async function loadLesson(lessonFile) {
       button.style.display = 'none';
     });
   }
-  hintBody.textContent = lessonhint;
+  hintBody.innerHTML = marked.parse(lessonhint);
 }
 
 function setupLogic() {
