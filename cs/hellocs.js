@@ -68,7 +68,7 @@ let correct = null;
 let prevLessonId = null;
 let showDebugCheckbox;
 let rawOutput='';
-let hintBody = null;
+let hintBody = document.getElementById("hint-body");
 // streak
 let lessonsInRow = 0;
 let streakEl = null;
