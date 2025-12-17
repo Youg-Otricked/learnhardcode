@@ -88,7 +88,7 @@ let hintBody = null;
 // streak
 let lessonsInRow = 0;
 let streakEl = null;
-
+let lessonhint;
 // solution
 let solutionFile = null;
 

@@ -76,7 +76,7 @@ let streakEl = null;
 // solution
 let solutionFile = null;
 
-
+let lessonhint;
 function loadStreak() {
   const raw = localStorage.getItem('cs_streak');
   lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
