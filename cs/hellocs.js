@@ -140,7 +140,7 @@ async function loadLesson(lessonFile) {
     });
   }
   if (hintBody) {
-    hintBody.textContent = lessonhint;
+    hintBody.innerHTML = marked.parse(lessonhint);
   }
 }
 
