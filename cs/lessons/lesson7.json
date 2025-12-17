@@ -6,6 +6,8 @@
   "expectedOutput": "lesson8.json",
   "nextLesson": "lesson6.json",
   "previous": "",
+  "expextedOutput": "",
+  "mustContain": "100",
   "showButtons": false,
   "correct": "",
   "b1t": "",
