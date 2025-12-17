@@ -124,7 +124,7 @@ async function loadLesson(lessonFile) {
   document.getElementById("b2").textContent = lesson.b2t;
   document.getElementById("b3").textContent = lesson.b3t;
   document.getElementById("b4").textContent = lesson.b4t;
-
+  console.log('Button texts set to:', lesson.b1t, lesson.b2t, lesson.b3t, lesson.b4t);
   nextBtn.style.display = 'none'; // hide until pass
   const btns = document.querySelectorAll('.ans');
   if (prevBtn) prevBtn.style.display = prevLessonId ? 'inline-block' : 'none';
