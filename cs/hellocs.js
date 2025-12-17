@@ -68,7 +68,7 @@ let correct = null;
 let prevLessonId = null;
 let showDebugCheckbox;
 let rawOutput='';
-let hintBody = document.getElementById("hint-body");
+let hintBody;
 // streak
 let lessonsInRow = 0;
 let streakEl = null;
@@ -94,6 +94,7 @@ function updateStreakUI() {
 }
 
 async function loadLesson(lessonFile) {
+
   console.log("About to fetch:", lessonFile);
   const path = 'lessons/' + lessonFile;   // folder prefix
   console.log("Fetching path:", path);
@@ -154,7 +155,7 @@ function setupLogic() {
   loadSolutionBtn = document.getElementById('load-solution');
   streakEl = document.getElementById('streak');
   
-  // inside setupLogic():
+  hintBody = document.getElementById("hint-body");
   showDebugCheckbox = document.getElementById('show-debug');
 
   
