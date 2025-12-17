@@ -1,13 +1,13 @@
 {
   "id": "lesson8.json",
-  "title": "Lesson Title Here",
-  "description": "Lesson description in **Markdown** here.",
-  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n class Program\n {\n public static int Main(string[] args)\n {\n // code goes here\n return 0;\n }\n }\n}",
-  "expectedOutput": "",
-  "nextLesson": "lesson7.json",
-  "previous": "lesson9.json",
+  "title": "String Variables & Interpolation",
+  "description": "So far you've seen `Console.WriteLine` and `int` variables. Now let's store **text**.\n\nIn C#, text is stored in variables of type `string`:\n\n```csharp\nstring gameName = \"Chronoshard\";\nstring playerName = \"Aurora\";\n```\n\nThere are two common ways to print variables:\n\n1. **Concatenation** (gluing strings with `+`):\n   ```csharp\n   Console.WriteLine(\"Player: \" + playerName);\n   ```\n\n2. **String interpolation** (the fancy way):\n   ```csharp\n   Console.WriteLine($\"Player: {playerName}\");\n   ```\n\nWith interpolation, you:\n\n- Put a `$` **before** the string: `$\"...\"`\n- Put variables inside `{ }` where you want their values to appear.\n\n---\n\n### Your task\n\nThe Chronoshard team needs a **login message**.\n\nInside `Main`:\n\n1. Create a `string` variable `PlayerName` and set it to any name you like.\n2. Create a `string` variable `GameName` and set it to `\"Chronoshard\"`.\n3. Use **string interpolation** to print exactly:\n\n```text\nPlayer Aurora has logged into Chronoshard.\n```\n\n(Replace `Aurora` with whatever name you chose, but match the format exactly.)",
+  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            // 1. Create PlayerName as a string\n            // 2. Create GameName as a string\n            // 3. Use string interpolation to print:\n            //    Player <Name> has logged into <GameName>.\n\n            return 0;\n        }\n    }\n}",
+  "expectedOutput": "Player Aurora has logged into Chronoshard.\n",
+  "mustContain": "Player",
+  "nextLesson": "lesson9.json",
+  "previous": "lesson7.json",
   "showButtons": false,
-  "mustContain": "",
   "correct": "",
   "b1t": "",
   "b2t": "",
@@ -15,6 +15,6 @@
   "b4t": "",
   "runHarness": "",
   "submitHarness": "",
-  "solutionFile": "solution.cs",
-  "hint": ""
+  "solutionFile": "solutions/lesson8.cs",
+  "hint": "Remember: string interpolation uses a `$` before the quotes, and `{variableName}` inside the string."
 }
