@@ -109,6 +109,7 @@ async function loadLesson(lessonFile) {
   showButtons = lesson.showButtons;
   outEl.textContent = '';
   lastRunOutput = '';
+  console.log('Loaded lesson:', lesson.id, 'showButtons=', showButtons);
   
 
   nextLessonId      = lesson.nextLesson      || null;

@@ -1,10 +1,10 @@
 {
-  "id": "lesson10.json",
+  "id": "lesson11.json",
   "title": "Lesson Title Here",
   "description": "Lesson description in **Markdown** here.",
   "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n class Program\n {\n public static int Main(string[] args)\n {\n // code goes here\n return 0;\n }\n }\n}",
-  "expectedOutput": "lesson11.json",
-  "nextLesson": "lesson9.json",
+  "expectedOutput": "lesson12.json",
+  "nextLesson": "lesson10.json",
   "previous": "",
   "showButtons": false,
   "correct": "",
