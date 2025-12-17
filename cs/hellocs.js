@@ -139,7 +139,9 @@ async function loadLesson(lessonFile) {
       button.style.display = 'none';
     });
   }
-  hintBody.textContent = lessonhint;
+  if (hintBody) {
+    hintBody.textContent = lessonhint;
+  }
 }
 
 function setupLogic() {
