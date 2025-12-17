@@ -1,0 +1,20 @@
+{
+  "id": "lesson9.json",
+  "title": "Decimal Numbers & Damage Multipliers",
+  "description": "So far you've used whole numbers with `int`. But games love **decimals**: damage multipliers, critical chances, movement speed, and more.\n\nIn C#, you usually use `double` for decimal numbers:\n\n```csharp\ndouble DamageMultiplier = 1.5;\ndouble CritChance = 0.25; // 25%\n```\n\nYou can also use `float`, but you must add an `f`:\n\n```csharp\nfloat MoveSpeed = 3.5f;\n```\n\nMost of the time, **`double` is preferred** for general calculations.\n\n---\n\n### Casting between `float` and `double`\n\nSometimes you need to convert between them:\n\n- `float` → `double` usually happens automatically:\n  ```csharp\n  float BaseSpeed = 3.5f;\n  double PreciseSpeed = BaseSpeed; // OK\n  ```\n- `double` → `float` needs an explicit cast and can lose precision:\n  ```csharp\n  double BossHealth = 1234.56789;\n  float DisplayedHealth = (float)BossHealth;\n  ```\n\n---\n\n### Arithmetic operators with decimals\n\nYou can use the same operators as with `int`:\n\n- `+` addition\n- `-` subtraction\n- `*` multiplication\n- `/` division\n\nExample:\n\n```csharp\ndouble BaseDamage = 50.0;\ndouble Multiplier = 1.5;\ndouble FinalDamage = BaseDamage * Multiplier; // 75.0\n```\n\n---\n\n### Compound assignment operators\n\nThese are short forms for updating a variable:\n\n```csharp\ndouble Health = 100.0;\n\nHealth -= 10.0; // Health = Health - 10.0;\nHealth += 5.0;  // Health = Health + 5.0;\nHealth *= 2.0;  // Health = Health * 2.0;\nHealth /= 2.0;  // Health = Health / 2.0;\n```\n\n---\n\n### Your task\n\nThe Chronoshard team wants to test **damage multipliers**.\n\nInside `Main`:\n\n1. Create a `double` variable `BaseDamage` with the value `40.0`.\n2. Create a `double` variable `DamageMultiplier` with the value `1.5`.\n3. Create a `double` variable `FinalDamage` equal to `BaseDamage * DamageMultiplier`.\n4. Use `+=` to add `10.0` to `FinalDamage` (a bonus buff).\n5. Print the result using:\n\n```csharp\nConsole.WriteLine($\"Final damage: {FinalDamage}\");\n```\n",
+  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            // 1. Create BaseDamage as a double with value 40.0\n            // 2. Create DamageMultiplier as a double with value 1.5\n            // 3. Create FinalDamage = BaseDamage * DamageMultiplier\n            // 4. Use += to add 10.0 to FinalDamage\n            // 5. Print: Final damage: <value>\n\n            return 0;\n        }\n    }\n}",
+  "expectedOutput": "Final damage: 70\n",
+  "mustContain": "",
+  "nextLesson": "lesson10.json",
+  "previous": "lesson8.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "solutions/lesson9.cs",
+  "hint": "Remember: use `double` for both `BaseDamage` and `DamageMultiplier`, multiply them, then use `+= 10.0` before printing with string interpolation."
+}
