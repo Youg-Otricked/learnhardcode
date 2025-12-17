@@ -2,7 +2,7 @@
   "id": "lesson7.json",
   "title": "Basic Int Variables",
   "description": "Variables are just areas in memory that you give a name. You create a variable by typing `DataType VariableName;` There are many data types in C#, but one of the most common data types is int. Int(Integer) is just a whole number, like 27, so creatign a integer variable z would be int z;. There are 3 core terms for variables. Assignment: Changing or seting the value for an existing variable EG: a = 8;. Delcaration: Creating an empty variable, EG: int a;. Finally, Initilization: Creating a variable with a value, EG: int arms = 2;.\n\n\n\nThe Chronoshard Team needs somthing to store user health! Create the variable MaxHealth which is equal to 100 and CurrentHealth which is equal to MaxHealth",
-  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class PlayerHealth\n {\n        public static int Main(string[] args)\n        {\n            // code goes here\n            //Don't touch below this line\n            Console.WriteLine($\"Player max health is {MaxHealth}, and current health is {CurrentHealth}\");\n            return 0;\n        }\n       }\n}",
+  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class PlayerHealth\n    {\n        public static int Main(string[] args)\n        {\n            // code goes here\n            //Don't touch below this line\n            Console.WriteLine($\"Player max health is {MaxHealth}, and current health is {CurrentHealth}\");\n            return 0;\n        }\n    }\n}",
   "expectedOutput": "lesson8.json",
   "nextLesson": "lesson6.json",
   "previous": "",
