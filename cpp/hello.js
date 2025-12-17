@@ -121,7 +121,7 @@ async function loadLesson(lessonFile) {
   showButtons = lesson.showButtons;
   outEl.textContent = '';
   lastRunOutput = '';
-  lessonhint        = lesson.hint || null;
+  lessonhint        = lesson.hint || "";
   nextLessonId      = lesson.nextLesson      || null;
   runHarnessFile    = lesson.runHarness      || null;
   submitHarnessFile = lesson.submitHarness   || null;
