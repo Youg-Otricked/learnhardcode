@@ -53,8 +53,7 @@ let buttons = document.getElementsByClassName('ans');
 let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, showButtons, mustContain;
 let correct = null;
 let prevLessonId = null;
-let hintBody = null;
-// streak
+let hintBody = document.getElementById("hint-body");
 let lessonsInRow = 0;
 let streakEl = null;
 let lessonhint;
