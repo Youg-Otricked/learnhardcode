@@ -99,7 +99,7 @@ async function loadLesson(lessonFile) {
   mustContain       = lesson.mustContain     || null;
   correct           = lesson.correct         || null;
   prevLessonId      = lesson.previous        || null;
-  lessonhint        = lesson.hint || null;
+  lessonhint        = lesson.hint || "";
   document.getElementById("b1").textContent = lesson.b1t;
   document.getElementById("b2").textContent = lesson.b2t;
   document.getElementById("b3").textContent = lesson.b3t;
