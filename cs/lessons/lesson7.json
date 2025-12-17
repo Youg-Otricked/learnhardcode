@@ -1,0 +1,18 @@
+{
+  "id": "lesson7.json",
+  "title": "Basic Int Variables",
+  "description": "Variables are just areas in memory that you give a name. You create a variable by typing `DataType VariableName;` There are many data types in C#, but one of the most common data types is int. Int(Integer) is just a whole number.",
+  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n class Program\n {\n public static int Main(string[] args)\n {\n // code goes here\n return 0;\n }\n }\n}",
+  "expectedOutput": "lesson8.json",
+  "nextLesson": "lesson6.json",
+  "previous": "",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solutionFile": ""
+}
