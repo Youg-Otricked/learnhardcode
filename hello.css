@@ -1,73 +1,3 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    font-family: monospace;
-    /* For a code-like font */
-    background-color: #282c34;
-    /* Dark background for code editor feel */
-    color: #abb2bf;
-    /* Light text color */
-    font-size: 20px;
-}
-
-.container {
-    font-size: 14px;
-    display: flex;
-    /* Use flexbox for side-by-side layout */
-    height: 100%;
-}
-
-.box {
-    flex: 1;
-    /* Each box takes equal width */
-    padding: 15px;
-    border-right: 2px solid lightgray;
-    /* Border for visual separation */
-    overflow: auto;
-    /* Enable scrolling if content overflows */
-    box-sizing: border-box;
-    /* Include padding and border in element's total width and height */
-}
-
-.text-box {
-    background-color: #3e4451;
-    /* Slightly different background for text box */
-}
-
-.code-box {
-    font-size: 14px;
-    background-color: #282c34;
-    /* Code box background */
-}
-
-.code-editor {
-    width: 100%;
-    height: 100%;
-    border: none;
-    /* Remove default textarea border */
-    background-color: transparent;
-    /* Make background transparent to show parent's background */
-    color: inherit;
-    /* Inherit text color from parent */
-    font-family: inherit;
-    /* Inherit font from parent */
-    resize: none;
-    /* Disable textarea resizing handle */
-    outline: none;
-    /* Remove outline on focus */
-    padding: 0;
-    /* Remove default textarea padding */
-    font-size: 14px;
-}
-
-pre {
-    margin: 0;
-    /* Remove default pre margin */
-    white-space: pre-wrap;
-    /* Wrap long lines of text */
-}
-
 :root {
     --bg: #1e1f24;
     --panel: #2a2d37;
@@ -75,8 +5,13 @@ pre {
     --text: #c7cbd4;
     --muted: #9aa1ab;
     --accent: #ffffff;
-    /* caret/highlight */
+
+    --cpp: #086692;
+    --rust: #2f241c;
+    --cs: #9b4f96;
 }
+
+/* Base page layout */
 
 html,
 body {
@@ -85,73 +20,89 @@ body {
     background: var(--bg);
     color: var(--text);
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 14px;
 }
 
+/* Two-column layout (with hacks to force equal width) */
+
 .container {
-    display: flex;
-    height: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    box-sizing: border-box;
 }
 
 .box {
-    flex: 1;
-    padding: 12px;
-    overflow: auto;
-    box-sizing: border-box;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: 50vw !important;
+    max-width: 50vw !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
     background: var(--panel);
     box-shadow: inset 0 0 0 1px var(--border);
+    font-size: 14px !important; /* same in both boxes */
 }
+
+/* Left and right column tweaks */
 
 .text-box {
     background: #333744;
-    /* subtle contrast */
 }
 
 .code-box {
     background: var(--panel);
 }
-.text-box .ans {
-    width: 600px;
-    height: 30px;
-    border-radius: 20px;
-    background-color: #086692;
-    border: none;              /* remove default button border */
-    color: #fff;               /* make text visible */
-    font: inherit;         
-    cursor: pointer;           /* pointer on hover */
-    display: none;
+
+/* Output / preformatted text */
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
 }
 
-.ans:hover {
-    background-color: #0a7fb5; /* nicer hover */
+/* Answer buttons in the C# lessons */
+
+.text-box .ans {
+    width: 600px;
+    max-width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    background-color: var(--cpp);
+    border: none;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    display: none; /* JS shows them when needed */
+}
+
+.text-box .ans:hover {
+    background-color: #0a7fb5;
+}
+
+/* Language launch buttons on the homepage */
+
+.cpp,
+.rust,
+.cs {
+    width: 150px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
 }
 
 .cpp {
-    background-color: #086692;
-    width: 150px;
-    height: 20px;
-    border-radius: 5px;
-    border: none;              /* remove default button border */
-    color: #fff;               /* make text visible */
-    font: inherit;         
-    cursor: pointer;           /* pointer on hover */
+    background-color: var(--cpp);
 }
+
 .rust {
-    background-color: #2f241c;
-    width: 150px;
-    height: 20px;
-    border-radius: 5px;
-    border: none;              /* remove default button border */
-    color: #fff;               /* make text visible */
-    font: inherit;         
-    cursor: pointer;           /* pointer on hover */
+    background-color: var(--rust);
 }
+
 .cs {
-    background-color: #9b4f96;
-    width: 150px;
-    height: 20px;
-    border-radius: 5px;
-    border: none;              /* remove default button border */
-    color: #fff;               /* make text visible */
-    font: inherit;         
-    cursor: pointer;           /* pointer on hover */
+    background-color: var(--cs);
 }
