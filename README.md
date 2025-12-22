@@ -5,7 +5,7 @@ _**Note that the C#, and Rust courses are not finished. C# has 4(5?) lesson and 
 ## Motivation
 I could not find a SINGLE in browser course for learning C++, and C# that was free, with no rediculose 'oh you can do 1 lesson every 7 days' limits, so i made this.
 ## Quick Start
-## Just open the site at [https://learnhardcode.dpdns.org/home.html](https://learnhardcode.dpdns.org/home.html) If you install the files, run uncache.py and open localhost:9000/
+## Just open the site at [https://learnhardcode.dpdns.org/](https://learnhardcode.dpdns.org/) If you install the files, run uncache.py and open localhost:9000/
 ## Usage(bugs with stupid chrome cache)
  If you get errors on correct lessons, open dev tools, and hard refresh(ctrl+shift+r) until hello.js says "hello.js?v=XXX" in the networktab. Alsom go to dev tools, and in storage clear local storage, cookies, and cache storage. that will garuntee fix it.
 
