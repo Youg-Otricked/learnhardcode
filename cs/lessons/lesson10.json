@@ -1,9 +1,9 @@
 {
   "id": "lesson10.json",
-  "title": "Lesson Title Here",
-  "description": "Lesson description in **Markdown** here.",
-  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            // code goes here\n            return 0;\n        }\n    }\n}",
-  "expectedOutput": "",
+  "title": "Char and Bool variables",
+  "description": "There are 2 more common data types in C#, Bool, and Char. Bool stands for Boolean, and can _only ever be one of 2 values_, **true** or **false**. Char is a _single_ charecter wrapped in **single quotes**.\nChronoshard needs a way to keep track of the users stage and if the yare dead! Make the variable stage and set it to the value A, and make a variable isDead and set it to the value false",
+  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            //Don't touch above this line\n            if (!isDead) {\n                Console.WriteLine(\"Player is alive\");\n            }\n            Console.WriteLine(stage);\n            return 0;\n        }\n    }\n}",
+  "expectedOutput": "Player is alive\nA",
   "nextLesson": "lesson11.json",
   "previous": "lesson9.json",
   "showButtons": false,
@@ -15,6 +15,6 @@
   "b4t": "",
   "runHarness": "",
   "submitHarness": "",
-  "solutionFile": "solution.cs",
-  "hint": ""
+  "solutionFile": "",
+  "hint": "Remember, chars must be wraped in _SINGLE_ quotes. **''**"
 }
