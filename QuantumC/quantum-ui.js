@@ -1,0 +1,145 @@
+let QuantumModule = null;
+let editor = null;
+
+require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });
+
+require(['vs/editor/editor.main'], function() {
+    editor = monaco.editor.create(document.getElementById('editor'), {
+        value: `int main() {
+    println("Hello from Quantum C!");
+    
+    int x = 5;
+    int y = 3;
+    println(f"Answer: {x + y}");
+    
+    return 0;
+}`,
+        language: 'cpp',  
+        theme: 'vs-dark',
+        automaticLayout: true,
+        fontSize: 14,
+        minimap: { enabled: false },
+        scrollBeyondLastLine: false,
+        wordWrap: 'on',
+    });
+    
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function() {
+        document.getElementById('run').click();
+    });
+    
+    console.log('Monaco Editor initialized');
+});
+
+QuantumC().then(function(module) {
+    QuantumModule = module;
+    document.getElementById('output').innerText = 'Ready! Press Ctrl+Enter or click "Run Code".';
+    console.log('Quantum C WASM loaded successfully');
+}).catch(function(err) {
+    document.getElementById('output').innerText = 'Error loading WASM: ' + err;
+    console.error('Failed to load Quantum C:', err);
+});
+
+document.getElementById('run').addEventListener('click', function() {
+    if (!QuantumModule) {
+        alert('WASM module still loading... please wait');
+        return;
+    }
+    
+    if (!editor) {
+        alert('Editor still loading... please wait');
+        return;
+    }
+    
+    const code = editor.getValue();
+    const outputEl = document.getElementById('output');
+    
+    outputEl.innerText = 'Running...\n';
+    outputEl.className = '';
+    
+    try {
+        const result = QuantumModule.ccall(
+            'run_quantum_code',
+            'string',
+            ['string'],
+            [code]
+        );
+        
+        outputEl.innerText = result || '(no output)';
+        
+        if (result.includes('Error') || result.includes('error')) {
+            outputEl.className = 'error';
+        } else {
+            outputEl.className = 'success';
+        }
+    } catch (err) {
+        outputEl.innerText = 'Runtime Error: ' + err.message;
+        outputEl.className = 'error';
+    }
+});
+
+document.getElementById('clear-output').addEventListener('click', function() {
+    document.getElementById('output').innerText = '';
+    document.getElementById('output').className = '';
+});
+
+const examples = [
+    {
+        name: "Hello World",
+        code: `int main() {
+    println("Hello, World!");
+    return 0;
+}`
+    },
+    {
+        name: "Lambda",
+        code: `int main() {
+    auto add = fn(int x, int y) {
+        return x + y;
+    };
+    
+    println(add(5, 3));
+    return 0;
+}`
+    },
+    {
+        name: "Multi-Return",
+        code: `int, string get_user() {
+    return 123, "Alice";
+}
+
+int main() {
+    int id, string name = get_user();
+    println(f"User: {name}, ID: {id}");
+    return 0;
+}`
+    },
+    {
+        name: "F-Strings",
+        code: `int main() {
+    string name = "World";
+    int x = 42;
+    
+    println(f"Hello, {name}!");
+    println(f"The answer is {x}");
+    
+    return 0;
+}`
+    }
+];
+
+let exampleIndex = 0;
+
+document.getElementById('load-example').addEventListener('click', function() {
+    if (!editor) return;
+    
+    editor.setValue(examples[exampleIndex].code);
+    
+    const outputEl = document.getElementById('output');
+    outputEl.innerText = `Loaded: ${examples[exampleIndex].name}\n\nClick "Run Code" to execute!`;
+    outputEl.className = '';
+    
+    exampleIndex = (exampleIndex + 1) % examples.length;
+});
+
+console.log('Quantum C Playground loaded');
+console.log('Shortcuts: Ctrl+Enter to run code');

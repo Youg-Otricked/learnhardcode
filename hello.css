@@ -85,7 +85,8 @@ pre {
 
 .cpp,
 .rust,
-.cs {
+.cs,
+.qc {
     width: 150px;
     height: 20px;
     border-radius: 5px;
@@ -105,4 +106,14 @@ pre {
 
 .cs {
     background-color: var(--cs);
+}
+.qc {
+    background: linear-gradient(90deg, 
+        #0e639c 0%,   
+        #0e639c 33%,
+        #c76b29 33%,   
+        #c76b29 66%,
+        #9b4f96 66%,  
+        #9b4f96 100%
+    );
 }
