@@ -14,7 +14,7 @@
 
 <body>
     <p id="info" style="color: var(--muted); padding: 12px;">
-        Quantum C (C⁴) v2.0 - More Powerful Than Explosives™
+        Quantum C (C⁴) v2.56 - More Powerful Than Explosives™
     </p>
     <button style="width: fit-content; height: fit-content; background-color: var(--accent-main); color: white; border-radius: 7px; padding: 8px 12px; margin-left: 12px;" 
             onclick='window.location.href="../"'>
@@ -65,6 +65,35 @@
 int main() {
     int id, string name = get_user();
     println(f"User: {name}, ID: {id}");
+    return 0;
+}</pre>
+                </details>
+                <details>
+                    <summary style="cursor: pointer; color: var(--accent-main);">Arrays/Grids</summary>
+                    <pre style="background: var(--panel); padding: 8px; border-radius: 4px; margin-top: 8px;">int main() {
+    int x[] = [1, 2, 3];
+    std::qout << x << '\n';
+    int y[][] = [[1, 2, 3][4, 5, 6][7, 8, 9]]std;
+    std::qout << y << '\n';
+    return 0;
+}</pre>
+                </details>
+
+                <details>
+                    <summary style="cursor: pointer; color: var(--accent-main);">Lists</summary>
+                    <pre style="background: var(--panel); padding: 8px; border-radius: 4px; margin-top: 8px;">int main() {
+    int[] z = [1, 2, 3];
+    z.push(9);
+    z.push([1, 2, 3]);
+    int[] inner = [1, 89, 3434];
+    z.push(inner);
+    std::qout << z << '\n';
+    inner.push(1234);
+    std::qout << z << '\n';
+    z.pop();
+    z.pop();
+    z.pop();
+    std::qout << z << inner << '\n';
     return 0;
 }</pre>
                 </details>
