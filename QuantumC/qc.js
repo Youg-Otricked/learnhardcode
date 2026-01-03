@@ -4019,6 +4019,41 @@ async function createWasm() {
       }
     };
 
+  var _emscripten_get_now = () => performance.now();
+  
+  var _emscripten_date_now = () => Date.now();
+  
+  var nowIsMonotonic = 1;
+  
+  var checkWasiClock = (clock_id) => clock_id >= 0 && clock_id <= 3;
+  
+  var INT53_MAX = 9007199254740992;
+  
+  var INT53_MIN = -9007199254740992;
+  var bigintToI53Checked = (num) => (num < INT53_MIN || num > INT53_MAX) ? NaN : Number(num);
+  function _clock_time_get(clk_id, ignored_precision, ptime) {
+    ignored_precision = bigintToI53Checked(ignored_precision);
+  
+  
+      if (!checkWasiClock(clk_id)) {
+        return 28;
+      }
+      var now;
+      // all wasi clocks but realtime are monotonic
+      if (clk_id === 0) {
+        now = _emscripten_date_now();
+      } else if (nowIsMonotonic) {
+        now = _emscripten_get_now();
+      } else {
+        return 52;
+      }
+      // "now" is in ms, and wasi times are in ns.
+      var nsec = Math.round(now * 1000 * 1000);
+      HEAP64[((ptime)>>3)] = BigInt(nsec);
+      return 0;
+    ;
+  }
+
   var getHeapMax = () =>
       // Stay one Wasm page short of 4GB: while e.g. Chrome is able to allocate
       // full 4GB Wasm memories, the size will wrap back to 0 bytes in Wasm side
@@ -4231,10 +4266,6 @@ async function createWasm() {
   }
 
   
-  var INT53_MAX = 9007199254740992;
-  
-  var INT53_MIN = -9007199254740992;
-  var bigintToI53Checked = (num) => (num < INT53_MIN || num > INT53_MAX) ? NaN : Number(num);
   function _fd_seek(fd, offset, whence, newOffset) {
     offset = bigintToI53Checked(offset);
   
@@ -4576,7 +4607,6 @@ if (Module['wasmBinary']) wasmBinary = Module['wasmBinary'];
   'jsStackTrace',
   'getCallstack',
   'convertPCtoSourceLocation',
-  'checkWasiClock',
   'wasiRightsToMuslOFlags',
   'wasiOFlagsToMuslOFlags',
   'safeSetTimeout',
@@ -4709,6 +4739,7 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'UNWIND_CACHE',
   'ExitStatus',
   'getEnvStrings',
+  'checkWasiClock',
   'doReadv',
   'doWritev',
   'initRandomFill',
@@ -4999,6 +5030,8 @@ var wasmImports = {
   /** @export */
   _tzset_js: __tzset_js,
   /** @export */
+  clock_time_get: _clock_time_get,
+  /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */
   environ_get: _environ_get,
@@ -5049,6 +5082,12 @@ var wasmImports = {
   /** @export */
   invoke_iiiiiiiiiiiii,
   /** @export */
+  invoke_j,
+  /** @export */
+  invoke_ji,
+  /** @export */
+  invoke_jii,
+  /** @export */
   invoke_jiiii,
   /** @export */
   invoke_v,
@@ -5082,6 +5121,8 @@ var wasmImports = {
   invoke_viiiiiiiiiiiiiii,
   /** @export */
   invoke_viijjiiii,
+  /** @export */
+  invoke_vij,
   /** @export */
   llvm_eh_typeid_for: _llvm_eh_typeid_for
 };
@@ -5284,6 +5325,41 @@ function invoke_iid(index,a1,a2) {
   }
 }
 
+function invoke_jii(index,a1,a2) {
+  var sp = stackSave();
+  try {
+    return getWasmTableEntry(index)(a1,a2);
+  } catch(e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+    return 0n;
+  }
+}
+
+function invoke_ji(index,a1) {
+  var sp = stackSave();
+  try {
+    return getWasmTableEntry(index)(a1);
+  } catch(e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+    return 0n;
+  }
+}
+
+function invoke_vij(index,a1,a2) {
+  var sp = stackSave();
+  try {
+    getWasmTableEntry(index)(a1,a2);
+  } catch(e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
 function invoke_viifiiii(index,a1,a2,a3,a4,a5,a6,a7) {
   var sp = stackSave();
   try {
@@ -5336,6 +5412,18 @@ function invoke_viiidi(index,a1,a2,a3,a4,a5) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
+  }
+}
+
+function invoke_j(index) {
+  var sp = stackSave();
+  try {
+    return getWasmTableEntry(index)();
+  } catch(e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+    return 0n;
   }
 }
 
