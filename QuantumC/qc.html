@@ -14,11 +14,11 @@
 
 <body>
     <p id="info" style="color: var(--muted); padding: 12px;">
-        Quantum C (C⁴) v2.56 - More Powerful Than Explosives™
+        Quantum C (C⁴) - More Powerful Than Explosives™
     </p>
     <button style="width: fit-content; height: fit-content; background-color: var(--accent-main); color: white; border-radius: 7px; padding: 8px 12px; margin-left: 12px;" 
             onclick='window.location.href="../"'>
-        ← Go to Homepage
+        Go to Homepage
     </button>
     
     <div class="container">
@@ -34,6 +34,7 @@
                     <li>F-strings: <code>f"Hello {name}"</code></li>
                     <li>Type inference with <code>auto</code></li>
                     <li>Default parameters</li>
+                    <li>Destructure(@)</li>
                 </ul>
 
                 <h3>Quick Examples:</h3>
@@ -73,7 +74,7 @@ int main() {
                     <pre style="background: var(--panel); padding: 8px; border-radius: 4px; margin-top: 8px;">int main() {
     int x[] = [1, 2, 3];
     std::qout << x << '\n';
-    int y[][] = [[1, 2, 3][4, 5, 6][7, 8, 9]]std;
+    int y[][] = [[@x][4, 5, 6][7, 8, 9]]std;
     std::qout << y << '\n';
     return 0;
 }</pre>
