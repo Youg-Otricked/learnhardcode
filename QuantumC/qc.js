@@ -261,7 +261,7 @@ if (!globalThis.WebAssembly) {
 var ABORT = false;
 
 // set by exit() and abort().  Passed to 'onExit' handler.
-// NOTE: This is also used as the process return code code in shell environments
+// NOTE: This is also used as the process return code in shell environments
 // but only when noExitRuntime is false.
 var EXITSTATUS;
 
@@ -581,7 +581,7 @@ function getBinarySync(file) {
   if (readBinary) {
     return readBinary(file);
   }
-  // Throwing a plain string here, even though it not normally adviables since
+  // Throwing a plain string here, even though it not normally advisable since
   // this gets turning into an `abort` in instantiateArrayBuffer.
   throw 'both async and sync fetching of the wasm failed';
 }
@@ -887,7 +887,6 @@ async function createWasm() {
   var exceptionCaught =  [];
   
   
-  
   var uncaughtExceptionCount = 0;
   var ___cxa_begin_catch = (ptr) => {
       var info = new ExceptionInfo(ptr);
@@ -897,7 +896,6 @@ async function createWasm() {
       }
       info.set_rethrown(false);
       exceptionCaught.push(info);
-      ___cxa_increment_exception_refcount(ptr);
       return ___cxa_get_exception_ptr(ptr);
     };
 
@@ -1020,6 +1018,7 @@ async function createWasm() {
 
   
   
+  
   var ___cxa_rethrow = () => {
       var info = exceptionCaught.pop();
       if (!info) {
@@ -1033,16 +1032,19 @@ async function createWasm() {
         info.set_caught(false);
         uncaughtExceptionCount++;
       }
+      ___cxa_increment_exception_refcount(ptr);
       exceptionLast = new CppException(ptr);
       throw exceptionLast;
     };
 
   
   
+  
   var ___cxa_throw = (ptr, type, destructor) => {
       var info = new ExceptionInfo(ptr);
       // Initialize ExceptionInfo content after it was allocated in __cxa_allocate_exception.
       info.init(type, destructor);
+      ___cxa_increment_exception_refcount(ptr);
       exceptionLast = new CppException(ptr);
       uncaughtExceptionCount++;
       throw exceptionLast;
@@ -1473,7 +1475,7 @@ async function createWasm() {
       },
   createNode(parent, name, mode, dev) {
         if (FS.isBlkdev(mode) || FS.isFIFO(mode)) {
-          // no supported
+          // not supported
           throw new FS.ErrnoError(63);
         }
         MEMFS.ops_table ||= {
@@ -1693,7 +1695,7 @@ async function createWasm() {
           // If the buffer is located in main memory (HEAP), and if
           // memory can grow, we can't hold on to references of the
           // memory buffer, as they may get invalidated. That means we
-          // need to do copy its contents.
+          // need to copy its contents.
           if (buffer.buffer === HEAP8.buffer) {
             canOwn = false;
           }
@@ -2032,7 +2034,7 @@ async function createWasm() {
           return plugin['handle'](byteArray, fullname);
         }
       }
-      // In no plugin handled this file then return the original/unmodified
+      // If no plugin handled this file then return the original/unmodified
       // byteArray.
       return byteArray;
     };
@@ -3022,7 +3024,7 @@ async function createWasm() {
           } else {
             // node doesn't exist, try to create it
             // Ignore the permission bits here to ensure we can `open` this new
-            // file below. We use chmod below the apply the permissions once the
+            // file below. We use chmod below to apply the permissions once the
             // file is open.
             node = FS.mknod(path, mode | 0o777, 0);
             created = true;
@@ -3720,7 +3722,6 @@ async function createWasm() {
   };
   
   var SYSCALLS = {
-  DEFAULT_POLLMASK:5,
   calculateAt(dirfd, path, allowEmpty) {
         if (PATH.isAbs(path)) {
           return path;
@@ -5259,6 +5260,17 @@ function invoke_iiiiiiii(index,a1,a2,a3,a4,a5,a6,a7) {
   }
 }
 
+function invoke_viiiii(index,a1,a2,a3,a4,a5) {
+  var sp = stackSave();
+  try {
+    getWasmTableEntry(index)(a1,a2,a3,a4,a5);
+  } catch(e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
 function invoke_iij(index,a1,a2) {
   var sp = stackSave();
   try {
@@ -5274,17 +5286,6 @@ function invoke_iijj(index,a1,a2,a3) {
   var sp = stackSave();
   try {
     return getWasmTableEntry(index)(a1,a2,a3);
-  } catch(e) {
-    stackRestore(sp);
-    if (!(e instanceof EmscriptenEH)) throw e;
-    _setThrew(1, 0);
-  }
-}
-
-function invoke_viiiii(index,a1,a2,a3,a4,a5) {
-  var sp = stackSave();
-  try {
-    getWasmTableEntry(index)(a1,a2,a3,a4,a5);
   } catch(e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
@@ -5724,7 +5725,7 @@ run();
 // and return either the Module itself, or a promise of the module.
 //
 // We assign to the `moduleRtn` global here and configure closure to see
-// this as and extern so it won't get minified.
+// this as an extern so it won't get minified.
 
 if (runtimeInitialized)  {
   moduleRtn = Module;
