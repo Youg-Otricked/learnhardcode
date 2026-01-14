@@ -4352,6 +4352,16 @@ function _fd_write(fd, iov, iovcnt, pnum) {
 
 var _llvm_eh_typeid_for = type => type;
 
+function _random_get(buffer, size) {
+  try {
+    randomFill(HEAPU8.subarray(buffer, buffer + size));
+    return 0;
+  } catch (e) {
+    if (typeof FS == "undefined" || !(e.name === "ErrnoError")) throw e;
+    return e.errno;
+  }
+}
+
 var stackAlloc = sz => __emscripten_stack_alloc(sz);
 
 var stringToUTF8OnStack = str => {
@@ -4667,6 +4677,7 @@ var wasmImports = {
   /** @export */ alignfault,
   /** @export */ clock_time_get: _clock_time_get,
   /** @export */ emscripten_date_now: _emscripten_date_now,
+  /** @export */ emscripten_get_now: _emscripten_get_now,
   /** @export */ emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */ environ_get: _environ_get,
   /** @export */ environ_sizes_get: _environ_sizes_get,
@@ -4719,6 +4730,7 @@ var wasmImports = {
   /** @export */ invoke_viijjiiii,
   /** @export */ invoke_vij,
   /** @export */ llvm_eh_typeid_for: _llvm_eh_typeid_for,
+  /** @export */ random_get: _random_get,
   /** @export */ segfault
 };
 
@@ -4876,6 +4888,17 @@ function invoke_dii(index, a1, a2) {
   }
 }
 
+function invoke_v(index) {
+  var sp = stackSave();
+  try {
+    getWasmTableEntry(index)();
+  } catch (e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
 function invoke_iij(index, a1, a2) {
   var sp = stackSave();
   try {
@@ -4925,17 +4948,6 @@ function invoke_iif(index, a1, a2) {
   var sp = stackSave();
   try {
     return getWasmTableEntry(index)(a1, a2);
-  } catch (e) {
-    stackRestore(sp);
-    if (!(e instanceof EmscriptenEH)) throw e;
-    _setThrew(1, 0);
-  }
-}
-
-function invoke_v(index) {
-  var sp = stackSave();
-  try {
-    getWasmTableEntry(index)();
   } catch (e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
