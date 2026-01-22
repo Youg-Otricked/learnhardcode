@@ -124,6 +124,71 @@ int main() {
     
     return 0;
 }`
+    },
+    {
+    name: "Quantum Boolean",
+    code: `int main() {
+        qbool q = both;
+        
+        qif (q) {
+            println("q was true this time");
+        } qelse {
+            println("q was false this time");
+        }
+        
+        return 0;
+    }`
+    },
+    {
+    name: "Union Types",
+    code: `type Number = int | float | double;
+
+    Number max(Number a, Number b) {
+        if (a > b) return a;
+        return b;
+    }
+
+    int main() {
+        Number x = 3;
+        Number y = 4.5;
+        println(max(x, y));
+        return 0;
+    }`
+    },
+    {
+    name: "Class with init",
+    code: `class Point {
+        int x;
+        int y;
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+        void init() {
+            x = 10;
+            y = 20;
+        }
+    }
+
+    int main() {
+        Point p;        // default init calls p.init()
+        println(f"({p.x}, {p.y})");
+        return 0;
+    }`
+    },
+    {
+        name: "Lists and foreach",
+        code: `int main() {
+            list<int> nums = [1, 2, 3, 4, 5];
+            
+            foreach (int n : nums) {
+                if (n % 2 == 0) {
+                    println(f"{n} is even");
+                }
+            }
+            
+            return 0;
+        }`
     }
 ];
 
