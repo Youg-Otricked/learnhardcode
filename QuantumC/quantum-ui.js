@@ -189,6 +189,55 @@ int main() {
             
             return 0;
         }`
+    },
+    {
+        name: "Including from standered lib and advanced QBool",
+        code: `
+        namespace Exported {
+            #include <AdvQBool, ./stdlib.qc>
+        }
+
+        int main() {
+            AdvQBool::AQB q = AdvQBool::AQB(70);
+
+            println("Rolling quantum truth 5 times:");
+            int i = 0;
+            while (i < 5) {
+                if (q) {
+                    println("q was true");
+                } else {
+                    println("q was false");
+                }
+                i = i + 1;
+            }
+
+            println(q.repr());
+            return 0;
+        }`
+    },
+    {
+        name: "Multi include from stdlib",
+        code: `
+        namespace Exported {
+            #include <Math,    ./stdlib.qc>
+            #include <Utils,   ./stdlib.qc>
+        }
+        int main() {
+            Math::Number a = 3;
+            Math::Number b = 4.5;
+
+            println(f"max = {Math::max(a, b)}");
+
+            int[] r = Utils::range(0, 10, 2);
+            int i = 0;
+            while (i < len(r)) {
+                print(f"{r[i]} ");
+                i = i + 1;
+            }
+            println("");
+
+            return 0;
+        }`
     }
 ];
 
