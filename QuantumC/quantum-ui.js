@@ -69,20 +69,10 @@ require(['vs/editor/editor.main'], function() {
         }
     });
     editor = monaco.editor.create(document.getElementById('editor'), {
-        value: `#include <iostream>
-
-fn main() {
-    // Quantum logic gates might look like this
-    qbool qubit1 = both; 
-    
-    if (qubit1 == true) {
-        println("Measured: 1");
-    } else {
-        println("Measured: 0");
-    }
-
-    return 0;
-}`,
+        value: `int main() {
+                    println("Hello, World!");
+                    return 0;
+                }`,
         language: 'qc',  
         theme: 'qcTheme',
         automaticLayout: true,
