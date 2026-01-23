@@ -70,9 +70,9 @@ require(['vs/editor/editor.main'], function() {
     });
     editor = monaco.editor.create(document.getElementById('editor'), {
         value: `int main() {
-                    println("Hello, World!");
-                    return 0;
-                }`,
+    println("Hello, World!");
+    return 0;
+}`,
         language: 'qc',  
         theme: 'qcTheme',
         automaticLayout: true,
@@ -187,116 +187,116 @@ int main() {
     {
     name: "Quantum Boolean",
     code: `int main() {
-        qbool q = both;
-        
-        qif (q) {
-            println("q was true this time");
-        } qelse {
-            println("q was false this time");
-        }
-        
-        return 0;
-    }`
+    qbool q = both;
+    
+    qif (q) {
+        println("q was true this time");
+    } qelse {
+        println("q was false this time");
+    }
+    
+    return 0;
+}`
     },
     {
     name: "Union Types",
     code: `type Number = int | float | double;
 
-    Number max(Number a, Number b) {
-        if (a > b) return a;
-        return b;
-    }
+Number max(Number a, Number b) {
+    if (a > b) return a;
+    return b;
+}
 
-    int main() {
-        Number x = 3;
-        Number y = 4.5;
-        println(max(x, y));
-        return 0;
-    }`
+int main() {
+    Number x = 3;
+    Number y = 4.5;
+    println(max(x, y));
+    return 0;
+}`
     },
     {
     name: "Class with init",
     code: `class Point {
-        int x;
-        int y;
-        Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-        void init() {
-            this.x = 10;
-            this.y = 20;
-        }
+    int x;
+    int y;
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
+    void init() {
+        this.x = 10;
+        this.y = 20;
+    }
+}
 
-    int main() {
-        Point p;        // default init calls p.init()
-        println(f"({p.x}, {p.y})");
-        return 0;
-    }`
+int main() {
+    Point p;        // default init calls p.init()
+    println(f"({p.x}, {p.y})");
+    return 0;
+}`
     },
     {
         name: "Lists and foreach",
         code: `int main() {
-            list<int> nums = [1, 2, 3, 4, 5];
-            
-            foreach (int n in nums) {
-                if (n % 2 == 0) {
-                    println(f"{n} is even");
-                }
-            }
-            
-            return 0;
-        }`
+    list<int> nums = [1, 2, 3, 4, 5];
+    
+    foreach (int n in nums) {
+        if (n % 2 == 0) {
+            println(f"{n} is even");
+        }
+    }
+    
+    return 0;
+}`
     },
     {
         name: "Including from standered lib and advanced QBool",
         code: `
-        namespace Exported {
-            #include <AdvQBool, ./stdlib.qc>
+namespace Exported {
+    #include <AdvQBool, ./stdlib.qc>
+}
+
+int main() {
+    AdvQBool::AQB q = AdvQBool::AQB(70);
+
+    println("Rolling quantum truth 5 times:");
+    int i = 0;
+    while (i < 5) {
+        if (q) {
+            println("q was true");
+        } else {
+            println("q was false");
         }
+        i = i + 1;
+    }
 
-        int main() {
-            AdvQBool::AQB q = AdvQBool::AQB(70);
-
-            println("Rolling quantum truth 5 times:");
-            int i = 0;
-            while (i < 5) {
-                if (q) {
-                    println("q was true");
-                } else {
-                    println("q was false");
-                }
-                i = i + 1;
-            }
-
-            println(q.repr());
-            return 0;
-        }`
+    println(q.repr());
+    return 0;
+}`
     },
     {
         name: "Multi include from stdlib",
         code: `
-        namespace Exported {
-            #include <Math,    ./stdlib.qc>
-            #include <Utils,   ./stdlib.qc>
-        }
-        int main() {
-            Math::Number a = 3;
-            Math::Number b = 4.5;
+namespace Exported {
+    #include <Math,    ./stdlib.qc>
+    #include <Utils,   ./stdlib.qc>
+}
+int main() {
+    Math::Number a = 3;
+    Math::Number b = 4.5;
 
-            println(f"max = {Math::max(a, b)}");
+    println(f"max = {Math::max(a, b)}");
 
-            int[] r = Utils::range(0, 10, 2);
-            int i = 0;
-            while (i < r.length) {
-                print(f"{r[i]} ");
-                i = i + 1;
-            }
-            println("");
+    int[] r = Utils::range(0, 10, 2);
+    int i = 0;
+    while (i < r.length) {
+        print(f"{r[i]} ");
+        i = i + 1;
+    }
+    println("");
 
-            return 0;
-        }`
+    return 0;
+}`
     }
 ];
 
