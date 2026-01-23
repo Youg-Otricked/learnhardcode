@@ -9,39 +9,43 @@ require(['vs/editor/editor.main'], function() {
     monaco.languages.setMonarchTokensProvider('qc', {
         tokenizer: {
             root: [
-                [/\/\/.*$/, 'comment'],
-                [/\/\*/, 'comment', '@comment'],
-                [/^\s*#\s*include/, { token: 'keyword.control.preprocessor', next: '@include' }],
-                [/^\s*#\s*(error|warning|define|undef|ifdef|ifndef|endif|pragma)\b/, 'keyword.control.preprocessor'],
-                [/\b(qif|qelse|qelif|qswitch|if|else|while|for|return|break|continue|switch|case|default|namespace|fn)\b/, 'keyword'],
-                [/\b(const|static|public|private|protected|long|short|final)\b/, 'storage.modifier'],
-                [/\b(true|false|null|nullptr|none|both)\b/, 'constant.language'],
-                [/\b(int|float|double|qbool|void|bool|string|char|dict|map|list|enum|struct|class|type|auto)\b/, 'storage.type'],
-                [/\b[A-Z][a-zA-Z0-9_]*\b/, 'entity.name.type'],
-                [/\b[a-zA-Z_][a-zA-Z0-9_]*(?=::)/, 'entity.name.namespace'],
-                [/\b[a-zA-Z_][a-zA-Z0-9_]*\s*(?=\()/, 'entity.name.function'],
-                [/(?<=\.|->)[a-zA-Z_][a-zA-Z0-9_]*/, 'variable.other.member'],
-                [/"/, 'string', '@string'],
-                [/'([^'\\\\]|\\.)'/, 'string.quoted.single'],
-                [/\b(0x[0-9a-fA-F]+|0b[01]+|[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?f?)\b/, 'number'],
-                [/(\+\+|--|\+|\-|\*\*|\*| \/|%|==|!=|<=|>=|<|>|&&&|&&|\|\|\||\|\||!!|!|=|\+=|\-=|\*=|\/=|&|\||\^|<<|>>)/, 'operator'],
+            [/\/\/.*$/, 'comment'],
+            [/\/\*/, 'comment', '@comment'],
+            [/^\s*#\s*include/, { token: 'keyword.control.preprocessor', next: '@include' }],
+            [/^\s*#\s*(error|warning|define|undef|ifdef|ifndef|endif|pragma)\b/, 'keyword.control.preprocessor'],
+            [/\b(qif|qelse|qelif|qswitch|if|else|while|for|return|break|continue|switch|case|default|namespace|fn)\b/, 'keyword'],
+            [/\b(const|static|public|private|protected|long|short|final)\b/, 'storage.modifier'],
+            [/\b(true|false|null|nullptr|none|both)\b/, 'constant.language'],
+            [/\b(int|float|double|qbool|void|bool|string|char|dict|map|list|enum|struct|class|type|auto)\b/, 'storage.type'],
+            [/\b[A-Z][a-zA-Z0-9_]*\b/, 'entity.name.type'],
+            [/\b[a-zA-Z_][a-zA-Z0-9_]*(?=::)/, 'entity.name.namespace'],
+            [/\b[a-zA-Z_][a-zA-Z0-9_]*\s*(?=\()/, 'entity.name.function'],
+            [/(?<=\.|->)[a-zA-Z_][a-zA-Z0-9_]*/, 'variable.other.member'],
+            [/"/, 'string', '@string'],
+            [/'([^'\\]|\\.)'/, 'string.quoted.single'],
+            [/\b(0x[0-9a-fA-F]+|0b[01]+|[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?f?)\b/, 'number'],
+            [/\+\+|--|\+|\-|\*\*|\*|\/|%|==|!=|<=|>=|<|>|&&&|&&|\|\|\||\|\||!!|!|=|\+=|\-=|\*=|\/=|&|\||\^|<<|>>/, 'operator'],
             ],
+
             comment: [
-                [/[^\/*]+/, 'comment'],
-                [/\*\//, 'comment', '@pop'],
-                [/[\/*]/, 'comment']
+            [/[^\/*]+/, 'comment'],
+            [/\*\//, 'comment', '@pop'],
+            [/[\/*]/, 'comment']
             ],
+
             string: [
-                [/[^\\"]+/, 'string'],
-                [/"/, 'string', '@pop'],
-                [/\\./, 'string.escape']
+            [/[^\\"]+/, 'string'],
+            [/\\./, 'string.escape'],
+            [/"/, 'string', '@pop'],
             ],
+
             include: [
-                [/[ \t]+/, ''],
-                [/<[^>]+>/, 'string.include'],
-                [/[a-zA-Z_][a-zA-Z0-9_]*/, 'entity.name.namespace'],
-                [/,/, 'punctuation.separator'],
-                [/$/, '', '@pop'],
+            [/[ \t]+/, ''],
+            [/,/, 'punctuation.separator'],
+            [/<|>/, 'string.include'],
+            [/[a-zA-Z0-9_.\/\\]+/, 'string.include'],
+            [/[a-zA-Z_][a-zA-Z0-9_]*/, 'entity.name.namespace'],
+            [/$/, '', '@pop'],
             ],
         },
     });
