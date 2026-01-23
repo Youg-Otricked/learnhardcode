@@ -237,8 +237,8 @@ int main() {
             this.y = y;
         }
         void init() {
-            x = 10;
-            y = 20;
+            this.x = 10;
+            this.y = 20;
         }
     }
 
@@ -253,7 +253,7 @@ int main() {
         code: `int main() {
             list<int> nums = [1, 2, 3, 4, 5];
             
-            foreach (int n : nums) {
+            foreach (int n in nums) {
                 if (n % 2 == 0) {
                     println(f"{n} is even");
                 }
@@ -302,7 +302,7 @@ int main() {
 
             int[] r = Utils::range(0, 10, 2);
             int i = 0;
-            while (i < len(r)) {
+            while (i < r.length) {
                 print(f"{r[i]} ");
                 i = i + 1;
             }
