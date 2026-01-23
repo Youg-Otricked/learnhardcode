@@ -69,9 +69,21 @@ monaco.editor.defineTheme('qcTheme', {
     { token: 'storage.type', foreground: '569CD6' },
     { token: 'entity.name.function', foreground: 'DCDCAA' },
     { token: 'operator', foreground: 'D4D4D4' },
-    // Add more mappings here
+
+    { token: 'comment', foreground: '6A9955', fontStyle: 'italic' },
+    { token: 'string', foreground: 'CE9178' },
+    { token: 'number', foreground: 'B5CEA8' },
+    { token: 'constant.language', foreground: '569CD6', fontStyle: 'bold' },
+    { token: 'keyword.control.preprocessor', foreground: 'C586C0' },
+    { token: 'entity.name.type', foreground: '4EC9B0' },
+    { token: 'entity.name.namespace', foreground: '4EC9B0' },
+    { token: 'variable.other.member', foreground: '9CDCFE' },
+    { token: 'identifier', foreground: '9CDCFE' }
   ],
-  colors: {}
+  colors: {
+    'editor.background': '#1E1E1E',
+    'editor.foreground': '#D4D4D4'
+  }
 });
 monaco.editor.setTheme('qcTheme');
 
