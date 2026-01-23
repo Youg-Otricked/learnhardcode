@@ -2,6 +2,78 @@ let QuantumModule = null;
 let editor = null;
 
 require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });
+monaco.languages.register({ id: 'qc' });
+
+monaco.languages.setMonarchTokensProvider('qc', {
+  tokenizer: {
+    root: [
+      // Comments
+      [/\/\/.*$/, 'comment'],
+      [/\/\*/, 'comment', '@comment'],
+
+      // Preprocessor
+      [/^\s*#\s*include/, { token: 'keyword.control.preprocessor', next: '@include' }],
+      [/^\s*#\s*(error|warning|define|undef|ifdef|ifndef|endif|pragma)\b/, 'keyword.control.preprocessor'],
+
+      // Keywords & Constants
+      [/\b(qif|qelse|qelif|qswitch|if|else|while|for|return|break|continue|switch|case|default|namespace|fn)\b/, 'keyword'],
+      [/\b(const|static|public|private|protected|long|short|final)\b/, 'storage.modifier'],
+      [/\b(true|false|null|nullptr|none|both)\b/, 'constant.language'],
+
+      // Types
+      [/\b(int|float|double|qbool|void|bool|string|char|dict|map|list|enum|struct|class|type|auto)\b/, 'storage.type'],
+      [/\b[A-Z][a-zA-Z0-9_]*\b/, 'entity.name.type'],
+      [/\b[a-zA-Z_][a-zA-Z0-9_]*(?=::)/, 'entity.name.namespace'],
+
+      // Functions and Members
+      [/\b[a-zA-Z_][a-zA-Z0-9_]*\s*(?=\()/, 'entity.name.function'],
+      [/(?<=\.|->)[a-zA-Z_][a-zA-Z0-9_]*/, 'variable.other.member'],
+
+      // Strings and Characters
+      [/"/, 'string', '@string'],
+      [/'([^'\\\\]|\\.)'/, 'string.quoted.single'],
+
+      // Numbers
+      [/\b(0x[0-9a-fA-F]+|0b[01]+|[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?f?)\b/, 'number'],
+
+      // Operators
+      [/(\+\+|--|\+|\-|\*\*|\*| \/|%|==|!=|<=|>=|<|>|&&&|&&|\|\|\||\|\||!!|!|=|\+=|\-=|\*=|\/=|&|\||\^|<<|>>)/, 'operator'],
+    ],
+
+    comment: [
+      [/[^\/*]+/, 'comment'],
+      [/\*\//, 'comment', '@pop'],
+      [/[\/*]/, 'comment']
+    ],
+
+    string: [
+      [/[^\\"]+/, 'string'],
+      [/"/, 'string', '@pop'],
+      [/\\./, 'string.escape']
+    ],
+
+    include: [
+      [/[ \t]+/, ''],
+      [/<[^>]+>/, 'string.include'],
+      [/[a-zA-Z_][a-zA-Z0-9_]*/, 'entity.name.namespace'],
+      [/,/, 'punctuation.separator'],
+      [/$/, '', '@pop'],
+    ],
+  },
+});
+monaco.editor.defineTheme('qcTheme', {
+  base: 'vs-dark',
+  inherit: true,
+  rules: [
+    { token: 'keyword', foreground: 'C586C0' },
+    { token: 'storage.type', foreground: '569CD6' },
+    { token: 'entity.name.function', foreground: 'DCDCAA' },
+    { token: 'operator', foreground: 'D4D4D4' },
+    // Add more mappings here
+  ],
+  colors: {}
+});
+monaco.editor.setTheme('qcTheme');
 
 require(['vs/editor/editor.main'], function() {
     editor = monaco.editor.create(document.getElementById('editor'), {
@@ -14,8 +86,8 @@ require(['vs/editor/editor.main'], function() {
     
     return 0;
 }`,
-        language: 'cpp',  
-        theme: 'vs-dark',
+        language: 'qc',  
+        theme: 'qcTheme',
         automaticLayout: true,
         fontSize: 14,
         minimap: { enabled: false },
