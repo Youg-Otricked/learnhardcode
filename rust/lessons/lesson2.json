@@ -5,7 +5,7 @@
   "starterCode": "println!(\"Welcome to Verdigris\");\nprintln!(\"> user-c4fc9ccdbce4030b10a71bd0\");",
   "expectedOutput": "Welcome to Verdigris\n> user-c4fc9ccdbce4030b10a71bd0\n",
   "nextLesson": "lesson3.json",
-  "previous": "lesson2.json",
+  "previous": "lesson1.json",
   "showButtons": false,
   "correct": "nobns",
   "b1t": "",
