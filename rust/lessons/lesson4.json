@@ -1,7 +1,7 @@
 {
   "id": "lesson4.json",
   "title": "Quiz",
-  "description": "Congrats! You have finished the first section of the Rust course. Expeirement iin the sandbox below, then answer the question\n\n #### What is a core goal of rust, and how do you define a function\n_Remember that some of these options could have one correct but not the other._",
+  "description": "Congrats! You have finished the first section of the Rust course. Expeirement in the sandbox below, then answer the question\n\n #### What is a core goal of rust, and how do you define a function\n_Remember that some of these options could have one correct but not the other._",
   "starterCode": "//Write your code here.",
   "expectedOutput": "",
   "mustContain": "",

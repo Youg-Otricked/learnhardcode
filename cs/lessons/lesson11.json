@@ -1,0 +1,20 @@
+{
+  "id": "lesson11.json",
+  "title": "Control flow [If]",
+  "description": "In C#, you can check certain conditions on booleans using somthing called _Control Flow_. Control Flow just checks if a boolean condition is true, and if it is true, it runs the code.\n---\nThe most basic type of control flow is the `if` statement.\n#### Syntax:\n```cs\nif (condition) {\n    code\n}\n```\n---\nIt's that simple. A condition is just anything that evaluates to a boolean.\n### Assignment:\nThe ChronoShard Team needs a way to check if the player is dead or dying. Write two `if` statements. One that checks the is_dead condition and prints \"You have died\" if it is true, and one that checks `is_dying` and prints \"You're dying\" if it is true.",
+  "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            bool is_dying = false;\n            bool is_dead = true;\n            // Write your code here.\n            return 0;\n        }\n    }\n}",
+  "expectedOutput": "You have died\n",
+  "nextLesson": "lesson12.json",
+  "previous": "lesson10.json",
+  "showButtons": false,
+  "mustContain": "",
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solutionFile": "",
+  "hint": "To evaluate just a boolean in a codition, just write the variables name, so to evaluate a boolean called flag in a `if` statement, you just type `if (flag)` and that will run if true"
+}

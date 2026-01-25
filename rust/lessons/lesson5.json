@@ -1,0 +1,16 @@
+{
+  "id": "lesson5.json",
+  "title": "Comments",
+  "description": "Comments are just special charecters that say \"_Hey code runner, this isnt code_\" and that's it. There are two types of comments: single line and multi line. You make a single line comment with the syntax `// Comment` Meanwhile multi line comments use the syntax `/*` to start them and are comments till `*/`.\n## Assignment:\nSomebody at the Verdigris OS team accidently made a bug and commented out the working code! You need to fix it.",
+  "starterCode": "fn main() {\n    //println!(\"This is a thing i coded. Please don't comment me out.\");\n    println(\"I replaced good code\");\n}",
+  "expectedOutput": "This is a thing i coded. Please don't comment me out.\n",
+  "mustContain": "",
+  "nextLesson": "lesson5.json",
+  "previous": "lesson3.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": ""
+}
