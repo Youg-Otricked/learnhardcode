@@ -45,7 +45,7 @@ function runQC(code) {
         );
         lastRunOutput = result || '';
         outEl.textContent += lastRunOutput;
-        if (result.includes('Error') || result.includes('error')) {
+        if (result.includes('QC-') || result.includes('Runtime Error:')) {
             outEl.className = 'error';
         } else {
             outEl.className = 'success';
@@ -54,7 +54,7 @@ function runQC(code) {
     } catch (err) {
         lastRunOutput = 'Runtime Error: ' + err.message;
         outEl.textContent += lastRunOutput;
-        outEl.className = 'success';
+        outEl.className = 'error';
     }
 }
 
