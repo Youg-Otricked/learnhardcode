@@ -81,7 +81,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpxqax8jh3.js
+// include: /tmp/tmp99sbw8c7.js
 if (!Module["expectedDataFileDownloads"]) Module["expectedDataFileDownloads"] = 0;
 
 Module["expectedDataFileDownloads"]++;
@@ -202,29 +202,29 @@ Module["expectedDataFileDownloads"]++;
     "files": [ {
       "filename": "/stdlib.qc",
       "start": 0,
-      "end": 7695
+      "end": 11531
     } ],
-    "remote_package_size": 7695
+    "remote_package_size": 11531
   });
 })();
 
-// end include: /tmp/tmpxqax8jh3.js
-// include: /tmp/tmpw0v7s9_t.js
+// end include: /tmp/tmp99sbw8c7.js
+// include: /tmp/tmpdq8tqsgf.js
 // All the pre-js content up to here must remain later on, we need to run
 // it.
 if ((typeof ENVIRONMENT_IS_WASM_WORKER != "undefined" && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != "undefined" && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != "undefined" && ENVIRONMENT_IS_AUDIO_WORKLET)) Module["preRun"] = [];
 
 var necessaryPreJSTasks = Module["preRun"].slice();
 
-// end include: /tmp/tmpw0v7s9_t.js
-// include: /tmp/tmputifsa77.js
+// end include: /tmp/tmpdq8tqsgf.js
+// include: /tmp/tmp0f42alt8.js
 if (!Module["preRun"]) throw "Module.preRun should exist because file support used it; did a pre-js delete it?";
 
 necessaryPreJSTasks.forEach(task => {
   if (Module["preRun"].indexOf(task) < 0) throw "All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?";
 });
 
-// end include: /tmp/tmputifsa77.js
+// end include: /tmp/tmp0f42alt8.js
 var arguments_ = [];
 
 var thisProgram = "./this.program";
@@ -1160,6 +1160,8 @@ var findMatchingCatch = args => {
 var ___cxa_find_matching_catch_2 = () => findMatchingCatch([]);
 
 var ___cxa_find_matching_catch_3 = arg0 => findMatchingCatch([ arg0 ]);
+
+var ___cxa_find_matching_catch_4 = (arg0, arg1) => findMatchingCatch([ arg0, arg1 ]);
 
 var ___cxa_find_matching_catch_5 = (arg0, arg1, arg2) => findMatchingCatch([ arg0, arg1, arg2 ]);
 
@@ -4727,6 +4729,8 @@ function checkIncomingModuleAPI() {
 // Imports from the Wasm binary.
 var ___cxa_free_exception = makeInvalidEarlyAccess("___cxa_free_exception");
 
+var ___cxa_get_exception_ptr = makeInvalidEarlyAccess("___cxa_get_exception_ptr");
+
 var _main = makeInvalidEarlyAccess("_main");
 
 var _run_quantum_code = Module["_run_quantum_code"] = makeInvalidEarlyAccess("_run_quantum_code");
@@ -4767,8 +4771,6 @@ var ___get_exception_message = makeInvalidEarlyAccess("___get_exception_message"
 
 var ___cxa_can_catch = makeInvalidEarlyAccess("___cxa_can_catch");
 
-var ___cxa_get_exception_ptr = makeInvalidEarlyAccess("___cxa_get_exception_ptr");
-
 var ___set_stack_limits = Module["___set_stack_limits"] = makeInvalidEarlyAccess("___set_stack_limits");
 
 var memory = makeInvalidEarlyAccess("memory");
@@ -4781,6 +4783,7 @@ var wasmTable = makeInvalidEarlyAccess("wasmTable");
 
 function assignWasmExports(wasmExports) {
   assert(typeof wasmExports["__cxa_free_exception"] != "undefined", "missing Wasm export: __cxa_free_exception");
+  assert(typeof wasmExports["__cxa_get_exception_ptr"] != "undefined", "missing Wasm export: __cxa_get_exception_ptr");
   assert(typeof wasmExports["__main_argc_argv"] != "undefined", "missing Wasm export: __main_argc_argv");
   assert(typeof wasmExports["run_quantum_code"] != "undefined", "missing Wasm export: run_quantum_code");
   assert(typeof wasmExports["fflush"] != "undefined", "missing Wasm export: fflush");
@@ -4801,11 +4804,11 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports["__cxa_increment_exception_refcount"] != "undefined", "missing Wasm export: __cxa_increment_exception_refcount");
   assert(typeof wasmExports["__get_exception_message"] != "undefined", "missing Wasm export: __get_exception_message");
   assert(typeof wasmExports["__cxa_can_catch"] != "undefined", "missing Wasm export: __cxa_can_catch");
-  assert(typeof wasmExports["__cxa_get_exception_ptr"] != "undefined", "missing Wasm export: __cxa_get_exception_ptr");
   assert(typeof wasmExports["__set_stack_limits"] != "undefined", "missing Wasm export: __set_stack_limits");
   assert(typeof wasmExports["memory"] != "undefined", "missing Wasm export: memory");
   assert(typeof wasmExports["__indirect_function_table"] != "undefined", "missing Wasm export: __indirect_function_table");
   ___cxa_free_exception = createExportWrapper("__cxa_free_exception", 1);
+  ___cxa_get_exception_ptr = createExportWrapper("__cxa_get_exception_ptr", 1);
   _main = createExportWrapper("__main_argc_argv", 2);
   _run_quantum_code = Module["_run_quantum_code"] = createExportWrapper("run_quantum_code", 1);
   _fflush = createExportWrapper("fflush", 1);
@@ -4826,7 +4829,6 @@ function assignWasmExports(wasmExports) {
   ___cxa_increment_exception_refcount = createExportWrapper("__cxa_increment_exception_refcount", 1);
   ___get_exception_message = createExportWrapper("__get_exception_message", 3);
   ___cxa_can_catch = createExportWrapper("__cxa_can_catch", 3);
-  ___cxa_get_exception_ptr = createExportWrapper("__cxa_get_exception_ptr", 1);
   ___set_stack_limits = Module["___set_stack_limits"] = createExportWrapper("__set_stack_limits", 2);
   memory = wasmMemory = wasmExports["memory"];
   __indirect_function_table = wasmTable = wasmExports["__indirect_function_table"];
@@ -4838,6 +4840,7 @@ var wasmImports = {
   /** @export */ __cxa_end_catch: ___cxa_end_catch,
   /** @export */ __cxa_find_matching_catch_2: ___cxa_find_matching_catch_2,
   /** @export */ __cxa_find_matching_catch_3: ___cxa_find_matching_catch_3,
+  /** @export */ __cxa_find_matching_catch_4: ___cxa_find_matching_catch_4,
   /** @export */ __cxa_find_matching_catch_5: ___cxa_find_matching_catch_5,
   /** @export */ __cxa_rethrow: ___cxa_rethrow,
   /** @export */ __cxa_throw: ___cxa_throw,
@@ -5021,10 +5024,10 @@ function invoke_viiiiii(index, a1, a2, a3, a4, a5, a6) {
   }
 }
 
-function invoke_i(index) {
+function invoke_iiiiiiii(index, a1, a2, a3, a4, a5, a6, a7) {
   var sp = stackSave();
   try {
-    return getWasmTableEntry(index)();
+    return getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7);
   } catch (e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
@@ -5032,10 +5035,10 @@ function invoke_i(index) {
   }
 }
 
-function invoke_iiiiiiii(index, a1, a2, a3, a4, a5, a6, a7) {
+function invoke_i(index) {
   var sp = stackSave();
   try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7);
+    return getWasmTableEntry(index)();
   } catch (e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
@@ -5076,10 +5079,10 @@ function invoke_v(index) {
   }
 }
 
-function invoke_viiiii(index, a1, a2, a3, a4, a5) {
+function invoke_vi(index, a1) {
   var sp = stackSave();
   try {
-    getWasmTableEntry(index)(a1, a2, a3, a4, a5);
+    getWasmTableEntry(index)(a1);
   } catch (e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
@@ -5087,10 +5090,10 @@ function invoke_viiiii(index, a1, a2, a3, a4, a5) {
   }
 }
 
-function invoke_vi(index, a1) {
+function invoke_viiiii(index, a1, a2, a3, a4, a5) {
   var sp = stackSave();
   try {
-    getWasmTableEntry(index)(a1);
+    getWasmTableEntry(index)(a1, a2, a3, a4, a5);
   } catch (e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
