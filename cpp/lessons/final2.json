@@ -1,11 +1,11 @@
 {
   "id": "final2.json",
   "title": "OOP [Final] – Congrats!",
-  "description": "It probably was a lot of work, and downright un-fun at some points, but **Congrats!** You have learned C++, From basic cout, all the way to advanced OOP!. Take a moment to practice in the playround below, then answer the question, Congrats!\n# Question: Did you learn somthing?\n\nClick this link to go to home: learnhardcode.dpdns.org/\n\nPress this link to go to this projects github (maybe hit it with a star!) github.com/Youg-Otricked/learnhardcode. Soon, there will be another C++ course! It will be on advanced stdlib and preproccesers, such as #include, and #define.",
+  "description": "It probably was a lot of work, and downright un-fun at some points, but **Congrats!** You have learned C++, From basic cout, all the way to advanced OOP!. Take a moment to practice in the playround below, then answer the question, Congrats!\n# Question: Did you learn somthing?\n\nClick this link to go to home: learnhardcode.dpdns.org/\n\nPress this link to go to this projects github (maybe hit it with a star!) github.com/Youg-Otricked/learnhardcode. There is another C++ course! It is on advanced stdlib and preproccesers, such as #include, and #define, along with DSA. Just press next lesson!",
   "starterCode": "",
   "expectedOutput": "",
   "mustContain": "",
-  "nextLesson": null,
+  "nextLesson": "stdlib1.json",
   "previous": "final1.json",
   "showButtons": true,
   "correct": "b1",
