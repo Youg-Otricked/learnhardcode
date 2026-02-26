@@ -1,0 +1,17 @@
+{
+  "id": "lesson6.json",
+  "title": "Variables [f64]",
+  "description": "You may be thinking \"Hey... what if we need a decimal!\" For this, we need another datatype: f64, which stores a 14-digit accurate floating point number.\n---\n## Assignment:\nMake a immutible variable, PI, whose value is `3.1415926535897`",
+  "starterCode": "fn main() {\n   // Don't touch above this line.\n    // Make the variable here.\n    // Don't touch below this line.\n    println!(\"{}\", PI);\n}",
+  "expectedOutput": "3.1415926535897",
+  "mustContain": "",
+  "nextLesson": "lesson7.json",
+  "previous": "lesson5.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "hint": "Don't use let mut, just use let."
+}
