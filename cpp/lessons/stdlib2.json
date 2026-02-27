@@ -2,7 +2,7 @@
     "id": "stdlib2.json",
     "title": "Stdlib - Vector - 1 [Creation]",
     "description": "To make a vector in C++, you must first include the vector header, then you can use the type `std::vector`. The element type of a vector you may choose by after `std::vector` you put `<elemtype>`, for example `std::vector<int>`.\n---\n## Assignment:\nCBit OS Team needs a directory listing! Make a vector of vectors of strings called directory_listing and initilize it with the value {{\"main.cpp\", \"main.h\"}, {\"THIS.vim\"}, {\".vimrc\", \"quantum.cpp\", \"quantum.h\"}}.",
-    "starterCode": "int main() {\n    // Code here\n    std::cout << '{';\n    for (std::vector<std::string> directory : directory_listing) {\n        std::cout << '{';\n        for (std::string file : directory) {\n        std::cout << file << \", \";\n        }\n        std::cout << '}';\n}\n    std::cout << '}';\n}",
+    "starterCode": "#include <iostream>\nint main() {\n    // Code here\n    std::cout << '{';\n    for (std::vector<std::string> directory : directory_listing) {\n        std::cout << '{';\n        for (std::string file : directory) {\n        std::cout << file << \", \";\n        }\n        std::cout << '}';\n    }\n    std::cout << '}';\n}",
     "expectedOutput": "{{main.cpp, main.h, }{THIS.vim, }{.vimrc, quantum.cpp, quantum.h, }}",
     "mustContain": "",
     "nextLesson": "stdlib3.json",
