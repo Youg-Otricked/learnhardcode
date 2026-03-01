@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Remember: `virtual` goes on the base method. In the child, use `void log(const std::string& msg) override final` to both override and prevent further overrides."
+  "hint": "Remember: `virtual` goes on the base method. In the child, use `void log(const std::string& msg) override final` to both override and prevent further overrides.",
+  "difficulty": "hard",
+  "xp": "40"
 }

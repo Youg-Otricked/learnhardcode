@@ -16,5 +16,7 @@
     "runHarness": "",
     "submitHarness": "",
     "solution": "",
-    "hint": "Remember that to use a string you need to include the string library."
+    "hint": "Remember that to use a string you need to include the string library.",
+  "difficulty": "medium",
+  "xp": "30"
 }

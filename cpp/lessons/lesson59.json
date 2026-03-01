@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Remember: `virtual` goes on the base method. Use `void log(const std::string& msg) override` in `ConsoleLogger` so the compiler knows you are overriding."
+  "hint": "Remember: `virtual` goes on the base method. Use `void log(const std::string& msg) override` in `ConsoleLogger` so the compiler knows you are overriding.",
+  "difficulty": "medium",
+  "xp": "30"
 }

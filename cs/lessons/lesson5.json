@@ -11,5 +11,7 @@
   "b1t": "Functional programing",
   "b2t": "None",
   "b3t": "DSA",
-  "b4t": "OOP"
+  "b4t": "OOP",
+  "difficulty": "easy",
+  "xp": "15"
 }

@@ -12,5 +12,7 @@
   "b1t": "Memory saftey, return type",
   "b2t": "Speed, fn",
   "b3t": "Easy to learn dynamic typing return type",
-  "b4t": "Good Garbage compilation, fn"
+  "b4t": "Good Garbage compilation, fn",
+  "difficulty": "easiest",
+  "xp": "10"
 }

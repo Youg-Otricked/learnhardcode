@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Remember: put the class **inside** `namespace cbitmath { ... }`, then define the method with `int cbitmath::Adder::add(int a, int b) { ... }` outside the namespace block or with a `using` directive."
+  "hint": "Remember: put the class **inside** `namespace cbitmath { ... }`, then define the method with `int cbitmath::Adder::add(int a, int b) { ... }` outside the namespace block or with a `using` directive.",
+  "difficulty": "medium",
+  "xp": "30"
 }

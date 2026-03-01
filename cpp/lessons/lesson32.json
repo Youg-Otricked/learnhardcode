@@ -16,5 +16,7 @@
   "b4t": "",
   "runHarness": null,
   "submitHarness": null,
-  "isSolution": false
+  "isSolution": false,
+  "difficulty": "medium",
+  "xp": "30"
 } 

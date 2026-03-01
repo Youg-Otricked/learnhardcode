@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solutionFile": "",
-  "hint": "To evaluate just a boolean in a codition, just write the variables name, so to evaluate a boolean called flag in a `if` statement, you just type `if (flag)` and that will run if true"
+  "hint": "To evaluate just a boolean in a codition, just write the variables name, so to evaluate a boolean called flag in a `if` statement, you just type `if (flag)` and that will run if true",
+  "difficulty": "basic",
+  "xp": "20"
 }

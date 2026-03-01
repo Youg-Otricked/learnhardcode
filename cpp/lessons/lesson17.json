@@ -13,5 +13,7 @@
   "b3t": "++ 5 / 4",
   "b4t": "5 % 4",
   "runHarness": null,
-  "submitHarness": null
+  "submitHarness": null,
+  "difficulty": "basic",
+  "xp": "20"
 }

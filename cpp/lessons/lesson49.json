@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "You can define multiple feilds of the same type in a struct via type name, name2"
+  "hint": "You can define multiple feilds of the same type in a struct via type name, name2",
+  "difficulty": "medium",
+  "xp": "30"
 }

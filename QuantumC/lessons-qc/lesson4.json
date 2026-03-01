@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Remember: You close multi line comments with `*/`"
+  "hint": "Remember: You close multi line comments with `*/`",
+  "difficulty": "easiest",
+  "xp": "10"
 }

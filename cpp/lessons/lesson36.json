@@ -16,5 +16,7 @@
   "b4t": "",
   "runHarness": "harnesses/harness_ov_run.cpp",
   "submitHarness": "harnesses/harness_ov_submit.cpp",
-  "solution": ""
+  "solution": "",
+  "difficulty": "basic",
+  "xp": "20"
 } 

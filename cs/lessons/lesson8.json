@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "solutions/lesson8.cs",
-  "hint": "Remember: string interpolation uses a `$` before the quotes, and `{variableName}` inside the string."
+  "hint": "Remember: string interpolation uses a `$` before the quotes, and `{variableName}` inside the string.",
+  "difficulty": "easy",
+  "xp": "15"
 }

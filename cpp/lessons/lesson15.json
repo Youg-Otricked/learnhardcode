@@ -13,5 +13,7 @@
   "b3t": "",
   "b4t": "",
   "runHarness": null,
-  "submitHarness": null
+  "submitHarness": null,
+  "difficulty": "basic",
+  "xp": "20"
 }

@@ -11,6 +11,7 @@ let correct = null;
 let runHarnessFile = null;
 let submitHarnessFile = null;
 let useSolution = false;
+let lessonXP = null;
 let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, streakEl, hintBody;
 
 function loadStreak() {
@@ -27,7 +28,20 @@ function updateStreakUI() {
     if (!streakEl) return;
     streakEl.textContent = `Lessons in a row: ${lessonsInRow}`;
 }
-
+function updateLevelUI() {
+  if (localStorage.getItem('user_xp') === null) {
+    localStorage.setItem('user_xp', 0);
+  }
+  if (localStorage.getItem('level_xp_cap') === null) {
+    localStorage.setItem('level_xp_cap', 100);
+  }
+  if (localStorage.getItem('user_level') === null) {
+    localStorage.setItem('user_level', 0);
+  }
+  document.getElementById("xp").textContent = `${localStorage.getItem('user_xp')} / ${localStorage.getItem('level_xp_cap')}. Level ${localStorage.getItem('user_level')}.`;
+  document.getElementById("levelProg").value = localStorage.getItem('user_xp');
+  document.getElementById("levelProg").max = localStorage.getItem('level_xp_cap');
+}
 function runQC(code) {
     if (!QuantumModule) {
         outEl.textContent += '\nWASM module still loading...\n';
@@ -57,7 +71,25 @@ function runQC(code) {
         outEl.className = 'error';
     }
 }
-
+function getCompletedLessons() {
+  const stored = localStorage.getItem('qc_completed_lessons');
+  return stored ? JSON.parse(stored) : {};
+}
+function isLessonCompleted(lessonId) {
+  const completed = getCompletedLessons();
+  return completed[lessonId]?.completed || false;
+}
+function markLessonCompleted(lessonId, xpEarned) {
+  const completed = getCompletedLessons();
+  completed[lessonId] = {
+    lessonId,
+    completed: true,
+    xpEarned,
+    attempts: (completed[lessonId]?.attempts || 0) + 1,
+    completedAt: Date.now()
+  };
+  localStorage.setItem('qc_completed_lessons', JSON.stringify(completed));
+}
 function submitCheck() {
     if (!currentLesson || (!currentLesson.expectedOutput && !mustContain)) {
         outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
@@ -79,29 +111,55 @@ function submitCheck() {
     } else {
         passed = (actual === expected);
     }
-
+    const alreadyCompleted = isLessonCompleted(currentLesson.id);
     if (passed) {
-        outEl.textContent += '\n[PASS] Output matches expected.\n';
+      outEl.textContent += '\n[PASS] Output matches expected.\n';
+      if (!alreadyCompleted) {
         lessonsInRow += 1;
-        saveStreak();
-        updateStreakUI();
+        let currentXP = parseInt(localStorage.getItem('user_xp')) || 0;
+        let levelCap = parseInt(localStorage.getItem('level_xp_cap')) || 100;
+        let currentLevel = parseInt(localStorage.getItem('user_level')) || 0;
+        
+        currentXP += lessonXP;
+        localStorage.setItem('user_xp', currentXP);
+        
+        if (currentXP >= levelCap) {
+          currentXP -= levelCap;
+          levelCap += 50;
+          currentLevel += 1;
+          localStorage.setItem('user_xp', currentXP);
+          localStorage.setItem('level_xp_cap', levelCap);
+          localStorage.setItem('user_level', currentLevel);
+        }
+        markLessonCompleted(currentLesson.id, lessonXP);
+        if (useSolution) {
+          lessonsInRow = 0;
+          outEl.textContent += '\n(Note: Streak reset due to loading solution.)\n';
+        }
+      } else {
+        outEl.textContent += '\n(Already completed - no XP gained.)\n';
+      }
+      saveStreak();
+      updateStreakUI();
+      updateLevelUI();
+      const params = new URLSearchParams(location.search);
+      const lessonFileFromUrl = params.get('lesson') || 'lesson1.json';
+      localStorage.setItem('rust_current_lesson', lessonFileFromUrl);
 
-        const params = new URLSearchParams(location.search);
-        const lessonFileFromUrl = params.get('lesson') || 'lesson1.json';
-        localStorage.setItem('qc_current_lesson', lessonFileFromUrl);
-
-        if (nextLessonId) nextBtn.style.display = 'inline-block';
+      if (nextLessonId) nextBtn.style.display = 'inline-block';
     } else {
+      if (!alreadyCompleted) {
         lessonsInRow = 0;
         saveStreak();
         updateStreakUI();
-        outEl.textContent += '\n[FAIL] Output does not match. (streak reset)\n';
-        if (mustContain) {
-            outEl.textContent += '\nExpected to contain:\n' + mustContain;
-        } else {
-            outEl.textContent += '\nExpected:\n' + expected;
-        }
-        outEl.textContent += '\n\nGot:\n' + actual + '\n';
+      }
+      outEl.textContent += '\n[FAIL] Output does not match. (streak reset)\n';
+      if (mustContain) {
+        outEl.textContent += '\nExpected to contain:\n' + mustContain;
+      } else {
+        outEl.textContent += '\nExpected:\n' + expected;
+      }
+      outEl.textContent += '\n\nGot:\n' + actual + '\n';
     }
 }
 
@@ -161,7 +219,8 @@ async function loadLesson(lessonFile) {
     correct         = lesson.correct       || null;
     runHarnessFile    = lesson.runHarness    || null;
     submitHarnessFile = lesson.submitHarness || null;
-
+    document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
+    lessonXP          = lesson.xp              || 0;
     if (b1Btn) b1Btn.textContent = lesson.b1t || '';
     if (b2Btn) b2Btn.textContent = lesson.b2t || '';
     if (b3Btn) b3Btn.textContent = lesson.b3t || '';

@@ -13,5 +13,7 @@
   "b3t": "const int NUMBER_OF = 1;",
   "b4t": "int NUMBER_OF_FRIENDS = 4;",
   "runHarness": null,
-  "submitHarness": null
+  "submitHarness": null,
+  "difficulty": "easiest",
+  "xp": "10"
 }

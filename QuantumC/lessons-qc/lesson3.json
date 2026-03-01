@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "remember that to print a new series in general, not just escape sequences, you type ` << ` followed by the escape sequence (wraped in single quotes) or your text (wrapped in double quotes)"
+  "hint": "remember that to print a new series in general, not just escape sequences, you type ` << ` followed by the escape sequence (wraped in single quotes) or your text (wrapped in double quotes)",
+  "difficulty": "easiest",
+  "xp": "10"
 }

@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "solutions/lesson9.cs",
-  "hint": "Remember: use `double` for both `BaseDamage` and `DamageMultiplier`, multiply them, then use `+= 10.0` before printing with string interpolation."
+  "hint": "Remember: use `double` for both `BaseDamage` and `DamageMultiplier`, multiply them, then use `+= 10.0` before printing with string interpolation.",
+  "difficulty": "easy",
+  "xp": "15"
 }

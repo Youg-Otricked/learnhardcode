@@ -1,7 +1,7 @@
-# This is a website for learning C++, rust, and C#. This will eventually also be for the language i am working on, Quantum C.
+# This is a website for learning C++, rust, and Quantum C.
 
 #### Please leave any bugs or errors in the Issues
-_**Note that the C#, and Rust courses are not finished. C# has 4(5?) lesson and rust has 5. I am activly working on making more lessons. I hope to go as in depth as i can. There will most likely be around 60-120 lessons per course.**_
+_**Note that the C#, and Rust courses are not finished. I am activly working on making more lessons. I hope to go as in depth as i can. There will most likely be around 60-120 lessons per course.**_
 ## Motivation
 I could not find a SINGLE in browser course for learning C++, and C# that was free, with no rediculose 'oh you can do 1 lesson every 7 days' limits, so i made this.
 ## Quick Start

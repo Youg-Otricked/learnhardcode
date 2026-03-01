@@ -16,5 +16,7 @@
   "runHarness": "harnesses/harness_run_fl.cpp",
   "submitHarness": "harnesses/harness_submit_fl.cpp",
   "solution": "solutions/solution44.cpp",
-  "hint": "I know this is very hard. You need a base case for when a is 0 or 1.\n- For other values, factorial(a) should return a * factorial(a - 1)."
+  "hint": "I know this is very hard. You need a base case for when a is 0 or 1.\n- For other values, factorial(a) should return a * factorial(a - 1).",
+  "difficulty": "medium",
+  "xp": "30"
 }

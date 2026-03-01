@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solutionFile": "",
-  "hint": "Make sure your variables are in the right place so the `Console.WriteLine` line can use them."
+  "hint": "Make sure your variables are in the right place so the `Console.WriteLine` line can use them.",
+  "difficulty": "basic",
+  "xp": "20"
 }

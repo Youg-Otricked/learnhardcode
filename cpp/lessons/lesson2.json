@@ -11,5 +11,7 @@
   "b1t": "The first line of code",
   "b2t": "At the first line of code in the main function.",
   "b3t": "At the first compile time",
-  "b4t": "Wherever you want it to start"
+  "b4t": "Wherever you want it to start",
+  "difficulty": "easiest",
+  "xp": "10"
 }

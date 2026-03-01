@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "You can also make default values by declaring a field via type name = value;. Remember that the fields for this need to be inside the public: section."
+  "hint": "You can also make default values by declaring a field via type name = value;. Remember that the fields for this need to be inside the public: section.",
+  "difficulty": "medium",
+  "xp": "30"
 }
