@@ -13,7 +13,9 @@
   "b2t": "",
   "b3t": "",
   "b4t": "",
-  "hint": "Don't use let mut, just use let."
+  "hint": "Don't use let mut, just use let.",
+  "difficulty": "basic",
+  "xp": "20"
 }
 
 

@@ -15,5 +15,7 @@
   "b4t": "",
   "runHarness": "harnesses/runTemplates3.cpp",
   "submitHarness": "harnesses/submitTemplates3.cpp",
-  "solution": "solutions/solutionTemplates3.cpp"
+  "solution": "solutions/solutionTemplates3.cpp",
+  "difficulty": "hard",
+  "xp": "40"
 }

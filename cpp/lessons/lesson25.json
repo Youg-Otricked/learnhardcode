@@ -15,5 +15,7 @@
   "b3t": "",
   "b4t": "",
   "runHarness": "harnesses/harness_abs_run.cpp",
-  "submitHarness": "harnesses/harness_abs_submit.cpp"
+  "submitHarness": "harnesses/harness_abs_submit.cpp",
+  "difficulty": "medium",
+  "xp": "30"
 }

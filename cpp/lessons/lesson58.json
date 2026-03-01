@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Use `class Keyboard : public Device { ... };`. Both classes should have an `identify` method, but they print different messages."
+  "hint": "Use `class Keyboard : public Device { ... };`. Both classes should have an `identify` method, but they print different messages.",
+  "difficulty": "hard",
+  "xp": "40"
 }

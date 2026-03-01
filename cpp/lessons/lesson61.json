@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Remember: `virtual` goes on the base class method. In `Circle` and `Square`, use `void draw() override` so calls through `Shape*` pick the right function."
+  "hint": "Remember: `virtual` goes on the base class method. In `Circle` and `Square`, use `void draw() override` so calls through `Shape*` pick the right function.",
+  "difficulty": "crazy",
+  "xp": "50"
 }

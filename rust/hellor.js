@@ -57,6 +57,7 @@ let hintBody = document.getElementById("hint-body");
 let lessonsInRow = 0;
 let streakEl = null;
 let lessonhint;
+let lessonXP = null;
 // solution
 let solutionFile = null;
 
@@ -75,7 +76,20 @@ function updateStreakUI() {
   if (!streakEl) return;
   streakEl.textContent = `Lessons in a row: ${lessonsInRow}`;
 }
-
+function updateLevelUI() {
+  if (localStorage.getItem('user_xp') === null) {
+    localStorage.setItem('user_xp', 0);
+  }
+  if (localStorage.getItem('level_xp_cap') === null) {
+    localStorage.setItem('level_xp_cap', 100);
+  }
+  if (localStorage.getItem('user_level') === null) {
+    localStorage.setItem('user_level', 0);
+  }
+  document.getElementById("xp").textContent = `${localStorage.getItem('user_xp')} / ${localStorage.getItem('level_xp_cap')}. Level ${localStorage.getItem('user_level')}.`;
+  document.getElementById("levelProg").value = localStorage.getItem('user_xp');
+  document.getElementById("levelProg").max = localStorage.getItem('level_xp_cap');
+}
 async function loadLesson(lessonFile) {
   const path = 'lessons/' + lessonFile;
   const res = await fetch(path);
@@ -99,6 +113,8 @@ async function loadLesson(lessonFile) {
   correct           = lesson.correct         || null;
   prevLessonId      = lesson.previous        || null;
   lessonhint        = lesson.hint || "";
+  document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
+  lessonXP          = lesson.xp              || 0;
   document.getElementById("b1").textContent = lesson.b1t;
   document.getElementById("b2").textContent = lesson.b2t;
   document.getElementById("b3").textContent = lesson.b3t;
@@ -119,7 +135,25 @@ async function loadLesson(lessonFile) {
   }
   hintBody.innerHTML = marked.parse(lessonhint);
 }
-
+function getCompletedLessons() {
+  const stored = localStorage.getItem('rust_completed_lessons');
+  return stored ? JSON.parse(stored) : {};
+}
+function isLessonCompleted(lessonId) {
+  const completed = getCompletedLessons();
+  return completed[lessonId]?.completed || false;
+}
+function markLessonCompleted(lessonId, xpEarned) {
+  const completed = getCompletedLessons();
+  completed[lessonId] = {
+    lessonId,
+    completed: true,
+    xpEarned,
+    attempts: (completed[lessonId]?.attempts || 0) + 1,
+    completedAt: Date.now()
+  };
+  localStorage.setItem('rust_completed_lessons', JSON.stringify(completed));
+}
 async function runWithSuite(suiteFile, label) {
   const studentSource = editor.getValue();
   outEl.textContent = (label || 'Running') + '...\n';
@@ -129,7 +163,6 @@ async function runWithSuite(suiteFile, label) {
 
   if (suiteFile) {
     const suite = await fetch(suiteFile).then(r => r.text());
-    // adjust order if you design Rust harnesses differently
     fullSource = suite + '\n\n' + studentSource;
   }
   if (studentSource.includes('fn main')) {
@@ -139,8 +172,6 @@ async function runWithSuite(suiteFile, label) {
   try {
     const result = await rubriRunner.run(fullSource, true);
     console.log('Rubri result:', result);
-
-// result is a string with all output (warnings + prints)
     lastRunOutput = String(result);
     outEl.textContent += lastRunOutput;
   } catch (err) {
@@ -192,26 +223,48 @@ function setupLogic() {
     } else {
       passed = (actual === expected);
     }
-
+    const alreadyCompleted = isLessonCompleted(currentLesson.id);
     if (passed) {
       outEl.textContent += '\n[PASS] Output matches expected.\n';
-      lessonsInRow += 1;
-      if (useSolution) {
-        lessonsInRow = 0;
-        outEl.textContent += '\n(Note: Streak reset due to loading solution.)\n';
+      if (!alreadyCompleted) {
+        lessonsInRow += 1;
+        let currentXP = parseInt(localStorage.getItem('user_xp')) || 0;
+        let levelCap = parseInt(localStorage.getItem('level_xp_cap')) || 100;
+        let currentLevel = parseInt(localStorage.getItem('user_level')) || 0;
+        
+        currentXP += lessonXP;
+        localStorage.setItem('user_xp', currentXP);
+        
+        if (currentXP >= levelCap) {
+          currentXP -= levelCap;
+          levelCap += 50;
+          currentLevel += 1;
+          localStorage.setItem('user_xp', currentXP);
+          localStorage.setItem('level_xp_cap', levelCap);
+          localStorage.setItem('user_level', currentLevel);
+        }
+        markLessonCompleted(currentLesson.id, lessonXP);
+        if (useSolution) {
+          lessonsInRow = 0;
+          outEl.textContent += '\n(Note: Streak reset due to loading solution.)\n';
+        }
+      } else {
+        outEl.textContent += '\n(Already completed - no XP gained.)\n';
       }
       saveStreak();
       updateStreakUI();
-
+      updateLevelUI();
       const params = new URLSearchParams(location.search);
       const lessonFileFromUrl = params.get('lesson') || 'lesson1.json';
       localStorage.setItem('rust_current_lesson', lessonFileFromUrl);
 
       if (nextLessonId) nextBtn.style.display = 'inline-block';
     } else {
-      lessonsInRow = 0;
-      saveStreak();
-      updateStreakUI();
+      if (!alreadyCompleted) {
+        lessonsInRow = 0;
+        saveStreak();
+        updateStreakUI();
+      }
       outEl.textContent += '\n[FAIL] Output does not match. (streak reset)\n';
       if (mustContain) {
         outEl.textContent += '\nExpected to contain:\n' + mustContain;

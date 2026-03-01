@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "You can make a switch on a enum with switch(enumvar) and each case is an enumstate. You can return nothign on a function with ret type null"
+  "hint": "You can make a switch on a enum with switch(enumvar) and each case is an enumstate. You can return nothign on a function with ret type null",
+  "difficulty": "basic",
+  "xp": "20"
 }

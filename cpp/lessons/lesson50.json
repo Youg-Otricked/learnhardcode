@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "You can make an item of a struct by doing either structname varname; and then varname.structfeilname = value; for each field, or structname varname = {varfields in order}. You can return any type fro ma struct by making the return type that name.\nAn advanced thing(try making the varibale then returning it first) is C++ is smart, so if you define the return type, you can just write return {structfieldsdef}; and it will work. As you probably have noticed, you cannot return multiple values from a function in c++, however, you can return an enum and use that as multiple values."
+  "hint": "You can make an item of a struct by doing either structname varname; and then varname.structfeilname = value; for each field, or structname varname = {varfields in order}. You can return any type fro ma struct by making the return type that name.\nAn advanced thing(try making the varibale then returning it first) is C++ is smart, so if you define the return type, you can just write return {structfieldsdef}; and it will work. As you probably have noticed, you cannot return multiple values from a function in c++, however, you can return an enum and use that as multiple values.",
+  "difficulty": "medium",
+  "xp": "30"
 }

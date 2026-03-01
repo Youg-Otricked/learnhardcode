@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Make `hp` private. Use `takeDamage` to change it, and `get` to read it. The constructor should set `hp` from its parameter."
+  "hint": "Make `hp` private. Use `takeDamage` to change it, and `get` to read it. The constructor should set `hp` from its parameter.",
+  "difficulty": "medium",
+  "xp": "30"
 }

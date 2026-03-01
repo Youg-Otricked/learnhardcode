@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solutionFile": "",
-  "hint": "Remember, chars must be wraped in _SINGLE_ quotes. **''**"
+  "hint": "Remember, chars must be wraped in _SINGLE_ quotes. **''**",
+  "difficulty": "easy",
+  "xp": "15"
 }

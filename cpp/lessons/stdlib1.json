@@ -16,5 +16,7 @@
     "runHarness": "",
     "submitHarness": "",
     "solution": "",
-    "hint": "Nothing to say. You're Done. Congrats! "
+    "hint": "",
+    "difficulty": "basic",
+    "xp": "20"
 }

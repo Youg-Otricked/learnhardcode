@@ -11,5 +11,7 @@
   "b1t": "With well writen documation and github issues",
   "b2t": "std::cout",
   "b3t": "std::cin",
-  "b4t": "You don't."
+  "b4t": "You don't.",
+  "difficulty": "beginner",
+  "xp": "15"
 }

@@ -13,5 +13,7 @@
   "b2t": "",
   "b3t": "",
   "b4t": "",
-  "hint": "Remember, the variables datatype should be `i32`"
+  "hint": "Remember, the variables datatype should be `i32`",
+  "difficulty": "basic",
+  "xp": "20"
 }

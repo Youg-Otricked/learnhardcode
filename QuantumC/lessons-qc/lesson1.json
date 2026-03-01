@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Just change the string between `std::qout << ` and ` << '\\n'` so it matches exactly."
+  "hint": "Just change the string between `std::qout << ` and ` << '\\n'` so it matches exactly.",
+  "difficulty": "easiest",
+  "xp": "10"
 }

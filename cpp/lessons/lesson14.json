@@ -13,5 +13,7 @@
   "b3t": "tab a newline b tab tab c tab tab c newline n",
   "b4t": "tab newline b tab tab c tab tab c newline n",
   "runHarness": null,
-  "submitHarness": null
+  "submitHarness": null,
+  "difficulty": "easiest",
+  "xp": "10"
 }

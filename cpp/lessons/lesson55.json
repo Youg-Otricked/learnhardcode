@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Remember: methods go inside the class, usually under `public:`. To change a field, just assign to it inside the method, like `field = value + 1;`. When using a value that has the same name as you method, like `a = a + 1` you use this->, like this `this->a = a + 1`"
+  "hint": "Remember: methods go inside the class, usually under `public:`. To change a field, just assign to it inside the method, like `field = value + 1;`. When using a value that has the same name as you method, like `a = a + 1` you use this->, like this `this->a = a + 1`",
+  "difficulty": "basic",
+  "xp": "20"
 }

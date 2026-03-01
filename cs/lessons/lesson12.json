@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solutionFile": "",
-  "hint": ""
+  "hint": "",
+  "difficulty": "basic",
+  "xp": "20"
 }

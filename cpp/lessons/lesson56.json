@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Remember: a constructor has the **same name** as the class and no return type. Inside the constructor, just assign to `value` using the parameter you’re given."
+  "hint": "Remember: a constructor has the **same name** as the class and no return type. Inside the constructor, just assign to `value` using the parameter you’re given.",
+  "difficulty": "basic",
+  "xp": "20"
 }

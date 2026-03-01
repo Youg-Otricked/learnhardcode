@@ -16,5 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Remember: put the classes inside `namespace cbit { ... }`. Use `protected` for `name` so the child can see it. The `ConsoleLogger` constructor should call the base `Logger` constructor using a member initializer list."
+  "hint": "Remember: put the classes inside `namespace cbit { ... }`. Use `protected` for `name` so the child can see it. The `ConsoleLogger` constructor should call the base `Logger` constructor using a member initializer list.",
+  "difficulty": "INSANE",
+  "xp": "60"
 }

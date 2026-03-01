@@ -13,5 +13,7 @@
   "b3t": "double division() {}",
   "b4t": "double sqrt();",
   "runHarness": null,
-  "submitHarness": null
+  "submitHarness": null,
+  "difficulty": "medium",
+  "xp": "30"
 }
