@@ -46,7 +46,7 @@ html, body {
   flex: 1 0 60%;   /* about 40% of width */
   max-width: 60%;
 }
-.text-box .ans {
+.ans {
   margin: 0 auto; 
   width: fit-content;
 }
@@ -125,4 +125,23 @@ button:hover {
 /* optional: when open add a class and show */
 .hint.open .hint-body {
   display: block;
+}
+.editor {
+  width: 100%;
+  height: 300px;
+  background-color: #1e1e1e; /* Match VS Code Dark */
+  color: #d4d4d4;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  resize: vertical; /* Only allow vertical resizing */
+  outline: none; /* Removes the blue focus outline */
+  line-height: 1.5;
+  tab-size: 4; /* Ensures tabs aren't massive */
+}
+
+.editor:focus {
+  border-color: --accent; /* Subtle blue border on focus */
 }
