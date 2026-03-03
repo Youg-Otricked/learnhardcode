@@ -13,7 +13,10 @@ let submitHarnessFile = null;
 let useSolution = false;
 let lessonXP = null;
 let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, streakEl, hintBody;
-
+let editorEl = null;
+let inputEl = null;
+let mode = "";
+let checkResultBtn = null;
 function loadStreak() {
     const raw = localStorage.getItem('qc_streak');
     lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
@@ -86,9 +89,24 @@ function markLessonCompleted(lessonId, xpEarned) {
     completed: true,
     xpEarned,
     attempts: (completed[lessonId]?.attempts || 0) + 1,
-    completedAt: Date.now()
+    completedAt: Date.now(),
+    mode: mode
   };
   localStorage.setItem('qc_completed_lessons', JSON.stringify(completed));
+}
+window.copytext = function(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.textContent;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = `lhc ${runHarnessFile} ${elementId == 'submit-command' ? '-s' : ''}`
+        
+        element.textContent = 'Copied!';
+        
+        setTimeout(() => {
+            element.textContent = originalText;
+        }, 750);
+    });
 }
 function submitCheck() {
     if (!currentLesson || (!currentLesson.expectedOutput && !mustContain)) {
@@ -101,68 +119,105 @@ function submitCheck() {
     .map(line => line.replace(/\x1b\[[0-9;]*m/g, '').trim())
     .filter(line => line);
 
-    const studentOut = cleanedLines.join('\n') + (cleanedLines.length ? '\n' : '');
-    const expected   = (currentLesson.expectedOutput || '').trim();
-    const actual     = studentOut.trim();
-
     let passed = false;
-    if (mustContain) {
+    if (mode === "text") {
+      let actual = inputEl.value;
+      if (mustContain) {
         passed = actual.includes(mustContain);
+      } else {
+        passed = (actual === currentLesson.expectedOutput.trim());
+      }
+    } else if (mode === 'cli') { 
+      passed = localStorage.getItem('cli_success') === 'true';
     } else {
+      const cleanedLines = lastRunOutput
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line => line);
+
+      const studentOut = cleanedLines.join('\n') + (cleanedLines.length ? '\n' : '');
+
+      const expected = currentLesson.expectedOutput.trim();
+      const actual   = studentOut.trim();
+      if (mustContain) {
+        passed = actual.includes(mustContain);
+      } else {
         passed = (actual === expected);
+      }
     }
     const alreadyCompleted = isLessonCompleted(currentLesson.id);
     if (passed) {
-      outEl.textContent += '\n[PASS] Output matches expected.\n';
-      if (!alreadyCompleted) {
-        lessonsInRow += 1;
-        let currentXP = parseInt(localStorage.getItem('user_xp')) || 0;
-        let levelCap = parseInt(localStorage.getItem('level_xp_cap')) || 100;
-        let currentLevel = parseInt(localStorage.getItem('user_level')) || 0;
-        
-        currentXP += lessonXP;
-        localStorage.setItem('user_xp', currentXP);
-        
-        if (currentXP >= levelCap) {
-          currentXP -= levelCap;
-          levelCap += 50;
-          currentLevel += 1;
-          localStorage.setItem('user_xp', currentXP);
-          localStorage.setItem('level_xp_cap', levelCap);
-          localStorage.setItem('user_level', currentLevel);
+        outEl.textContent += '\n[PASS] Output matches expected.\n';
+        if (mode === "text") {
+            alert("Pass");
         }
-        markLessonCompleted(currentLesson.id, lessonXP);
-        if (useSolution) {
-          lessonsInRow = 0;
-          outEl.textContent += '\n(Note: Streak reset due to loading solution.)\n';
+        if (!alreadyCompleted) {
+            lessonsInRow += 1;
+            let currentXP = parseInt(localStorage.getItem('user_xp')) || 0;
+            let levelCap = parseInt(localStorage.getItem('level_xp_cap')) || 100;
+            let currentLevel = parseInt(localStorage.getItem('user_level')) || 0;
+            
+            currentXP += lessonXP;
+            localStorage.setItem('user_xp', currentXP);
+            
+            if (currentXP >= levelCap) {
+                currentXP -= levelCap;
+                levelCap += 50;
+                currentLevel += 1;
+                localStorage.setItem('user_xp', currentXP);
+                localStorage.setItem('level_xp_cap', levelCap);
+                localStorage.setItem('user_level', currentLevel);
+            }
+            markLessonCompleted(currentLesson.id, lessonXP);
+            if (useSolution) {
+                lessonsInRow = 0;
+                outEl.textContent += '\n(Note: Streak reset due to loading solution.)\n';
+            }
+        } else {
+            outEl.textContent += '\n(Already completed - no XP gained.)\n';
         }
-      } else {
-        outEl.textContent += '\n(Already completed - no XP gained.)\n';
-      }
-      saveStreak();
-      updateStreakUI();
-      updateLevelUI();
-      const params = new URLSearchParams(location.search);
-      const lessonFileFromUrl = params.get('lesson') || 'lesson1.json';
-      localStorage.setItem('rust_current_lesson', lessonFileFromUrl);
-
-      if (nextLessonId) nextBtn.style.display = 'inline-block';
-    } else {
-      if (!alreadyCompleted) {
-        lessonsInRow = 0;
         saveStreak();
         updateStreakUI();
-      }
-      outEl.textContent += '\n[FAIL] Output does not match. (streak reset)\n';
-      if (mustContain) {
-        outEl.textContent += '\nExpected to contain:\n' + mustContain;
-      } else {
-        outEl.textContent += '\nExpected:\n' + expected;
-      }
-      outEl.textContent += '\n\nGot:\n' + actual + '\n';
+        updateLevelUI();
+        const params = new URLSearchParams(location.search);
+        const lessonFileFromUrl = params.get('lesson') || 'lesson1.json';
+        localStorage.setItem('rust_current_lesson', lessonFileFromUrl);
+
+        if (nextLessonId) nextBtn.style.display = 'inline-block';
+    } else {
+        if (!alreadyCompleted) {
+            lessonsInRow = 0;
+            saveStreak();
+            updateStreakUI();
+        }
+        if (mode === "text") {
+            alert('Fail');
+        } else {
+            outEl.textContent += '\n[FAIL] Output does not match. (streak reset)\n';
+            if (mustContain) {
+                outEl.textContent += '\nExpected to contain:\n' + mustContain;
+            } else {
+                outEl.textContent += '\nExpected:\n' + expected;
+            }
+            outEl.textContent += '\n\nGot:\n' + actual + '\n';
+        }
     }
 }
-
+window.addEventListener('storage', (e) => {
+    if (e.key === 'cli_success' && mode === 'cli' && e.newValue) {
+        console.log('CLI event:', e.newValue);
+        
+        const parts = e.newValue.split('_');
+        const lang = parts[0];
+        const lessonId = parts[1];
+        const isSuccess = parts[2];
+        if (currentLesson && lessonId === currentLesson.id) {
+            localStorage.setItem('cli_success', isSuccess);
+            submitCheck();
+            localStorage.removeItem('cli_success');
+        }
+    }
+});
 async function runWithSuite(suiteFile, label) {
     if (!editor) return;
     const studentSource = editor.getValue();
@@ -180,26 +235,50 @@ async function runWithSuite(suiteFile, label) {
 }
 
 function btn(bn) {
-    if (bn === correct) {
-        lessonsInRow += 1;
-        saveStreak();
-        updateStreakUI();
-        outEl.textContent += '\n[PASS].\n';
-        if (useSolution) {
-            lessonsInRow = 0;
-            saveStreak();
-            updateStreakUI();
-        }
-        useSolution = false;
-        if (nextLessonId) nextBtn.style.display = 'inline-block';
-    } else {
+  if (bn === correct) {
+    const alreadyCompleted = isLessonCompleted(currentLesson.id);
+    outEl.textContent += '\n[PASS] Output matches expected.\n';
+    if (!alreadyCompleted) {
+      lessonsInRow += 1;
+      
+      let currentXP = parseInt(localStorage.getItem('user_xp')) || 0;
+      let levelCap = parseInt(localStorage.getItem('level_xp_cap')) || 100;
+      let currentLevel = parseInt(localStorage.getItem('user_level')) || 0;
+      
+      currentXP += lessonXP;
+      localStorage.setItem('user_xp', currentXP);
+      
+      while (currentXP >= levelCap) {
+        currentXP -= levelCap;
+        levelCap += 50;
+        currentLevel += 1;
+        localStorage.setItem('user_xp', currentXP);
+        localStorage.setItem('level_xp_cap', levelCap);
+        localStorage.setItem('user_level', currentLevel);
+      }
+      markLessonCompleted(currentLesson.id, lessonXP);
+      
+      if (useSolution) {
         lessonsInRow = 0;
-        saveStreak();
-        updateStreakUI();
-        outEl.textContent += '\n[FAIL].\n';
+        outEl.textContent += '\n(Note: Streak reset due to loading solution.)\n';
+      }
+    } else {
+      outEl.textContent += '\n(Already completed - no XP gained.)\n';
     }
+    saveStreak();
+    updateStreakUI();
+    updateLevelUI();
+    alert("Correct");
+    useSolution = false;
+    outEl.textContent += '\n[PASS].\n';
+    if (nextLessonId) nextBtn.style.display = 'inline-block';
+  } else {
+    lessonsInRow = 0;
+    saveStreak();
+    updateStreakUI();
+    alert("Incorrect");
+  }
 }
-
 async function loadLesson(lessonFile) {
     const path = 'lessons-qc/' + lessonFile;
     const res = await fetch(path);
@@ -219,8 +298,45 @@ async function loadLesson(lessonFile) {
     correct         = lesson.correct       || null;
     runHarnessFile    = lesson.runHarness    || null;
     submitHarnessFile = lesson.submitHarness || null;
+    mode              = lesson.mode            || "editor";
     document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
-    lessonXP          = lesson.xp              || 0;
+    lessonXP          = parseInt(lesson.xp, 10)|| 0;
+    editorEl = document.getElementsByClassName("code-box")[0];
+    inputEl = document.getElementsByClassName("editor")[0];
+    if (mode === "text") {
+        editorEl.innerHTML = '<textarea class="editor"></textarea><button id="check-stdout">Submit</button><button id="next-lesson" style="display:none">Next Lesson</button><button id="prev-lesson">Previous Lesson</button>'
+        checkBtn = document.getElementById('check-stdout');
+        nextBtn  = document.getElementById('next-lesson');
+        prevBtn  = document.getElementById('prev-lesson');
+        inputEl = document.getElementsByClassName("editor")[0];
+    } else if (mode === 'cli') {
+        editorEl.innerHTML = `
+    <div style="border: 2px solid #333; padding: 1rem; border-radius: 8px; background: #1e1e1e; margin-bottom: 1rem;">
+        <h2 style='margin-top: 0;'>Run</h2>
+        <div style="display: flex; align-items: center; gap: 1rem; background: #2d2d2d; padding: 0.75rem; border-radius: 4px;">
+            <code id="run-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc {hash}</code>
+            <button onclick='copytext("run-command")' style="border: none; cursor: pointer; font-weight: bold;">Copy</button>
+        </div>
+    </div>
+    <div style="border: 2px solid #333; padding: 1rem; border-radius: 8px; background: #1e1e1e; margin-bottom: 1rem;">
+        <h2 style='margin-top: 0;'>Submit</h2>
+        <div style="display: flex; align-items: center; gap: 1rem; background: #2d2d2d; padding: 0.75rem; border-radius: 4px;">
+            <code id="submit-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc {hash} -s</code>
+            <button onclick='copytext("submit-command")' style="cursor: pointer; font-weight: bold;">Copy</button>
+        </div>
+    </div>
+    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+        <button id="prev-lesson">Previous Lesson</button>
+        <button id="next-lesson" style="display:none">Next Lesson</button>
+        <button id="load-solution">View Solution Files</button>
+    </div>
+    <pre id="out"></pre>
+    `
+        nextBtn  = document.getElementById('next-lesson');
+        prevBtn  = document.getElementById('prev-lesson');
+        outEl   = document.getElementById('out');
+    }
+    nextBtn  = document.getElementById('next-lesson');
     if (b1Btn) b1Btn.textContent = lesson.b1t || '';
     if (b2Btn) b2Btn.textContent = lesson.b2t || '';
     if (b3Btn) b3Btn.textContent = lesson.b3t || '';
@@ -236,55 +352,76 @@ async function loadLesson(lessonFile) {
     btns.forEach(button => {
         button.style.display = showButtons ? 'block' : 'none';
     });
+    updateLevelUI();
 }
 
-function setupLogic() {
+async function setupLogic() {
     titleEl = document.getElementById('lesson-title');
     descEl  = document.getElementById('lesson-description');
     outEl   = document.getElementById('output');
+    streakEl= document.getElementById('streak');
+    hintBody= document.querySelector('.hint-body');
+    let params = new URLSearchParams(location.search);
+    let lessonFileFromUrl = params.get('lesson');
+    let lastLesson = localStorage.getItem('qc_current_lesson');
+    let lessonFile = lessonFileFromUrl || lastLesson || 'lesson1.json';
+    
+    await loadLesson(lessonFile).catch(err => {
+        outEl.textContent = 'Failed to load lesson: ' + err.message;
+    });
     runBtn  = document.getElementById('run');
     checkBtn= document.getElementById('check-stdout');
     nextBtn = document.getElementById('next-lesson');
     prevBtn = document.getElementById('prev-lesson');
-    streakEl= document.getElementById('streak');
-    hintBody= document.querySelector('.hint-body');
-    b1Btn = document.getElementById('b1');
-    b2Btn = document.getElementById('b2');
-    b3Btn = document.getElementById('b3');
-    b4Btn = document.getElementById('b4');
-
-    if (b1Btn) b1Btn.onclick = () => btn("b1");
-    if (b2Btn) b2Btn.onclick = () => btn("b2");
-    if (b3Btn) b3Btn.onclick = () => btn("b3");
-    if (b4Btn) b4Btn.onclick = () => btn("b4");
-
+    checkResultBtn = document.getElementById('check-result');
     loadStreak();
-
-    runBtn.addEventListener('click', async () => {
-        const suite = runHarnessFile || null;
-        await runWithSuite(suite, 'Running');
-    });
-
-    checkBtn.addEventListener('click', async () => {
-        const harnessToUse = submitHarnessFile || runHarnessFile || null;
-        await runWithSuite(harnessToUse, 'Submitting');
-        submitCheck();
-    });
-
-    nextBtn.addEventListener('click', () => {
-        if (!nextLessonId) return;
-        const url = new URL(window.location.href);
-        url.searchParams.set('lesson', nextLessonId);
-        window.location.href = url.toString();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        if (!prevLessonId) return;
-        const url = new URL(window.location.href);
-        url.searchParams.set('lesson', prevLessonId);
-        window.location.href = url.toString();
-    });
-
+    if (runBtn) {
+        runBtn.addEventListener('click', async () => {
+            const suite = runHarnessFile || null;
+            await runWithSuite(suite, 'Running');
+        });
+    }
+    if (checkResultBtn) {
+        checkResultBtn.addEventListener('click', () => {
+            submitCheck();
+            useSolution = false;
+            runBtn.style.display = 'inline-block';
+            checkBtn.style.display = 'inline-block';
+            if (prevBtn && prevLessonId) prevBtn.style.display = 'inline-block';
+            checkResultBtn.style.display = 'none';
+        });
+    }
+    if (checkBtn) {
+        checkBtn.addEventListener('click', async () => {
+            if (mode === "text") {
+                submitCheck();
+            } else {
+                const harnessToUse = submitHarnessFile || runHarnessFile || null;
+                await runWithSuite(harnessToUse, 'Submitting');
+                runBtn.style.display = 'none';
+                checkBtn.style.display = 'none';
+                if (prevBtn) prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+                checkResultBtn.style.display = 'inline-block';
+            }
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (!nextLessonId) return;
+            const url = new URL(window.location.href);
+            url.searchParams.set('lesson', nextLessonId);
+            window.location.href = url.toString();
+        });
+    }
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (!prevLessonId) return;
+            const url = new URL(window.location.href);
+            url.searchParams.set('lesson', prevLessonId);
+            window.location.href = url.toString();
+        });
+    }
     document.addEventListener("click", (e) => {
         const btn = e.target.closest(".hint-toggle");
         if (!btn) return;
@@ -293,15 +430,13 @@ function setupLogic() {
         const open = hint.classList.contains("open");
         btn.textContent = open ? "Hide hint ▴" : "Show hint ▾";
     });
-
-    let params = new URLSearchParams(location.search);
-    let lessonFileFromUrl = params.get('lesson');
-    let lastLesson = localStorage.getItem('qc_current_lesson');
-    let lessonFile = lessonFileFromUrl || lastLesson || 'lesson1.json';
-
-    loadLesson(lessonFile).catch(err => {
-        outEl.textContent = 'Failed to load lesson: ' + err.message;
-    });
+    if (prevBtn) {
+        prevBtn.style.display = prevLessonId ? 'inline-block' : 'none';
+    }
+    if (nextBtn) {
+        const alreadyCompleted = isLessonCompleted(currentLesson.id);
+        nextBtn.style.display = alreadyCompleted ? 'inline-block' : 'none';
+    }
 }
 
 require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });

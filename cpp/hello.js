@@ -75,6 +75,7 @@ let useSolution = false;
 let editor;             
 let currentLesson = null;
 let lastRunOutput = '';
+let actual = "";
 let nextLessonId = null;
 let submitHarnessFile, runHarnessFile; 
 let buttons = document.getElementsByClassName('ans');
@@ -89,6 +90,9 @@ let streakEl = null;
 let lessonhint;
 // solution
 let solutionFile = null;
+let editorEl;
+// modes
+let mode = "editor";
 
 function loadStreak() {
   const raw = localStorage.getItem('cpp_streak');
@@ -118,9 +122,22 @@ function updateLevelUI() {
   document.getElementById("levelProg").value = localStorage.getItem('user_xp');
   document.getElementById("levelProg").max = localStorage.getItem('level_xp_cap');
 }
-
+window.copytext = function(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.textContent;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = `lhc ${runHarnessFile} ${elementId == 'submit-command' ? '-s' : ''}`
+        
+        element.textContent = 'Copied!';
+        
+        setTimeout(() => {
+            element.textContent = originalText;
+        }, 750);
+    });
+}
 async function loadLesson(lessonFile) {
-  const path = 'lessons/' + lessonFile;   // folder prefix
+  const path = 'lessons/' + lessonFile;
   const res = await fetch(path);
   if (!res.ok) throw new Error('Failed to load lesson ' + path);
   const lesson = await res.json();
@@ -141,41 +158,95 @@ async function loadLesson(lessonFile) {
   mustContain       = lesson.mustContain     || null;
   correct           = lesson.correct         || null;
   prevLessonId      = lesson.previous        || null;
+  mode              = lesson.mode            || "editor";
   document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
-  lessonXP          = lesson.xp              || 0;
+  lessonXP          = parseInt(lesson.xp, 10)|| 0;
+  editorEl = document.getElementsByClassName("code-box")[0];
+  inputEl = document.getElementsByClassName("editor")[0];
+  nextBtn  = document.getElementById('next-lesson');
+  if (mode === "text") {
+    editorEl.innerHTML = '<textarea class="editor"></textarea><button id="check-stdout">Submit</button><button id="next-lesson" style="display:none">Next Lesson</button><button id="prev-lesson">Previous Lesson</button>'
+    checkBtn = document.getElementById('check-stdout');
+    nextBtn  = document.getElementById('next-lesson');
+    prevBtn  = document.getElementById('prev-lesson');
+    inputEl = document.getElementsByClassName("editor")[0];
+  } else if (mode === 'cli') {
+    editorEl.innerHTML = `
+<div style="border: 2px solid #333; padding: 1rem; border-radius: 8px; background: #1e1e1e; margin-bottom: 1rem;">
+    <h2 style='margin-top: 0;'>Run</h2>
+    <div style="display: flex; align-items: center; gap: 1rem; background: #2d2d2d; padding: 0.75rem; border-radius: 4px;">
+        <code id="run-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc {hash}</code>
+        <button onclick='copytext("run-command")' style="border: none; cursor: pointer; font-weight: bold;">Copy</button>
+    </div>
+</div>
+<div style="border: 2px solid #333; padding: 1rem; border-radius: 8px; background: #1e1e1e; margin-bottom: 1rem;">
+    <h2 style='margin-top: 0;'>Submit</h2>
+    <div style="display: flex; align-items: center; gap: 1rem; background: #2d2d2d; padding: 0.75rem; border-radius: 4px;">
+        <code id="submit-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc {hash} -s</code>
+        <button onclick='copytext("submit-command")' style="cursor: pointer; font-weight: bold;">Copy</button>
+    </div>
+</div>
+<div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+    <button id="prev-lesson">Previous Lesson</button>
+    <button id="next-lesson" style="display:none">Next Lesson</button>
+    <button id="load-solution">View Solution Files</button>
+</div>
+<pre id="out"></pre>
+`
+    nextBtn  = document.getElementById('next-lesson');
+    prevBtn  = document.getElementById('prev-lesson');
+    outEl   = document.getElementById('out');
+  }
+  updateLevelUI();
   document.getElementById("b1").textContent = lesson.b1t;
   document.getElementById("b2").textContent = lesson.b2t;
   document.getElementById("b3").textContent = lesson.b3t;
   document.getElementById("b4").textContent = lesson.b4t;
-  updateLevelUI();
   nextBtn.style.display = 'none'; // hide until pass
-  const btns = document.querySelectorAll('.ans');
   if (prevBtn) prevBtn.style.display = prevLessonId ? 'inline-block' : 'none';
+  requestAnimationFrame(() => {
+    const btns = document.querySelectorAll('.ans');
+    btns.forEach(b => {
+      if (b) {
+        b.style.setProperty('display', showButtons ? 'inline-block' : 'none', 'important');
+      }
+    });
+  });
 
-  if (showButtons) {
-    btns.forEach(button => {
-      button.style.display = 'block';
-    });
-  } else {
-    btns.forEach(button => {
-      button.style.display = 'none';
-    });
-  }
   hintBody.innerHTML = marked.parse(lessonhint);
 }
-
-function setupLogic() {
+function forceShowAnswerButtons() {
+  const btns = document.querySelectorAll('.ans');
+  btns.forEach(b => {
+      b.style.setProperty('display', showButtons ? 'inline-block' : 'none', 'important');
+  });
+}
+function getCompletedLessons() {
+  const stored = localStorage.getItem('cpp_completed_lessons');
+  return stored ? JSON.parse(stored) : {};
+}
+function isLessonCompleted(lessonId) {
+  const completed = getCompletedLessons();
+  return completed[lessonId]?.completed || false;
+}
+function markLessonCompleted(lessonId, xpEarned) {
+  const completed = getCompletedLessons();
+  completed[lessonId] = {
+    lessonId,
+    completed: true,
+    xpEarned,
+    attempts: (completed[lessonId]?.attempts || 0) + 1,
+    completedAt: Date.now(),
+    mode: mode
+  };
+  localStorage.setItem('cpp_completed_lessons', JSON.stringify(completed));
+}
+async function setupLogic() {
   titleEl = document.getElementById('lesson-title');
   descEl  = document.getElementById('lesson-description');
   outEl   = document.getElementById('out');
-  runBtn  = document.getElementById('run');
-  checkBtn = document.getElementById('check-stdout');
-  nextBtn  = document.getElementById('next-lesson');
-  prevBtn  = document.getElementById('prev-lesson');
-  checkResultBtn = document.getElementById('check-result');
-  loadSolutionBtn = document.getElementById('load-solution');
-  streakEl = document.getElementById('streak');
   hintBody = document.querySelector(".hint-body");
+  streakEl = document.getElementById('streak');
   
   api = new WorkerAPI();
   api.onWrite = (text) => {
@@ -194,7 +265,22 @@ function setupLogic() {
   };
 
   loadStreak();
+  let params = new URLSearchParams(location.search);
+  let lessonFileFromUrl = params.get('lesson');
+  let lastLesson = localStorage.getItem('cpp_current_lesson');
 
+  let lessonFile = lessonFileFromUrl || lastLesson || 'lesson1.json';
+  await loadLesson(lessonFile).then(() => {
+    requestAnimationFrame(() => {
+      forceShowAnswerButtons();
+    });
+  })
+  runBtn  = document.getElementById('run');
+  checkBtn = document.getElementById('check-stdout');
+  nextBtn  = document.getElementById('next-lesson');
+  prevBtn  = document.getElementById('prev-lesson');
+  checkResultBtn = document.getElementById('check-result');
+  loadSolutionBtn = document.getElementById('load-solution');
   async function runWithSuite(suiteFile, label) {
     const studentSource = editor.getValue();
     outEl.textContent = (label || 'Building & running') + '...\n';
@@ -213,53 +299,73 @@ function setupLogic() {
       outEl.textContent += '\nError: ' + err.message + '\n';
     }
   }
-
-  runBtn.addEventListener('click', () => {
-    const suite = runHarnessFile || null;
-    runWithSuite(suite, 'Building & running');
-  });
-  function getCompletedLessons() {
-    const stored = localStorage.getItem('cpp_completed_lessons');
-    return stored ? JSON.parse(stored) : {};
+  if (checkResultBtn) {
+    checkResultBtn.addEventListener('click', () => {
+      submitCheck();
+      useSolution = false;
+      runBtn.style.display = 'inline-block';
+      checkBtn.style.display = 'inline-block';
+      if (prevBtn && prevLessonId) prevBtn.style.display = 'inline-block';
+      checkResultBtn.style.display = 'none';
+    });
   }
-  function isLessonCompleted(lessonId) {
-    const completed = getCompletedLessons();
-    return completed[lessonId]?.completed || false;
+  if (runBtn) {
+    runBtn.addEventListener('click', () => {
+      const suite = runHarnessFile || null;
+      runWithSuite(suite, 'Building & running');
+    });
   }
-  function markLessonCompleted(lessonId, xpEarned) {
-    const completed = getCompletedLessons();
-    completed[lessonId] = {
-      lessonId,
-      completed: true,
-      xpEarned,
-      attempts: (completed[lessonId]?.attempts || 0) + 1,
-      completedAt: Date.now()
-    };
-    localStorage.setItem('cpp_completed_lessons', JSON.stringify(completed));
+  if (loadSolutionBtn) {
+    loadSolutionBtn.addEventListener('click', async () => {
+      if (!solutionFile) {
+        outEl.textContent += '\nNo solution available for this lesson.\n';
+        return;
+      }
+      try {
+        useSolution = true;
+        const sol = await fetch(solutionFile).then(r => r.text());
+        editor.setValue(sol);
+        lessonsInRow = 0;
+        saveStreak();
+        updateStreakUI();
+        outEl.textContent += '\nLoaded solution and reset streak.\n';
+      } catch (e) {
+        outEl.textContent += '\nFailed to load solution: ' + e.message + '\n';
+      }
+    });
   }
   function submitCheck() {
     if (!currentLesson || (!currentLesson.expectedOutput && !currentLesson.mustContain)) {
       outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
       return;
     }
-
-    const cleanedLines = lastRunOutput
-      .split('\n')
-      .map(line => line.replace(/\x1b\[[0-9;]*m/g, '').trim())
-      .filter(line => line);
-
-    const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
-    const studentOut = studentLines.join('\n') + (studentLines.length ? '\n' : '');
-
-    const expected = currentLesson.expectedOutput.trim();
-    const actual = studentOut.trim();
-
     let passed = false;
-
-    if (mustContain) {
-      passed = actual.includes(mustContain);
+    if (mode === "text") {
+      actual = inputEl.value;
+      if (mustContain) {
+        passed = actual.includes(mustContain);
+      } else {
+        passed = (actual === currentLesson.expectedOutput.trim());
+      }
+    } else if (mode === 'cli') { 
+       passed = localStorage.getItem('cli_success') === 'true';
     } else {
-      passed = (actual === expected);
+      const cleanedLines = lastRunOutput
+        .split('\n')
+        .map(line => line.replace(/\x1b\[[0-9;]*m/g, '').trim())
+        .filter(line => line);
+
+      const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
+      const studentOut = studentLines.join('\n') + (studentLines.length ? '\n' : '');
+
+      const expected = currentLesson.expectedOutput.trim();
+      actual = studentOut.trim();
+
+      if (mustContain) {
+        passed = actual.includes(mustContain);
+      } else {
+        passed = (actual === expected);
+      }
     }
     const alreadyCompleted = isLessonCompleted(currentLesson.id);
     if (passed) {
@@ -276,7 +382,7 @@ function setupLogic() {
         currentXP += lessonXP;
         localStorage.setItem('user_xp', currentXP);
         
-        if (currentXP >= levelCap) {
+        while (currentXP >= levelCap) {
           currentXP -= levelCap;
           levelCap += 50;
           currentLevel += 1;
@@ -309,15 +415,34 @@ function setupLogic() {
         saveStreak();
         updateStreakUI();
       }
-      outEl.textContent += '\n[FAIL] Output does not match. (streak reset)\n';
-      if (mustContain) {
-        outEl.textContent += '\nExpected to contain:\n' + mustContain;
+      if (mode === "text") {
+        alert('Fail');
       } else {
-        outEl.textContent += '\nExpected:\n' + expected;
+        outEl.textContent += '\n[FAIL] Output does not match. (streak reset)\n';
+        if (mustContain) {
+          outEl.textContent += '\nExpected to contain:\n' + mustContain;
+        } else {
+          outEl.textContent += '\nExpected:\n' + expectedOutput.trim();
+        }
+        outEl.textContent += '\n\nGot:\n' + actual + '\n';
       }
-      outEl.textContent += '\n\nGot:\n' + actual + '\n';
     }
   }
+  window.addEventListener('storage', (e) => {
+      if (e.key === 'cli_success' && mode === 'cli' && e.newValue) {
+          console.log('CLI event:', e.newValue);
+          
+          const parts = e.newValue.split('_');
+          const lang = parts[0];
+          const lessonId = parts[1];
+          const isSuccess = parts[2];
+          if (currentLesson && lessonId === currentLesson.id) {
+              localStorage.setItem('cli_success', isSuccess);
+              submitCheck();
+              localStorage.removeItem('cli_success');
+          }
+      }
+  });
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".hint-toggle");
     if (!btn) return;
@@ -328,104 +453,93 @@ function setupLogic() {
     const open = hint.classList.contains("open");
     btn.textContent = open ? "Hide hint ▴" : "Show hint ▾";
   });
-  checkResultBtn.addEventListener('click', () => {
-    submitCheck();
-
-    // Restore normal controls
-    useSolution = false;
-    runBtn.style.display = 'inline-block';
-    checkBtn.style.display = 'inline-block';
-    if (prevBtn && prevLessonId) prevBtn.style.display = 'inline-block';
-    checkResultBtn.style.display = 'none';
-  });
-
-  checkBtn.addEventListener('click', async () => {
-    const harnessToUse = submitHarnessFile || runHarnessFile || null;
-    await runWithSuite(harnessToUse, 'Submitting');
-
-    // Hide normal controls
-    runBtn.style.display = 'none';
-    checkBtn.style.display = 'none';
-    if (prevBtn) prevBtn.style.display = 'none';
-    nextBtn.style.display = 'none';
-
-    // Show "Check Result" button
-    checkResultBtn.style.display = 'inline-block';
-  });
-
-  // Load solution button resets streak
-  loadSolutionBtn.addEventListener('click', async () => {
-    if (!solutionFile) {
-      outEl.textContent += '\nNo solution available for this lesson.\n';
-      return;
-    }
-    try {
-      useSolution = true;
-      const sol = await fetch(solutionFile).then(r => r.text());
-      editor.setValue(sol);
-      lessonsInRow = 0;
-      saveStreak();
-      updateStreakUI();
-      outEl.textContent += '\nLoaded solution and reset streak.\n';
-    } catch (e) {
-      outEl.textContent += '\nFailed to load solution: ' + e.message + '\n';
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (!nextLessonId) return;
-    let url = new URL(window.location.href);
-    url.searchParams.set('lesson', nextLessonId);
-    window.location.href = url.toString();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    if (!prevLessonId) return;
-    let url = new URL(window.location.href);
-    url.searchParams.set('lesson', prevLessonId);
-    window.location.href = url.toString();
-  });
-
-
-  let params = new URLSearchParams(location.search);
-  let lessonFileFromUrl = params.get('lesson');
-  let lastLesson = localStorage.getItem('cpp_current_lesson');
-
-  let lessonFile = lessonFileFromUrl || lastLesson || 'lesson1.json';
-
-  loadLesson(lessonFile).catch(err => {
-    outEl.textContent = 'Failed to load lesson: ' + err.message;
-  });
+  if (checkBtn) {
+    checkBtn.addEventListener('click', async () => {
+      if (mode === "text") {
+        submitCheck();
+      } else {
+        const harnessToUse = submitHarnessFile || runHarnessFile || null;
+        await runWithSuite(harnessToUse, 'Submitting');
+        runBtn.style.display = 'none';
+        checkBtn.style.display = 'none';
+        if (prevBtn) prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        checkResultBtn.style.display = 'inline-block';
+      }
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (!nextLessonId) return;
+      let url = new URL(window.location.href);
+      url.searchParams.set('lesson', nextLessonId);
+      window.location.href = url.toString();
+    });
+  }
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (!prevLessonId) return;
+      let url = new URL(window.location.href);
+      url.searchParams.set('lesson', prevLessonId);
+      window.location.href = url.toString();
+    });
+  }
+  if (prevBtn) {
+    prevBtn.style.display = prevLessonId ? 'inline-block' : 'none';
+  }
+  if (nextBtn) {
+    const alreadyCompleted = isLessonCompleted(currentLesson.id);
+    nextBtn.style.display = alreadyCompleted ? 'inline-block' : 'none';
+  }
+  forceShowAnswerButtons();
 }
-
 document.addEventListener('DOMContentLoaded', () => {
-  require.config({
-    paths: { 'vs': 'https://unpkg.com/monaco-editor@0.45.0/min/vs' }
-  });
-
-  require(['vs/editor/editor.main'], () => {
-    editor = monaco.editor.create(document.getElementById('editor'), {
-      value: '',
-      language: 'cpp',
-      theme: 'vs-dark',
-      automaticLayout: true,
+  if (mode == 'editor') {
+    require.config({
+      paths: { 'vs': 'https://unpkg.com/monaco-editor@0.45.0/min/vs' }
     });
 
-    setupLogic();
-  });
+    require(['vs/editor/editor.main'], () => {
+      editor = monaco.editor.create(document.getElementById('editor'), {
+        value: '',
+        language: 'cpp',
+        theme: 'vs-dark',
+        automaticLayout: true,
+      });
+
+      setupLogic();
+    });
+  }
 });
 
 function btn(bn) {
   if (bn === correct) {
-    lessonsInRow += 1;
+    const alreadyCompleted = isLessonCompleted(currentLesson.id);
+    if (!alreadyCompleted) {
+      lessonsInRow += 1;
+      
+      let currentXP = parseInt(localStorage.getItem('user_xp')) || 0;
+      let levelCap = parseInt(localStorage.getItem('level_xp_cap')) || 100;
+      let currentLevel = parseInt(localStorage.getItem('user_level')) || 0;
+      
+      currentXP += lessonXP;
+      localStorage.setItem('user_xp', currentXP);
+      
+      while (currentXP >= levelCap) {
+        currentXP -= levelCap;
+        levelCap += 50;
+        currentLevel += 1;
+        localStorage.setItem('user_xp', currentXP);
+        localStorage.setItem('level_xp_cap', levelCap);
+        localStorage.setItem('user_level', currentLevel);
+      }
+      markLessonCompleted(currentLesson.id, lessonXP);
+    } else {
+    }
     saveStreak();
     updateStreakUI();
+    updateLevelUI();
     alert("Correct");
-    if (useSolution) {
-      lessonsInRow = 0;
-      saveStreak();
-      updateStreakUI();
-    }
     useSolution = false;
     outEl.textContent += '\n[PASS].\n';
     if (nextLessonId) nextBtn.style.display = 'inline-block';
@@ -434,6 +548,5 @@ function btn(bn) {
     saveStreak();
     updateStreakUI();
     alert("Incorrect");
-    
   }
 }

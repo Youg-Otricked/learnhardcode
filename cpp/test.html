@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Playground</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="hello.css?v=123">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
+    <script src="hello.js?v=137" defer></script>
+</head>
+
+<body>
+    <p id="streak">Lessons in a row: 0</p>
+    <p id="difficulty">Dificulty: unknown</p>
+    <p id="xp">X / X XP. Level X.</p><progress id="levelProg" value="0" max = "100"></progress>
+    <br><button style="width: fit-content; height: fit-content;  background-color: lightgray; color: black; border-radius: 7; padding-bottom: 5px;" onclick='document.location="../"'>Go to Homepage</button>
+    
+    <div class="container">
+        <div class="box text-box">
+            <h1 id="lesson-title"></h1>
+            <div id="lesson-description"></div><br><br>
+            <p id="nobns"></p>
+            <button onclick='btn("b1")' id="b1" class="ans">Nothing here for now...</button><br><br>
+            <button id="b2" onclick='btn("b2")' class="ans">Nothing here for now...</button><br><br>
+            <button id="b3" onclick='btn("b3")' class="ans">Nothing here for now...</button><br><br>
+            <button id="b4" onclick='btn("b4")' class="ans">Nothing here for now...</button><br><br>
+            <div class="hint">
+                <button class="hint-toggle">Show hint ▾</button>
+                <div id="hint-body" class="hint-body">
+                </div>
+            </div>
+        </div>
+        <div class="box code-box">
+            <div style="border: 2px solid #333; padding: 1rem; border-radius: 8px; background: #1e1e1e; margin-bottom: 1rem;">
+                <h2 style='margin-top: 0;'>Run</h2>
+                <div style="display: flex; align-items: center; gap: 1rem; background: #2d2d2d; padding: 0.75rem; border-radius: 4px;">
+                    <code id="run-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc {hash}</code>
+                    <button onclick='copytext("run-command")' style="border: none; cursor: pointer; font-weight: bold;">Copy</button>
+                </div>
+            </div>
+            <div style="border: 2px solid #333; padding: 1rem; border-radius: 8px; background: #1e1e1e; margin-bottom: 1rem;">
+                <h2 style='margin-top: 0;'>Submit</h2>
+                <div style="display: flex; align-items: center; gap: 1rem; background: #2d2d2d; padding: 0.75rem; border-radius: 4px;">
+                    <code id="submit-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc {hash} -s</code>
+                    <button onclick='copytext("submit-command")' style="cursor: pointer; font-weight: bold;">Copy</button>
+                </div>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                <button id="prev-lesson">Previous Lesson</button>
+                <button id="next-lesson" style="display:none">Next Lesson</button>
+                <button id="load-solution">View Solution Files</button>
+            </div>
+            <pre id="out"></pre>
+        </div>
+    </div>
+</body>
+
+</html>

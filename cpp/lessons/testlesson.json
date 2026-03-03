@@ -1,0 +1,19 @@
+{
+  "id": "lessonclitest.json",
+  "title": "Hello World",
+  "description": "",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson2.json?v=7",
+  "previous": "dummy",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "abc1234",
+  "mode": "cli",
+  "difficulty": "easiest",
+  "xp": "10"
+}

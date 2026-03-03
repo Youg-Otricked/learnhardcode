@@ -229,7 +229,7 @@ body > p {
 }
 
 
-.text-box .ans {
+.ans {
   margin: 0 auto;
   text-align: center;
   width: fit-content;
@@ -240,9 +240,27 @@ body > p {
   color: #fff;
   font: inherit;
   cursor: pointer;
-  display: none;
 }
 
-.text-box .ans:hover {
+.ans:hover {
   background-color: #0a7fb5;
+}
+.editor {
+  width: 100%;
+  height: 300px;
+  background-color: #1e1e1e; /* Match VS Code Dark */
+  color: #d4d4d4;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  resize: vertical; /* Only allow vertical resizing */
+  outline: none; /* Removes the blue focus outline */
+  line-height: 1.5;
+  tab-size: 4; /* Ensures tabs aren't massive */
+}
+
+.editor:focus {
+  border-color: #007acc; /* Subtle blue border on focus */
 }
