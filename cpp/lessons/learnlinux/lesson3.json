@@ -1,0 +1,19 @@
+{
+  "id": "lesson3.json",
+  "title": "First Commands! [pwd and cd]",
+  "description": "You may be kinda sick of just `Ctrl-C Ctrl-V` over and over. Don't worry, as it's time for you to learn your first ever commands!\n---\nFirst, somthing simple:\n### Command 1:  `pwd`.\nThis stands for \"Print Working Directory\". Basically this prints where you are. In Linux, ~ means /home/YOUR_USERNAME, so in my Linux, ~ = `/home/lucar`. Here is what pwd outputs for me in my ~/cli directory:\n```\nlucar@DESKTOP-08KNEMT:~/cliCode$ pwd\n/home/lucar/cliCode\n```\nPretty Simple, Right?\n---\n### Command 2: `cd`.\ncd stands for _Change Directory_. This, as you may expect, allows you to change the directory you are in. It uses a path like normal, so you just need to run `cd ~` to go to home.\n# Assignment:\nUse `cd` to go to the `STARTER_FILE_YOU_INSTALLED_NAME/accounts` directory. Submit the lesson from **within _that directory_**.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "learnlinux/lesson4.json",
+  "previous": "learnlinux/lesson2.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "1ebca476",
+  "mode": "cli",
+  "difficulty": "easiest",
+  "xp": "11"
+}
