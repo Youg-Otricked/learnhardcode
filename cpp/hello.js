@@ -175,14 +175,14 @@ async function loadLesson(lessonFile) {
 <div style="border: 2px solid #333; padding: 1rem; border-radius: 8px; background: #1e1e1e; margin-bottom: 1rem;">
     <h2 style='margin-top: 0;'>Run</h2>
     <div style="display: flex; align-items: center; gap: 1rem; background: #2d2d2d; padding: 0.75rem; border-radius: 4px;">
-        <code id="run-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc {hash}</code>
+        <code id="run-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc run ${runHarnessFile}</code>
         <button onclick='copytext("run-command")' style="border: none; cursor: pointer; font-weight: bold;">Copy</button>
     </div>
 </div>
 <div style="border: 2px solid #333; padding: 1rem; border-radius: 8px; background: #1e1e1e; margin-bottom: 1rem;">
     <h2 style='margin-top: 0;'>Submit</h2>
     <div style="display: flex; align-items: center; gap: 1rem; background: #2d2d2d; padding: 0.75rem; border-radius: 4px;">
-        <code id="submit-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc {hash} -s</code>
+        <code id="submit-command" style="flex: 1; color: #00ff00; font-family: 'Courier New', monospace; user-select: all;">lhc run ${runHarnessFile} -s</code>
         <button onclick='copytext("submit-command")' style="cursor: pointer; font-weight: bold;">Copy</button>
     </div>
 </div>
@@ -335,7 +335,7 @@ async function setupLogic() {
     });
   }
   function submitCheck() {
-    if (!currentLesson || (!currentLesson.expectedOutput && !currentLesson.mustContain)) {
+    if (!currentLesson || (!currentLesson.expectedOutput && !currentLesson.mustContain) && mode == "editor") {
       outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
       return;
     }
@@ -436,7 +436,7 @@ async function setupLogic() {
           const lang = parts[0];
           const lessonId = parts[1];
           const isSuccess = parts[2];
-          if (currentLesson && lessonId === currentLesson.id) {
+          if (currentLesson) {
               localStorage.setItem('cli_success', isSuccess);
               submitCheck();
               localStorage.removeItem('cli_success');

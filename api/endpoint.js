@@ -9,6 +9,5 @@ function main() {
         var key = "".concat(course, "_").concat(prefix + lessonId + '.json', "_").concat(success);
         localStorage.setItem('cli_success', key);
     }
-    window.location.href = "about:blank";
 }
 main();

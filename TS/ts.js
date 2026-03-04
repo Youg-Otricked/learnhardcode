@@ -1,4 +1,3 @@
-let QuantumModule = null;
 let editor = null;
 let currentLesson = null;
 let lastRunOutput = '';
@@ -18,13 +17,13 @@ let inputEl = null;
 let mode = "";
 let checkResultBtn = null;
 function loadStreak() {
-    const raw = localStorage.getItem('qc_streak');
+    const raw = localStorage.getItem('ts_streak');
     lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
     updateStreakUI();
 }
 
 function saveStreak() {
-    localStorage.setItem('qc_streak', String(lessonsInRow));
+    localStorage.setItem('ts_streak', String(lessonsInRow));
 }
 
 function updateStreakUI() {
@@ -45,29 +44,25 @@ function updateLevelUI() {
   document.getElementById("levelProg").value = localStorage.getItem('user_xp');
   document.getElementById("levelProg").max = localStorage.getItem('level_xp_cap');
 }
-function runQC(code) {
-    if (!QuantumModule) {
-        outEl.textContent += '\nWASM module still loading...\n';
-        return;
-    }
-    outEl.textContent = 'Running...\n';
+function runTS(code) {
     lastRunOutput = '';
     outEl.className = '';
     try {
-        const result = QuantumModule.ccall(
-            'run_quantum_code',
-            'string',
-            ['string'],
-            [code]
-        );
+        const jsCode = ts.transpileModule(code, {
+            compilerOptions: {
+                target: ts.ScriptTarget.ES2020,
+                strict: true,
+                module: ts.ModuleKind.ESNext,
+                noImplicitAny: true,
+                removeComments: true,    
+            }
+        }).outputText;
+        const output = [];
+        const fakeConsole = { log: (...args) => output.push(args.join(' ')) };
+        new Function('console', jsCode)(fakeConsole);
+        const result = output.join('\n');
         lastRunOutput = result || '';
-        outEl.textContent += lastRunOutput;
-        if (result.includes('QC-') || result.includes('Runtime Error:')) {
-            outEl.className = 'error';
-        } else {
-            outEl.className = 'success';
-        }
-        lastRunOutput = result.split("Program exited with code:")[0];
+        outEl.textContent = lastRunOutput;
     } catch (err) {
         lastRunOutput = 'Runtime Error: ' + err.message;
         outEl.textContent += lastRunOutput;
@@ -75,7 +70,7 @@ function runQC(code) {
     }
 }
 function getCompletedLessons() {
-  const stored = localStorage.getItem('qc_completed_lessons');
+  const stored = localStorage.getItem('ts_completed_lessons');
   return stored ? JSON.parse(stored) : {};
 }
 function isLessonCompleted(lessonId) {
@@ -92,7 +87,7 @@ function markLessonCompleted(lessonId, xpEarned) {
     completedAt: Date.now(),
     mode: mode
   };
-  localStorage.setItem('qc_completed_lessons', JSON.stringify(completed));
+  localStorage.setItem('ts_completed_lessons', JSON.stringify(completed));
 }
 window.copytext = function(elementId) {
     const element = document.getElementById(elementId);
@@ -109,7 +104,7 @@ window.copytext = function(elementId) {
     });
 }
 function submitCheck() {
-    if (!currentLesson || (!currentLesson.expectedOutput && !mustContain) && mode == "editor") {
+    if (!currentLesson || (!currentLesson.expectedOutput && !mustContain)) {
         outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
         return;
     }
@@ -231,7 +226,7 @@ async function runWithSuite(suiteFile, label) {
         fullSource = suite + '\n\n' + studentSource;
     }
 
-    runQC(fullSource);
+    runTS(fullSource);
 }
 
 function btn(bn) {
@@ -280,7 +275,7 @@ function btn(bn) {
   }
 }
 async function loadLesson(lessonFile) {
-    const path = 'lessons-qc/' + lessonFile;
+    const path = 'lessons/' + lessonFile;
     const res = await fetch(path);
     if (!res.ok) throw new Error('Failed to load lesson ' + path);
     const lesson = await res.json();
@@ -363,7 +358,7 @@ async function setupLogic() {
     hintBody= document.querySelector('.hint-body');
     let params = new URLSearchParams(location.search);
     let lessonFileFromUrl = params.get('lesson');
-    let lastLesson = localStorage.getItem('qc_current_lesson');
+    let lastLesson = localStorage.getItem('ts_current_lesson');
     let lessonFile = lessonFileFromUrl || lastLesson || 'lesson1.json';
     
     await loadLesson(lessonFile).catch(err => {
@@ -442,106 +437,18 @@ async function setupLogic() {
 require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });
 document.addEventListener('DOMContentLoaded', () => {
     require(['vs/editor/editor.main'], function() {
-        monaco.languages.register({ id: 'qc' });
-
-        monaco.languages.setMonarchTokensProvider('qc', {
-            tokenizer: {
-                root: [
-                [/\/\/.*$/, 'comment'],
-                [/\/\*/, 'comment', '@comment'],
-                [/^\s*#\s*include/, { token: 'keyword.control.preprocessor', next: '@include' }],
-                [/^\s*#\s*(error|warning|define|undef|ifdef|ifndef|endif|pragma)\b/, 'keyword.control.preprocessor'],
-                [/\b(qif|qelse|qelif|qswitch|if|else|while|for|return|break|continue|switch|case|default|namespace|fn)\b/, 'keyword'],
-                [/\b(const|static|public|private|protected|long|short|final)\b/, 'storage.modifier'],
-                [/\b(true|false|null|nullptr|none|both)\b/, 'constant.language'],
-                [/\b(int|float|double|qbool|void|bool|string|char|dict|map|list|enum|struct|class|type|auto)\b/, 'storage.type'],
-                [/\b[A-Z][a-zA-Z0-9_]*\b/, 'entity.name.type'],
-                [/\b[a-zA-Z_][a-zA-Z0-9_]*(?=::)/, 'entity.name.namespace'],
-                [/\b[a-zA-Z_][a-zA-Z0-9_]*\s*(?=\()/, 'entity.name.function'],
-                [/(?<=\.|->)[a-zA-Z_][a-zA-Z0-9_]*/, 'variable.other.member'],
-                [/"/, 'string', '@string'],
-                [/'([^'\\]|\\.)'/, 'string.quoted.single'],
-                [/\b(0x[0-9a-fA-F]+|0b[01]+|[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?f?)\b/, 'number'],
-                [/\+\+|--|\+|\-|\*\*|\*|\/|%|==|!=|<=|>=|<|>|&&&|&&|\|\|\||\|\||!!|!|=|\+=|\-=|\*=|\/=|&|\||\^|<<|>>/, 'operator'],
-                ],
-
-                comment: [
-                [/[^\/*]+/, 'comment'],
-                [/\*\//, 'comment', '@pop'],
-                [/[\/*]/, 'comment']
-                ],
-
-                string: [
-                [/[^\\"]+/, 'string'],
-                [/\\./, 'string.escape'],
-                [/"/, 'string', '@pop'],
-                ],
-
-                include: [
-                [/[ \t]+/, ''],
-                [/,/, 'punctuation.separator'],
-                [/<|>/, 'string.include'],
-                [/[a-zA-Z0-9_.\/\\]+/, 'string.include'],
-                [/[a-zA-Z_][a-zA-Z0-9_]*/, 'entity.name.namespace'],
-                [/$/, '', '@pop'],
-                ],
-            },
-        });
-        monaco.editor.defineTheme('qcTheme', {
-            base: 'vs-dark',
-            inherit: true,
-            rules: [
-                { token: 'keyword', foreground: 'C586C0' },
-                { token: 'storage.type', foreground: '569CD6' },
-                { token: 'entity.name.function', foreground: 'DCDCAA' },
-                { token: 'operator', foreground: 'D4D4D4' },
-                { token: 'comment', foreground: '6A9955', fontStyle: 'italic' },
-                { token: 'string', foreground: 'CE9178' },
-                { token: 'number', foreground: 'B5CEA8' },
-                { token: 'constant.language', foreground: '569CD6', fontStyle: 'bold' },
-                { token: 'keyword.control.preprocessor', foreground: 'C586C0' },
-                { token: 'entity.name.type', foreground: '4EC9B0' },
-                { token: 'entity.name.namespace', foreground: '4EC9B0' },
-                { token: 'variable.other.member', foreground: '9CDCFE' },
-                { token: 'identifier', foreground: '9CDCFE' }
-            ],
-            colors: {
-                'editor.background': '#1E1E1E',
-                'editor.foreground': '#D4D4D4'
-            }
-        });
         editor = monaco.editor.create(document.getElementById('editor'), {
-            value: `int main() {
-    println("Hello, World!");
-    return 0;
-}`,
-            language: 'qc',  
-            theme: 'qcTheme',
-            automaticLayout: true,
-            fontSize: 14,
-            minimap: { enabled: false },
-            scrollBeyondLastLine: false,
-            wordWrap: 'on',
+            value: [].join('\\n'),
+            language: 'typescript',
+            theme: 'vs-dark'
         });
         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function() {
             const runBtn = document.getElementById('run');
             if (runBtn) runBtn.click();
         });
         
-        console.log('QuantumC Monaco Editor initialized');
+        console.log('TypeScript Monaco Editor initialized');
         setupLogic();
 
-    });
-
-    QuantumC().then(function(module) {
-        QuantumModule = module;
-        document.getElementById('output').innerText = 'Ready! Press Ctrl+Enter or click "Run Code".';
-        console.log('Quantum C WASM loaded successfully');
-        document.getElementById('output').className = 'success';
-    }).catch(function(err) {
-        document.getElementById('output').innerText = 'Error loading WASM: ' + err;
-        document.getElementById('output').className = 'error'
-        console.error('Failed to load Quantum C:', err);
-        
     });
 });
