@@ -337,6 +337,11 @@ async function loadLesson(lessonFile) {
         outEl   = document.getElementById('out');
     }
     nextBtn  = document.getElementById('next-lesson');
+    const btns = document.querySelectorAll('.ans');
+    b1Btn = btns[0];
+    b2Btn = btns[1];
+    b3Btn = btns[2];
+    b4Btn = btns[3];
     if (b1Btn) b1Btn.textContent = lesson.b1t || '';
     if (b2Btn) b2Btn.textContent = lesson.b2t || '';
     if (b3Btn) b3Btn.textContent = lesson.b3t || '';
@@ -347,7 +352,6 @@ async function loadLesson(lessonFile) {
 
     const lessonHint = lesson.hint || '';
     hintBody.innerHTML = marked.parse(lessonHint);
-    const btns = document.querySelectorAll('.ans');
     const showButtons = !!(lesson.b1t || lesson.b2t || lesson.b3t || lesson.b4t);
     btns.forEach(button => {
         button.style.display = showButtons ? 'block' : 'none';

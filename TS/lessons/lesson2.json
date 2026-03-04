@@ -1,5 +1,5 @@
 {
-    "id": "lesson1.json",
+    "id": "lesson2.json",
     "title": "Printing to console.",
     "description": "To print to console in TS, you use the function `console.log(WhatYouWantToOutput)`, such as\n```\nconsole.log(\"Hello, World\");\n```\n---\n### Assignment:\nMake the code output 'Starting local server'",
     "starterCode": "",
