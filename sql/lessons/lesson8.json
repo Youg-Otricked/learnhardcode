@@ -1,0 +1,21 @@
+{
+    "id": "lesson8.json",
+    "title": "Create Table [Syntax and TEXT/INT/FLOAT(or REAL)]",
+    "description": "Now, it is time for you to make your own tables!\nTo create a table in SQL, you use \n```sql\nCREATE TABLE table_name (\n    field_name FIELD_TYPE,\n    field_name FIELD_TYPE,......\n    field_name FIELD_TYPE\n);\n```\nThere are 3 main types in SQL, TEXT (text), INT(whole number) and FLOAT(decimal number).\n---\n## Assignment:\nCreate a table instances with fields id, name, status, and uptime with types INT, TEXT, TEXT, and FLOAT.",
+    "setupCode": "",
+    "starterCode": "-- Make the table here.\n",
+    "runHarness": "INSERT INTO instances (id, name, status, uptime) VALUES (1, 'BWS-server', 'running', 12.5),(2, 'riku', 'creating-a-sidequest', 99.99),(3, 'chaos', 'locked-up', 9999999.99);SELECT * FROM instances;",
+    "expectedOutput": "id | name | status | uptime\n1 | BWS-server | running | 12.5\n2 | riku | creating-a-sidequest | 99.99\n3 | chaos | locked-up | 9999999.99",
+    "nextLesson": "lesson9.json",
+    "previous": "lesson7.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "13"
+}

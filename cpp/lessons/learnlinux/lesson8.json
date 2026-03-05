@@ -1,0 +1,20 @@
+{
+  "id": "lesson8.json",
+  "title": "Basic Commands [cp]",
+  "description": "# cp\n---\n`cp` stands for copy. It is used as `cp FILE_PATH COPIED_FILE_PATH`.\n---\n# Assignment:\nWe still need the reports file! Copy the archive/steve_report.txt to fraud/reports.txt. Make sure you submit in the root of the project files.",
+  "starterCode": "",
+  "mustContain": null,
+  "expectedOutput": "",
+  "nextLesson": "learnlinux/lesson9.json",
+  "previous": "learnlinux/lesson7.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "25bcaf7b",
+  "mode": "cli",
+  "difficulty": "beginner",
+  "xp": "10"
+}

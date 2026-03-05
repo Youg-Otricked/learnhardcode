@@ -1,0 +1,19 @@
+{
+    "id": "lesson5.json",
+    "title": "Basic SELECTS [More logical operators]",
+    "description": "Sometimes, we need more than just = and !=. There are 7 other comparison operators, > < >= <= AND OR and NOT. `>` is true when left is more than right, `<` is true when left is less than right, `>=` is true when left is at least right, and `<=` is true when left is at most right. AND is true when the left and right condition are true, OR is true when the left or right condition is true, and NOT is true when the condition is false.\n---\n## Assignment:\nBWS wants to select all data from all buckets that fall into the following catagory: size is greater than 0, and type is not directory.",
+    "setupCode": "CREATE TABLE buckets (name TEXT, type TEXT, size INT); INSERT INTO buckets VALUES ('backups', 'directory', 123); INSERT INTO buckets VALUES ('homework', 'files', 144142); INSERT INTO buckets VALUES ('test', 'nothing', 0); INSERT INTO buckets VALUES ('BWSdata', 'we need stuff for ourselves, ok?', 400000); INSERT INTO buckets VALUES ('real_backups', 'directorys and files', 1993);",
+    "starterCode": "-- Write your query here.\n",
+    "expectedOutput": "name | type | size\nhomework | files | 144142\nBWSdata | we need stuff for ourselves, ok? | 400000\nreal_backups | directorys and files | 1993",
+    "nextLesson": "lesson6.json",
+    "previous": "lesson4.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "11"
+}

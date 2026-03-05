@@ -1,0 +1,19 @@
+{
+    "id": "lesson7.json",
+    "title": "Basic SELECTS [LIMIT]",
+    "description": "Let's say that you have a massive database, with 100,000 no, 100,000,000,000 users! Now imagine how long it would take to select all data from that database. The answer? _Hours_. This is why LIMIT statements exist. You put this at the VERY END of a statement (that means even after ORDER BY), and the syntax is `LIMIT number`. `LIMIT` only selects the _first_ X results where X is the number you pass.\n# Assignment:\nBWS wants you to write a query that only selects the 1st bucket where the type is directory!",
+    "setupCode": "CREATE TABLE buckets (name TEXT, type TEXT, size INT); INSERT INTO buckets VALUES ('backups', 'directory', 123); INSERT INTO buckets VALUES ('homework', 'files', 144142); INSERT INTO buckets VALUES ('test', 'nothing', 0); INSERT INTO buckets VALUES ('BWSdata', 'we need stuff for ourselves, ok?', 400000); INSERT INTO buckets VALUES ('real_backups', 'directory', 1993);",
+    "starterCode": "-- Write your query here.\n",
+    "expectedOutput": "name | type | size\nbackups | directory | 123",
+    "nextLesson": "lesson8.json",
+    "previous": "lesson6.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "13"
+}

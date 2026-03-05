@@ -16,6 +16,8 @@ let editorEl = null;
 let inputEl = null;
 let mode = "";
 let checkResultBtn = null;
+let rawHarness = false;
+let suite;
 function loadStreak() {
     const raw = localStorage.getItem('ts_streak');
     lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
@@ -108,15 +110,15 @@ function submitCheck() {
         outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
         return;
     }
-
+    let expected = '';
     const cleanedLines = lastRunOutput
     .split('\n')
     .map(line => line.replace(/\x1b\[[0-9;]*m/g, '').trim())
     .filter(line => line);
-
+    let actual = '';
     let passed = false;
     if (mode === "text") {
-      let actual = inputEl.value;
+      actual = inputEl.value;
       if (mustContain) {
         passed = actual.includes(mustContain);
       } else {
@@ -132,8 +134,8 @@ function submitCheck() {
 
       const studentOut = cleanedLines.join('\n') + (cleanedLines.length ? '\n' : '');
 
-      const expected = currentLesson.expectedOutput.trim();
-      const actual   = studentOut.trim();
+      expected = currentLesson.expectedOutput.trim();
+      actual   = studentOut.trim();
       if (mustContain) {
         passed = actual.includes(mustContain);
       } else {
@@ -215,17 +217,20 @@ window.addEventListener('storage', (e) => {
 });
 async function runWithSuite(suiteFile, label) {
     if (!editor) return;
-    const studentSource = editor.getValue();
+    let studentSource = editor.getValue();
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
-
     let fullSource = studentSource;
 
     if (suiteFile) {
-        const suite = await fetch(suiteFile).then(r => r.text());
-        fullSource = suite + '\n\n' + studentSource;
+        if (rawHarness) {
+            studentSource += suiteFile;
+        } else {
+            suite = await fetch(suiteFile).then(r => r.text());
+            studentSource += '\n\n' + suite;
+        }
     }
-
+    fullSource = studentSource;
     runTS(fullSource);
 }
 
@@ -293,7 +298,8 @@ async function loadLesson(lessonFile) {
     correct         = lesson.correct       || null;
     runHarnessFile    = lesson.runHarness    || null;
     submitHarnessFile = lesson.submitHarness || null;
-    mode              = lesson.mode            || "editor";
+    mode              = lesson.mode        || "editor";
+    rawHarness        = lesson.rawHarness  || false;
     document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
     lessonXP          = parseInt(lesson.xp, 10)|| 0;
     editorEl = document.getElementsByClassName("code-box")[0];
@@ -376,7 +382,7 @@ async function setupLogic() {
     loadStreak();
     if (runBtn) {
         runBtn.addEventListener('click', async () => {
-            const suite = runHarnessFile || null;
+            suite = runHarnessFile || null;
             await runWithSuite(suite, 'Running');
         });
     }

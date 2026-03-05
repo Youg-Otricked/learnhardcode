@@ -339,6 +339,7 @@ async function setupLogic() {
       outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
       return;
     }
+    let expected = '';
     let passed = false;
     if (mode === "text") {
       actual = inputEl.value;
@@ -358,7 +359,7 @@ async function setupLogic() {
       const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
       const studentOut = studentLines.join('\n') + (studentLines.length ? '\n' : '');
 
-      const expected = currentLesson.expectedOutput.trim();
+      expected = currentLesson.expectedOutput.trim();
       actual = studentOut.trim();
 
       if (mustContain) {

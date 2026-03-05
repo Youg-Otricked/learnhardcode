@@ -70,6 +70,7 @@ let showDebugCheckbox;
 let rawOutput='';
 let hintBody;
 let lessonXP = null;
+let rawHarness = false;
 // streak
 let lessonsInRow = 0;
 let streakEl = null;
@@ -150,8 +151,9 @@ async function loadLesson(lessonFile) {
   mustContain       = lesson.mustContain     || null;
   correct           = lesson.correct         || null;
   prevLessonId      = lesson.previous        || null;
-  lessonhint        = lesson.hint || "";
+  lessonhint        = lesson.hint            || "";
   mode              = lesson.mode            || "editor";
+  rawHarness        = lesson.rawHarnss       || false;
   document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
   lessonXP          = parseInt(lesson.xp, 10)|| 0;
   editorEl = document.getElementsByClassName("code-box")[0];
@@ -292,7 +294,12 @@ async function setupLogic() {
 
     let harnessSource = "";
     if (suiteFile) {
-      harnessSource = await fetch(suiteFile).then(r => r.text());
+        if (rawHarness) {
+            harnessSource = suiteFile;
+        } else {
+            const suite = await fetch(suiteFile).then(r => r.text());
+            harnessSource = suite;
+        }
     }
 
     try {
@@ -308,6 +315,7 @@ async function setupLogic() {
       appendOutput('\nNo expectedOutput defined for this lesson.\n');
       return;
     }
+    let expected = '';
     const alreadyCompleted = isLessonCompleted(currentLesson.id);
     let passed = false;
     if (mode === "text") {
@@ -331,7 +339,7 @@ async function setupLogic() {
       const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
       const studentOut = studentLines.join('\n') + (studentLines.length ? '\n' : '');
 
-      const expected = currentLesson.expectedOutput.trim();
+      expected = currentLesson.expectedOutput.trim();
       actual   = studentOut.trim();
       if (mustContain) {
         passed = actual.includes(mustContain);
@@ -436,8 +444,8 @@ async function setupLogic() {
   }
   if (runBtn) {
     runBtn.addEventListener('click', () => {
-      const suite = runHarnessFile || null;
-      runWithSuiteCSharp(suite, 'Building & running');
+      const suiteToUse = runHarnessFile || null;
+      runWithSuiteCSharp(suiteToUse, 'Building & running');
     });
   }
   if (checkBtn) { 
