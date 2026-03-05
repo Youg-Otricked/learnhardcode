@@ -1,0 +1,19 @@
+{
+    "id": "lesson1.json",
+    "title": "Welcome to BWS",
+    "description": "## Welcome to BWS!\nYou just got hired as a database administrator at **BWS (Better Web Services)**, the world's totally-not-a-knockoff cloud platform.\n\nYour first task is simple - query the system status table to make sure everything is online.\n\n---\n\nWrite a query to SELECT everything from the `system_status` table.",
+    "setupCode": "CREATE TABLE system_status (service TEXT, status TEXT, uptime INT); INSERT INTO system_status VALUES ('database', 'online', 99); INSERT INTO system_status VALUES ('storage', 'online', 97); INSERT INTO system_status VALUES ('compute', 'on fire', 0);",
+    "starterCode": "SELECT * FROM -- table_name_here;\n",
+    "expectedOutput": "service | status | uptime\ndatabase | online | 99\nstorage | online | 97\ncompute | on fire | 0",
+    "nextLesson": "lesson2.json",
+    "previous": null,
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "10"
+}

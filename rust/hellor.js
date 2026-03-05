@@ -48,7 +48,7 @@ class RubriRunner {
 }
 
 // ===== Lesson + editor + UI logic =====
-
+let rawHarness = false;
 let checkResultBtn;
 let loadSolutionBtn;
 let rubriRunner;
@@ -130,6 +130,7 @@ async function loadLesson(lessonFile) {
   prevLessonId      = lesson.previous        || null;
   lessonhint        = lesson.hint || "";
   mode              = lesson.mode            || "editor";
+  rawHarness        = lesson.rawHarness  || false;
   document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
   lessonXP          = parseInt(lesson.xp, 10)|| 0;
   editorEl = document.getElementsByClassName("code-box")[0];
@@ -209,17 +210,22 @@ function markLessonCompleted(lessonId, xpEarned) {
   localStorage.setItem('rust_completed_lessons', JSON.stringify(completed));
 }
 async function runWithSuite(suiteFile, label) {
-  const studentSource = editor.getValue();
+  let studentSource = editor.getValue();
   outEl.textContent = (label || 'Running') + '...\n';
   lastRunOutput = '';
 
   let fullSource = studentSource;
 
   if (suiteFile) {
-    const suite = await fetch(suiteFile).then(r => r.text());
-    fullSource = suite + '\n\n' + studentSource;
+      if (rawHarness) {
+          studentSource += suiteFile;
+      } else {
+          const suite = await fetch(suiteFile).then(r => r.text());
+          studentSource += '\n\n' + suite;
+      }
   }
-  if (studentSource.includes('fn main')) {
+  fullSource = studentSource;
+  if (fullSource.includes('fn main')) {
     fullSource += '\n\nmain();\n';
   }
 
@@ -289,8 +295,8 @@ async function setupLogic() {
   loadStreak();
   if (runBtn) {
     runBtn.addEventListener('click', () => {
-      const suite = runHarnessFile || null;
-      runWithSuite(suite, 'Running');
+      const suiteToUse = runHarnessFile || null;
+      runWithSuite(suiteToUse, 'Running');
     });
   }
   function submitCheck() {
@@ -298,9 +304,11 @@ async function setupLogic() {
       outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
       return;
     }
+    let actual = '';
+    let expected = '';
     let passed = false;
     if (mode === "text") {
-      let actual = inputEl.value;
+      actual = inputEl.value;
       if (mustContain) {
         passed = actual.includes(mustContain);
       } else {
@@ -316,8 +324,8 @@ async function setupLogic() {
 
       const studentOut = cleanedLines.join('\n') + (cleanedLines.length ? '\n' : '');
 
-      const expected = currentLesson.expectedOutput.trim();
-      const actual   = studentOut.trim();
+      expected = currentLesson.expectedOutput.trim();
+      actual   = studentOut.trim();
       if (mustContain) {
         passed = actual.includes(mustContain);
       } else {

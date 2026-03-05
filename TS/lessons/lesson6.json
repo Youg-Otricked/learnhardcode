@@ -1,0 +1,18 @@
+{
+    "id": "lesson6.json",
+    "title": "Binops [&&, ||, !, ==, !=]",
+    "description": "## Logical and Comparison Operators\n---\n### Comparison:\n`==` checks if two values are equal. `>` checks if left is more than right. `<` checks if right is more than left. `>=` checks if left is at least right. `<=` checks if right is at least left.\n```ts\nconsole.log(5 == 5); // true\nconsole.log(5 != 3); // true\n```\n### Logical:\n- `&&` (AND) - both sides must be true\n- `||` (OR) - at least one side must be true\n- `!` (NOT) - flips true to false and vice versa\n```ts\nconsole.log(true && false); // false\nconsole.log(true || false); // true\nconsole.log(!true); // false\n```\n---\n## Assignment:\nMeTube needs to check if videos are eligible for the homepage. Create the following variables:\n- `views` - set it to 15000\n- `monetized` - set it to true\n- `copyrightStrike` - set it to false\n\nThen print the results of the asked for comparisons.",
+    "starterCode": "// Create your variables here\n\n\n// Check 1: views is more than 10000 and monetized\nconsole.log();\n// Check 2: views is more than 10000 or is monetized\nconsole.log();\n// Check 3: copyrightStrike\nconsole.log();\nconsole.log(views > 10000 && monetized && !copyrightStrike);",
+    "expectedOutput": "true\ntrue\nfalse\ntrue",
+    "nextLesson": "lesson7.json",
+    "previous": "lesson5.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

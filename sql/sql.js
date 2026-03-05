@@ -1,4 +1,3 @@
-let QuantumModule = null;
 let editor = null;
 let currentLesson = null;
 let lastRunOutput = '';
@@ -17,15 +16,17 @@ let editorEl = null;
 let inputEl = null;
 let mode = "";
 let checkResultBtn = null;
+let suite = null;
+let db = null;
 let rawHarness = false;
 function loadStreak() {
-    const raw = localStorage.getItem('qc_streak');
+    const raw = localStorage.getItem('sql_streak');
     lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
     updateStreakUI();
 }
 
 function saveStreak() {
-    localStorage.setItem('qc_streak', String(lessonsInRow));
+    localStorage.setItem('sql_streak', String(lessonsInRow));
 }
 
 function updateStreakUI() {
@@ -46,37 +47,54 @@ function updateLevelUI() {
   document.getElementById("levelProg").value = localStorage.getItem('user_xp');
   document.getElementById("levelProg").max = localStorage.getItem('level_xp_cap');
 }
-function runQC(code) {
-    if (!QuantumModule) {
-        outEl.textContent += '\nWASM module still loading...\n';
-        return;
-    }
-    outEl.textContent = 'Running...\n';
+let SQL = null;
+async function initDB() {
+    SQL = await initSqlJs({
+        locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+    });
+    db = new SQL.Database();
+}
+function formatResults(results) {
+    if (results.length === 0) return 'Query executed successfully (no results)';
+    
+    const cols = results[0].columns;
+    const rows = results[0].values;
+    const widths = cols.map((col, i) => {
+        const valLengths = rows.map(r => String(r[i]).length);
+        return Math.max(col.length, ...valLengths);
+    });
+    
+    const pad = (str, width) => String(str).padEnd(width);
+    const separator = widths.map(w => '-'.repeat(w)).join('-+-');
+    const header = cols.map((c, i) => pad(c, widths[i])).join(' | ');
+    const body = rows.map(r => 
+        r.map((val, i) => pad(val, widths[i])).join(' | ')
+    ).join('\n');
+    
+    return header + '\n' + separator + '\n' + body;
+}
+function runSQL(code) {
     lastRunOutput = '';
     outEl.className = '';
     try {
-        const result = QuantumModule.ccall(
-            'run_quantum_code',
-            'string',
-            ['string'],
-            [code]
-        );
-        lastRunOutput = result || '';
-        outEl.textContent += lastRunOutput;
-        if (result.includes('QC-') || result.includes('Runtime Error:')) {
-            outEl.className = 'error';
+        const results = db.exec(code);
+        if (results.length > 0) {
+            const cols = results[0].columns.join(' | ');
+            const rows = results[0].values.map(r => r.join(' | ')).join('\n');
+            lastRunOutput = cols + '\n' + rows;
+            outEl.textContent = formatResults(results);
         } else {
-            outEl.className = 'success';
+            lastRunOutput = 'Query executed successfully (no results)';
+            outEl.textContent = lastRunOutput;
         }
-        lastRunOutput = result.split("Program exited with code:")[0];
     } catch (err) {
-        lastRunOutput = 'Runtime Error: ' + err.message;
-        outEl.textContent += lastRunOutput;
+        lastRunOutput = 'SQL Error: ' + err.message;
+        outEl.textContent = lastRunOutput;
         outEl.className = 'error';
     }
 }
 function getCompletedLessons() {
-  const stored = localStorage.getItem('qc_completed_lessons');
+  const stored = localStorage.getItem('sql_completed_lessons');
   return stored ? JSON.parse(stored) : {};
 }
 function isLessonCompleted(lessonId) {
@@ -93,7 +111,7 @@ function markLessonCompleted(lessonId, xpEarned) {
     completedAt: Date.now(),
     mode: mode
   };
-  localStorage.setItem('qc_completed_lessons', JSON.stringify(completed));
+  localStorage.setItem('sql_completed_lessons', JSON.stringify(completed));
 }
 window.copytext = function(elementId) {
     const element = document.getElementById(elementId);
@@ -110,19 +128,19 @@ window.copytext = function(elementId) {
     });
 }
 function submitCheck() {
-    if (!currentLesson || (!currentLesson.expectedOutput && !mustContain) && mode == "editor") {
+    if (!currentLesson || (!currentLesson.expectedOutput && !mustContain)) {
         outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
         return;
     }
-    let actual = '';
+    let expected = '';
     const cleanedLines = lastRunOutput
     .split('\n')
     .map(line => line.replace(/\x1b\[[0-9;]*m/g, '').trim())
     .filter(line => line);
-    let expected = '';
+    let actual = '';
     let passed = false;
     if (mode === "text") {
-      actual = inputEl.value;
+      let actual = inputEl.value;
       if (mustContain) {
         passed = actual.includes(mustContain);
       } else {
@@ -224,20 +242,21 @@ async function runWithSuite(suiteFile, label) {
     let studentSource = editor.getValue();
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
-
-    let fullSource = studentSource;
-
+    db.close();
+    db = new SQL.Database();
     if (suiteFile) {
-        if (rawHarness) {
+        if (currentLesson.rawHarness) {
             studentSource += suiteFile;
         } else {
-            const suite = await fetch(suiteFile).then(r => r.text());
-            studentSource += '\n\n' + suite;
+            suite = await fetch(suiteFile).then(r => r.text());
+            studentSource = suite + '\n\n' + studentSource;
         }
     }
-    fullSource = studentSource;
+    if (currentLesson.setupCode) {
+        db.run(currentLesson.setupCode);
+    }
 
-    runQC(fullSource);
+    runSQL(studentSource);
 }
 
 function btn(bn) {
@@ -286,7 +305,7 @@ function btn(bn) {
   }
 }
 async function loadLesson(lessonFile) {
-    const path = 'lessons-qc/' + lessonFile;
+    const path = 'lessons/' + lessonFile;
     const res = await fetch(path);
     if (!res.ok) throw new Error('Failed to load lesson ' + path);
     const lesson = await res.json();
@@ -305,7 +324,7 @@ async function loadLesson(lessonFile) {
     runHarnessFile    = lesson.runHarness    || null;
     submitHarnessFile = lesson.submitHarness || null;
     mode              = lesson.mode            || "editor";
-    rawHarness      = lesson.rawHarness || false;
+    rawHarness      = lesson.rawHarness    || false;
     document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
     lessonXP          = parseInt(lesson.xp, 10)|| 0;
     editorEl = document.getElementsByClassName("code-box")[0];
@@ -359,7 +378,7 @@ async function loadLesson(lessonFile) {
 
     const lessonHint = lesson.hint || '';
     hintBody.innerHTML = marked.parse(lessonHint);
-    const showButtons = !!(lesson.b1t || lesson.b2t || lesson.b3t || lesson.b4t);
+    const showButtons = (lesson.b1t || lesson.b2t || lesson.b3t || lesson.b4t);
     btns.forEach(button => {
         button.style.display = showButtons ? 'block' : 'none';
     });
@@ -374,7 +393,7 @@ async function setupLogic() {
     hintBody= document.querySelector('.hint-body');
     let params = new URLSearchParams(location.search);
     let lessonFileFromUrl = params.get('lesson');
-    let lastLesson = localStorage.getItem('qc_current_lesson');
+    let lastLesson = localStorage.getItem('sql_current_lesson');
     let lessonFile = lessonFileFromUrl || lastLesson || 'lesson1.json';
     
     await loadLesson(lessonFile).catch(err => {
@@ -388,8 +407,8 @@ async function setupLogic() {
     loadStreak();
     if (runBtn) {
         runBtn.addEventListener('click', async () => {
-            const suiteToUse = runHarnessFile || null;
-            await runWithSuite(suiteToUse, 'Running');
+            suite = runHarnessFile || null;
+            await runWithSuite(suite, 'Running');
         });
     }
     if (checkResultBtn) {
@@ -452,107 +471,17 @@ async function setupLogic() {
 
 require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });
 document.addEventListener('DOMContentLoaded', () => {
-    require(['vs/editor/editor.main'], function() {
-        monaco.languages.register({ id: 'qc' });
-
-        monaco.languages.setMonarchTokensProvider('qc', {
-            tokenizer: {
-                root: [
-                [/\/\/.*$/, 'comment'],
-                [/\/\*/, 'comment', '@comment'],
-                [/^\s*#\s*include/, { token: 'keyword.control.preprocessor', next: '@include' }],
-                [/^\s*#\s*(error|warning|define|undef|ifdef|ifndef|endif|pragma)\b/, 'keyword.control.preprocessor'],
-                [/\b(qif|qelse|qelif|qswitch|if|else|while|for|return|break|continue|switch|case|default|namespace|fn)\b/, 'keyword'],
-                [/\b(const|static|public|private|protected|long|short|final)\b/, 'storage.modifier'],
-                [/\b(true|false|null|nullptr|none|both)\b/, 'constant.language'],
-                [/\b(int|float|double|qbool|void|bool|string|char|dict|map|list|enum|struct|class|type|auto)\b/, 'storage.type'],
-                [/\b[A-Z][a-zA-Z0-9_]*\b/, 'entity.name.type'],
-                [/\b[a-zA-Z_][a-zA-Z0-9_]*(?=::)/, 'entity.name.namespace'],
-                [/\b[a-zA-Z_][a-zA-Z0-9_]*\s*(?=\()/, 'entity.name.function'],
-                [/(?<=\.|->)[a-zA-Z_][a-zA-Z0-9_]*/, 'variable.other.member'],
-                [/"/, 'string', '@string'],
-                [/'([^'\\]|\\.)'/, 'string.quoted.single'],
-                [/\b(0x[0-9a-fA-F]+|0b[01]+|[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?f?)\b/, 'number'],
-                [/\+\+|--|\+|\-|\*\*|\*|\/|%|==|!=|<=|>=|<|>|&&&|&&|\|\|\||\|\||!!|!|=|\+=|\-=|\*=|\/=|&|\||\^|<<|>>/, 'operator'],
-                ],
-
-                comment: [
-                [/[^\/*]+/, 'comment'],
-                [/\*\//, 'comment', '@pop'],
-                [/[\/*]/, 'comment']
-                ],
-
-                string: [
-                [/[^\\"]+/, 'string'],
-                [/\\./, 'string.escape'],
-                [/"/, 'string', '@pop'],
-                ],
-
-                include: [
-                [/[ \t]+/, ''],
-                [/,/, 'punctuation.separator'],
-                [/<|>/, 'string.include'],
-                [/[a-zA-Z0-9_.\/\\]+/, 'string.include'],
-                [/[a-zA-Z_][a-zA-Z0-9_]*/, 'entity.name.namespace'],
-                [/$/, '', '@pop'],
-                ],
-            },
-        });
-        monaco.editor.defineTheme('qcTheme', {
-            base: 'vs-dark',
-            inherit: true,
-            rules: [
-                { token: 'keyword', foreground: 'C586C0' },
-                { token: 'storage.type', foreground: '569CD6' },
-                { token: 'entity.name.function', foreground: 'DCDCAA' },
-                { token: 'operator', foreground: 'D4D4D4' },
-                { token: 'comment', foreground: '6A9955', fontStyle: 'italic' },
-                { token: 'string', foreground: 'CE9178' },
-                { token: 'number', foreground: 'B5CEA8' },
-                { token: 'constant.language', foreground: '569CD6', fontStyle: 'bold' },
-                { token: 'keyword.control.preprocessor', foreground: 'C586C0' },
-                { token: 'entity.name.type', foreground: '4EC9B0' },
-                { token: 'entity.name.namespace', foreground: '4EC9B0' },
-                { token: 'variable.other.member', foreground: '9CDCFE' },
-                { token: 'identifier', foreground: '9CDCFE' }
-            ],
-            colors: {
-                'editor.background': '#1E1E1E',
-                'editor.foreground': '#D4D4D4'
-            }
-        });
+    require(['vs/editor/editor.main'], async function() {
+        await initDB();
         editor = monaco.editor.create(document.getElementById('editor'), {
-            value: `int main() {
-    println("Hello, World!");
-    return 0;
-}`,
-            language: 'qc',  
-            theme: 'qcTheme',
-            automaticLayout: true,
-            fontSize: 14,
-            minimap: { enabled: false },
-            scrollBeyondLastLine: false,
-            wordWrap: 'on',
+            value: '',
+            language: 'sql',
+            theme: 'vs-dark'
         });
         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function() {
             const runBtn = document.getElementById('run');
             if (runBtn) runBtn.click();
         });
-        
-        console.log('QuantumC Monaco Editor initialized');
         setupLogic();
-
-    });
-
-    QuantumC().then(function(module) {
-        QuantumModule = module;
-        document.getElementById('output').innerText = 'Ready! Press Ctrl+Enter or click "Run Code".';
-        console.log('Quantum C WASM loaded successfully');
-        document.getElementById('output').className = 'success';
-    }).catch(function(err) {
-        document.getElementById('output').innerText = 'Error loading WASM: ' + err;
-        document.getElementById('output').className = 'error'
-        console.error('Failed to load Quantum C:', err);
-        
     });
 });
