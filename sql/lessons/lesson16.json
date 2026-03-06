@@ -1,0 +1,22 @@
+{
+    "id": "lesson16.json",
+    "title": "UPDATE",
+    "description": "## UPDATE\n`UPDATE` lets you modify existing rows in a table. The syntax is:\n```sql\nUPDATE table_name\n    SET column = value, column2 = value2...\n    WHERE condition;\n```\n**WARNING:** If you forget the `WHERE` clause, it updates EVERY row. That's bad.\n```sql\n-- updates only Steve's plan\nUPDATE customers SET plan = 'pro' WHERE name = 'Steve';\n-- updates EVERYONE's plan to pro. Oops.\nUPDATE customers SET plan = 'pro';\n```\n---\n## Assignment:\nBWS-API crashed! Update its status to 'on fire' and StupidShovelware got taken down, update its status to 'deleted'. (table name is deployments)",
+    "setupCode": "CREATE TABLE deployments (id INTEGER PRIMARY KEY AUTOINCREMENT, app TEXT NOT NULL, status TEXT DEFAULT 'pending', region TEXT); INSERT INTO deployments (app, status, region) VALUES ('BWS-API', 'running', 'us-east'), ('StupidShovelware', 'Vibe-Coded', 'cn');",
+    "starterCode": "-- Update the statuses here\n",
+    "runHarness": "SELECT * FROM deployments ORDER BY id ASC;",
+    "mustContain": null,
+    "expectedOutput": "id | app | status | region\n1 | BWS-API | on fire | us-east\n2 | StupidShovelware | deleted | cn",
+    "nextLesson": "lesson17.json",
+    "previous": "lesson15.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

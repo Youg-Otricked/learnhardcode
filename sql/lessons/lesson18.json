@@ -1,0 +1,22 @@
+{
+    "id": "lesson18.json",
+    "title": "DROP TABLE",
+    "description": "You may be wondering how to acutally delete a table? For this, you use the statement DROP TABLE. It deletes a table. BE _**VERY**_ CAREFUL WITH THIS COMMAND.\n```sql\n-- Syntax:\nDROP TABLE table_name;\n```\n---\n## Assignment:\nWe need to temporarily take down our deployments table to fix bugs. Do it.",
+    "setupCode": "CREATE TABLE deployments (id INTEGER PRIMARY KEY AUTOINCREMENT, app TEXT NOT NULL, status TEXT DEFAULT 'pending', region TEXT); INSERT INTO deployments (app, status, region) VALUES ('BWS-API', 'not-on-fire-anymore', 'us-east'), ('Lol', 'Vibe-Coded', 'chameritan'), ('Bread tracker', 'made with butter on rye', 'gm'), ('Byby resources', '2 TBs lol', 'chameritan');",
+    "starterCode": "-- Write your statement here.\n",
+    "runHarness": "SELECT name FROM sqlite_master WHERE type='table' AND name='deployments';",
+    "expectedOutput": "Query executed successfully (no results)",
+    "mustContain": null,
+    "nextLesson": "lesson19.json",
+    "previous": "lesson17.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

@@ -1,0 +1,21 @@
+{
+    "id": "lesson19.json",
+    "title": "Advanced SELECT [JOIN (INNER)]",
+    "description": "## JOIN\nSo far you've only queried one table at a time. But what if you need data from TWO tables? That's what `JOIN` does - it combines rows from different tables based on a matching column.\n\n### INNER JOIN\n`INNER JOIN` returns only rows where there's a match in BOTH tables.\n```sql\nSELECT columns\nFROM table1\nINNER JOIN table2\n    ON table1.column = table2.column; -- Note that this could be any comparison, but columns must be table_name.column_name\n```\n---\n## Assignment:\nBWS has a `users` table and a `deployments` table. Each deployment has a `user_id` that matches a user's `id`. Write a query that shows each deployment's app name alongside the user's name who deployed it.",
+    "setupCode": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT NOT NULL); CREATE TABLE deployments (id INTEGER PRIMARY KEY, app TEXT NOT NULL, user_id INTEGER, status TEXT); INSERT INTO users VALUES (1, 'Steve'), (2, 'Bob'), (3, 'Alice'); INSERT INTO deployments VALUES (1, 'BWS-API', 1, 'running'), (2, 'Bread tracker', 2, 'on fire'), (3, 'StupidShovelware', 1, 'deleted');",
+    "starterCode": "-- Join deployments with users\n",
+    "runHarness": "",
+    "expectedOutput": "app | name\nBWS-API | Steve\nBread tracker | Bob\nStupidShovelware | Steve",
+    "nextLesson": "lesson20.json",
+    "previous": "lesson18.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

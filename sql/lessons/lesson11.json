@@ -1,0 +1,22 @@
+{
+    "id": "lesson11.json",
+    "title": "Create Table [NOT NULL]",
+    "description": "Have you noticed that you can insert _**empty**_ values into tables? Sometimes, this is a problem, as you may have required fields, and you would just need the backend to verify, adding complexity. This is what `NOT NULL` is for. It makes sure a field _cannot be null_. You put it _after the datatype_.\n## Assignment:\nBWS needs the customers table's name and plan fields to be non-null! Fix it.",
+    "setupCode": "",
+    "starterCode": "CREATE TABLE customers (\n    id INTEGER PRIMARY KEY,\n    name TEXT,\n    plan TEXT\n);",
+    "runHarness": "INSERT INTO customers (name, plan) VALUES ('Tim', 'cheapest');\nSELECT sql FROM sqlite_master WHERE name='customers';",
+    "expectedOutput": "",
+    "mustContain": ["name TEXT NOT NULL", "plan TEXT NOT NULL"],
+    "nextLesson": "lesson12.json",
+    "previous": "lesson10.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

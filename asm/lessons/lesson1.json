@@ -1,0 +1,12 @@
+{
+    "id": "lesson1.json",
+    "title": "Welcome to LHINX",
+    "description": "## Welcome to LHINX Kernel Development\nYou just got hired to work on the **LHINX** kernel. Your first task is simple - change the boot message.\n\nDon't worry about understanding the code yet. Just change the text between the quotes to say `LHINX booted!` exactly.\n\n---\nChange the message and hit Run.",
+    "starterCode": "section .data\n    msg db \"Hello, World!\", 10\n    len equ $ - msg\n\nsection .text\n    global _start\n\n_start:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, msg\n    mov rdx, len\n    syscall\n\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "expectedOutput": "LHINX booted!",
+    "nextLesson": "lesson2.json",
+    "previous": null,
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "10"
+}

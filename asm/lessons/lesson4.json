@@ -1,0 +1,18 @@
+{
+    "id": "lesson4.json",
+    "title": "Syscalls",
+    "description": "## Syscalls\nA syscall is how your program talks to the kernel (the OS). You can't just print to the screen or exit directly - you have to ASK the kernel to do it.\n\n### How it works:\n1. Put the syscall number in `rax`\n2. Put arguments in `rdi`, `rsi`, `rdx` (in that order)\n3. Run `syscall`\n\n### Two syscalls you know:\n**Write (rax = 1)** - print to screen\n- `rdi` = 1 (stdout)\n- `rsi` = address of your string\n- `rdx` = length of string\n\n**Exit (rax = 60)** - stop the program\n- `rdi` = exit code (0 = success)\n\n### Example:\n```asm\nmov rax, 1      ; syscall: write\nmov rdi, 1      ; to: stdout\nmov rsi, msg    ; what: address of msg\nmov rdx, 5      ; how much: 5 bytes\nsyscall         ; do it!\n```\n\n---\n## Question:\nTo print a string using a syscall, what value must `rax` be?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson5.json",
+    "previous": "lesson3.json",
+    "showButtons": true,
+    "correct": "b2",
+    "b1t": "60",
+    "b2t": "1",
+    "b3t": "The string address",
+    "b4t": "0",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "10"
+}

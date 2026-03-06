@@ -1,0 +1,18 @@
+{
+    "id": "lesson6.json",
+    "title": "Program Structure",
+    "description": "## The Boilerplate\nEvery program you've written has the same skeleton. Let's understand it.\n\n### `section .data`\nThis is where you store your data. Strings, numbers, constants. This section is loaded into memory when the program starts.\n\n### `section .text`\nThis is where your instructions live. The CPU executes these top to bottom.\n\n### `global _start`\nThis tells the linker where your program begins. Without it, the linker doesn't know where to start executing.\n\n### `_start:`\nThis is a **label**. It marks a position in your code. `_start` is special - it's the entry point. The CPU begins executing here.\n\n---\n## Question:\nWhat happens if you remove `global _start`?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson7.json",
+    "previous": "lesson5.json",
+    "showButtons": true,
+    "correct": "b3",
+    "b1t": "The program runs normally",
+    "b2t": "The program crashes at runtime",
+    "b3t": "The linker fails with an error",
+    "b4t": "The assembler fails with an error",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "10"
+}

@@ -1,0 +1,22 @@
+{
+    "id": "lesson14.json",
+    "title": "Control Flow [Switch]",
+    "description": "## Switch\nWhen you have many `else if` statements checking the same variable, `switch` is cleaner.\n```csharp\nswitch (variable)\n{\n    case value1:\n        code;\n        break;\n    case value2:\n        code;\n        break;\n    default:\n        code;\n        break;\n}\n```\n`break` is important - without it, execution \"falls through\" to the next case.\n`default` runs when no case matches, like `else`.\n\n---\n## Assignment:\nThe Chronoshard team needs a weapon damage calculator. Given a weapon name, print its damage. Use a switch statement:\n- `\"sword\"` -> `\"Damage: 25\"`\n- `\"bow\"` -> `\"Damage: 15\"`\n- `\"staff\"` -> `\"Damage: 30\"`\n- anything else -> `\"Damage: 5\"`",
+    "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            string weapon = \"staff\";\n            // Write your switch statement here\n\n            return 0;\n        }\n    }\n}",
+    "expectedOutput": "Damage: 30",
+    "nextLesson": "lesson15.json",
+    "previous": "lesson13.json",
+    "showButtons": false,
+    "mustContain": "",
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "runHarness": "",
+    "submitHarness": "",
+    "solutionFile": "",
+    "hint": "",
+    "difficulty": "basic",
+    "xp": "20"
+}
