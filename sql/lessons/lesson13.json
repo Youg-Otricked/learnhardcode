@@ -1,0 +1,23 @@
+{
+    "id": "lesson13.json",
+    "title": "Create Table [UNIQUE and AUTOINCREMENT]",
+    "description": "The two final most important keywords for tables are `UNIQUE` and `AUTOINCREMENT`.\n`UNIQUE` is exactly what it sounds like. It makes the field unique, so it errors if you insert two of the same values into it. `AUTOINCREMENT` works on a number type, and will auto-increment by 1 to the newest possible one. You may now notice `INTEGER PRIMARY KEY AUTOINCREMENT` is just `INTEGER UNIQUE NOT NULL AUTOINCREMENT` internally. You cannot use autoincrement on non integerprimarykeys.\n# Assignment:\nMake the instances table's id an auto-incrementing integer primary key, and make the name field unique.",
+    "setupCode": "",
+    "starterCode": "CREATE TABLE instances (\n    id INT,\n    name TEXT,\n    status TEXT,\n    uptime FLOAT\n);",
+    "runHarness": "INSERT INTO instances (name, status, uptime) VALUES ('BWS-1', 'running', 99.9);\nINSERT INTO instances (name, status, uptime) VALUES ('BWS-2', 'stopped', 0.0);\nSELECT sql FROM sqlite_master WHERE name='instances';",
+    "mustContain": ["AUTOINCREMENT", "UNIQUE"],
+    "expectedOutput": "",
+    "nextLesson": "lesson14.json",
+    "previous": "lesson12.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "hint": "",
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

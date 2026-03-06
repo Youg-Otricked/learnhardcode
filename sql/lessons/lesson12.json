@@ -1,0 +1,23 @@
+{
+    "id": "lesson12.json",
+    "title": "Create Table [TIMESTAMP and DEFAULT]",
+    "description": "There is one more core datatype of columns in sql. That is `TIMESTAMP`. Timestamp is a timestamp (duh), and it is usefull for tracking created at dates, updated at dates... Another important thing is DEFAULT. This means that when this column isnt set in a row, it is auto-assigned to the value stated. There is a special thing you can do to default to the current timestamp for `TIMESTAMP`s, and that is `DEFAULT CURRENT_TIMESTAMP`.\n## Assignment:\nBWS needs the instances table to have created and updated at fields. Replace the uptime field with 2 timestamps, created_at and updated_at that both default to current timestamp.",
+    "setupCode": "",
+    "starterCode": "CREATE TABLE instances (\n    id INT,\n    name TEXT,\n    status TEXT,\n    uptime FLOAT\n);",
+    "runHarness": "INSERT INTO instances (id, name, status) VALUES (1, 'BWS-1', 'running');\nSELECT sql FROM sqlite_master WHERE name='instances';",
+    "mustContain": ["created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP", "updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"],
+    "expectedOutput": "",
+    "nextLesson": "lesson13.json",
+    "previous": "lesson11.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "hint": "`DEFAULT` goes after the datatype.",
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

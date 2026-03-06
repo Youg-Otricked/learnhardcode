@@ -1,0 +1,18 @@
+{
+    "id": "lesson9.json",
+    "title": "Control flow [IF]",
+    "description": "You may be noticing that sometimes you dont want things to execute all the time. This is what `if` statements are for. They only execute when the condition is true. synatx:\n```ts\nif (condition) {\n    code\n}\n```\n## Assignment:\nMeTube needs to check if a video should be recommended. If the video has more than 10000 views, print `Recommended!`. If not, print nothing.",
+    "starterCode": "const views: number = 15000;\n\n// Write your if statement here\n",
+    "expectedOutput": "Recommended!",
+    "nextLesson": "lesson10.json",
+    "previous": "lesson8.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "10"
+}

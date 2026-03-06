@@ -139,12 +139,21 @@ function submitCheck() {
     .filter(line => line);
     let actual = '';
     let passed = false;
+    console.log(typeof mustContain, mustContain, actual);
     if (mode === "text") {
       let actual = inputEl.value;
       if (mustContain) {
-        passed = actual.includes(mustContain);
+        if (Array.isArray(mustContain)) {
+            for (let str of mustContain) {
+                passed = actual.includes(str);
+                if (!passed) break
+            }
+        } else {
+            passed = actual.includes(mustContain);
+        }
       } else {
-        passed = (actual === currentLesson.expectedOutput.trim());
+        expected = currentLesson.expectedOutput.trim();
+        passed = (actual === expected);
       }
     } else if (mode === 'cli') { 
       passed = localStorage.getItem('cli_success') === 'true';
@@ -159,7 +168,14 @@ function submitCheck() {
       expected = currentLesson.expectedOutput.trim();
       actual   = studentOut.trim();
       if (mustContain) {
-        passed = actual.includes(mustContain);
+        if (Array.isArray(mustContain)) {
+            for (let str of mustContain) {
+                passed = actual.includes(str);
+                if (!passed) break
+            }
+        } else {
+            passed = actual.includes(mustContain);
+        }
       } else {
         passed = (actual === expected);
       }

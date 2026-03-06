@@ -1,0 +1,19 @@
+{
+    "id": "lesson5.json",
+    "title": "Writing to console",
+    "description": "Now, it is time for you to combine eveything. Print string 1 and 2 to console, then exit with code 0.",
+    "starterCode": "section .data\n    msg db \"LHINX booted!\", 10\n    len equ $ - msg\n    msg2 db \"System started\", 10\n    len2 equ $ - msg2\n\nsection .text\n    global _start\n\n_start:\n    ",
+    "expectedOutput": "LHINX booted!\nSystem started\n",
+    "nextLesson": "lesson6.json",
+    "previous": "lesson4.json",
+    "hint": "**Write (rax = 1)** - print to screen\n- `rdi` = 1 (stdout)\n- `rsi` = address of your string\n- `rdx` = length of string\n",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "16"
+}

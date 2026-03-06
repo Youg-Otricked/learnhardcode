@@ -344,9 +344,17 @@ async function setupLogic() {
     if (mode === "text") {
       actual = inputEl.value;
       if (mustContain) {
-        passed = actual.includes(mustContain);
+        if (Array.isArray(mustContain)) {
+            for (let str of mustContain) {
+                passed = actual.includes(str);
+                if (!passed) break
+            }
+        } else {
+            passed = actual.includes(mustContain);
+        }
       } else {
-        passed = (actual === currentLesson.expectedOutput.trim());
+        expected = currentLesson.expectedOutput.trim();
+        passed = (actual === expected);
       }
     } else if (mode === 'cli') { 
        passed = localStorage.getItem('cli_success') === 'true';
@@ -363,7 +371,14 @@ async function setupLogic() {
       actual = studentOut.trim();
 
       if (mustContain) {
-        passed = actual.includes(mustContain);
+        if (Array.isArray(mustContain)) {
+            for (let str of mustContain) {
+                passed = actual.includes(str);
+                if (!passed) break
+            }
+        } else {
+            passed = actual.includes(mustContain);
+        }
       } else {
         passed = (actual === expected);
       }
