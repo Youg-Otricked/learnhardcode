@@ -1,0 +1,17 @@
+{
+  "id": "lesson62.json",
+  "title": "Window Functions — Ranking & Aggregation",
+  "description": "## Window Functions\nWindow functions calculate values across a set of rows related to the current row - without collapsing them like GROUP BY does.\n\n- `RANK() OVER (ORDER BY col)` - assigns a rank\n- `ROW_NUMBER() OVER (ORDER BY col)` - assigns a row number\n- `SUM(col) OVER (ORDER BY col)` - running total\n\n```sql\nSELECT title, escalation_level,\n    RANK() OVER (ORDER BY escalation_level DESC) AS priority_rank\nFROM tickets;\n```\nEvery row stays - but each gets a rank based on the window.\n\n---\n## Assignment:\nBWS needs to prioritize tickets. Select each ticket's id, title, escalation_level, and its rank ordered by escalation_level descending. Name the rank column `priority_rank`.",
+  "setupCode": "CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT, assigned_to TEXT, escalation_level INTEGER); INSERT INTO tickets (title, assigned_to, escalation_level) VALUES ('Server outage', 'Alice', 5), ('Bucket misconfigured', 'Bob', 3), ('Deploy failed', 'Steve', 4);",
+  "starterCode": "-- You are near the end.\n",
+  "runHarness": "SELECT id, title, escalation_level FROM tickets ORDER BY escalation_level DESC;",
+  "expectedOutput": "1|Server outage|5\n3|Deploy failed|4\n2|Bucket misconfigured|3",
+  "mustContain": ["ORDER BY"],
+  "nextLesson": "lesson63.json",
+  "previous": "lesson61.json",
+  "showButtons": false,
+  "rawHarness": true,
+  "mode": "editor",
+  "difficulty": "advanced",
+  "xp": "20"
+}
