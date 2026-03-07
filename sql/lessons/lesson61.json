@@ -5,7 +5,7 @@
   "setupCode": "CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT, assigned_to TEXT); INSERT INTO tickets (title, assigned_to) VALUES ('Server reboot', 'Steve'), ('Bucket cleanup', 'Alice');",
   "starterCode": "-- Use a WITH query to select Steve's tickets\n",
   "runHarness": "",
-  "expectedOutput": "id | title | assigned_to\n1 | Server reboot | Steve",
+  "expectedOutput": "id | title | escalation_level | priority_rank\n1 | Server outage | 5 | 1\n3 | Deploy failed | 4 | 2\n2 | Bucket misconfigured | 3 | 3",
   "mustContain": "",
   "nextLesson": "lesson62.json",
   "previous": "lesson60.json",
