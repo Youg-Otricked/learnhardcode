@@ -1,0 +1,21 @@
+{
+    "id": "lesson45.json",
+    "title": "Transactions [BEGIN / COMMIT]",
+    "description": "## Transactions\nA transaction groups multiple operations into one atomic unit. Either ALL of them happen, or NONE of them do.\n\n```sql\nBEGIN;\nUPDATE accounts SET balance = balance - 100 WHERE name = 'Steve';\nUPDATE accounts SET balance = balance + 100 WHERE name = 'Bob';\nCOMMIT;\n```\nWithout a transaction, if the server crashes between the two UPDATEs, Steve loses $100 but Bob never gets it. With a transaction, both happen or neither does.\n\n- `BEGIN` - starts the transaction\n- `COMMIT` - saves all changes\n\n---\n## Assignment:\nBWS is transferring server resources. In ONE transaction:\n1. Subtract 4 cpu_cores from prod-1\n2. Add 4 cpu_cores to staging\n\nMake sure both happen together.",
+    "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER); INSERT INTO servers VALUES (1, 'prod-1', 16), (2, 'staging', 4), (3, 'dev', 2);",
+    "starterCode": "-- Transfer 4 cores from prod-1 to staging\n",
+    "runHarness": "SELECT * FROM servers ORDER BY id;",
+    "expectedOutput": "id | name | cpu_cores\n1 | prod-1 | 12\n2 | staging | 8\n3 | dev | 2",
+    "nextLesson": "lesson46.json",
+    "previous": "lesson44.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

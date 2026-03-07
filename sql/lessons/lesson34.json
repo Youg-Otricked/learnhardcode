@@ -1,0 +1,21 @@
+{
+    "id": "lesson34.json",
+    "title": "Select [Aliases (AS)]",
+    "description": "## Aliases\nAliases let you rename columns and tables in your query. They don't change the actual data - just how it appears in results.\n\n### Column aliases:\n```sql\nSELECT name AS employee_name, salary AS pay\nFROM staff;\n```\n\n### Table aliases (useful for JOINs):\n```sql\nSELECT e.name, d.name\nFROM employees AS e\nINNER JOIN departments AS d\n    ON e.dept_id = d.id;\n```\nWay shorter than writing `employees.name` and `departments.name` every time.\n\n---\n## Assignment:\nBWS has a new `invoices` table. Select the customer_name as `customer`, amount as `total`, and status as `payment_status`.",
+    "setupCode": "CREATE TABLE invoices (id INTEGER PRIMARY KEY, customer_name TEXT, amount REAL, status TEXT); INSERT INTO invoices VALUES (1, 'Steve', 3.47, 'unpaid'), (2, 'Bob', 1500.00, 'paid'), (3, 'Alice', 750.50, 'pending'), (4, 'Steve', 0.99, 'unpaid');",
+    "starterCode": "-- Select with aliases\n",
+    "runHarness": "",
+    "expectedOutput": "customer | total | payment_status\nSteve | 3.47 | unpaid\nBob | 1500 | paid\nAlice | 750.5 | pending\nSteve | 0.99 | unpaid",
+    "nextLesson": "lesson35.json",
+    "previous": "lesson33.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

@@ -1,0 +1,22 @@
+{
+    "id": "lesson50.json",
+    "title": "Indexes [Expression-based]",
+    "description": "## Expression-based Indexes\nNormal indexes work on a column as-is. But what if you always search with a function like `LOWER()` or `LENGTH()`?\n```sql\n-- This query can't use a normal index on name\nSELECT * FROM users WHERE LOWER(name) = 'steve';\n```\nAn expression-based index indexes the RESULT of an expression:\n```sql\nCREATE INDEX idx_lower_name ON users(LOWER(name));\n```\nNow `WHERE LOWER(name) = 'steve'` is fast because the index stores the lowercased values.\n\nCommon uses:\n- `LOWER(column)` - case-insensitive searches\n- `LENGTH(column)` - searching by string length\n- `SUBSTR(column, 1, 3)` - searching by prefix\n\n---\n## Assignment:\nBWS searches tickets by lowercase title all the time. Create an expression-based index called `idx_lower_title` on `LOWER(title)` of the tickets table.",
+    "setupCode": "CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT, assigned_to TEXT); INSERT INTO tickets (id, title, assigned_to) VALUES(4, 'Password reset', 'Steve'),(5, 'Printer on fire', 'Alice'),(6, 'Internet is slow', NULL),(7, 'VPN connection failed', 'Bob'),(8, 'Forgot username', 'Steve'),(9, 'Blue screen of death', 'Alice'),(10, 'Excel is freezing', NULL),(11, 'Coffee cup holder broken (it was the CD drive)', 'Bob'),(12, 'Mouse moving by itself', 'Steve'),(13, 'Monitor won''t turn on', 'Alice'),(14, 'Deleted the internet icon', NULL),(15, 'Keyboard missing \"Any\" key', 'Bob'),(16, 'Email not sending', 'Steve'),(17, 'Spilled soda on laptop', 'Alice'),(18, 'Wi-Fi keeps dropping', NULL),(19, 'Locked out of account', 'Bob'),(20, 'Request for dual monitors', 'Steve'),(21, 'Laptop making loud buzzing noise', 'Alice'),(22, 'Slack notifications not working', NULL),(23, 'Can''t find the power button', 'Bob'),(24, 'Zoom audio issues', 'Steve'),(25, 'Malware warning popup', 'Alice'),(26, 'Need admin rights', NULL),(27, 'Webcam is blurry', 'Bob'),(28, 'Cannot connect to server', 'Steve'),(29, 'Lost files after update', 'Alice'),(30, 'Computer won''t boot', NULL),(31, 'Strange smell from PC', 'Bob'),(32, 'Caps lock stuck', 'Steve'),(33, 'Browser home page changed', 'Alice'),(34, 'Touchpad not responding', NULL),(35, 'Need new headset', 'Bob'),(36, 'PDF won''t open', 'Steve'),(37, 'Software license expired', 'Alice'),(38, 'Double clicks not working', NULL),(39, 'External drive not recognized', 'Bob'),(40, 'Calendar sync error', 'Steve'),(41, 'Desktop icons rearranged', 'Alice'),(42, 'Screen is upside down', NULL),(43, 'Microphone is muffled', 'Bob'),(44, 'Battery not charging', 'Steve'),(45, 'Phishing email reported', 'Alice'),(46, 'Requested New MacBook', NULL),(47, 'Database query timeout', 'Bob'),(48, 'SSO login error', 'Steve'),(49, 'Heat sink fan failure', 'Alice'),(50, 'Broken laptop hinge', NULL),(51, 'Head of lettuce on power strip', 'Bob'),(52, 'Spacebar missing space', 'Steve'),(53, 'Cannot find the cloud', 'Alice');",
+    "starterCode": "-- Create expression-based index\n",
+    "runHarness": "SELECT name FROM sqlite_master WHERE type='index' AND tbl_name='tickets';",
+    "mustContain": ["idx_lower_title"],
+    "expectedOutput": "",
+    "nextLesson": "lesson51.json",
+    "previous": "lesson49.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "advanced",
+    "xp": "25"
+}

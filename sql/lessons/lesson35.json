@@ -1,0 +1,21 @@
+{
+    "id": "lesson35.json",
+    "title": "Select [DISTINCT]",
+    "description": "## SELECT DISTINCT\nSometimes your query returns duplicate rows. `DISTINCT` removes them.\n```sql\n-- Without DISTINCT: shows duplicates\nSELECT status FROM invoices;\n-- unpaid\n-- paid\n-- pending\n-- unpaid    <- duplicate!\n\n-- With DISTINCT: unique values only\nSELECT DISTINCT status FROM invoices;\n-- unpaid\n-- paid\n-- pending\n```\n\n---\n## Assignment:\nBWS wants to know which customers have invoices. Select all unique customer names from the invoices table.",
+    "setupCode": "CREATE TABLE invoices (id INTEGER PRIMARY KEY, customer_name TEXT, amount REAL, status TEXT); INSERT INTO invoices VALUES (1, 'Steve', 3.47, 'unpaid'), (2, 'Bob', 1500.00, 'paid'), (3, 'Alice', 750.50, 'pending'), (4, 'Steve', 0.99, 'unpaid'), (5, 'Bob', 200.00, 'unpaid');",
+    "starterCode": "-- Select unique customer names\n",
+    "runHarness": "",
+    "expectedOutput": "customer_name\nSteve\nBob\nAlice",
+    "nextLesson": "lesson36.json",
+    "previous": "lesson34.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

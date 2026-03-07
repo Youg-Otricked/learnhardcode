@@ -1,0 +1,21 @@
+{
+    "id": "lesson46.json",
+    "title": "Select [GLOB]",
+    "description": "## GLOB\nGLOB is similar to LIKE but with two differences:\n1. It's **case-sensitive** (LIKE is not)\n2. It uses different wildcards:\n   - `*` instead of `%` (any number of characters)\n   - `?` instead of `_` (one character)\n\n```sql\n-- LIKE: case-insensitive\nSELECT * FROM servers WHERE name LIKE 'prod%';  -- matches Prod, PROD, prod\n\n-- GLOB: case-sensitive\nSELECT * FROM servers WHERE name GLOB 'prod*';  -- matches prod only\n```\n\n---\n## Assignment:\nBWS ticket titles are messy. Find all tickets where the title starts with a capital letter followed by exactly 3 lowercase characters. Use GLOB with `?`. (you can match a capital letter with [A-Z] and lowercase with [a-z])",
+    "setupCode": "CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT); INSERT INTO tickets VALUES (1, 'Disk full'), (2, 'slow'), (3, 'Help'), (4, 'LOUD'), (5, 'Bugs'), (6, 'ok');",
+    "starterCode": "-- Find titles matching capital + 3 lowercase\n",
+    "runHarness": "",
+    "expectedOutput": "id | title\n3 | Help\n5 | Bugs",
+    "nextLesson": "lesson47.json",
+    "previous": "lesson45.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "15"
+}

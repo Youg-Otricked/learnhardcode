@@ -1,0 +1,21 @@
+{
+    "id": "lesson41.json",
+    "title": "Functions [String]",
+    "description": "## String Functions\nSQL has built-in functions to manipulate text:\n\n- `UPPER(text)` - converts to uppercase\n- `LOWER(text)` - converts to lowercase\n- `LENGTH(text)` - returns character count\n- `SUBSTR(text, start, length)` - extracts part of a string\n- `REPLACE(text, old, new)` - replaces text\n- `TRIM(text)` - removes leading/trailing spaces\n\n```sql\nSELECT UPPER('hello');        -- HELLO\nSELECT LENGTH('hello');       -- 5\nSELECT SUBSTR('hello', 2, 3); -- ell\nSELECT REPLACE('hello', 'l', 'r'); -- herro\n```\n\n---\n## Assignment:\nBWS customer names are messy. Select each customer's name in uppercase, and the length of their name. Use aliases `upper_name` and `name_length`.",
+    "setupCode": "CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT); INSERT INTO customers VALUES (1, 'steve'), (2, 'Bob'), (3, '  alice  '), (4, 'DAVE');",
+    "starterCode": "-- Select uppercase name and name length\n",
+    "runHarness": "",
+    "expectedOutput": "upper_name | name_length\nSTEVE | 5\nBOB | 3\nALICE   | 9\nDAVE | 4",
+    "nextLesson": "lesson42.json",
+    "previous": "lesson40.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

@@ -1,0 +1,22 @@
+{
+    "id": "lesson26.json",
+    "title": "Create Table [FOREIGN KEY]",
+    "description": "## FOREIGN KEY\nSo far when we joined tables, nothing STOPPED you from inserting a deployment with `user_id = 999` even if that user doesn't exist. That's bad data.\n\nA `FOREIGN KEY` enforces that a value in one table MUST exist in another table.\n```sql\nCREATE TABLE deployments (\n    id INTEGER PRIMARY KEY,\n    app TEXT NOT NULL,\n    user_id INTEGER,\n    FOREIGN KEY (user_id) REFERENCES users(id)\n);\n```\nNow if you try `INSERT INTO deployments VALUES (1, 'app', 999, 'running')` and user 999 doesn't exist, SQL will reject it.\n\n**Note:** In SQLite, you must enable foreign keys first:\n```sql\nPRAGMA foreign_keys = ON;\n```\n---\n## Assignment:\n(don't worry, the pragma is already on)\nCreate a `tickets` table for BWS support with:\n- `id` (INTEGER PRIMARY KEY)\n- `title` (TEXT NOT NULL)\n- `server_id` (INTEGER, FOREIGN KEY referencing servers(id))\n- `priority` (TEXT DEFAULT 'low')",
+    "setupCode": "PRAGMA foreign_keys = ON; CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER); INSERT INTO servers VALUES (1, 'prod-1', 8), (2, 'prod-2', 16);",
+    "starterCode": "-- Create the tickets table with a foreign key\n",
+    "runHarness": "INSERT INTO tickets (title, server_id) VALUES ('Server on fire', 1);\nSELECT sql FROM sqlite_master WHERE name='tickets';",
+    "mustContain": ["FOREIGN KEY", "REFERENCES"],
+    "expectedOutput": "",
+    "nextLesson": "lesson27.json",
+    "previous": "lesson25.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}
