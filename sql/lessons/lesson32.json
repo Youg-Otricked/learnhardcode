@@ -1,0 +1,21 @@
+{
+    "id": "lesson32.json",
+    "title": "Select [CASE WHEN - Shorthand]",
+    "description": "## CASE Shorthand\nWhen you're checking the same column every time, there's a shorter syntax:\n```sql\n-- Long form\nCASE\n    WHEN status = 'running' THEN 'ok'\n    WHEN status = 'stopped' THEN 'down'\nEND\n\n-- Shorthand\nCASE status\n    WHEN 'running' THEN 'ok'\n    WHEN 'stopped' THEN 'down'\nEND\n```\nYou can also use CASE to change what VALUE a column shows based on conditions.\n\n---\n## Assignment:\nBWS needs a cost report. Select each server's name and a cost column:\n- status is 'running' -> show cpu_cores * 10 (active cost)\n- status is 'on fire' -> show cpu_cores * 25 (emergency cost)\n- anything else -> show 0",
+    "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, status TEXT); INSERT INTO servers VALUES (1, 'prod-1', 8, 'running'), (2, 'prod-2', 16, 'running'), (3, 'staging-1', 4, 'stopped'), (4, 'dev-box', 2, 'on fire'), (5, 'test', 1, 'pending');",
+    "starterCode": "-- Select name and cost\n",
+    "runHarness": "",
+    "expectedOutput": "name | cost\nprod-1 | 80\nprod-2 | 160\nstaging-1 | 0\ndev-box | 50\ntest | 0",
+    "nextLesson": "lesson33.json",
+    "previous": "lesson31.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

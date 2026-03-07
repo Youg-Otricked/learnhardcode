@@ -1,0 +1,21 @@
+{
+    "id": "lesson47.json",
+    "title": "Select [EXISTS]",
+    "description": "## EXISTS\nEXISTS checks if a subquery returns ANY rows. It returns true or false.\n```sql\nSELECT * FROM users\nWHERE EXISTS (\n    SELECT 1 FROM orders\n    WHERE orders.user_id = users.id\n);\n```\nThis finds all users who have at least one order. The subquery doesn't need to return specific data - just whether rows exist.\n\n`NOT EXISTS` does the opposite - finds rows where the subquery returns nothing.\n```sql\nSELECT * FROM users\nWHERE NOT EXISTS (\n    SELECT 1 FROM orders\n    WHERE orders.user_id = users.id\n);\n```\nThis finds users with NO orders.\n\n---\n## Assignment:\nBWS wants to find servers that have NO tickets at all. Use NOT EXISTS.",
+    "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT, server_id INTEGER); INSERT INTO servers VALUES (1, 'prod-1'), (2, 'staging'), (3, 'dev'), (4, 'backup'); INSERT INTO tickets VALUES (1, 'Disk full', 1), (2, 'Memory leak', 1), (3, 'Slow build', 3);",
+    "starterCode": "-- Find servers with no tickets\n",
+    "runHarness": "",
+    "expectedOutput": "id | name\n2 | staging\n4 | backup",
+    "nextLesson": "lesson48.json",
+    "previous": "lesson46.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

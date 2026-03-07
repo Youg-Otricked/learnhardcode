@@ -1,0 +1,21 @@
+{
+    "id": "lesson28.json",
+    "title": "Select [LIKE]",
+    "description": "Another important term in `WHERE` for `SELECT`s is `LIKE`. `LIKE` in where is used like this:\n```sql\nWHERE column LIKE string\n```\nThe string you can pass can contain 3 things: Normal string, `_`, and `%`. `%` means any number of characters and `_` means one character, so \"%\" would mean any string of charecters, and \"_\" would be any singular character.\n---\n## Assignment:\nBWS needs to find all servers whose name starts with 'prod'. Use LIKE to find them.",
+    "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, status TEXT); INSERT INTO servers VALUES (1, 'prod-1', 8, 'running'), (2, 'prod-2', 16, 'running'), (3, 'staging-1', 4, 'stopped'), (4, 'dev-box', 2, 'on fire'), (5, 'production-main', 8, 'running');",
+    "starterCode": "-- Find all servers whose name starts with 'prod'\n",
+    "expectedOutput": "id | name | cpu_cores | status\n1 | prod-1 | 8 | running\n2 | prod-2 | 16 | running\n5 | production-main | 8 | running",
+    "runHarness": "",
+    "nextLesson": "lesson29.json",
+    "previous": "lesson27.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "15"
+}

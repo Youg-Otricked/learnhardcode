@@ -1,0 +1,18 @@
+{
+    "id": "lesson57.json",
+    "title": "Workflow [Why SQL?]",
+    "description": "## Why SQL?\nYou could store data in JSON files, CSV files, or even plain text. So why use a database?\n\n- **Concurrency**: Multiple users can read/write at the same time without corrupting data\n- **ACID compliance**: Transactions guarantee data integrity\n- **Querying power**: Try doing a JOIN on two CSV files\n- **Indexing**: Instant lookups on millions of rows\n- **Constraints**: The database enforces your rules (NOT NULL, FOREIGN KEY, CHECK)\n\n---\n## Question:\nWhat problem does a database solve that JSON files don't?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson58.json",
+    "previous": "lesson56.json",
+    "showButtons": true,
+    "correct": "b4",
+    "b1t": "JSON files can't store strings",
+    "b2t": "JSON files are too slow to read",
+    "b3t": "JSON files can't be used on servers",
+    "b4t": "Safe concurrent access from multiple users",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "10"
+}

@@ -1,0 +1,22 @@
+{
+    "id": "lesson53.json",
+    "title": "Create Table [CHECK Constraint]",
+    "description": "## CHECK\nCHECK lets you add custom validation rules to columns. If an INSERT or UPDATE violates the rule, SQL rejects it.\n```sql\nCREATE TABLE employees (\n    id INTEGER PRIMARY KEY,\n    name TEXT NOT NULL,\n    age INTEGER CHECK(age >= 18),\n    salary REAL CHECK(salary > 0)\n);\n```\nNow you can't insert an employee under 18 or with a negative salary.\n\nYou can also name your constraints:\n```sql\nage INTEGER CONSTRAINT age_check CHECK(age >= 18)\n```\n\n---\n## Assignment:\nCreate a BWS `servers` table with:\n- `id` (INTEGER PRIMARY KEY)\n- `name` (TEXT NOT NULL)\n- `cpu_cores` (INTEGER, must be greater than 0)\n- `uptime` (REAL, must be between 0 and 100)",
+    "setupCode": "",
+    "starterCode": "-- Create the table with CHECK constraints\n",
+    "runHarness": "INSERT INTO servers VALUES (1, 'prod-1', 8, 99.9);\nSELECT sql FROM sqlite_master WHERE name='servers';",
+    "mustContain": ["CHECK", "cpu_cores", "uptime"],
+    "expectedOutput": "",
+    "nextLesson": "lesson54.json",
+    "previous": "lesson52.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

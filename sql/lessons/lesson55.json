@@ -1,0 +1,18 @@
+{
+    "id": "lesson55.json",
+    "title": "Workflow [CREATE DATABASE]",
+    "description": "## CREATE DATABASE\nIn a real SQL server (PostgreSQL, MySQL), you create databases with:\n```sql\nCREATE DATABASE my_app;\n```\nA database is a container for all your tables, views, indexes, etc. One server can have many databases.\n\nIn SQLite, there's no CREATE DATABASE - each `.db` file IS a database.\n\n---\n## Question:\nWhy doesn't SQLite need CREATE DATABASE?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson56.json",
+    "previous": "lesson54.json",
+    "showButtons": true,
+    "correct": "b3",
+    "b1t": "SQLite doesn't support multiple tables",
+    "b2t": "SQLite runs in the cloud",
+    "b3t": "Each SQLite file is already a database",
+    "b4t": "SQLite creates databases automatically on INSERT",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "10"
+}

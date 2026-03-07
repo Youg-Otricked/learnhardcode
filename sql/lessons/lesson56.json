@@ -1,0 +1,18 @@
+{
+    "id": "lesson56.json",
+    "title": "Workflow [VACUUM]",
+    "description": "## VACUUM\nWhen you DELETE rows or DROP tables, SQLite doesn't actually shrink the file. The space is marked as free but the file stays the same size.\n\n`VACUUM` rebuilds the entire database file, reclaiming that wasted space.\n```sql\nVACUUM;\n```\n\nWhen to use it:\n- After deleting lots of data\n- After dropping large tables\n- When the database file is much larger than the actual data\n\n---\n## Question:\nWhat does VACUUM actually do?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson57.json",
+    "previous": "lesson55.json",
+    "showButtons": true,
+    "correct": "b2",
+    "b1t": "Deletes all data from all tables",
+    "b2t": "Rebuilds the database file to reclaim unused space",
+    "b3t": "Speeds up queries by creating indexes",
+    "b4t": "Backs up the database to a new file",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "10"
+}

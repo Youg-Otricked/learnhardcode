@@ -1,0 +1,21 @@
+{
+    "id": "lesson38.json",
+    "title": "Advanced SELECT [JOIN (SELF)]",
+    "description": "## SELF JOIN\nA self join joins a table with ITSELF. You use table aliases to treat it as two separate tables.\n\nCommon use: children and their parents, both stored in the same table.\n```sql\nSELECT c.name AS child, p.name AS parent\nFROM familys as c\nINNER JOIN familys AS p\n    ON c.parent_id = p.id;\n```\n\n---\n## Assignment:\nBWS has a staff table where each employee has a manager_id pointing to another employee's id. Show each employee's name and their manager's name.",
+    "setupCode": "CREATE TABLE staff (id INTEGER PRIMARY KEY, name TEXT, manager_id INTEGER); INSERT INTO staff VALUES (1, 'CEO Bob', NULL), (2, 'Steve', 1), (3, 'Alice', 1), (4, 'Dave', 2), (5, 'Eve', 2);",
+    "starterCode": "-- Self join to find each employee's manager\n",
+    "runHarness": "",
+    "expectedOutput": "employee | manager\nSteve | CEO Bob\nAlice | CEO Bob\nDave | Steve\nEve | Steve",
+    "nextLesson": "lesson39.json",
+    "previous": "lesson37.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

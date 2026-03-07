@@ -1,0 +1,21 @@
+{
+    "id": "lesson25.json",
+    "title": "Advanced SELECT [Subqueries]",
+    "description": "## Subqueries\nA subquery is a query inside another query. You can use them anywhere you'd use a value or a table.\n\n### In WHERE:\n```sql\nSELECT * FROM users\nWHERE age > (SELECT AVG(age) FROM users);\n```\nThis finds all users with above-average age. The inner query runs first, returns a number, then the outer query uses it.\n\n### In FROM:\nA subquery in FROM creates a temporary table from a complex query, so you can filter or query it simply.\n```sql\nSELECT * FROM\n    (SELECT name, COUNT(*) as deploys\n     FROM users\n     JOIN deployments ON users.id = deployments.user_id\n     GROUP BY name)\nWHERE deploys > 2;\n```\nThe inner query does the hard work (join, group, count). The outer query just filters the result. Think of it as breaking a complex query into two steps.\n---\n## Assignment:\nBWS wants to find all servers that have more CPU cores than the average. Use a subquery to find them.",
+    "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, ram_gb REAL, uptime REAL); INSERT INTO servers VALUES (1, 'prod-1', 8, 32.0, 99.9), (2, 'prod-2', 8, 64.0, 95.5), (3, 'staging', 4, 16.0, 88.2), (4, 'dev', 2, 8.0, 12.0), (5, 'test', 4, 16.0, 45.0);",
+    "starterCode": "-- Find servers with above-average CPU cores\n",
+    "runHarness": "",
+    "expectedOutput": "id | name | cpu_cores | ram_gb | uptime\n1 | prod-1 | 8 | 32 | 99.9\n2 | prod-2 | 8 | 64 | 95.5",
+    "nextLesson": "lesson26.json",
+    "previous": "lesson24.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}
