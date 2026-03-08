@@ -1,0 +1,18 @@
+{
+    "id": "lesson10.json",
+    "title": "Memory Access",
+"description": "## Reading and Writing Memory\nSo far you've only used registers. But registers are limited - there's only 16. Real programs store data in memory.\n\nBrackets `[]` mean \"the value AT this address\":\n```asm\nmov al, [myvar]       ; read byte from myvar into al\nmov [myvar], byte 42  ; write 42 into myvar\n```\n\nYou can also use registers as pointers:\n```asm\nmov rsi, myvar        ; rsi holds the address\nmov byte [rsi], 42    ; write 42 to that address\nmov al, [rsi]         ; read from that address\n```\n\nOr use raw hex addresses directly:\n```asm\nmov al, [0x402000]    ; read from address 0x402000\nmov [0x402000], byte 5 ; write 5 to address 0x402000\n```\nYou can see these addresses in the disassembly tab - that's where your data lives in memory.\n\n- `mov rax, myvar` = put the ADDRESS in rax\n- `mov al, [myvar]` = put the VALUE at that address in al\n\n**Use the Step button and check the Registers/Stack tab to watch values move between registers and memory!**\n\n---\n## Assignment:\nLHINX stores the boot mode in memory. Read the value from `boot_mode`, compare it to 1. If it equals 1, print `Normal boot`. Otherwise print `Safe mode`.",
+    "starterCode": "section .data\n    boot_mode db 1\n    normal_msg db \"Normal boot\", 10\n    normal_len equ $ - normal_msg\n    safe_msg db \"Safe mode\", 10\n    safe_len equ $ - safe_msg\n\nsection .text\n    global _start\n\n_start:\n    ; read boot_mode into al\n    ; compare and jump\n\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "expectedOutput": "Normal boot",
+    "nextLesson": "lesson11.json",
+    "previous": "lesson9.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}
