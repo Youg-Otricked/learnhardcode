@@ -1,0 +1,18 @@
+{
+    "id": "lesson13.json",
+    "title": "Loops",
+    "description": "## Loops in Assembly\nThere's no `while` or `for` keyword in assembly. Loops are just labels + compare + jump back.\n\n```asm\n    mov rcx, 5        ; counter\nloop_start:\n    ; do something\n    dec rcx            ; counter--\n    cmp rcx, 0\n    jg loop_start      ; if counter > 0, jump back\n```\nThat's a while loop. `dec` subtracts 1, `cmp` checks if we're done, `jg` jumps back if not.\n\n---\n## Assignment:\nLHINX needs to print a boot countdown. Print `Booting...` 3 times using a loop. Use `rcx` as your counter.",
+    "starterCode": "section .data\n    msg db \"Booting...\", 10\n    len equ $ - msg\n\nsection .text\n    global _start\n\n_start:\n    mov rcx, 3\n    ; write your loop here\n\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "expectedOutput": "Booting...\nBooting...\nBooting...",
+    "nextLesson": "lesson14.json",
+    "previous": "lesson12.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

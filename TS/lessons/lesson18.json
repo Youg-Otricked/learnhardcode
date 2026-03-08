@@ -1,0 +1,18 @@
+{
+    "id": "lesson18.json",
+    "title": "Loops [For...of]",
+    "description": "## For...of\nAccessing arrays by index works, but it's clunky. `for...of` loops through every element directly:\n```ts\nconst names: string[] = [\"Alice\", \"Bob\", \"Steve\"];\nfor (const name of names) {\n    console.log(name);\n}\n// Alice\n// Bob\n// Steve\n```\nNo index needed. Clean and simple.\n\n---\n## Assignment:\nMeTube needs to display all comments on a video. Loop through the `comments` array and print each one.",
+    "starterCode": "const comments: string[] = [\"Great video!\", \"First!\", \"This is terrible\", \"Steve was here\"];\n\n// Loop through and print each comment\n",
+    "expectedOutput": "Great video!\nFirst!\nThis is terrible\nSteve was here",
+    "nextLesson": "lesson19.json",
+    "previous": "lesson17.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

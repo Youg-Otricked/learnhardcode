@@ -1,0 +1,22 @@
+{
+  "id": "lesson4.json",
+  "title": "Comments",
+  "description": "Comments are how you add, well, comments to your code. You make a single line comment by typing '`//`'. That makes all text on this line past `//` a comment. Meanwhile, multiline comments you make with the syntax`/* text */`. All text and all lines past /* is a comment until */.\n## Assignment:\nAnother **_[REDACTED]_** From the TechQ team _accidently_ commented out the code and forgot to close a multi line comment! Fix it.",
+  "starterCode": "int main() {\n    //std::qout << \"Hi i am broken\" << '\\n';\n    /* This is a comment\n    this is also comment\n    return 0;\n}",
+  "expectedOutput": "Hi i am broken\n",
+  "mustContain": "",
+  "nextLesson": "lesson5.json",
+  "previous": "lesson3.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "Remember: You close multi line comments with `*/`",
+  "difficulty": "easiest",
+  "xp": "10"
+}
