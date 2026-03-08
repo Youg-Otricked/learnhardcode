@@ -1,0 +1,18 @@
+{
+    "id": "lesson15.json",
+    "title": "Loops [While]",
+    "description": "## Loops.\nOf course, sometimes you need to do more than one thing. That is what loops are for.\n## While loop.\n`while` loops are the most basic and important type of loop. While loops just check if their condition is true, and run until it is false.\n### Syntax:\n```ts\nwhile (condition) {\n    code;\n}\n```\nUs at MeTube _really_ like annoying our users. Let's make sure that they don't get connected to wifi until a bit AFTER they connect. Create a variable times, and initlize it to 0, then while connected is true and time is less than 5, print \"Not connected\", then increment times, then outside the loop, print \"Connected to WiFi\".\n###### Note: Copy your code before running, as if you make a infinite loop, you may need to reload the page.",
+    "starterCode": "const connected: boolean = true;\n// Write your code here",
+    "expectedOutput": "Not connected\nNot connected\nNot connected\nNot connected\nNot connected\nConnected to WiFi\n",
+    "nextLesson": "lesson16.json",
+    "previous": "lesson14.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

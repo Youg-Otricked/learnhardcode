@@ -1,0 +1,18 @@
+{
+    "id": "lesson9.json",
+    "title": "Comparisons & Jumps [Code]",
+    "description": "## Time to jump\nYou know what `cmp` and conditional jumps do. Now use them.\n\nRemember the pattern:\n```asm\n    cmp rax, value\n    jg label        ; jump if rax > value\n    ; code if not greater\n    jmp done\nlabel:\n    ; code if greater\ndone:\n```\n\n---\n## Assignment:\nLHINX needs a memory check at boot. The value in `rax` is the available memory. If `rax` is greater than or equal to 1024, print `Boot OK`. Otherwise print `Low memory`. The memory value is already set for you.",
+    "starterCode": "section .data\n    ok_msg db \"Boot OK\", 10\n    ok_len equ $ - ok_msg\n    low_msg db \"Low memory\", 10\n    low_len equ $ - low_msg\n\nsection .text\n    global _start\n\n_start:\n    mov rax, 2048\n    ; compare rax to 1024 and jump\n\n    ; exit\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "expectedOutput": "Boot OK",
+    "nextLesson": "lesson10.json",
+    "previous": "lesson8.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}
