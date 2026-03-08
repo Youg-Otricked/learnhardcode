@@ -1,0 +1,18 @@
+{
+    "id": "lesson17.json",
+    "title": "Arrays",
+    "description": "## Arrays\nAn array stores multiple values in one variable.\n```ts\nconst videos: string[] = [\"Cat Falls\", \"Dog Runs\", \"Bird Flies\"];\nconsole.log(videos[0]); // Cat Falls\nconsole.log(videos[1]); // Dog Runs\nconsole.log(videos.length); // 3\n```\n- `string[]` means an array of strings\n- `[0]` accesses the first element (arrays start at 0)\n- `.length` gives the number of elements\n\nYou can also modify arrays:\n```ts\nvideos.push(\"Fish Swims\");  // add to end\nvideos[0] = \"Cat Jumps\";    // change first element\n```\n\n---\n## Assignment:\nMeTube needs a trending page. Create an array called `trending` with these video titles: `\"LHINX Tutorial\"`, `\"BWS Crash Course\"`, `\"Steve Gets Scammed\"`. Print each one using a for loop + index access.",
+    "starterCode": "// Create trending array and print each title\n",
+    "expectedOutput": "LHINX Tutorial\nBWS Crash Course\nSteve Gets Scammed",
+    "nextLesson": "lesson18.json",
+    "previous": "lesson16.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

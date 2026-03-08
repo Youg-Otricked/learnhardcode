@@ -1,0 +1,18 @@
+{
+    "id": "lesson16.json",
+    "title": "Loops [For]",
+    "description": "## For loop\nFor loops are very simmilar to while loops: The syntax is:\n```ts\nfor (start; stop; step) {\n    code\n}\n```\nStart is the variable initilized when you start the loop, stop is just like a while loop, that is the condition for the loop to execute, and step is what happens on each run.\n```ts\nfor (let i = 0; i < 15; i++) {\n    code;\n}\n```\nIs equivelant to:\n```ts\nlet i: number = 0;\nwhile (i < 15) {\n    i++;\n    code;\n}\n```\nSo much slimmer, right!\nUs at MeTube realized out previous solution was inneficient: replace it with a for loop.",
+    "starterCode": "const connected: boolean = true;\nlet count: number = 0;\nwhile (connected && count < 5) {\n    console.log(\"Not connected\");\n    count++;\n}\nconsole.log(\"Connected to WiFi\");",
+    "expectedOutput": "Not connected\nNot connected\nNot connected\nNot connected\nNot connected\nConnected to WiFi\n",
+    "nextLesson": "lesson17.json",
+    "previous": "lesson15.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

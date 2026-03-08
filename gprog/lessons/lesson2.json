@@ -1,0 +1,22 @@
+{
+  "id": "lesson2.json",
+  "title": "Main",
+  "description": "In Quantum C, all programs only need one thing to start: the `main()` function. While i will cover functions later, all you need to know is:\n- A: All programs start at the first line of the `main` function\n- B: The main function signature is `int main() { code... return 0;}.\nThe main function will look like:\n```cpp\nint main() {\n    code...\n    return 0;\n}\n```\n---\n## Assignment: \nMake the code work by wraping it in the `main` function.",
+  "starterCode": "std::qout << \"I am in the main function and I work.\" << '\\n';\nreturn 0;",
+  "expectedOutput": "I am in the main function and I work.\n",
+  "mustContain": "",
+  "nextLesson": "lesson3.json",
+  "previous": "lesson1.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "",
+  "difficulty": "easiest",
+  "xp": "10"
+}
