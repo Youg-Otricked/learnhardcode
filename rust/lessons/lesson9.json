@@ -1,0 +1,18 @@
+{
+    "id": "lesson6.json",
+    "title": "Data Types [char]",
+    "description": "## char\nA `char` in Rust represents a single character. Unlike strings, chars use single quotes.\n```rust\nlet c: char = 'A';\nlet digit: char = '7';\nlet emoji: char = '🦀';\n```\nRust chars are 4 bytes and support full Unicode - so yes, even emojis.\n\n---\n## Assignment:\nVerdigris OS uses a single character for its release version. Create a variable `release` of type `char` set to `'D'` and print it.",
+    "starterCode": "fn main() {\n    // Create the release char and print it\n}",
+    "expectedOutput": "D",
+    "nextLesson": "lesson7.json",
+    "previous": "lesson5.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

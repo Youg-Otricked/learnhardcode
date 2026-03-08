@@ -1,0 +1,20 @@
+{
+    "id": "lesson12.json",
+    "title": "Basic Commands [chmod]",
+    "description": "# chmod\n`chmod` stands for `change mode`. It allows you to change who can read, write, and execute files. There are 2 ways to use chmod, A: by number, and B: by specifics.\nA: by number.\nEach value has a number associated with it:\n- r (read): 4\n- w (write): 2\n- x (execute): 1\n- none: 0\nTo get a permission, you can us adding them together, so everything is 7 (rwx), or read and execute (rx) is 5. Then, you can combine your 3 values: owner (file creator default), group (i will explain later), everyone (any user on the computer), so for the owner to have all permissions (`rwx`), the group to have read and execute (`r-x`), and all people to have read-only (`r--`) (combined `rwxr-xr--`) would be 754. Then, you would `chmod NUMBER filepath`.\n### By specifics\nBy specifics is simple. To adjust somthing, you do `chmod SPECIFIER+/-VALUE FILEPATH`. SPECIFIER can be 4 things:\n- `u`: user (you),\n- `g`: your group (again, later),\n- `o`: others (anyone else)\n- `a`: all 3.\n+ = add permission, and - = remove permission.\nIDENTIFIER = a combination of r, w, and x (read write and execute), so to add read and write to group, you would run `chmod g+rw PATH`.\n---\n## Assignment:\nIt seems you have **uncovered somthing _you wont supposed to._** Make sure nobody else finds this. Use chmod to make it so NOBODY can read, write, or execute this file. Submit in the accounts directory.",
+    "starterCode": "",
+    "expectedOutput": "",
+    "mustContain": "",
+    "nextLesson": "learnlinux/lesson13.json",
+    "previous": "learnlinux/lesson11.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "runHarness": "9ef20d46",
+    "mode": "cli",
+    "difficulty": "beginner",
+    "xp": "20"
+}

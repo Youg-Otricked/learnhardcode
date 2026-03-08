@@ -1,0 +1,20 @@
+{
+    "id": "lesson11.json",
+    "title": "Basic Commands [ls -a]",
+    "description": "# ls -a\n---\n`ls` shows files in a directory. But it hides files that start with a dot (`.`). These are called **hidden files**.\n\n`ls -a` shows ALL files, including hidden ones.\n\nWhy does this matter? Some files are hidden for a reason... and some are hidden to HIDE things.\n\n---\n## Assignment:\nSomething feels off about the accounts directory. Run `ls -a -1` in the `accounts/` directory to see what's really there. Paste the output of catting a new file that shows up. _Oops_.\n\n**Important:** Make sure you `cd` into `accounts/` first.",
+    "starterCode": "",
+    "expectedOutput": "",
+    "mustContain": ["CITYBANK OFFSHORE HOLDINGS", "Saul Betterman", "$1,250,000"],
+    "nextLesson": "learnlinux/lesson12.json",
+    "previous": "learnlinux/lesson10.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "runHarness": "",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "20"
+}
