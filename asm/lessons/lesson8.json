@@ -1,0 +1,18 @@
+{
+    "id": "lesson8.json",
+    "title": "Comparisons & Jumps",
+    "description": "## Labels\nYou've seen `_start:` - that's a label. But you can create your own labels anywhere:\n```asm\n_start:\n    jmp skip_this\n    mov rax, 99       ; this never runs\nskip_this:\n    mov rax, 1        ; execution continues here\n```\nA label is just a name followed by `:`. It marks a spot in your code that you can jump to.\n\n## cmp and Conditional Jumps\n`cmp` compares two values and sets CPU flags. Then conditional jumps check those flags:\n\n- `cmp rax, rbx` - compare rax with rbx\n- `je label` - jump if equal\n- `jne label` - jump if not equal\n- `jg label` - jump if greater\n- `jl label` - jump if less\n- `jge label` - jump if greater or equal\n- `jle label` - jump if less or equal\n- `jmp label` - jump always (unconditional)\n\nThis is how assembly does if/else:\n```asm\ncmp rax, 10\njg bigger\n; rax <= 10 code here\njmp done\nbigger:\n; rax > 10 code here\ndone:\n```\n\n---\n## Question:\nWhat does `je` do after `cmp rax, rbx`?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson9.json",
+    "previous": "lesson7.json",
+    "showButtons": true,
+    "correct": "b3",
+    "b1t": "Jumps always",
+    "b2t": "Jumps if rax is greater than rbx",
+    "b3t": "Jumps if rax equals rbx",
+    "b4t": "Jumps if rax is less than rbx",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "10"
+}
