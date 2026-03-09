@@ -438,7 +438,7 @@ async function setupLogic() {
         if (mustContain) {
           outEl.textContent += '\nExpected to contain:\n' + mustContain;
         } else {
-          outEl.textContent += '\nExpected:\n' + expectedOutput.trim();
+          outEl.textContent += '\nExpected:\n' + expected;
         }
         outEl.textContent += '\n\nGot:\n' + actual + '\n';
       }
