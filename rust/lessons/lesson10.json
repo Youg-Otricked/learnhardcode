@@ -1,0 +1,18 @@
+{
+    "id": "lesson10.json",
+    "title": "Logic Operators",
+    "description": "## Logic Operators\nRust has the standard logic operators for combining conditions:\n\n- `&&` - AND (both must be true)\n- `||` - OR (at least one must be true)\n- `!` - NOT (flips true to false)\n\n```rust\nlet a: bool = true;\nlet b: bool = false;\nprintln!(\"{}\", a && b);  // false\nprintln!(\"{}\", a || b);  // true\nprintln!(\"{}\", !a);      // false\n```\n\nYou can also use comparison operators:\n- `==`, `!=`, `>`, `<`, `>=`, `<=`\n\n```rust\nlet x: i32 = 10;\nprintln!(\"{}\", x > 5 && x < 20);  // true\n```\n\n---\n## Assignment:\nVerdigris OS checks if a process should run. A process runs if `priority` is greater than 3 AND `memory` is less than 1024. Print the result.",
+    "starterCode": "fn main() {\n    let priority: i32 = 5;\n    let memory: i32 = 512;\n    // Print whether the process should run\n}",
+    "expectedOutput": "true",
+    "nextLesson": "lesson11.json",
+    "previous": "lesson9.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

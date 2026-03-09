@@ -1,0 +1,22 @@
+{
+  "id": "lesson8.json",
+  "title": "More datatypes",
+  "description": "###### You are on part 3/3 of this lesson.\n---\nThe text on the right shows all the other datatypes. Read it then answer the question:\n---\n## Question:\nWhat is a invalid value for a char.",
+  "starterCode": "// THIS IS A NON-RUNNING DEMO.\nbool flag; // Stores true or false\nfloat f_pi; // Stores a 7 digit decimal number. Float numbers end with 'f', such as 3.141592f\ndouble pi; // Stores a 14 digit decimal number.\nchar c; // Stores any single character, including things like newlines (\\n), tabs (\\t), and unicode (4 digit)\nstring s; // Stores a string of text.\nqbool quantum; // Stores qtrue, qfalse, none, or both.",
+  "expectedOutput": "",
+  "mustContain": "",
+  "nextLesson": "lesson9.json",
+  "previous": "lesson7.json",
+  "showButtons": true,
+  "correct": "b1",
+  "b1t": "\"1\"",
+  "b2t": "'\\xA5'",
+  "b3t": "'\\n'",
+  "b4t": "'$'",
+  "runHarness": "",
+  "submitHarness": "",
+  "solution": "",
+  "hint": "",
+  "difficulty": "basic",
+  "xp": "20"
+}

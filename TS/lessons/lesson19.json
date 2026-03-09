@@ -1,0 +1,19 @@
+
+{
+    "id": "lesson19.json",
+    "title": "Loops [For...of]",
+    "description": "## Do While\nA `do while` loop runs at least once, then checks the condition:\n```ts\ndo {\n    code;\n} while (condition);\n```\nUnlike `while`, the code runs BEFORE the check.\n---\n## Assignment:\nMeTube's video player retries buffering until it succeeds. Create a variable `attempts` set to 0. Use a do-while loop to print `Buffering...` and increment attempts. Stop when attempts reaches 3. After the loop, print `Video ready!`.",
+    "starterCode": "// Write your do-while loop\n",
+    "expectedOutput": "Buffering...\nBuffering...\nBuffering...\nVideo ready!",
+    "nextLesson": "lesson20.json",
+    "previous": "lesson18.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}
