@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Import Course</title>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="custom.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="db.js"></script>
+</head>
+<body>
+  <button onclick='document.location="../"'>Go to Homepage</button>
+  <h1>Type your course / lesson JSON here</h1>
+  <textarea id="courseString">
+
+  </textarea>
+  <button id="loadCourse/lesson">Submit</button>
+  <h1>Or drag and drop here.</h1>
+  <div id="drop-zone">
+    Drop course .json here
+  </div>
+  <div id="course-list"></div>
+</body>
+</html>
