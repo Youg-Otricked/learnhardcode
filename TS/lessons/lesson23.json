@@ -1,0 +1,22 @@
+{
+    "id": "lesson23.json",
+    "title": "Functions [Helper]",
+    "description": "In this lesson, you will write a _helper function_. A helper function is just a function that is made to break up a big block of code into smaller code.\n## Assignment:\nWe want a function that will determine the add rev of out users!\nWrite the getAddRevenue function: it shoud take 4 numbers: addSpend, conversions, clicks, and perAddRev. To get the conversion rate devide conversions by clicks, to get the total addSpend divide addSpend by conversions and then return the result of subtracting conversion rate by totalAddSpend then multipliying it by perAddRev",
+    "starterCode": "function getAddRevenue(addSpend: number, conversions: number, clicks: number, perAddRev: number): number {\n    // TODO: implement formula\n}\n",
+    "expectedOutput": "",
+    "nextLesson": "lesson24.json",
+    "previous": "lesson22.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "mustContain": "Pass\n---------------------\n5 passed, 0 failed",
+    "runHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n  const roundedGot = typeof got === 'number' ? Math.round(got * 1e10) / 1e10 : got;\n  const roundedExp = typeof expected === 'number' ? Math.round(expected * 1e10) / 1e10 : expected;\n  const passed = roundedGot === roundedExp;\n  console.log('---------------------');\n  console.log('Test ' + num + ':');\n  console.log('Output: ' + got);\n  console.log(passed ? 'Pass' : 'Fail');\n  if (passed) _pass++; else _fail++;\n}\n_test(1, getAddRevenue(100, 10, 100, 5), -49.5);\n_test(2, getAddRevenue(100, 50, 100, 10), -15);\n_test(3, getAddRevenue(200, 20, 200, 50), -495);\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');",
+    "submitHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n  const roundedGot = typeof got === 'number' ? Math.round(got * 1e10) / 1e10 : got;\n  const roundedExp = typeof expected === 'number' ? Math.round(expected * 1e10) / 1e10 : expected;\n  const passed = roundedGot === roundedExp;\n  console.log('---------------------');\n  console.log('Test ' + num + ':');\n  console.log('Output: ' + got);\n  console.log(passed ? 'Pass' : 'Fail');\n  if (passed) _pass++; else _fail++;\n}\n\n_test(1, getAddRevenue(100, 10, 100, 5), -49.5);\n\n_test(2, getAddRevenue(100, 50, 100, 10), -15);\n\n_test(3, getAddRevenue(200, 20, 200, 50), -495);\n\n_test(4, getAddRevenue(80, 5, 100, 4), -63.8);\n\n_test(5, getAddRevenue(300, 90, 100, 20), -48.6666666667);\n\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "18"
+}
