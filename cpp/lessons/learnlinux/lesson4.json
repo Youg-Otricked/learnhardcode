@@ -9,6 +9,7 @@
   "previous": "learnlinux/lesson3.json",
   "showButtons": false,
   "correct": "nobns",
+  "hint": "Confused about prompt/output?\nIn this example:\n```bash\nlucar@DESKTOP-08KNEMT:~/linux-start-assets/transactions$ whoami\nlucar\nlucar@DESKTOP-08KNEMT:~/linux-start-assets/transactions$ \n```\nlucar@DESKTOP-08KNEMT:~/linux-start-assets/transactions$ whoami: This is the prompt and the command whoami. the text past : is the dir and the $ means asking for a command.\nlucar: this is the output\nlucar@DESKTOP-08KNEMT:~/linux-start-assets/transactions$ : this is the new prompt.",
   "b1t": "",
   "b2t": "",
   "b3t": "",

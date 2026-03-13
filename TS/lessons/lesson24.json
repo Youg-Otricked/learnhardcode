@@ -1,0 +1,22 @@
+{
+    "id": "lesson24.json",
+    "title": "Functions [Using helpers]",
+    "description": "In this lesson, you will use your helper from last lesson, combined with new code.\n---\n## Assignment:\nCreate the findROAS function, which should take addSpend, conversions, clicks,  perAddRev (all numbers), and use your previous function (already defined) to find ROAS, which is addSpend / addRevenue",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson25.json",
+    "previous": "lesson23.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "mustContain": "Pass\n---------------------\n5 passed, 0 failed",
+    "runHarness": "\nlet _pass = 0;\nlet _fail = 0;\n\nfunction getAddRevenue(addSpend, conversions, clicks, perAddRev) {\n  return (conversions / clicks - addSpend / conversions) * perAddRev;\n}\n\nfunction _test(num, got, expected) {\n  const roundedGot = typeof got === 'number' ? Math.round(got * 1e10) / 1e10 : got;\n  const roundedExp = typeof expected === 'number' ? Math.round(expected * 1e10) / 1e10 : expected;\n  const passed = roundedGot === roundedExp;\n  console.log('---------------------');\n  console.log('Test ' + num + ':');\n  console.log('Output: ' + got);\n  console.log(passed ? 'Pass' : 'Fail');\n  if (passed) _pass++; else _fail++;\n}\n\n// ROAS = addRevenue / addSpend\n// Use getAddRevenue to compute addRevenue, then divide by addSpend\n\n_test(1, findROAS(100, 10, 100, 5), getAddRevenue(100, 10, 100, 5) / 100);\n_test(2, findROAS(100, 50, 100, 10), getAddRevenue(100, 50, 100, 10) / 100);\n_test(3, findROAS(200, 20, 200, 50), getAddRevenue(200, 20, 200, 50) / 200);\n\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "submitHarness": "\nlet _pass = 0;\nlet _fail = 0;\n\nfunction getAddRevenue(addSpend, conversions, clicks, perAddRev) {\n  return (conversions / clicks - addSpend / conversions) * perAddRev;\n}\n\nfunction _test(num, got, expected) {\n  const roundedGot = typeof got === 'number' ? Math.round(got * 1e10) / 1e10 : got;\n  const roundedExp = typeof expected === 'number' ? Math.round(expected * 1e10) / 1e10 : expected;\n  const passed = roundedGot === roundedExp;\n  console.log('---------------------');\n  console.log('Test ' + num + ':');\n  console.log('Output: ' + got);\n  console.log(passed ? 'Pass' : 'Fail');\n  if (passed) _pass++; else _fail++;\n}\n\n_test(1, findROAS(100, 10, 100, 5), getAddRevenue(100, 10, 100, 5) / 100);\n_test(2, findROAS(100, 50, 100, 10), getAddRevenue(100, 50, 100, 10) / 100);\n_test(3, findROAS(200, 20, 200, 50), getAddRevenue(200, 20, 200, 50) / 200);\n_test(4, findROAS(80, 5, 100, 4), getAddRevenue(80, 5, 100, 4) / 80);\n_test(5, findROAS(300, 90, 100, 20), getAddRevenue(300, 90, 100, 20) / 300);\n\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "18"
+}

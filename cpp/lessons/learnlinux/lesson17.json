@@ -1,0 +1,13 @@
+{
+    "id": "lesson17.json",
+    "title": "Shell Scripts [.sh]",
+    "description": "# Shell Scripts\nA `.sh` file is a script - a list of commands that run in order. Instead of typing commands one by one, you write them in a file and run them all at once.\n\nTo run a script:\n1. Make it executable: `chmod +x script.sh`\n2. Run it: `./script.sh`\n\nOr skip step 1 with: `bash script.sh`\n\n---\n## Assignment:\nSomething suspicious is happening in the `transactions/` directory. Use `ls -a` to look around. Find the hidden directory, look inside, and read the script. What is the author's initials? (Check the comments)",
+    "starterCode": "",
+    "expectedOutput": "",
+    "mustContain": ["S.B."],
+    "nextLesson": "learnlinux/lesson18.json",
+    "previous": "learnlinux/lesson16.json",
+    "mode": "text",
+    "difficulty": "intermediate",
+    "xp": "25"
+}
