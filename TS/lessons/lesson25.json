@@ -1,0 +1,22 @@
+{
+    "id": "lesson25.json",
+    "title": "Functions [Bubble Sort]",
+    "description": "Sometimes, you need to sort things. _duh_. One of the simplest sorting algorithms is called _bubble sort_.\n\nBubble sort works by repeatedly comparing **adjacent elements** and swapping them if they are in the wrong order. After each pass through the array, the largest value 'bubbles' to the end.\n\n---\n\n## Assignment:\n\nMeTube needs to sort our channels by subscriber count!\n\nImplement a function `bubbleSort` that takes an `number[]` and returns the sorted `number[]`.\n\n### Steps:\n- [ ] Create a loop that continues running while a swap was made during the previous pass.\n- [ ] Inside that loop, iterate through the array while the iterator is less than `array.length - 1`.\n- [ ] Compare `array[i]` and `array[i + 1]`.\n- [ ] If `array[i]` is greater than `array[i + 1]`, swap them.\n- [ ] If you swap any values, record that a swap happened.\n- [ ] Return the sorted array.",
+    "starterCode": "// Write bubbleSort here",
+    "expectedOutput": "",
+    "nextLesson": "lesson26.json",
+    "previous": "lesson24.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "mustContain": "Pass\n---------------------\n7 passed, 0 failed",
+    "runHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num, got, expected) {\n  const roundedGot = typeof got === 'number' ? Math.round(got * 1e10) / 1e10 : got;\n  const roundedExp = typeof expected === 'number' ? Math.round(expected * 1e10) / 1e10 : expected;\n  const passed = roundedGot === roundedExp;\n  console.log('---------------------');\n  console.log('Test ' + num + ':');\n  console.log('Output: ' + got);\n  console.log(passed ? 'Pass' : 'Fail');\n  if (passed) _pass++; else _fail++;\n}\n\n_test(1, JSON.stringify(bubbleSort([3,2,1])), JSON.stringify([1,2,3]));\n_test(2, JSON.stringify(bubbleSort([5,1,4,2,8])), JSON.stringify([1,2,4,5,8]));\n_test(3, JSON.stringify(bubbleSort([1,2,3,4])), JSON.stringify([1,2,3,4]));\n_test(4, JSON.stringify(bubbleSort([9,7,5,3,1])), JSON.stringify([1,3,5,7,9]));\n_test(5, JSON.stringify(bubbleSort([4,2,2,8,3])), JSON.stringify([2,2,3,4,8]));\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "submitHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num, got, expected) {\n  const roundedGot = typeof got === 'number' ? Math.round(got * 1e10) / 1e10 : got;\n  const roundedExp = typeof expected === 'number' ? Math.round(expected * 1e10) / 1e10 : expected;\n  const passed = roundedGot === roundedExp;\n  console.log('---------------------');\n  console.log('Test ' + num + ':');\n  console.log('Output: ' + got);\n  console.log(passed ? 'Pass' : 'Fail');\n  if (passed) _pass++; else _fail++;\n}\n\n_test(1, JSON.stringify(bubbleSort([3,2,1])), JSON.stringify([1,2,3]));_test(2, JSON.stringify(bubbleSort([5,1,4,2,8])), JSON.stringify([1,2,4,5,8]));\n_test(3, JSON.stringify(bubbleSort([1,2,3,4])), JSON.stringify([1,2,3,4]));\n_test(4, JSON.stringify(bubbleSort([9,7,5,3,1])), JSON.stringify([1,3,5,7,9]));\n_test(5, JSON.stringify(bubbleSort([4,2,2,8,3])), JSON.stringify([2,2,3,4,8]));\n_test(6, JSON.stringify(bubbleSort([1])), JSON.stringify([1]));\n_test(7, JSON.stringify(bubbleSort([])), JSON.stringify([]));\n\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "18"
+}

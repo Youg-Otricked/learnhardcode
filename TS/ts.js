@@ -17,6 +17,7 @@ let inputEl = null;
 let mode = "";
 let checkResultBtn = null;
 let rawHarness = false;
+let setupCode = "";
 let suite;
 function loadStreak() {
     const raw = localStorage.getItem('ts_streak');
@@ -236,7 +237,9 @@ async function runWithSuite(suiteFile, label) {
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
     let fullSource = studentSource;
-
+    if (setupCode) {
+        studentSource = setupCode + "\n" + studentSource;
+    }
     if (suiteFile) {
         if (rawHarness) {
             studentSource += suiteFile;
@@ -319,6 +322,7 @@ async function loadLesson(lessonFile) {
     lessonXP          = parseInt(lesson.xp, 10)|| 0;
     editorEl = document.getElementsByClassName("code-box")[0];
     inputEl = document.getElementsByClassName("editor")[0];
+    setupCode = lesson.setupCode || "";
     if (mode === "text") {
         editorEl.innerHTML = '<textarea class="editor"></textarea><button id="check-stdout">Submit</button><button id="next-lesson" style="display:none">Next Lesson</button><button id="prev-lesson">Previous Lesson</button>'
         checkBtn = document.getElementById('check-stdout');

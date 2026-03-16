@@ -1,0 +1,18 @@
+{
+    "id": "stdlib7.json",
+    "title": "DSA - Big O Notation",
+    "description": "## What is Big O?\nBig O describes how an algorithm's performance scales as input grows. It answers: \"If I double the input, how much slower does it get?\"\n\n### Common complexities (fastest to slowest):\n- `O(1)` - Constant. Array access by index. Doesn't matter if there's 10 or 10 million items.\n- `O(log n)` - Logarithmic. Binary search. Doubles input = one extra step.\n- `O(n)` - Linear. Loop through array once. Double input = double time.\n- `O(n log n)` - Merge sort, quick sort. The sweet spot for sorting.\n- `O(n²)` - Quadratic. Nested loops. Double input = 4x slower.\n- `O(2^n)` - Exponential. Brute force. Don't.\n\n### Example:\n```cpp\n// O(1)\nint x = arr[5];\n\n// O(n)\nfor (int i = 0; i < n; i++) { ... }\n\n// O(n²)\nfor (int i = 0; i < n; i++)\n    for (int j = 0; j < n; j++) { ... }\n```\n\n---\n## Question:\nWhat is the Big O of searching through every element in an unsorted array?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "stdlib8.json",
+    "previous": "stdlib6.json",
+    "showButtons": true,
+    "correct": "b2",
+    "b1t": "O(1)",
+    "b2t": "O(n)",
+    "b3t": "O(n²)",
+    "b4t": "O(log n)",
+    "mode": "editor",
+    "difficulty": "medium",
+    "xp": "20"
+}

@@ -1,0 +1,18 @@
+{
+    "id": "lesson8.json",
+    "title": "Control Flow [if/else]",
+    "description": "## if/else in Rust\nRust's if/else looks familiar but with one key difference - **no parentheses** around the condition:\n```rust\nlet x: i32 = 10;\nif x > 5 {\n    println!(\"Big\");\n} else {\n    println!(\"Small\");\n}\n```\n\nParentheses are optional but the compiler will warn you if you use them. Curly braces are always required.\n\n---\n## Assignment:\nVerdigris OS checks available memory at boot. If `memory` is greater than or equal to 1024, print `Boot OK`. Otherwise print `Low memory`.",
+    "starterCode": "fn main() {\n    let memory: i32 = 2048;\n    // Write your if/else here\n}",
+    "expectedOutput": "Boot OK",
+    "nextLesson": "lesson9.json",
+    "previous": "lesson7.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

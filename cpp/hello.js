@@ -81,6 +81,7 @@ let submitHarnessFile, runHarnessFile;
 let buttons = document.getElementsByClassName('ans');
 let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, showButtons, mustContain;
 let correct = null;
+let setupCode = "";
 let prevLessonId = null;
 let hintBody = null;
 let lessonXP = null;
@@ -93,7 +94,7 @@ let solutionFile = null;
 let editorEl;
 // modes
 let mode = "editor";
-
+let rawHarness = false;
 function loadStreak() {
   const raw = localStorage.getItem('cpp_streak');
   lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
@@ -159,6 +160,8 @@ async function loadLesson(lessonFile) {
   correct           = lesson.correct         || null;
   prevLessonId      = lesson.previous        || null;
   mode              = lesson.mode            || "editor";
+  setupCode         = lesson.setupCode       || "";
+  rawHarness = lesson.rawHarness || false;
   document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
   lessonXP          = parseInt(lesson.xp, 10)|| 0;
   editorEl = document.getElementsByClassName("code-box")[0];
@@ -285,14 +288,18 @@ async function setupLogic() {
     const studentSource = editor.getValue();
     outEl.textContent = (label || 'Building & running') + '...\n';
     lastRunOutput = '';
-
-    let fullSource = studentSource;
-
-    if (suiteFile) {
-      const suite = await fetch(suiteFile).then(r => r.text());
-      fullSource = suite + '\n\n' + studentSource;
+    if (setupCode) {
+      studentSource = setupCode + "\n" + studentSource;
     }
-
+    let fullSource = studentSource;
+    if (suiteFile) {
+      if (rawHarness) {
+        fullSource = studentSource + '\n\n' + suiteFile;
+      } else {
+        const suite = await fetch(suiteFile).then(r => r.text());
+        fullSource = suite + '\n\n' + studentSource;
+      }
+    }
     try {
       api.compileLinkRun(fullSource); // fire-and-forget
     } catch (err) {

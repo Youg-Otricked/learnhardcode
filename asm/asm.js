@@ -11,6 +11,7 @@ let nextLessonId = null;
 let prevLessonId = null;
 let lessonsInRow = 0;
 let mustContain = null;
+let setupCode = "";
 let b1Btn, b2Btn, b3Btn, b4Btn;
 let stepBtn;
 let correct = null;
@@ -369,15 +370,18 @@ async function runWithSuite(suiteFile, label) {
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
     let fullSource = studentSource;
-
+    if (setupCode) {
+        studentSource = setupCode + "\n" + studentSource;
+    }
     if (suiteFile) {
         if (rawHarness) {
-            studentSource += suiteFile;
+            studentSource += '\n' + suiteFile;
         } else {
             suite = await fetch(suiteFile).then(r => r.text());
             studentSource += '\n\n' + suite;
         }
     }
+    console.log('FULL SOURCE:', studentSource);
     fullSource = studentSource;
     runASM(fullSource);
 }
@@ -449,6 +453,7 @@ async function loadLesson(lessonFile) {
     submitHarnessFile = lesson.submitHarness || null;
     mode              = lesson.mode        || "editor";
     rawHarness        = lesson.rawHarness  || false;
+    setupCode      = lesson.setupCode || "";
     document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
     lessonXP          = parseInt(lesson.xp, 10)|| 0;
     editorEl = document.getElementsByClassName("code-box")[0];
@@ -604,10 +609,133 @@ require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } 
 document.addEventListener('DOMContentLoaded', () => {
     require(['vs/editor/editor.main'], async function() {
         await initBlink();
-        
+        monaco.languages.register({
+            id: "nasm",
+            extensions: [".asm"],
+            aliases: ["NASM", "asm", "x86asm"]
+        });
+        monaco.languages.setMonarchTokensProvider("nasm", {
+
+            defaultToken: "",
+            ignoreCase: true,
+
+            keywords: [
+                "mov","add","sub","mul","imul","div","idiv",
+                "inc","dec","push","pop",
+                "call","ret","syscall",
+                "jmp","je","jne","jg","jl","jge","jle","ja","jb","jo","jno",
+                "cmp","test",
+                "xor","or","and","not",
+                "shl","shr","sal","sar",
+                "lea","nop","int",
+                "hlt","clc","stc","cli","sti",
+                "adc","sbb","rol","ror","rcl","rcr",
+                "movzx","movsx","xchg","bswap",
+                "bt","btc","btr","bts"
+            ],
+
+            directives: [
+                "section","segment",
+                "global","extern",
+                "default","equ",
+                "times","org","align",
+                "bits","use16","use32","use64"
+            ],
+
+            types: [
+                "db","dw","dd","dq",
+                "resb","resw","resd","resq",
+                "byte","word","dword","qword",
+                "tword","oword","yword","zword"
+            ],
+
+            registers: [
+                "rax","rbx","rcx","rdx","rsi","rdi","rsp","rbp",
+                "r8","r9","r10","r11","r12","r13","r14","r15",
+                "eax","ebx","ecx","edx","esi","edi","esp","ebp",
+                "ax","bx","cx","dx","si","di","sp","bp",
+                "al","bl","cl","dl","ah","bh","ch","dh",
+                "rip","eip","ip",
+                "cs","ds","es","fs","gs","ss",
+                "st0","st1","st2","st3","st4","st5","st6","st7",
+                "xmm0","xmm1","xmm2","xmm3","xmm4","xmm5","xmm6","xmm7",
+                "xmm8","xmm9","xmm10","xmm11","xmm12","xmm13","xmm14","xmm15",
+                "ymm0","ymm1","ymm2","ymm3","ymm4","ymm5","ymm6","ymm7",
+                "ymm8","ymm9","ymm10","ymm11","ymm12","ymm13","ymm14","ymm15",
+                "zmm0","zmm1","zmm2","zmm3","zmm4","zmm5","zmm6","zmm7"
+            ],
+
+            symbols: /[=><!~?:&|+\-*\/\^%]+/,
+
+            tokenizer: {
+
+                root: [
+
+                    [/;.*$/, "comment"],
+                    [/^[a-zA-Z_.$][\w.$]*:/, "type.identifier"],
+                    [/%(define|macro|endmacro|ifdef|ifndef|endif|include|assign)\b/, "keyword.preproc"],
+
+                    [/\b\w+\b/, {
+                        cases: {
+                            '@keywords': 'keyword',
+                            '@directives': 'keyword',
+                            '@types': 'type',
+                            '@registers': 'variable.predefined',
+                            '@default': 'identifier'
+                        }
+                    }],
+                    [/0x[0-9a-fA-F_]+/, "number.hex"],
+                    [/0b[01_]+/, "number.binary"],
+                    [/[0-9a-fA-F]+h\b/, "number.hex"],
+                    [/[0-9_]+/, "number"],
+                    [/".*?"/, "string"],
+                    [/'.*?'/, "string"],
+                    [/\[/, "delimiter.bracket"],
+                    [/\]/, "delimiter.bracket"],
+                    [/@symbols/, "operator"],
+                    [/[a-zA-Z_.$][\w.$]*/, "identifier"]
+                ]
+            }
+        });
+        monaco.languages.registerCompletionItemProvider("nasm", {
+
+            provideCompletionItems: () => {
+
+                const instructions = [
+                "mov","add","sub","mul","imul","div","idiv",
+                "push","pop","call","ret",
+                "jmp","je","jne","jg","jl",
+                "cmp","test","xor","and","or",
+                "shl","shr","lea","nop","syscall"
+                ];
+
+                const registers = [
+                "rax","rbx","rcx","rdx",
+                "rsi","rdi","rsp","rbp",
+                "r8","r9","r10","r11",
+                "r12","r13","r14","r15"
+                ];
+
+                return {
+                suggestions: [
+
+                    ...instructions.map(i => ({
+                    label: i,
+                    kind: monaco.languages.CompletionItemKind.Keyword,
+                    insertText: i
+                    })),
+
+                    ...registers.map(r => ({
+                    label: r,
+                    kind: monaco.languages.CompletionItemKind.Variable,
+                    insertText: r
+                    }))
+                ]
+                };
+            }
+        });
         editor = monaco.editor.create(document.getElementById('editor'), {
-            value: '',
-            language: 'x86asm',
+            language: 'nasm',
             theme: 'vs-dark'
         });
         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function() {

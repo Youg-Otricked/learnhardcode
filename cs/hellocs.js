@@ -77,6 +77,7 @@ let streakEl = null;
 let inputEl = null;
 // solution
 let actual = "";
+let setupCode = "";
 let solutionFile = null;
 // modes
 let mode = "editor";
@@ -154,6 +155,7 @@ async function loadLesson(lessonFile) {
   lessonhint        = lesson.hint            || "";
   mode              = lesson.mode            || "editor";
   rawHarness        = lesson.rawHarnss       || false;
+  setupCode         = lesson.setupCode       || "";
   document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
   lessonXP          = parseInt(lesson.xp, 10)|| 0;
   editorEl = document.getElementsByClassName("code-box")[0];
@@ -287,11 +289,11 @@ async function setupLogic() {
   }
 
   async function runWithSuiteCSharp(suiteFile, label) {
-    const studentSource = editor.getValue();
+    let studentSource = editor.getValue();
     rawOutput = (label || 'Building & running') + '...\n';
     renderOutput();
     lastRunOutput = '';
-
+    
     let harnessSource = "";
     if (suiteFile) {
         if (rawHarness) {
@@ -301,7 +303,9 @@ async function setupLogic() {
             harnessSource = suite;
         }
     }
-
+    if (setupCode) {
+      studentSource = setupCode + "\n" + studentSource;
+    }
     try {
       const result = await runCSharpCode(studentSource + '\n' + harnessSource);
       lastRunOutput = result;

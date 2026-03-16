@@ -59,6 +59,7 @@ let lastRunOutput = '';
 let nextLessonId = null;
 let submitHarnessFile = null;
 let runHarnessFile = null;
+let setupCode = "";
 let buttons = document.getElementsByClassName('ans');
 let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, showButtons, mustContain;
 let correct = null;
@@ -131,6 +132,7 @@ async function loadLesson(lessonFile) {
   lessonhint        = lesson.hint || "";
   mode              = lesson.mode            || "editor";
   rawHarness        = lesson.rawHarness  || false;
+  setupCode = lesson.setupCode || "";
   document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
   lessonXP          = parseInt(lesson.xp, 10)|| 0;
   editorEl = document.getElementsByClassName("code-box")[0];
@@ -215,7 +217,9 @@ async function runWithSuite(suiteFile, label) {
   lastRunOutput = '';
 
   let fullSource = studentSource;
-
+  if (setupCode) {
+    studentSource = setupCode + "\n" + studentSource;
+  }
   if (suiteFile) {
       if (rawHarness) {
           studentSource += suiteFile;
