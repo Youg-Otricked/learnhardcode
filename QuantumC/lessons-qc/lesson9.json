@@ -1,0 +1,18 @@
+{
+    "id": "lesson9.json",
+    "title": "Control Flow [if/else]",
+    "description": "## if/else\nQuantumC uses C-style if/else:\n```qc\nif (condition) {\n    code;\n} else {\n    code;\n}\n```\n\nComparison operators: `==`, `!=`, `>`, `<`, `>=`, `<=`\nLogic operators: `&&`, `||`, `!`\n\n---\n## Assignment:\nTechQ's quantum processor has a stability rating. If `stability` is greater than 75, print `Stable`. Otherwise print `Unstable`.",
+    "starterCode": "int main() {\n    int stability = 82;\n    // Write your if/else here\n    return 0;\n}",
+    "expectedOutput": "Stable",
+    "nextLesson": "lesson10.json",
+    "previous": "lesson8.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

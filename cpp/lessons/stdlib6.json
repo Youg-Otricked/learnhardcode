@@ -1,0 +1,18 @@
+{
+    "id": "stdlib6.json",
+    "title": "Stdlib - String vs char*",
+    "description": "## Two ways to store text in C++\n\n### char* (C-style string)\nA raw pointer to an array of characters ending with `\\0` (null terminator).\n```cpp\nconst char* name = \"CBitOS\";\n// In memory: ['C','B','i','t','O','S','\\0']\n```\n- No `.length()`, no `.append()`, no safety\n- Use `strlen()`, `strcmp()`, `strcpy()` from `<cstring>`\n- Easy to cause buffer overflows and memory bugs\n\n### std::string (C++ string)\nA class that manages memory for you.\n```cpp\nstd::string name = \"CBitOS\";\nname.append(\" v2\");  // just works\n```\n- Has `.length()`, `.substr()`, `.find()`, etc.\n- Grows automatically\n- Safe\n\n### Converting between them:\n```cpp\nstd::string s = \"hello\";\nconst char* c = s.c_str();  // string -> char*\nstd::string s2 = std::string(c);  // char* -> string\n```\n\n---\n## Assignment:\nCBitOS has a legacy function that takes `const char*`. Given the `std::string version`, convert it to a `const char*` and print it. Then create a `const char*` kernel name and convert it to `std::string` and print its length.",
+    "starterCode": "#include <iostream>\n#include <string>\n#include <cstring>\nint main() {\n    std::string version = \"CBitOS v3.2.1\";\n    // Convert to const char* and print\n\n    const char* kernel = \"cbit_kernel\";\n    // Convert to std::string and print its length\n\n    return 0;\n}",
+    "expectedOutput": "CBitOS v3.2.1\n11",
+    "nextLesson": "stdlib7.json",
+    "previous": "stdlib5.json",
+    "showButtons": false,
+    "correct": null,
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "medium",
+    "xp": "25"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "lesson15.json",
+    "title": "Functions [call & ret]",
+    "description": "## Functions in Assembly\nYou've been using labels and jumps. Functions are just labels with a convention:\n\n- `call label` - pushes return address, jumps to label\n- `ret` - pops return address, jumps back\n\nArguments go in registers (in order):\n`rdi`, `rsi`, `rdx`, `rcx`, `r8`, `r9`\n\nReturn value goes in `rax`.\n\n```asm\nadd_nums:\n    mov rax, rdi\n    add rax, rsi\n    ret\n\n_start:\n    mov rdi, 5\n    mov rsi, 3\n    call add_nums\n    ; rax is now 8\n```\n\n`call` is just `push` the next instruction's address + `jmp`. `ret` is just `pop` + `jmp`. That's it.\n\n---\n## Assignment:\nLHINX needs a memory calculator. Write a function called `calc_mem` that takes the number of banks in `rdi` and multiplies by 512 (stored in the function). Call it with 4 banks.",
+    "starterCode": "section .data\n    msg db \"Memory calculated. Memory = \"\n    len equ $ - msg\n    newline db 10\n\nsection .bss\n    buffer resb 20\n\nsection .text\n    global _start\n\n; ===================================\n; DO NOT MODIFY BELOW \n; ===================================\nprint_num:\n    mov rsi, buffer + 19\n    mov byte [rsi], 10\n    mov rcx, 1\n    mov rbx, 10\n.loop:\n    xor rdx, rdx\n    div rbx\n    add dl, '0'\n    dec rsi\n    mov [rsi], dl\n    inc rcx\n    cmp rax, 0\n    jne .loop\n    mov rax, 1\n    mov rdi, 1\n    mov rdx, rcx\n    syscall\n    ret\n; ===================================\n; DO NOT MODIFY ABOVE\n; ===================================\n\ncalc_mem:\n    ; multiply rdi by 512, return in rax\n    ret\n\n_start:\n    ; call here\n    ; ===================================\n    ; DO NOT MODIFY BELOW - prints result\n    ; ===================================\n    push rax\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, msg\n    mov rdx, len\n    syscall\n    ; print the number\n    pop rax\n    call print_num\n\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "expectedOutput": "Memory calculated. Memory = 2048",
+    "nextLesson": "lesson16.json",
+    "previous": "lesson14.json",
+    "hint": "Inside calc_mem, move rdi into rax, then use `imul rax, 512` or `shl rax, 9` (shift left by 9 = multiply by 512).",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

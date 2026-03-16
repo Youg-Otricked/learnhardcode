@@ -1,0 +1,18 @@
+{
+    "id": "lesson18.json",
+    "title": "Operators [Increment & Compound]",
+    "description": "## Increment & Decrement\n- `x++` - adds 1 to x\n- `x--` - subtracts 1 from x\n\n## Compound Assignment\nInstead of writing `x = x + 5`, you can write:\n- `x += 5` (add)\n- `x -= 5` (subtract)\n- `x *= 5` (multiply)\n- `x /= 5` (divide)\n- `x %= 5` (modulo)\n\n```csharp\nint score = 100;\nscore += 50;   // 150\nscore -= 20;   // 130\nscore++;       // 131\nscore--;       // 130\n```\n\n---\n## Assignment:\nChronoShard tracks a player's gold. Starting with 100 gold:\n1. Add 50 using `+=`\n2. Subtract 30 using `-=`\n3. Double it using `*=`\n4. Increment once with `++`\n5. Print the final amount",
+    "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            int gold = 100;\n            // Modify gold and print it\n\n            return 0;\n        }\n    }\n}",
+    "expectedOutput": "241",
+    "nextLesson": "lesson19.json",
+    "previous": "lesson17.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "basic",
+    "xp": "15"
+}

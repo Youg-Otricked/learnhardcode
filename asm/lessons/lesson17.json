@@ -1,0 +1,21 @@
+{
+    "id": "lesson17.json",
+    "title": "Functions [Practice - abs]",
+    "description": "## Testing Functions\nFrom now on, some lessons will test your functions automatically. You write the function, the test code calls it for you. Note that if section .text / .data isnt there, don't write it, it is auto appended. If it is their, you probably need to use it.\n\n---\n## Assignment:\nWrite a function called `abs_val` that takes a number in `rdi` and returns its absolute value in `rax`.\n\n- If `rdi` is negative, negate it\n- If `rdi` is positive or zero, return it as-is\n\nHint: `neg rax` flips the sign of rax.",
+    "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n\nsection .text\n    global _start\n",
+    "starterCode": "abs_val:\n    ; return absolute value of rdi in rax\n    ret\n",
+    "expectedOutput": "PASS",
+    "nextLesson": "lesson18.json",
+    "previous": "lesson16.json",
+    "rawHarness": true,
+    "runHarness": "_start:\n    mov rdi, -5\n    call abs_val\n    cmp rax, 5\n    jne .fail1\n    mov rdi, 3\n    call abs_val\n    cmp rax, 3\n    jne .fail2\n    mov rdi, 0\n    call abs_val\n    cmp rax, 0\n    jne .fail3\n    ; all passed\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, pass_msg\n    mov rdx, pass_len\n    syscall\n    jmp .exit\n.fail1:\n.fail2:\n.fail3:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, fail_msg\n    mov rdx, fail_len\n    syscall\n.exit:\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

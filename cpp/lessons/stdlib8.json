@@ -1,0 +1,21 @@
+{
+    "id": "stdlib8.json",
+    "title": "DSA - Bubble Sort",
+    "description": "## Bubble Sort\nBubble sort repeatedly walks through the array, comparing adjacent elements and swapping them if they're in the wrong order. The largest values \"bubble\" to the end.\n\n### Visualization:\n```\n[5, 3, 8, 1]  -> compare 5,3 -> swap\n[3, 5, 8, 1]  -> compare 5,8 -> ok\n[3, 5, 8, 1]  -> compare 8,1 -> swap\n[3, 5, 1, 8]  -> pass done, 8 is in place\n[3, 5, 1, 8]  -> compare 3,5 -> ok\n[3, 5, 1, 8]  -> compare 5,1 -> swap\n[3, 1, 5, 8]  -> pass done, 5 is in place\n...\n[1, 3, 5, 8]  -> sorted!\n```\n\n**Big O: O(n²)** - nested loops. Slow for large arrays, but simple to understand.\n\n---\n## Assignment:\nImplement `bubbleSort` that takes a `std::vector<int>` by reference and sorts it in place.\n\n### Steps:\n- [ ] Create an `do...while` loop that runs while a swap has happened\n- [ ] Loop through the array from 0 to `arr.size() - 1`\n- [ ] Compare `arr[i]` and `arr[i + 1]`\n- [ ] If `arr[i]` is greater, swap them",
+    "starterCode": "#include <iostream>\n#include <vector>\n\nvoid bubbleSort(std::vector<int>& arr) {\n    // Your code here\n}\n",
+    "expectedOutput": "11 12 22 25 34 64 90\n1\n5 5 5 5\n1 2 3 4 5\n1 2 3 4 5",
+    "nextLesson": "stdlib9.json",
+    "previous": "stdlib7.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "runHarness": "int main() {\n    std::vector<int> nums = {64, 34, 25, 12, 22, 11, 90};\n    bubbleSort(nums);\n    for (int n : nums) {\n        std::cout << n << \" \";\n    }\n    std::cout << std::endl;\n    return 0;\n}",
+    "submitHarness": "int main() {\n    std::vector<int> nums1 = {64, 34, 25, 12, 22, 11, 90};\n    bubbleSort(nums1);\n    for (int n : nums1) std::cout << n << \" \";\n    std::cout << std::endl;\n\n    std::vector<int> nums2 = {1};\n    bubbleSort(nums2);\n    for (int n : nums2) std::cout << n << \" \";\n    std::cout << std::endl;\n\n    std::vector<int> nums3 = {5, 5, 5, 5};\n    bubbleSort(nums3);\n    for (int n : nums3) std::cout << n << \" \";\n    std::cout << std::endl;\n\n    std::vector<int> nums4 = {1, 2, 3, 4, 5};\n    bubbleSort(nums4);\n    for (int n : nums4) std::cout << n << \" \";\n    std::cout << std::endl;\n\n    std::vector<int> nums5 = {5, 4, 3, 2, 1};\n    bubbleSort(nums5);\n    for (int n : nums5) std::cout << n << \" \";\n    std::cout << std::endl;\n    return 0;\n}",
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "hard",
+    "xp": "35"
+}
