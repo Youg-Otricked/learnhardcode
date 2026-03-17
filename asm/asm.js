@@ -327,7 +327,7 @@ function submitCheck() {
         updateLevelUI();
         const params = new URLSearchParams(location.search);
         const lessonFileFromUrl = params.get('lesson') || 'lesson1.json';
-        localStorage.setItem('rust_current_lesson', lessonFileFromUrl);
+        localStorage.setItem('asm_current_lesson', lessonFileFromUrl);
 
         if (nextLessonId) nextBtn.style.display = 'inline-block';
     } else {

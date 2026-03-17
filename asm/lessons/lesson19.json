@@ -1,0 +1,21 @@
+{
+    "id": "lesson19.json",
+    "title": "SET Instructions",
+    "description": "## `movzx`\n`movzx` means **move with zero extend**. `setg` only sets `al` (8 bits). The rest of `rax` could be garbage. `movzx rax, al` copies `al` into `rax` and fills the upper 56 bits with zeros.\b## SET Instructions\n`set` instructions store the result of a comparison as a byte (0 or 1) in a register. They check the flags set by `cmp` or `test`.\n\n```asm\ncmp rax, rbx\nsete al        ; al = 1 if equal, 0 if not\nsetne al       ; al = 1 if not equal\nsetg al        ; al = 1 if greater\nsetl al        ; al = 1 if less\nsetge al       ; al = 1 if greater or equal\nsetle al       ; al = 1 if less or equal\n```\n\nUseful for storing boolean results without jumping:\n```asm\ncmp rdi, 10\nsetg al         ; al = 1 if rdi > 10\nmovzx rax, al   ; zero-extend al to full rax\n```\n\n`movzx` zero-extends a smaller register into a larger one.\n\n---\n## Assignment:\nWrite a function `is_positive` that takes a number in `rdi` and returns 1 if it's greater than 0, otherwise 0. Use `cmp`, `setg`, and `movzx`. No jumps allowed!",
+    "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n\nsection .text\n    global _start\n",
+    "starterCode": "\nis_positive:\n    ; return 1 if rdi > 0, else 0. No jumps!\n    ret\n",
+    "expectedOutput": "PASS",
+    "rawHarness": true,
+    "runHarness": "\n_start:\n    mov rdi, 5\n    call is_positive\n    cmp rax, 1\n    jne .fail\n    mov rdi, -3\n    call is_positive\n    cmp rax, 0\n    jne .fail\n    mov rdi, 0\n    call is_positive\n    cmp rax, 0\n    jne .fail\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, pass_msg\n    mov rdx, pass_len\n    syscall\n    jmp .exit\n.fail:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, fail_msg\n    mov rdx, fail_len\n    syscall\n.exit:\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "nextLesson": "lesson20.json",
+    "previous": "lesson18.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

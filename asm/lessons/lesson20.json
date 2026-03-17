@@ -1,0 +1,21 @@
+{
+    "id": "lesson20.json",
+    "title": "Conditional Moves [cmov]",
+    "description": "## Conditional Moves\nYou know `set` stores 0 or 1. But sometimes you want to move a FULL value conditionally - without jumping.\n\n`cmov` moves a value only if the condition is true. Otherwise it does nothing.\n\n```asm\ncmp rdi, 10\ncmovg rax, rsi    ; rax = rsi ONLY if rdi > 10\n```\n\nAll the same suffixes as jumps:\n- `cmove` - move if equal\n- `cmovne` - move if not equal\n- `cmovg` - move if greater\n- `cmovl` - move if less\n- `cmovge` - move if greater or equal\n- `cmovle` - move if less or equal\n\n### Why?\nNo branch = no branch misprediction = faster. CPUs hate unpredictable jumps.\n\n```asm\n; With jumps (slow if unpredictable):\ncmp rdi, rsi\njg .use_rdi\nmov rax, rsi\njmp .done\n.use_rdi:\nmov rax, rdi\n.done:\n\n; With cmov (always fast):\nmov rax, rsi\ncmp rdi, rsi\ncmovg rax, rdi    ; overwrite only if rdi > rsi\n```\n\n---\n## Assignment:\nWrite a function `max_val` that takes two numbers in `rdi` and `rsi` and returns the larger one in `rax`. Use `cmov` - no jumps allowed!",
+    "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n\nsection .text\n    global _start\n",
+    "starterCode": "\nmax_val:\n    ; return the larger of rdi and rsi. No jumps!\n    ret\n",
+    "expectedOutput": "PASS",
+    "rawHarness": true,
+    "runHarness": "\n_start:\n    mov rdi, 5\n    mov rsi, 3\n    call max_val\n    cmp rax, 5\n    jne .fail\n    mov rdi, 2\n    mov rsi, 8\n    call max_val\n    cmp rax, 8\n    jne .fail\n    mov rdi, 7\n    mov rsi, 7\n    call max_val\n    cmp rax, 7\n    jne .fail\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, pass_msg\n    mov rdx, pass_len\n    syscall\n    jmp .exit\n.fail:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, fail_msg\n    mov rdx, fail_len\n    syscall\n.exit:\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "nextLesson": "lesson21.json",
+    "previous": "lesson19.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "20"
+}

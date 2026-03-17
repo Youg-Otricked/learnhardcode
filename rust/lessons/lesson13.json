@@ -1,0 +1,13 @@
+{
+    "id": "lesson13.json",
+    "title": "Operators [Compound Assignment]",
+    "description": "## Compound Assignment\nRust has compound assignment operators:\n- `x += 5` (add)\n- `x -= 5` (subtract)\n- `x *= 5` (multiply)\n- `x /= 5` (divide)\n- `x %= 5` (modulo)\n\n```rust\nlet mut score: i32 = 100;\nscore += 50;   // 150\nscore -= 20;   // 130\nscore *= 2;    // 260\n```\n\n**Important:** The variable must be `mut` to use compound assignment.\n\nRust does NOT have `++` or `--`. Use `x += 1` and `x -= 1`.\n\n---\n## Assignment:\nVerdigris OS tracks process count. Starting with 10 processes:\n1. Add 5 using `+=`\n2. Subtract 3 using `-=`\n3. Double using `*=`\n4. Add 1 using `+=`\n5. Print the result",
+    "starterCode": "fn main() {\n    let mut processes: i32 = 10;\n    // Modify and print\n}",
+    "expectedOutput": "25",
+    "nextLesson": "lesson14.json",
+    "previous": "lesson12.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

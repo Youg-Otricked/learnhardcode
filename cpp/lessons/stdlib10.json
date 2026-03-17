@@ -1,0 +1,18 @@
+{
+    "id": "stdlib10.json",
+    "title": "DSA - Bubble Sort Best & Worst Case",
+    "description": "## Best Case\nIf the array is already sorted, bubble sort with early exit only does ONE pass with zero swaps, then stops.\n\n**Best case: O(n)** - just one pass to confirm it's sorted.\n\n```cpp\n// With early exit optimization:\ndo {\n    swapped = false;\n    for (int i = 0; i < n-1; i++) {\n        if (arr[i] > arr[i+1]) {\n            swap(arr[i], arr[i+1]);\n            swapped = true;\n        }\n    }\n} while (swapped);\n```\n\n## Worst Case\nIf the array is completely reversed (e.g. `[5,4,3,2,1]`), every element needs to bubble all the way across. Every pass, every comparison, every swap.\n\n**Worst case: O(n²)**\n\n---\n## Question:\nWhat is the best case input for bubble sort?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "stdlib11.json",
+    "previous": "stdlib9.json",
+    "showButtons": true,
+    "correct": "b1",
+    "b1t": "Already sorted array",
+    "b2t": "Reverse sorted array",
+    "b3t": "Array with all duplicates",
+    "b4t": "Random array",
+    "mode": "editor",
+    "difficulty": "medium",
+    "xp": "15"
+}

@@ -1,0 +1,13 @@
+{
+    "id": "lesson10.json",
+    "title": "Operators [Comparison & Logic]",
+    "description": "## Comparison Operators\n- `==` equal\n- `!=` not equal\n- `>`, `<`, `>=`, `<=`\n\n## Logic Operators\n- `&&` AND\n- `||` OR\n- `!` NOT\n\n```qc\nint x = 10;\nprintln(x > 5 && x < 20);  // true\nprintln(!(x > 100));        // true\n```\n\n---\n## Assignment:\nTechQ monitors quantum coherence. Print whether:\n1. `stability` is greater than 50 AND `temperature` is less than 100\n2. `stability` is less than 20 OR `temperature` is greater than 200\n3. `error_rate` is NOT equal to 0",
+    "starterCode": "int main() {\n    int stability = 82;\n    int temperature = 45;\n    int error_rate = 3;\n    // Print the three checks\n    return 0;\n}",
+    "expectedOutput": "true\nfalse\ntrue",
+    "nextLesson": "lesson11.json",
+    "previous": "lesson9.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}
