@@ -1,0 +1,22 @@
+{
+    "id": "lesson21.json",
+    "title": "Arrays in Assembly",
+    "description": "## Arrays\nArrays in assembly are just consecutive bytes in memory. You access elements using a base address + offset.\n\n```asm\nsection .data\n    nums dd 10, 20, 30, 40, 50   ; array of 5 dwords (4 bytes each)\n```\n\n### Accessing elements:\n```asm\nmov eax, [nums]           ; first element (10)\nmov eax, [nums + 4]       ; second element (20)\nmov eax, [nums + 8]       ; third element (30)\n```\n\nEach `dd` (dword) is 4 bytes, so element `i` is at `[nums + i*4]`.\n\n### Using a register as index:\n```asm\nmov rcx, 2                     ; index\nmov eax, [nums + rcx*4]        ; third element (30)\n```\n\nThis is where `lea` shines:\n```asm\nlea rsi, [nums + rcx*4]        ; address of element\nmov eax, [rsi]                 ; value at that address\n```\n\n---\n## Assignment:\nLHINX stores boot priorities in an array. Write a function `sum_array` that takes the address of an array in `rdi` and the count in `rsi`, and returns the sum of all elements in `rax`.",
+    "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n    arr1 dd 10, 20, 30, 40, 50\n    arr2 dd 5, 5, 5\n    arr3 dd 100\n\nsection .text\n    global _start\n",
+    "starterCode": "\nsum_array:\n    ; rdi = array address, rsi = count\n    ; return sum in rax\n    ret\n",
+    "expectedOutput": "PASS",
+    "rawHarness": true,
+    "runHarness": "\n_start:\n    lea rdi, [arr1]\n    mov rsi, 5\n    call sum_array\n    cmp rax, 150\n    jne .fail\n    lea rdi, [arr2]\n    mov rsi, 3\n    call sum_array\n    cmp rax, 15\n    jne .fail\n    lea rdi, [arr3]\n    mov rsi, 1\n    call sum_array\n    cmp rax, 100\n    jne .fail\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, pass_msg\n    mov rdx, pass_len\n    syscall\n    jmp .exit\n.fail:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, fail_msg\n    mov rdx, fail_len\n    syscall\n.exit:\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "hint": "Use a loop with rcx as your index. Access each element with [rdi + rcx*4]. Remember dd is 4 bytes. Use eax for the running total since dd elements are 32-bit.",
+    "nextLesson": "lesson22.json",
+    "previous": "lesson20.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "hard",
+    "xp": "25"
+}

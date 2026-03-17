@@ -1,0 +1,13 @@
+{
+    "id": "lesson12.json",
+    "title": "Operators [Comparison & Logic]",
+    "description": "## Comparison Operators\n- `==` equal\n- `!=` not equal\n- `>`, `<`, `>=`, `<=`\n\n## Logic Operators\n- `&&` AND\n- `||` OR\n- `!` NOT\n\n```rust\nlet x: i32 = 10;\nprintln!(\"{}\", x > 5 && x < 20);  // true\nprintln!(\"{}\", x == 10 || x == 20);  // true\nprintln!(\"{}\", !(x > 100));  // true\n```\n\n---\n## Assignment:\nVerdigris OS checks system health. Print whether:\n1. `cpu` is less than 90 AND `memory` is less than 80\n2. `cpu` is greater than 95 OR `memory` is greater than 95\n3. `disk` is NOT equal to 100",
+    "starterCode": "fn main() {\n    let cpu: i32 = 72;\n    let memory: i32 = 65;\n    let disk: i32 = 88;\n    // Print the three checks\n}",
+    "expectedOutput": "true\nfalse\ntrue",
+    "nextLesson": "lesson13.json",
+    "previous": "lesson10.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

@@ -1,0 +1,13 @@
+{
+    "id": "lesson11.json",
+    "title": "Operators [Compound & Increment]",
+    "description": "## Compound Assignment\n- `x += 5`, `x -= 5`, `x *= 5`, `x /= 5`, `x %= 5`\n\n## Increment & Decrement\n- `x++` adds 1\n- `x--` subtracts 1\n\n```qc\nint count = 10;\ncount += 5;   // 15\ncount *= 2;   // 30\ncount++;      // 31\ncount--;      // 30\n```\n\n---\n## Assignment:\nTechQ tracks active qubits. Starting with 8 qubits:\n1. Add 4 using `+=`\n2. Double using `*=`\n3. Subtract 6 using `-=`\n4. Increment with `++`\n5. Increment with `++`\n6. Print the result",
+    "starterCode": "int main() {\n    int qubits = 8;\n    // Modify and print\n    return 0;\n}",
+    "expectedOutput": "20",
+    "nextLesson": "lesson12.json",
+    "previous": "lesson10.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

@@ -1,0 +1,17 @@
+{
+    "id": "lesson31.json",
+    "title": "Functions [Optional & Default Params]",
+    "description": "## Default Parameters\nGive a parameter a default value with `=`:\n```ts\nfunction greet(name: string, greeting: string = \"Hello\"): string {\n    return greeting + \", \" + name;\n}\ngreet(\"Steve\");           // \"Hello, Steve\"\ngreet(\"Steve\", \"Hey\");    // \"Hey, Steve\"\n```\n\n## Optional Parameters\nMark a parameter as optional with `?`. It becomes `undefined` if not passed:\n```ts\nfunction log(msg: string, prefix?: string): void {\n    if (prefix) {\n        console.log(prefix + \": \" + msg);\n    } else {\n        console.log(msg);\n    }\n}\nlog(\"hello\");            // hello\nlog(\"hello\", \"INFO\");    // INFO: hello\n```\n\nOptional params must come after required params.\n\n---\n## Assignment:\nWrite a function `formatVideo` that takes a `title` (string) and an optional `views` (number, default 0). Return `\"title - X views\"`.",
+    "starterCode": "// Write formatVideo here\n",
+    "expectedOutput": "",
+    "rawHarness": true,
+    "mustContain": "Pass\n---------------------\n6 passed, 0 failed",
+    "runHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n    const passed = got === expected;\n    console.log('---------------------');\n    console.log('Test ' + num + ':');\n    console.log('Output: ' + got);\n    console.log(passed ? 'Pass' : 'Fail');\n    if (passed) _pass++; else _fail++;\n}\n_test(1, formatVideo(\"Cat Video\", 5000), \"Cat Video - 5000 views\");\n_test(2, formatVideo(\"Dog Video\"), \"Dog Video - 0 views\");\n_test(3, formatVideo(\"LHINX Tutorial\", 1), \"LHINX Tutorial - 1 views\");\n_test(4, formatVideo(\"Steve Gets Scammed\", 999999), \"Steve Gets Scammed - 999999 views\");\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "submitHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n    const passed = got === expected;\n    console.log('---------------------');\n    console.log('Test ' + num + ':');\n    console.log('Output: ' + got);\n    console.log(passed ? 'Pass' : 'Fail');\n    if (passed) _pass++; else _fail++;\n}\n_test(1, formatVideo(\"Cat Video\", 5000), \"Cat Video - 5000 views\");\n_test(2, formatVideo(\"Dog Video\"), \"Dog Video - 0 views\");\n_test(3, formatVideo(\"LHINX Tutorial\", 1), \"LHINX Tutorial - 1 views\");\n_test(4, formatVideo(\"Steve Gets Scammed\", 999999), \"Steve Gets Scammed - 999999 views\");\n_test(5, formatVideo(\"\", 0), \" - 0 views\");\n_test(6, formatVideo(\"Test\", 0), \"Test - 0 views\");\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "nextLesson": "lesson32.json",
+    "previous": "lesson30.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "18"
+}
