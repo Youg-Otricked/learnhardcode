@@ -1,0 +1,13 @@
+{
+    "id": "lesson37.json",
+    "title": "Optional Chaining [?.]",
+    "description": "## The Problem\nAccessing nested properties that might not exist crashes:\n```ts\nconst video = { title: \"Cat\" };\nconsole.log(video.stats.views);  // ERROR! stats is undefined\n```\n\n## The Fix: ?.\nOptional chaining returns `undefined` instead of crashing:\n```ts\nconsole.log(video.stats?.views);  // undefined (no crash)\n```\n\nYou can chain multiple levels:\n```ts\nconst channel = {\n    name: \"Steve's Channel\",\n    topVideo: undefined\n};\nconsole.log(channel.topVideo?.title?.toUpperCase());  // undefined\n```\n\nAlso works with methods:\n```ts\nchannel.getStats?.();  // calls getStats if it exists, undefined if not\n```\n\n---\n## Assignment:\nGiven the `channel` object, safely print:\n1. The channel name\n2. The top video title (might not exist)\n3. The top video's author name (definitely doesn't exist)",
+    "starterCode": "const channel = {\n    name: \"MeTube Gaming\",\n    topVideo: {\n        title: \"Epic Fail Compilation\"\n    }\n};\n\n// Print name\n// Print top video title safely\n// Print top video author name safely\n",
+    "expectedOutput": "MeTube Gaming\nEpic Fail Compilation\nundefined",
+    "nextLesson": "lesson38.json",
+    "previous": "lesson36.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

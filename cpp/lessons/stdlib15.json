@@ -1,0 +1,18 @@
+{
+    "id": "stdlib15.json",
+    "title": "DSA - Insertion Sort Best & Worst Case",
+    "description": "## Best Case\nIf the array is already sorted, each element is already in the right place. The inner loop does zero shifts every time.\n\n```\n[1, 2, 3, 4, 5]\n key=2: compare with 1, already in place. 1 comparison.\n key=3: compare with 2, already in place. 1 comparison.\n key=4: compare with 3, already in place. 1 comparison.\n key=5: compare with 4, already in place. 1 comparison.\n```\nTotal: n-1 comparisons = **O(n)**\n\n## Worst Case\nIf the array is reverse sorted, every element must shift ALL the way to the front.\n\n```\n[5, 4, 3, 2, 1]\n key=4: shift 5 right, insert 4. 1 shift.\n key=3: shift 5,4 right, insert 3. 2 shifts.\n key=2: shift 5,4,3 right, insert 2. 3 shifts.\n key=1: shift 5,4,3,2 right, insert 1. 4 shifts.\n```\nTotal: 1+2+3+4 = 10 = **O(n²)**\n\n---\n## Question:\nWhat is the best case time complexity of insertion sort AND what input causes it?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "stdlib16.json",
+    "previous": "stdlib14.json",
+    "showButtons": true,
+    "correct": "b2",
+    "b1t": "O(n²) - random array",
+    "b2t": "O(n) - already sorted array",
+    "b3t": "O(n log n) - nearly sorted array",
+    "b4t": "O(1) - single element array",
+    "mode": "editor",
+    "difficulty": "medium",
+    "xp": "15"
+}
