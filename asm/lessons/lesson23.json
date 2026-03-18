@@ -1,0 +1,22 @@
+{
+    "id": "lesson23.json",
+    "title": "Structs in Assembly",
+    "description": "## Structs\nAssembly doesn't have structs like C. But structs are just data laid out at known offsets in memory.\n\nA C struct like:\n```c\nstruct Player {\n    int health;    // offset 0, 4 bytes\n    int armor;     // offset 4, 4 bytes\n    int damage;    // offset 8, 4 bytes\n};\n```\n\nIn assembly is just:\n```asm\nsection .data\n    player:\n        dd 100      ; health at [player + 0]\n        dd 50       ; armor at [player + 4]\n        dd 25       ; damage at [player + 8]\n```\n\nAccess fields by base address + offset:\n```asm\nmov eax, [player]       ; health = 100\nmov eax, [player + 4]   ; armor = 50\nmov eax, [player + 8]   ; damage = 25\n```\n\nOr with a pointer in a register:\n```asm\nlea rdi, [player]\nmov eax, [rdi]          ; health\nmov eax, [rdi + 4]      ; armor\nmov eax, [rdi + 8]      ; damage\n```\n\nYou can even define constants for readability:\n```asm\n%define HEALTH 0\n%define ARMOR  4\n%define DAMAGE 8\nmov eax, [rdi + HEALTH]\n```\n\n---\n## Assignment:\nLHINX stores process info as a struct: `pid` (4 bytes), `priority` (4 bytes), `memory` (4 bytes). Write a function `get_total_resources` that takes a pointer to a process struct in `rdi` and returns `priority + memory` in `rax`.",
+    "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n    proc1:\n        dd 1        ; pid\n        dd 5        ; priority\n        dd 512      ; memory\n    proc2:\n        dd 2        ; pid\n        dd 10       ; priority\n        dd 1024     ; memory\n\nsection .text\n    global _start\n",
+    "starterCode": "\nget_total_resources:\n    ; rdi = pointer to process struct\n    ; return priority + memory in rax\n    ret\n",
+    "expectedOutput": "PASS",
+    "rawHarness": true,
+    "runHarness": "\n_start:\n    lea rdi, [proc1]\n    call get_total_resources\n    cmp rax, 517\n    jne .fail\n    lea rdi, [proc2]\n    call get_total_resources\n    cmp rax, 1034\n    jne .fail\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, pass_msg\n    mov rdx, pass_len\n    syscall\n    jmp .exit\n.fail:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, fail_msg\n    mov rdx, fail_len\n    syscall\n.exit:\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "hint": "Priority is at offset 4 (skip pid). Memory is at offset 8. Use [rdi + 4] and [rdi + 8]. Use eax for 32-bit values since dd is 4 bytes.",
+    "nextLesson": "lesson24.json",
+    "previous": "lesson22.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "hard",
+    "xp": "25"
+}

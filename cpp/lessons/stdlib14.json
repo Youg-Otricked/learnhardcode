@@ -1,0 +1,18 @@
+{
+    "id": "stdlib14.json",
+    "title": "DSA - Why Insertion Sort?",
+    "description": "## Insertion Sort\nInsertion sort builds the sorted array one element at a time - like sorting cards in your hand.\n\nWhy learn another O(n²) sort?\n- **Simple** - easy to implement correctly\n- **Fast on small arrays** - less overhead than merge/quick sort\n- **Fast on nearly sorted data** - O(n) best case\n- **Stable** - equal elements keep their original order\n- **In-place** - no extra memory needed\n\nIn practice, `std::sort` in C++ switches to insertion sort for small subarrays (typically < 16 elements) because the overhead of recursion in quicksort isn't worth it for tiny arrays.\n\n## Time Complexity\nFor each element, you compare it with elements to its left and shift them:\n- Inner loop: up to `i` comparisons for element `i`\n- Total: 1 + 2 + 3 + ... + n = **n(n+1)/2 = O(n²)**\n\n---\n## Question:\nWhy does `std::sort` use insertion sort for small subarrays instead of quicksort?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "stdlib15.json",
+    "previous": "stdlib13.json",
+    "showButtons": true,
+    "correct": "b3",
+    "b1t": "Insertion sort is always faster",
+    "b2t": "Quicksort doesn't work on small arrays",
+    "b3t": "Less overhead than recursion for small arrays",
+    "b4t": "Insertion sort uses less memory",
+    "mode": "editor",
+    "difficulty": "medium",
+    "xp": "15"
+}

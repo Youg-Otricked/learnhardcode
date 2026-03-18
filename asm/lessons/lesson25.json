@@ -1,0 +1,22 @@
+{
+    "id": "lesson25.json",
+    "title": "Stack Allocation [Arrays on Stack]",
+    "description": "## Arrays on the Stack\nYou can allocate arrays on the stack by subtracting more from rsp:\n\n```asm\nmy_func:\n    push rbp\n    mov rbp, rsp\n    sub rsp, 40       ; 10 dwords = 40 bytes\n\n    ; array[0] = 5\n    mov dword [rbp - 4], 5\n    ; array[1] = 10\n    mov dword [rbp - 8], 10\n    ; array[i] at [rbp - (i+1)*4]\n\n    mov rsp, rbp\n    pop rbp\n    ret\n```\n\nStack arrays are fast - no syscall needed. But they're limited by stack size and die when the function returns.\n\n### When to use stack:\n- Small, fixed-size data\n- Local to one function\n- Automatically cleaned up on return\n\n---\n## Assignment:\nWrite a function `stack_sum` that allocates an array of 3 ints on the stack, stores the values 10, 20, 30, then returns their sum.",
+    "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n\nsection .text\n    global _start\n",
+    "starterCode": "\nstack_sum:\n    ; allocate 3 ints on stack\n    ; store 10, 20, 30\n    ; sum them and return in rax\n    ret\n",
+    "expectedOutput": "PASS",
+    "rawHarness": true,
+    "runHarness": "\n_start:\n    call stack_sum\n    cmp rax, 60\n    jne .fail\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, pass_msg\n    mov rdx, pass_len\n    syscall\n    jmp .exit\n.fail:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, fail_msg\n    mov rdx, fail_len\n    syscall\n.exit:\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "hint": "Prologue, sub rsp 12 (3 * 4 bytes). Store values at [rbp-4], [rbp-8], [rbp-12]. Load all three into registers, add them, put result in rax. Epilogue.",
+    "nextLesson": "lesson26.json",
+    "previous": "lesson24.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "hard",
+    "xp": "25"
+}

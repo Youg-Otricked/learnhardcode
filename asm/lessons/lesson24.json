@@ -1,0 +1,22 @@
+{
+    "id": "lesson24.json",
+    "title": "Stack Frames [Local Variables]",
+    "description": "## Stack Frames\nSo far you've used registers for everything. But what if you need more variables than registers? Use the stack.\n\n### The prologue:\n```asm\nmy_func:\n    push rbp          ; save old base pointer\n    mov rbp, rsp      ; set new base pointer\n    sub rsp, 16       ; allocate 16 bytes for local vars\n```\n\n### Accessing local variables:\n```asm\n    mov dword [rbp - 4], 42    ; local var 1\n    mov dword [rbp - 8], 100   ; local var 2\n```\n\n### The epilogue:\n```asm\n    mov rsp, rbp      ; deallocate locals\n    pop rbp           ; restore old base pointer\n    ret\n```\n\nThis is exactly what C compilers generate. Every function call creates a stack frame:\n```\n|  return address  |  <- pushed by call\n|  old rbp         |  <- pushed by prologue\n|  local var 1     |  [rbp - 4]\n|  local var 2     |  [rbp - 8]\n|  ...             |  <- rsp points here\n```\n\n**Step through with the debugger and watch rbp and rsp change!**\n\n---\n## Assignment:\nWrite a function `swap_add` that takes two numbers in `rdi` and `rsi`, stores them in local stack variables, swaps them, then returns their sum. Use a proper stack frame with prologue/epilogue.",
+    "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n\nsection .text\n    global _start\n",
+    "starterCode": "\nswap_add:\n    ; prologue\n    ; store rdi and rsi in local vars\n    ; swap them\n    ; add and return in rax\n    ; epilogue\n    ret\n",
+    "expectedOutput": "PASS",
+    "rawHarness": true,
+    "runHarness": "\n_start:\n    mov rdi, 5\n    mov rsi, 3\n    call swap_add\n    cmp rax, 8\n    jne .fail\n    mov rdi, 10\n    mov rsi, 20\n    call swap_add\n    cmp rax, 30\n    jne .fail\n    mov rdi, 0\n    mov rsi, 0\n    call swap_add\n    cmp rax, 0\n    jne .fail\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, pass_msg\n    mov rdx, pass_len\n    syscall\n    jmp .exit\n.fail:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, fail_msg\n    mov rdx, fail_len\n    syscall\n.exit:\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "hint": "Prologue: push rbp, mov rbp rsp, sub rsp 16. Store rdi at [rbp-4] and rsi at [rbp-8]. Swap by loading into registers and storing back. Add both and put in rax. Epilogue: mov rsp rbp, pop rbp, ret.",
+    "nextLesson": "lesson25.json",
+    "previous": "lesson23.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "hard",
+    "xp": "25"
+}

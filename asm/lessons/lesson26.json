@@ -1,0 +1,22 @@
+{
+    "id": "lesson26.json",
+    "title": "Practice [Structs + Stack Frames]",
+    "description": "## Putting It All Together\nTime to combine everything: structs, stack frames, calling convention, and functions.\n\n---\n## Assignment:\nLHINX needs a process manager. You're given a process struct with `pid` (4 bytes), `priority` (4 bytes), and `memory` (4 bytes).\n\nWrite a function `boost_process` that:\n1. Takes a pointer to a process struct in `rdi` and a boost amount in `rsi`\n2. Uses a proper stack frame (prologue/epilogue)\n3. Stores the original priority in a local stack variable\n4. Adds `rsi` to the process's priority field (modify the struct in memory)\n5. Returns the OLD priority in `rax`",
+    "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n    proc1:\n        dd 1\n        dd 5\n        dd 512\n\nsection .text\n    global _start\n",
+    "starterCode": "\nboost_process:\n    ; prologue\n    ; save old priority to local var\n    ; add boost to priority in struct\n    ; return old priority\n    ; epilogue\n    ret\n",
+    "expectedOutput": "PASS",
+    "rawHarness": true,
+    "runHarness": "\n_start:\n    lea rdi, [proc1]\n    mov rsi, 3\n    call boost_process\n    cmp rax, 5\n    jne .fail\n    mov eax, [proc1 + 4]\n    cmp eax, 8\n    jne .fail\n    lea rdi, [proc1]\n    mov rsi, 2\n    call boost_process\n    cmp rax, 8\n    jne .fail\n    mov eax, [proc1 + 4]\n    cmp eax, 10\n    jne .fail\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, pass_msg\n    mov rdx, pass_len\n    syscall\n    jmp .exit\n.fail:\n    mov rax, 1\n    mov rdi, 1\n    mov rsi, fail_msg\n    mov rdx, fail_len\n    syscall\n.exit:\n    mov rax, 60\n    xor rdi, rdi\n    syscall",
+    "hint": "Priority is at [rdi + 4]. Save it to [rbp - 4] before modifying. Add esi to [rdi + 4] directly. Return the saved value.",
+    "nextLesson": "lesson27.json",
+    "previous": "lesson25.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "hard",
+    "xp": "30"
+}
