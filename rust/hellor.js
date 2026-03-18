@@ -222,7 +222,7 @@ async function runWithSuite(suiteFile, label) {
   }
   if (suiteFile) {
       if (rawHarness) {
-          studentSource += suiteFile;
+          studentSource += "\n" + suiteFile;
       } else {
           const suite = await fetch(suiteFile).then(r => r.text());
           studentSource += '\n\n' + suite;

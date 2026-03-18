@@ -1,0 +1,13 @@
+{
+    "id": "lesson20.json",
+    "title": "Loops [For]",
+    "description": "## For Loop\nA `for` loop repeats code a specific number of times. It has three parts:\n\n```csharp\nfor (start; condition; step) {\n    code;\n}\n```\n\n- **start** - runs once before the loop begins\n- **condition** - checked before each loop. If false, the loop stops\n- **step** - runs after each loop\n\n```csharp\nfor (int i = 0; i < 5; i++) {\n    Console.WriteLine(i);\n}\n// 0\n// 1\n// 2\n// 3\n// 4\n```\n\nBreaking it down:\n1. `int i = 0` - create counter, start at 0\n2. `i < 5` - keep going while i is less than 5\n3. `i++` - add 1 to i after each loop\n4. The body runs 5 times with i = 0, 1, 2, 3, 4\n\n---\n## Assignment:\nChronoShard displays a level-up animation. Print `Level X` for levels 1 through 5.",
+    "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            // For loop here\n\n            return 0;\n        }\n    }\n}",
+    "expectedOutput": "Level 1\nLevel 2\nLevel 3\nLevel 4\nLevel 5",
+    "nextLesson": "lesson21.json",
+    "previous": "lesson19.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "basic",
+    "xp": "15"
+}

@@ -1,0 +1,13 @@
+{
+    "id": "lesson14.json",
+    "title": "Control Flow [if/else]",
+    "description": "## if/else\nSometimes you need your code to make decisions. `if` checks a condition - if it's true, the code inside runs. If it's false, the `else` block runs instead.\n\n```rust\nlet x: i32 = 10;\nif x > 5 {\n    println!(\"Big\");\n} else {\n    println!(\"Small\");\n}\n// prints: Big\n```\n\n### Key differences from C/C++:\n- **No parentheses** around the condition\n- Curly braces are **always required**\n- The condition must be a `bool` - no truthy/falsy like other languages\n\n```rust\nlet x: i32 = 1;\nif x {           // ERROR! x is i32, not bool\n    println!(\"yes\");\n}\nif x == 1 {      // correct - comparison returns bool\n    println!(\"yes\");\n}\n```\n\n---\n## Assignment:\nVerdigris OS checks available memory at boot. If `memory` is greater than or equal to 1024, print `Boot OK`. Otherwise print `Low memory`.",
+    "starterCode": "fn main() {\n    let memory: i32 = 2048;\n    // Write your if/else here\n}",
+    "expectedOutput": "Boot OK",
+    "nextLesson": "lesson15.json",
+    "previous": "lesson13.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

@@ -1,0 +1,16 @@
+{
+    "id": "lesson34.json",
+    "title": "Interfaces",
+    "description": "## Interfaces\nSo far your objects have no type checking. You could accidentally misspell a property or forget one. Interfaces fix that.\n\nAn interface defines the SHAPE of an object:\n```ts\ninterface Video {\n    title: string;\n    views: number;\n    isPublic: boolean;\n}\n\nconst video: Video = {\n    title: \"Cat Falls\",\n    views: 5000,\n    isPublic: true\n};\n```\n\nNow TypeScript enforces:\n- All properties must exist\n- All properties must be the correct type\n- No extra properties allowed\n\n### Optional properties:\n```ts\ninterface Video {\n    title: string;\n    views: number;\n    description?: string;  // optional\n}\n```\n\n---\n## Assignment:\nCreate an interface `Channel` with:\n- `name`: string\n- `subscribers`: number\n- `verified`: boolean\n\nThen create two channels named channel1, and channel2, using the interface and print their names.",
+    "starterCode": "// Define Channel interface\n\n// Create two channels\n\n// Print their names\n",
+    "expectedOutput": "Steve's Channel\nMeTube Official",
+    "nextLesson": "lesson35.json",
+    "previous": "lesson33.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "runHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n    const passed = got === expected;\n    console.log('---------------------');\n    console.log('Test ' + num + ':');\n    console.log('Output: ' + got);\n    console.log(passed ? 'Pass' : 'Fail');\n    if (passed) _pass++; else _fail++;\n}\n_test(1, typeof channel1.name, 'string');\n_test(2, typeof channel1.subscribers, 'number');\n_test(3, typeof channel1.verified, 'boolean');\n_test(4, typeof channel2.name, 'string');\n_test(5, typeof channel2.subscribers, 'number');\n_test(6, typeof channel2.verified, 'boolean');\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "mustContain": "Pass\n---------------------\n6 passed, 0 failed",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "18"
+}
