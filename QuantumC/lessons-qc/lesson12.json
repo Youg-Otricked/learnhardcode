@@ -1,0 +1,13 @@
+{
+    "id": "lesson12.json",
+    "title": "Control Flow [if/else]",
+    "description": "## if/else\nSometimes you need your code to make decisions. `if` checks a condition - if it's true, the code inside runs. If it's false, the `else` block runs instead.\n\n```qc\nint x = 10;\nif (x > 5) {\n    println(\"Big\");\n} else {\n    println(\"Small\");\n}\n// prints: Big\n```\n\n### How it works:\n- `if` evaluates the condition inside `()`\n- If true, runs the first `{}` block\n- If false, runs the `else {}` block\n- `else` is optional - you can use `if` alone\n\n```qc\nint x = 10;\nif (x > 100) {\n    println(\"This never runs\");\n}\nprintln(\"This always runs\");\n```\n\n---\n## Assignment:\nTechQ's quantum processor has a stability rating. If `stability` is greater than 75, print `Stable`. Otherwise print `Unstable`.",
+    "starterCode": "int main() {\n    int stability = 82;\n    // Write your if/else here\n    return 0;\n}",
+    "expectedOutput": "Stable",
+    "nextLesson": "lesson13.json",
+    "previous": "lesson11.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

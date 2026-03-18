@@ -1,0 +1,13 @@
+{
+    "id": "lesson15.json",
+    "title": "Control Flow [else if]",
+    "description": "## else if\nWhat if you have more than two options? Chain conditions with `else if`:\n\n```rust\nlet x: i32 = 15;\nif x > 20 {\n    println!(\"High\");\n} else if x > 10 {\n    println!(\"Medium\");\n} else {\n    println!(\"Low\");\n}\n// prints: Medium\n```\n\nRust checks each condition top to bottom. The first one that's true runs, and the rest are skipped. `else` at the end catches everything that didn't match.\n\nYou can chain as many `else if` blocks as you want.\n\n---\n## Assignment:\nVerdigris OS rates CPU load. Given `load`:\n- Above 90 -> print `Critical`\n- Above 60 -> print `Warning`\n- Above 30 -> print `Normal`\n- Otherwise -> print `Idle`",
+    "starterCode": "fn main() {\n    let load: i32 = 75;\n    // Write your if/else if/else here\n}",
+    "expectedOutput": "Warning",
+    "nextLesson": "lesson16.json",
+    "previous": "lesson14.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

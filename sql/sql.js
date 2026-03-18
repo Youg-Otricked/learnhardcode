@@ -262,7 +262,7 @@ async function runWithSuite(suiteFile, label) {
     db = new SQL.Database();
     if (suiteFile) {
         if (currentLesson.rawHarness) {
-            studentSource += suiteFile;
+            studentSource += "\n" + suiteFile;
         } else {
             suite = await fetch(suiteFile).then(r => r.text());
             studentSource = suite + '\n\n' + studentSource;
