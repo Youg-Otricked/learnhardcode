@@ -1,0 +1,12 @@
+{
+    "id": "lesson24.json",
+    "title": "Getting Help [man, --help]",
+    "description": "# Getting Help\nYou don't need to memorize every command. Two ways to get help:\n\n## man\n`man` opens the manual page for a command:\n```bash\nman ls\nman grep\nman chmod\n```\nUse arrow keys to scroll, `q` to quit.\n\n## --help\nMost commands support `--help` for a quick summary:\n```bash\nls --help\ngrep --help\n```\n\nShorter than `man`, shows flags and usage.\n\n## Common flag conventions:\n- `-h` or `--help` - show help\n- `-v` or `--version` - show version\n- `-r` or `-R` - recursive\n- `-f` - force\n- `-n` - number/count\n- Single dash = short flag (`-a`)\n- Double dash = long flag (`--all`)\n- Short flags can combine: `ls -la` = `ls -l -a`\n\n---\n## Assignment:\nRun `man wc` or `wc --help`. What flag counts only lines? Type just the flag.",
+    "starterCode": "",
+    "expectedOutput": "-l",
+    "nextLesson": "learnlinux/lesson25.json",
+    "previous": "learnlinux/lesson23.json",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "15"
+}

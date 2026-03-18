@@ -1,0 +1,18 @@
+{
+    "id": "lesson16.json",
+    "title": "Control Flow [Why break?]",
+    "description": "## Why break?\nYou might wonder why `switch` needs `break` after each case. Without it, execution **falls through** to the next case:\n\n```qc\nint x = 1;\nswitch (x) {\n    case 1:\n        println(\"One\");\n    case 2:\n        println(\"Two\");\n        break;\n    case 3:\n        println(\"Three\");\n        break;\n}\n```\nOutput:\n```\nOne\nTwo\n```\n\nCase 1 matched, printed \"One\", then fell through to case 2 and printed \"Two\" before hitting `break`.\n\nThis is usually a bug, but sometimes useful:\n```qc\nswitch (day) {\n    case 1:\n    case 2:\n    case 3:\n    case 4:\n    case 5:\n        println(\"Weekday\");\n        break;\n    case 6:\n    case 7:\n        println(\"Weekend\");\n        break;\n}\n```\n\n---\n## Question:\nWhat is the output if `x = 2`?\n```qc\nswitch (x) {\n    case 1:\n        println(\"A\");\n    case 2:\n        println(\"B\");\n    case 3:\n        println(\"C\");\n        break;\n}\n```",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson17.json",
+    "previous": "lesson15.json",
+    "showButtons": true,
+    "correct": "b3",
+    "b1t": "B",
+    "b2t": "A\nB\nC",
+    "b3t": "B\nC",
+    "b4t": "B\nC\nD",
+    "mode": "editor",
+    "difficulty": "basic",
+    "xp": "15"
+}
