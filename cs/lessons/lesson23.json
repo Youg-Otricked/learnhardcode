@@ -1,0 +1,13 @@
+{
+    "id": "lesson23.json",
+    "title": "Loops [Foreach]",
+    "description": "## Foreach\n`foreach` loops through every element in a collection without needing an index:\n\n```csharp\nstring[] items = {\"Sword\", \"Shield\", \"Potion\"};\nforeach (string item in items) {\n    Console.WriteLine(item);\n}\n```\n\nCompare with `for`:\n```csharp\n// for - you manage the index\nfor (int i = 0; i < items.Length; i++) {\n    Console.WriteLine(items[i]);\n}\n\n// foreach - cleaner, no index needed\nforeach (string item in items) {\n    Console.WriteLine(item);\n}\n```\n\nUse `foreach` when you don't need the index. Use `for` when you do.\n\n---\n## Assignment:\nChronoShard displays a player's inventory. Given the array below, use `foreach` to print each item.",
+    "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            string[] inventory = {\"Iron Sword\", \"Health Potion\", \"Shield\", \"Map\", \"Gold Key\"};\n            // Foreach loop here\n\n            return 0;\n        }\n    }\n}",
+    "expectedOutput": "Iron Sword\nHealth Potion\nShield\nMap\nGold Key",
+    "nextLesson": "lesson24.json",
+    "previous": "lesson22.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "basic",
+    "xp": "15"
+}

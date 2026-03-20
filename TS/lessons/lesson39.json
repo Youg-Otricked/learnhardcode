@@ -1,0 +1,17 @@
+{
+    "id": "lesson39.json",
+    "title": "Functions [Returning Objects]",
+    "description": "## Returning Objects\nFunctions can create and return objects:\n\n```ts\nfunction createUser(name: string, age: number) {\n    return {\n        name: name,\n        age: age,\n        isAdmin: false\n    };\n}\n\nconst user = createUser(\"Steve\", 25);\nconsole.log(user.name);  // Steve\n```\n\n### Shorthand\nWhen the property name matches the variable name, you can shorten it:\n```ts\nfunction createUser(name: string, age: number) {\n    return { name, age, isAdmin: false };\n}\n```\n\nSame result, less typing.\n\n---\n## Assignment:\nWrite a function `createVideo` that takes `title` (string) and `views` (number) and returns an object with those properties plus `likes` set to 0.",
+    "starterCode": "// Write createVideo here\n",
+    "expectedOutput": "",
+    "rawHarness": true,
+    "mustContain": "Pass\n---------------------\n6 passed, 0 failed",
+    "runHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n    const passed = JSON.stringify(got) === JSON.stringify(expected);\n    console.log('---------------------');\n    console.log('Test ' + num + ':');\n    console.log('Output: ' + JSON.stringify(got));\n    console.log(passed ? 'Pass' : 'Fail');\n    if (passed) _pass++; else _fail++;\n}\n_test(1, createVideo('Cat Falls', 5000), {title: 'Cat Falls', views: 5000, likes: 0});\n_test(2, createVideo('Steve Gets Scammed', 999999), {title: 'Steve Gets Scammed', views: 999999, likes: 0});\n_test(3, createVideo('', 0), {title: '', views: 0, likes: 0});\n_test(4, createVideo('LHINX Tutorial', 1), {title: 'LHINX Tutorial', views: 1, likes: 0});\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "submitHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n    const passed = JSON.stringify(got) === JSON.stringify(expected);\n    console.log('---------------------');\n    console.log('Test ' + num + ':');\n    console.log('Output: ' + JSON.stringify(got));\n    console.log(passed ? 'Pass' : 'Fail');\n    if (passed) _pass++; else _fail++;\n}\n_test(1, createVideo('Cat Falls', 5000), {title: 'Cat Falls', views: 5000, likes: 0});\n_test(2, createVideo('Steve Gets Scammed', 999999), {title: 'Steve Gets Scammed', views: 999999, likes: 0});\n_test(3, createVideo('', 0), {title: '', views: 0, likes: 0});\n_test(4, createVideo('LHINX Tutorial', 1), {title: 'LHINX Tutorial', views: 1, likes: 0});\n_test(5, createVideo('Test', 42), {title: 'Test', views: 42, likes: 0});\n_test(6, createVideo('Why I\\'m Broke', 500000), {title: 'Why I\\'m Broke', views: 500000, likes: 0});\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
+    "nextLesson": "lesson40.json",
+    "previous": "lesson38.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}
