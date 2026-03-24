@@ -1,0 +1,18 @@
+{
+    "id": "lesson46.json",
+    "title": "Inheritance [Prototypes]",
+    "description": "## Prototypes\nUnder the hood, JavaScript/TypeScript inheritance uses **prototypes**. Every object has a hidden link to another object called its prototype.\n\nWhen you access a property, the engine:\n1. Checks the object itself\n2. If not found, checks its prototype\n3. If not found, checks the prototype's prototype\n4. ...until it reaches `null`\n\n```ts\nclass Animal {\n    speak(): string {\n        return \"...\";\n    }\n}\n\nclass Dog extends Animal {\n    speak(): string {\n        return \"Woof\";\n    }\n}\n\nconst dog = new Dog();\nconsole.log(dog.speak());  // \"Woof\" - found on Dog\n```\n\nWhen you call `dog.speak()`, the engine finds `speak` on `Dog` and stops. But if `Dog` didn't have `speak`, it would check `Animal` (the prototype).\n\n## `instanceof`\nChecks if an object's prototype chain includes a class:\n\n```ts\nconst dog = new Dog();\nconsole.log(dog instanceof Dog);    // true\nconsole.log(dog instanceof Animal); // true\nconsole.log(dog instanceof Object); // true\n```\n\n`dog` is a `Dog`, which is an `Animal`, which is an `Object`. The chain goes all the way up.\n\n---\n## Question:\n```ts\nclass A {\n    greet(): string { return \"A\"; }\n}\nclass B extends A {\n    greet(): string { return \"B\"; }\n}\nclass C extends B {}\n\nconst c = new C();\n```\nWhat does `c.greet()` return?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson47.json",
+    "previous": "lesson45.json",
+    "showButtons": true,
+    "correct": "b2",
+    "b1t": "\"A\" - A is the root class",
+    "b2t": "\"B\" - C doesn't have greet, so it checks B",
+    "b3t": "undefined - C doesn't define greet",
+    "b4t": "Error - C must override greet",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "15"
+}

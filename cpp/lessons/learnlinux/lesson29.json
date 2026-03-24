@@ -1,0 +1,13 @@
+{
+    "id": "lesson29.json",
+    "title": "The Unix Philosophy",
+    "description": "## The Unix Philosophy\nUnix was built on a simple idea:\n\n> Make each program do one thing well.\n\n### The rules:\n1. **Do one thing well** - `ls` lists files. It doesn't delete them, rename them, or edit them.\n2. **Text is the universal interface** - programs input and output plain text, so they can be chained together.\n3. **Compose small tools** - combine simple programs with pipes to do complex things.\n\n### Example:\nHow many `.txt` files are in a directory?\n\nYou could write a program that counts specific file types. Or you could compose existing tools:\n\n```bash\nls | grep \\.txt | wc -l\n```\n\n- `ls` lists files (one thing)\n- `grep` filters text (one thing)\n- `wc -l` counts lines (one thing)\n\nThree simple tools, one powerful result.\n\n### Another example:\nFind the 5 largest files in a directory:\n\n```bash\nls -lS | head -6\n```\n\n- `ls -lS` lists files sorted by size\n- `head -6` shows first 6 lines (header + 5 files)\n\n---\n## Assignment:\nUsing pipes, count how many lines in `/etc/passwd` contain the word `root`. Paste the command and its output.",
+    "starterCode": "",
+    "expectedOutput": "",
+    "mustContain": ["grep", "wc"],
+    "nextLesson": "learnlinux/lesson30.json",
+    "previous": "learnlinux/lesson28.json",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "15"
+}

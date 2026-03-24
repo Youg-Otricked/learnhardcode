@@ -1,0 +1,13 @@
+{
+    "id": "lesson17.json",
+    "title": "Loops [for]",
+    "description": "## for loop\nA `for` loop combines three things in one line: init, condition, and update.\n\n```qc\nfor (int i = 0; i < 5; i++) {\n    println(i);\n}\n// 0\n// 1\n// 2\n// 3\n// 4\n```\n\nBreaking it down:\n- `int i = 0` - runs once at the start\n- `i < 5` - checked before each loop, stops when false\n- `i++` - runs after each loop\n\n### Compared to while:\n```qc\n// these do the same thing\nint i = 0;\nwhile (i < 5) {\n    println(i);\n    i++;\n}\n\nfor (int i = 0; i < 5; i++) {\n    println(i);\n}\n```\n\n`for` is cleaner when you know how many times to loop.\n\n---\n## Assignment:\nTechQ runs diagnostics on 8 quantum cores (numbered 0-7). Use a `for` loop to print `Core X: online` for each core.",
+    "starterCode": "int main() {\n    // Write your for loop here\n    return 0;\n}",
+    "expectedOutput": "Core 0: online\nCore 1: online\nCore 2: online\nCore 3: online\nCore 4: online\nCore 5: online\nCore 6: online\nCore 7: online",
+    "nextLesson": "lesson18.json",
+    "previous": "lesson16.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

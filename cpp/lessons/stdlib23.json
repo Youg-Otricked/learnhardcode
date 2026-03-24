@@ -1,0 +1,18 @@
+{
+    "id": "stdlib23.json",
+    "title": "DSA - Polynomial Time",
+    "description": "## What is Polynomial Time?\nAn algorithm runs in polynomial time if its time complexity is O(n^k) for some constant k.\n\n### Polynomial (in P):\n| Complexity | Example |\n|---|---|\n| O(1) | Array index access |\n| O(log n) | Binary search |\n| O(n) | Linear search |\n| O(n log n) | Merge sort |\n| O(n²) | Bubble sort |\n| O(n³) | Matrix multiplication (naive) |\n\nAll of these are n raised to some fixed power. Even O(n^100) is polynomial (though impractical).\n\n### NOT Polynomial (exponential/factorial):\n| Complexity | Example |\n|---|---|\n| O(2^n) | Brute force subset generation |\n| O(n!) | Brute force permutations |\n| O(n^n) | ... don't |\n\nThe gap between polynomial and exponential is MASSIVE:\n- n = 100, O(n²) = 10,000 operations\n- n = 100, O(2^n) = 1,267,650,600,228,229,401,496,703,205,376 operations\n\nThat's why P vs NP matters. If a problem has no known polynomial solution, it's essentially unsolvable for large inputs.\n\n---\n## Question:\nWhich of these is NOT polynomial time?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "stdlib24.json",
+    "previous": "stdlib22.json",
+    "showButtons": true,
+    "correct": "b4",
+    "b1t": "O(n³)",
+    "b2t": "O(n log n)",
+    "b3t": "O(n^50)",
+    "b4t": "O(2^n)",
+    "mode": "editor",
+    "difficulty": "medium",
+    "xp": "15"
+}
