@@ -1,0 +1,13 @@
+{
+    "id": "lesson25.json",
+    "title": "Loops [Break & Continue]",
+    "description": "## Break\n`break` exits a loop immediately:\n\n```csharp\nfor (int i = 0; i < 10; i++)\n{\n    if (i == 5) break;\n    Console.WriteLine(i);\n}\n// 0, 1, 2, 3, 4\n```\n\n## Continue\n`continue` skips the rest of the current iteration:\n\n```csharp\nfor (int i = 0; i < 6; i++)\n{\n    if (i == 3) continue;\n    Console.WriteLine(i);\n}\n// 0, 1, 2, 4, 5\n```\n\n---\n## Assignment:\nLoop from 1 to 20. Skip numbers divisible by 3 using `continue`. Stop entirely when you hit 17 using `break`. Print each number that passes.",
+    "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            // Write your loop here\n\n            return 0;\n        }\n    }\n}",
+    "expectedOutput": "1\n2\n4\n5\n7\n8\n10\n11\n13\n14\n16",
+    "nextLesson": "lesson26.json",
+    "previous": "lesson24.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

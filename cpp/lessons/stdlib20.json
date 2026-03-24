@@ -1,0 +1,18 @@
+{
+    "id": "stdlib20.json",
+    "title": "DSA - Bucket Sort Time Complexity",
+    "description": "## Bucket Sort Analysis\nRecall how bucket sort works:\n1. Create k empty buckets\n2. Distribute n elements into buckets based on value\n3. Sort each bucket (usually with insertion sort)\n4. Concatenate all buckets\n\n### Best/Average Case: O(n + k)\nWhen elements are **uniformly distributed** across buckets:\n- Step 1: O(k) to create buckets\n- Step 2: O(n) to distribute\n- Step 3: Each bucket has ~n/k elements. Insertion sort on small lists is fast\n- Step 4: O(k) to concatenate\n\n### Worst Case: O(n²)\nWhen ALL elements land in ONE bucket:\n- You're just running insertion sort on the entire array\n- This happens with non-uniform data\n\n### Space: O(n + k)\nYou need the extra bucket storage.\n\n### When to use bucket sort:\n- Input is uniformly distributed across a known range\n- You need better than O(n log n)\n- Extra memory is acceptable\n\n### Comparison:\n| Algorithm | Best | Average | Worst | Space | In-place? |\n|-----------|------|---------|-------|-------|-----------|\n| Quicksort | O(n log n) | O(n log n) | O(n²) | O(1) | Yes |\n| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) | No |\n| Bucket Sort | O(n + k) | O(n + k) | O(n²) | O(n + k) | No |\n\n---\n## Question:\nYou have 1 million uniformly distributed floats between 0 and 1. Which sort is fastest?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "stdlib21.json",
+    "previous": "stdlib19.json",
+    "showButtons": true,
+    "correct": "b3",
+    "b1t": "Quicksort - O(n log n) average, in-place",
+    "b2t": "Merge sort - guaranteed O(n log n)",
+    "b3t": "Bucket sort - O(n + k) with uniform distribution",
+    "b4t": "Insertion sort - O(n) best case",
+    "mode": "editor",
+    "difficulty": "medium",
+    "xp": "15"
+}

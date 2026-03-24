@@ -1,0 +1,13 @@
+{
+    "id": "lesson19.json",
+    "title": "Loops [loop, break, continue]",
+    "description": "## loop\n`loop` runs forever until you `break` out:\n\n```rust\nlet mut i: i32 = 0;\nloop {\n    if i >= 5 {\n        break;\n    }\n    println!(\"{}\", i);\n    i += 1;\n}\n// 0, 1, 2, 3, 4\n```\n\n`break` exits the loop immediately.\n\n## continue\n`continue` skips the rest of the current iteration and jumps to the next:\n\n```rust\nfor i in 0..6 {\n    if i == 3 {\n        continue;\n    }\n    println!(\"{}\", i);\n}\n// 0, 1, 2, 4, 5  (3 is skipped)\n```\n\n## loop with return value\nUnique to Rust - `loop` can return a value via `break`:\n\n```rust\nlet mut i: i32 = 0;\nlet result: i32 = loop {\n    i += 1;\n    if i * i > 50 {\n        break i;\n    }\n};\nprintln!(\"{}\", result);  // 8 (because 8*8=64 > 50)\n```\n\n`break i` exits the loop AND returns `i`.\n\n---\n## Assignment:\nVerdigris OS searches for the first number where `n * n * n` (n cubed) is greater than 1000. Use `loop` starting at `n = 1`, incrementing each time. When you find it, `break` with that number and print `\"Found: X\"`.",
+    "starterCode": "fn main() {\n    let mut n: i32 = 1;\n    // Write your loop here\n}",
+    "expectedOutput": "Found: 11",
+    "nextLesson": "lesson20.json",
+    "previous": "lesson18.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

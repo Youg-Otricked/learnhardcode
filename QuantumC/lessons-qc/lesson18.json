@@ -1,0 +1,13 @@
+{
+    "id": "lesson18.json",
+    "title": "Loops [break & continue]",
+    "description": "## break\n`break` exits a loop immediately:\n\n```qc\nfor (int i = 0; i < 10; i++) {\n    if (i == 5) break;\n    println(i);\n}\n// 0, 1, 2, 3, 4\n```\n\n## continue\n`continue` skips to the next iteration:\n\n```qc\nfor (int i = 0; i < 6; i++) {\n    if (i == 3) continue;\n    println(i);\n}\n// 0, 1, 2, 4, 5\n```\n\n---\n## Assignment:\nTechQ scans quantum cores 0 through 15. Core 7 is offline (skip it with `continue`). If a core number exceeds 12, abort the scan with `break`. Print `Scanning core X` for each scanned core.",
+    "starterCode": "int main() {\n    // Write your loop here\n    return 0;\n}",
+    "expectedOutput": "Scanning core 0\nScanning core 1\nScanning core 2\nScanning core 3\nScanning core 4\nScanning core 5\nScanning core 6\nScanning core 8\nScanning core 9\nScanning core 10\nScanning core 11\nScanning core 12",
+    "nextLesson": "lesson19.json",
+    "previous": "lesson17.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

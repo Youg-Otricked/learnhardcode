@@ -1,0 +1,18 @@
+{
+    "id": "lesson31.json",
+    "title": "Sections [The section keyword]",
+    "description": "## What is a section?\nSo far you've used `section .data` and `section .text` without really knowing what they do.\n\nA **section** tells the assembler and linker how to organize your program in memory. Each section has different permissions:\n\n| Section | Contains | Read | Write | Execute |\n|---------|----------|------|-------|---------|\n| `.text` | Code | Yes | No | Yes |\n| `.data` | Initialized variables | Yes | Yes | No |\n| `.bss` | Uninitialized variables | Yes | Yes | No |\n| `.rodata` | Constants | Yes | No | No |\n\nWhen the OS loads your program, it puts each section in a different memory region with the right permissions. This is why:\n- You can't write to `.text` (your code is read-only)\n- You can't execute `.data` (your variables aren't code)\n- You can't write to `.rodata` (constants are read-only)\n\nIf you violate these permissions, the OS kills your program with a **segfault**.\n\n## Why separate sections?\n1. **Security** - code can't be overwritten, data can't be executed\n2. **Memory efficiency** - `.bss` takes zero space in the binary file\n3. **Sharing** - `.text` and `.rodata` can be shared between multiple instances of the same program\n\n---\n## Question:\nWhy would writing to `.text` at runtime cause a segfault?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson32.json",
+    "previous": "lesson30.json",
+    "showButtons": true,
+    "correct": "b3",
+    "b1t": "The CPU can't find the .text section",
+    "b2t": "Writing to .text corrupts the assembler",
+    "b3t": "The OS marks .text as read-only and execute-only",
+    "b4t": "You can write to .text, it just isn't recommended",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}
