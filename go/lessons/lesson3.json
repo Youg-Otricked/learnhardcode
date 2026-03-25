@@ -1,0 +1,18 @@
+{
+  "id": "lesson3.json",
+  "title": "Go Program Boilerplate",
+  "description": "# Go Program Boilerplate\nEvery Go program you write starts with the same basic structure:\n\n1. A **package declaration** at the top:\n   ```go\n   package main\n   ```\n   `main` marks this as an executable program.\n\n2. An **import** for any packages you use, like:\n   ```go\n   import \"fmt\"\n   ```\n   `fmt` is Go’s standard formatting/printing package.\n\n3. A `main` function, where execution starts:\n   ```go\n   func main() {\n       // this is where your code boots\n   }\n   ```\n\n---\n## Assignment\nSome wierd dev that clearly is just a beginner python dev for some reason didn't write a main function.\n\nYour job is to wrap it all upin a valid Go program, because",
+  "starterCode": "// Add the missing boilerplate and main function\n\n    fmt.Println(\"Booting Go runtime...\")\n",
+  "expectedOutput": "Booting Go runtime...\n",
+  "nextLesson": "lesson4.json",
+  "previous": "lesson2.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "easiest",
+  "xp": "12"
+}

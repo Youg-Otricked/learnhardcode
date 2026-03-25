@@ -1,0 +1,22 @@
+{
+  "id": "lesson_subsets_kn.json",
+  "title": "Order K^N – Subsets of a Set",
+  "description": "# Exponential Time: Subsets of a Set\nGiven a set of `N` elements, there are **2^N** possible subsets (including the empty set and the full set).\n\nIn this lesson you'll write a function that generates **all subsets** of a vector of integers.\n\n---\n## Assignment\nComplete the `subsets` function.\n\n- Input: a `std::vector<int> nums`.\n- Output: a `std::vector<std::vector<int>>` containing **all** subsets of `nums`.\n- The order of subsets and elements inside each subset doesn't matter for the tests.\n\nOne simple algorithm:\n\n1. Start with `result = { { } }` – a vector containing just the empty subset.\n2. For each number `x` in `nums`:\n   - Create a new empty `newResult` vector.\n   - For each existing subset `subset` in `result`:\n     - Push `subset` unchanged into `newResult`.\n     - Push a **copy** of `subset` with `x` appended into `newResult`.\n   - After the loop, assign `result = newResult`.\n3. Return `result`.\n",
+  "starterCode": "#include <iostream>\n#include <vector>\n\nstd::vector<std::vector<int>> subsets(const std::vector<int>& nums) {\n    // TODO: implement the algorithm described in the lesson\n}\n",
+  "expectedOutput": "",
+  "nextLesson": "lesson_next.json",
+  "previous": "lesson_prev.json",
+  "showButtons": false,
+  "rawHarness": true,
+  "mustContain": "4 passed, 0 failed",
+  "runHarness": "int _pass = 0;\nint _fail = 0;\n\nvoid _test(int num, const std::vector<std::vector<int>>& got, const std::vector<std::vector<int>>& expected) {\n    auto g = got;\n    auto e = expected;\n\n    auto norm = [](std::vector<std::vector<int>>& v) {\n        for (auto& subset : v) {\n            std::sort(subset.begin(), subset.end());\n        }\n        std::sort(v.begin(), v.end());\n    };\n\n    norm(g);\n    norm(e);\n\n    bool passed = (g == e);\n    std::cout << \"---------------------\\n\";\n    std::cout << \"Test \" << num << \":\\n\";\n    std::cout << \"Output subsets: \" << got.size() << \"\\n\";\n    std::cout << (passed ? \"Pass\" : \"Fail\") << \"\\n\";\n    if (passed) _pass++; else _fail++;\n}\n\nint main() {\n    _test(1, subsets({}), {{} });\n    _test(2, subsets({1}), {{}, {1}});\n    _test(3, subsets({1,2}), {{}, {1}, {2}, {1,2}});\n    std::cout << \"---------------------\\n\";\n    std::cout << _pass << \" passed, \" << _fail << \" failed\\n\";\n    return 0;\n}\n",
+  "submitHarness": "int _pass = 0;\nint _fail = 0;\n\nvoid _test(int num, const std::vector<std::vector<int>>& got, const std::vector<std::vector<int>>& expected) {\n    auto g = got;\n    auto e = expected;\n\n    auto norm = [](std::vector<std::vector<int>>& v) {\n        for (auto& subset : v) {\n            std::sort(subset.begin(), subset.end());\n        }\n        std::sort(v.begin(), v.end());\n    };\n\n    norm(g);\n    norm(e);\n\n    bool passed = (g == e);\n    std::cout << \"---------------------\\n\";\n    std::cout << \"Test \" << num << \":\\n\";\n    std::cout << \"Output subsets: \" << got.size() << \"\\n\";\n    std::cout << (passed ? \"Pass\" : \"Fail\") << \"\\n\";\n    if (passed) _pass++; else _fail++;\n}\n\nint main() {\n    _test(1, subsets({}), {{} });\n    _test(2, subsets({1}), {{}, {1}});\n    _test(3, subsets({1,2}), {{}, {1}, {2}, {1,2}});\n    _test(4, subsets({1,2,3}), {{}, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}});\n    std::cout << \"---------------------\\n\";\n    std::cout << _pass << \" passed, \" << _fail << \" failed\\n\";\n    return 0;\n}\n",
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "intermediate",
+  "xp": "24"
+}
