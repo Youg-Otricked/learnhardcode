@@ -1,0 +1,52 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "name": "Introduction",
+      "firstLesson": "lesson1.json",
+      "lessons": ["lesson1.json", "lesson2.json", "lesson3.json", "lesson4.json", "lesson5.json", "lesson6.json"]
+    },
+    {
+      "number": 2,
+      "name": "Arithmetic & Logic",
+      "firstLesson": "lesson7.json",
+      "lessons": ["lesson7.json", "lesson8.json", "lesson9.json", "lesson10.json", "lesson11.json", "lesson12.json"]
+    },
+    {
+      "number": 3,
+      "name": "Stack & Functions",
+      "firstLesson": "lesson13.json",
+      "lessons": ["lesson13.json", "lesson14.json", "lesson15.json", "lesson16.json", "lesson17.json"]
+    },
+    {
+      "number": 4,
+      "name": "Advanced Arithmetic",
+      "firstLesson": "lesson18.json",
+      "lessons": ["lesson18.json", "lesson19.json", "lesson20.json"]
+    },
+    {
+      "number": 5,
+      "name": "Arrays & Structs",
+      "firstLesson": "lesson21.json",
+      "lessons": ["lesson21.json", "lesson22.json", "lesson23.json"]
+    },
+    {
+      "number": 6,
+      "name": "Stack Frames",
+      "firstLesson": "lesson24.json",
+      "lessons": ["lesson24.json", "lesson25.json", "lesson26.json"]
+    },
+    {
+      "number": 7,
+      "name": "Data & Memory",
+      "firstLesson": "lesson27.json",
+      "lessons": ["lesson27.json", "lesson28.json", "lesson29.json", "lesson30.json"]
+    },
+    {
+      "number": 8,
+      "name": "Sections",
+      "firstLesson": "lesson31.json",
+      "lessons": ["lesson31.json", "lesson32.json"]
+    }
+  ]
+}

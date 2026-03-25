@@ -1,0 +1,40 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "name": "Introduction",
+      "firstLesson": "lesson1.json",
+      "lessons": ["lesson1.json", "lesson2.json", "lesson3.json", "lesson4.json", "lesson5.json"]
+    },
+    {
+      "number": 2,
+      "name": "Variables & Types",
+      "firstLesson": "lesson6.json",
+      "lessons": ["lesson6.json", "lesson7.json", "lesson8.json", "lesson9.json"]
+    },
+    {
+      "number": 3,
+      "name": "Operators",
+      "firstLesson": "lesson10.json",
+      "lessons": ["lesson10.json", "lesson11.json", "lesson12.json", "lesson13.json"]
+    },
+    {
+      "number": 4,
+      "name": "Control Flow",
+      "firstLesson": "lesson14.json",
+      "lessons": ["lesson14.json", "lesson15.json", "lesson16.json"]
+    },
+    {
+      "number": 5,
+      "name": "Loops",
+      "firstLesson": "lesson17.json",
+      "lessons": ["lesson17.json", "lesson18.json", "lesson19.json"]
+    },
+    {
+      "number": 6,
+      "name": "Functions",
+      "firstLesson": "lesson20.json",
+      "lessons": ["lesson20.json"]
+    }
+  ]
+}

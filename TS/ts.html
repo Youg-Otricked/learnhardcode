@@ -9,13 +9,14 @@
   <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
   <script src="https://unpkg.com/typescript@latest/lib/typescript.js"></script>
   <script src="ts.js" defer></script>
+  <script type="module" src="chapters.js" defer></script>
 </head>
 <body>
   <p id="streak">Lessons in a row: 0</p>
   <p id="difficulty">Dificulty: unknown</p>
   <p id="xp">X / X XP. Level X.</p><progress id="levelProg" value="0" max = "100"></progress>
   <button onclick='document.location="../"'>Go to Homepage</button>
-
+  <details id="chapters" style="z-index: 9999;  position: absolute; top: 0; right: 0; text-align: center;"><summary style="padding: 0 30px;">Chapters</summary></details>
   <div class="container">
     <div class="box text-box">
       <h1 id="lesson-title"></h1>

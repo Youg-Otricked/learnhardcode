@@ -1,0 +1,64 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "name": "Introduction",
+      "firstLesson": "lesson1_1.json",
+      "lessons": ["lesson1_1.json", "lesson1_2.json", "lesson1_3.json"]
+    },
+    {
+      "number": 2,
+      "name": "Variables",
+      "firstLesson": "lesson2_1.json",
+      "lessons": ["lesson2_1.json", "lesson2_2.json"]
+    },
+    {
+      "number": 3,
+      "name": "Functions",
+      "firstLesson": "lesson3_1.json",
+      "lessons": ["lesson3_1.json", "lesson3_2.json", "lesson3_3.json", "lesson3_4.json"]
+    },
+    {
+      "number": 4,
+      "name": "Control Flow",
+      "firstLesson": "lesson4_1.json",
+      "lessons": ["lesson4_1.json", "lesson4_2.json"]
+    },
+    {
+      "number": 5,
+      "name": "Arrays",
+      "firstLesson": "lesson5_1.json",
+      "lessons": ["lesson5_1.json", "lesson5_2.json", "lesson5_3.json"]
+    },
+    {
+      "number": 6,
+      "name": "Structs",
+      "firstLesson": "lesson6_1.json",
+      "lessons": ["lesson6_1.json", "lesson6_2.json"]
+    },
+    {
+      "number": 7,
+      "name": "Pointers",
+      "firstLesson": "lesson7_1.json",
+      "lessons": ["lesson7_1.json", "lesson7_2.json", "lesson7_3.json"]
+    },
+    {
+      "number": 8,
+      "name": "Memory",
+      "firstLesson": "lesson8_1.json",
+      "lessons": ["lesson8_1.json", "lesson8_2.json"]
+    },
+    {
+      "number": 9,
+      "name": "Generics",
+      "firstLesson": "lesson9_1.json",
+      "lessons": ["lesson9_1.json", "lesson9_2.json", "lesson9_3.json"]
+    },
+    {
+      "number": 10,
+      "name": "Advanced Topics",
+      "firstLesson": "lesson10_1.json",
+      "lessons": ["lesson10_1.json", "lesson10_2.json", "lesson10_3.json", "lesson10_4.json"]
+    }
+  ]
+}
