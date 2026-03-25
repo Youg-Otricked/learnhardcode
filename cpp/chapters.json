@@ -64,7 +64,7 @@
       "number": 11,
       "name": "DSA - The heck is P vs NP?",
       "firstLesson": "stdlib22.json",
-      "lessons": ["stdlib22.json","stdlib23.json"]
+      "lessons": ["stdlib22.json","stdlib23.json", "stdlib24.json"]
     }
   ]
 }

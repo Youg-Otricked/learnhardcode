@@ -1,0 +1,22 @@
+{
+  "id": "stdlib24.json",
+  "title": "Reduce Fibonacci to P",
+  "description": "# Reducing Fibonacci to P\nYou’re given a **slow** implementation of Fibonacci:\n\n```cpp\nint fib(int n) {\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n    return fib(n - 1) + fib(n - 2);\n}\n```\n\nThis version makes an *exponential* number of recursive calls as `n` grows.\n\nYour job is to **reduce this problem to P** by writing a *fast* Fibonacci function:\n\n```cpp\nint fib(int n);\n```\n\nRequirements:\n\n- `fib(0) == 0`\n- `fib(1) == 1`\n- For `n > 1`, use an **iterative** approach that runs in **O(n)** time (no recursion).\n\n",
+  "starterCode": "#include <iostream>\n\nint fib(int n) {\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n    return fib(n - 1) + fib(n - 2);\n}\n\n// Make it fast.",
+  "expectedOutput": "",
+  "nextLesson": "stdlib25.json",
+  "previous": "stdlib23.json",
+  "showButtons": false,
+  "rawHarness": true,
+  "mustContain": "7 passed, 0 failed",
+  "runHarness": "\nint _pass = 0;\nint _fail = 0;\n\nvoid _test(int num, int got, int expected) {\n    bool passed = (got == expected);\n    std::cout << \"---------------------\\n\";\n    std::cout << \"Test \" << num << \":\\n\";\n    std::cout << \"Output: \" << got << \"\\n\";\n    std::cout << (passed ? \"Pass\" : \"Fail\") << \"\\n\";\n    if (passed) _pass++; else _fail++;\n}\n\nint main() {\n    _test(1, fib(0), 0);\n    _test(2, fib(1), 1);\n    _test(3, fib(2), 1);\n    _test(4, fib(5), 5);\n    _test(5, fib(10), 55);\n    std::cout << \"---------------------\\n\";\n    std::cout << _pass << \" passed, \" << _fail << \" failed\\n\";\n    return 0;\n}\n",
+  "submitHarness": "\nint _pass = 0;\nint _fail = 0;\n\nvoid _test(int num, int got, int expected) {\n    bool passed = (got == expected);\n    std::cout << \"---------------------\\n\";\n    std::cout << \"Test \" << num << \":\\n\";\n    std::cout << \"Output: \" << got << \"\\n\";\n    std::cout << (passed ? \"Pass\" : \"Fail\") << \"\\n\";\n    if (passed) _pass++; else _fail++;\n}\n\nint main() {\n    _test(1, fib(0), 0);\n    _test(2, fib(1), 1);\n    _test(3, fib(2), 1);\n    _test(4, fib(5), 5);\n    _test(5, fib(10), 55);\n    _test(6, fib(20), 6765);\n    _test(7, fib(30), 832040);\n    std::cout << \"---------------------\\n\";\n    std::cout << _pass << \" passed, \" << _fail << \" failed\\n\";\n    return 0;\n}\n",
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "intermediate",
+  "xp": "25"
+}

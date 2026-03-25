@@ -243,6 +243,7 @@ async function runWithSuite(suiteFile, label) {
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
     let fullSource = studentSource;
+    await loadYaegi()
     if (setupCode) {
         studentSource = setupCode + "\n" + studentSource;
     }
