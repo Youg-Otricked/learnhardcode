@@ -1,0 +1,112 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "name": "Introduction",
+      "firstLesson": "lesson1.json",
+      "lessons": ["lesson1.json", "lesson2.json"]
+    },
+    {
+      "number": 2,
+      "name": "Basic SELECTs",
+      "firstLesson": "lesson3.json",
+      "lessons": ["lesson3.json", "lesson4.json", "lesson5.json", "lesson6.json", "lesson7.json"]
+    },
+    {
+      "number": 3,
+      "name": "Create Table",
+      "firstLesson": "lesson8.json",
+      "lessons": ["lesson8.json", "lesson9.json", "lesson10.json", "lesson11.json", "lesson12.json", "lesson13.json"]
+    },
+    {
+      "number": 4,
+      "name": "Alter Table",
+      "firstLesson": "lesson14.json",
+      "lessons": ["lesson14.json", "lesson15.json"]
+    },
+    {
+      "number": 5,
+      "name": "Modifying Data",
+      "firstLesson": "lesson16.json",
+      "lessons": ["lesson16.json", "lesson17.json", "lesson18.json"]
+    },
+    {
+      "number": 6,
+      "name": "Advanced SELECT",
+      "firstLesson": "lesson19.json",
+      "lessons": ["lesson19.json", "lesson20.json", "lesson21.json", "lesson22.json", "lesson23.json", "lesson24.json", "lesson25.json"]
+    },
+    {
+      "number": 7,
+      "name": "Foreign Keys",
+      "firstLesson": "lesson26.json",
+      "lessons": ["lesson26.json", "lesson27.json"]
+    },
+    {
+      "number": 8,
+      "name": "More SELECT",
+      "firstLesson": "lesson28.json",
+      "lessons": ["lesson28.json", "lesson29.json", "lesson30.json", "lesson31.json", "lesson32.json", "lesson33.json", "lesson34.json", "lesson35.json"]
+    },
+    {
+      "number": 9,
+      "name": "JOINs",
+      "firstLesson": "lesson36.json",
+      "lessons": ["lesson36.json", "lesson37.json", "lesson38.json", "lesson39.json"]
+    },
+        {
+      "number": 10,
+      "name": "Set Operations",
+      "firstLesson": "lesson40.json",
+      "lessons": ["lesson40.json"]
+    },
+    {
+      "number": 11,
+      "name": "Functions",
+      "firstLesson": "lesson41.json",
+      "lessons": ["lesson41.json", "lesson42.json"]
+    },
+    {
+      "number": 12,
+      "name": "Views & Indexes",
+      "firstLesson": "lesson43.json",
+      "lessons": ["lesson43.json", "lesson44.json", "lesson50.json"]
+    },
+    {
+      "number": 13,
+      "name": "Transactions",
+      "firstLesson": "lesson45.json",
+      "lessons": ["lesson45.json"]
+    },
+    {
+      "number": 14,
+      "name": "More Features",
+      "firstLesson": "lesson46.json",
+      "lessons": ["lesson46.json", "lesson47.json", "lesson48.json", "lesson49.json"]
+    },
+    {
+      "number": 15,
+      "name": "Triggers & Search",
+      "firstLesson": "lesson51.json",
+      "lessons": ["lesson51.json", "lesson52.json"]
+    },
+    {
+      "number": 16,
+      "name": "Constraints",
+      "firstLesson": "lesson53.json",
+      "lessons": ["lesson53.json", "lesson54.json"]
+    },
+    {
+      "number": 17,
+      "name": "Workflow",
+      "firstLesson": "lesson55.json",
+      "lessons": ["lesson55.json", "lesson56.json", "lesson57.json", "lesson58.json", "lesson59.json"]
+    },
+    {
+      "number": 18,
+      "name": "Advanced Queries",
+      "firstLesson": "lesson60.json",
+      "lessons": ["lesson60.json", "lesson61.json", "lesson62.json", "lesson63.json"]
+    }
+  ]
+}

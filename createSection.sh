@@ -1,0 +1,1 @@
+seq -f "$1%g.json" $2 $3 | jq -R . | jq -s -c .

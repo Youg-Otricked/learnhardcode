@@ -1,0 +1,70 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "name": "Start of Course",
+      "firstLesson": "lesson1.json",
+      "lessons": ["lesson1.json", "lesson2.json", "lesson3.json", "lesson4.json", "lesson5.json", "lesson6.json", "lesson7.json", "lesson8.json", "lesson9.json"]
+    },
+    {
+      "number": 2,
+      "name": "Variables",
+      "firstLesson": "lesson10.json",
+      "lessons": ["lesson10.json", "lesson11.json", "lesson12.json", "lesson13.json", "lesson14.json", "lesson15.json", "lesson16.json", "lesson17.json"]
+    },
+    {
+      "number": 3,
+      "name": "Functions",
+      "firstLesson": "lesson18.json",
+      "lessons": ["lesson18.json", "lesson19.json", "lesson20.json", "lesson21.json", "lesson22.json", "lesson23.json", "lesson24.json", "lesson25.json", "lesson26.json"]
+    },
+    {
+      "number": 4,
+      "name": "Loops",
+      "firstLesson": "lesson27.json",
+      "lessons": ["lesson27.json", "lesson28.json", "lesson29.json", "lesson30.json", "lesson31.json", "lesson32.json", "lesson33.json", "lesson34.json", "lesson35.json"]
+    },
+    {
+      "number": 5,
+      "name": "MMM",
+      "firstLesson": "lesson36.json",
+      "lessons": ["lesson36.json", "lesson37.json", "lesson38.json", "lesson39.json", "lesson40.json", "lesson41.json", "lesson42.json", "lesson43.json", "lesson44.json", "lesson45.json"]
+    },
+    {
+      "number": 6,
+      "name": "User Types",
+      "firstLesson": "lesson46.json",
+      "lessons": ["lesson46.json", "lesson47.json", "lesson48.json", "lesson49.json", "lesson50.json", "lesson51.json", "lesson52.json"]
+    },
+    {
+      "number": 7,
+      "name": "OOP",
+      "firstLesson": "lesson53.json",
+      "lessons": ["lesson53.json", "lesson54.json", "lesson55.json", "lesson56.json", "lesson57.json", "lesson58.json", "lesson59.json", "lesson60.json", "lesson61.json", "lesson62.json", "final1.json", "final2.json"]
+    },
+    {
+      "number": 8,
+      "name": "Adv start - Vector",
+      "firstLesson": "stdlib1.json",
+      "lessons": ["stdlib1.json", "stdlib2.json", "stdlib3.json", "stdlib4.json"]
+    },
+    {
+      "number": 9,
+      "name": "Adv - String",
+      "firstLesson": "stdlib5.json",
+      "lessons": ["stdlib5.json", "stdlib6.json"]
+    },
+    {
+      "number": 10,
+      "name": "DSA - Sorting",
+      "firstLesson": "stdlib7.json",
+      "lessons": ["stdlib7.json","stdlib8.json","stdlib9.json","stdlib10.json","stdlib11.json","stdlib12.json","stdlib13.json","stdlib14.json","stdlib15.json","stdlib16.json","stdlib17.json","stdlib18.json","stdlib19.json","stdlib20.json","stdlib21.json"]
+    },
+    {
+      "number": 11,
+      "name": "DSA - The heck is P vs NP?",
+      "firstLesson": "stdlib22.json",
+      "lessons": ["stdlib22.json","stdlib23.json"]
+    }
+  ]
+}
