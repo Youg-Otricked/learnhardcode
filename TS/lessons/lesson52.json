@@ -1,0 +1,18 @@
+{
+  "id": "lesson52.json",
+  "title": "Sets [Composition Methods]",
+  "description": "###### You are on part 2/2 for this lesson.\n---\n## Intersection\nThe `.intersection()` method returns a **new set** containing elements that exist in **both sets**.\n\n```ts\nconst a = new Set([\"alice\", \"bob\", \"carol\"]);\nconst b = new Set([\"bob\", \"dave\", \"alice\"]);\nconst c = a.intersection(b);\nconsole.log(c); // Set { 'alice', 'bob' }\n```\n\n## Difference\nThe `.difference()` method returns a **new set** containing elements that are in the **first set but not in the second**.\n\n```ts\nconst d = a.difference(b);\nconsole.log(d); // Set { 'carol' }\n```\n\n## Union\nThe `.union()` method returns a **new set** containing all elements from both sets (duplicates removed).\n\n```ts\nconst e = a.union(b);\nconsole.log(e); // Set { 'alice', 'bob', 'carol', 'dave' }\n```\n\n## Assignment (MCQ)\nWhich set method would you use for these scenarios?\n1. Find elements in both sets\n2. Find elements in the first set but not the second\n3. Find all elements from both sets\n### Assignment:\nWhat would a.difference(b) return",
+  "starterCode": "",
+  "correct": "b3",
+  "b1t": "The values that aren't in both a and b",
+  "b2t": "The values in b, but not in a",
+  "b3t": "The values in a, but not in b",
+  "b4t": "",
+  "hint": "Remember: difference focuses on the **first set only**.",
+  "nextLesson": "lesson53.json",
+  "previous": "lesson51.json",
+  "showButtons": true,
+  "mode": "editor",
+  "difficulty": "intermediate",
+  "xp": "15"
+}
