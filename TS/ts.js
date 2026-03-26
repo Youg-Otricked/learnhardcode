@@ -143,7 +143,7 @@ function submitCheck() {
 
       const studentOut = cleanedLines.join('\n') + (cleanedLines.length ? '\n' : '');
 
-      expected = currentLesson.expectedOutput.trim();
+      expected = currentLesson.expectedOutput ? currentLesson.expectedOutput.trim() : "";
       actual   = studentOut.trim();
       if (mustContain) {
         if (Array.isArray(mustContain)) {

@@ -40,7 +40,13 @@
       "number": 7,
       "name": "Classes",
       "firstLesson": "lesson40.json",
-      "lessons": ["lesson40.json", "lesson41.json", "lesson42.json", "lesson43.json", "lesson44.json", "lesson45.json", "lesson46.json", "lesson47.json", "lesson48.json"]
+      "lessons": ["lesson40.json", "lesson41.json", "lesson42.json", "lesson43.json", "lesson44.json", "lesson45.json", "lesson46.json", "lesson47.json", "lesson48.json", "lesson49.json"]
+    },
+    {
+      "number": 8,
+      "name": "Sets",
+      "firstLesson": "lesson50.json",
+      "lessons": ["lesson50.json", "lesson51.json", "lesson52.json"]
     }
   ]
 }

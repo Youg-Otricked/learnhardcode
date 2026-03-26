@@ -1,0 +1,19 @@
+{
+    "id": "lesson49.json",
+    "title": "Composition VS Inheritance",
+    "description": "Now that you've learned all this new stuff, it's time for me to say: _**Don't use it!**_. Well, not really. Actually, just don't use it _literally everywhere you can_. Instead, there is somthing that will replace inheritance sometimes: That is called _composition_. Composition is instead of creating a new, child class for each new feature the parent has, you just make a object/class that _might exist_ _inside of that object/class_, which houses a additional idea. Most of the time this is obvious when you use it instead of inheritance, but sometimes you use _**both at once!**_.\n---\nFirst, here is a example for why you would use composition _over_ inheritance.\nLet's say you have a class, car.\n```ts\nclass Car {\n    doors: number;\n    horsepower: number;\n    color: string;\n    isDrivable: boolean;\n    constructor(doors: number, horsepower: number, color: string, isDrivable: boolean) {        this.doors = doors;\n        this.horsepower = horsepower;\n        this.color = color;\n        this.isDrivable = isDrivable;\n    }\n}\n```\nNow, let's say we later want to allow cars to be convertibles. What makes more sense?\n## A: Inheritance\n```ts\nclass ConvertibleCar extends Car {\n    roofOpen: boolean;\n    public openRoof() {\n        this.roofOpen = true;\n    }\n    public closeRoof() {\n        this.roofOpen = false;\n    }\n}\n```\n## B: Composition\n```ts\nclass Roof {\n    isOpen: boolean;\n    private isConvertible: boolean;\n    constructor(isConvertible: boolean) {\n        this.isConvertible = isConvertible;\n    }\n    \n    public open() {\n        if (this.isConvertible) {\n            this.isOpen = true;\n        }\n    }\n    public close() {\n        if (this.isConvertible) {\n                    this.isOpen = false;\n        }\n    }\n}\nclass Car {\n    roof: Roof;\n    constructor(/* Same */, isConvertible: boolean) {\n        this.roof = new Roof(isConvertible);\n        // Stays the same\n    }\n    // Rest of class stays the same.\n}\n```\nThe second one, right?\nImagine needing to constantly swap between classes. That would be horrible! Also, think, The problem is: a convertible isn't a different type of car — it's a feature a car can have.\n---\n## Assignment:\nAt MeTube, we have a class, Video. However, we just added a new video type, movie! They are just videos but with a isMovie, and a lengthInHours method. What should we use, inheritance, or composition?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson50.json",
+    "previous": "lesson48.json",
+    "showButtons": true,
+    "correct": "b3",
+    "hint": "Think: is a movie a fundamentally different type of video, or just a video with extra features?",
+    "b1t": "Inheritance, because movies extend videos with additional behavior.",
+    "b2t": "Inheritance, because movies should be a seperate thing than normal videos.",
+    "b3t": "Composition, because a movie is just a video with extra features, not a completely different type.",
+    "b4t": "Composition, because we don't ever use inheritance when we can use composition.",
+    "mode": "editor",
+    "difficulty": "intermediate",
+    "xp": "15"
+}
