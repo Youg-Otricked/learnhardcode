@@ -1,56 +1,38 @@
 
 console.log("hellocs.js running");
 console.log('wasmRunner.js loaded');
-
-import { dotnet } from "./_framework/dotnet.js";
-
+import * as Comlink from "https://unpkg.com/comlink/dist/esm/comlink.mjs";
+const worker = new Worker("./wwwroot/assets/worker.js", { type: "module" });
+const dotnet = Comlink.wrap(worker);
+let dotnetLoaded = false;
+const dotnetPromise = dotnet.startAsync().then(async () => {
+    dotnetLoaded = true;
+    console.log("DotNet Runtime Ready");
+    
+    console.log("Initializing compiler...");
+    await dotnet.initAsync(frameworkPath);
+});
+require.config({
+  paths: { 'vs': 'https://unpkg.com/monaco-editor@0.45.0/min/vs' }
+});
 let exportsPromise = null;
-
-async function initRuntime() {
-  if (exportsPromise) return exportsPromise;
-
-  try {
-    const { getAssemblyExports, getConfig, setModuleImports } = await dotnet.create();
-
-    setModuleImports("CSharpMethodsJSImplementationsModule", {
-      getBaseUrl: () => window.location.href,
-    });
-
-    const config = getConfig();
-    const exports = await getAssemblyExports(config.mainAssemblyName);
-    exportsPromise = Promise.resolve(exports);
-    return exports;
-  } catch (e) {
-    console.error("Failed to initialize .NET runtime:", e);
-    throw e;
-  }
-}
-
-export async function compileAndRun(src) {
-  const exports = await initRuntime();
-  const output = await exports.WASM.Compiler.CompileAndRun(src);
-  return output;
-}
-
-export async function precompile(src) {
-  const exports = await initRuntime();
-  await exports.WASM.Compiler.PreCompile(src);
-}
-
-export async function preload() {
-  const exports = await initRuntime();
-  await exports.WASM.Compiler.PreloadReferences();
-}
 async function runCSharpCode(source) {
+  if (!dotnetLoaded) {
+    await dotnetPromise;
+  }
   try {
-    const output = await compileAndRun(source);
-    return output;
+    await dotnet.resetCodeAsync(source.replace(/\r\n/g, '\n') + "\n");
+    console.log("Compiling...");
+    const result = await dotnet.processAsync();
+    if (result.diagnostics && result.diagnostics.length > 0) {
+        return result.diagnostics.map(d => `[ERROR] ${d.message}`).join('\n');
+    }
+
+    return result.outputs.join("");
   } catch (e) {
     return '[EXCEPTION]\n' + e;
   }
 }
-
-
 
 
 // ========== Lesson + editor + UI logic ==========
@@ -72,6 +54,7 @@ let hintBody;
 let lessonXP = null;
 let rawHarness = false;
 // streak
+const frameworkPath = window.location.origin + "/cs/wwwroot/_framework/";
 let lessonsInRow = 0;
 let streakEl = null;
 let inputEl = null;
@@ -154,7 +137,7 @@ async function loadLesson(lessonFile) {
   prevLessonId      = lesson.previous        || null;
   lessonhint        = lesson.hint            || "";
   mode              = lesson.mode            || "editor";
-  rawHarness        = lesson.rawHarnss       || false;
+  rawHarness        = lesson.rawHarness       || false;
   setupCode         = lesson.setupCode       || "";
   document.getElementById("difficulty").textContent = lesson.difficulty ? "Diffficulty: " + lesson.difficulty : "Difficulty: unknown";
   lessonXP          = parseInt(lesson.xp, 10)|| 0;
@@ -296,24 +279,28 @@ async function setupLogic() {
     
     let harnessSource = "";
     if (suiteFile) {
-        if (rawHarness) {
-            harnessSource = suiteFile;
-        } else {
-            const suite = await fetch(suiteFile).then(r => r.text());
-            harnessSource = suite;
-        }
+      if (rawHarness) {
+        harnessSource = suiteFile;
+      } else {
+        const suite = await fetch(suiteFile).then(r => r.text());
+        harnessSource = suite;
+      }
     }
+
     if (setupCode) {
       studentSource = setupCode + "\n" + studentSource;
     }
+
     try {
-      const result = await runCSharpCode(studentSource + '\n' + harnessSource);
-      lastRunOutput = result;
+      const fullSource = studentSource + '\n' + harnessSource;
+      const result = await runCSharpCode(fullSource);
+      lastRunOutput = result; 
       appendOutput(result);
+      submitCheck(); 
     } catch (err) {
       appendOutput('\nError: ' + err.message + '\n');
     }
-  }
+  } 
   function submitCheck() {
     if (!currentLesson || (!currentLesson.expectedOutput && !currentLesson.mustContain) && mode == "editor") {
       appendOutput('\nNo expectedOutput defined for this lesson.\n');
@@ -346,7 +333,8 @@ async function setupLogic() {
           line.replace(/\x1b\[[0-9;]*m/g, '').trim()
         )
         .filter(line => line)
-        .filter(line => !line.startsWith('dbg:'));
+        .filter(line => !line.startsWith('dbg:'))
+        .filter(line => !line.startsWith('Exits with code'));
 
       const studentLines = cleanedLines.filter(line => !line.startsWith('>'));
       const studentOut = studentLines.join('\n') + (studentLines.length ? '\n' : '');
@@ -526,27 +514,18 @@ async function setupLogic() {
     nextBtn.style.display = alreadyCompleted ? 'inline-block' : 'none';
   }
 }
+require(['vs/editor/editor.main'], async () => {
+  console.log('Monaco Loaded');
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOMContentLoaded fired');
-  require.config({
-    
-
-    paths: { 'vs': 'https://unpkg.com/monaco-editor@0.45.0/min/vs' }
+  editor = monaco.editor.create(document.getElementById('editor'), {
+    value: '',
+    language: 'csharp',
+    theme: 'vs-dark',
+    automaticLayout: true,
   });
-  
-  require(['vs/editor/editor.main'], () => {
-    console.log('Monaco loaded, creating editor');
-    editor = monaco.editor.create(document.getElementById('editor'), {
-      value: '',
-      language: 'csharp',
-      theme: 'vs-dark',
-      automaticLayout: true,
-    });
-    console.log('Calling setupLogic');
-    setupLogic();
-  });
+  setupLogic();
 });
+
 
 function btn(bn) {
   if (bn === correct) {

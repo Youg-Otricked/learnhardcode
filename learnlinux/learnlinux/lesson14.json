@@ -1,0 +1,20 @@
+{
+    "id": "lesson14.json",
+    "title": "Basic Commands [grep]",
+    "description": "# grep\n`grep` searches for text inside files.\n```bash\ngrep \"word\" filename\n```\nIt prints every line that contains the match.\n\nUseful flags:\n- `grep -i` - case insensitive\n- `grep -r` - search recursively through directories\n- `grep -n` - show line numbers\b- `grep -C/-A/-B NUM` - returns NUM lines around text. -A prints the line of and NUM lines past the occurence, -B prints the line and NUM lines before it, and -C prints the line and NUM lines in both directions.\n\n---\n## Assignment:\nYou've locked down the offshore file, but Saul might have traces elsewhere. Search ALL files in `accounts/` for any mention of `Saul` in the _non offshore_ files. Paste the output.",
+    "starterCode": "",
+    "expectedOutput": "",
+    "mustContain": ["Saul"],
+    "nextLesson": "lesson15.json",
+    "previous": "lesson13.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "runHarness": "",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "20"
+}

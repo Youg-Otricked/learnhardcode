@@ -1,0 +1,64 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "name": "Setup",
+      "firstLesson": "lesson1.json",
+      "lessons": ["lesson1.json", "lesson2.json"]
+    },
+    {
+      "number": 2,
+      "name": "Basic Commands",
+      "firstLesson": "lesson3.json",
+      "lessons": ["lesson3.json", "lesson4.json", "lesson5.json", "lesson6.json", "lesson7.json", "lesson8.json", "lesson9.json", "lesson10.json", "lesson11.json"]
+    },
+    {
+      "number": 3,
+      "name": "Permissions",
+      "firstLesson": "lesson12.json",
+      "lessons": ["lesson12.json", "lesson13.json"]
+    },
+    {
+      "number": 5,
+      "name": "Pipes & Redirection",
+      "firstLesson": "lesson15.json",
+      "lessons": ["lesson14.json", "lesson15.json", "lesson16.json", "lesson26.json"]
+    },
+    {
+      "number": 6,
+      "name": "Shell Scripts",
+      "firstLesson": "lesson17.json",
+      "lessons": ["lesson17.json", "lesson18.json", "lesson19.json"]
+    },
+    {
+      "number": 7,
+      "name": "Text Processing",
+      "firstLesson": "lesson20.json",
+      "lessons": ["lesson20.json"]
+    },
+    {
+      "number": 8,
+      "name": "Environment Variables",
+      "firstLesson": "lesson21.json",
+      "lessons": ["lesson21.json", "lesson22.json", "lesson23.json"]
+    },
+    {
+      "number": 9,
+      "name": "Misc",
+      "firstLesson": "lesson27.json",
+      "lessons": ["lesson24.json", "lesson25.json", "lesson27.json", "lesson28.json", "lesson29.json"]
+    },
+    {
+      "number": 10,
+      "name": "Packages",
+      "firstLesson": "lesson30.json",
+      "lessons": ["lesson30.json", "lesson31.json"]
+    },
+    {
+      "number": 11,
+      "name": "Globbing",
+      "firstLesson": "lesson32.json",
+      "lessons": ["lesson32.json","lesson33.json","lesson34.json","lesson35.json"]
+    }
+  ]
+}

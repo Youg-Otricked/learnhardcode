@@ -1,0 +1,13 @@
+{
+    "id": "lesson31.json",
+    "title": "Editors [Using Neovim]",
+    "description": "## Using Neovim\nThis isn't a course on vim: I would still be writing this course in a few months, but let's at least figure out how to edit a file and exit the program.\n\nDon't be fooled, exiting Vim (or Neovim) is one of the greatest hurdles you must overcome as a developer. It's a rite of passage. It's a badge of honor.\n\n---\n## Assignment\n\nSomebody put somthing sercret in a file that plain out right doesnt go there.\n\nUse Neovim to fix it:\n\n1. Open the file:\n```bash\nnvim archive/chat_log.txt\n```\n\n2. You might notice you can't type anything. That's because you're in **normal** mode - the mode for navigating and manipulating text.\n\n3. Use the arrow keys (Vim people _do not like this_) to move your cursor to the password.\n\n4. Enter **insert** mode by pressing the `i` key. You should see `-- INSERT --` appear at the bottom of the screen.\n\n5. Delete the password and replace it with `REDACTED` in all caps.\n\n6. When you're done, press `Esc` to return to normal mode.\n\n7. Type `:w` and press Enter to save your changes.\n\n8. Type `:q` and press Enter to quit Neovim.\n\nYou've successfully edited a file (and escaped from) Neovim!\n\nUse `cat` to verify your changes. Paste the contents into the input field and submit.",
+    "starterCode": "",
+    "expectedOutput": "",
+    "mustContain": ["[Alice] Sure: REDACTED"],
+    "nextLesson": "lesson32.json",
+    "previous": "lesson30.json",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "15"
+}

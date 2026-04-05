@@ -23,6 +23,12 @@
       "name": "Loops",
       "firstLesson": "lesson16.json",
       "lessons": ["lesson16.json","lesson17.json","lesson18.json"]
+    },
+    {
+      "number": 5,
+      "name": "Functions",
+      "firstLesson": "lesson19.json",
+      "lessons": ["lesson19.json"]
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+    "id": "lesson27.json",
+    "title": "Signals [Ctrl+C, Ctrl+Z, Ctrl+D]",
+    "description": "# Signals\nSignals are messages sent to running programs. You send them with keyboard shortcuts:\n\n## Ctrl+C - SIGINT (Interrupt)\nStops the current program. Use it when something is stuck:\n```bash\nping google.com\n# Ctrl+C to stop\n```\n\n## Ctrl+Z - SIGTSTP (Suspend)\nPauses the program and sends it to the background:\n```bash\nping google.com\n# Ctrl+Z to pause\nfg              # bring it back\n```\n\n## Ctrl+D - EOF (End of File)\nTells the program there's no more input. Not a signal - it closes stdin:\n```bash\ncat\n# type some text\n# Ctrl+D to end\n```\n\n---\n## Assignment:\nRun `cat` (with no arguments). It waits for input. Type `Citybank was here` then press Ctrl+D. Paste the output.",
+    "starterCode": "",
+    "expectedOutput": "",
+    "mustContain": ["Citybank was here"],
+    "nextLesson": "lesson28.json",
+    "previous": "lesson26.json",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "15"
+}

@@ -1,0 +1,18 @@
+{
+    "id": "lesson33.json",
+    "title": "Globbing Basics",
+    "description": "Globbing is how the shell matches filenames using patterns instead of typing everything manually.\n\nThe most common patterns are:\n- `*` matches anything (any number of characters)\n- `?` matches exactly one character\n- `[]` matches a set of characters\n\nExamples:\n- `ls *.txt` matches all .txt files\n- `ls file?.txt` matches file1.txt, fileA.txt, etc\n- `ls file[1-3].txt` matches file1.txt, file2.txt, file3.txt\n\n---\n## Assignment:\nWhich command lists all files that start with \"log\" and end with \".txt\"?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "showButtons": true,
+    "correct": "b1",
+    "b1t": "ls log*.txt",
+    "b2t": "ls log?.txt",
+    "b3t": "ls log[txt]",
+    "b4t": "ls *.logtxt",
+    "nextLesson": "lesson34.json",
+    "previous": "lesson32.json",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "15"
+}

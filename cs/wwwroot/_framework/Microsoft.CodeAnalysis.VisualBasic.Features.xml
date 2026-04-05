@@ -1,0 +1,2407 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Microsoft.CodeAnalysis.VisualBasic.Features
+</name>
+</assembly>
+<members>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC30002">
+ <summary>
+ Type xxx is not defined
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC30451">
+ <summary>
+ Error 'x' is not declared
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC30456">
+ <summary>
+ xxx is not a member of yyy
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC32016">
+ <summary>
+ 'X' has no parameters and its return type cannot be indexed
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC32042">
+ <summary>
+ Too few type arguments
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC36593">
+ <summary>
+ Expression of type xxx is not queryable
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC32045">
+ <summary>
+ 'A' has no type parameters and so cannot have type arguments.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC30389">
+ <summary>
+ 'A' is not accessible in this context because it is 'Friend'.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC31504">
+ <summary>
+ 'A' cannot be used as an attribute because it does not inherit from 'System.Attribute'.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC36610">
+ <summary>
+ Name 'A' is either not declared or not in the current scope.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC36719">
+ <summary>
+ Cannot initialize the type 'A' with a collection initializer because it does not have an accessible 'Add' method
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC30512">
+ <summary>
+ Option Strict On disallows implicit conversions from 'Integer' to 'String'.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC30390">
+ <summary>
+ 'A' is not accessible in this context because it is 'Private'.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC42309">
+ <summary>
+ XML comment has a tag With a 'cref' attribute that could not be resolved. XML comment will be ignored.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC30182">
+ <summary>
+ Type expected.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.AddImport.AddImportDiagnosticIds.BC36930">
+ <summary>
+ 'A' should have suitable 'GetAwaiter' method.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.AddImport.VisualBasicAddImportCodeFixProvider.#ctor(Microsoft.CodeAnalysis.Packaging.IPackageInstallerService,Microsoft.CodeAnalysis.SymbolSearch.ISymbolSearchService)">
+ <summary>	
+ For testing purposes so that tests can pass in mocks for these values.	
+ </summary>	
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.CodeFixes.SimplifyTypeNames.TypeSyntaxSimplifierWalker._aliasedNames">
+ <summary>
+ Set of type and namespace names that have an alias associated with them.  i.e. if the
+ user has <c>Imports X = System.DateTime</c>, then <c>DateTime</c> will be in this set.
+ This is used so we can easily tell if we should try to simplify some identifier to an
+ alias when we encounter it.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.CodeFixes.FullyQualify.VisualBasicFullyQualifyCodeFixProvider.BC30002">
+ <summary>
+ Type xxx is not defined
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.CodeFixes.FullyQualify.VisualBasicFullyQualifyCodeFixProvider.BC30451">
+ <summary>
+ Error 'x' is not declared
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.CodeFixes.FullyQualify.VisualBasicFullyQualifyCodeFixProvider.BC30561">
+ <summary>
+ 'reference' is an ambiguous reference between 'identifier' and 'identifier'
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.CodeFixes.FullyQualify.VisualBasicFullyQualifyCodeFixProvider.BC40056">
+ <summary>
+ Namespace or type specified in imports cannot be found
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.CodeFixes.FullyQualify.VisualBasicFullyQualifyCodeFixProvider.BC32045">
+ <summary>
+ 'A' has no type parameters and so cannot have type arguments.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.CodeFixes.AddExplicitCast.VisualBasicAddExplicitCastCodeFixProvider.GetTargetArgument(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.SemanticModel,System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.IParameterSymbol},Microsoft.CodeAnalysis.SeparatedSyntaxList{Microsoft.CodeAnalysis.VisualBasic.Syntax.ArgumentSyntax})">
+ <summary>
+ Find the first argument that need to be cast
+ </summary>
+ <param name="parameters"> The parameters of method</param>
+ <param name="arguments"> The arguments of invocation node</param>
+ <returns>
+ Return the first argument that need to be cast, could be null if such argument doesn't exist
+ </returns>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.CodeFixes.AddExplicitCast.VisualBasicAddExplicitCastCodeFixProvider.GetPotentialConversionTypesWithInvocationNode(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)">
+ <summary>
+ Collect available cast pairs without target argument.
+ For each method, the first argument need to be cast is the target argument.
+ Return format is (argument expression, potential conversion type).
+ </summary>
+ <param name="invocationNode">The invocation node that contains some arguments need to be cast</param>
+ <returns>
+ Return all the available cast pairs, format is (argument expression, potential conversion type)
+ </returns>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.CodeLens.VisualBasicDisplayInfoService.GetDisplayNode(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Returns the node that should be displayed
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.CodeLens.VisualBasicDisplayInfoService.GetDisplayName(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Gets the DisplayName for the given node.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.CodeRefactorings.ReplaceMethodWithProperty.VisualBasicReplacePropertyWithMethods.IsValueName(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax)">
+ <summary>
+ Used by the documentation comment rewriters to identify top-level <c>&lt;value&gt;</c> nodes.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.Providers.FirstBuiltInCompletionProvider">
+ <summary>
+ Provides a completion provider that always appears before any built-in completion provider. This completion
+ provider does not provide any completions.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.Providers.LastBuiltInCompletionProvider">
+ <summary>
+ Provides a completion provider that always appears after all built-in completion providers. This completion
+ provider does not provide any completions.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.Providers.FirstBuiltInArgumentProvider">
+ <summary>
+ Provides an argument provider that always appears before any built-in argument provider. This argument
+ provider does not provide any argument values.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.Providers.LastBuiltInArgumentProvider">
+ <summary>
+ Provides an argument provider that always appears after all built-in argument providers. This argument
+ provider does not provide any argument values.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.ArrayStatements.EraseKeywordRecommender">
+ <summary>
+ Recommends the "Erase" statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.ArrayStatements.PreserveKeywordRecommender">
+ <summary>
+ Recommends the "Preserve" modifier after the ReDim statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.ArrayStatements.ReDimKeywordRecommender">
+ <summary>
+ Recommends the "ReDim" statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.AliasKeywordRecommender">
+ <summary>
+ Recommends the "Alias" keyword in external method declarations.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.AsKeywordRecommender">
+ <summary>
+ Recommends the "As" keyword in all types of declarations.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.AttributeScopesKeywordRecommender">
+ <summary>
+ Recommends the "Assembly" and "Module" keyword for top-level attributes that may exist in a file.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.CharsetModifierKeywordRecommender">
+ <summary>
+ Recommends one of the charset modifiers after a "Declare" keyword
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ClassKeywordRecommender">
+ <summary>
+ Recommends the "Class" keyword in type declaration contexts
+ </summary>    
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ConstKeywordRecommender">
+ <summary>
+ Recommends the "Const" keyword for the start of a statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.CustomEventKeywordRecommender">
+ <summary>
+ Recommends the "Custom Event" keyword in type declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.DeclareKeywordRecommender">
+ <summary>
+ Recommends the "Declare" keyword in member declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.DelegateKeywordRecommender">
+ <summary>
+ Recommends the "Delegate" keyword in member declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.DelegateSubFunctionKeywordRecommender">
+ <summary>
+ Recommends the "Function" and "Sub" keywords in external method declarations.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.DimKeywordRecommender">
+ <summary>
+ Recommends the "Dim" keyword in all appropriate contexts.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.EndBlockKeywordRecommender">
+ <summary>
+ Recommends "End [block]" or, if after a End keyword, just the Block.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.EnumKeywordRecommender">
+ <summary>
+ Recommends the "Enum" keyword in type declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.EventKeywordRecommender">
+ <summary>
+ Recommends the "Event" keyword in type declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ExternalSubFunctionKeywordRecommender">
+ <summary>
+ Recommends the "Function" and "Sub" keywords in external method declarations.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.FunctionKeywordRecommender">
+ <summary>
+ Recommends the "Function" keyword in member declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.GetSetKeywordRecommender">
+ <summary>
+ Recommends the "Get" and "Set" keyword in property declarations.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ImplementsKeywordRecommender">
+ <summary>
+ Recommends the "Implements" keyword
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ImportsKeywordRecommender">
+ <summary>
+ Recommends the "Imports" keyword
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.InheritsKeywordRecommender">
+ <summary>
+ Recommends the "Inherits" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.InKeywordRecommender">
+ <summary>
+ Recommends the "In" keyword in all types of declarations.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.InterfaceKeywordRecommender">
+ <summary>
+ Recommends the "Interface" keyword in type declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.IteratorKeywordRecommender">
+ <summary>
+ Recommends the "Iterator" keyword in member declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.LibKeywordRecommender">
+ <summary>
+ Recommends the "Lib" keyword in external method declarations.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ModifierKeywordsRecommender">
+ <summary>
+ Recommends the "Property" keyword in member declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ModuleKeywordRecommender">
+ <summary>
+ Recommends the "Module" keyword in type declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.NamespaceKeywordRecommender">
+ <summary>
+ Recommends the "Namespace" keyword in type declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.OperatorKeywordRecommender">
+ <summary>
+ Recommends the "Operator" keyword in member declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.OverloadableOperatorRecommender">
+ <summary>
+ Recommends the various list of operators you can overload after the "Operator" keyword
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ParameterModifiersKeywordRecommender">
+ <summary>
+ Recommends the ByVal, ByRef, etc keywords.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.PropertyKeywordRecommender">
+ <summary>
+ Recommends the "Property" keyword in member declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.StaticKeywordRecommender">
+ <summary>
+ Recommends the "Static" keyword for the start of a statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.StructureKeywordRecommender">
+ <summary>
+ Recommends the "Structure" keyword in type declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.SubKeywordRecommender">
+ <summary>
+ Recommends the "Sub" keyword in member declaration contexts
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Declarations.ToKeywordRecommender">
+ <summary>
+ Recommends the "To" keyword in array bounds.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.EventHandling.AddHandlerKeywordRecommender">
+ <summary>
+ Recommends the "AddHandler" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.EventHandling.HandlesKeywordRecommender">
+ <summary>
+ Recommends the "Handles" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.EventHandling.RaiseEventKeywordRecommender">
+ <summary>
+ Recommends the "RaiseEvent" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.EventHandling.RemoveHandlerKeywordRecommender">
+ <summary>
+ Recommends the "RemoveHandler" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.AddressOfKeywordRecommender">
+ <summary>
+ Recommends the "AddressOf" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.BinaryOperatorKeywordRecommender">
+ <summary>
+ Recommends binary infix operators that are English text, like "AndAlso", "OrElse", "Like", etc.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.FromKeywordRecommender">
+ <summary>
+ Recommends the "From" keyword when used in a New syntax (such as New goo From)
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.GetTypeKeywordRecommender">
+ <summary>
+ Recommends the "GetType" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.GetXmlNamespaceKeywordRecommender">
+ <summary>
+ Recommends the "GetXmlNamespace" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.GlobalKeywordRecommender">
+ <summary>
+ Recommends the "Global" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.IfKeywordRecommender">
+ <summary>
+ Recommends the "If" keyword when used for the null coalescing or ternary operator
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.KeyKeywordRecommender">
+ <summary>
+ Recommends the "Key" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.LambdaKeywordRecommender">
+ <summary>
+ Recommends the "Sub", "Function", "Async" and "Iterator" keywords in expression contexts that would start a lambda.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.MeKeywordRecommender">
+ <summary>
+ Recommends the "Me" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.MyBaseKeywordRecommender">
+ <summary>
+ Recommends the "MyBase" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.MyClassKeywordRecommender">
+ <summary>
+ Recommends the "MyClass" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.NewKeywordRecommender">
+ <summary>
+ Recommends the "New" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.NothingKeywordRecommender">
+ <summary>
+ Recommends the "Nothing" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.NotKeywordRecommender">
+ <summary>
+ Recommends the "Not" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.TrueFalseKeywordRecommender">
+ <summary>
+ Recommends the "True" and "False" keywords
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.TypeOfKeywordRecommender">
+ <summary>
+ Recommends the "TypeOf" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Expressions.WithKeywordRecommender">
+ <summary>
+ Recommends the "With" keyword when used in a New syntax (such as New goo With)
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OnErrorStatements.ErrorKeywordRecommender">
+ <summary>
+ Recommends "Error" after "On" in a "On Error" statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OnErrorStatements.GoToDestinationsRecommender">
+ <summary>
+ Recommends 0 and -1 as the "destinations" of where to go to after On Error Goto
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OnErrorStatements.GoToKeywordRecommender">
+ <summary>
+ Recommends "GoTo" after "On Error"
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OnErrorStatements.NextKeywordRecommender">
+ <summary>
+ Recommends "Next" after "On Error Resume" or after the "Resume" statement
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OnErrorStatements.OnErrorKeywordRecommender">
+ <summary>
+ Recommends "On Error Resume Next" and "On Error Goto" in a statement context.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OnErrorStatements.ResumeKeywordRecommender">
+ <summary>
+ Recommends "Resume Next" after "On Error", or "Resume" as a standalone statement
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OptionStatements.CompareBinaryTextRecommender">
+ <summary>
+ Recommends the "Binary" and "Text" options that come after "Option Compare"
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OptionStatements.ExplicitOptionsRecommender">
+ <summary>
+ Recommends the "On" and "Off" options that appear after Option Explicit.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OptionStatements.InferOptionsRecommender">
+ <summary>
+ Recommends the "On" and "Off" options that come after "Option Infer"
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OptionStatements.OptionKeywordRecommender">
+ <summary>
+ Recommends the "Option" keyword
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OptionStatements.OptionNamesRecommender">
+ <summary>
+ Recommends the names of options that can appear after an Option keyword, such as Compare or Infer.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.OptionStatements.StrictOptionsRecommender">
+ <summary>
+ Recommends the "On" and "Off" options that come after "Option Infer"
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.ConstDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#Const" preprocessor directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.ElseDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#Else" preprocessor directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.ElseIfDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#ElseIf" preprocessor directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.EndIfDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#End If" preprocessor directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.EndRegionDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#End Region" directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.IfDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#If" preprocessor directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.ReferenceDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#R" preprocessor directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.RegionDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#Region" directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.PreprocessorDirectives.WarningDirectiveKeywordRecommender">
+ <summary>
+ Recommends the "#Disable" preprocessor directive
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.AggregateKeywordRecommender">
+ <summary>
+ Recommends the Aggregate operator.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.AscendingDescendingKeywordRecommender">
+ <summary>
+ Recommends the "Ascending" and "Descending" contextual keywords in a Order By clause.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.DistinctKeywordRecommender">
+ <summary>
+ Recommends the "Distinct" query operator.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.EqualsKeywordRecommender">
+ <summary>
+ Recommends the Equals keyword when in a join syntax.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.FromKeywordRecommender">
+ <summary>
+ Recommends the From keyword to introduce a LINQ query or do a cross-join.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.GroupByKeywordRecommender">
+ <summary>
+ Recommends the "By" keyword for the "Group By" query clause.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.GroupJoinKeywordRecommender">
+ <summary>
+ Recommends the ""Group Join" query clause when it appears inside a normal Join clause.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.GroupKeywordRecommender">
+ <summary>
+ Recommends the "Group" query operator.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.IntoKeywordRecommender">
+ <summary>
+ Recommends the "Into" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.JoinKeywordRecommender">
+ <summary>
+ Recommends the "Join" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.LetKeywordRecommender">
+ <summary>
+ Recommends the Let operator.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.OnKeywordRecommender">
+ <summary>
+ Recommends the "On" keyword.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.OrderByKeywordRecommender">
+ <summary>
+ Recommends the "Order By" query clause.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.SelectKeywordRecommender">
+ <summary>
+ Recommends the "Select" query operator.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.SkipKeywordRecommender">
+ <summary>
+ Recommends the Skip operator for Skip/Skip While.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.TakeKeywordRecommender">
+ <summary>
+ Recommends the Take operator for Take/Take While.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.WhereKeywordRecommender">
+ <summary>
+ Recommends the "Where" query clause.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Queries.WhileKeywordRecommender">
+ <summary>
+ Recommends the While keyword after a Skip/Take query
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.RecommendationHelpers.GetParentOrNull(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Returns the parent of the node given. node may be null, which will cause this function to return null.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.CallKeywordRecommender">
+ <summary>
+ Recommends the "Call" statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.CaseKeywordRecommender">
+ <summary>
+ Recommends the "Case" and possibly "Case Else" keyword inside a Select block
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.CatchKeywordRecommender">
+ <summary>
+ Recommends the "Catch" keyword for the statement context
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ContinueKeywordRecommender">
+ <summary>
+ Recommends the "Continue" keyword at the start of a statement when in any loop.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.DoKeywordRecommender">
+ <summary>
+ Recommends the "Do" keyword at the start of a statement
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.EachKeywordRecommender">
+ <summary>
+ Recommends the "Each" keyword after the "For" keyword
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ElseIfKeywordRecommender">
+ <summary>
+ Recommends the "ElseIf" keyword for the statement context
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ElseKeywordRecommender">
+ <summary>
+ Recommends the "Else" keyword for the statement context.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.EndKeywordRecommender">
+ <summary>
+ Recommends the "End" statement
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ExitKeywordRecommender">
+ <summary>
+ Recommends the "Exit" keyword at the start of a statement
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.FinallyKeywordRecommender">
+ <summary>
+ Recommends the "Finally" keyword for the statement context
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ForKeywordRecommender">
+ <summary>
+ Recommends the "For" keyword for the statement context
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.GotoKeywordRecommender">
+ <summary>
+ Recommends the "Goto" keyword
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.IfKeywordRecommender">
+ <summary>
+ Recommends the "If" keyword for the statement context
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.IsKeywordRecommender">
+ <summary>
+ Recommends the "Is" keyword at the beginning of any clause in a "Case" statement
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.LoopKeywordRecommender">
+ <summary>
+ Recommends the "Loop" statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.MidKeywordRecommender">
+ <summary>
+ Recommends the "Mid" keyword for the Mid statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.NextKeywordRecommender">
+ <summary>
+ Recommends the "Next" statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ReturnKeywordRecommender">
+ <summary>
+ Recommends the "Return" keyword at the start of a statement
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.SelectKeywordRecommender">
+ <summary>
+ Recommends the "Select" keyword at the start of a statement
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.StepKeywordRecommender">
+ <summary>
+ Recommends the "Step" keyword in a For statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.StopKeywordRecommender">
+ <summary>
+ Recommends the "Stop" statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.SyncLockKeywordRecommender">
+ <summary>
+ Recommends the "SyncLock" keyword for the statement context
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ThenKeywordRecommender">
+ <summary>
+ Recommends the "Then" keyword in an If statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ThrowKeywordRecommender">
+ <summary>
+ Recommends the "Throw" keyword for the statement context
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.ToKeywordRecommender">
+ <summary>
+ Recommends the "To" keyword in an For.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.TryKeywordRecommender">
+ <summary>
+ Recommends the "Try" keyword for the statement context
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.UntilAndWhileKeywordRecommender">
+ <summary>
+ Recommends the "While" and "Until" keywords as a part of a Do or Loop statements
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.UsingKeywordRecommender">
+ <summary>
+ Recommends the "Using" keyword at the beginning of a statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.WhenKeywordRecommender">
+ <summary>
+ Recommends the "When" keyword for a Catch filter
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.WhileLoopKeywordRecommender">
+ <summary>
+ Recommends the "While" keyword at the start of a statement. "While" as a part of a Do statement is handled in
+ the UntilAndWhileKeywordRecommender.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.WithKeywordRecommender">
+ <summary>
+ Recommends the "With" statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Statements.YieldKeywordRecommender">
+ <summary>
+ Recommends the "Yield" keyword at the beginning of a statement.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.Completion.KeywordRecommenders.Types.BuiltInTypesKeywordRecommender">
+ <summary>
+ Recommends built-in types in various contexts.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.ConvertAutoPropertyToFullProperty.VisualBasicConvertAutoPropertyToFullPropertyCodeRefactoringProvider.GetFieldNameAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.IPropertySymbol,System.Threading.CancellationToken)">
+ <summary>
+ In VB, auto properties have an implicit backing field that is named using the property 
+ name preceded by an underscore. We will use this as the field name so we don't mess up 
+ any existing references to this field.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.Diagnostics.Analyzers.VisualBasicPreferFrameworkTypeDiagnosticAnalyzer.KeywordMatchesTypeName(Microsoft.CodeAnalysis.VisualBasic.SyntaxKind)">
+ <summary>
+ Returns true, if the VB language keyword for predefined type matches its
+ actual framework type name.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.DocumentationComments.VisualBasicRemoveDocCommentNodeCodeFixProvider.BC42305">
+ <summary>
+ XML comment tag with identical attributes
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.DocumentationComments.VisualBasicRemoveDocCommentNodeCodeFixProvider.BC42306">
+ <summary>
+ XML comment tag is not permitted on a 'sub' language element
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.DocumentationComments.VisualBasicRemoveDocCommentNodeCodeFixProvider.BC42307">
+ <summary>
+ XML comment type parameter does not match a type parameter
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.DocumentationComments.VisualBasicRemoveDocCommentNodeCodeFixProvider.BC42313">
+ <summary>
+ XML comment tag 'returns' is not permitted on a 'WriteOnly' property
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.DocumentationComments.VisualBasicRemoveDocCommentNodeCodeFixProvider.BC42315">
+ <summary>
+ XML comment tag 'returns' is not permitted on a 'declare sub' language element
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.DocumentationComments.VisualBasicRemoveDocCommentNodeCodeFixProvider.BC42317">
+ <summary>
+ XML comment type parameter does not match a type parameter
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.BreakpointSpans.TryGetClosestBreakpointSpan(Microsoft.CodeAnalysis.SyntaxNode,System.Int32,System.Int32,Microsoft.CodeAnalysis.Text.TextSpan@)">
+ <summary>
+ Given a syntax token determines a text span delimited by the closest applicable sequence points 
+ encompassing the token.
+ </summary>
+ <remarks>
+ If the span exists it Is possible To place a breakpoint at the given position.
+ </remarks>
+ <param name="minLength">
+ In case there are multiple breakpoint spans starting at the given <paramref name="position"/>,
+ <paramref name="minLength"/> can be used to disambiguate between them. 
+ The inner-most available span whose length is at least <paramref name="minLength"/> is returned.
+ </param>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldOrPropertyDeclarationBody">
+ <summary>
+ Property initializers:
+   Property [|p As Integer = expr|]
+   Property [|p As New C(expr)|]
+ 
+ Simple field initializers:
+   Dim [|a = expr|]
+   Dim [|a As Integer = expr|]
+   Dim [|a = expr|], [|b = expr|], [|c As Integer = expr|]
+   Dim [|a As New C(expr)|] 
+ 
+ Array initialized fields
+   Dim [|a(expr, ...)|] As Integer
+   
+ Shared initializers
+   Dim [|a|], [|b|] As New C(expr)
+ </summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldOrPropertyDeclarationBody.InitializerActiveStatement">
+ <summary>
+ Node that represents the active statement for the initializer of the member.
+ </summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldOrPropertyDeclarationBody.OtherActiveStatementContainer">
+ <summary>
+ Node that may include other active statements than <see cref="P:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldOrPropertyDeclarationBody.InitializerActiveStatement"/> (e.g. in a lambda).
+ <see cref="T:System.Linq.Expressions.Expression"/> or <see cref="T:Microsoft.CodeAnalysis.VisualBasic.Syntax.ArgumentListSyntax"/>.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldWithInitializerDeclarationBody">
+ <summary>
+ Field declarations:
+   Dim [|a = expr|]
+   Dim [|a As Integer = expr|]
+   Dim [|a = expr|], [|b = expr|], [|c As Integer = expr|]
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldWithMultipleArrayBoundsDeclarationBody">
+ <summary>
+ A field that's part of declaration with multiple identifiers with array bounds.
+ 
+ Dim [|a(n)|], [|b(n)|] As Integer
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldWithMultipleAsNewClauseDeclarationBody">
+ <summary>
+ A field that's part of declaration with multiple identifiers and As New clause:
+   Dim [|a|], [|b|] As New C(expr)
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldWithSingleArrayBoundsDeclarationBody">
+ <summary>
+ A field that's part of declaration with single identifier with array bounds.
+   Dim [|a(n)|] As Integer
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.FieldWithSingleAsNewClauseDeclarationBody">
+ <summary>
+ A field that's part of declaration with a single identifier and As New clause:
+   Dim [|a As New C()|]
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.PropertyWithInitializerDeclarationBody">
+ <summary>
+ Property [|P As Integer = initializer|]
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.PropertyWithNewClauseDeclarationBody">
+ <summary>
+ Property [|P As New C()|]
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.TiedToAncestor(Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.Label)">
+ <summary>
+ Return true if it is desirable to report two edits (delete and insert) rather than a move edit
+ when the node changes its parent.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.GetDescendantTokensIgnoringSeparators``1(Microsoft.CodeAnalysis.SyntaxList{``0})">
+ <summary>
+ Enumerates tokens of all nodes in the list.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.GetDescendantTokensIgnoringSeparators``1(Microsoft.CodeAnalysis.SeparatedSyntaxList{``0})">
+ <summary>
+ Enumerates tokens of all nodes in the list. Doesn't include separators.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.ComputeDistance(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Calculates the distance between two syntax nodes, disregarding trivia. 
+ </summary>
+ <remarks>
+ Distance is a number within [0, 1], the smaller the more similar the nodes are. 
+ </remarks>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.ComputeDistance(Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxToken)">
+ <summary>
+ Calculates the distance between two syntax tokens, disregarding trivia. 
+ </summary>
+ <remarks>
+ Distance is a number within [0, 1], the smaller the more similar the tokens are. 
+ </remarks>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.ComputeDistance(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxToken})">
+ <summary>
+ Calculates the distance between two sequences of syntax tokens, disregarding trivia. 
+ </summary>
+ <remarks>
+ Distance is a number within [0, 1], the smaller the more similar the sequences are. 
+ </remarks>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.ComputeDistance(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})">
+ <summary>
+ Calculates the distance between two sequences of syntax nodes, disregarding trivia. 
+ </summary>
+ <remarks>
+ Distance is a number within [0, 1], the smaller the more similar the sequences are. 
+ </remarks>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.GetSequenceEdits(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode})">
+ <summary>
+ Calculates the edits that transform one sequence of syntax nodes to another, disregarding trivia.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.GetSequenceEdits(System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.SyntaxNode},System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.SyntaxNode})">
+ <summary>
+ Calculates the edits that transform one sequence of syntax nodes to another, disregarding trivia.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.GetSequenceEdits(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxToken})">
+ <summary>
+ Calculates the edits that transform one sequence of syntax tokens to another, disregarding trivia.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxComparer.GetSequenceEdits(System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.SyntaxToken},System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.SyntaxToken})">
+ <summary>
+ Calculates the edits that transform one sequence of syntax tokens to another, disregarding trivia.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxUtilities.IsFieldDeclaration(Microsoft.CodeAnalysis.VisualBasic.Syntax.ModifiedIdentifierSyntax)">
+ <summary>
+ Returns true if the <see cref="T:Microsoft.CodeAnalysis.VisualBasic.Syntax.ModifiedIdentifierSyntax"/> node represents a field declaration.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.SyntaxUtilities.IsFieldDeclaration(Microsoft.CodeAnalysis.VisualBasic.Syntax.VariableDeclaratorSyntax)">
+ <summary>
+ Returns true if the <see cref="T:Microsoft.CodeAnalysis.VisualBasic.Syntax.VariableDeclaratorSyntax"/> node represents a field declaration.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.VisualBasicEditAndContinueAnalyzer.TryGetDeclarationBody(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.ISymbol)">
+ <returns>
+ Given a node representing a declaration or a top-level edit node returns:
+ - <see cref="T:Microsoft.CodeAnalysis.VisualBasic.Syntax.MethodBlockBaseSyntax"/> for methods, constructors, operators and accessors.
+ - <see cref="T:Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax"/> for auto-properties and fields with initializer or AsNew clause.
+ - <see cref="T:Microsoft.CodeAnalysis.VisualBasic.Syntax.ArgumentListSyntax"/> for fields with array initializer, e.g. "Dim a(1) As Integer".
+ A null reference otherwise.
+ </returns>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.VisualBasicEditAndContinueAnalyzer.GetSymbolDeclarationSyntax(Microsoft.CodeAnalysis.ISymbol,System.Func{System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.SyntaxReference},Microsoft.CodeAnalysis.SyntaxReference},System.Threading.CancellationToken)">
+ <summary>
+ VB symbols return references that represent the declaration statement.
+ The node that represents the whole declaration (the block) is the parent node if it exists.
+ For example, a method with a body is represented by a SubBlock/FunctionBlock while a method without a body
+ is represented by its declaration statement.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.EditAndContinue.VisualBasicEditAndContinueAnalyzer.GetExceptionHandlingRegion(Microsoft.CodeAnalysis.SyntaxNode,System.Boolean@)">
+ <summary>
+ An active statement (leaf or not) inside a "Catch" makes the Catch part readonly.
+ An active statement (leaf or not) inside a "Finally" makes the whole Try/Catch/Finally part read-only.
+ An active statement (non leaf)    inside a "Try" makes the Catch/Finally part read-only.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.GenerateConstructors.VisualBasicGenerateConstructorsCodeRefactoringProvider.#ctor(Microsoft.CodeAnalysis.PickMembers.IPickMembersService)">
+ <summary>
+ For testing purposes only.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.KeywordHighlighting.ForLoopBlockHighlighter.GetNextStatementMatchingForBlock(Microsoft.CodeAnalysis.VisualBasic.Syntax.ForOrForEachBlockSyntax)">
+ <summary>
+ Find the Next statement that closes this For block (if one exists). Normally that
+ would just be the one associated with forBlock, but if we have a "Next a, b" 
+ statement that is closing multiple loops, the Next statement is attached to the 
+ innermost matching loop.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.KeywordHighlighting.ForLoopBlockHighlighter.GetForBlocksMatchingNextStatement(Microsoft.CodeAnalysis.VisualBasic.Syntax.NextStatementSyntax)">
+ <summary>
+ Returns all For blocks logically matching the Next statement, ordered from outermost to 
+ innermost. Do not consider the actual names of the loop variables because highlighting 
+ should work even if the wrong identifier names are listed. 
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.InlineHints.VisualBasicInlineHintsService">
+ <summary>
+ The service to locate all positions where inline hints should be placed.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.QuickInfo.VisualBasicSemanticQuickInfoProvider.GetBindableNodeForTokenIndicatingLambda(Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxNode@)">
+ <summary>
+ If the token is a 'Sub' or 'Function' in a lambda, returns the syntax for the whole lambda
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.SpellCheck.VisualBasicSpellCheckCodeFixProvider.BC30002">
+ <summary>
+ Type xxx is not defined
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.SpellCheck.VisualBasicSpellCheckCodeFixProvider.BC30451">
+ <summary>
+ Error 'x' is not declared
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.SpellCheck.VisualBasicSpellCheckCodeFixProvider.BC30456">
+ <summary>
+ xxx is not a member of yyy
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.VisualBasic.SpellCheck.VisualBasicSpellCheckCodeFixProvider.BC32045">
+ <summary>
+ 'A' has no type parameters and so cannot have type arguments.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.IsLambda(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Returns true if the specified node represents a lambda.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.GetLambda(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Given a node that represents a lambda body returns a node that represents the lambda.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.GetCorrespondingLambdaBody(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ SyntaxNode.GetCorrespondingLambdaBody(SyntaxNode)
+ </summary>
+ <remarks>
+ We need to handle case when an old node that represents a lambda body with multiple nodes 
+ of the same kind is mapped to a new node that belongs to the lambda body but is 
+ different from the one that represents the new body.
+ 
+ In that case <paramref name="newLambdaOrPeer"/> isn't lambda representing node (the first range variable of a clause)
+ but its equivalent peer (another range variable of the same clause).
+ </remarks>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.IsLambdaBody(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Returns true if the specified <paramref name="node"/> represents a body of a lambda.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.IsLambdaBodyStatementOrExpression(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode@)">
+ <summary>
+ Returns true if the specified <paramref name="node"/> is part of a lambda body and its parent is not.
+ Returns the node (<paramref name="lambdaBody"/>) that represents the containing lambda body.
+ </summary>
+ <remarks>
+ VB lambda bodies may be non-contiguous sequences of nodes whose ancestor (parent or grandparent) is a lambda node.
+ Whenever we need to check whether a node is a lambda body node we should use this method.
+ </remarks>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.TryGetLambdaBodies(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode@,Microsoft.CodeAnalysis.SyntaxNode@)">
+ <summary>
+ If the specified node represents a lambda returns a node (or nodes) that represent its body (bodies).
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.GetLambdaBodyExpressionsAndStatements(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Enumerates all nodes that belong to the given <paramref name="lambdaBody"/> and their parents do not
+ (they are the top-most expressions and statements of the body).
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.TryGetSimpleLambdaBody(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode@)">
+ <summary>
+ If the specified node represents a "simple" lambda returns a node (or nodes) that represent its body (bodies).
+ Lambda is "simple" if all its body nodes are also its child nodes and vice versa.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.AreEquivalentIgnoringLambdaBodies(Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Compares content of two nodes ignoring lambda bodies and trivia.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.DescendantTokensIgnoringLambdaBodies(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Returns all tokens of <paramref name="node"/> that are not part of lambda bodies.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.IsNonUserCodeQueryLambda(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Non-user code lambdas are synthesized lambdas that create an instance of an anonymous type representing a pair of values,
+ or otherwise transform sequences/anonymous types from one form to another without calling user code.
+ TODO: Could we avoid generating proper lambdas for these?
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.LambdaUtilities.IsClosureScope(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>
+ Returns true if the specified node can represent a closure scope -- that is a scope of a captured variable.
+ Doesn't validate whether or not the node actually declares any captured variable.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.NewLines.ConsecutiveStatementPlacement.VisualBasicConsecutiveStatementPlacementDiagnosticAnalyzer">
+ <summary>
+ Analyzer that finds code of the form:
+ <code>
+ If cond
+ End If
+ NextStatement()
+ </code>
+ 
+ And requires it to be of the form:
+ <code>
+ If cond
+ End If
+ 
+ NextStatement()
+ </code>
+ 
+ Specifically, all blocks followed by another statement must have a blank line between them.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.RemoveUnnecessaryImports.VisualBasicRemoveUnnecessaryImportsDiagnosticAnalyzer.MergeImports(System.Collections.Immutable.ImmutableArray{Microsoft.CodeAnalysis.VisualBasic.Syntax.ImportsClauseSyntax})">
+ Takes the import clauses we want to remove and returns them *or* their 
+ containing ImportsStatements *if* we wanted to remove all the clauses of
+ that ImportStatement.
+</member>
+<member name="M:Microsoft.CodeAnalysis.VisualBasic.RemoveUnusedMembers.VisualBasicRemoveUnusedMembersCodeFixProvider.AdjustAndAddAppropriateDeclaratorsToRemove(System.Collections.Generic.HashSet{Microsoft.CodeAnalysis.VisualBasic.Syntax.FieldDeclarationSyntax},System.Collections.Generic.HashSet{Microsoft.CodeAnalysis.SyntaxNode})">
+ <summary>
+ This method adjusts the <paramref name="declarators"/> to remove based on whether or not all variable declarators
+ within a field declaration should be removed,
+ i.e. if all the fields declared within a field declaration are unused,
+ we can remove the entire field declaration instead of individual variable declarators.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.UseConditionalExpression.MultiLineConditionalExpressionFormattingRule">
+ <summary>
+ Special formatting rule that will convert a conditional expression into the following form
+ if it has the <see cref="F:Microsoft.CodeAnalysis.UseConditionalExpression.UseConditionalExpressionCodeFixHelpers.SpecializedFormattingAnnotation"/>
+ on it:
+
+ <code>
+     Dim v = If(expr,
+         whenTrue,
+         whenFalse)
+ </code>
+
+ i.e. both branches will be on a newline, indented once from the parent indentation.
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.UseInferredMemberName.VisualBasicUseInferredMemberNameDiagnosticAnalyzer">
+ <summary>
+ Offers to simplify tuple expressions and anonymous types with redundant names, such as <c>(a:=a, b:=b)</c> or <c>New With {.a = a, .b = b}</c>
+ </summary>
+</member>
+<member name="T:Microsoft.CodeAnalysis.VisualBasic.UseIsNotExpression.VisualBasicUseIsNotExpressionDiagnosticAnalyzer">
+ <summary>
+ Looks for code of the forms:
+ 
+     If Not x Is ...
+ 
+ and converts it to:
+ 
+     If x IsNot ...
+     
+ </summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Insert_0">
+ <summary>Insert '{0}'.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Delete_the_0_statement1">
+ <summary>Delete the '{0}' statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Create_event_0_in_1">
+ <summary>Create event {0} in {1}</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Insert_the_missing_End_Property_statement">
+ <summary>Insert the missing 'End Property' statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Insert_the_missing_0">
+ <summary>Insert the missing '{0}'.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Invert_If">
+ <summary>Invert If</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Add_Await">
+ <summary>Add Await</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Add_Await_and_ConfigureAwaitFalse">
+ <summary>Add Await and 'ConfigureAwait(false)'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Move_the_0_statement_to_line_1">
+ <summary>Move the '{0}' statement to line {1}.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Delete_the_0_statement2">
+ <summary>Delete the '{0}' statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_name_here_to_declare_a_new_field">
+ <summary>Type a name here to declare a new field.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Note_colon_Space_completion_is_disabled_to_avoid_potential_interference_To_insert_a_name_from_the_list_use_tab">
+ <summary>Note: Space completion is disabled to avoid potential interference. To insert a name from the list, use tab.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.new_field">
+ <summary>&lt;new field&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_name_here_to_declare_a_parameter_If_no_preceding_keyword_is_used_ByVal_will_be_assumed_and_the_argument_will_be_passed_by_value">
+ <summary>Type a name here to declare a parameter. If no preceding keyword is used; 'ByVal' will be assumed and the argument will be passed by value.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.parameter_name">
+ <summary>&lt;parameter name&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_new_name_for_the_column_followed_by_Otherwise_the_original_column_name_with_be_used">
+ <summary>Type a new name for the column, followed by '='. Otherwise, the original column name with be used.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Note_colon_Use_tab_for_automatic_completion_space_completion_is_disabled_to_avoid_interfering_with_a_new_name">
+ <summary>Note: Use tab for automatic completion; space completion is disabled to avoid interfering with a new name.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.result_alias">
+ <summary>&lt;result alias&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_new_variable_name">
+ <summary>Type a new variable name</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Note_colon_Space_and_completion_are_disabled_to_avoid_potential_interference_To_insert_a_name_from_the_list_use_tab">
+ <summary>Note: Space and '=' completion are disabled to avoid potential interference. To insert a name from the list, use tab.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.new_resource">
+ <summary>&lt;new resource&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.AddHandler_statement">
+ <summary>AddHandler statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.RemoveHandler_statement">
+ <summary>RemoveHandler statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources._0_function">
+ <summary>{0} function</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.CType_function">
+ <summary>CType function</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.DirectCast_function">
+ <summary>DirectCast function</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.TryCast_function">
+ <summary>TryCast function</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.GetType_function">
+ <summary>GetType function</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.GetXmlNamespace_function">
+ <summary>GetXmlNamespace function</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Mid_statement">
+ <summary>Mid statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Fix_Incorrect_Function_Return_Type">
+ <summary>Fix Incorrect Function Return Type</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Remove_Me_qualification">
+ <summary>Remove 'Me' qualification</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.contains_invalid_selection">
+ <summary>contains invalid selection</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.the_selection_contains_syntactic_errors">
+ <summary>the selection contains syntactic errors</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Selection_can_t_be_crossed_over_preprocessors">
+ <summary>Selection can't be crossed over preprocessors</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Selection_can_t_contain_throw_without_enclosing_catch_block">
+ <summary>Selection can't contain throw without enclosing catch block</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Selection_can_t_be_parts_of_constant_initializer_expression">
+ <summary>Selection can't be parts of constant initializer expression</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Argument_used_for_ByRef_parameter_can_t_be_extracted_out">
+ <summary>Argument used for ByRef parameter can't be extracted out</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.all_static_local_usages_defined_in_the_selection_must_be_included_in_the_selection">
+ <summary>all static local usages defined in the selection must be included in the selection</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Implicit_member_access_can_t_be_included_in_the_selection_without_containing_statement">
+ <summary>Implicit member access can't be included in the selection without containing statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Selection_must_be_part_of_executable_statements">
+ <summary>Selection must be part of executable statements</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.next_statement_control_variable_doesn_t_have_matching_declaration_statement">
+ <summary>next statement control variable doesn't have matching declaration statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Selection_doesn_t_contain_any_valid_node">
+ <summary>Selection doesn't contain any valid node</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Deprecated">
+ <summary>Deprecated</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Extension">
+ <summary>Extension</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Awaitable">
+ <summary>Awaitable</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Awaitable_Extension">
+ <summary>Awaitable, Extension</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.new_variable">
+ <summary>&lt;new variable&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Creates_a_delegate_procedure_instance_that_references_the_specified_procedure_AddressOf_procedureName">
+ <summary>Creates a delegate procedure instance that references the specified procedure.
+ AddressOf &lt;procedureName&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Indicates_that_an_external_procedure_has_another_name_in_its_DLL">
+ <summary>Indicates that an external procedure has another name in its DLL.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Performs_a_short_circuit_logical_conjunction_on_two_expressions_Returns_True_if_both_operands_evaluate_to_True_If_the_first_expression_evaluates_to_False_the_second_is_not_evaluated_result_expression1_AndAlso_expression2">
+ <summary>Performs a short-circuit logical conjunction on two expressions. Returns True if both operands evaluate to True. If the first expression evaluates to False, the second is not evaluated.
+ &lt;result&gt; = &lt;expression1&gt; AndAlso &lt;expression2&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Performs_a_logical_conjunction_on_two_Boolean_expressions_or_a_bitwise_conjunction_on_two_numeric_expressions_For_Boolean_expressions_returns_True_if_both_operands_evaluate_to_True_Both_expressions_are_always_evaluated_result_expression1_And_expression2">
+ <summary>Performs a logical conjunction on two Boolean expressions, or a bitwise conjunction on two numeric expressions. For Boolean expressions, returns True if both operands evaluate to True. Both expressions are always evaluated.
+ &lt;result&gt; = &lt;expression1&gt; And &lt;ex ...</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Used_in_a_Declare_statement_The_Ansi_modifier_specifies_that_Visual_Basic_should_marshal_all_strings_to_ANSI_values_and_should_look_up_the_procedure_without_modifying_its_name_during_the_search_If_no_character_set_is_specified_ANSI_is_the_default">
+ <summary>Used in a Declare statement. The Ansi modifier specifies that Visual Basic should marshal all strings to ANSI values, and should look up the procedure without modifying its name during the search. If no character set is specified, ANSI is the default.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_a_data_type_in_a_declaration_statement">
+ <summary>Specifies a data type in a declaration statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_an_attribute_at_the_beginning_of_a_source_file_applies_to_the_entire_assembly_Otherwise_the_attribute_will_apply_only_to_an_individual_programming_element_such_as_a_class_or_property">
+ <summary>Specifies that an attribute at the beginning of a source file applies to the entire assembly. Otherwise the attribute will apply only to an individual programming element, such as a class or property.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Indicates_an_asynchronous_method_that_can_use_the_Await_operator">
+ <summary>Indicates an asynchronous method that can use the Await operator.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Used_in_a_Declare_statement_The_Auto_modifier_specifies_that_Visual_Basic_should_marshal_strings_according_to_NET_Framework_rules_and_should_determine_the_base_character_set_of_the_run_time_platform_and_possibly_modify_the_external_procedure_name_if_the_initial_search_fails">
+ <summary>Used in a Declare statement. The Auto modifier specifies that Visual Basic should marshal strings according to .NET Framework rules, and should determine the base character set of the run-time platform and possibly modify the external procedure name if the ...</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_an_argument_is_passed_in_such_a_way_that_the_called_procedure_can_change_the_underlying_value_of_the_argument_in_the_calling_code">
+ <summary>Specifies that an argument is passed in such a way that the called procedure can change the underlying value of the argument in the calling code.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_an_argument_is_passed_in_such_a_way_that_the_called_procedure_or_property_cannot_change_the_underlying_value_of_the_argument_in_the_calling_code">
+ <summary>Specifies that an argument is passed in such a way that the called procedure or property cannot change the underlying value of the argument in the calling code.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_the_name_of_a_class_and_introduces_the_definitions_of_the_variables_properties_and_methods_that_make_up_the_class">
+ <summary>Declares the name of a class and introduces the definitions of the variables, properties, and methods that make up the class.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Generates_a_string_concatenation_of_two_expressions">
+ <summary>Generates a string concatenation of two expressions.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_and_defines_one_or_more_constants">
+ <summary>Declares and defines one or more constants.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Use_In_for_a_type_that_will_only_be_used_for_ByVal_arguments_to_functions">
+ <summary>Use 'In' for a type that will only be used for ByVal arguments to functions.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Use_Out_for_a_type_that_will_only_be_used_as_a_return_from_functions">
+ <summary>Use 'Out' for a type that will only be used as a return from functions.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Returns_the_result_of_explicitly_converting_an_expression_to_a_specified_data_type_object_structure_class_or_interface_CType_Object_As_Expression_Object_As_Type_As_Type">
+ <summary>Returns the result of explicitly converting an expression to a specified data type, object, structure, class, or interface.
+ CType(Object As Expression, Object As Type) As Type</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_an_event_has_additional_specialized_code_for_adding_handlers_removing_handlers_and_raising_events">
+ <summary>Specifies that an event has additional, specialized code for adding handlers, removing handlers, and raising events.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_a_reference_to_a_procedure_implemented_in_an_external_file">
+ <summary>Declares a reference to a procedure implemented in an external file.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Identifies_a_property_as_the_default_property_of_its_class_structure_or_interface">
+ <summary>Identifies a property as the default property of its class, structure, or interface.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Used_to_declare_a_delegate_A_delegate_is_a_reference_type_that_refers_to_a_shared_method_of_a_type_or_to_an_instance_method_of_an_object_Any_procedure_that_is_convertible_or_that_has_matching_parameter_types_and_return_type_may_be_used_to_create_an_instance_of_this_delegate_class">
+ <summary>Used to declare a delegate. A delegate is a reference type that refers to a shared method of a type or to an instance method of an object. Any procedure that is convertible, or that has matching parameter types and return type may be used to create an inst ...</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_and_allocates_storage_space_for_one_or_more_variables_Dim_var_bracket_As_bracket_New_bracket_dataType_bracket_boundList_bracket_bracket_bracket_initializer_bracket_bracket_var2_bracket">
+ <summary>Declares and allocates storage space for one or more variables.
+ Dim {&lt;var&gt; [As [New] dataType [(boundList)]][= initializer]}[, var2]</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Divides_two_numbers_and_returns_a_floating_point_result">
+ <summary>Divides two numbers and returns a floating-point result.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Terminates_a_0_block">
+ <summary>Terminates a {0} block.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Terminates_an_0_block">
+ <summary>Terminates an {0} block.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Terminates_the_definition_of_a_0_statement">
+ <summary>Terminates the definition of a {0} statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Terminates_the_definition_of_an_0_statement">
+ <summary>Terminates the definition of an {0} statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_an_enumeration_and_defines_the_values_of_its_members">
+ <summary>Declares an enumeration and defines the values of its members.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_two_expressions_and_returns_True_if_they_are_equal_Otherwise_returns_False">
+ <summary>Compares two expressions and returns True if they are equal. Otherwise, returns False.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Used_to_release_array_variables_and_deallocate_the_memory_used_for_their_elements">
+ <summary>Used to release array variables and deallocate the memory used for their elements.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_a_user_defined_event">
+ <summary>Declares a user-defined event.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Exits_a_Sub_procedure_and_transfers_execution_immediately_to_the_statement_following_the_call_to_the_Sub_procedure">
+ <summary>Exits a Sub procedure and transfers execution immediately to the statement following the call to the Sub procedure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Raises_a_number_to_the_power_of_another_number">
+ <summary>Raises a number to the power of another number.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_the_external_procedure_being_referenced_in_the_Declare_statement_is_a_Function">
+ <summary>Specifies that the external procedure being referenced in the Declare statement is a Function.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_the_external_procedure_being_referenced_in_the_Declare_statement_is_a_Sub">
+ <summary>Specifies that the external procedure being referenced in the Declare statement is a Sub.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_one_or_more_declared_programming_elements_are_accessible_only_from_within_the_assembly_that_contains_their_declaration">
+ <summary>Specifies that one or more declared programming elements are accessible only from within the assembly that contains their declaration.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_a_collection_and_a_range_variable_to_use_in_a_query">
+ <summary>Specifies a collection and a range variable to use in a query.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_the_name_parameters_and_code_that_define_a_Function_procedure_that_is_a_procedure_that_returns_a_value_to_the_calling_code">
+ <summary>Declares the name, parameters, and code that define a Function procedure, that is, a procedure that returns a value to the calling code.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Constrains_a_generic_type_parameter_to_require_that_any_type_argument_passed_to_it_be_a_reference_type">
+ <summary>Constrains a generic type parameter to require that any type argument passed to it be a reference type.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_a_constructor_constraint_on_a_generic_type_parameter">
+ <summary>Specifies a constructor constraint on a generic type parameter.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Constrains_a_generic_type_parameter_to_require_that_any_type_argument_passed_to_it_be_a_value_type">
+ <summary>Constrains a generic type parameter to require that any type argument passed to it be a value type.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_a_Get_property_procedure_that_is_used_to_return_the_current_value_of_a_property">
+ <summary>Declares a Get property procedure that is used to return the current value of a property.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_two_expressions_and_returns_True_if_the_first_is_greater_than_the_second_Otherwise_returns_False">
+ <summary>Compares two expressions and returns True if the first is greater than the second. Otherwise, returns False.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_two_expressions_and_returns_True_if_the_first_is_greater_than_or_equal_to_the_second_Otherwise_returns_False">
+ <summary>Compares two expressions and returns True if the first is greater than or equal to the second. Otherwise, returns False.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_that_a_procedure_handles_a_specified_event">
+ <summary>Declares that a procedure handles a specified event.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Indicates_that_a_class_or_structure_member_is_providing_the_implementation_for_a_member_defined_in_an_interface">
+ <summary>Indicates that a class or structure member is providing the implementation for a member defined in an interface.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_one_or_more_interfaces_or_interface_members_that_must_be_implemented_in_the_class_or_structure_definition_in_which_the_Implements_statement_appears">
+ <summary>Specifies one or more interfaces, or interface members, that must be implemented in the class or structure definition in which the Implements statement appears.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Imports_all_or_specified_elements_of_a_namespace_into_a_file">
+ <summary>Imports all or specified elements of a namespace into a file.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_group_that_the_loop_variable_in_a_For_Each_statement_is_to_traverse">
+ <summary>Specifies the group that the loop variable in a For Each statement is to traverse.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Causes_the_current_class_or_interface_to_inherit_the_attributes_variables_properties_procedures_and_events_from_another_class_or_set_of_interfaces">
+ <summary>Causes the current class or interface to inherit the attributes, variables, properties, procedures, and events from another class or set of interfaces.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_group_that_the_range_variable_is_to_traverse_in_a_query">
+ <summary>Specifies the group that the range variable is to traverse in a query.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Divides_two_numbers_and_returns_an_integer_result">
+ <summary>Divides two numbers and returns an integer result.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_the_name_of_an_interface_and_the_definitions_of_the_members_of_the_interface">
+ <summary>Declares the name of an interface and the definitions of the members of the interface.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Determines_whether_an_expression_is_false_If_instances_of_any_class_or_structure_will_be_used_in_an_OrElse_clause_you_must_define_IsFalse_on_that_class_or_structure">
+ <summary>Determines whether an expression is false. If instances of any class or structure will be used in an OrElse clause, you must define IsFalse on that class or structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_two_object_reference_variables_and_returns_True_if_the_objects_are_equal_result_object1_Is_object2">
+ <summary>Compares two object reference variables and returns True if the objects are equal.
+ &lt;result&gt; = &lt;object1&gt; Is &lt;object2&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_two_object_reference_variables_and_returns_True_if_the_objects_are_not_equal_result_object1_IsNot_object2">
+ <summary>Compares two object reference variables and returns True if the objects are not equal.
+ &lt;result&gt; = &lt;object1&gt; IsNot &lt;object2&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Determines_whether_an_expression_is_true_If_instances_of_any_class_or_structure_will_be_used_in_an_OrElse_clause_you_must_define_IsTrue_on_that_class_or_structure">
+ <summary>Determines whether an expression is true. If instances of any class or structure will be used in an OrElse clause, you must define IsTrue on that class or structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Indicates_an_iterator_method_that_can_use_the_Yield_statement">
+ <summary>Indicates an iterator method that can use the Yield statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Defines_an_iterator_lambda_expression_that_can_use_the_Yield_statement_Iterator_Function_parameterList_As_IEnumerable_Of_T">
+ <summary>Defines an iterator lambda expression that can use the Yield statement.
+ Iterator Function(&lt;parameterList&gt;) As IEnumerable(Of &lt;T&gt;)</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Performs_an_arithmetic_left_shift_on_a_bit_pattern">
+ <summary>Performs an arithmetic left shift on a bit pattern.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_two_expressions_and_returns_True_if_the_first_is_less_than_the_second_Otherwise_returns_False">
+ <summary>Compares two expressions and returns True if the first is less than the second. Otherwise, returns False.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_two_expressions_and_returns_True_if_the_first_is_less_than_or_equal_to_the_second_Otherwise_returns_False">
+ <summary>Compares two expressions and returns True if the first is less than or equal to the second. Otherwise, returns False.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_clause_that_identifies_the_external_file_DLL_or_code_resource_containing_an_external_procedure">
+ <summary>Introduces a clause that identifies the external file (DLL or code resource) containing an external procedure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_a_string_against_a_pattern_Wildcards_available_include_to_match_1_character_and_to_match_0_or_more_characters_result_string_Like_pattern">
+ <summary>Compares a string against a pattern. Wildcards available include ? to match 1 character and * to match 0 or more characters.
+ &lt;result&gt; = &lt;string&gt; Like &lt;pattern&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Returns_the_difference_between_two_numeric_expressions_or_the_negative_value_of_a_numeric_expression">
+ <summary>Returns the difference between two numeric expressions, or the negative value of a numeric expression.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Divides_two_numbers_and_returns_only_the_remainder_number1_Mod_number2">
+ <summary>Divides two numbers and returns only the remainder.
+ &lt;number1&gt; Mod &lt;number2&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_an_attribute_at_the_beginning_of_a_source_file_applies_to_the_entire_module_Otherwise_the_attribute_will_apply_only_to_an_individual_programming_element_such_as_a_class_or_property">
+ <summary>Specifies that an attribute at the beginning of a source file applies to the entire module. Otherwise the attribute will apply only to an individual programming element, such as a class or property.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Multiplies_two_numbers_and_returns_the_product">
+ <summary>Multiplies two numbers and returns the product.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_class_can_be_used_only_as_a_base_class_and_that_you_cannot_create_an_object_directly_from_it">
+ <summary>Specifies that a class can be used only as a base class, and that you cannot create an object directly from it.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_property_or_procedure_is_not_implemented_in_the_class_and_must_be_overridden_in_a_derived_class_before_it_can_be_used">
+ <summary>Specifies that a property or procedure is not implemented in the class and must be overridden in a derived class before it can be used.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_the_name_of_a_namespace_and_causes_the_source_code_following_the_declaration_to_be_compiled_within_that_namespace">
+ <summary>Declares the name of a namespace, and causes the source code following the declaration to be compiled within that namespace.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Indicates_that_a_conversion_operator_CType_converts_a_class_or_structure_to_a_type_that_might_not_be_able_to_hold_some_of_the_possible_values_of_the_original_class_or_structure">
+ <summary>Indicates that a conversion operator (CType) converts a class or structure to a type that might not be able to hold some of the possible values of the original class or structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Compares_two_expressions_and_returns_True_if_they_are_not_equal_Otherwise_returns_False">
+ <summary>Compares two expressions and returns True if they are not equal. Otherwise, returns False.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_class_cannot_be_used_as_a_base_class">
+ <summary>Specifies that a class cannot be used as a base class.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Performs_logical_negation_on_a_Boolean_expression_or_bitwise_negation_on_a_numeric_expression_result_Not_expression">
+ <summary>Performs logical negation on a Boolean expression, or bitwise negation on a numeric expression.
+ &lt;result&gt; = Not &lt;expression&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_property_or_procedure_cannot_be_overridden_in_a_derived_class">
+ <summary>Specifies that a property or procedure cannot be overridden in a derived class.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Identifies_a_type_parameter_on_a_generic_class_structure_interface_delegate_or_procedure">
+ <summary>Identifies a type parameter on a generic class, structure, interface, delegate, or procedure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_the_operator_symbol_operands_and_code_that_define_an_operator_procedure_on_a_class_or_structure">
+ <summary>Declares the operator symbol, operands, and code that define an operator procedure on a class or structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_procedure_argument_can_be_omitted_when_the_procedure_is_called">
+ <summary>Specifies that a procedure argument can be omitted when the procedure is called.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_statement_that_specifies_a_compiler_option_that_applies_to_the_entire_source_file">
+ <summary>Introduces a statement that specifies a compiler option that applies to the entire source file.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Performs_short_circuit_inclusive_logical_disjunction_on_two_expressions_Returns_True_if_either_operand_evaluates_to_True_If_the_first_expression_evaluates_to_True_the_second_expression_is_not_evaluated_result_expression1_OrElse_expression2">
+ <summary>Performs short-circuit inclusive logical disjunction on two expressions. Returns True if either operand evaluates to True. If the first expression evaluates to True, the second expression is not evaluated.
+ &lt;result&gt; = &lt;expression1&gt; OrElse &lt;expression2&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Performs_an_inclusive_logical_disjunction_on_two_Boolean_expressions_or_a_bitwise_disjunction_on_two_numeric_expressions_For_Boolean_expressions_returns_True_if_at_least_one_operand_evaluates_to_True_Both_expressions_are_always_evaluated_result_expression1_Or_expression2">
+ <summary>Performs an inclusive logical disjunction on two Boolean expressions, or a bitwise disjunction on two numeric expressions. For Boolean expressions, returns True if at least one operand evaluates to True. Both expressions are always evaluated.
+ &lt;result&gt; = &lt;e ...</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_property_or_procedure_re_declares_one_or_more_existing_properties_or_procedures_with_the_same_name">
+ <summary>Specifies that a property or procedure re-declares one or more existing properties or procedures with the same name.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_property_or_procedure_can_be_overridden_by_an_identically_named_property_or_procedure_in_a_derived_class">
+ <summary>Specifies that a property or procedure can be overridden by an identically named property or procedure in a derived class.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_property_or_procedure_overrides_an_identically_named_property_or_procedure_inherited_from_a_base_class">
+ <summary>Specifies that a property or procedure overrides an identically named property or procedure inherited from a base class.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_procedure_parameter_takes_an_optional_array_of_elements_of_the_specified_type">
+ <summary>Specifies that a procedure parameter takes an optional array of elements of the specified type.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Indicates_that_a_method_class_or_structure_declaration_is_a_partial_definition_of_the_method_class_or_structure">
+ <summary>Indicates that a method, class, or structure declaration is a partial definition of the method, class, or structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Returns_the_sum_of_two_numbers_or_the_positive_value_of_a_numeric_expression">
+ <summary>Returns the sum of two numbers, or the positive value of a numeric expression.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Prevents_the_contents_of_an_array_from_being_cleared_when_the_dimensions_of_the_array_are_changed">
+ <summary>Prevents the contents of an array from being cleared when the dimensions of the array are changed.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_one_or_more_declared_programming_elements_are_accessible_only_from_within_their_module_class_or_structure">
+ <summary>Specifies that one or more declared programming elements are accessible only from within their module, class, or structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_the_name_of_a_property_and_the_property_procedures_used_to_store_and_retrieve_the_value_of_the_property">
+ <summary>Declares the name of a property, and the property procedures used to store and retrieve the value of the property.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_one_or_more_declared_members_of_a_class_are_accessible_from_anywhere_in_the_same_assembly_their_own_classes_and_derived_classes">
+ <summary>Specifies that one or more declared members of a class are accessible from anywhere in the same assembly, their own classes, and derived classes.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_one_or_more_declared_programming_elements_are_accessible_only_from_within_their_own_class_or_from_a_derived_class">
+ <summary>Specifies that one or more declared programming elements are accessible only from within their own class or from a derived class.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_one_or_more_declared_programming_elements_have_no_access_restrictions">
+ <summary>Specifies that one or more declared programming elements have no access restrictions.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_variable_or_property_can_be_read_but_not_written_to">
+ <summary>Specifies that a variable or property can be read but not written to.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Reallocates_storage_space_for_an_array_variable">
+ <summary>Reallocates storage space for an array variable.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Performs_an_arithmetic_right_shift_on_a_bit_pattern">
+ <summary>Performs an arithmetic right shift on a bit pattern</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_a_Set_property_procedure_that_is_used_to_assign_a_value_to_a_property">
+ <summary>Declares a Set property procedure that is used to assign a value to a property.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_declared_programming_element_redeclares_and_hides_an_identically_named_element_in_a_base_class">
+ <summary>Specifies that a declared programming element redeclares and hides an identically named element in a base class.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_one_or_more_declared_programming_elements_are_associated_with_all_instances_of_a_class_or_structure">
+ <summary>Specifies that one or more declared programming elements are associated with all instances of a class or structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_one_or_more_declared_local_variables_are_to_remain_in_existence_and_retain_their_latest_values_after_the_procedure_in_which_they_are_declared_terminates">
+ <summary>Specifies that one or more declared local variables are to remain in existence and retain their latest values after the procedure in which they are declared terminates.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_the_name_of_a_structure_and_introduces_the_definition_of_the_variables_properties_events_and_procedures_that_make_up_the_structure">
+ <summary>Declares the name of a structure and introduces the definition of the variables, properties, events, and procedures that make up the structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Declares_the_name_parameters_and_code_that_define_a_Sub_procedure_that_is_a_procedure_that_does_not_return_a_value_to_the_calling_code">
+ <summary>Declares the name, parameters, and code that define a Sub procedure, that is, a procedure that does not return a value to the calling code.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Separates_the_beginning_and_ending_values_of_a_loop_counter_or_array_bounds_or_that_of_a_value_match_range">
+ <summary>Separates the beginning and ending values of a loop counter or array bounds or that of a value match range.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Determines_the_run_time_type_of_an_object_reference_variable_and_compares_it_to_a_data_type_Returns_True_or_False_depending_on_whether_the_two_types_are_compatible_result_TypeOf_objectExpression_Is_typeName">
+ <summary>Determines the run-time type of an object reference variable and compares it to a data type. Returns True or False depending, on whether the two types are compatible.
+ &lt;result&gt; = TypeOf &lt;objectExpression&gt; Is &lt;typeName&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Used_in_a_Declare_statement_Specifies_that_Visual_Basic_should_marshal_all_strings_to_Unicode_values_in_a_call_into_an_external_procedure_and_should_look_up_the_procedure_without_modifying_its_name">
+ <summary>Used in a Declare statement. Specifies that Visual Basic should marshal all strings to Unicode values in a call into an external procedure, and should look up the procedure without modifying its name.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Indicates_that_a_conversion_operator_CType_converts_a_class_or_structure_to_a_type_that_can_hold_all_possible_values_of_the_original_class_or_structure">
+ <summary>Indicates that a conversion operator (CType) converts a class or structure to a type that can hold all possible values of the original class or structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_one_or_more_declared_member_variables_refer_to_an_instance_of_a_class_that_can_raise_events">
+ <summary>Specifies that one or more declared member variables refer to an instance of a class that can raise events</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_that_a_property_can_be_written_to_but_not_read">
+ <summary>Specifies that a property can be written to but not read.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Performs_a_logical_exclusion_on_two_Boolean_expressions_or_a_bitwise_exclusion_on_two_numeric_expressions_For_Boolean_expressions_returns_True_if_exactly_one_of_the_expressions_evaluates_to_True_Both_expressions_are_always_evaluated_result_expression1_Xor_expression2">
+ <summary>Performs a logical exclusion on two Boolean expressions, or a bitwise exclusion on two numeric expressions. For Boolean expressions, returns True if exactly one of the expressions evaluates to True. Both expressions are always evaluated.
+ &lt;result&gt; = &lt;expres ...</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Applies_an_aggregation_function_such_as_Sum_Average_or_Count_to_a_sequence">
+ <summary>Applies an aggregation function, such as Sum, Average, or Count to a sequence.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_sort_order_for_an_Order_By_clause_in_a_query_The_smallest_element_will_appear_first">
+ <summary>Specifies the sort order for an Order By clause in a query. The smallest element will appear first.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Sets_the_string_comparison_method_specified_in_Option_Compare_to_a_strict_binary_sort_order">
+ <summary>Sets the string comparison method specified in Option Compare to a strict binary sort order.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_element_keys_used_for_grouping_in_Group_By_or_sort_order_in_Order_By">
+ <summary>Specifies the element keys used for grouping (in Group By) or sort order (in Order By).</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Transfers_execution_to_a_Function_Sub_or_dynamic_link_library_DLL_procedure_bracket_Call_bracket_procedureName_bracket_argumentList_bracket">
+ <summary>Transfers execution to a Function, Sub, or dynamic-link library (DLL) procedure.
+ [Call] &lt;procedureName&gt; [(&lt;argumentList&gt;)]</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_the_statements_to_run_if_none_of_the_previous_cases_in_the_Select_Case_statement_returns_True">
+ <summary>Introduces the statements to run if none of the previous cases in the Select Case statement returns True.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Followed_by_a_comparison_operator_and_then_an_expression_Case_Is_introduces_the_statements_to_run_if_the_Select_Case_expression_combined_with_the_Case_Is_expression_evaluates_to_True">
+ <summary>Followed by a comparison operator and then an expression, Case Is introduces the statements to run if the Select Case expression combined with the Case Is expression evaluates to True.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_value_or_set_of_values_against_which_the_value_of_an_expression_in_a_Select_Case_statement_is_to_be_tested_Case_expression_expression1_To_expression2_bracket_Is_bracket_comparisonOperator_expression">
+ <summary>Introduces a value, or set of values, against which the value of an expression in a Select Case statement is to be tested.
+ Case {&lt;expression&gt;|&lt;expression1&gt; To &lt;expression2&gt;|[Is] &lt;comparisonOperator&gt; &lt;expression&gt;}</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_statement_block_to_be_run_if_the_specified_exception_occurs_inside_a_Try_block">
+ <summary>Introduces a statement block to be run if the specified exception occurs inside a Try block.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Sets_the_default_comparison_method_to_use_when_comparing_string_data_When_set_to_Text_uses_a_text_sort_order_that_is_not_case_sensitive_When_set_to_Binary_uses_a_strict_binary_sort_order_Option_Compare_Binary_Text">
+ <summary>Sets the default comparison method to use when comparing string data. When set to Text, uses a text sort order that is not case sensitive. When set to Binary, uses a strict binary sort order.
+ Option Compare {Binary | Text}</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Defines_a_conditional_compiler_constant_Conditional_compiler_constants_are_always_private_to_the_file_in_which_they_appear_The_expressions_used_to_initialize_them_can_contain_only_conditional_compiler_constants_and_literals">
+ <summary>Defines a conditional compiler constant. Conditional compiler constants are always private to the file in which they appear. The expressions used to initialize them can contain only conditional compiler constants and literals.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Transfers_execution_immediately_to_the_next_iteration_of_the_Do_loop">
+ <summary>Transfers execution immediately to the next iteration of the Do loop.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Transfers_execution_immediately_to_the_next_iteration_of_the_For_loop">
+ <summary>Transfers execution immediately to the next iteration of the For loop.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Transfers_execution_immediately_to_the_next_iteration_of_the_loop_Can_be_used_in_a_Do_loop_a_For_loop_or_a_While_loop">
+ <summary>Transfers execution immediately to the next iteration of the loop. Can be used in a Do loop, a For loop, or a While loop.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Transfers_execution_immediately_to_the_next_iteration_of_the_While_loop">
+ <summary>Transfers execution immediately to the next iteration of the While loop.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_sort_order_for_an_Order_By_clause_in_a_query_The_largest_element_will_appear_first">
+ <summary>Specifies the sort order for an Order By clause in a query. The largest element will appear first.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Restricts_the_values_of_a_query_result_to_eliminate_duplicate_values">
+ <summary>Restricts the values of a query result to eliminate duplicate values.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Repeats_a_block_of_statements_while_a_Boolean_condition_is_true_or_until_the_condition_becomes_true_Do_Loop_While_Until_condition">
+ <summary>Repeats a block of statements while a Boolean condition is true, or until the condition becomes true.
+ Do...Loop {While | Until} &lt;condition&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Repeats_a_block_of_statements_until_a_Boolean_condition_becomes_true_Do_Until_condition_Loop">
+ <summary>Repeats a block of statements until a Boolean condition becomes true.
+ Do Until &lt;condition&gt;...Loop</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Repeats_a_block_of_statements_while_a_Boolean_condition_is_true_Do_While_condition_Loop">
+ <summary>Repeats a block of statements while a Boolean condition is true.
+ Do While &lt;condition&gt;...Loop</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_group_of_statements_in_an_SharpIf_statement_that_is_compiled_if_no_previous_condition_evaluates_to_True">
+ <summary>Introduces a group of statements in an #If statement that is compiled if no previous condition evaluates to True.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_condition_in_an_SharpIf_statement_that_is_tested_if_the_previous_conditional_test_evaluates_to_False">
+ <summary>Introduces a condition in an #If statement that is tested if the previous conditional test evaluates to False.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_condition_in_an_If_statement_that_is_to_be_tested_if_the_previous_conditional_test_fails">
+ <summary>Introduces a condition in an If statement that is to be tested if the previous conditional test fails.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_group_of_statements_in_an_If_statement_that_is_executed_if_no_previous_condition_evaluates_to_True">
+ <summary>Introduces a group of statements in an If statement that is executed if no previous condition evaluates to True.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Terminates_the_definition_of_an_SharpIf_block">
+ <summary>Terminates the definition of an #If block.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Stops_execution_immediately">
+ <summary>Stops execution immediately.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Terminates_a_SharpRegion_block">
+ <summary>Terminates a #Region block.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_relationship_between_element_keys_to_use_as_the_basis_of_a_join_operation">
+ <summary>Specifies the relationship between element keys to use as the basis of a join operation.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Simulates_the_occurrence_of_an_error">
+ <summary>Simulates the occurrence of an error.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Exits_a_Do_loop_and_transfers_execution_immediately_to_the_statement_following_the_Loop_statement">
+ <summary>Exits a Do loop and transfers execution immediately to the statement following the Loop statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Exits_a_For_loop_and_transfers_execution_immediately_to_the_statement_following_the_Next_statement">
+ <summary>Exits a For loop and transfers execution immediately to the statement following the Next statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Exits_a_procedure_or_block_and_transfers_execution_immediately_to_the_statement_following_the_procedure_call_or_block_definition_Exit_Do_For_Function_Property_Select_Sub_Try_While">
+ <summary>Exits a procedure or block and transfers execution immediately to the statement following the procedure call or block definition.
+ Exit {Do | For | Function | Property | Select | Sub | Try | While}</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Exits_a_Select_block_and_transfers_execution_immediately_to_the_statement_following_the_End_Select_statement">
+ <summary>Exits a Select block and transfers execution immediately to the statement following the End Select statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Exits_a_Try_block_and_transfers_execution_immediately_to_the_statement_following_the_End_Try_statement">
+ <summary>Exits a Try block and transfers execution immediately to the statement following the End Try statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Exits_a_While_loop_and_transfers_execution_immediately_to_the_statement_following_the_End_While_statement">
+ <summary>Exits a While loop and transfers execution immediately to the statement following the End While statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.When_set_to_On_requires_explicit_declaration_of_all_variables_using_a_Dim_Private_Public_or_ReDim_statement_Option_Explicit_On_Off">
+ <summary>When set to On, requires explicit declaration of all variables, using a Dim, Private, Public, or ReDim statement.
+ Option Explicit {On | Off}</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Represents_a_Boolean_value_that_fails_a_conditional_test">
+ <summary>Represents a Boolean value that fails a conditional test.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_statement_block_to_be_run_before_exiting_a_Try_structure">
+ <summary>Introduces a statement block to be run before exiting a Try structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_loop_that_is_repeated_for_each_element_in_a_collection">
+ <summary>Introduces a loop that is repeated for each element in a collection.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_loop_that_is_iterated_a_specified_number_of_times">
+ <summary>Introduces a loop that is iterated a specified number of times.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Identifies_a_list_of_values_as_a_collection_initializer">
+ <summary>Identifies a list of values as a collection initializer</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Branches_unconditionally_to_a_specified_line_in_a_procedure">
+ <summary>Branches unconditionally to a specified line in a procedure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Groups_elements_that_have_a_common_key">
+ <summary>Groups elements that have a common key.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Combines_the_elements_of_two_sequences_and_groups_the_results_The_join_operation_is_based_on_matching_keys">
+ <summary>Combines the elements of two sequences and groups the results. The join operation is based on matching keys.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Use_Group_to_specify_that_a_group_named_0_should_be_created">
+ <summary>Use 'Group' to specify that a group named '{0}' should be created.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Use_Group_to_specify_that_a_group_named_Group_should_be_created">
+ <summary>Use 'Group' to specify that a group named 'Group' should be created.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Conditionally_compiles_selected_blocks_of_code_depending_on_the_value_of_an_expression">
+ <summary>Conditionally compiles selected blocks of code, depending on the value of an expression.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Conditionally_executes_a_group_of_statements_depending_on_the_value_of_an_expression">
+ <summary>Conditionally executes a group of statements, depending on the value of an expression.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.When_set_to_On_allows_the_use_of_local_type_inference_in_declaring_variables_Option_Infer_On_Off">
+ <summary>When set to On, allows the use of local type inference in declaring variables.
+ Option Infer {On | Off}</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_an_identifier_that_can_serve_as_a_reference_to_the_results_of_a_join_or_grouping_subexpression">
+ <summary>Specifies an identifier that can serve as a reference to the results of a join or grouping subexpression.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Combines_the_elements_of_two_sequences_The_join_operation_is_based_on_matching_keys">
+ <summary>Combines the elements of two sequences. The join operation is based on matching keys.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Identifies_a_key_field_in_an_anonymous_type_definition">
+ <summary>Identifies a key field in an anonymous type definition.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Computes_a_value_for_each_item_in_the_query_and_assigns_the_value_to_a_new_range_variable">
+ <summary>Computes a value for each item in the query, and assigns the value to a new range variable.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Terminates_a_loop_that_is_introduced_with_a_Do_statement">
+ <summary>Terminates a loop that is introduced with a Do statement.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Repeats_a_block_of_statements_until_a_Boolean_condition_becomes_true_Do_Loop_Until_condition">
+ <summary>Repeats a block of statements until a Boolean condition becomes true.
+ Do...Loop Until &lt;condition&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Repeats_a_block_of_statements_while_a_Boolean_condition_is_true_Do_Loop_While_condition">
+ <summary>Repeats a block of statements while a Boolean condition is true.
+ Do...Loop While &lt;condition&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Provides_a_way_to_refer_to_the_current_instance_of_a_class_or_structure_that_is_the_instance_in_which_the_code_is_running">
+ <summary>Provides a way to refer to the current instance of a class or structure, that is, the instance in which the code is running.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Provides_a_way_to_refer_to_the_base_class_of_the_current_class_instance_You_cannot_use_MyBase_to_call_MustOverride_base_methods">
+ <summary>Provides a way to refer to the base class of the current class instance. You cannot use MyBase to call MustOverride base methods.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Provides_a_way_to_refer_to_the_class_instance_members_as_originally_implemented_ignoring_any_derived_class_overrides">
+ <summary>Provides a way to refer to the class instance members as originally implemented, ignoring any derived class overrides.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Creates_a_new_object_instance">
+ <summary>Creates a new object instance.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Terminates_a_loop_that_iterates_through_the_values_of_a_loop_variable">
+ <summary>Terminates a loop that iterates through the values of a loop variable.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Represents_the_default_value_of_any_data_type">
+ <summary>Represents the default value of any data type.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Turns_a_compiler_option_off">
+ <summary>Turns a compiler option off.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Enables_the_error_handling_routine_that_starts_at_the_line_specified_in_the_line_argument_The_specified_line_must_be_in_the_same_procedure_as_the_On_Error_statement_On_Error_GoTo_bracket_label_0_1_bracket">
+ <summary>Enables the error-handling routine that starts at the line specified in the line argument.
+ The specified line must be in the same procedure as the On Error statement.
+ On Error GoTo [&lt;label&gt; | 0 | -1]</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.When_a_run_time_error_occurs_execution_transfers_to_the_statement_following_the_statement_or_procedure_call_that_resulted_in_the_error">
+ <summary>When a run-time error occurs, execution transfers to the statement following the statement or procedure call that resulted in the error.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Turns_a_compiler_option_on">
+ <summary>Turns a compiler option on.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_element_keys_used_to_correlate_sequences_for_a_join_operation">
+ <summary>Specifies the element keys used to correlate sequences for a join operation.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_sort_order_for_columns_in_a_query_Can_be_followed_by_either_the_Ascending_or_the_Descending_keyword_If_neither_is_specified_Ascending_is_used">
+ <summary>Specifies the sort order for columns in a query. Can be followed by either the Ascending or the Descending keyword. If neither is specified, Ascending is used.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_statements_to_run_when_the_event_is_raised_by_the_RaiseEvent_statement_RaiseEvent_delegateSignature_End_RaiseEvent">
+ <summary>Specifies the statements to run when the event is raised by the RaiseEvent statement.
+ RaiseEvent(&lt;delegateSignature&gt;)...End RaiseEvent</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Triggers_an_event_declared_at_module_level_within_a_class_form_or_document_RaiseEvent_eventName_bracket_argumentList_bracket">
+ <summary>Triggers an event declared at module level within a class, form, or document.
+ RaiseEvent &lt;eventName&gt; [(&lt;argumentList&gt;)]</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Collapses_and_hides_sections_of_code_in_Visual_Basic_files">
+ <summary>Collapses and hides sections of code in Visual Basic files.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Returns_execution_to_the_code_that_called_the_Function_Sub_Get_Set_or_Operator_procedure_Return_or_Return_expression">
+ <summary>Returns execution to the code that called the Function, Sub, Get, Set, or Operator procedure.
+ Return -or- Return &lt;expression&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Runs_one_of_several_groups_of_statements_depending_on_the_value_of_an_expression">
+ <summary>Runs one of several groups of statements, depending on the value of an expression.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_which_columns_to_include_in_the_result_of_a_query">
+ <summary>Specifies which columns to include in the result of a query.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Skips_elements_up_to_a_specified_position_in_the_collection">
+ <summary>Skips elements up to a specified position in the collection.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_how_much_to_increment_between_each_loop_iteration">
+ <summary>Specifies how much to increment between each loop iteration.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Suspends_program_execution">
+ <summary>Suspends program execution.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.When_set_to_On_restricts_implicit_data_type_conversions_to_only_widening_conversions_Option_Strict_On_Off">
+ <summary>When set to On, restricts implicit data type conversions to only widening conversions.
+ Option Strict {On | Off}</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Ensures_that_multiple_threads_do_not_execute_the_statement_block_at_the_same_time_SyncLock_object_End_Synclock">
+ <summary>Ensures that multiple threads do not execute the statement block at the same time.
+ SyncLock &lt;object&gt;...End Synclock</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Includes_elements_up_to_a_specified_position_in_the_collection">
+ <summary>Includes elements up to a specified position in the collection.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Sets_the_string_comparison_method_specified_in_Option_Compare_to_a_text_sort_order_that_is_not_case_sensitive">
+ <summary>Sets the string comparison method specified in Option Compare to a text sort order that is not case sensitive.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduces_a_statement_block_to_be_compiled_or_executed_if_a_tested_condition_is_true">
+ <summary>Introduces a statement block to be compiled or executed if a tested condition is true.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Throws_an_exception_within_a_procedure_so_that_you_can_handle_it_with_structured_or_unstructured_exception_handling_code">
+ <summary>Throws an exception within a procedure so that you can handle it with structured or unstructured exception-handling code.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Represents_a_Boolean_value_that_passes_a_conditional_test">
+ <summary>Represents a Boolean value that passes a conditional test.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Provides_a_way_to_handle_some_or_all_possible_errors_that_might_occur_in_a_given_block_of_code_while_still_running_the_code_Try_bracket_Catch_bracket_Catch_Finally_End_Try">
+ <summary>Provides a way to handle some or all possible errors that might occur in a given block of code, while still running the code.
+ Try...[Catch]...{Catch | Finally}...End Try</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.A_Using_block_does_three_things_colon_it_creates_and_initializes_variables_in_the_resource_list_it_runs_the_code_in_the_block_and_it_disposes_of_the_variables_before_exiting_Resources_used_in_the_Using_block_must_implement_System_IDisposable_Using_resource1_bracket_resource2_bracket_End_Using">
+ <summary>A Using block does three things: it creates and initializes variables in the resource list, it runs the code in the block, and it disposes of the variables before exiting. Resources used in the Using block must implement System.IDisposable.
+ Using &lt;resource ...</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Adds_a_conditional_test_to_a_Catch_statement_Exceptions_are_caught_by_that_Catch_statement_only_when_the_conditional_test_that_follows_the_When_keyword_evaluates_to_True">
+ <summary>Adds a conditional test to a Catch statement. Exceptions are caught by that Catch statement only when the conditional test that follows the When keyword evaluates to True.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_filtering_condition_for_a_range_variable_in_a_query">
+ <summary>Specifies the filtering condition for a range variable in a query.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Runs_a_series_of_statements_as_long_as_a_given_condition_is_true">
+ <summary>Runs a series of statements as long as a given condition is true.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_a_condition_for_Skip_and_Take_operations_Elements_will_be_bypassed_or_included_as_long_as_the_condition_is_true">
+ <summary>Specifies a condition for Skip and Take operations. Elements will be bypassed or included as long as the condition is true.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Specifies_the_declaration_of_property_initializations_in_an_object_initializer_New_typeName_With_bracket_property_expression_bracket_bracket_bracket">
+ <summary>Specifies the declaration of property initializations in an object initializer.
+ New &lt;typeName&gt; With {[.&lt;property&gt; = &lt;expression&gt;][,...]}</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Runs_a_series_of_statements_that_refer_to_a_single_object_or_structure_With_object_End_With">
+ <summary>Runs a series of statements that refer to a single object or structure.
+ With &lt;object&gt;...End With</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Produces_an_element_of_an_IEnumerable_or_IEnumerator">
+ <summary>Produces an element of an IEnumerable or IEnumerator.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Defines_an_asynchronous_lambda_expression_that_can_use_the_Await_operator_Can_be_used_wherever_a_delegate_type_is_expected_Async_Sub_Function_parameterList_expression">
+ <summary>Defines an asynchronous lambda expression that can use the Await operator. Can be used wherever a delegate type is expected.
+ Async Sub/Function(&lt;parameterList&gt;) &lt;expression&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Defines_a_lambda_expression_that_calculates_and_returns_a_single_value_Can_be_used_wherever_a_delegate_type_is_expected_Function_parameterList_expression">
+ <summary>Defines a lambda expression that calculates and returns a single value. Can be used wherever a delegate type is expected.
+ Function(&lt;parameterList&gt;) &lt;expression&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Defines_a_lambda_expression_that_can_execute_statements_and_does_not_return_a_value_Can_be_used_wherever_a_delegate_type_is_expected_Sub_parameterList_statement">
+ <summary>Defines a lambda expression that can execute statements and does not return a value. Can be used wherever a delegate type is expected.
+ Sub(&lt;parameterList&gt;) &lt;statement&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Disables_reporting_of_specified_warnings_in_the_portion_of_the_source_file_below_the_current_line">
+ <summary>Disables reporting of specified warnings in the portion of the source file below the current line.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Enables_reporting_of_specified_warnings_in_the_portion_of_the_source_file_below_the_current_line">
+ <summary>Enables reporting of specified warnings in the portion of the source file below the current line.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Use_the_correct_control_variable">
+ <summary>Use the correct control variable</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.NameOf_function">
+ <summary>NameOf function</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Try_block">
+ <summary>Try block</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Catch_clause">
+ <summary>Catch clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Finally_clause">
+ <summary>Finally clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Using_statement">
+ <summary>Using statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Using_block">
+ <summary>Using block</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.With_statement">
+ <summary>With statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.With_block">
+ <summary>With block</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.SyncLock_statement">
+ <summary>SyncLock statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.SyncLock_block">
+ <summary>SyncLock block</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.For_Each_statement">
+ <summary>For Each statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.For_Each_block">
+ <summary>For Each block</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.On_Error_statement">
+ <summary>On Error statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Resume_statement">
+ <summary>Resume statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Yield_statement">
+ <summary>Yield statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Await_expression">
+ <summary>Await expression</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Lambda">
+ <summary>Lambda</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Where_clause">
+ <summary>Where clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Select_clause">
+ <summary>Select clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.From_clause">
+ <summary>From clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Aggregate_clause">
+ <summary>Aggregate clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Let_clause">
+ <summary>Let clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Join_clause">
+ <summary>Join clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Group_Join_clause">
+ <summary>Group Join clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Group_By_clause">
+ <summary>Group By clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Function_aggregation">
+ <summary>Function aggregation</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Take_While_clause">
+ <summary>Take While clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Skip_While_clause">
+ <summary>Skip While clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Ordering_clause">
+ <summary>Ordering clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Join_condition">
+ <summary>Join condition</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.option_">
+ <summary>option</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.import">
+ <summary>import</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.structure_">
+ <summary>structure</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.module_">
+ <summary>module</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.WithEvents_field">
+ <summary>WithEvents field</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.as_clause">
+ <summary>as clause</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.type_parameters">
+ <summary>type parameters</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.parameters">
+ <summary>parameters</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.attributes">
+ <summary>attributes</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_0_is_not_defined">
+ <summary>Type '{0}' is not defined.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Add_Overloads">
+ <summary>Add 'Overloads'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Add_a_metadata_reference_to_specified_assembly_and_all_its_dependencies_e_g_Sharpr_myLib_dll">
+ <summary>Add a metadata reference to specified assembly and all its dependencies, e.g. #r "myLib.dll".</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_name_here_to_declare_a_namespace">
+ <summary>Type a name here to declare a namespace.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_name_here_to_declare_a_partial_class">
+ <summary>Type a name here to declare a partial class.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.module_name">
+ <summary>&lt;module name&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.structure_name">
+ <summary>&lt;structure name&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_name_here_to_declare_a_partial_interface">
+ <summary>Type a name here to declare a partial interface.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_name_here_to_declare_a_partial_module">
+ <summary>Type a name here to declare a partial module.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Type_a_name_here_to_declare_a_partial_structure">
+ <summary>Type a name here to declare a partial structure.</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Event_add_handler_name">
+ <summary>{0}.add</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Event_remove_handler_name">
+ <summary>{0}.remove</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Property_getter_name">
+ <summary>{0}.get</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Property_setter_name">
+ <summary>{0}.set</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Multiple_Types">
+ <summary>&lt;Multiple Types&gt;</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Convert_to_Select_Case">
+ <summary>Convert to 'Select Case'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Convert_to_For_Each">
+ <summary>Convert to 'For Each'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Convert_to_For">
+ <summary>Convert  to 'For'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Add_missing_Imports">
+ <summary>Add missing Imports</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Add_Shadows">
+ <summary>Add 'Shadows'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Introduce_Using_statement">
+ <summary>Introduce 'Using' statement</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Organize_Imports">
+ <summary>Organize Imports</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Change_to_DirectCast">
+ <summary>Change to 'DirectCast'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Change_to_TryCast">
+ <summary>Change to 'TryCast'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Remove_shared_keyword_from_module_member">
+ <summary>Remove 'Shared' keyword from Module member</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources._0_Events">
+ <summary>({0} Events)</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Shared_constructor">
+ <summary>Shared constructor</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Apply_isnot_preferences">
+ <summary>Apply IsNot preferences</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Apply_object_creation_preferences">
+ <summary>Apply object creation preferences</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Project_level_Imports">
+ <summary>Project level 'Imports'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Add_Imports_0">
+ <summary>Add 'Imports {0}'</summary>
+</member>
+<member name="P:Microsoft.CodeAnalysis.VisualBasic.VBFeaturesResources.Add_Imports_0_and_simplify_all_occurrences">
+ <summary>Add 'Imports {0}' and simplify all occurrences</summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.Editor.VisualBasic.LineSeparators.VisualBasicLineSeparatorService.IsSeparableBlock(Microsoft.CodeAnalysis.SyntaxNodeOrToken)">
+ <summary>Node types that are interesting for line separation.</summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.Editor.VisualBasic.LineSeparators.VisualBasicLineSeparatorService.IsSeparableContainer(Microsoft.CodeAnalysis.SyntaxNode)">
+ <summary>Node types that may contain separable blocks.</summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.Editor.VisualBasic.LineSeparators.VisualBasicLineSeparatorService.GetLineSeparatorsAsync(Microsoft.CodeAnalysis.Document,Microsoft.CodeAnalysis.Text.TextSpan,System.Threading.CancellationToken)">
+ <summary>
+ Given a syntaxTree returns line separator spans. The operation may take fairly long time
+ on a big syntaxTree so it is cancellable.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.Editor.VisualBasic.LineSeparators.VisualBasicLineSeparatorService.ProcessNodeList``1(Microsoft.CodeAnalysis.SyntaxList{``0},Microsoft.CodeAnalysis.PooledObjects.ArrayBuilder{Microsoft.CodeAnalysis.Text.TextSpan},System.Threading.CancellationToken)">
+ <summary>
+ If node is separable and not the last in its container => add line separator after the node
+ If node is separable and not the first in its container => ensure separator before the node
+ last separable node in Program needs separator after it.
+ </summary>
+</member>
+<member name="M:Microsoft.CodeAnalysis.NavigationBar.VisualBasicNavigationBarItemService.CreateItemForEvents(Microsoft.CodeAnalysis.Solution,Microsoft.CodeAnalysis.INamedTypeSymbol,System.Int32,Microsoft.CodeAnalysis.ITypeSymbol,Microsoft.CodeAnalysis.IPropertySymbol,Microsoft.CodeAnalysis.SemanticModel,System.Boolean,Microsoft.CodeAnalysis.LanguageService.ISymbolDeclarationService,System.Threading.CancellationToken)">
+ <summary>
+ Creates the left-hand entry and right-hand entries for a list of events.
+ </summary>
+ <param name="containingType">The type that contains the methods attached to the events.
+ For items that will generate new methods, they will be generated into this
+ class.</param>
+ <param name="eventType">The type to list the events of. This is either equal to
+ containingType if it's listing the event handlers for the base types, or else it's the
+ type of the eventContainer.</param>
+ <param name="eventContainer">If this is an entry for a WithEvents member, the WithEvents
+ property itself.</param>
+</member>
+<member name="T:Microsoft.CodeAnalysis.Diagnostics.VisualBasicAnalyzerOptionsProvider">
+ <summary>
+ Provides Visual Basic analyzers a convenient access to editorconfig options with fallback to IDE default values.
+ </summary>
+</member>
+<member name="F:Microsoft.CodeAnalysis.Diagnostics.VisualBasicAnalyzerOptionsProvider._options">
+ <summary>
+ Document editorconfig options.
+ </summary>
+</member>
+<member name="P:VisualBasicAnalyzersResources.Imports_statement_is_unnecessary">
+ <summary>Imports statement is unnecessary.</summary>
+</member>
+<member name="P:VisualBasicAnalyzersResources.Use_Is_Nothing_check">
+ <summary>Use 'Is Nothing' check</summary>
+</member>
+<member name="P:VisualBasicAnalyzersResources.Use_IsNot_Nothing_check">
+ <summary>Use 'IsNot Nothing' check</summary>
+</member>
+<member name="P:VisualBasicAnalyzersResources.If_statement_can_be_simplified">
+ <summary>'If' statement can be simplified</summary>
+</member>
+<member name="P:VisualBasicAnalyzersResources.Remove_ByVal">
+ <summary>'ByVal' keyword is unnecessary and can be removed.</summary>
+</member>
+<member name="P:VisualBasicAnalyzersResources.GetType_can_be_converted_to_NameOf">
+ <summary>'GetType' can be converted to 'NameOf'</summary>
+</member>
+<member name="P:VisualBasicAnalyzersResources.Use_IsNot_expression">
+ <summary>Use 'IsNot' expression</summary>
+</member>
+<member name="P:VisualBasicAnalyzersResources.Object_creation_can_be_simplified">
+ <summary>Object creation can be simplified</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Remove_unnecessary_imports">
+ <summary>Remove unnecessary imports</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Add_Me">
+ <summary>Add 'Me.'</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Convert_GetType_to_NameOf">
+ <summary>Convert 'GetType' to 'NameOf'</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Simplify_object_creation">
+ <summary>Simplify object creation</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Add_Obsolete">
+ <summary>Add &lt;Obsolete&gt;</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Convert_0_to_Iterator">
+ <summary>Convert {0} to Iterator</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Make_0_inheritable">
+ <summary>Make '{0}' inheritable</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Replace_Return_with_Yield">
+ <summary>Replace 'Return' with 'Yield</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Make_0_an_Async_Function">
+ <summary>Make {0} an Async Function.</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Make_Async_Function">
+ <summary>Make Async Function</summary>
+</member>
+<member name="P:VisualBasicCodeFixesResources.Make_Async_Sub">
+ <summary>Make Async Sub</summary>
+</member>
+</members>
+</doc>

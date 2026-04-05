@@ -1,0 +1,20 @@
+{
+  "id": "lesson6.json",
+  "title": "Basic Commands [cat]",
+  "description": "# cat\nCat outputs the contents of a file. It stands for concatenate. To cat a file, you simply type `cat PATH`.\n## Assignment:\nA new fraud report came in! Cat the fraud/reports.txt file and put its contents into the text box.",
+  "starterCode": "",
+  "mustContain": null,
+  "expectedOutput": "Report: This bank is a scam.\nDetails: WHY IS MY APY -0.21 AND MY INTREST FOR A 10K LOAN 17K IN ONE YEAR\nName: Steve",
+  "nextLesson": "lesson7.json",
+  "previous": "lesson5.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "runHarness": "",
+  "mode": "text",
+  "difficulty": "beginner",
+  "xp": "15"
+}
