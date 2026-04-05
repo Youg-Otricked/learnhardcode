@@ -1,0 +1,17 @@
+{
+    "id": "lesson26.json",
+    "title": "Functions [Test Harnesses]",
+    "description": "## Test Harnesses\n_This site has a problem_. It is _really_ easy to cheat, even in function lessons - you can just replace main with what it should do. Anybody would do that when they are having trouble instead of just . . . _thinking_. However, I now have a solution. This is called _test harnesses_. From now on, tests will be appended onto your code after you press run / submit, and will test your code without it being possible to cheat. Run will do fewer tests but not affect your lessons-in-a-row streak, and you won't pass the lesson. Submit does more tests and passes the lesson - but also will affect your streak. Your code will be in the Solution class, and the test harness will be appended later.\n---\n## Assignment\nWrite the function `bool isNegative(int num);`. It should return true if the number is negative, and false if not.",
+    "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Solution\n    {\n        // Write the function here.\n    }\n}\n",
+    "rawHarness": true,
+    "runHarness": "class Program\n{\n    public static void Main()\n    {\n        int _passed = 0;\n        int _failed = 0;\n        if (Chronoshard.Core.Solution.isNegative(-1)) {\n            _passed++;Console.WriteLine(\"--------------------\\nPass\\nisNegative(-1) == true\\n[1/2]\");\n        } else {\n            _failed++;Console.WriteLine(\"--------------------\\nFail\\nisNegative(-1) == true\\n[1/2]\");\n       }\n        if (!Chronoshard.Core.Solution.isNegative(1)) {\n            _passed++;Console.WriteLine(\"--------------------\\nPass\\nisNegative(1) == false\\n[2/2]\");\n        } else {\n            _failed++;Console.WriteLine(\"--------------------\\nFail\\nisNegative(1) == false\\n[2/2]\");\n       }\n        Console.WriteLine(\"--------------------\");\n        Console.WriteLine($\"{_passed} Passed, {_failed} Failed.\");    }\n}",
+    "submitHarness": "class Program\n{\n    public static void Main()\n    {\n        int _passed = 0;\n        int _failed = 0;\n        if (Chronoshard.Core.Solution.isNegative(-1)) {\n            _passed++;Console.WriteLine(\"--------------------\\nPass\\nisNegative(-1) == true\\n[1/3]\");\n        } else {\n            _failed++;Console.WriteLine(\"--------------------\\nFail\\nisNegative(-1) == true\\n[1/3]\");\n       }\n        if (!Chronoshard.Core.Solution.isNegative(1)) {\n            _passed++;Console.WriteLine(\"--------------------\\nPass\\nisNegative(1) == false\\n[2/3]\");\n        } else {\n            _failed++;Console.WriteLine(\"--------------------\\nFail\\nisNegative(1) == false\\n[2/3]\");\n       }\n        if (!Chronoshard.Core.Solution.isNegative(0)) {\n            _passed++;Console.WriteLine(\"--------------------\\nPass\\nisNegative(0) == false\\n[3/3]\");\n        } else {\n            _failed++;Console.WriteLine(\"--------------------\\nFail\\nisNegative(0) == false\\n[3/3]\");\n       }\n        Console.WriteLine(\"--------------------\");\n        Console.WriteLine($\"{_passed} Passed, {_failed} Failed.\");\n    }\n}",
+    "mustContain": "--------------------\n3 Passed, 0 Failed.",
+    "expectedOutput": "",
+    "nextLesson": "lesson27.json",
+    "previous": "lesson25.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15"
+}

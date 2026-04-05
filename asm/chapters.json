@@ -47,6 +47,12 @@
       "name": "Sections",
       "firstLesson": "lesson31.json",
       "lessons": ["lesson31.json", "lesson32.json"]
+    },
+    {
+      "number": 9,
+      "name": "Misk",
+      "firstLesson": "lesson33.json",
+      "lessons": ["lesson33.json", "lesson34.json"]
     }
   ]
 }

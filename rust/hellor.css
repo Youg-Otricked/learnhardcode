@@ -236,7 +236,7 @@ body > p {
   width: fit-content;
   height: 30px;
   border-radius: 20px;
-  background-color: #086692;
+  background: var(--accent);
   border: none;
   color: #fff;
   font: inherit;
@@ -244,7 +244,7 @@ body > p {
 }
 
 .ans:hover {
-  background-color: #0a7fb5;
+  background-color: var(--accent-hover);
 }
 .editor {
   width: 100%;

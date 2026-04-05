@@ -1,0 +1,13 @@
+{
+    "id": "lesson25.json",
+    "title": "Basic Commands [wc, $?]",
+    "description": "# wc\n`wc` stands for **word count**. It counts lines, words, and characters:\n```bash\nwc filename\n# 10  50  300  filename\n# lines  words  bytes\n```\n\nUseful flags:\n- `wc -l` - lines only\n- `wc -w` - words only\n- `wc -c` - bytes only\n\n# Exit codes ($?)\nEvery command returns an exit code when it finishes:\n- `0` = success\n- anything else = failure\n\n```bash\nls /real/directory\necho $?    # 0 (success)\n\nls /fake/directory\necho $?    # 2 (no such file)\n```\n\n`$?` holds the exit code of the LAST command. It's how scripts check if something worked.\n\n---\n## Assignment:\nRun `wc -l accounts/savings.txt` then `echo $?`. Paste both outputs.",
+    "starterCode": "",
+    "expectedOutput": "",
+    "mustContain": ["0"],
+    "nextLesson": "lesson26.json",
+    "previous": "lesson24.json",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "20"
+}

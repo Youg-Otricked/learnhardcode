@@ -1,0 +1,14 @@
+{
+  "id": "lesson33.json",
+  "title": "Strings & Memory Scanning",
+  "description": "## Strings in Assembly\nStrings are just arrays of bytes ending in 0 (null-terminated).\n\n```asm\nmsg db 'Hello', 0\n```\n\nTo process strings, you loop through memory one byte at a time:\n\n```asm\nmov rsi, msg\n.loop:\n    mov al, [rsi]\n    cmp al, 0\n    je .done\n    ; do something with al\n    inc rsi\n    jmp .loop\n.done:\n```\n\n## Assignment\nWrite a function `strlen` that takes a pointer to a string in `rdi` and returns its length in `rax`.\n\nCount bytes until you hit the null terminator (0).",
+  "starterCode": "section .text\nglobal strlen\n\nstrlen:\n    ; rdi = pointer to string\n    ; your code here\n    ret",
+  "setupCode": "section .data\n    test_str db 'Bootdev', 0\n    empty_str db 0\n",
+  "runHarness": "\n; Simple test call\nmov rdi, test_str\ncall strlen\n; rax should be 7",
+  "submitHarness": "\n; Test 1: Normal string\nmov rdi, test_str\ncall strlen\ncmp rax, 7\njne .fail\n\n; Test 2: Empty string\nmov rdi, empty_str\ncall strlen\ncmp rax, 0\njne .fail\n\nmov rax, 0 ; Success code\nret\n.fail:\nmov rax, 1 ; Error code\nret",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "25",
+  "nextLesson": "lesson34.json",
+  "previous": "lesson32.json"
+}

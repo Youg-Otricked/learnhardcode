@@ -1,0 +1,10 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "name": "Start of Course",
+      "firstLesson": "lesson1.json",
+      "lessons": ["lesson1.json"]
+    }
+  ]
+}

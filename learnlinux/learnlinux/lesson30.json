@@ -1,0 +1,14 @@
+{
+    "id": "lesson30.json",
+    "title": "Packages [Installing Software]",
+    "description": "## Package Managers\nLinux uses **package managers** to install, update, and remove software. Think of it like an app store but from the terminal.\n\n### Debian/Ubuntu (apt):\n```bash\nsudo apt update            # refresh package list\nsudo apt install <package> # install something\nsudo apt remove <package>  # remove something\n```\n\n### macOS (brew):\n```bash\nbrew install <package>\nbrew uninstall <package>\n```\n\n`sudo apt update` should always be run first - it downloads the latest list of available packages. Without it, you might install an old version or get \"package not found\".\n\n### Why not download from websites?\n- Package managers handle **dependencies** (packages that other packages need)\n- Automatic **updates** with `apt upgrade`\n- Easy **removal** that cleans up everything\n- Packages are **verified** (signed by maintainers)\n\n---\n## Assignment:\nInstall Neovim, a modern terminal text editor:\n\n```bash\nsudo apt update\nsudo apt install -y neovim\n```\n\nThe `-y` flag automatically answers \"yes\" to the install prompt.\n\nVerify it installed by running `nvim --version`.\n\n**Run and submit** the CLI tests.",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson31.json",
+    "previous": "lesson29.json",
+    "showButtons": false,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "15",
+    "runHarness": "85e4f539"
+}

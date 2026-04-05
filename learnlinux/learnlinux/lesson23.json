@@ -1,0 +1,18 @@
+{
+    "id": "lesson23.json",
+    "title": "Environment Variables [What's in PATH?]",
+    "description": "# What's in your PATH?\nYour PATH has several default directories. Each has a purpose:\n\n- `/usr/local/bin` - programs YOU installed (brew, npm, lhc)\n- `/usr/bin` - system programs installed by your package manager\n- `/bin` - essential programs (ls, cp, mv, cat, echo)\n- `/usr/sbin` - system admin programs (not for regular users)\n- `/sbin` - essential admin programs (shutdown, mount)\n\n### The pattern:\n- `bin` = regular user programs\n- `sbin` = admin programs\n- `/usr/local/` = stuff you installed\n- `/usr/` = stuff the system installed\n- `/` = essential stuff the OS needs to boot\n\n---\n## Question:\nYou just installed a new program with `apt install`. Which directory is it most likely in?",
+    "starterCode": "",
+    "expectedOutput": "",
+    "nextLesson": "lesson24.json",
+    "previous": "lesson22.json",
+    "showButtons": true,
+    "correct": "b2",
+    "b1t": "usr/local/bin",
+    "b2t": "usr/bin",
+    "b3t": "bin",
+    "b4t": "sbin",
+    "mode": "text",
+    "difficulty": "beginner",
+    "xp": "15"
+}
