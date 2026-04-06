@@ -120,6 +120,7 @@ async function runHaskell(code) {
     outEl.textContent = "Haskell still loading.";
     return;
   }
+  lastRunOutput = stdout;
   outEl.className = "";
   try {
     await main_func("", code);
