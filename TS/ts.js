@@ -231,9 +231,31 @@ window.addEventListener('storage', (e) => {
         }
     }
 });
+document.addEventListener('beforeunload', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_ts', JSON.stringify(data));
+});
+window.addEventListener('pagehide', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_ts', JSON.stringify(data));
+});
 async function runWithSuite(suiteFile, label) {
     if (!editor) return;
     let studentSource = editor.getValue();
+    const data = {
+        lesson: currentLesson.id,
+        code: studentSource
+    };
+
+    localStorage.setItem('saved_code_ts', JSON.stringify(data));
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
     let fullSource = studentSource;
@@ -306,7 +328,21 @@ async function loadLesson(lessonFile) {
 
     titleEl.textContent = lesson.title || '';
     descEl.innerHTML = marked.parse(lesson.description || '');
-    if (editor) editor.setValue(lesson.starterCode || '');
+    if (editor) {
+        editor.setValue(lesson.starterCode || '');
+        const saved = localStorage.getItem('saved_code_ts');
+
+        if (saved) {
+            try {
+                const data = JSON.parse(saved);
+
+                if (data?.lesson === lesson.id && typeof data.code === 'string') {
+                editor.setValue(data.code);
+                }
+            } catch (e) {
+            }
+        }
+    }
 
     outEl.textContent = '';
     lastRunOutput = '';

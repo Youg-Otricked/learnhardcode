@@ -72,7 +72,7 @@ async function runZig(code) {
                     lastRunOutput += data.stderr;
                 }
                 if (data.stdout) {
-                    lastRunoUTPUT += data.stdout;
+                    lastRunoutput += data.stdout;
                 }
                 if (data.done) {
                     resolve(data);

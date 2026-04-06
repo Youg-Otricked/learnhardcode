@@ -1,0 +1,266 @@
+:root {
+  --bg:         #1e1e1e;
+  --panel:      #252526;
+  --panel-alt:  #2d2d30;
+  --border:     #3e3e42;
+  --text:       #d4d4d4;
+  --muted:      #858585;
+  --accent:     #3178C6;
+  --accent-hover:#4b8fd4;
+  --output-bg:  #1e1e1e;
+  --output-text:#cccccc;
+  --error:      #f48771;
+  --success:    #89d185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.container {
+  display: flex;
+  height: calc(100% - 40px);
+}
+
+.box {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.text-box {
+  background: var(--panel-alt);
+  flex: 0 0 35%;
+  border-right: 1px solid var(--border);
+}
+
+.code-box {
+  background: var(--panel);
+  flex: 1;
+}
+
+h1 {
+  color: var(--text);
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h3 {
+  color: var(--text);
+  margin: 20px 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+p {
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin: 6px 0;
+  color: var(--text);
+}
+
+code {
+  background: var(--panel);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+details {
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px;
+  background: var(--panel);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px;
+  user-select: none;
+}
+
+summary:hover {
+  color: var(--accent);
+}
+
+pre {
+  background: var(--bg);
+  padding: 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+#editor {
+  border: 1px solid var(--border);
+  height: 400px;
+  margin-bottom: 12px;
+}
+
+#output {
+  background: var(--output-bg);
+  border: 1px solid var(--border);
+  padding: 16px;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--output-text);
+}
+
+#output.error {
+  color: var(--error);
+}
+
+#output.success {
+  color: var(--success);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4e4e50;
+}
+
+/* Top bar */
+body > p {
+  background: var(--panel-alt);
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+  padding: 12px 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.hint {
+  margin-top: 8px;
+  border: 1px solid #3a3f4b;
+  border-radius: 4px;
+  background: #2a2d37;
+}
+
+.hint-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 6px 8px;
+  border: none;
+  background: #333744;
+  color: #c7cbd4;
+  font: inherit;
+  cursor: pointer;
+}
+
+.hint-toggle:hover {
+  background: #3a3f4b;
+}
+
+.hint-body {
+  display: none;
+  padding: 8px;
+  border-top: 1px solid #3a3f4b;
+}
+
+.hint.open .hint-body {
+  display: block;
+}
+
+
+.ans {
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+  height: 30px;
+  border-radius: 20px;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ans:hover {
+  background-color: var(--accent-hover);
+}
+.editor {
+  width: 100%;
+  height: 300px;
+  background-color: #1e1e1e; /* Match VS Code Dark */
+  color: #d4d4d4;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  padding: 15px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  resize: vertical; /* Only allow vertical resizing */
+  outline: none; /* Removes the blue focus outline */
+  line-height: 1.5;
+  tab-size: 4; /* Ensures tabs aren't massive */
+}
+
+.editor:focus {
+  border-color: #007acc; /* Subtle blue border on focus */
+}

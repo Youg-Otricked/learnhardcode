@@ -89,6 +89,22 @@ function updateStreakUI() {
   if (!streakEl) return;
   streakEl.textContent = `Lessons in a row: ${lessonsInRow}`;
 }
+document.addEventListener('beforeunload', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_rust', JSON.stringify(data));
+});
+window.addEventListener('pagehide', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_rust', JSON.stringify(data));
+});
 function updateLevelUI() {
   if (localStorage.getItem('user_xp') === null) {
     localStorage.setItem('user_xp', 0);
@@ -116,7 +132,21 @@ async function loadLesson(lessonFile) {
   streakEl = document.getElementById('streak');
   titleEl.textContent = lesson.title || '';
   descEl.innerHTML = (window.marked ? marked.parse(lesson.description) : lesson.description) || '';
-  if (editor) editor.setValue(lesson.starterCode || '');
+  if (editor) {
+    editor.setValue(lesson.starterCode || '');
+    const saved = localStorage.getItem('saved_code_rust');
+
+    if (saved) {
+      try {
+          const data = JSON.parse(saved);
+
+          if (data?.lesson === lesson.id && typeof data.code === 'string') {
+          editor.setValue(data.code);
+          }
+      } catch (e) {
+      }
+    }
+  } 
 
   showButtons = lesson.showButtons;
   outEl.textContent = '';
@@ -213,6 +243,12 @@ function markLessonCompleted(lessonId, xpEarned) {
 }
 async function runWithSuite(suiteFile, label) {
   let studentSource = editor.getValue();
+  const data = {
+    lesson: currentLesson.id,
+    code: studentSource
+  };
+
+  localStorage.setItem('saved_code_rust', JSON.stringify(data));
   outEl.textContent = (label || 'Running') + '...\n';
   lastRunOutput = '';
 

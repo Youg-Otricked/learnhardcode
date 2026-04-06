@@ -146,8 +146,21 @@ async function loadLesson(lessonFile) {
   
   titleEl.textContent = lesson.title || '';
   descEl.innerHTML = marked.parse(lesson.description) || '';
-  if (editor) editor.setValue(lesson.starterCode || '');
+  if (editor) {
+    editor.setValue(lesson.starterCode || '');
+    const saved = localStorage.getItem('saved_code_cpp');
 
+    if (saved) {
+      try {
+        const data = JSON.parse(saved);
+
+        if (data?.lesson === lesson.id && typeof data.code === 'string') {
+          editor.setValue(data.code);
+        }
+      } catch (e) {
+      }
+    }
+  }
   showButtons = lesson.showButtons;
   outEl.textContent = '';
   lastRunOutput = '';
@@ -286,6 +299,12 @@ async function setupLogic() {
   loadSolutionBtn = document.getElementById('load-solution');
   async function runWithSuite(suiteFile, label) {
     const studentSource = editor.getValue();
+    const data = {
+      lesson: currentLesson.id,
+      code: studentSource
+    };
+
+    localStorage.setItem('saved_code_cpp', JSON.stringify(data));
     outEl.textContent = (label || 'Building & running') + '...\n';
     lastRunOutput = '';
     if (setupCode) {
@@ -516,12 +535,27 @@ async function setupLogic() {
   }
   forceShowAnswerButtons();
 }
+document.addEventListener('beforeunload', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_cpp', JSON.stringify(data));
+});
+window.addEventListener('pagehide', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_cpp', JSON.stringify(data));
+});
 document.addEventListener('DOMContentLoaded', () => {
   if (mode == 'editor') {
     require.config({
       paths: { 'vs': 'https://unpkg.com/monaco-editor@0.45.0/min/vs' }
     });
-
     require(['vs/editor/editor.main'], () => {
       editor = monaco.editor.create(document.getElementById('editor'), {
         value: '',
