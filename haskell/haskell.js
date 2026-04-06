@@ -628,7 +628,11 @@ require(["vs/editor/editor.main"], async function () {
       { token: "comment", foreground: "6A9955", fontStyle: "italic" },
       { token: "number", foreground: "B5CEA8" },
       { token: "operator", foreground: "D4D4D4" }
-    ]
+    ],
+    colors: {
+        'editor.foreground': '#D4D4D4',
+        'editor.background': '#1E1E1E'
+    }
   });
   editor = monaco.editor.create(document.getElementById("editor"), {
     value: [].join("\\n"),
