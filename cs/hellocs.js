@@ -120,7 +120,21 @@ async function loadLesson(lessonFile) {
   
   titleEl.textContent = lesson.title || '';
   descEl.innerHTML = marked.parse(lesson.description) || '';
-  if (editor) editor.setValue(lesson.starterCode || '');
+  if (editor) {
+    editor.setValue(lesson.starterCode || '');
+    const saved = localStorage.getItem('saved_code_cs');
+
+    if (saved) {
+      try {
+          const data = JSON.parse(saved);
+
+          if (data?.lesson === lesson.id && typeof data.code === 'string') {
+          editor.setValue(data.code);
+          }
+      } catch (e) {
+      }
+    }
+  }
 
   showButtons = lesson.showButtons;
   outEl.textContent = '';
@@ -220,7 +234,22 @@ function markLessonCompleted(lessonId, xpEarned) {
   };
   localStorage.setItem('cs_completed_lessons', JSON.stringify(completed));
 }
+document.addEventListener('beforeunload', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
 
+  localStorage.setItem('saved_code_cs', JSON.stringify(data));
+});
+window.addEventListener('pagehide', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_cs', JSON.stringify(data));
+});
 async function setupLogic() {
   console.log('setupLogic start');
   titleEl = document.getElementById('lesson-title');
@@ -273,6 +302,12 @@ async function setupLogic() {
 
   async function runWithSuiteCSharp(suiteFile, label) {
     let studentSource = editor.getValue();
+    const data = {
+      lesson: currentLesson.id,
+      code: studentSource
+    };
+
+    localStorage.setItem('saved_code_cs', JSON.stringify(data));
     rawOutput = (label || 'Building & running') + '...\n';
     renderOutput();
     lastRunOutput = '';

@@ -78,6 +78,22 @@ async function runGo(code) {
         outEl.className = 'error';
     }
 }
+document.addEventListener('beforeunload', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_go', JSON.stringify(data));
+});
+window.addEventListener('pagehide', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_go', JSON.stringify(data));
+});
 function getCompletedLessons() {
   const stored = localStorage.getItem('go_completed_lessons');
   return stored ? JSON.parse(stored) : {};
@@ -240,6 +256,12 @@ window.addEventListener('storage', (e) => {
 async function runWithSuite(suiteFile, label) {
     if (!editor) return;
     let studentSource = editor.getValue();
+    const data = {
+      lesson: currentLesson.id,
+      code: studentSource
+    };
+
+    localStorage.setItem('saved_code_go', JSON.stringify(data));
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
     let fullSource = studentSource;
@@ -313,7 +335,21 @@ async function loadLesson(lessonFile) {
 
     titleEl.textContent = lesson.title || '';
     descEl.innerHTML = marked.parse(lesson.description || '');
-    if (editor) editor.setValue(lesson.starterCode || '');
+    if (editor) {
+        editor.setValue(lesson.starterCode || '');
+        const saved = localStorage.getItem('saved_code_go');
+
+        if (saved) {
+        try {
+            const data = JSON.parse(saved);
+
+            if (data?.lesson === lesson.id && typeof data.code === 'string') {
+            editor.setValue(data.code);
+            }
+        } catch (e) {
+        }
+        }
+    }
 
     outEl.textContent = '';
     lastRunOutput = '';

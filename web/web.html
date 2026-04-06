@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typescript Lessons</title>
+  <link rel="icon" href="../favicon.ico" type="image/png">
+  <link rel="stylesheet" href="ts.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
+  <script src="https://unpkg.com/typescript@latest/lib/typescript.js"></script>
+  <script src="ts.js" defer></script>
+  <script type="module" src="chapters.js" defer></script>
+</head>
+<body>
+  <p id="streak">Lessons in a row: 0</p>
+  <p id="difficulty">Dificulty: unknown</p>
+  <p id="xp">X / X XP. Level X.</p><progress id="levelProg" value="0" max = "100"></progress>
+  <button onclick='document.location="../"'>Go to Homepage</button>
+  <details id="chapters" style="z-index: 9999;  position: absolute; top: 0; right: 0; text-align: center;"><summary style="padding: 0 30px;">Chapters</summary></details>
+  <div class="container">
+    <div class="box text-box">
+      <h1 id="lesson-title"></h1>
+      <div id="lesson-description"></div>
+      <p id="nobns"></p>
+      <button onclick='btn("b1")' id="b1" class="ans" style="display: none;">Nothing here for now...</button><br><br>
+      <button id="b2" onclick='btn("b2")' class="ans" style="display: none;">Nothing here for now...</button><br><br>
+      <button id="b3" onclick='btn("b3")' class="ans" style="display: none;">Nothing here for now...</button><br><br>
+      <button id="b4" onclick='btn("b4")' class="ans" style="display: none;">Nothing here for now...</button><br><br>
+      <div class="hint">
+        <button class="hint-toggle">Show hint ▾</button>
+        <div class="hint-body"></div>
+      </div>
+    </div>
+    <div class="box code-box">
+      <div id="editor"></div>
+      <button id="run">Run</button>
+      <button id="next-lesson" style="display:none">Next Lesson</button>
+      <button id="prev-lesson">Previous Lesson</button>
+      <pre id="output"></pre>
+      <button id="check-stdout">Submit</button>
+      <button id="check-result" style="display:none">Check Result</button>
+    </div>
+  </div>
+</body>
+</html>

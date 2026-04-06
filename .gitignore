@@ -1,2 +1,7 @@
-zig/playground
-*/node_modules
+zig-out/
+.zig-cache/
+
+# Dependencies
+node_modules/
+zig/playground/
+zig/

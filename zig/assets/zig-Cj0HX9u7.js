@@ -81,22 +81,24 @@
     U = 2n,
     v = 4n,
     W = 8n;
-    class x {
+  class x {
     write_bytes(e, r) {
-      e.setBigUint64(r, BigInt(this.dev), !0);
+      for (let i = 0; i < 64; i++) {
+        e.setUint8(r + i, 0);
+      }
+      e.setBigUint64(r + 0, BigInt(this.dev), !0);
       e.setBigUint64(r + 8, BigInt(this.ino), !0);
       e.setUint8(r + 16, Number(this.filetype));
       
       e.setBigUint64(r + 24, BigInt(this.nlink), !0);
       e.setBigUint64(r + 32, BigInt(this.size), !0);
-      e.setBigUint64(r + 38, BigInt(this.atim), !0);
-      e.setBigUint64(r + 46, BigInt(this.mtim), !0);
-      e.setBigUint64(r + 52, BigInt(this.ctim), !0);
+      e.setBigUint64(r + 40, BigInt(this.atim), !0);
+      e.setBigUint64(r + 48, BigInt(this.mtim), !0);
+      e.setBigUint64(r + 56, BigInt(this.ctim), !0);
     }
-
     constructor(e, r, s) {
-      this.dev = 0n;
-      this.nlink = 0n;
+      this.dev = 1n;
+      this.nlink = 1n;
       this.atim = 0n;
       this.mtim = 0n;
       this.ctim = 0n;
@@ -260,22 +262,28 @@
         },
         fd_close(n) {
           if (t.fds[n] != null) {
-            const i = t.fds[n].fd_close();
-            return ((t.fds[n] = void 0), i);
-          } else return 8;
+            t.fds[n].fd_close();
+            t.fds[n] = undefined;
+            return 0;
+          }
+          return 8;
         },
         fd_datasync(n) {
           return t.fds[n] != null ? t.fds[n].fd_sync() : 8;
         },
-        fd_fdstat_get(n, i) {
-          if (t.fds[n] != null) {
-            const { ret: f, fdstat: a } = t.fds[n].fd_fdstat_get();
-            return (
-              a != null &&
-                a.write_bytes(new DataView(t.inst.exports.memory.buffer), i),
-              f
-            );
-          } else return 8;
+        fd_filestat_get(n, i) {
+          const view = new DataView(t.inst.exports.memory.buffer);
+          const fd_obj = t.fds[n];
+          if (!fd_obj) return 8;
+          const size = fd_obj.file ? BigInt(fd_obj.file.data.byteLength || fd_obj.file.data.length || 0) : 0n;
+          const ino = fd_obj.file ? BigInt(fd_obj.file.ino) : BigInt(n);
+
+          view.setBigUint64(i + 0, 0n, !0);
+          view.setBigUint64(i + 8, ino, !0);
+          view.setUint8(i + 16, fd_obj.file ? 4 : 3);
+          view.setBigUint64(i + 24, 1n, !0);
+          view.setBigUint64(i + 32, size, !0);
+          return 0;
         },
         fd_fdstat_set_flags(n, i) {
           return t.fds[n] != null ? t.fds[n].fd_fdstat_set_flags(i) : 8;
@@ -283,15 +291,17 @@
         fd_fdstat_set_rights(n, i, f) {
           return t.fds[n] != null ? t.fds[n].fd_fdstat_set_rights(i, f) : 8;
         },
-        fd_filestat_get(n, i) {
-          if (t.fds[n] != null) {
-            const { ret: f, filestat: a } = t.fds[n].fd_filestat_get();
-            return (
-              a != null &&
-                a.write_bytes(new DataView(t.inst.exports.memory.buffer), i),
-              f
-            );
-          } else return 8;
+        fd_fdstat_get(n, i) {
+          const view = new DataView(t.inst.exports.memory.buffer);
+          const fd_obj = t.fds[n];
+          if (!fd_obj) return 8;
+          const type = (fd_obj instanceof H) ? 3 : 4; 
+          view.setUint8(i, type); 
+          view.setUint16(i + 2, 0, !0);
+          view.setBigUint64(i + 8, 0xFFFFFFFFFFFFFFFFn, !0);
+          view.setBigUint64(i + 16, 0xFFFFFFFFFFFFFFFFn, !0);
+
+          return 0;
         },
         fd_filestat_set_size(n, i) {
           return t.fds[n] != null ? t.fds[n].fd_filestat_set_size(i) : 8;
@@ -300,24 +310,24 @@
           return t.fds[n] != null ? t.fds[n].fd_filestat_set_times(i, f, a) : 8;
         },
         fd_pread(n, i, f, a, o) {
-          const l = new DataView(t.inst.exports.memory.buffer),
-            d = new Uint8Array(t.inst.exports.memory.buffer);
-          if (t.fds[n] != null) {
-            const c = b.read_bytes_array(l, i, f);
-            let R = 0;
-            for (const _ of c) {
-              const { ret: p, data: y } = t.fds[n].fd_pread(_.buf_len, a);
-              if (p != 0) return (l.setUint32(o, R, !0), p);
-              if (
-                (d.set(y, _.buf),
-                (R += y.length),
-                (a += BigInt(y.length)),
-                y.length != _.buf_len)
-              )
-                break;
-            }
-            return (l.setUint32(o, R, !0), 0);
-          } else return 8;
+          const view = new DataView(t.inst.exports.memory.buffer);
+          const mem = new Uint8Array(t.inst.exports.memory.buffer);
+          
+          const fd_obj = t.fds[n];
+          if (!fd_obj) return 8;
+          const buffers = b.read_bytes_array(view, i, f);
+          let total_read = 0;
+          let offset = a;
+          for (const buf_info of buffers) {
+            const { ret: p, data: y } = fd_obj.fd_pread(buf_info.buf_len, offset);
+            if (p != 0) return p;
+            mem.set(y, buf_info.buf);
+            
+            total_read += y.length;
+            offset += BigInt(y.length);
+          }
+          view.setUint32(o, total_read, !0);
+          return 0;
         },
         fd_prestat_get(n, i) {
           const f = new DataView(t.inst.exports.memory.buffer);
@@ -356,19 +366,25 @@
           } else return 8;
         },
         fd_read(n, i, f, a) {
-          const o = new DataView(t.inst.exports.memory.buffer),
-            l = new Uint8Array(t.inst.exports.memory.buffer);
-          if (t.fds[n] != null) {
-            const d = b.read_bytes_array(o, i, f);
-            let c = 0;
-            for (const R of d) {
-              const { ret: _, data: p } = t.fds[n].fd_read(R.buf_len);
-              if (_ != 0) return (o.setUint32(a, c, !0), _);
-              if ((l.set(p, R.buf), (c += p.length), p.length != R.buf_len))
-                break;
-            }
-            return (o.setUint32(a, c, !0), 0);
-          } else return 8;
+          const view = new DataView(t.inst.exports.memory.buffer);
+          const mem = new Uint8Array(t.inst.exports.memory.buffer);
+          
+          if (!t.fds[n]) return 8;
+
+          const buffers = b.read_bytes_array(view, i, f);
+          let total_read = 0;
+
+          for (const b_info of buffers) {
+            const { ret: err, data: d } = t.fds[n].fd_read(b_info.buf_len);
+            if (err !== 0) return err;
+            mem.set(d, b_info.buf); 
+            
+            total_read += d.length;
+            if (d.length < b_info.buf_len) break;
+          }
+
+          view.setUint32(a, total_read, !0);
+          return 0;
         },
         fd_readdir(n, i, f, a, o) {
           const l = new DataView(t.inst.exports.memory.buffer),
@@ -414,8 +430,8 @@
         fd_seek(n, i, f, a) {
           const o = new DataView(t.inst.exports.memory.buffer);
           if (t.fds[n] != null) {
-            const { ret: l, offset: d } = t.fds[n].fd_seek(i, f);
-            return (o.setBigInt64(a, d, !0), l);
+            const { ret: l, offset: d } = t.fds[n].fd_seek(BigInt(i), f);
+            return (o.setBigInt64(a, BigInt(d), !0), l);
           } else return 8;
         },
         fd_sync(n) {
@@ -476,18 +492,30 @@
           } else return 8;
         },
         path_open(n, i, f, a, o, l, d, c, R) {
-          const _ = new DataView(t.inst.exports.memory.buffer),
-            p = new Uint8Array(t.inst.exports.memory.buffer);
-          if (t.fds[n] != null) {
-            const y = new TextDecoder("utf-8").decode(p.slice(f, f + a));
-            console.log("DEBUG: Compiler requesting path:", y);
-            g.log(y);
-            const { ret: w, fd_obj: _e } = t.fds[n].path_open(i, y, o, 0x3FFFFFFFn, 0x3FFFFFFFn, c);
-            if (w != 0) return w;
-            t.fds.push(_e);
-            const de = t.fds.length - 1;
-            return (_.setUint32(R, de, !0), 0);
-          } else return 8;
+          const view = new DataView(t.inst.exports.memory.buffer);
+          const mem = new Uint8Array(t.inst.exports.memory.buffer);
+          const path = new TextDecoder("utf-8").decode(mem.slice(f, f + a));
+          const sudo_rights = 0x3FFFFFFFn;
+
+          const { ret: w, fd_obj: _e } = t.fds[n].path_open(
+              i, 
+              path, 
+              o, 
+              sudo_rights,
+              sudo_rights,
+              c
+          );
+
+          if (w != 0) return w;
+          _e.fs_rights_base = BigInt(sudo_rights);
+          _e.fs_rights_inherited = BigInt(sudo_rights);
+
+          const new_fd = t.fds.length;
+          t.fds.push(_e);
+          view.setUint32(R, new_fd, !0);
+          
+          console.log(`ZIG OPEN: ${path} as fd=${new_fd}`);
+          return 0;
         },
         path_readlink(n, i, f, a, o, l) {
           const d = new DataView(t.inst.exports.memory.buffer),
@@ -588,7 +616,9 @@
       return 0;
     }
     fd_fdstat_get() {
-      return { ret: 58, fdstat: null };
+      const stat = new B(D, 0);
+      stat.fs_rights_base = 0x3FFFFFFFn;
+      return { ret: 0, fdstat: stat };
     }
     fd_fdstat_set_flags(e) {
       return 58;
@@ -687,7 +717,15 @@
       return 0;
     }
     fd_fdstat_get() {
-      return { ret: 0, fdstat: new B(D, 0) };
+      return { 
+        ret: 0, 
+        fdstat: { 
+          fs_filetype: 4,
+          fs_flags: 0, 
+          fs_rights_base: 0xFFFFFFFFFFFFFFFFn, 
+          fs_rights_inherited: 0xFFFFFFFFFFFFFFFFn 
+        } 
+      };
     }
     fd_filestat_set_size(e) {
       if (this.file.size > e)
@@ -701,19 +739,23 @@
       return 0;
     }
     fd_read(e) {
-      const r = this.file.data.slice(
-        Number(this.file_pos),
-        Number(this.file_pos + BigInt(e)),
-      );
-      return ((this.file_pos += BigInt(r.length)), { ret: 0, data: r });
+      const start = Number(this.file_pos);
+      const end = start + Number(e);
+      const r = this.file.data.slice(start, end);
+      this.file_pos += BigInt(r.byteLength || r.length || 0);
+      
+      return { ret: 0, data: r };
     }
-    fd_pread(e, r) {
-      return {
-        ret: 0,
-        data: this.file.data.slice(Number(r), Number(r + BigInt(e))),
-      };
+
+    fd_pread(len, offset) {
+      const start = Number(offset);
+      const end = start + Number(len);
+      const data = this.file.data.slice(start, end);
+      
+      return { ret: 0, data: data };
     }
     fd_seek(e, r) {
+      console.log("SEEK CALLED ON", this.file, "offset:", e, "whence:", r);
       let s;
       switch (r) {
         case J:
@@ -728,6 +770,7 @@
         default:
           return { ret: 28, offset: 0n };
       }
+      
       return s < 0
         ? { ret: 28, offset: 0n }
         : ((this.file_pos = s), { ret: 0, offset: this.file_pos });
@@ -824,7 +867,12 @@
       if (f == null) return { ret: i, fd_obj: null };
       
       let { ret: a, entry: o } = this.dir.get_entry_for_path(f);
-      
+      if (o == null && (oflags & C) == C) { 
+        console.log(`!!! CREATING NEW EMPTY FILE AT PATH: ${r} !!!`);
+        const is_dir = (Number(oflags) & 0x01) === 0x01;
+        const { ret: l, entry: d } = this.dir.create_entry_for_path(r, is_dir);
+        o = d;
+      }
       if (o == null) {
         if (a != 44) return { ret: a, fd_obj: null };
         if ((oflags & C) == C) { 
@@ -950,30 +998,25 @@
     }
   }
   class A extends O {
-    path_open(e, r, s) {
-      const rights_base = BigInt(e);
-      const lookup_flags = BigInt(r);
+    path_open(oflags, rights_base, rights_inher) {
+      if ((BigInt(oflags) & 2n) === 2n) return { ret: 54, fd_obj: null };
 
-      if (this.readonly && (lookup_flags & 64n) == 64n)
-        return { ret: 63, fd_obj: null };
-        
-      if ((rights_base & 8n) == 8n) {
-        if (this.readonly) return { ret: 63, fd_obj: null };
-        this.data = new Uint8Array([]);
-      }
-      const u = new Y(this);
-      return (BigInt(s) & 1n && u.fd_seek(0n, 2n), { ret: 0, fd_obj: u });
+      const descriptor = new Y(this);
+      descriptor.fs_rights_base = BigInt(rights_base) | 6n;
+      descriptor.fs_rights_inherited = BigInt(rights_inher);
+      
+      return { ret: 0, fd_obj: descriptor };
     }
     get size() {
       return BigInt(this.data.byteLength);
     }
     stat() {
-      return new x(this.ino, D, this.size);
+      return new x(this.ino, 4, this.size);
     }
     constructor(e, r) {
-      (super(),
-        (this.data = new Uint8Array(e)),
-        (this.readonly = !!(r != null && r.readonly)));
+      super();
+      this.data = e instanceof Uint8Array ? e : new Uint8Array(e);
+      this.readonly = !!(r != null && r.readonly);
     }
   }
   let m = class $ {
@@ -1020,61 +1063,65 @@
     get_entry_for_path(e) {
       let r = this;
       for (const s of e.parts) {
-        if (!(r instanceof N)) return { ret: 54, entry: null };
+        if (!(r instanceof N)) {
+          console.error(`PATH RESOLUTION FAILURE: '${s}' is not in a directory (reached a file instead)`);
+          return { ret: 54, entry: null };
+        }
         const u = r.contents.get(s);
-        if (u !== void 0) r = u;
-        else return (g.log(s), { ret: 44, entry: null });
+        if (u !== void 0) {
+          r = u;
+        } else {
+          return { ret: 44, entry: null };
+        }
       }
-      return e.is_dir && r.stat().filetype != E
-        ? { ret: 54, entry: null }
-        : { ret: 0, entry: r };
+      
+      if (e.is_dir && !(r instanceof N)) {
+          console.error(`PATH RESOLUTION FAILURE: Path ended in '/' but target is a file`);
+          return { ret: 54, entry: null };
+      }
+      return { ret: 0, entry: r };
     }
     get_parent_dir_and_entry_for_path(e, r) {
-      const s = e.parts.pop();
-      if (s === void 0)
-        return { ret: 28, parent_entry: null, filename: null, entry: null };
-      const { ret: u, entry: t } = this.get_entry_for_path(e);
-      if (t == null)
-        return { ret: u, parent_entry: null, filename: null, entry: null };
-      if (!(t instanceof N))
-        return { ret: 54, parent_entry: null, filename: null, entry: null };
-      const n = t.contents.get(s);
-      return n === void 0
-        ? r
-          ? { ret: 0, parent_entry: t, filename: s, entry: null }
-          : { ret: 44, parent_entry: null, filename: null, entry: null }
-        : e.is_dir && n.stat().filetype != E
-          ? { ret: 54, parent_entry: null, filename: null, entry: null }
-          : { ret: 0, parent_entry: t, filename: s, entry: n };
+      const filename = e.parts.pop();
+      if (filename === undefined) return { ret: 28, parent_entry: null, filename: null, entry: null };
+      const { ret: u, entry: parent } = e.parts.length === 0 ? { ret: 0, entry: this } : this.get_entry_for_path(e);
+      
+      if (parent == null) return { ret: u, parent_entry: null, filename: null, entry: null };
+      if (!(parent instanceof N)) return { ret: 54, parent_entry: null, filename: null, entry: null };
+      
+      const entry = parent.contents.get(filename);
+      return { ret: 0, parent_entry: parent, filename: filename, entry: entry || null };
     }
-    create_entry_for_path(e, r) {
-      const { ret: s, path: u } = m.from(e);
+    create_entry_for_path(path_str, is_directory_requested) {
+      const { ret: s, path: u } = m.from(path_str);
       if (u == null) return { ret: s, entry: null };
-      let {
-        ret: t,
-        parent_entry: n,
-        filename: i,
-        entry: f,
-      } = this.get_parent_dir_and_entry_for_path(u, !0);
+
+      let { ret: t, parent_entry: n, filename: i, entry: f } = this.get_parent_dir_and_entry_for_path(u, !0);
       if (n == null || i == null) return { ret: t, entry: null };
       if (f != null) return { ret: 20, entry: null };
-      g.log("create", u);
-      let a;
-      return (
-        r ? (a = new N(new Map())) : (a = new A(new ArrayBuffer(0))),
-        n.contents.set(i, a),
-        (f = a),
-        { ret: 0, entry: f }
-      );
+
+      let new_entry;
+      if (is_directory_requested) {
+          new_entry = new N(new Map());
+      } else {
+          new_entry = new A(new ArrayBuffer(0));
+      }
+
+      n.contents.set(i, new_entry);
+      return { ret: 0, entry: new_entry };
     }
     constructor(e) {
-      (super(),
-        (this.parent = null),
-        e instanceof Array
-          ? (this.contents = new Map(e))
-          : (this.contents = e));
+      super();
+      this.parent = null;
+      if (e instanceof N) {
+        this.contents = e.contents;
+      } else if (e instanceof Array) {
+        this.contents = new Map(e);
+      } else {
+        this.contents = e;
+      }
       for (const r of this.contents.values())
-        r instanceof N && (r.parent = this);
+        if (r instanceof N) r.parent = this;
     }
   }
   class L extends F {
@@ -1191,7 +1238,7 @@
         (this.filename = this.name),
         (this.fileData = null),
         +this.typeflag == 0 &&
-          ((this.fileData = new Uint8Array(s.bytes.buffer, s.ptr, this.size)),
+          ((this.fileData = s.bytes.slice(s.ptr, s.ptr + this.size)),
           this.name.length > 0 &&
             this.fileData &&
             this.fileData.buffer &&
@@ -1233,7 +1280,7 @@
         if (!f.has(a)) f.set(a, new Map());
         f = f.get(a);
       }
-      f.set(i[i.length - 1], t.fileData);
+      f.set(i[i.length - 1], t.fileData); 
     }
     return q(u);
   }
@@ -1244,12 +1291,16 @@
 
     return new N(
       [...h.entries()].map(([e, r]) => {
-        if (r instanceof Uint8Array) {
-          return [e, new A(r)];
-        } else if (r instanceof A || r instanceof N) {
+        if (r instanceof Map) {
+          return [e, q(r)];
+        } else if (r instanceof N || r instanceof A) {
           return [e, r];
         } else {
-          return [e, q(r)];
+          const size = r.byteLength || r.length || 0;
+          if (size === 0) {
+            console.error(`!!! EMPTY FILE DETECTED: ${e} !!!`);
+          }
+          return [e, new A(r)];
         }
       })
     );
@@ -1266,70 +1317,52 @@
     if (M) return;
     M = !0;
     const e = await ue();
-    const masterMap = new Map();
-    masterMap.set("main.zig", new A(new TextEncoder().encode(h)));
-    for (const [key, value] of e.contents.entries()) {
-      masterMap.set(key, value);
-    }
-    masterMap.set("cache", new m(new Map()));
-    masterMap.set("tmp", new m(new Map())); 
+    const rootMap = new Map();
+    const cacheDir = new N(new Map());
+    const tmpDir = new N(new Map());
+    rootMap.set("cache", cacheDir);
+    rootMap.set("tmp", tmpDir);
+    rootMap.set("lib", new N(e.contents));
+    rootMap.set("main.zig", new A(new TextEncoder().encode(h)));
+    const rootDir = new N(rootMap);
     let r = [
-          "zig.wasm",
-          "build-exe",
-          "main.zig",
-          "--zig-lib-dir", "/",
-          "--cache-dir", "/cache",
-          "-target", "wasm32-wasi",
-          "-fno-llvm",
-          "-fno-lld",
-          "-fno-ubsan-rt",
-          "-fno-entry",
-          "-rdynamic",
-      ],
-      s = [],
+      "zig.wasm",
+      "build-exe",
+      "main.zig",
+      "--zig-lib-dir", "/",
+      "--cache-dir", "/cache",
+      "-fno-llvm",
+      "-fno-lld",
+      "-fno-ubsan-rt",
+      "-fno-entry",
+      "-rdynamic",
+    ];
+    let s = [],
       u = [
         new Y(new A([])),
         Z(),
         Z(),
-        new k(".", masterMap),
-      ],
-      t = new ie(r, s, u, { debug: !1 });
-    console.log(e.contents);
-    function findFile(map, name, path = "") {
-      for (const [key, value] of map.entries()) {
-        const currentPath = path + "/" + key;
-        if (key === name) console.log("Found " + name + " at: " + currentPath);
-        if (value instanceof N) findFile(value.contents, name, currentPath);
-      }
-    }
-    findFile(e.contents, "std.zig");
-    function grepFiles(map, searchTerm, currentPath = "") {
-      for (const [key, value] of map.entries()) {
-        const fullPath = currentPath + "/" + key;
-        if (key.includes(searchTerm)) {
-          console.log("MATCH:", fullPath);
-        }
-        if (value instanceof N) {
-          grepFiles(value.contents, searchTerm, fullPath);
-        }
-      }
-    }
-    console.log("--- GREP RESULTS ---");
-    grepFiles(e.contents, "std."); 
-    console.log("-------------------");
+        new k("/", rootDir),
+        new k("/cache", cacheDir),
+        new k("/tmp", tmpDir),
+      ];
+    let t = new ie(r, s, u, { debug: !1 });
     const { instance: n } = await WebAssembly.instantiateStreaming(
       fetch(new URL("./zig-DycCsy1F.wasm", self.location.href)),
       { wasi_snapshot_preview1: t.wasiImport },
     );
-    postMessage({
-      stderr: `Compiling...
-`,
-    });
+
+    postMessage({ stderr: `Compiling...\n` });
+
     try {
       const exitCode = t.start(n);
       if (exitCode == 0) {
-        const a = t.fds[3].dir.contents.get("main.wasm");
-        a && postMessage({ compiled: a.data });
+        const a = rootDir.contents.get("main.wasm");
+        if (a) {
+            postMessage({ compiled: a.data });
+        } else {
+            postMessage({ stderr: "Error: Compilation succeeded but main.wasm was not found in root." });
+        }
       } else {
         postMessage({ stderr: `Compiler exited with code ${exitCode}` });
       }
@@ -1338,6 +1371,7 @@
       postMessage({ stderr: `Internal JS Error: ${i.message}\n${i.stack}` });
       postMessage({ failed: !0 });
     }
+    
     M = !1;
   }
   onmessage = (h) => {

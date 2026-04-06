@@ -1,0 +1,52 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "name": "Introduction",
+      "firstLesson": "lesson1.json",
+      "lessons": ["lesson1.json", "lesson2.json"]
+    },
+    {
+      "number": 2,
+      "name": "Variables & Types",
+      "firstLesson": "lesson3.json",
+      "lessons": ["lesson3.json", "lesson4.json", "lesson5.json", "lesson6.json", "lesson7.json", "lesson8.json"]
+    },
+    {
+      "number": 3,
+      "name": "Control Flow",
+      "firstLesson": "lesson9.json",
+      "lessons": ["lesson9.json", "lesson10.json", "lesson11.json", "lesson12.json", "lesson13.json", "lesson14.json"]
+    },
+    {
+      "number": 4,
+      "name": "Loops",
+      "firstLesson": "lesson15.json",
+      "lessons": ["lesson15.json", "lesson16.json", "lesson17.json", "lesson18.json", "lesson19.json"]
+    },
+    {
+      "number": 5,
+      "name": "Functions",
+      "firstLesson": "lesson20.json",
+      "lessons": ["lesson20.json", "lesson21.json", "lesson22.json", "lesson23.json", "lesson24.json", "lesson25.json", "lesson26.json", "lesson27.json", "lesson28.json", "lesson29.json", "lesson30.json", "lesson31.json"]
+    },
+    {
+      "number": 6,
+      "name": "Objects & Interfaces",
+      "firstLesson": "lesson32.json",
+      "lessons": ["lesson32.json", "lesson33.json", "lesson34.json", "lesson35.json", "lesson36.json", "lesson37.json", "lesson38.json", "lesson39.json"]
+    },
+    {
+      "number": 7,
+      "name": "Classes",
+      "firstLesson": "lesson40.json",
+      "lessons": ["lesson40.json", "lesson41.json", "lesson42.json", "lesson43.json", "lesson44.json", "lesson45.json", "lesson46.json", "lesson47.json", "lesson48.json", "lesson49.json"]
+    },
+    {
+      "number": 8,
+      "name": "Sets",
+      "firstLesson": "lesson50.json",
+      "lessons": ["lesson50.json", "lesson51.json", "lesson52.json"]
+    }
+  ]
+}

@@ -146,7 +146,21 @@ async function loadLesson(lessonFile) {
   
   titleEl.textContent = lesson.title || '';
   descEl.innerHTML = marked.parse(lesson.description) || '';
-  if (editor) editor.setValue(lesson.starterCode || '');
+  if (editor) {
+    editor.setValue(lesson.starterCode || '');
+    const saved = localStorage.getItem('saved_code_c');
+
+    if (saved) {
+      try {
+          const data = JSON.parse(saved);
+
+          if (data?.lesson === lesson.id && typeof data.code === 'string') {
+          editor.setValue(data.code);
+          }
+      } catch (e) {
+      }
+    }
+  }
 
   showButtons = lesson.showButtons;
   outEl.textContent = '';
@@ -224,6 +238,7 @@ function forceShowAnswerButtons() {
       b.style.setProperty('display', showButtons ? 'inline-block' : 'none', 'important');
   });
 }
+
 function getCompletedLessons() {
   const stored = localStorage.getItem('c_completed_lessons');
   return stored ? JSON.parse(stored) : {};
@@ -244,6 +259,22 @@ function markLessonCompleted(lessonId, xpEarned) {
   };
   localStorage.setItem('c_completed_lessons', JSON.stringify(completed));
 }
+document.addEventListener('beforeunload', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_c', JSON.stringify(data));
+});
+window.addEventListener('pagehide', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_c', JSON.stringify(data));
+});
 async function setupLogic() {
   titleEl = document.getElementById('lesson-title');
   descEl  = document.getElementById('lesson-description');
@@ -286,6 +317,12 @@ async function setupLogic() {
   loadSolutionBtn = document.getElementById('load-solution');
   async function runWithSuite(suiteFile, label) {
     const studentSource = editor.getValue();
+    const data = {
+      lesson: currentLesson.id,
+      code: studentSource
+    };
+
+    localStorage.setItem('saved_code_c', JSON.stringify(data));
     outEl.textContent = (label || 'Building & running') + '...\n';
     lastRunOutput = '';
     if (setupCode) {

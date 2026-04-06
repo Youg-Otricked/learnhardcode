@@ -367,6 +367,12 @@ window.addEventListener('storage', (e) => {
 async function runWithSuite(suiteFile, label) {
     if (!editor) return;
     let studentSource = editor.getValue();
+    const data = {
+      lesson: currentLesson.id,
+      code: studentSource
+    };
+
+    localStorage.setItem('saved_code_asm', JSON.stringify(data));
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
     let fullSource = studentSource;
@@ -441,8 +447,21 @@ async function loadLesson(lessonFile) {
 
     titleEl.textContent = lesson.title || '';
     descEl.innerHTML = marked.parse(lesson.description || '');
-    if (editor) editor.setValue(lesson.starterCode || '');
+    if (editor) {
+        editor.setValue(lesson.starterCode || '');
+        const saved = localStorage.getItem('saved_code_asm');
 
+        if (saved) {
+        try {
+            const data = JSON.parse(saved);
+
+            if (data?.lesson === lesson.id && typeof data.code === 'string') {
+            editor.setValue(data.code);
+            }
+        } catch (e) {
+        }
+        }
+    }
     outEl.textContent = '';
     lastRunOutput = '';
     nextLessonId    = lesson.nextLesson    || null;
@@ -604,7 +623,22 @@ async function setupLogic() {
         nextBtn.style.display = alreadyCompleted ? 'inline-block' : 'none';
     }
 }
+document.addEventListener('beforeunload', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
 
+  localStorage.setItem('saved_code_asm', JSON.stringify(data));
+});
+window.addEventListener('pagehide', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_asm', JSON.stringify(data));
+});
 require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });
 document.addEventListener('DOMContentLoaded', () => {
     require(['vs/editor/editor.main'], async function() {
