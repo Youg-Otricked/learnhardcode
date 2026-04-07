@@ -1,7 +1,7 @@
 {
     "id": "lesson64.json",
     "title": "Course Complete!",
-    "description": "## Congratulations!\nYou've completed the BWS SQL course. From `SELECT *` to triggers, full-text search, and production workflows.\n\n### What you learned:\n- **Reading data**: SELECT, WHERE, JOIN, GROUP BY, HAVING, subqueries\n- **Writing data**: INSERT, UPDATE, DELETE, REPLACE, UPSERT\n- **Schema design**: CREATE TABLE, constraints, FOREIGN KEY, indexes\n- **Advanced**: Views, triggers, transactions, FTS, CASE WHEN\n- **Workflow**: Migrations, backups, VACUUM\n\n### What's next?\nConnect SQL to a real application. Learn an ORM like Drizzle (TypeScript) or SQLAlchemy (Python) to use SQL from your code.\n\nSteve's servers may be on fire, but your SQL skills are rock solid.\n\n---\n**Welcome to the BWS alumni club.**",
+    "description": "## Congratulations!\nYou've completed the SQL course. From `SELECT *` to triggers, full-text search, and production workflows.\n\n### What you learned:\n- **Reading data**: SELECT, WHERE, JOIN, GROUP BY, HAVING, subqueries\n- **Writing data**: INSERT, UPDATE, DELETE, REPLACE, UPSERT\n- **Schema design**: CREATE TABLE, constraints, FOREIGN KEY, indexes\n- **Advanced**: Views, triggers, transactions, FTS, CASE WHEN\n- **Workflow**: Migrations, backups, VACUUM\n\n### What's next?\nConnect SQL to a real application. Learn an ORM like Drizzle (TypeScript) or SQLAlchemy (Python) to use SQL from your code.\n\nSteve's servers may be on fire, but your SQL skills are rock solid.\n\n---\n**Welcome to the BWS alumni club.**",
     "starterCode": "",
     "expectedOutput": "",
     "nextLesson": null,
@@ -14,5 +14,5 @@
     "b4t": "",
     "mode": "editor",
     "difficulty": "beginner",
-    "xp": "50"
+    "xp": "100"
 }
