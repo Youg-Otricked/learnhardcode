@@ -1,7 +1,7 @@
 {
     "id": "lesson1.json",
     "title": "Welcome to Pear!",
-    "description": "## Welcome to Pear!\nYou just got hired  at **Pear**, the only other tech company that can release the same product 18 times and get away with it! You will be working on the pPhone 18, our flagship model\n\nRight now, you just need to make the phone's boot screen print the right message.\n\n---\n\nChange the code so it prints `Welcome to POS 209` exactly.",
+    "description": "## Welcome to Pear!\nYou just got hired at **Pear**, the only other tech company that can release the same product 18 times and get away with it! You will be working on the pPhone 18, our flagship model.\n\nRight now, you just need to make the phone's boot screen print the right message.\n\n---\n\nChange the code so it prints `Welcome to POS 209` exactly.",
     "starterCode": "main :: IO ()\nmain = putStrLn \"Hello, Haskell!\"",
     "expectedOutput": "Welcome to POS 209\n",
     "nextLesson": "lesson2.json",
