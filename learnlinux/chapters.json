@@ -59,6 +59,18 @@
       "name": "Globbing",
       "firstLesson": "lesson32.json",
       "lessons": ["lesson32.json","lesson33.json","lesson34.json","lesson35.json"]
+    },
+    {
+      "number": 12,
+      "name": "Advanced concepts",
+      "firstLesson": "lesson36.json",
+      "lessons": ["lesson36.json", "lesson37.json", "lesson38.json", "lesson39.json"]
+    },
+    {
+      "number": 13,
+      "name": "IDE Setup",
+      "firstLesson": "lesson40.json",
+      "lessons": ["lesson40.json", "lesson41.json"]
     }
   ]
 }

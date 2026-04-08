@@ -1,3 +1,0 @@
-Cycle=TS*3,x86-64asm*2,STL*2,Linux*2,Rust*1,C#*1
-
-CurrentCycle:TS*3

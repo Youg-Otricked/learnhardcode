@@ -1,0 +1,18 @@
+{
+    "id": "lesson38.json",
+    "title": "Command Substitution",
+    "description": "Sometimes you want to use the output of a command inside another command. This is called *command substitution*.\n\nThere are two ways to do it:\n- `` `cmd` `` (old style)\n- `$(cmd)` (modern style, recommended)\n\nBoth do the same thing: they replace the command with its output before running the full command.\n\n---\n## Example:\nIf you run:\n```\necho Today is $(date)\n```\nThe `date` command runs first, and its output is inserted into the `echo` command.\n\nYou can also write:\n```\necho Today is `date`\n```\n\n---\n## Key idea:\nCommand substitution lets you *embed command output inside another command*.\n\n---\n",
+    "starterCode": "",
+    "expectedOutput": "",
+    "showButtons": true,
+    "correct": "b1",
+    "b1t": "Continue",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "nextLesson": "lesson39.json",
+    "previous": "lesson37.json",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "25"
+}

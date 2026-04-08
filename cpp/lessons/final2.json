@@ -1,7 +1,7 @@
 {
   "id": "final2.json",
   "title": "OOP [Final] – Congrats!",
-  "description": "It probably was a lot of work, and downright un-fun at some points, but **Congrats!** You have learned C++, From basic cout, all the way to advanced OOP!. Take a moment to practice in the playround below, then answer the question, Congrats!\n# Question: Did you learn somthing?\n\nClick this link to go to home: learnhardcode.dpdns.org/\n\nPress this link to go to this projects github (maybe hit it with a star!) github.com/Youg-Otricked/learnhardcode. There is another C++ course! It is on advanced stdlib and preproccesers, such as #include, and #define, along with DSA. Just press next lesson!",
+  "description": "It probably was a lot of work, and downright un-fun at some points, but **Congrats!** You have learned C++, From basic cout, all the way to advanced OOP!. Take a moment to practice in the playround below, then answer the question, Congrats!\n# Question: Did you learn somthing?\n\nClick this link to go to home: learnhardcode.dpdns.org/\n\nPress this link to go to this projects github (maybe hit it with a star!) github.com/Youg-Otricked/learnhardcode. There is another C++ course! It is on advanced stdlib and preproccesers, such as #include, and #define, along with DSA. Just press next lesson!\n```\n __                    _____           _ _____       _     \n|  |   ___ ___ ___ ___|  |  |___ ___ _| |     |___ _| |___ \n|  |__| -_| .'|  _|   |     | .'|  _| . |   --| . | . | -_|\n|_____|___|__,|_| |_|_|__|__|__,|_| |___|_____|___|___|___|\n```",
   "starterCode": "",
   "expectedOutput": "",
   "mustContain": "",

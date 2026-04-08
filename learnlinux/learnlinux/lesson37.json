@@ -1,0 +1,18 @@
+{
+    "id": "lesson37.json",
+    "title": "Tee",
+    "description": "You may notice that let's say you are searching for the total count json files in a dir: you would use `find . -type f -name \"*.json\" | wc -l`: However, you may notice that this doesnt let you see output for command one because it gets passed along to wc, which may make it hard to find which command errors in a longer sequence: this is why we have `tee`. Tee is very simple. It just copys the output of the command before it. With no args it passes to stdout and if args exist it passes to its argument. If you changed the previous command to `find . -type f -name \"*.json\" | tee | wc -l`, you would see the names of all json files in the dir AND their total count. If you wanted to capture the output to a file EG a log, you could do `find . -type f -name \"*.json\" | tee count.log | wc -l`",
+    "starterCode": "",
+    "expectedOutput": "",
+    "showButtons": true,
+    "correct": "b1",
+    "b1t": "Continue",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "nextLesson": "lesson38.json",
+    "previous": "lesson36.json",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "20"
+}

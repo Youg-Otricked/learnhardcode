@@ -1,0 +1,18 @@
+{
+    "id": "lesson41.json",
+    "title": "WSL in VSCode",
+    "description": "If you are on Mac or Linux, skip this step. Otherwise, you need to set up [VSCode for WSL](https://code.visualstudio.com/docs/remote/wsl#_from-vs-code). This lets you use linux in VSCode.\n---\n## Assignment:\n- [ ] Open VSCode and click the \"Extentions\" menu on the left side bar\n- [ ] Search \"WSL\" and install the _[Extention made BY MICROSOFT](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)_\n- [ ] In the very bottom-left corner, their should be a button that looks like a > with a < stacked on top of it: Click on it and press Connect to WSL Using Distro when it pops up on top and then select \"Ubuntu\"\nYou should now have WSL VS Code! Close the other VS Code window if it opened one, then pin this new one to your taskbar so you don't need to click the button every time. You won't have linux access on your _bleck_ windows VS Code, so just avoid it.\n- [ ] Select File -> Open Folder then navigate to your project files directory. You should see all your files on the side bar! This is now your text editor!\n> If you need more detailed instructions, go [here](https://code.visualstudio.com/docs/remote/wsl#_getting-started)\n# Congrats on completing the course!\n```\n __                    _____           _ _____       _     \n|  |   ___ ___ ___ ___|  |  |___ ___ _| |     |___ _| |___ \n|  |__| -_| .'|  _|   |     | .'|  _| . |   --| . | . | -_|\n|_____|___|__,|_| |_|_|__|__|__,|_| |___|_____|___|___|___|\n```",
+    "starterCode": "",
+    "expectedOutput": "",
+    "showButtons": true,
+    "correct": "b1",
+    "b1t": "Congrats!",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "nextLesson": null,
+    "previous": "lesson40.json",
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "150"
+}
