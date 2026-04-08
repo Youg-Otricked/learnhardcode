@@ -4,7 +4,13 @@
             "number": 1,
             "name": "Introduction",
             "firstLesson": "lesson1.json",
-            "lessons": ["lesson1.json"]
+            "lessons": ["lesson1.json", "lesson2.json"]
+        },
+        {
+            "number": 2,
+            "name": "Vars",
+            "firstLesson": "lesson3.json",
+            "lessons": ["lesson3.json"]
         }
     ]
 }

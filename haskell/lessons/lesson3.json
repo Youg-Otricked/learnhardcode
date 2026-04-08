@@ -1,0 +1,20 @@
+{
+    "id": "lesson3.json",
+    "title": "Basic variables",
+    "description": "## Vars\nIf you come from other languages, you probably think of variables as mutible little bundles of data. Not in haskell. Basically, variables are immutible period in haskell. Technically its possible, but it involves references. _Yeah, that manual memory managment thing_. To create a var in haskell, you use:\n```haskell\nvar <VarName> = <value>\n```\n. Pretty simple!\n## String concatenation.\nYou concatenate strings in haskell with the `++` operator.\n```haskell\nputStrLn (\"Hello, \" ++ \"World!\")\n```\nNotice the () around the ++ in the previous line: that is because functions in haskells precedency is BEFORE the ++, and () basically says evaluate what's inside these () first. Without the (), it would try and print the first message--\"Hello, \",--then try and conacatenate nothing with a string, causing an error.\n---\n## Assignment:\nCreate a variable, deviceName, and set it to `\"pPhone 18\"`, then print `\"Hello! We are setting up your new device, \"`, then concatenate the deviceName variable to the end. _The test will print bonus text to make sure you created the var. Try to not put excess whitespace at the end of the main function.",
+    "starterCode": "-- Write it Here!",
+    "expectedOutput": "Hello! We are setting up your new device, pPhone 18\nWelcome to pPhone 18\n",
+    "nextLesson": "lesson4.json",
+    "previous": "lesson2.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "runHarness": "    putStrLn (\"Welcome to \" ++ deviceName)",
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "12"
+}
