@@ -1,14 +1,2 @@
-directory perms (x on dirs, how traversal works)
-Processes & jobs beyond signals
-
-ps, top/htop
-bg, fg, &, nohup
-nice/renice basics
-
-tee
-xargs
 command substitution: `cmd` and $(cmd)
-User / group management concepts
-
 aliases (alias ll='ls -la')
-maybe a lesson on .bash_profile vs .bashrc vs /etc/profile.
