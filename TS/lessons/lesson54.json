@@ -1,0 +1,22 @@
+{
+  "id": "lesson54.json",
+  "title": "Maps [Keys]",
+  "description": "There is one more map method: Get. `get(key: <KeyType>): <ValueType>`. _Technically_, keys can be of any type. However. _**PLEASE DONT MAKE WEIRD KEYS**_.\n```ts\nconst map = new Map<string[], string>();\nmap.set([\"Hello,\", \" World!\"], \"Famous\");\nconsole.log(map.get([\"Hello,\", \" World!\"]));\n// undefined\n```\nWhat? Why did that happen?\bSee, arrays in TypeScript are _references_, not values. That means that means that `[\"me\"] === [\"me\"]` is false. But that does mean that\n```\nconst me: string[] = [\"me\"];\nme === me // true\n```\nThis means that you can create a variable that holds the key then using that as the key. PLEASE DONT DO THIS.\n---\n# Assignment:\nMeTube uses private \"Session Tokens\" (objects) to securely look up live stream analytics. \nCreate a function `getStreamStats` that takes a `sessionToken` object and a `statsMap` Map. It should return the string value associated with that **specific** token reference.\nIf a hacker creates a new object `{ id: \"VIP\" }` that looks exactly like a real token, the map should still return `undefined` because it isn't the same reference in memory!",
+  "expectedOutput": "",
+  "rawHarness": true,
+  "starterCode": "function getStreamStats(token: object, statsMap: Map<object, string>): string | undefined {\n  // Your code here\n}",
+  "runHarness": "let _pass = 0;\nlet _fail = 0;\n\nfunction _test(num: number, got: any, expected: any) {\n    const passed = got === expected;\n    console.log('Test ' + num + ': ' + (passed ? 'Pass' : 'Fail'));\n    if (passed) _pass++; else _fail++;\n}\n\nconst realToken = { id: \"user-123\" };\nconst fakeToken = { id: \"user-123\" };\nconst analytics = new Map<object, string>();\nanalytics.set(realToken, \"10.5k Viewers\");\n\n// Test 1: Real token access\n_test(1, getStreamStats(realToken, analytics), \"10.5k Viewers\");\n\n// Test 2: Fake token (identical looking) should fail\n_test(2, getStreamStats(fakeToken, analytics), undefined);\n\n// Test 3: Random object should fail\n_test(3, getStreamStats({}, analytics), undefined);\n\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');",
+  "mustContain": "3 passed, 0 failed",
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "hint": "",
+  "nextLesson": "lesson55.json",
+  "previous": "lesson53.json",
+  "showButtons": false,
+  "mode": "editor",
+  "difficulty": "intermediate",
+  "xp": "15"
+}

@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Typescript Lessons</title>
   <link rel="icon" href="../favicon.ico" type="image/png">
-  <link rel="stylesheet" href="ts.css">
+  <link rel="stylesheet" href="web.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
   <script src="https://unpkg.com/typescript@latest/lib/typescript.js"></script>
-  <script src="ts.js" defer></script>
+  <script src="web.js" defer></script>
   <script type="module" src="chapters.js" defer></script>
 </head>
 <body>
@@ -32,7 +32,15 @@
       </div>
     </div>
     <div class="box code-box">
-      <div id="editor"></div>
+      <div id="langButtons">
+        <button class="langBtn active" id="html">index.html</button>
+        <button class="langBtn" id="css">style.css</button>
+        <button class="langBtn" id="ts">index.ts</button>
+      </div>
+      <div class="editor" id="htmleditor"></div>
+      <div class="editor" id="csseditor"></div>
+      <div class="editor" id="tseditor"></div>
+      <iframe class="editor" id="previeweditor"></iframe>
       <button id="run">Run</button>
       <button id="next-lesson" style="display:none">Next Lesson</button>
       <button id="prev-lesson">Previous Lesson</button>

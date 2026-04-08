@@ -1,0 +1,23 @@
+{
+  "id": "lesson53.json",
+  "title": "Maps [Maps]",
+  "description": "Along with `Set`s, TypeScript allows for somthing called `Map`s. Maps are Key-Value pairs. Map keys are unique, meaning that if a key already exists, its value is replaced instead of a duplicate being created. Maps have some methods: 2 important ones are `delete(key: <KeyType>): void`, and `set(key: <KeyType>, value: <ValueType>): void`. You create a map with `new Map<KeyType, ValueType>();`. You can technically create a map from any iterable, but most of the time you can only do it with a array of arrays, ([[key, value]]), or another map.\n---\n## Example 1: Set and Get.\n```ts\nconst contacts = new Map<string, string>();\ncontacts.set(\"123-456-7890\", \"Steve\");\ncontacts.set(\"132-293-1234\", \"Paul America\");\ncontacts.set(\"9988-123-7233\", \"⹔Ⅸ⽩ɳ⨠⥴ᩥ⑸⩴൮ᱲ⩥ॡቤᱡᡢ⭬եമภ⁈ਠ٭ᱯݪ୩≢ᡡၫ⩥⤮⑲づᅡᩤ⵩᭮ⅧⰠᡴ२ᱩ⥳Ȯ୳\");\nconsole.log(contacts);\n// Map { \"123-456-7890\" => \"Steve\", \"132-293-1234\" => \"Paul America\", \"9988-123-7233\" => \"⹔Ⅸ⽩ɳ⨠⥴ᩥ⑸⩴൮ᱲ⩥ॡቤᱡᡢ⭬եമภ⁈ਠ٭ᱯݪ୩≢ᡡၫ⩥⤮⑲づᅡᩤ⵩᭮ⅧⰠᡴ२ᱩ⥳Ȯ୳\" }\n\ncontacts.delete(\"9988-123-7233\");\ncontacts.set(\"123-456-7890\", \"Steve Broke\");\nconsole.log(contacts);\n// Map { \"123-456-7890\" => \"Steve\", \"132-293-1234\" => \"Paul America\" }\n```\n## Example 2: Map construction.\n```ts\nconst originalMap = new Map();\noriginalMap.set(\"1\", \"2\");\nconst mapCopy = new Map(originalMap);\nconsole.log(mapCopy);\n// Map { \"1\" => \"2\" }\n```\n---\n# Assignment:\nMeTube wants a channel to subscribers registry! Create the addChannel function, which should take a name string subscribers number and channels map, and return the map with an additional pair added, the arguments. DO NOT MODIFY THE ORIGINAL MAP.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "rawHarness": true,
+  "runHarness": "let _pass = 0;\nlet _fail = 0;\n\nfunction _test(num: number, got: any, expected: any) {\n    const passed = got === expected;\n    console.log('---------------------');\n    console.log('Test ' + num + ':');\n    console.log('Output: ' + got);\n    console.log(passed ? 'Pass' : 'Fail');\n    if (passed) _pass++; else _fail++;\n}\n\nconst m1 = new Map<string, number>();\nconst r1 = addChannel(\"music\", 100, m1);\n_test(1, r1.get(\"music\"), 100);\n_test(2, r1.size, 1);\n\nconst m2 = new Map<string, number>([[\"gaming\", 50]]);\nconst r2 = addChannel(\"sports\", 200, m2);\n_test(3, m2.has(\"sports\"), false);\n_test(4, r2.has(\"sports\"), true);\n\nconst m3 = new Map<string, number>([[\"news\", 10]]);\nconst r3 = addChannel(\"news\", 999, m3);\n_test(5, r3.get(\"news\"), 999);\n\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');",
+  "submitHarness": "let _pass = 0;\nlet _fail = 0;\n\nfunction _test(num: number, got: any, expected: any) {\n    const passed = got === expected;\n    console.log('---------------------');\n    console.log('Test ' + num + ':');\n    console.log('Output: ' + got);\n    console.log(passed ? 'Pass' : 'Fail');\n    if (passed) _pass++; else _fail++;\n}\n\nconst m1 = new Map<string, number>();\nconst r1 = addChannel(\"tech\", 300, m1);\n_test(1, r1.get(\"tech\"), 300);\n_test(2, r1.size, 1);\n\nconst m2 = new Map<string, number>([[\"travel\", 20]]);\nconst r2 = addChannel(\"food\", 80, m2);\n_test(3, m2.has(\"food\"), false);\n_test(4, r2.has(\"food\"), true);\n\nconst m3 = new Map<string, number>([[\"education\", 5]]);\nconst r3 = addChannel(\"education\", 15, m3);\n_test(5, r3.get(\"education\"), 15);\n\nconst m4 = new Map<string, number>([[\"a\", 1],[\"b\", 2],[\"c\", 3]]);\nconst r4 = addChannel(\"d\", 4, m4);\n_test(6, r4.size, 4);\n\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');",
+  "mustContain": "Pass\n---------------------\n6 passed, 0 failed",
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "hint": "",
+  "nextLesson": "lesson54.json",
+  "previous": "lesson52.json",
+  "showButtons": false,
+  "mode": "editor",
+  "difficulty": "intermediate",
+  "xp": "15"
+}
