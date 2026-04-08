@@ -47,6 +47,12 @@
       "name": "Sets",
       "firstLesson": "lesson50.json",
       "lessons": ["lesson50.json", "lesson51.json", "lesson52.json"]
+    },
+    {
+      "number": 9,
+      "name": "Maps",
+      "firstLesson": "lesson53.json",
+      "lessons": ["lesson53.json", "lesson54.json", "lesson55.json"]
     }
   ]
 }

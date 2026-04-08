@@ -8,7 +8,13 @@ import {
 import { DyLDBrowserHost, main } from "./dyld.mjs";
 let stdout = "";
 let main_func;
+let HASKELL_INSTANCE_CACHE = null;
+let setup = false;
 async function initHaskell() {
+  if (HASKELL_INSTANCE_CACHE) {
+    main_func = HASKELL_INSTANCE_CACHE;
+    return;
+  }
   const rootfs = new PreopenDirectory("/", []);
 
   const bsdtar_wasi = new WASI(
@@ -51,11 +57,20 @@ async function initHaskell() {
     isIserv: false,
   });
   main_func = await dyld.exportFuncs.myMain("/tmp/hslib/lib");
+  HASKELL_INSTANCE_CACHE = main_func;
 }
 initHaskell().then(() => {
   setup = true;
 });
-let setup = false;
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function waitForHaskell() {
+  while (!setup) {
+    await sleep(100); 
+  }
+}
 let editor = null;
 let currentLesson = null;
 let lastRunOutput = "";
@@ -116,13 +131,15 @@ function updateLevelUI() {
     localStorage.getItem("level_xp_cap");
 }
 async function runHaskell(code) {
-  if (!setup) {
-    outEl.textContent = "Haskell still loading.";
-    return;
+  if (!(HASKELL_INSTANCE_CACHE || setup)) {
+    outEl.textContent = "Haskell is performing the initial extraction... please wait.";
+    await waitForHaskell();
   }
+  lastRunOutput = '';
   outEl.className = "";
   try {
     await main_func("", code);
+    lastRunOutput = stdout;
     if (!stdout.includes("*** Exception") && !stdout.includes("[GHC-")) {
       outEl.textContent = stdout;
     } else {
@@ -571,47 +588,36 @@ require.config({
 require(["vs/editor/editor.main"], async function () {
   monaco.languages.register({ id: "haskell" });
   monaco.languages.setMonarchTokensProvider("haskell", {
-    defaultToken: "",
-    tokenPostfix: ".hs",
-
-    keywords: [
-      "case", "of", "if", "then", "else", "let", "in", "where",
-      "do", "module", "import", "data", "type", "newtype",
-      "deriving", "class", "instance", "forall"
-    ],
-
-    operators: [
-      "=", "->", "<-", "::", "\\", "|", "=>", "@", "~"
-    ],
-
+    keywords: ["case","of","if","then","else","let","in","where","do","module","import","data","type","newtype","deriving","class","instance","forall","qualified","as","hiding"],
+    operators: ["=","->","<-","::",'\\',"|","=>","@","~"],
     symbols: /[=><!~?:&|+\-*\/\^%]+/,
-
     tokenizer: {
       root: [
-        [/[a-zA-Z_]\w*/, {
+        [/[a-z_][\w']*/, {
           cases: {
             "@keywords": "keyword",
             "@default": "identifier"
           }
         }],
-        [/[A-Z]\w*/, "type.identifier"],
-
+        [/[A-Z][\w']*/, "type.identifier"],
         [/\d+(\.\d+)?/, "number"],
-
-        [/"([^"\\]|\\.)*$/, "string.invalid"],
-        [/"/, "string", "@string"],
-
         [/--.*$/, "comment"],
- 
+        [/{-/, "comment", "@commentBody"],
+        [/"/, "string", "@stringBody"],
         [/@symbols/, {
           cases: {
             "@operators": "operator",
-            "@default": ""
+            "@default": "operator"
           }
         }]
       ],
-
-      string: [
+      commentBody: [
+        [/[^-{}]+/, "comment"],
+        [/{-/, "comment", "@push"],
+        [/-}/, "comment", "@pop"],
+        [/[-{}]/, "comment"]
+      ],
+      stringBody: [
         [/[^\\"]+/, "string"],
         [/\\./, "string.escape"],
         [/"/, "string", "@pop"]
@@ -622,13 +628,22 @@ require(["vs/editor/editor.main"], async function () {
     base: "vs-dark",
     inherit: true,
     rules: [
-      { token: "keyword", foreground: "C586C0", fontStyle: "bold" },
-      { token: "type.identifier", foreground: "4EC9B0" },
-      { token: "string", foreground: "CE9178" },
-      { token: "comment", foreground: "6A9955", fontStyle: "italic" },
-      { token: "number", foreground: "B5CEA8" },
-      { token: "operator", foreground: "D4D4D4" }
-    ]
+        { token: "keyword", foreground: "C586C0", fontStyle: "bold" },
+        { token: "type.identifier", foreground: "4EC9B0" },
+        { token: "string", foreground: "CE9178" },
+        { token: "comment", foreground: "6A9955", fontStyle: "italic" },
+        { token: "number", foreground: "B5CEA8" },
+        { token: "operator", foreground: "D4D4D4" }
+    ],
+    colors: {
+        "editor.foreground": "#D4D4D4",
+        "editor.background": "#1E1E1E",
+        "editorCursor.foreground": "#AEAFAD",
+        "editor.lineHighlightBackground": "#2D2D30",
+        "editorLineNumber.foreground": "#858585",
+        "editor.selectionBackground": "#264F78",
+        "editorInactiveSelectionBackground": "#3A3D41"
+    }
   });
   editor = monaco.editor.create(document.getElementById("editor"), {
     value: [].join("\\n"),

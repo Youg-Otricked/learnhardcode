@@ -1,7 +1,7 @@
 let params = new URLSearchParams(location.search);
 let file = `${params.get('course') ? params.get('course') + "_" : ""}chapters.json`;
 const chapters = await (await fetch(file)).json();
-const completedLessons = JSON.parse(localStorage.getItem("ts_completed_lessons") || '[]');
+const completedLessons = JSON.parse(localStorage.getItem("web_completed_lessons") || '[]');
 console.log(chapters);
 const completedSet = new Set(Object.keys(completedLessons));
 const chaptersElem = document.getElementById("chapters");
