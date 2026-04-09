@@ -1,0 +1,21 @@
+{
+  "id": "lesson37.json",
+  "title": "Congrats!",
+  "description": "## Congrats:\nYou have learned x86-64 asm, the \"Hardest programming language\". You now know the second lowest level language there is, and all the syntax you can use in a program in the userspace. Congrats!\n```\n __                    _____           _ _____       _     \n|  |   ___ ___ ___ ___|  |  |___ ___ _| |     |___ _| |___ \n|  |__| -_| .'|  _|   |     | .'|  _| . |   --| . | . | -_|\n|_____|___|__,|_| |_|_|__|__|__,|_| |___|_____|___|___|___|\n```",
+  "starterCode": "",
+  "setupCode": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "mode": "editor",
+  "showButtons": true,
+  "b1t": "Congrats!",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "expectedOutput": "",
+  "correct": "b1",
+  "difficulty": "N/A",
+  "xp": "150",
+  "nextLesson": null,
+  "previous": "lesson36.json"
+}

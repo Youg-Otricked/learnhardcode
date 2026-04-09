@@ -1,0 +1,21 @@
+{
+  "id": "lesson36.json",
+  "title": "Resb",
+  "description": "## Resb:\nWhat if you wanted data available, but you didn't have anything to put there yet. You couldn't just `db <datasize>`: That can't be changed, and just uses the size. Enter `resb`. You use the syntax `resb <amountofbytestoregister>`. Along with resb, there are of course 2 byte 4 byte and 8 byte versions of `resb`, `resw`, `resd` and `resq`, but it is simple. You just use `res<suffix> <count>`. Simple!",
+  "starterCode": "",
+  "setupCode": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "mode": "editor",
+  "showButtons": true,
+  "b1t": "continue",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "expectedOutput": "",
+  "correct": "b1",
+  "difficulty": "beginner",
+  "xp": "1",
+  "nextLesson": "lesson37.json",
+  "previous": "lesson35.json"
+}

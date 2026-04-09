@@ -1,0 +1,21 @@
+{
+  "id": "lesson35.json",
+  "title": "Align",
+  "description": "## Align:\nSometimes, you need data aligned with a specific space to work, like let's say you are making the page table of a Operating System. Those typically need to be aligned with 4096 bytes. This is what you use align for. At the top of the section, you type `align <bytecount>`, so to align for 4096 bytes, you put `align 4096`.",
+  "starterCode": "",
+  "setupCode": "",
+  "runHarness": "",
+  "submitHarness": "",
+  "mode": "editor",
+  "showButtons": true,
+  "b1t": "continue",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "expectedOutput": "",
+  "correct": "b1",
+  "difficulty": "beginner",
+  "xp": "1",
+  "nextLesson": "lesson36.json",
+  "previous": "lesson34.json"
+}
