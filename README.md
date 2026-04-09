@@ -27,11 +27,12 @@ I could not find a SINGLE in browser course for learning C++, and C# that was fr
 ## Planned Courses
 - Objective C
 - Zig
-- Guided Projects, Docker, Kubernetes, RabbitMQ, Redis (Local Dev Courses)
+- Guided Projects/Guided Course Projects (EG Compilers, OS, System Design), Docker, Kubernetes, RabbitMQ, Redis (Local Dev Courses)
 - Elixir
 - Fortran
 - OCaml
 - Cobol
+- Nix
 ## Like this project?
 
 - ⭐ Star the repo if it helped you
