@@ -52,7 +52,7 @@
       "number": 9,
       "name": "Misk",
       "firstLesson": "lesson33.json",
-      "lessons": ["lesson33.json", "lesson34.json"]
+      "lessons": ["lesson33.json", "lesson34.json", "lesson35.json", "lesson36.json", "lesson37.json"]
     }
   ]
 }
