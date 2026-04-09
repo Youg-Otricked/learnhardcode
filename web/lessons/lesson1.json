@@ -4,7 +4,7 @@
     "description": "## NOTE:\nThis course has a prerequisit! You must have completed the **_Learn TypeScript_** course before starting. If you haven't, then do it [Here!](https://youg-otricked.github.io/learnhardcode/TS/ts.html), but otherwise, let's get onto the course!\n---\n# Welcome\nYou just got hired  at **Googol**, The hottest new search engine.\n\nWe are making a basic test 200 code page: replace 404: Not Found with 200: OK\n\n---\n\nChange the code so it says 200: OK instead of 404: Not Found.\n---\nYou can press the buttons at the top to change to different files, but for this lesson, don't edit anything but index.html. After running code, re-click a file to go back to the editor.",
     "starterTS": "// We'll get to TS soon.",
     "starterCss": "body {\n    background-color: #000000;\n    color: #ffffff;\n} /* You will understand this soon, don't worry. */",
-    "starterHtml": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n    <h1 id=\"title\">404: Not Found</h1>\n</body>\n</html>",
+    "starterHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n    <h1 id=\"title\">404: Not Found</h1>\n</body>\n</html>",
     "reqElems": [
         {
             "type": "element", 
