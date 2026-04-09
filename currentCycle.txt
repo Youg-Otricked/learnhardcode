@@ -1,3 +1,3 @@
 Cycle = QuantumC,C#,Rust*1,C,C++DSA/STL,Go,Haskell,Git,Web*2,TypeScript*3
 Completed courses: SQL, C++, Linux, ASM
-CurrentCycleSoFar=Go,Haskell*2,Linux*6,TypeScript*3,ASM*3
+CurrentCycleSoFar=Go,Haskell*2,Linux*6,TypeScript*3,ASM*3,Web*1

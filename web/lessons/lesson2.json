@@ -1,0 +1,36 @@
+{
+    "id": "lesson2.json",
+    "title": "Boiler Plate [Basics]",
+    "description": "You may have noticed the large amount of stuff around the actuall text element in the last lesson. This is called _boiler plate_. This is just stuff all files have that just is required. Let's look at the boiler plate.\nThe default boilerplate is\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\"></head>\n<body>\n</body>\n</html>\n```\nLet's break this down line by line:\n- `<!DOCTYPE html>`: This just defines the document type, as XML files also use a similar structure.\n- `<html lang=\"en\">`: This opens the `html` tag, which is where all your html goes. The `lang=\"en\"` section says that it is in english.\n- `<head>`: This opens the head section of the document: This is things that can't be viewed on the page, and instead have special meanings.\n- `<meta charset=\"UTF-8\">`: This just means the HTML document is written in UTF-8 chars.\n- `</head>`: This closes the head tag. Most tags have a opening and closing tags. Opening tags are the tag name, and closing tags are the tag name starting with /. All tags in HTML start with `<` and end with `>`.\n- `<body>`: This opens the `body` tag: This is where your visible HTML goes.\n- `</body>`: This closes the `body` tag.\n- `</html>`: This closes the `html` tag, and the document.\n---\n## Assignment:\nSomebody deleted out boilerplate! Re-add it around the `<h1>` element.",
+    "starterTS": "// We'll get to TS soon.",
+    "starterCss": "/* No CSS this lesson */",
+    "starterHtml": "<h1 id=\"title\">200: OK</h1>",
+    "reqElems": [
+        {
+            "type": "container",
+            "label": "html",
+            "children": 2
+        },
+        {
+            "type": "element",
+            "label": "head",
+            "children": 1
+        },
+        {
+            "type": "element",
+            "label": "body",
+            "children": 1
+        }
+    ],
+    "nextLesson": "lesson3.json",
+    "previous": "lesson1.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "10"
+}
