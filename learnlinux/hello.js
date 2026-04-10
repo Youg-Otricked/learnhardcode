@@ -69,7 +69,7 @@ window.copytext = function(elementId) {
     });
 }
 async function loadLesson(lessonFile) {
-  const path = 'learnlinux/' + lessonFile;
+  const path = 'lessons/' + lessonFile;
   const res = await fetch(path);
   if (!res.ok) throw new Error('Failed to load lesson ' + path);
   const lesson = await res.json();

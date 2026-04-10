@@ -1,0 +1,31 @@
+{
+    "id": "lesson3.json",
+    "title": "Tags and Headings",
+    "description": "Finally, time to get to actual HTML!\n## Tags\nA 'tag' is just a word that is surrounded in `<>` and has a special meaning in HTML. Most tags have an opening and closing tag. The difference is opening tags are `<tagname>` and closing tags are `</tagname>`. Simple!\n# `h` Tags.\n`h` stands for heading. There are `h1` through `h6` tags, and the larger the number, the smaller and less bold the text gets, because the number basically says how important the text is. You just wrap your text in the tag, so like `<h2>This is Text</h2>`.\n---\n## Assignment:\nGoogol wants a real `404` page: Make the document show `404: Not Found` as big as possible, and `The requested URL was not found on this server.` as small as possible.",
+    "starterTS": "// We'll get to TS soon.",
+    "starterCss": "body {\n    background-color: #000000;\n    color: #ffffff;\n} /* You will understand this soon, don't worry. */",
+    "starterHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n</body>\n</html>",
+    "reqElems": [
+        {
+            "type": "element",
+            "label": "h1",
+            "value": "404: Not Found"
+        },
+        {
+            "type": "element",
+            "label": "h6",
+            "value": "The requested URL was not found on this server."
+        }
+    ],
+    "nextLesson": "lesson4.json",
+    "previous": "lesson2.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "10"
+}

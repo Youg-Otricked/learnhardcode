@@ -1,0 +1,17 @@
+{
+    "id": "lesson20.json",
+    "title": "Functions [Default args]",
+    "description": "## Default args\nYou can make default arguments using `<argdef> = value` then if the arg isn't passed, it is repaced with that value.\n---\n## Assignment:\nWrite a function, `greet`. It should take a optional string `name`, which defaults to World, and return `\"Hello, \"` and then the passed argument.",
+    "starterCode": "// Write 'greet' here.",
+    "expectedOutput": "",
+    "mustContain": "Test 3\nPass\n----------------\n3 Passed, 0 Failed.",
+    "runHarness": "bool _test(int test, auto expected, auto actual, string call) {\n    std::qout << f\"\\n----------------\\nTest {test}\\n{call} = {expected}\\n\";\n    if (expected == actual) {\n        std::qout << \"Pass\";\n        return true;\n    } else {\n        std::qout << \"Fail\";\n        return false;\n    }\n}\nint main() {\n    int _passed = 0;\n    int _failed = 0;\n    if (_test(1, \"Hello, Me\", greet(\"Me\"), \"greet(\\\"Me\\\")\")) {\n        _passed++;\n    } else {\n        _failed++;\n    }\n    if (_test(2, \"Hello, World\", greet(), \"greet()\")) {\n        _passed++;\n    } else {\n        _failed++;\n    }\n    std::qout << \"\n----------------\" << '\n' << _passed << \" Passed, \" << _failed << \" Failed.\" << '\n';\n}",
+    "submitHarness": "bool _test(int test, auto expected, auto actual, string call) {\n    std::qout << f\"\\n----------------\\nTest {test}\\n\";\n    if (expected == actual) {\n        std::qout << \"Pass\";\n        return true;\n    } else {\n        std::qout << \"Fail\";\n        return false;\n    }\n}\nint main() {\n    int _passed = 0;\n    int _failed = 0;\n    if (_test(1, \"Hello, Me\", greet(\"Me\"), \"greet(\\\"Me\\\")\")) {\n        _passed++;\n    } else {\n        _failed++;\n    }\n    if (_test(2, \"Hello, World\", greet(), \"greet()\")) {\n        _passed++;\n    } else {\n        _failed++;\n    }\n    if (_test(3, \"Hello, \", greet(\"\"), \"greet(\\\"\\\")\")) {\n        _passed++;\n    } else {\n        _failed++;\n    }\n    std::qout << \"\n----------------\" << '\n' << _passed << \" Passed, \" << _failed << \" Failed.\" << '\n';\n}",
+    "nextLesson": "lesson21.json",
+    "previous": "lesson19.json",
+    "showButtons": false,
+    "rawHarness": true,
+    "mode": "editor",
+    "difficulty": "beginner",
+    "xp": "19"
+}

@@ -34,7 +34,7 @@
       "number": 6,
       "name": "Functions",
       "firstLesson": "lesson20.json",
-      "lessons": ["lesson20.json"]
+      "lessons": ["lesson20.json", "lesson21.json"]
     }
   ]
 }

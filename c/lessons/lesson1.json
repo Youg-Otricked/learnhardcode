@@ -1,7 +1,7 @@
 {
   "id": "lesson1.json",
-  "title": "Welcome to MacroHard",
-  "description": "In this course, you will learn C from scratch all the way to building your own garbage collector.\nYou are a developer at the totally-not-real company _MacroHard_, working on their latest operating system:\n**Bidirectional Interface Network Data Observation System 12 (BINDOS)**\n---\n## Assignment:\nJust make the code output _exactly_ \"Welcome to BINDOS\"",
+  "title": "Welcome to MacroStiff",
+  "description": "In this course, you will learn C from scratch all the way to building your own garbage collector.\nYou are a developer at the totally-not-real company _MacroStiff_, working on their latest operating system:\n**Bidirectional Interface Network Data Observation System 12 (BINDOS)**\n---\n## Assignment:\nJust make the code output _exactly_ \"Welcome to BINDOS\"",
   "hint": "Change the text inside the `printf` statement.",
   "starterCode": "#include <stdio.h>\n\nint main() {\n    printf(\"Welcome to <wait i dont want to get copyrighted>\");\n    return 0;\n}\n",
   "expectedOutput": "Welcome to BINDOS\n",
