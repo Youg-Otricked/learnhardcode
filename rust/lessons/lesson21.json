@@ -1,7 +1,7 @@
 {
     "id": "lesson20.json",
     "title": "Strings and Printing vars.",
-    "description": "## Strings\nThere is one more datatype in rust, &str. &str is a string of text, such as `\"Hello, World!\"`.\nYou can print a variable in rust using this format: `println!(\"{}\", var_name);`. In order of args passed, {}s are replaced with the var passed, so in this example it would just print the var named var_name.\n---\n## Assignment:\nMake a simple function that takes a &str and prints it called `print_str`.",
+    "description": "## Strings\nThere is one more datatype in rust, &str. &str is a string of text, such as `\"Hello, World!\"`.\n---\n## Assignment:\nMake a simple function that takes a &str and prints it called `print_str`.",
     "starterCode": "// Write print_str here\n\n",
     "expectedOutput": "Hello, World!",
     "rawHarness": true,
