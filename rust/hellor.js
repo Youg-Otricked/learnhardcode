@@ -1,7 +1,3 @@
-// rust.js
-
-// ===== Rubri runner wrapper (instead of WorkerAPI) =====
-
 class RubriRunner {
   constructor() {
     this.worker = new Worker('rubri-worker.js', { type: 'module' });
