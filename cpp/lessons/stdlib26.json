@@ -1,0 +1,18 @@
+{
+  "id": "stdlib26.json",
+  "title": "Big O - Review (1/2)",
+  "description": "What is the Big O complexity of this Code:\n```cpp\nvoid compress(std::vector<int>& vec) {\n    for (int i = 0; i < vec.size() - 1; i++) {\n        int j = i + 1;\n        vec[j] += vec[i];\n    }\n}\n```",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "stdlib27.json",
+  "previous": "stdlib25.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "O(N^2)",
+  "b2t": "O(N)",
+  "b3t": "O(2^N)",
+  "b4t": "O(log(N))",
+  "mode": "editor",
+  "difficulty": "intermediate",
+  "xp": "24"
+}
