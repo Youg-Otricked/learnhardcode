@@ -25,7 +25,7 @@ I could not find a SINGLE in browser course for learning C++, and C# that was fr
 - Haskell: WIP
 - Web: WIP
 ## Planned Courses
-- Objective C
+- Objective C (probably not)
 - Zig
 - Guided Projects/Guided Course Projects (EG Compilers, OS, System Design), Docker, Kubernetes, RabbitMQ, Redis (Local Dev Courses)
 - Elixir
