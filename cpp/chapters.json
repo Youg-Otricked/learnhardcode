@@ -64,7 +64,13 @@
       "number": 11,
       "name": "DSA - The heck is P vs NP?",
       "firstLesson": "stdlib22.json",
-      "lessons": ["stdlib22.json","stdlib23.json", "stdlib24.json", "stdlib25.json"]
+      "lessons": ["stdlib22.json","stdlib23.json", "stdlib24.json", "stdlib25.json", "stdlib26.json", "stdlib27.json"]
+    },
+    {
+      "number": 11,
+      "name": "DSA - Datastructures - Stack",
+      "firstLesson": "stdlib28.json",
+      "lessons": ["stdlib28.json"]
     }
   ]
 }
