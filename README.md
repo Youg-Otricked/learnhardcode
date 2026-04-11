@@ -31,8 +31,8 @@ I could not find a SINGLE in browser course for learning C++, and C# that was fr
 - Elixir
 - Fortran
 - OCaml
-- Cobol
-- Nix
+- Cobol (maybe impossible)
+- Nix (maybe impossible)
 ## Like this project?
 
 - ⭐ Star the repo if it helped you
