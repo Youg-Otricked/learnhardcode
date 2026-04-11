@@ -53,6 +53,12 @@
       "name": "Maps",
       "firstLesson": "lesson53.json",
       "lessons": ["lesson53.json", "lesson54.json", "lesson55.json"]
+    },
+    {
+      "number": 10,
+      "name": "Promises",
+      "firstLesson": "lesson56.json",
+      "lessons": ["lesson56.json", "lesson57.json", "lesson58.json"]
     }
   ]
 }

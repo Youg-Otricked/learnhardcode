@@ -1,0 +1,18 @@
+{
+  "id": "lesson57.json",
+  "title": "Why Async?",
+  "description": "Most of the time, we try and write synchronous code because it's easier to write, ergo less bugs. However, sometimes we **_need_** our code to be asynchronous. For example, let's say you update your account on a site. Now the website needs to send some data to a server, likely the users new data. The internet isn't instant. The time it actually takes only for the request to travel across the internet is anywhere from 10 milliseconds to a second, and then the server needs to parse the data which could take more! It would be terrible if the entire site froze whenever you where waiting for a network request to finish. By making them async, the website can execute code and network requests at once.\n![Img](./lessons/1751323637-1726566414-synchronous-asynchronous.avif)\n---\n## Question:\nWhich is simpler to understand and work with, and which kind of code allows multiple processes to be run at the same time?",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson58.json",
+  "previous": "lesson56.json",
+  "showButtons": true,
+  "correct": "b4",
+  "b1t": "Async, Non-Async",
+  "b2t": "Async, Async",
+  "b3t": "Non-Async, Non-Async",
+  "b4t": "Non-Async, Async",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "12"
+}

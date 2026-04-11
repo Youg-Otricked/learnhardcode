@@ -1,3 +1,4 @@
+let worker = null;
 let editor = null;
 let currentLesson = null;
 let lastRunOutput = '';
@@ -19,6 +20,8 @@ let checkResultBtn = null;
 let rawHarness = false;
 let setupCode = "";
 let suite;
+let runId = 0;
+let currentReject = null;
 function loadStreak() {
     const raw = localStorage.getItem('ts_streak');
     lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
@@ -50,26 +53,48 @@ function updateLevelUI() {
 function runTS(code) {
     lastRunOutput = '';
     outEl.className = '';
-    try {
-        const jsCode = ts.transpileModule(code, {
-            compilerOptions: {
-                target: ts.ScriptTarget.ES2020,
-                strict: true,
-                module: ts.ModuleKind.ESNext,
-                noImplicitAny: true,
-                removeComments: true,    
-            }
-        }).outputText;
-        const output = [];
-        const fakeConsole = { log: (...args) => output.push(args.join(' ')) };
-        new Function('console', jsCode)(fakeConsole);
-        const result = output.join('\n');
-        lastRunOutput = result || '';
-        outEl.textContent = lastRunOutput;
-    } catch (err) {
-        lastRunOutput = 'Runtime Error: ' + err.message;
-        outEl.textContent += lastRunOutput;
-        outEl.className = 'error';
+
+    const id = ++runId;
+
+    const jsCode = ts.transpileModule(code, {
+        compilerOptions: {
+            target: ts.ScriptTarget.ES2020,
+            strict: true,
+            module: ts.ModuleKind.ESNext,
+            removeComments: true,
+        }
+    }).outputText;
+
+    const output = [];
+
+    if (worker) {
+        worker.terminate();
+        worker = null;
+    }
+
+    worker = new Worker("tsworker.js");
+
+    worker.onmessage = (e) => {
+        const { type, data, run } = e.data;
+        if (run !== id) return;
+        if (type === "log") {
+            output.push(data);
+            lastRunOutput = output.join('\n');
+            outEl.textContent = lastRunOutput;
+        }
+        if (type === "error") {
+            lastRunOutput = 'Runtime Error: ' + data;
+            outEl.textContent = lastRunOutput;
+            outEl.className = 'error';
+        }
+    };
+    console.log("posting to worker:", worker);
+    worker.postMessage({ code: jsCode, run: id });
+}
+function stopExecution() {
+    if (worker) {
+        worker.terminate();
+        worker = null;
     }
 }
 function getCompletedLessons() {
@@ -107,15 +132,12 @@ window.copytext = function(elementId) {
     });
 }
 function submitCheck() {
+    stopExecution();
     if (!currentLesson || (!currentLesson.expectedOutput && !mustContain)) {
         outEl.textContent += '\nNo expectedOutput defined for this lesson.\n';
         return;
     }
     let expected = '';
-    const cleanedLines = lastRunOutput
-    .split('\n')
-    .map(line => line.replace(/\x1b\[[0-9;]*m/g, '').trim())
-    .filter(line => line);
     let actual = '';
     let passed = false;
     if (mode === "text") {
