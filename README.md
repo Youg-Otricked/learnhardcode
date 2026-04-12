@@ -25,12 +25,12 @@ I could not find a SINGLE in browser course for learning C++, and C# that was fr
 - Go: WIP
 - Haskell: WIP
 - Web: WIP
+- Fortran: WIP
 ## Planned Courses
 - Objective C (probably not)
 - Zig
 - Guided Projects/Guided Course Projects (EG Compilers, OS, System Design), Docker, Kubernetes, RabbitMQ, Redis (Local Dev Courses)
 - Elixir
-- Fortran
 - OCaml
 - Cobol (maybe impossible)
 - Nix (maybe impossible)
