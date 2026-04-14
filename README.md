@@ -32,8 +32,7 @@ I could not find a SINGLE in browser course for learning C++, and C# that was fr
 - Guided Projects/Guided Course Projects (EG Compilers, OS, System Design), Docker, Kubernetes, RabbitMQ, Redis (Local Dev Courses)
 - Elixir
 - OCaml
-- Cobol (maybe impossible)
-- Nix (maybe impossible)
+- Cobol
 ## Like this project?
 
 - ⭐ Star the repo if it helped you
