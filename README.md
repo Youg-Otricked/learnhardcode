@@ -1,5 +1,7 @@
 # This is a website for learning the most important stack to be a backend & system engineer.
-
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![Website youg-otricked.github.io/learnhardcode](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 #### Please leave any bugs or errors in the Issues
 _**Note: Some courses are unfinished. This is intentional. The site is actively expanding, and lessons are released continuously (every 2–3 lessons), rather than waiting for a full course to be completed. This ensures new content is always available. Completed courses currently are C++, Linux, x86-64 Assembly, and SQL.
 Each course is expected to reach around 60–120 lessons.**_

@@ -865,6 +865,7 @@ document.addEventListener("DOMContentLoaded", () => {
       value: "// ts sample",
       language: "typescript",
       theme: "vs-dark",
+      tabSize: 2
     });
     tseditor.addCommand(
       monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,

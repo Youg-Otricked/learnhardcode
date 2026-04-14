@@ -68,9 +68,9 @@
     },
     {
       "number": 11,
-      "name": "DSA - Datastructures - Stack",
+      "name": "DSA - Datastructures - Array",
       "firstLesson": "stdlib28.json",
-      "lessons": ["stdlib28.json"]
+      "lessons": ["stdlib28.json", "stdlib29.json", "stdlib30.json"]
     }
   ]
 }
