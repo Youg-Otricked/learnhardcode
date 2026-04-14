@@ -338,7 +338,7 @@ async function runWithSuite(suiteFile, label) {
   runHaskell(fullSource);
 }
 
-function btn(bn) {
+window.btn = function(bn) {
   if (bn === correct) {
     const alreadyCompleted = isLessonCompleted(currentLesson.id);
     outEl.textContent += "\n[PASS] Output matches expected.\n";
