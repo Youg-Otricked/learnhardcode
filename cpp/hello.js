@@ -569,7 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function btn(bn) {
+window.btn = function(bn) {
   if (bn === correct) {
     const alreadyCompleted = isLessonCompleted(currentLesson.id);
     if (!alreadyCompleted) {
