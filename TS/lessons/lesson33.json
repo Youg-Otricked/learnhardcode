@@ -1,15 +1,15 @@
 {
-    "id": "lesson33.json",
-    "title": "Objects [Nested & Modifying]",
-    "description": "## Modifying Objects\nYou can change properties after creation:\n```ts\nconst video = { title: \"Cat\", views: 100 };\nvideo.views = 200;\nvideo.views += 50;\nvideo[\"title\"] = \"Dog\";\n```\n\nWait - `const` but we can modify it? `const` means you can't reassign the variable, but you CAN change what's inside the object.\n\n```ts\nconst video = { title: \"Cat\" };\nvideo.title = \"Dog\";          // fine\nvideo = { title: \"Bird\" };     // ERROR! can't reassign\n```\n\n## Nested Objects\nObjects can contain other objects:\n```ts\nconst channel = {\n    name: \"MeTube Gaming\",\n    stats: {\n        subscribers: 50000,\n        totalViews: 1000000\n    }\n};\nconsole.log(channel.stats.subscribers);  // 50000\nconsole.log(channel[\"stats\"][\"totalViews\"]); // 1000000\n```\n\n---\n## Assignment:\nCreate a MeTube `channel` object with:\n- `name`: `\"Steve's Channel\"`\n- `subscribers`: `3`\n- `topVideo`: an object with `title`: `\"Why I'm Broke\"` and `views`: `999999`\n\nThen set `subscribers` to 4 (Steve got a pity sub).",
-    "starterCode": "// Create channel object, modify, and print\n",
-    "expectedOutput": "Steve's Channel\n4\nWhy I'm Broke",
-    "nextLesson": "lesson34.json",
-    "previous": "lesson32.json",
-    "showButtons": false,
-    "rawHarness": true,
-    "runHarness": "console.log(`${channel.name}\n${channel.subscribers}\n${channel.topVideo.title}`);",
-    "mode": "editor",
-    "difficulty": "beginner",
-    "xp": "15"
+  "id": "lesson33.json",
+  "title": "Objects [Nested & Modifying]",
+  "description": "## Modifying Objects\nYou can change properties after creation:\n```ts\nconst video = { title: \"Cat\", views: 100 };\nvideo.views = 200;\nvideo.views += 50;\nvideo[\"title\"] = \"Dog\";\n```\n\nWait - `const` but we can modify it? `const` means you can't reassign the variable, but you CAN change what's inside the object.\n\n```ts\nconst video = { title: \"Cat\" };\nvideo.title = \"Dog\";          // fine\nvideo = { title: \"Bird\" };     // ERROR! can't reassign\n```\n\n## Nested Objects\nObjects can contain other objects:\n```ts\nconst channel = {\n    name: \"MeTube Gaming\",\n    stats: {\n        subscribers: 50000,\n        totalViews: 1000000\n    }\n};\nconsole.log(channel.stats.subscribers);  // 50000\nconsole.log(channel[\"stats\"][\"totalViews\"]); // 1000000\n```\n\n---\n## Assignment:\nCreate a MeTube `channel` object with:\n- `name`: `\"Steve's Channel\"`\n- `subscribers`: `3`\n- `topVideo`: an object with `title`: `\"Why I'm Broke\"` and `views`: `999999`\n\nThen set `subscribers` to 4 (Steve got a pity sub).",
+  "starterCode": "// Create channel object, modify, and print\n",
+  "expectedOutput": "Steve's Channel\n4\nWhy I'm Broke",
+  "nextLesson": "lesson34.json",
+  "previous": "lesson32.json",
+  "showButtons": false,
+  "rawHarness": true,
+  "runHarness": "console.log(`${channel.name}\n${channel.subscribers}\n${channel.topVideo.title}`);",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "15"
 }
