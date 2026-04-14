@@ -527,7 +527,8 @@ document.addEventListener('DOMContentLoaded', () => {
         editor = monaco.editor.create(document.getElementById('editor'), {
             value: [].join('\\n'),
             language: 'typescript',
-            theme: 'vs-dark'
+            theme: 'vs-dark',
+            tabSize: 2
         });
         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function() {
             const runBtn = document.getElementById('run');
