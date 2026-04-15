@@ -745,7 +745,7 @@ class API {
     this.memfs.addFile(input, contents);
     const clang = await this.getModule(this.clangFilename);
     await this.run(clang, 'clang', '-cc1', '-S', ...this.clangCommonArgs,
-                          `-triple=${triple}`, '-mllvm',
+                          `-triple=${triple}`, '-mllvm', '-std=c++23', 
                           '--x86-asm-syntax=intel', `-O${opt}`,
                           '-o', output, '-x', 'c++', input);
     return this.memfs.getFileContents(output);
