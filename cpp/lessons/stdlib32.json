@@ -1,7 +1,7 @@
 {
   "id": "stdlib32.json",
   "title": "Fixed Size Array - QOL",
-  "description": "\n---\nCongrats! One thing left before you finish your first _real datastructure!_. We are going to add 3 new simple methods. `T front()`, which returns the first element of the array, `T back()`, which returns the final element of the array, and finally, `T* get_data()`, which returns data. For all these methods they should have a const return and the function itself should be const.",
+  "description": "\n---\nCongrats! One thing left before you finish your first _real datastructure!_. We are going to add 3 new simple methods. `T& front()`, which returns a ref to the first element of the array, `T& back()`, which returns a ref to the final element of the array, and finally, `T* get_data()`, which returns data. For all these methods they should have a const return and the function itself should be const.",
   "starterCode": "#include <iostream>\n#include <initializer_list>\n#include <algorithm>\ntemplate <typename T, int S = 1>\nclass FSizeArr {\nprivate:\n    T* data;\npublic:\n    int length;\n    FSizeArr(std::initializer_list<T> init) {\n        this->length = S > 1 ? S : 1;\n        this->data = new T[this->length];\n        std::copy(init.begin(), init.end(), this->data);\n    }\n    FSizeArr() {\n        this->length = S > 1 ? S : 1;\n        this->data = new T[this->length];\n    }\n    T& operator[](size_t index) {\n        return this->data[index];\n    }\n    const T& operator[](size_t index) const {\n        return this->data[index];\n    }\n};",
   "expectedOutput": "",
   "rawHarness": true,
