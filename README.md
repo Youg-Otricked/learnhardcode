@@ -12,6 +12,7 @@ I could not find a SINGLE in browser course for learning C++, and C# that was fr
 ## Usage(bugs with chrome cache)
  If you get errors on correct lessons, open dev tools, and hard refresh(ctrl+shift+r) until hello.js says "hello.js?v=XXX" in the networktab. Also, go to dev tools, and in storage clear cache storage. That will guarantee to fix it.
 
+_**Yet another note: WIP doesn't mean that it's not on the site, it means the editor exists and some lessons exist but it's not 100% so some lessons may be subject to change**_
 ## Current Courses
 - C++: Done (66 lessons)
 - SQL: Done (66 lessons)
