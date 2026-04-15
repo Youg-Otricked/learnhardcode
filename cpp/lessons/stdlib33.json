@@ -1,0 +1,16 @@
+{
+  "id": "stdlib33.json",
+  "title": "Fixed Size Array - Destructor",
+  "description": "Now that the class is technically complete, we should add one thing that makes it _safe_: This is a OOP feature called _**destructors**_. Constructors are called when a object is _created_, and destructors are called when a object _exits scope_. Destructors signature are similar to constructors. A destructor takes no arguments and it's name starts with `~`, EG `~AClass() {}`, and should clean up memory allocated by the class.\n---\n## Assignment:\nMake the destructor for our array class! It should just delete our value field. (make sure to assign data to nullptr after)",
+  "expectedOutput": "",
+  "starterCode": "#include <type_traits> // This is for the test harness.\n#include <iostream> // Also for the test harness\n#include <initializer_list>\n#include <algorithm>\ntemplate <typename T, int S = 1>\nclass FSizeArr {\nprivate:\n    T* value;\npublic:\n    int length;\n    FSizeArr(std::initializer_list<T> init) {\n        this->length = S > 1 ? S : init.size();\n        this->value = new T[this->length];\n        std::copy(init.begin(), init.end(), this->value);\n    }\n    FSizeArr() {\n        this->length = S > 1 ? S : 1;\n        this->value = new T[this->length];\n    }\n    T& operator[](size_t index) {\n        return this->value[index];\n    }\n    const T& operator[](size_t index) const {\n        return this->value[index];\n    }\n    const T back() const {\n        return this->value[this->length - 1];\n    }\n    const T front() const {\n        return this->value[0];\n    }\n    const T* data() const {\n        return this->value;\n    }\n};",
+  "rawHarness": true,
+  "mustContain": "1 passed, 0 failed",
+  "runHarness": "int _pass = 0;\nint _fail = 0;\nvoid _test(int num, int got, int expected) {\n    bool passed = got == expected;\n    std::cout << \"---------------------\\n\";\n    std::cout << \"Test \" << num << \":\\n\";\n    std::cout << (passed ? \"Pass\" : \"Fail\") << \"\\n\";\n    if (passed) _pass++; else _fail++;\n}\n\nint main() {\n    _test(1, 1, std::is_destructible<FSizeArr>::value ? 1 : 0);\n    std::cout << \"---------------------\\n\";\n    std::cout << _pass << \" passed, \" << _fail << \" failed\\n\";\n    return 0;\n}\n",
+  "nextLesson": "stdlib34.json",
+  "previous": "stdlib32.json",
+  "showButtons": false,
+  "mode": "editor",
+  "difficulty": "medium",
+  "xp": "30"
+}
