@@ -7,7 +7,7 @@
   "expectedOutput": "id | title | escalation_level | server_name | bucket_name | level | priority_rank\n1 | Server outage | 5 | EC2-1 | backup-bucket | 5 | 1\n3 | Deploy failed | 4 | EC2-2 |  | 4 | 2\n2 | Bucket misconfigured | 3 |  | logs-bucket | 3 | 3",
   "starterCode": "-- One more.\n",
   "runHarness": "",
-  "nextLesson": "",
+  "nextLesson": "lesson64.json",
   "previous": "lesson62.json",
   "showButtons": false,
   "rawHarness": true,

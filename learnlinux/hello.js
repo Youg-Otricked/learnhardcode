@@ -1,4 +1,5 @@
 // ========== Lesson + editor + UI logic ==========
+const worker = new Worker("../api/endpoint.js");
 let checkResultBtn;
 let loadSolutionBtn;
 let api;
@@ -59,7 +60,7 @@ window.copytext = function(elementId) {
     const text = element.textContent;
     
     navigator.clipboard.writeText(text).then(() => {
-        const originalText = `lhc ${runHarnessFile} ${elementId == 'submit-command' ? '-s' : ''}`
+        const originalText = `lhc run ${runHarnessFile} ${elementId == 'submit-command' ? '-s' : ''}`
         
         element.textContent = 'Copied!';
         
@@ -252,7 +253,10 @@ async function setupLogic() {
         passed = (actual === expected);
       }
     } else if (mode === 'cli') { 
-       passed = localStorage.getItem('cli_success') === 'true';
+      const cli = localStorage.getItem('cli_success');
+      const [status, hash] = cli.split(':');
+      passed = status === 'PASS' && hash === runHarnessFile;
+      if (passed) { worker.postMessage("stop");}
     } else {
       const cleanedLines = lastRunOutput
         .split('\n')
@@ -339,21 +343,16 @@ async function setupLogic() {
       }
     }
   }
-  window.addEventListener('storage', (e) => {
-      if (e.key === 'cli_success' && mode === 'cli' && e.newValue) {
-          console.log('CLI event:', e.newValue);
-          
-          const parts = e.newValue.split('_');
-          const lang = parts[0];
-          const lessonId = parts[1];
-          const isSuccess = parts[2];
-          if (currentLesson) {
-              localStorage.setItem('cli_success', isSuccess);
-              submitCheck();
-              localStorage.removeItem('cli_success');
-          }
-      }
-  });
+  worker.onmessage = (e) => {
+    console.log("WORKER MSG:", e.data);
+    localStorage.setItem("cli_success", e.data.success);
+    if (mode === 'cli') {
+        if (currentLesson) {
+          submitCheck();
+          localStorage.removeItem("cli_success");
+        }
+    }
+  };
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".hint-toggle");
     if (!btn) return;
@@ -397,7 +396,6 @@ async function setupLogic() {
 document.addEventListener('DOMContentLoaded', () => {
   setupLogic();
 });
-
 window.btn = function(bn) {
   if (bn === correct) {
     const alreadyCompleted = isLessonCompleted(currentLesson.id);

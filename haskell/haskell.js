@@ -6,6 +6,7 @@ import {
   WASI,
 } from "./wasi_shim.mjs";
 import { DyLDBrowserHost, main } from "./dyld.mjs";
+const worker = new Worker("../api/endpoint.js");
 let stdout = "";
 let main_func;
 let HASKELL_INSTANCE_CACHE = null;
@@ -209,8 +210,11 @@ function submitCheck() {
       expected = currentLesson.expectedOutput.trim();
       passed = actual === expected;
     }
-  } else if (mode === "cli") {
-    passed = localStorage.getItem("cli_success") === "true";
+  } else if (mode === 'cli') { 
+    const cli = localStorage.getItem('cli_success');
+    const [status, hash] = cli.split(':');
+    passed = status === 'PASS' && hash === runHarnessFile;
+    if (passed) { worker.postMessage("stop");}
   } else {
     const lines = (lastRunOutput || "").split("\n");
 
@@ -296,21 +300,16 @@ function submitCheck() {
     }
   }
 }
-window.addEventListener("storage", (e) => {
-  if (e.key === "cli_success" && mode === "cli" && e.newValue) {
-    console.log("CLI event:", e.newValue);
-
-    const parts = e.newValue.split("_");
-    const lang = parts[0];
-    const lessonId = parts[1];
-    const isSuccess = parts[2];
-    if (currentLesson) {
-      localStorage.setItem("cli_success", isSuccess);
-      submitCheck();
-      localStorage.removeItem("cli_success");
+worker.onmessage = (e) => {
+    console.log("WORKER MSG:", e.data);
+    localStorage.setItem("cli_success", e.data.success);
+    if (mode === 'cli') {
+        if (currentLesson) {
+          submitCheck();
+          localStorage.removeItem("cli_success");
+        }
     }
-  }
-});
+};
 async function runWithSuite(suiteFile, label) {
   if (!editor) return;
   let studentSource = editor.getValue();

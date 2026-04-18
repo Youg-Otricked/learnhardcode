@@ -1,3 +1,4 @@
+const worker = new Worker("../api/endpoint.js");
 let editor = null;
 let currentLesson = null;
 let lastRunOutput = '';
@@ -55,23 +56,34 @@ async function initDB() {
     db = new SQL.Database();
 }
 function formatResults(results) {
-    if (results.length === 0) return 'Query executed successfully (no results)';
-    
-    const cols = results[0].columns;
-    const rows = results[0].values;
-    const widths = cols.map((col, i) => {
-        const valLengths = rows.map(r => String(r[i]).length);
-        return Math.max(col.length, ...valLengths);
-    });
-    
-    const pad = (str, width) => String(str).padEnd(width);
-    const separator = widths.map(w => '-'.repeat(w)).join('-+-');
-    const header = cols.map((c, i) => pad(c, widths[i])).join(' | ');
-    const body = rows.map(r => 
-        r.map((val, i) => pad(val, widths[i])).join(' | ')
-    ).join('\n');
-    
-    return header + '\n' + separator + '\n' + body;
+    if (!results || results.length === 0) {
+        return 'Query executed successfully (no results)';
+    }
+    console.log(results);
+    const formatOne = (res) => {
+        const cols = res.columns;
+        const rows = res.values;
+
+        if (rows.length === 0) {
+            return cols.join(' | ') + '\n(no rows)';
+        }
+
+        const widths = cols.map((col, i) => {
+            const valLengths = rows.map(r => String(r[i]).length);
+            return Math.max(col.length, ...valLengths);
+        });
+
+        const pad = (str, width) => String(str).padEnd(width);
+        const separator = widths.map(w => '-'.repeat(w)).join('-+-');
+        const header = cols.map((c, i) => pad(c, widths[i])).join(' | ');
+        const body = rows.map(r =>
+            r.map((val, i) => pad(val, widths[i])).join(' | ')
+        ).join('\n');
+
+        return header + '\n' + separator + '\n' + body;
+    };
+
+    return results.map(formatOne).join('\n\n');
 }
 function runSQL(code) {
     lastRunOutput = '';
@@ -156,7 +168,10 @@ function submitCheck() {
         passed = (actual === expected);
       }
     } else if (mode === 'cli') { 
-      passed = localStorage.getItem('cli_success') === 'true';
+        const cli = localStorage.getItem('cli_success');
+        const [status, hash] = cli.split(':');
+        passed = status === 'PASS' && hash === runHarnessFile;
+        if (passed) { worker.postMessage("stop");}
     } else {
       const cleanedLines = lastRunOutput
         .split('\n')
@@ -238,21 +253,16 @@ function submitCheck() {
         }
     }
 }
-window.addEventListener('storage', (e) => {
-    if (e.key === 'cli_success' && mode === 'cli' && e.newValue) {
-        console.log('CLI event:', e.newValue);
-        
-        const parts = e.newValue.split('_');
-        const lang = parts[0];
-        const lessonId = parts[1];
-        const isSuccess = parts[2];
+worker.onmessage = (e) => {
+    console.log("WORKER MSG:", e.data);
+    localStorage.setItem("cli_success", e.data.success);
+    if (mode === 'cli') {
         if (currentLesson) {
-            localStorage.setItem('cli_success', isSuccess);
-            submitCheck();
-            localStorage.removeItem('cli_success');
+          submitCheck();
+          localStorage.removeItem("cli_success");
         }
     }
-});
+};
 document.addEventListener('beforeunload', () => {
   const data = {
     lesson: currentLesson.id,
