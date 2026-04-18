@@ -3,5 +3,7 @@ zig-out/
 
 # Dependencies
 node_modules/
-zig/playground/
-zig/
+# WIP
+cobol/
+elixir/
+ocaml/

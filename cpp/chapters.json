@@ -70,7 +70,7 @@
       "number": 11,
       "name": "DSA - Datastructures - Array",
       "firstLesson": "stdlib28.json",
-      "lessons": ["stdlib28.json", "stdlib29.json", "stdlib30.json", "stdlib31.json"]
+      "lessons": ["stdlib28.json", "stdlib29.json", "stdlib30.json", "stdlib31.json", "stdlib32.json", "stdlib33.json", "stdlib34.json"]
     }
   ]
 }

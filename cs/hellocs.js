@@ -3,6 +3,7 @@ console.log("hellocs.js running");
 console.log('wasmRunner.js loaded');
 import * as Comlink from "https://unpkg.com/comlink/dist/esm/comlink.mjs";
 const worker = new Worker("./wwwroot/assets/worker.js", { type: "module" });
+const CLIWorker = new Worker("../api/endpoint.js");
 const dotnet = Comlink.wrap(worker);
 let dotnetLoaded = false;
 const dotnetPromise = dotnet.startAsync().then(async () => {
@@ -360,7 +361,10 @@ async function setupLogic() {
         passed = (actual === expected);
       }
     } else if (mode === 'cli') { 
-      passed = localStorage.getItem('cli_success') === 'true';
+      const cli = localStorage.getItem('cli_success');
+      const [status, hash] = cli.split(':');
+      passed = status === 'PASS' && hash === runHarnessFile;
+      if (passed) { CLIWorker.postMessage("stop");}
     } else {
       const cleanedLines = lastRunOutput
         .split('\n')
@@ -447,21 +451,16 @@ async function setupLogic() {
       }
     }
   }
-  window.addEventListener('storage', (e) => {
-      if (e.key === 'cli_success' && mode === 'cli' && e.newValue) {
-          console.log('CLI event:', e.newValue);
-          
-          const parts = e.newValue.split('_');
-          const lang = parts[0];
-          const lessonId = parts[1];
-          const isSuccess = parts[2];
-          if (currentLesson) {
-              localStorage.setItem('cli_success', isSuccess);
-              submitCheck();
-              localStorage.removeItem('cli_success');
-          }
+  CLIWorker.onmessage = (e) => {
+    console.log("WORKER MSG:", e.data);
+    localStorage.setItem("cli_success", e.data.success);
+    if (mode === 'cli') {
+      if (currentLesson) {
+        submitCheck();
+        localStorage.removeItem("cli_success");
       }
-  });
+    }
+  };
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".hint-toggle");
     if (!btn) return;

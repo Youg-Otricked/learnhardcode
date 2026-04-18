@@ -1,104 +1,6 @@
 const worker = new Worker("../api/endpoint.js");
-let lfortranReady = false;
-let lfortranFuncs = {
-  compile_code: null,
-  execute_code: null
-};
-function initLFortran() {
-  return new Promise((resolve, reject) => {
-    if (lfortranReady) {
-      resolve();
-      return;
-    }
-
-    window.Module = {
-      locateFile: function(path) {
-        return path;
-      },
-      onRuntimeInitialized: function() {
-        lfortranFuncs.emit_wasm_from_source =
-          Module.cwrap("emit_wasm_from_source", "string", ["string"]);
-
-        lfortranFuncs.compile_code = function(source) {
-          return lfortranFuncs.emit_wasm_from_source(source);
-        };
-
-        lfortranFuncs.execute_code = async function(wasmBytes, print) {
-          let output = [];
-          let exitCode = { val: 1 };
-          let memoryRef = null;
-
-          function flush() {
-            print(output.join(""));
-            output.length = 0;
-          }
-
-          const imports = {
-            wasi_snapshot_preview1: {
-              fd_write: function(fd, iovs, iovsLen, nwritten) {
-                let written = 0;
-                let text = "";
-
-                for (let i = 0; i < iovsLen; i++) {
-                    const view = new DataView(memoryRef.buffer, iovs + i * 8, 8);
-                    const ptr = view.getUint32(0, true);
-                    const len = view.getUint32(4, true);
-
-                    text += new TextDecoder("utf8").decode(
-                    new Uint8Array(memoryRef.buffer, ptr, len)
-                    );
-                    written += len;
-                }
-
-                output.push(text);
-                flush();
-
-                if (nwritten) {
-                    new DataView(memoryRef.buffer).setUint32(nwritten, written, true);
-                }
-
-                return 0;
-              },
-              proc_exit: function(code) {
-                exitCode.val = code;
-                throw new Error("__FORTRAN_EXIT__" + code);
-              }
-            },
-            js: {
-              cpu_time: function() {
-                return Date.now() / 1000;
-              },
-              show_img: function() {},
-              show_img_color: function() {}
-            }
-          };
-
-          const result = await WebAssembly.instantiate(wasmBytes, imports);
-            memoryRef = result.instance.exports.memory;
-
-            try {
-            result.instance.exports._start();
-            } catch (err) {
-            if (!String(err).includes("__FORTRAN_EXIT__")) {
-                throw err;
-            }
-        }
-        };
-
-        lfortranReady = true;
-        resolve();
-      }
-    };
-
-    const script = document.createElement("script");
-    script.src = "lfortran.js";
-    script.onerror = () => reject(new Error("Failed to load lfortran.js"));
-    document.body.appendChild(script);
-  });
-}
-async function init() {
-    await initLFortran();
-}
+const ZigCompiler = new Worker("./assets/zig-xEFKY47a.js");
+const ZigRunner = new Worker("./assets/runner-DTHaRc0a.js")
 let editor = null;
 let currentLesson = null;
 let lastRunOutput = '';
@@ -120,16 +22,14 @@ let checkResultBtn = null;
 let rawHarness = false;
 let setupCode = "";
 let suite;
-let runId = 0;
-let currentReject = null;
 function loadStreak() {
-    const raw = localStorage.getItem('fortran_streak');
+    const raw = localStorage.getItem('zig_streak');
     lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
     updateStreakUI();
 }
 
 function saveStreak() {
-    localStorage.setItem('fortran_streak', String(lessonsInRow));
+    localStorage.setItem('zig_streak', String(lessonsInRow));
 }
 
 function updateStreakUI() {
@@ -150,52 +50,68 @@ function updateLevelUI() {
   document.getElementById("levelProg").value = localStorage.getItem('user_xp');
   document.getElementById("levelProg").max = localStorage.getItem('level_xp_cap');
 }
-async function runFortran(code) {
-  lastRunOutput = '';
-  outEl.className = '';
-  outEl.textContent = 'Running...\n';
-
-  try {
-    await initLFortran();
-
-    const compiled = lfortranFuncs.compile_code(code);
-
-    if (!compiled) {
-      lastRunOutput = 'Compilation failed.';
-      outEl.textContent = lastRunOutput;
-      outEl.className = 'error';
-      return;
+async function runZig(code) {
+    lastRunOutput = '';
+    outEl.className = '';
+    try {
+        const compileResult = await new Promise((resolve, reject) => {
+            ZigCompiler.onmessage = (e) => {
+                const data = e.data;
+                if (data.failed || (data.stderr && data.stderr.includes("error: "))) {
+                    reject({ error: "Compile failed", stderr: data.stderr });
+                    return;
+                }
+                if (data.compiled) resolve(data);
+            };
+            ZigCompiler.postMessage({ run: code });
+        });
+        await new Promise((resolve) => {
+            ZigRunner.onmessage = (e) => {
+                const data = e.data;
+                console.log(data);
+                if (data.stderr) {
+                    lastRunOutput += data.stderr;
+                }
+                if (data.stdout) {
+                    lastRunoutput += data.stdout;
+                }
+                if (data.done) {
+                    resolve(data);
+                }
+            }
+            ZigRunner.postMessage({ run: compileResult.compiled});
+        })
+        outEl.textContent = lastRunOutput;
+    } catch (err) {
+        console.log(err);
+        outEl.textContent += '\nCompile Error: ' + (err.stderr || err);
+        outEl.className = 'error';
     }
-
-    const parts = compiled.split(",");
-    const status = parts[0];
-    const bytes = parts.slice(1).map(x => Number(x));
-
-    if (status !== "0") {
-      lastRunOutput = parts.slice(1).join(",");
-      outEl.textContent = lastRunOutput;
-      outEl.className = 'error';
-      return;
-    }
-
-    await lfortranFuncs.execute_code(new Uint8Array(bytes), (text) => {
-      lastRunOutput += text;
-      outEl.textContent = lastRunOutput;
-    });
-  } catch (err) {
-    lastRunOutput = 'Runtime Error: ' + err;
-    outEl.textContent = lastRunOutput;
-    outEl.className = 'error';
-  }
 }
 function getCompletedLessons() {
-  const stored = localStorage.getItem('fortran_completed_lessons');
+  const stored = localStorage.getItem('zig_completed_lessons');
   return stored ? JSON.parse(stored) : {};
 }
 function isLessonCompleted(lessonId) {
   const completed = getCompletedLessons();
   return completed[lessonId]?.completed || false;
 }
+document.addEventListener('beforeunload', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_zig', JSON.stringify(data));
+});
+window.addEventListener('pagehide', () => {
+  const data = {
+    lesson: currentLesson.id,
+    code: editor.getValue()
+  };
+
+  localStorage.setItem('saved_code_zig', JSON.stringify(data));
+});
 function markLessonCompleted(lessonId, xpEarned) {
   const completed = getCompletedLessons();
   completed[lessonId] = {
@@ -206,7 +122,7 @@ function markLessonCompleted(lessonId, xpEarned) {
     completedAt: Date.now(),
     mode: mode
   };
-  localStorage.setItem('fortran_completed_lessons', JSON.stringify(completed));
+  localStorage.setItem('zig_completed_lessons', JSON.stringify(completed));
 }
 window.copytext = function(elementId) {
     const element = document.getElementById(elementId);
@@ -246,19 +162,22 @@ function submitCheck() {
         passed = (actual === expected);
       }
     } else if (mode === 'cli') { 
-      const cli = localStorage.getItem('cli_success');
-      const [status, hash] = cli.split(':');
-      passed = status === 'PASS' && hash === runHarnessFile;
-      if (passed) { worker.postMessage("stop");}
-    } else {
-      const cleanedLines = lastRunOutput
-        .split('\n')
-        .map(line => line.trim())
-        .filter(line => line);
+    const cli = localStorage.getItem('cli_success');
+    const [status, hash] = cli.split(':');
+    passed = status === 'PASS' && hash === runHarnessFile;
+    if (passed) { worker.postMessage("stop");}
+  } else {
+      const cleaned = lastRunOutput
+        .replace(/---\s*exit with exit code \d+\s*---\s*$/, "")
+        .trim();
+
+      const cleanedLines = cleaned
+        .split("\n")
+        .filter(Boolean);
 
       const studentOut = cleanedLines.join('\n') + (cleanedLines.length ? '\n' : '');
 
-      expected = currentLesson.expectedOutput ? currentLesson.expectedOutput.trim() : "";
+      expected = currentLesson.expectedOutput.trim();
       actual   = studentOut.trim();
       if (mustContain) {
         if (Array.isArray(mustContain)) {
@@ -309,7 +228,7 @@ function submitCheck() {
         updateLevelUI();
         const params = new URLSearchParams(location.search);
         const lessonFileFromUrl = params.get('lesson') || 'lesson1.json';
-        localStorage.setItem('fortran_current_lesson', lessonFileFromUrl);
+        localStorage.setItem('zig_current_lesson', lessonFileFromUrl);
 
         if (nextLessonId) nextBtn.style.display = 'inline-block';
     } else {
@@ -341,31 +260,15 @@ worker.onmessage = (e) => {
         }
     }
 };
-document.addEventListener('beforeunload', () => {
-  const data = {
-    lesson: currentLesson.id,
-    code: editor.getValue()
-  };
-
-  localStorage.setItem('saved_code_fortran', JSON.stringify(data));
-});
-window.addEventListener('pagehide', () => {
-  const data = {
-    lesson: currentLesson.id,
-    code: editor.getValue()
-  };
-
-  localStorage.setItem('saved_code_fortran', JSON.stringify(data));
-});
 async function runWithSuite(suiteFile, label) {
     if (!editor) return;
-    let studentSource = editor.getValue();
+    const studentSource = editor.getValue();
     const data = {
-        lesson: currentLesson.id,
-        code: studentSource
+      lesson: currentLesson.id,
+      code: studentSource
     };
 
-    localStorage.setItem('saved_code_fortran', JSON.stringify(data));
+    localStorage.setItem('saved_code_zig', JSON.stringify(data));
     outEl.textContent = (label || 'Running') + '...\n';
     lastRunOutput = '';
     let fullSource = studentSource;
@@ -381,7 +284,7 @@ async function runWithSuite(suiteFile, label) {
         }
     }
     fullSource = studentSource;
-    await runFortran(fullSource);
+    runZig(fullSource);
 }
 
 window.btn = function(bn) {
@@ -440,14 +343,14 @@ async function loadLesson(lessonFile) {
     descEl.innerHTML = marked.parse(lesson.description || '');
     if (editor) {
         editor.setValue(lesson.starterCode || '');
-        const saved = localStorage.getItem('saved_code_fortran');
+        const saved = localStorage.getItem('saved_code_zig');
 
         if (saved) {
             try {
                 const data = JSON.parse(saved);
 
                 if (data?.lesson === lesson.id && typeof data.code === 'string') {
-                editor.setValue(data.code);
+                    editor.setValue(data.code);
                 }
             } catch (e) {
             }
@@ -533,7 +436,7 @@ async function setupLogic() {
     hintBody= document.querySelector('.hint-body');
     let params = new URLSearchParams(location.search);
     let lessonFileFromUrl = params.get('lesson');
-    let lastLesson = localStorage.getItem('fortran_current_lesson');
+    let lastLesson = localStorage.getItem('zig_current_lesson');
     let lessonFile = lessonFileFromUrl || lastLesson || 'lesson1.json';
     
     await loadLesson(lessonFile).catch(err => {
@@ -610,11 +513,12 @@ async function setupLogic() {
 }
 
 require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });
+if (document.readyState === "loading") {
 document.addEventListener('DOMContentLoaded', () => {
     require(['vs/editor/editor.main'], function() {
         editor = monaco.editor.create(document.getElementById('editor'), {
             value: [].join('\\n'),
-            language: 'fortran',
+            language: 'zig',
             theme: 'vs-dark'
         });
         editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function() {
@@ -622,9 +526,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (runBtn) runBtn.click();
         });
         
-        console.log('Fortran Monaco Editor initialized');
-        init();
+        console.log('Zig Monaco Editor initialized');
         setupLogic();
 
     });
 });
+} else {
+    require(['vs/editor/editor.main'], function() {
+        editor = monaco.editor.create(document.getElementById('editor'), {
+            value: [].join('\\n'),
+            language: 'zig',
+            theme: 'vs-dark'
+        });
+        editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function() {
+            const runBtn = document.getElementById('run');
+            if (runBtn) runBtn.click();
+        });
+        
+        console.log('Zig Monaco Editor initialized');
+        setupLogic();
+    });
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lesson1.json",
+  "title": "Welcome!",
+  "description": "You just got hired at **Invisible Bottleneck Maker (IBM)** to work on their \"Not Ancient\" punch card based programming language, **_COBOLT_**!\n---\n## Assignment:\nSomebody wrote a \"Hello, World!\" program. Make the code print `COBOLT REPL v0.0.0.000.01`",
+  "starterCode": "const std = @import(\"std\");\n\npub fn main(init: std.process.Init) !void {\n    try std.Io.File.stdout().writeStreamingAll(init.io, \"Hello, World!\\n\");\n}",
+  "expectedOutput": "COBOLT REPL v0.0.0.000.01",
+  "nextLesson": "lesson2.json",
+  "previous": null,
+  "showButtons": false,
+  "correct": "nobns",
+  "difficulty": "easiest",
+  "xp": "10"
+}

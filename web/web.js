@@ -1,3 +1,4 @@
+const worker = new Worker("../api/endpoint.js");
 let htmleditor = null;
 let csseditor = null;
 let tseditor = null;
@@ -460,8 +461,11 @@ function submitCheck() {
       expected = currentLesson.expectedOutput.trim();
       passed = actual === expected;
     }
-  } else if (mode === "cli") {
-    passed = localStorage.getItem("cli_success") === "true";
+  } else if (mode === 'cli') { 
+    const cli = localStorage.getItem('cli_success');
+    const [status, hash] = cli.split(':');
+    passed = status === 'PASS' && hash === runHarnessFile;
+    if (passed) { worker.postMessage("stop");}
   } else {
     passed = true;
     const cleanedLines = lastRunOutput
@@ -551,21 +555,16 @@ function submitCheck() {
     }
   }
 }
-window.addEventListener("storage", (e) => {
-  if (e.key === "cli_success" && mode === "cli" && e.newValue) {
-    console.log("CLI event:", e.newValue);
-
-    const parts = e.newValue.split("_");
-    const lang = parts[0];
-    const lessonId = parts[1];
-    const isSuccess = parts[2];
-    if (currentLesson) {
-      localStorage.setItem("cli_success", isSuccess);
-      submitCheck();
-      localStorage.removeItem("cli_success");
+worker.onmessage = (e) => {
+    console.log("WORKER MSG:", e.data);
+    localStorage.setItem("cli_success", e.data.success);
+    if (mode === 'cli') {
+        if (currentLesson) {
+          submitCheck();
+          localStorage.removeItem("cli_success");
+        }
     }
-  }
-});
+};
 document.addEventListener("beforeunload", () => {
   let studentTs = tseditor.getValue();
   let studentCss = csseditor.getValue();
