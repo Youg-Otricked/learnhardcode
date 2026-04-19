@@ -1,0 +1,18 @@
+{
+  "id": "lesson7.json",
+  "title": "What are gophers for, anyways?",
+  "description": "Go is used for 3 core reasons:\n1. It's fast to compile and lightweight.\n2. It's concurrency system is _very easy_ to learn.\n3. It's simple.\n---\nYou can do math in go with your standard operators, (+ - * /), then there are a few unique ones: \n1. %: This is _modulus_, which gives the remainder of a division\n2. `+=`/`-=`/`*=`/`/=`/`%=`: If you did an operation on a variable, it would create the value but not assign to it, so `x + 3` would do nothing: so to add 3 to let's say `x`, we would do `x = x + 3`, but that's boring and long. `x += 3` is the same as that.\n3. `++`/`--`: You need to increment/decrement things _a lot._ That's what these are for: `x--` == `x -= 1`. Note: `++` and `--` are _full statements_, so `y = x++` is illegal.\n---\n## Assignment:\nPrices are terribly inaccurate. Fix the calculation.",
+  "starterCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    perGigPrice := 1.3\n    totalGigs := 192.0\n    due := perGigPrice + totalGigs\n    fmt.Printf(\"Your due price is %.2f.\", due)\n}",
+  "expectedOutput": "Your due price is 249.60.",
+  "nextLesson": "lesson8.json",
+  "previous": "lesson6.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "easiest",
+  "xp": "15"
+}

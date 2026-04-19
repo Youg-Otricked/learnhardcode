@@ -877,6 +877,7 @@ document.addEventListener("DOMContentLoaded", () => {
       value: "/*css sample*/",
       language: "css",
       theme: "vs-dark",
+      tabSize: 4
     });
     csseditor.addCommand(
       monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
@@ -889,6 +890,7 @@ document.addEventListener("DOMContentLoaded", () => {
       value: "<! html sample>",
       language: "html",
       theme: "vs-dark",
+      tabSize: 2,
     });
     htmleditor.addCommand(
       monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
