@@ -1,0 +1,17 @@
+{
+  "id": "lesson4.json",
+  "title": "Types",
+  "description": "C is what is called a _statically typed language_. This means that once somthing of a type exists, it _cannot change types_.\nWait. What are types anyways?\nThere are 5 main types you will use in C:\n- `int`: This stores a whole number, e.g. `12`\n- `float`: This stores a 7 digit decimal number. The number literal _must end in 'f'_. e.g. `123.4f`\n- `double`: This stoes a 15 digit decimal number, e.g. `123.456789`\n- `char`: This stores a character wrapped in _single quotes_. e.g. `'$'`\n- `char*`: This is typically used in C to store a string of text wrapped in _double quotes_. (I'll explain the `*` later). e.g. `\"Hello, World!\"`.\n---\n## Question:\nWhat datatype would store 3.12",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson5.json",
+  "previous": "lesson3.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "float",
+  "b2t": "double",
+  "b3t": "int",
+  "b4t": "",
+  "difficulty": "easiest",
+  "xp": "11"
+}

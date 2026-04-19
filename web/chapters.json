@@ -10,7 +10,7 @@
       "number": 2,
       "name": "Text",
       "firstLesson": "lesson3.json",
-      "lessons": ["lesson3.json"
-    },
+      "lessons": ["lesson3.json", "lesson4.json", "lesson5.json"]
+    }
   ]
 }

@@ -10,7 +10,7 @@
             "number": 2,
             "name": "Variables",
             "firstLesson": "lesson4.json",
-            "lessons": ["lesson4.json", "lesson5.json"]
+            "lessons": ["lesson4.json", "lesson5.json", "lesson6.json", "lesson7.json"]
         }
     ]
 }
