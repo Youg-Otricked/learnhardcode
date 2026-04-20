@@ -7,7 +7,7 @@
     "nextLesson": "lesson31.json",
     "previous": "lesson29.json",
     "showButtons": false,
-    "mode": "editor",
+    "mode": "cli",
     "difficulty": "beginner",
     "xp": "15",
     "runHarness": "85e4f539"
