@@ -42,7 +42,36 @@ html, body {
   flex: 0 0 35%;
   border-right: 1px solid var(--border);
 }
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  background-color: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
 
+table thead tr {
+  background-color: var(--accent);
+  color: #ffffff;
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border);
+}
+table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: var(--panel-alt);
+}
 .code-box {
   background: var(--panel);
   flex: 1;
