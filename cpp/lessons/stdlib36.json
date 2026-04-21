@@ -1,0 +1,16 @@
+{
+  "id": "stdlib36.json",
+  "title": "C++ - Advanced weird overloads[new/delete/new[]/delete[]]",
+  "description": "In C++, when you think manual memory managment, you think `int* x = new int`, `delete x`... However, new and delete are just unary operators - ergo, you can overload them. There signature is \n```cpp\nstatic void* operator new(std::size_t size);\nstatic void operator delete(void* ptr) noexcept;\nstatic void* operator new[](std::size_t size);\nstatic void operator delete[](void* ptr) noexcept;\n```\nThey are static because they exist before the object - they are operators for new.\n\n---\n## Assignment:\nWe will be making a small allocater.\n## Steps:\n1. Override single object allocation\n    - operator new must:\n        * increment allocCount\n        * allocate memory using malloc\n2. Override single object deallocation\n    - operator delete must:\n        * increment freeCount\n        * free memory using free\n3. Override array allocation\n    - operator new[] must:\n        * increment allocCount by number of objects (approx allowed)\n        * allocate memory using malloc\n4. Override array deallocation\n    - operator delete[] must:\n        * increment freeCount\n        * free memory\n(note that with cstdlib included, you allocate a specific number of bytes with std::malloc(amountofbytes), and free it with std::free(pointer). size_t is just a special unsigned int ment for storing amounts of bytes)",
+  "expectedOutput": "Alloc: 2\nFree: 2\nTest 1:\nPass",
+  "starterCode": "#include <cstdlib>\n#include <iostream>\n\nclass Tracker {\npublic:\n    static int allocCount;\n    static int freeCount;\n\n    int value;\n\n    Tracker(int v = 0) : value(v) {}\n\n    // Write your overloads for new/delete/new[]/delete[]\n};",
+  "nextLesson": "stdlib37.json",
+  "previous": "stdlib35.json",
+  "showButtons": false,
+  "rawHarness": true,
+  "runHarness": "int Tracker::allocCount = 0;\nint Tracker::freeCount = 0;\n\nint main() {\n    Tracker* a = new Tracker(10);\n    delete a;\n\n    Tracker* arr = new Tracker[5];\n    delete[] arr;\n\n    std::cout << \"Alloc: \" << Tracker::allocCount << '\\n';\n    std::cout << \"Free: \" << Tracker::freeCount << '\\n';\n\n    std::cout << ((Tracker::allocCount >= 2 && Tracker::freeCount >= 2)\n        ? \"Test 1:\\nPass\"\n        : \"Test 1:\\nFail\");\n\n    return 0;\n}",
+  "correct": "nobns",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "20"
+}
