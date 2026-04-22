@@ -1,7 +1,7 @@
 {
     "id": "lesson31.json",
     "title": "Select [CASE WHEN]",
-    "description": "## CASE WHEN\nCASE WHEN is if/else inside SQL. It creates a new value based on conditions.\n```sql\nSELECT name,\n    CASE\n        WHEN uptime > 95 THEN 'healthy'\n        WHEN uptime > 50 THEN 'degraded'\n        ELSE 'critical'\n    END as health\nFROM servers;\n```\nThis checks each row and assigns a label based on the condition. `END` closes the CASE block. `as health` names the new column.\n\n---\n## Assignment:\nBWS needs a server report. Select each server's name and a priority label:\n- cpu_cores >= 8 -> 'high'\n- cpu_cores >= 4 -> 'medium'\n- everything else -> 'low' as priority",
+    "description": "## CASE WHEN\nCASE WHEN is if/else inside SQL. It creates a new value based on conditions.\n```sql\nSELECT name,\n    CASE\n        WHEN uptime > 95 THEN 'healthy'\n        WHEN uptime > 50 THEN 'degraded'\n        ELSE 'critical'\n    END as health\nFROM servers;\n```\nThis checks each row and assigns a label based on the condition. `END` closes the CASE block. `as health` names the new column.\n\n\n---\n## Assignment:\nBWS needs a server report. Select each server's name and a priority label:\n- cpu_cores >= 8 -> 'high'\n- cpu_cores >= 4 -> 'medium'\n- everything else -> 'low' as priority",
     "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, status TEXT); INSERT INTO servers VALUES (1, 'prod-1', 8, 'running'), (2, 'prod-2', 16, 'running'), (3, 'staging-1', 4, 'stopped'), (4, 'dev-box', 2, 'on fire'), (5, 'test', 1, 'pending');",
     "starterCode": "-- Select name and priority label\n",
     "runHarness": "",

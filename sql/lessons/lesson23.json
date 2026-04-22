@@ -1,7 +1,7 @@
 {
     "id": "lesson23.json",
     "title": "Advanced SELECT [HAVING]",
-    "description": "## HAVING\n`WHERE` filters rows BEFORE grouping. But what if you want to filter AFTER grouping? That's `HAVING`.\n\n```sql\n-- WHERE: filter rows first, then group\nSELECT status, COUNT(*)\nFROM deployments\nWHERE status != 'deleted'\nGROUP BY status;\n\n-- HAVING: group first, then filter groups\nSELECT status, COUNT(*)\nFROM deployments\nGROUP BY status\nHAVING COUNT(*) > 1;\n```\n\n`WHERE` = filter individual rows\n`HAVING` = filter entire groups\n\n---\n## Assignment:\nBWS wants to find overloaded servers. Group servers by their cpu_cores count and show only groups where the average uptime is below 90.",
+    "description": "## HAVING\n`WHERE` filters rows BEFORE grouping. But what if you want to filter AFTER grouping? That's `HAVING`.\n\n```sql\n-- WHERE: filter rows first, then group\nSELECT status, COUNT(*)\nFROM deployments\nWHERE status != 'deleted'\nGROUP BY status;\n\n-- HAVING: group first, then filter groups\nSELECT status, COUNT(*)\nFROM deployments\nGROUP BY status\nHAVING COUNT(*) > 1;\n```\n\n`WHERE` = filter individual rows\n`HAVING` = filter entire groups\n\n\n---\n## Assignment:\nBWS wants to find overloaded servers. Group servers by their cpu_cores count and show only groups where the average uptime is below 90.",
     "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, ram_gb REAL, uptime REAL); INSERT INTO servers VALUES (1, 'prod-1', 8, 32.0, 99.9), (2, 'prod-2', 8, 64.0, 95.5), (3, 'staging', 4, 16.0, 88.2), (4, 'dev', 2, 8.0, 12.0), (5, 'test', 4, 16.0, 45.0);",
     "starterCode": "-- Find cpu_cores groups with avg uptime below 90\n",
     "runHarness": "",

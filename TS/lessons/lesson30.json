@@ -1,7 +1,7 @@
 {
   "id": "lesson30.json",
   "title": "Functions [Map & Filter]",
-  "description": "## Map & Filter\nArrays have built-in higher order functions:\n\n### .map() - transform every element\n```ts\nconst nums = [1, 2, 3];\nconst doubled = nums.map((n) => n * 2);\n// [2, 4, 6]\n```\n\n### .filter() - keep elements that pass a test\n```ts\nconst nums = [1, 2, 3, 4, 5];\nconst big = nums.filter((n) => n > 3);\n// [4, 5]\n```\n\nYou can chain them:\n```ts\nconst result = nums.filter((n) => n > 2).map((n) => n * 10);\n// [30, 40, 50]\n```\n\n---\n## Assignment:\nMeTube has an array of video view counts. Use `.filter()` to keep only videos with over 1000 views, then `.map()` to format them as `\"X views\"`. Print each result.",
+  "description": "## Map & Filter\nArrays have built-in higher order functions:\n\n### .map() - transform every element\n```ts\nconst nums = [1, 2, 3];\nconst doubled = nums.map((n) => n * 2);\n// [2, 4, 6]\n```\n\n### .filter() - keep elements that pass a test\n```ts\nconst nums = [1, 2, 3, 4, 5];\nconst big = nums.filter((n) => n > 3);\n// [4, 5]\n```\n\nYou can chain them:\n```ts\nconst result = nums.filter((n) => n > 2).map((n) => n * 10);\n// [30, 40, 50]\n```\n\n\n---\n## Assignment:\nMeTube has an array of video view counts. Use `.filter()` to keep only videos with over 1000 views, then `.map()` to format them as `\"X views\"`. Print each result.",
   "starterCode": "const views: number[] = [500, 2300, 150, 8900, 1001, 50];\n\n// Filter > 1000, map to \"X views\", print each\n",
   "expectedOutput": "2300 views\n8900 views\n1001 views",
   "nextLesson": "lesson31.json",

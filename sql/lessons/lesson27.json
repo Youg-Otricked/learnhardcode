@@ -1,7 +1,7 @@
 {
     "id": "lesson27.json",
     "title": "Create Table [FOREIGN KEY Practice]",
-    "description": "## Foreign Keys in Action\nLet's see what happens when foreign keys protect your data.\n\nWith foreign keys ON:\n- Insert a ticket for server that EXISTS -> works\n- Insert a ticket for server that DOESN'T EXIST -> rejected\n\nThe tickets table and servers table from last lesson are already set up.\n\n---\n## Assignment:\nInsert two tickets:\n1. Title `'Disk full'` for server_id `1` (exists)\n2. Title `'Memory leak'` for server_id `2` (exists)\n\nThen try to understand: what would happen if you used server_id `999`?",
+    "description": "## Foreign Keys in Action\nLet's see what happens when foreign keys protect your data.\n\nWith foreign keys ON:\n- Insert a ticket for server that EXISTS -> works\n- Insert a ticket for server that DOESN'T EXIST -> rejected\n\nThe tickets table and servers table from last lesson are already set up.\n\n\n---\n## Assignment:\nInsert two tickets:\n1. Title `'Disk full'` for server_id `1` (exists)\n2. Title `'Memory leak'` for server_id `2` (exists)\n\nThen try to understand: what would happen if you used server_id `999`?",
     "setupCode": "PRAGMA foreign_keys = ON; CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT); INSERT INTO servers VALUES (1, 'prod-1'), (2, 'prod-2'); CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT NOT NULL, server_id INTEGER, priority TEXT DEFAULT 'low', FOREIGN KEY (server_id) REFERENCES servers(id));",
     "starterCode": "-- Insert two valid tickets\n",
     "runHarness": "SELECT tickets.title, servers.name FROM tickets INNER JOIN servers ON tickets.server_id = servers.id;",

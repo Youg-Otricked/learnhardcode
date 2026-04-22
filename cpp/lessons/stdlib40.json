@@ -1,0 +1,18 @@
+{
+  "id": "stdlib40.json",
+  "title": "C++ - Bitwise operations",
+  "description": "C++ lets you operate directly on binary. A binary number literal is just `0b<binary number>`. Binary is also known as base 2. (rightmost bit is smallest), and doubles in size per bit. A bit is a 1/0 and a byte is 8 bits. So 1 byte is 8 chars, and if bit 1 = 128, bit 2 = 64, bit 3 = 32, bit 4 = 16... so `0b11111111` = 255.\n\n---\n## Bitwise operators\nIn C++, there are 6 bitwise operators.\n1. `a << b` (LShift). This binary shifts a number (a) b bits. One shift left is equal to multiplying by 2, so 64 (`0b1000000`) << 1 = 128.\n2. `a >> b` (RShift). LShift but right. A 1 bit RShift = divide by 2. 128 (`0b10000000`) >> 1 = 64.\n3. `a & b` (Binary AND). You already have and, but that just treats values as true or false. Binary and ands each individual bit. To show: 214 (`0b11010110`) & 78 (`0b01001110`) = 70(`0b01000110`)\n4. `a | b` (Binary OR). Binary or ors each individual bit, so 214 (`0b11010110`) | 78 (`0b01001110`) = 222 (`0b11011110`)\n5. `a ^ b` (Binary XOR): A XOR (Exclusive OR) is true when one but not both bits are true. 214 (`0b11010110`) ^ 78 (`0b01001110`) = 152 (`0b10011000`)\n6. `~a` (Binary NOT): Nots each bit, so ~214 (`0b11010110`) = 41 (`0b00101001`) (all of these examples are unsigned. How negative numbers work is that the most significant bit (so 128 in a byte) actually means the negative version, so it = -128 (in a byte). That means that in a unsigned byte, one bytes max is 255, but in signed, one bytes max is 127 and min is -128)\nOf course, you can overload bitwise ops just like any other.",
+  "expectedOutput": "",
+  "starterCode": "",
+  "nextLesson": "stdlib41.json",
+  "previous": "stdlib39.json",
+  "showButtons": true,
+  "correct": "b1",
+  "b1t": "Continue",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "20"
+}

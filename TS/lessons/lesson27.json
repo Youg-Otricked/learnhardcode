@@ -1,11 +1,11 @@
 {
   "id": "lesson27.json",
   "title": "Functions [Recursion Practice]",
-  "description": "## Fibonacci\nThe Fibonacci sequence: each number is the sum of the two before it.\n```\n0, 1, 1, 2, 3, 5, 8, 13, 21...\n```\n\n- `fib(0)` = 0\n- `fib(1)` = 1\n- `fib(n)` = fib(n-1) + fib(n-2)\n\nTwo base cases this time!\n\n---\n## Assignment:\nWrite a function `fib` that returns the nth Fibonacci number.",
+  "description": "## Fibonacci\nThe Fibonacci sequence: each number is the sum of the two before it.\n```\n0, 1, 1, 2, 3, 5, 8, 13, 21...\n```\n\n- `fib(0)` = 0\n- `fib(1)` = 1\n- `fib(n)` = fib(n-1) + fib(n-2)\n\nTwo base cases this time!\n\n\n---\n## Assignment:\nWrite a function `fib` that returns the nth Fibonacci number.",
   "starterCode": "// Write fib here\n",
   "expectedOutput": "",
   "rawHarness": true,
-  "mustContain": "---------------------\nTest 7:\nOutput: 144\nPass\n---------------------\n7 passed, 0 failed",
+  "mustContain": "---------------------\nTest 7:\nOutput: 144\nPass\n\n---------------------\n7 passed, 0 failed",
   "runHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n  const passed = got === expected;\n  console.log('---------------------');\n  console.log('Test ' + num + ':');\n  console.log('Output: ' + got);\n  console.log(passed ? 'Pass' : 'Fail');\n  if (passed) _pass++; else _fail++;\n}\n_test(1, fib(0), 0);\n_test(2, fib(1), 1);\n_test(3, fib(5), 5);\n_test(4, fib(10), 55);\n_test(5, fib(7), 13);\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
   "submitHarness": "\nlet _pass = 0;\nlet _fail = 0;\nfunction _test(num: number, got: any, expected: any) {\n  const passed = got === expected;\n  console.log('---------------------');\n  console.log('Test ' + num + ':');\n  console.log('Output: ' + got);\n  console.log(passed ? 'Pass' : 'Fail');\n  if (passed) _pass++; else _fail++;\n}\n_test(1, fib(0), 0);\n_test(2, fib(1), 1);\n_test(3, fib(5), 5);\n_test(4, fib(10), 55);\n_test(5, fib(7), 13);\n_test(6, fib(2), 1);\n_test(7, fib(12), 144);\nconsole.log('---------------------');\nconsole.log(_pass + ' passed, ' + _fail + ' failed');\n",
   "nextLesson": "lesson28.json",

@@ -1,7 +1,7 @@
 {
     "id": "lesson2.json",
     "title": "Printing to console.",
-    "description": "## Printing\n\nTo print to console, there is only one prerequisit, importing the `fmt` package. I'll explain importing later, but all you need to know is right after `package`, you import fmt with `import \"fmt\"`. To actually print to console, you use the syntax `fmt.Println(\"Text here\")`. It prints a line to console, it's just that simple.\n---\n## Assignment:\nWe want to tell out users their connecting! Adjust the code to print \"Connecting to GopherCloud application!\"",
+    "description": "## Printing\n\nTo print to console, there is only one prerequisit, importing the `fmt` package. I'll explain importing later, but all you need to know is right after `package`, you import fmt with `import \"fmt\"`. To actually print to console, you use the syntax `fmt.Println(\"Text here\")`. It prints a line to console, it's just that simple.\n\n---\n## Assignment:\nWe want to tell out users their connecting! Adjust the code to print \"Connecting to GopherCloud application!\"",
     "starterCode": "package main\n\n\n\nfunc main() {\n\t\n}",
     "expectedOutput": "Connecting to GopherCloud application!\n",
     "nextLesson": "lesson3.json",

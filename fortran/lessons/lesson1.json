@@ -1,7 +1,7 @@
 {
   "id": "lesson1.json",
   "title": "Welcome to Capital None",
-  "description": "In this course, you will learn Fortran\nYou are a developer at the newest deffinitly non - riff bank, _Capital None_, working on their new credit card transaction setup.\n---\n## Assignment:\nJust make the code output _exactly_ \"Processing transaction for card 8910\"",
+  "description": "In this course, you will learn Fortran\nYou are a developer at the newest deffinitly non - riff bank, _Capital None_, working on their new credit card transaction setup.\n\n---\n## Assignment:\nJust make the code output _exactly_ \"Processing transaction for card 8910\"",
   "hint": "Change the text inside the `print` statement.",
   "starterCode": "program capital\n    print *, \"Hello, OldLanguage\"\nend program",
   "expectedOutput": "Processing transaction for card 8910\n",

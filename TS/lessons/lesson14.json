@@ -1,7 +1,7 @@
 {
   "id": "lesson14.json",
   "title": "Control flow [switch (fallthrough)]",
-  "description": "## Intentional Fallthrough\nSometimes fallthrough is useful! When multiple cases should do the same thing, you can stack them:\n```ts\nswitch (day) {\n    case \"Saturday\":\n    case \"Sunday\":\n        console.log(\"Weekend!\");\n        break;\n    default:\n        console.log(\"Weekday\");\n}\n```\nBoth Saturday and Sunday hit the same code. No duplication needed.\n\n---\n## Assignment:\nMeTube groups video resolutions for billing. Using fallthrough:\n- `360` and `480` -> print `Standard`\n- `720` and `1080` -> print `HD`\n- `1440` and `2160` -> print `Ultra HD`\n- anything else -> print `Unknown`",
+  "description": "## Intentional Fallthrough\nSometimes fallthrough is useful! When multiple cases should do the same thing, you can stack them:\n```ts\nswitch (day) {\n    case \"Saturday\":\n    case \"Sunday\":\n        console.log(\"Weekend!\");\n        break;\n    default:\n        console.log(\"Weekday\");\n}\n```\nBoth Saturday and Sunday hit the same code. No duplication needed.\n\n\n---\n## Assignment:\nMeTube groups video resolutions for billing. Using fallthrough:\n- `360` and `480` -> print `Standard`\n- `720` and `1080` -> print `HD`\n- `1440` and `2160` -> print `Ultra HD`\n- anything else -> print `Unknown`",
   "starterCode": "const resolution: number = 1080;\n\n// Write your switch with fallthrough\n",
   "expectedOutput": "HD",
   "nextLesson": "lesson15.json",

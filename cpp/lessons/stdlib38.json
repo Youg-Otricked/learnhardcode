@@ -1,0 +1,16 @@
+{
+  "id": "stdlib38.json",
+  "title": "C++ - Advanced weird overloads[->/*]",
+  "description": "Now, it's time for your classes to start cosplaying as a pointer. As in, you are now going to overload `->` and `*`.\n```cpp\nT& operator*();\nT* operator->();\n```\n\n---\n## Assignment:\nMake the `*` and `->` overloads for the Handle class: They should return pointers and references to the inner T.",
+  "expectedOutput": "Test 1:\nPass",
+  "starterCode": "#include <iostream>\ntemplate <typename T>\nclass Handle {\n    private:\n        T wrapper;\n    public:\n        Handle(T wrap) {\n            this->wrapper = wrap;\n        }\n        // Write your overloads here.\n};",
+  "nextLesson": "stdlib39.json",
+  "previous": "stdlib37.json",
+  "showButtons": false,
+  "rawHarness": true,
+  "runHarness": "struct basicWrapper {\n    int x;\n    int y;\n};\nint main() {\n    Handle<basicWrapper> x({1, 3});\n    std::cout << \"Test 1: \" << '\\n' << (x->y == 3 && (*x).x == 1 ? \"Pass\" : \"Fail\");\n}",
+  "correct": "nobns",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "20"
+}

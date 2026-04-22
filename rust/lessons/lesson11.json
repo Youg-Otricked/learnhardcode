@@ -1,7 +1,7 @@
 {
     "id": "lesson11.json",
     "title": "Operators [Arithmetic]",
-    "description": "## Arithmetic in Rust\nRust has the standard math operators:\n- `+` addition\n- `-` subtraction\n- `*` multiplication\n- `/` division\n- `%` modulo (remainder)\n\n```rust\nlet a: i32 = 10;\nlet b: i32 = 3;\nprintln!(\"{}\", a + b);  // 13\nprintln!(\"{}\", a / b);  // 3 (integer division!)\nprintln!(\"{}\", a % b);  // 1\n```\n\nNote: Rust does NOT have `++` or `--`. Use `x += 1` instead.\n\n---\n## Assignment:\nVerdigris OS calculates disk usage. Given `total_blocks` and `used_blocks`, print the used percentage (integer division is fine) and the remaining blocks.",
+    "description": "## Arithmetic in Rust\nRust has the standard math operators:\n- `+` addition\n- `-` subtraction\n- `*` multiplication\n- `/` division\n- `%` modulo (remainder)\n\n```rust\nlet a: i32 = 10;\nlet b: i32 = 3;\nprintln!(\"{}\", a + b);  // 13\nprintln!(\"{}\", a / b);  // 3 (integer division!)\nprintln!(\"{}\", a % b);  // 1\n```\n\nNote: Rust does NOT have `++` or `--`. Use `x += 1` instead.\n\n\n---\n## Assignment:\nVerdigris OS calculates disk usage. Given `total_blocks` and `used_blocks`, print the used percentage (integer division is fine) and the remaining blocks.",
     "starterCode": "fn main() {\n    let total_blocks: i32 = 1024;\n    let used_blocks: i32 = 768;\n    // Print used percentage (used * 100 / total)\n    // Print remaining blocks\n}",
     "expectedOutput": "75\n256",
     "nextLesson": "lesson12.json",

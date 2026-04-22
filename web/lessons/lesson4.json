@@ -1,7 +1,7 @@
 {
     "id": "lesson4.json",
     "title": "p",
-    "description": "What about the remaining 99% of text that isn't supposed to be a heading?\nThose are typically called paragraphs, and guess what, the HTML tag for a paragraph is just . . . `p`.\nP tags are very simple. You just put `<p>{text here}</p>`. Note, both `p` and `h<x>` elements are _block elements_. Block elements create a newline after their closing tag.\n---\n## Assignment:\nWe want a 500 error page! Make the first line a `h1`, with content `500: Internal Server Error`, then a `p` with content `The server was unable to complete your request. Please try again later.`",
+    "description": "What about the remaining 99% of text that isn't supposed to be a heading?\nThose are typically called paragraphs, and guess what, the HTML tag for a paragraph is just . . . `p`.\nP tags are very simple. You just put `<p>{text here}</p>`. Note, both `p` and `h<x>` elements are _block elements_. Block elements create a newline after their closing tag.\n\n---\n## Assignment:\nWe want a 500 error page! Make the first line a `h1`, with content `500: Internal Server Error`, then a `p` with content `The server was unable to complete your request. Please try again later.`",
     "starterTS": "// We'll get to TS soon.",
     "starterCss": "body {\n    background-color: #000000;\n    color: #ffffff;\n} /* You will understand this soon, don't worry. */",
     "starterHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n</body>\n</html>",

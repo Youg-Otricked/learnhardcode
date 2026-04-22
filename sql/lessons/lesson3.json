@@ -1,7 +1,7 @@
 {
     "id": "lesson3.json",
     "title": "Basic SELECTS [Specific columns]",
-    "description": "In SQL, to select only **specific columns**, you use the syntax\n```sql\nSELECT column1, column2,...... FROM table_name;\n```\nThis is very important for selecting data you _actually care about_. Kinda like selecting only the eldest and youngest child, not the middle.\n---\n## Assignment:\nBWS realized we don't really care about our users bucket _names_. Make your SELECT statment only select the type and size columns.",
+    "description": "In SQL, to select only **specific columns**, you use the syntax\n```sql\nSELECT column1, column2,...... FROM table_name;\n```\nThis is very important for selecting data you _actually care about_. Kinda like selecting only the eldest and youngest child, not the middle.\n\n---\n## Assignment:\nBWS realized we don't really care about our users bucket _names_. Make your SELECT statment only select the type and size columns.",
     "setupCode": "CREATE TABLE buckets (name TEXT, type TEXT, size TEXT); INSERT INTO buckets VALUES ('backups', 'directory', '123gb'); INSERT INTO buckets VALUES ('homework', 'files', '144142gb'); INSERT INTO buckets VALUES ('test', 'nothing', '0b'); INSERT INTO buckets VALUES ('BWSdata', 'we need stuff for ourselves, ok?', '400TB');",
     "starterCode": "SELECT * FROM buckets;\n",
     "expectedOutput": "type | size\ndirectory | 123gb\nfiles | 144142gb\nnothing | 0b\nwe need stuff for ourselves, ok? | 400TB",

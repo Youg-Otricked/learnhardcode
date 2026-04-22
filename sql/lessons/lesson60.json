@@ -1,7 +1,7 @@
 {
   "id": "lesson60.json",
   "title": "WITH RECURSIVE: Hierarchies & Sequences",
-  "description": "## WITH RECURSIVE\n`WITH RECURSIVE` allows you to build queries that refer to themselves, like generating sequences or walking through hierarchies.\n\nExample: generate numbers 1 to 10:\n```sql\nWITH RECURSIVE numbers(n) AS (\n    SELECT 1\n    UNION ALL\n    SELECT n+1 FROM numbers WHERE n < 10\n)\nSELECT * FROM numbers;\n```\nThe first SELECT is the starting point. The second SELECT refers back to itself, adding 1 each time until the condition fails.\n\n---\n## Assignment:\nBWS tickets have 5 escalation levels. Generate a table called `escalation` with levels 1 through 5 using WITH RECURSIVE. Select all levels from it.",
+  "description": "## WITH RECURSIVE\n`WITH RECURSIVE` allows you to build queries that refer to themselves, like generating sequences or walking through hierarchies.\n\nExample: generate numbers 1 to 10:\n```sql\nWITH RECURSIVE numbers(n) AS (\n    SELECT 1\n    UNION ALL\n    SELECT n+1 FROM numbers WHERE n < 10\n)\nSELECT * FROM numbers;\n```\nThe first SELECT is the starting point. The second SELECT refers back to itself, adding 1 each time until the condition fails.\n\n\n---\n## Assignment:\nBWS tickets have 5 escalation levels. Generate a table called `escalation` with levels 1 through 5 using WITH RECURSIVE. Select all levels from it.",
   "setupCode": "CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT, assigned_to TEXT, escalation_level INTEGER);",
   "starterCode": "-- Create a recursive query to generate escalation levels\n",
   "runHarness": "",

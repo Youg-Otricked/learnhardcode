@@ -1,7 +1,7 @@
 {
     "id": "lesson26.json",
     "title": "Redirection [stderr, 2>]",
-    "description": "# Standard Streams\nEvery program has three streams:\n- `stdin` (0) - input\n- `stdout` (1) - normal output\n- `stderr` (2) - error output\n\n`>` only redirects stdout. Errors still show on screen:\n```bash\nls /fake > output.txt\n# error still prints to terminal!\n```\n\n## Redirecting stderr:\n```bash\nls /fake 2> errors.txt       # stderr to file\nls /fake > out.txt 2>&1       # both stdout AND stderr to file\nls /fake 2>/dev/null          # throw away errors\n```\n\n`2>` means redirect stream 2 (stderr).\n`2>&1` means redirect stderr to wherever stdout goes.\n`/dev/null` is a black hole - anything sent there disappears.\n\n---\n## Assignment:\nRun `ls /fakepath 2> errors.txt` then `cat errors.txt`. Paste the error message.",
+    "description": "# Standard Streams\nEvery program has three streams:\n- `stdin` (0) - input\n- `stdout` (1) - normal output\n- `stderr` (2) - error output\n\n`>` only redirects stdout. Errors still show on screen:\n```bash\nls /fake > output.txt\n# error still prints to terminal!\n```\n\n## Redirecting stderr:\n```bash\nls /fake 2> errors.txt       # stderr to file\nls /fake > out.txt 2>&1       # both stdout AND stderr to file\nls /fake 2>/dev/null          # throw away errors\n```\n\n`2>` means redirect stream 2 (stderr).\n`2>&1` means redirect stderr to wherever stdout goes.\n`/dev/null` is a black hole - anything sent there disappears.\n\n\n---\n## Assignment:\nRun `ls /fakepath 2> errors.txt` then `cat errors.txt`. Paste the error message.",
     "starterCode": "",
     "expectedOutput": "",
     "mustContain": ["No such file"],

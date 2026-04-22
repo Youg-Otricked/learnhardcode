@@ -1,7 +1,7 @@
 {
     "id": "stdlib9.json",
     "title": "DSA - Why Bubble Sort? + Time Complexity",
-    "description": "## Why Bubble Sort?\nBubble sort is the simplest sorting algorithm. Nobody uses it in production - it's too slow. But it teaches you:\n- How sorting works\n- How to analyze time complexity\n- Why better algorithms matter\n\n## Time Complexity\nBubble sort has two nested loops:\n- Outer loop runs n times\n- Inner loop runs n times\n- Total: n × n = **O(n²)**\n\nFor 10 items: 100 operations. Fine.\nFor 1,000 items: 1,000,000 operations. Slow.\nFor 1,000,000 items: 1,000,000,000,000 operations. Dead.\n\n---\n## Question:\nIf bubble sort takes 1 second to sort 1,000 items, roughly how long would it take to sort 10,000 items?",
+    "description": "## Why Bubble Sort?\nBubble sort is the simplest sorting algorithm. Nobody uses it in production - it's too slow. But it teaches you:\n- How sorting works\n- How to analyze time complexity\n- Why better algorithms matter\n\n## Time Complexity\nBubble sort has two nested loops:\n- Outer loop runs n times\n- Inner loop runs n times\n- Total: n × n = **O(n²)**\n\nFor 10 items: 100 operations. Fine.\nFor 1,000 items: 1,000,000 operations. Slow.\nFor 1,000,000 items: 1,000,000,000,000 operations. Dead.\n\n\n---\n## Question:\nIf bubble sort takes 1 second to sort 1,000 items, roughly how long would it take to sort 10,000 items?",
     "starterCode": "",
     "expectedOutput": "",
     "nextLesson": "stdlib10.json",

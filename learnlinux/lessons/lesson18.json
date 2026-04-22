@@ -1,7 +1,7 @@
 {
   "id": "lesson18.json",
   "title": "Shebangs [#!]",
-  "description": "# Shebangs (#!)\nWhen you run a script like this:\n\n```bash\n./script.sh\n```\n\nLinux needs to know **which program** should interpret that file. That’s what the **shebang** is for.\n\nThe shebang is the very first line of a script and looks like this:\n\n```bash\n#!/usr/bin/env bash\n```\n\n- `#!` tells the kernel: \"use this program to run the file\"\n- `/usr/bin/env bash` runs whatever `bash` is on your `PATH`\n- It must be on **line 1**, with no spaces before it\n\nIf you forget the shebang, `./script.sh` might fail with:\n\n```bash\nbash: ./script.sh: Permission denied\n```\n\n…but `bash script.sh` still works, because you’re telling bash explicitly to run it.\n\n---\n## Assignment\nPatse the shebang line from any script in the scripts dir.",
+  "description": "# Shebangs (#!)\nWhen you run a script like this:\n\n```bash\n./script.sh\n```\n\nLinux needs to know **which program** should interpret that file. That’s what the **shebang** is for.\n\nThe shebang is the very first line of a script and looks like this:\n\n```bash\n#!/usr/bin/env bash\n```\n\n- `#!` tells the kernel: \"use this program to run the file\"\n- `/usr/bin/env bash` runs whatever `bash` is on your `PATH`\n- It must be on **line 1**, with no spaces before it\n\nIf you forget the shebang, `./script.sh` might fail with:\n\n```bash\nbash: ./script.sh: Permission denied\n```\n\n…but `bash script.sh` still works, because you’re telling bash explicitly to run it.\n\n\n---\n## Assignment\nPatse the shebang line from any script in the scripts dir.",
   "starterCode": "",
   "expectedOutput": "",
   "mustContain": ["#!/usr/bin/env bash"],

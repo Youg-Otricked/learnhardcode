@@ -1,7 +1,7 @@
 {
   "id": "lesson13.json",
   "title": "Control flow [switch (why break;)]",
-  "description": "## Why break;?\n---\nYou may be thinking 'Why do i need to put break after each switch case?'\nThis is because somthing called _**Fallthrough**_. Fallthrough means that switch will keep going on to the next statement till it hits a break statement.\n---\n## Assignment:\nWhat would be the output of this switch statement:\n```ts\nconst thing: number = 124;\nswitch(thing) {\n    case 23:\n        console.log(\"Case 1!\")\n    case 124:\n        console.log(\"Case 2!\");\n    default:\n        console.log(\"Default case!\");\n}\n",
+  "description": "## Why break;?\n\n---\nYou may be thinking 'Why do i need to put break after each switch case?'\nThis is because somthing called _**Fallthrough**_. Fallthrough means that switch will keep going on to the next statement till it hits a break statement.\n\n---\n## Assignment:\nWhat would be the output of this switch statement:\n```ts\nconst thing: number = 124;\nswitch(thing) {\n    case 23:\n        console.log(\"Case 1!\")\n    case 124:\n        console.log(\"Case 2!\");\n    default:\n        console.log(\"Default case!\");\n}\n",
   "starterCode": "",
   "expectedOutput": "",
   "nextLesson": "lesson14.json",

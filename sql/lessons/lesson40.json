@@ -1,7 +1,7 @@
 {
     "id": "lesson40.json",
     "title": "UNION",
-    "description": "## UNION\nUNION combines the results of two SELECT statements into one result set. The columns must match in number and type.\n```sql\nSELECT name FROM customers\nUNION\nSELECT name FROM employees;\n```\n`UNION` removes duplicates automatically. If you want to keep duplicates, use `UNION ALL`.\n\n---\n## Assignment:\nBWS has two tables: `active_servers` and `retired_servers`. Combine them into one list showing all server names and their status.",
+    "description": "## UNION\nUNION combines the results of two SELECT statements into one result set. The columns must match in number and type.\n```sql\nSELECT name FROM customers\nUNION\nSELECT name FROM employees;\n```\n`UNION` removes duplicates automatically. If you want to keep duplicates, use `UNION ALL`.\n\n\n---\n## Assignment:\nBWS has two tables: `active_servers` and `retired_servers`. Combine them into one list showing all server names and their status.",
     "setupCode": "CREATE TABLE active_servers (id INTEGER PRIMARY KEY, name TEXT, status TEXT); CREATE TABLE retired_servers (id INTEGER PRIMARY KEY, name TEXT, status TEXT); INSERT INTO active_servers VALUES (1, 'prod-1', 'running'), (2, 'prod-2', 'running'), (3, 'staging', 'stopped'); INSERT INTO retired_servers VALUES (1, 'old-prod', 'decommissioned'), (2, 'legacy-db', 'decommissioned'), (3, 'staging', 'decommissioned');",
     "starterCode": "-- Combine both server lists\n",
     "runHarness": "",

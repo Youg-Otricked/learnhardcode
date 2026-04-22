@@ -1,7 +1,7 @@
 {
   "id": "lesson5.json",
   "title": "Variables [Bad initialization]",
-  "description": "There are two ways to create a variable in Go, but in this lesson, i'll teach the easy-to-understand way. You create a variable with the following syntax:\n```go\nvar balance float64\nbalance = 47.60\n```\nIn this example, the first line - `var balance float64` - creates a variable named balance, with the datatype float64 to its default value, then the second line, `balance = 47.60`, assigns it to 47.60\n---\n## Assignment:\nGopherCloud needs to print users their usage stats! According to the names in the print statement, create the variables using the types int, float64, string, and bool with their zero values.",
+  "description": "There are two ways to create a variable in Go, but in this lesson, i'll teach the easy-to-understand way. You create a variable with the following syntax:\n```go\nvar balance float64\nbalance = 47.60\n```\nIn this example, the first line - `var balance float64` - creates a variable named balance, with the datatype float64 to its default value, then the second line, `balance = 47.60`, assigns it to 47.60\n\n---\n## Assignment:\nGopherCloud needs to print users their usage stats! According to the names in the print statement, create the variables using the types int, float64, string, and bool with their zero values.",
   "starterCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    // create vars here\n    fmt.Printf(\"Hourly price: %v. Required payment: %.2f. Note: %q. Needs action: %v\", price, due, note, needsAction)\n}",
   "expectedOutput": "Hourly price: 0. Required payment: 0.00. Note: \"\". Needs action: false",
   "nextLesson": "lesson6.json",

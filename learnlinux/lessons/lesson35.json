@@ -1,7 +1,7 @@
 {
     "id": "lesson35.json",
     "title": "Recursive Globbing and &&",
-    "description": "Two useful features in the shell:\n\n1. `**` (recursive globbing)\nThis matches files in all subdirectories, but only if enabled with:\n`shopt -s globstar`\n\nExample:\n- `ls **/*.txt` finds all .txt files recursively\n\n2. `&&` (command chaining)\nThis runs the next command ONLY if the previous one succeeds.\n\nExample:\n- `mkdir test && cd test`\n\n---\n## Assignment:\nWhich command will create a directory and ONLY enter it if creation succeeds?",
+    "description": "Two useful features in the shell:\n\n1. `**` (recursive globbing)\nThis matches files in all subdirectories, but only if enabled with:\n`shopt -s globstar`\n\nExample:\n- `ls **/*.txt` finds all .txt files recursively\n\n2. `&&` (command chaining)\nThis runs the next command ONLY if the previous one succeeds.\n\nExample:\n- `mkdir test && cd test`\n\n\n---\n## Assignment:\nWhich command will create a directory and ONLY enter it if creation succeeds?",
     "starterCode": "",
     "expectedOutput": "",
     "showButtons": true,

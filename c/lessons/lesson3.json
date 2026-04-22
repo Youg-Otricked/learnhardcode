@@ -1,7 +1,7 @@
 {
   "id": "lesson3.json",
   "title": "Printing to Console",
-  "description": "To print to console in C, there is one prerequisit:\nYou must put `#include <stdio.h>` at the top of your file (I'll explain later).\nThen, you can print to console using the `printf` function. You just run `printf(\"<Text you want to print>\");`\nThe `stdio.h` part is because `printf` isn't a part of C. It's in the _standard library_, and the `#include` says \"Hey C, this exists\". (`stdio` == `Standard I/O`)\n---\n# Assignment:\nMake the code print to console \"Starting...\".",
+  "description": "To print to console in C, there is one prerequisit:\nYou must put `#include <stdio.h>` at the top of your file (I'll explain later).\nThen, you can print to console using the `printf` function. You just run `printf(\"<Text you want to print>\");`\nThe `stdio.h` part is because `printf` isn't a part of C. It's in the _standard library_, and the `#include` says \"Hey C, this exists\". (`stdio` == `Standard I/O`)\n\n---\n# Assignment:\nMake the code print to console \"Starting...\".",
   "starterCode": "int main() {\n    // Two lines to write\n    return 0;\n}",
   "expectedOutput": "Starting...",
   "nextLesson": "lesson4.json",

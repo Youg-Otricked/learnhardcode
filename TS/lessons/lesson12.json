@@ -1,7 +1,7 @@
 {
   "id": "lesson12.json",
   "title": "Control flow [switch]",
-  "description": "There is only one more control flow type: switch. Switch is just like a ton of else if (thing == value) in a row. The syntax is:\n```ts\nswitch(variable) {\n    case value:\n        code;\n        break;\n    case value2:\n        code;\n        break;....\n    default:\n        code;\n        break;\n}\n```\nIn this code, if variable = value then case 1 would run, if value 2, it would be case 2, and otherwise it wolud be default.\n---\n## Assignment:\nMeTube categorizes videos by genre code. Given a genre code, print the genre name:\n- `1` -> `Music`\n- `2` -> `Gaming`\n- `3` -> `Education`\n- anything else -> `Unknown`",
+  "description": "There is only one more control flow type: switch. Switch is just like a ton of else if (thing == value) in a row. The syntax is:\n```ts\nswitch(variable) {\n    case value:\n        code;\n        break;\n    case value2:\n        code;\n        break;....\n    default:\n        code;\n        break;\n}\n```\nIn this code, if variable = value then case 1 would run, if value 2, it would be case 2, and otherwise it wolud be default.\n\n---\n## Assignment:\nMeTube categorizes videos by genre code. Given a genre code, print the genre name:\n- `1` -> `Music`\n- `2` -> `Gaming`\n- `3` -> `Education`\n- anything else -> `Unknown`",
   "starterCode": "const genreCode: number = 3;\n\n// Write your switch statement here\n",
   "expectedOutput": "Education",
   "nextLesson": "lesson13.json",

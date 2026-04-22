@@ -1,7 +1,7 @@
 {
   "id": "lesson3.json",
   "title": "Datatypes",
-  "description": "Now, time to get to the whole point of typescript: Datatypes. Typescript has 3 main datatypes: string, number, and boolean.\n---\n`string`: String stores a string of text, such as \"Hello, World!\"\n`number`: Number stores a number. Decimal or whole, just a number.\n`boolean`: Boolean stores true or false. Simple!\n## Assignment:\nAnswer the Question: Which button stores a illegal value for the type (format type, value)",
+  "description": "Now, time to get to the whole point of typescript: Datatypes. Typescript has 3 main datatypes: string, number, and boolean.\n\n---\n`string`: String stores a string of text, such as \"Hello, World!\"\n`number`: Number stores a number. Decimal or whole, just a number.\n`boolean`: Boolean stores true or false. Simple!\n## Assignment:\nAnswer the Question: Which button stores a illegal value for the type (format type, value)",
   "starterCode": "",
   "expectedOutput": "",
   "nextLesson": "lesson4.json",

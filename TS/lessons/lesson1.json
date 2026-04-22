@@ -1,7 +1,7 @@
 {
   "id": "lesson1.json",
   "title": "Welcome to MeTube",
-  "description": "## Welcome to MeTube!\nYou just got hired as a backend developer at **MeTube**, the world's hottest video platform.\n\nYour first task is simple - fix the welcome message that displays when the server starts.\n\n---\n\nChange the code so it prints `MeTube server is running!` exactly.",
+  "description": "## Welcome to MeTube!\nYou just got hired as a backend developer at **MeTube**, the world's hottest video platform.\n\nYour first task is simple - fix the welcome message that displays when the server starts.\n\n\n---\n\nChange the code so it prints `MeTube server is running!` exactly.",
   "starterCode": "const serverMessage: string = \"TODO: fix me\";\nconsole.log(serverMessage);",
   "expectedOutput": "MeTube server is running!\n",
   "nextLesson": "lesson2.json",

@@ -1,7 +1,7 @@
 {
   "id": "lesson4.json",
   "title": "Basic Commands [Special paths and ls]",
-  "description": "# Ls and ../.\n## Special paths:\n---\nThere are 2 special paths in Linux, '..' and '.'.\n.. means the previous directory, so `cd ..` in `~` would take you to `/home/`\n. means the current directory.\n---\n## ls\n---\n`ls` stands for list. It lists all files at the path, so `ls .` lists all files in the current directory. Another important flag is -1. This will make it so only one file is outputed per line.\n---\n## Assignment:\nIn the text input, paste the full output of `ls .` using a flag to make it output 1 file per line.",
+  "description": "# Ls and ../.\n## Special paths:\n\n---\nThere are 2 special paths in Linux, '..' and '.'.\n.. means the previous directory, so `cd ..` in `~` would take you to `/home/`\n. means the current directory.\n\n---\n## ls\n\n---\n`ls` stands for list. It lists all files at the path, so `ls .` lists all files in the current directory. Another important flag is -1. This will make it so only one file is outputed per line.\n\n---\n## Assignment:\nIn the text input, paste the full output of `ls .` using a flag to make it output 1 file per line.",
   "starterCode": "",
   "mustContain": null,
   "expectedOutput": "checking.txt\nloans.txt\nsavings.txt",

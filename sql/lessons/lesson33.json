@@ -1,7 +1,7 @@
 {
     "id": "lesson33.json",
     "title": "Update [CASE WHEN]",
-    "description": "## CASE WHEN in UPDATE\nYou can use CASE WHEN to update a column differently based on conditions - all in one statement instead of multiple UPDATEs.\n```sql\nUPDATE users SET health = \n    CASE\n        WHEN age > 95 THEN 'healthy'\n        WHEN age > 50 THEN 'warning'\n        ELSE 'critical'\n    END;\n```\nThis updates every row's health based on its uptime. One query, all rows handled.\n\n---\n## Assignment:\nBWS is reorganizing. Update all servers' status based on their cpu_cores:\n- cpu_cores > 8 -> 'priority'\n- cpu_cores > 4 -> 'standard'\n- everything else -> 'decommission'",
+    "description": "## CASE WHEN in UPDATE\nYou can use CASE WHEN to update a column differently based on conditions - all in one statement instead of multiple UPDATEs.\n```sql\nUPDATE users SET health = \n    CASE\n        WHEN age > 95 THEN 'healthy'\n        WHEN age > 50 THEN 'warning'\n        ELSE 'critical'\n    END;\n```\nThis updates every row's health based on its uptime. One query, all rows handled.\n\n\n---\n## Assignment:\nBWS is reorganizing. Update all servers' status based on their cpu_cores:\n- cpu_cores > 8 -> 'priority'\n- cpu_cores > 4 -> 'standard'\n- everything else -> 'decommission'",
     "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, status TEXT); INSERT INTO servers VALUES (1, 'prod-1', 8, 'running'), (2, 'prod-2', 16, 'running'), (3, 'staging-1', 4, 'stopped'), (4, 'dev-box', 2, 'on fire'), (5, 'test', 1, 'pending');",
     "starterCode": "-- Update status based on cpu_cores\n",
     "runHarness": "SELECT * FROM servers ORDER BY id;",

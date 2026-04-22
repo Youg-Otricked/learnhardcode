@@ -1,7 +1,7 @@
 {
     "id": "lesson37.json",
     "title": "Advanced SELECT [JOIN (CROSS)]",
-    "description": "## CROSS JOIN\nCROSS JOIN combines EVERY row from the first table with EVERY row from the second table. No `ON` condition needed.\n```sql\nSELECT * FROM colors CROSS JOIN sizes;\n```\nIf colors has 3 rows and sizes has 4 rows, you get 3 × 4 = 12 rows. Every possible combination.\n\nThis is rarely used, but useful for generating all possible combinations - like a menu with every topping + every size.\n\n---\n## Assignment:\nBWS is planning server deployments across all regions. Cross join the servers table with the regions table to see every possible server-region combination. Select the server name and region name.",
+    "description": "## CROSS JOIN\nCROSS JOIN combines EVERY row from the first table with EVERY row from the second table. No `ON` condition needed.\n```sql\nSELECT * FROM colors CROSS JOIN sizes;\n```\nIf colors has 3 rows and sizes has 4 rows, you get 3 × 4 = 12 rows. Every possible combination.\n\nThis is rarely used, but useful for generating all possible combinations - like a menu with every topping + every size.\n\n\n---\n## Assignment:\nBWS is planning server deployments across all regions. Cross join the servers table with the regions table to see every possible server-region combination. Select the server name and region name.",
     "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE regions (id INTEGER PRIMARY KEY, name TEXT); INSERT INTO servers VALUES (1, 'prod-1'), (2, 'staging'), (3, 'dev'); INSERT INTO regions VALUES (1, 'us-east'), (2, 'eu-west'), (3, 'ap-south');",
     "starterCode": "-- Cross join servers with regions\n",
     "runHarness": "",

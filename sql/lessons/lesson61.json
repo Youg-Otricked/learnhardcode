@@ -1,7 +1,7 @@
 {
   "id": "lesson61.json",
   "title": "WITH (CTEs) — Temporary Named Queries",
-  "description": "## WITH (CTEs)\n`WITH` creates a temporary named query that exists only for a single statement. It makes complex queries more readable by breaking them into named steps.\n\nExample:\n```sql\nWITH active_tickets AS (\n    SELECT * FROM tickets WHERE assigned_to IS NOT NULL\n)\nSELECT * FROM active_tickets;\n```\nThe CTE `active_tickets` only exists for that one query. Think of it as a named subquery.\n\n---\n## Assignment:\nCreate a CTE called `steve_tickets` that selects all tickets assigned to Steve. Then select everything from it.",
+  "description": "## WITH (CTEs)\n`WITH` creates a temporary named query that exists only for a single statement. It makes complex queries more readable by breaking them into named steps.\n\nExample:\n```sql\nWITH active_tickets AS (\n    SELECT * FROM tickets WHERE assigned_to IS NOT NULL\n)\nSELECT * FROM active_tickets;\n```\nThe CTE `active_tickets` only exists for that one query. Think of it as a named subquery.\n\n\n---\n## Assignment:\nCreate a CTE called `steve_tickets` that selects all tickets assigned to Steve. Then select everything from it.",
   "setupCode": "CREATE TABLE tickets (id INTEGER PRIMARY KEY, title TEXT, assigned_to TEXT); INSERT INTO tickets (title, assigned_to) VALUES ('Server reboot', 'Steve'), ('Bucket cleanup', 'Alice');",
   "starterCode": "-- Use a WITH query to select Steve's tickets\n",
   "runHarness": "",

@@ -1,7 +1,7 @@
 {
     "id": "lesson39.json",
     "title": "Aliases",
-    "description": "Typing long commands over and over can get annoying. Bash lets you create shortcuts called *aliases*.\n\nAn alias replaces a long command with a shorter name.\n\n---\n## Syntax:\n```\nalias name='command'\n```\n\nExample:\n```\nalias ll='ls -la'\n```\nNow, typing `ll` will run `ls -la`.\n\n---\n## Important notes:\n- Aliases only last for the current shell session (unless added to config files like `.bashrc`).\n- They do not accept complex arguments like functions do.\n\n---\n## Example use:\nInstead of typing:\n```\nls -la\n```\nYou can just type:\n```\nll\n```\n\n---\n## Question:\nWhich command correctly creates an alias that makes `gs` run `git status`?",
+    "description": "Typing long commands over and over can get annoying. Bash lets you create shortcuts called *aliases*.\n\nAn alias replaces a long command with a shorter name.\n\n\n---\n## Syntax:\n```\nalias name='command'\n```\n\nExample:\n```\nalias ll='ls -la'\n```\nNow, typing `ll` will run `ls -la`.\n\n\n---\n## Important notes:\n- Aliases only last for the current shell session (unless added to config files like `.bashrc`).\n- They do not accept complex arguments like functions do.\n\n\n---\n## Example use:\nInstead of typing:\n```\nls -la\n```\nYou can just type:\n```\nll\n```\n\n\n---\n## Question:\nWhich command correctly creates an alias that makes `gs` run `git status`?",
     "starterCode": "",
     "expectedOutput": "",
     "showButtons": true,

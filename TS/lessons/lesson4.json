@@ -1,7 +1,7 @@
 {
   "id": "lesson4.json",
   "title": "Variables [let and const]",
-  "description": "In TypeScript, you declare variables with `let` and `const`. Const variables are immutable, which means they cannot be reassigned. In TypeScript, it is a common trope to make any variable that can be const const. let allows you to make mutable variables. To declare a variable, you use:\n```\nlet VAR_NAMEL: type = value;\n// or\nlet VAR_NAME: type;\n// or\nconst VAR_NAME: type = value;\n```\nConst variables must be initilized.\n---\n## Assignment:\nSomebody at MeTube that came from JS used wrong datatypes and assigned to a `const` variable. Fix it!",
+  "description": "In TypeScript, you declare variables with `let` and `const`. Const variables are immutable, which means they cannot be reassigned. In TypeScript, it is a common trope to make any variable that can be const const. let allows you to make mutable variables. To declare a variable, you use:\n```\nlet VAR_NAMEL: type = value;\n// or\nlet VAR_NAME: type;\n// or\nconst VAR_NAME: type = value;\n```\nConst variables must be initilized.\n\n---\n## Assignment:\nSomebody at MeTube that came from JS used wrong datatypes and assigned to a `const` variable. Fix it!",
   "starterCode": "let SITE_NAME: string = \"MeTube\";\nconst viewCount: number = 0;\nviewCount = viewCount + 1;\nconsole.log(SITE_NAME + \" - Views: \" + viewCount);",
   "expectedOutput": "MeTube - Views: 1",
   "nextLesson": "lesson5.json",

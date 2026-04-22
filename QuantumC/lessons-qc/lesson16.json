@@ -1,7 +1,7 @@
 {
     "id": "lesson16.json",
     "title": "Loops [while]",
-    "description": "## while loop\nA `while` loop repeats code as long as its condition is true:\n\n```qc\nint i = 0;\nwhile (i < 3) {\n    println(i);\n    i++;\n}\n// 0\n// 1\n// 2\n```\n\n### How it works:\n1. Check the condition (`i < 3`)\n2. If true, run the code inside `{}`\n3. Go back to step 1\n4. If false, skip the loop and continue\n\n**Without `i++`, the loop runs forever!**\n\n---\n## Assignment:\nTechQ's quantum processor runs calibration cycles. Starting with `cycle` at 1, print `Calibrating cycle X` while cycle is less than or equal to 4. Increment each time.",
+    "description": "## while loop\nA `while` loop repeats code as long as its condition is true:\n\n```qc\nint i = 0;\nwhile (i < 3) {\n    println(i);\n    i++;\n}\n// 0\n// 1\n// 2\n```\n\n### How it works:\n1. Check the condition (`i < 3`)\n2. If true, run the code inside `{}`\n3. Go back to step 1\n4. If false, skip the loop and continue\n\n**Without `i++`, the loop runs forever!**\n\n\n---\n## Assignment:\nTechQ's quantum processor runs calibration cycles. Starting with `cycle` at 1, print `Calibrating cycle X` while cycle is less than or equal to 4. Increment each time.",
     "starterCode": "int main() {\n    int cycle = 1;\n    // Write your while loop here\n    return 0;\n}",
     "expectedOutput": "Calibrating cycle 1\nCalibrating cycle 2\nCalibrating cycle 3\nCalibrating cycle 4",
     "nextLesson": "lesson18.json",

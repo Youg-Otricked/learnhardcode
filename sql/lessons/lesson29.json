@@ -1,7 +1,7 @@
 {
     "id": "lesson29.json",
     "title": "Select [IS NULL / IS NOT NULL]",
-    "description": "## NULL\nNULL means \"no value\" - not 0, not empty string, just nothing. You can't check for NULL with `=` because NULL isn't equal to anything, not even itself.\n\n```sql\n-- WRONG: this doesn't work\nSELECT * FROM users WHERE name = NULL;\n\n-- RIGHT: use IS NULL\nSELECT * FROM users WHERE name IS NULL;\n\n-- Find rows that DO have a value\nSELECT * FROM users WHERE name IS NOT NULL;\n```\n\n---\n## Assignment:\nSome BWS servers were added without a status. Find all servers that are missing a status.",
+    "description": "## NULL\nNULL means \"no value\" - not 0, not empty string, just nothing. You can't check for NULL with `=` because NULL isn't equal to anything, not even itself.\n\n```sql\n-- WRONG: this doesn't work\nSELECT * FROM users WHERE name = NULL;\n\n-- RIGHT: use IS NULL\nSELECT * FROM users WHERE name IS NULL;\n\n-- Find rows that DO have a value\nSELECT * FROM users WHERE name IS NOT NULL;\n```\n\n\n---\n## Assignment:\nSome BWS servers were added without a status. Find all servers that are missing a status.",
     "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, status TEXT); INSERT INTO servers VALUES (1, 'prod-1', 8, 'running'), (2, 'prod-2', 16, 'running'), (3, 'staging-1', 4, NULL), (4, 'dev-box', 2, 'on fire'), (5, 'mystery-box', 8, NULL);",
     "starterCode": "-- Find servers with no status\n",
     "runHarness": "",

@@ -1,7 +1,7 @@
 {
     "id": "lesson19.json",
     "title": "Loops [While]",
-    "description": "## While Loop\nSometimes, you want repeated work, and writing the same code over . . . and over . . . and over . . . is _very_ bad, because let's say you want to make a change and forget somewhere? That is what loops are: they just repeat work. A `while` loop runs as long as its condition is true:\n```csharp\nint i = 0;\nwhile (i < 5) {\n    Console.WriteLine(i);\n    i++;\n}\n```\n\n---\n## Assignment:\nChronoShard has a health regeneration system. Starting with `health` at 50, regenerate 10 health per tick until health reaches 100 or above. Print health after each tick.",
+    "description": "## While Loop\nSometimes, you want repeated work, and writing the same code over . . . and over . . . and over . . . is _very_ bad, because let's say you want to make a change and forget somewhere? That is what loops are: they just repeat work. A `while` loop runs as long as its condition is true:\n```csharp\nint i = 0;\nwhile (i < 5) {\n    Console.WriteLine(i);\n    i++;\n}\n```\n\n\n---\n## Assignment:\nChronoShard has a health regeneration system. Starting with `health` at 50, regenerate 10 health per tick until health reaches 100 or above. Print health after each tick.",
     "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            int health = 50;\n            // While loop here\n\n            return 0;\n        }\n    }\n}",
     "expectedOutput": "60\n70\n80\n90\n100",
     "nextLesson": "lesson20.json",

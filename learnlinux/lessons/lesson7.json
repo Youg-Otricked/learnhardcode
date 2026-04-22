@@ -1,7 +1,7 @@
 {
   "id": "lesson7.json",
   "title": "Basic Commands [mv]",
-  "description": "# mv\n---\nmv stands for move. It has two uses, moving files, and renaming them.\nTo move a file, you can just run `mv FILEPATH NEWPATH`, and to rename, you can just `mv FILEPATH NEWPATHWITHNEWNAME`\nSteve switched banks! We need to archive his fraud report. Move fraud/reports.txt to archive/steve_report.txt. Make sure you submit in the root of the project files.",
+  "description": "# mv\n\n---\nmv stands for move. It has two uses, moving files, and renaming them.\nTo move a file, you can just run `mv FILEPATH NEWPATH`, and to rename, you can just `mv FILEPATH NEWPATHWITHNEWNAME`\nSteve switched banks! We need to archive his fraud report. Move fraud/reports.txt to archive/steve_report.txt. Make sure you submit in the root of the project files.",
   "starterCode": "",
   "mustContain": null,
   "expectedOutput": "",

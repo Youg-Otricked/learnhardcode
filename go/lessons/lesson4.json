@@ -1,7 +1,7 @@
 {
   "id": "lesson4.json",
   "title": "Basic Datatypes",
-  "description": "There are many, **_many_** datatypes in Go, however there are 5 important ones:\n- `bool`: a boolean value, which is true or false.\n- `string`: a string of text.\n- `int`: a signed integer. That is a non decimal number, typicaly between -2,147,483,648 and 2,147,483,647.\n- `float64`: a decimal number with 15 digits max in length.\n- `byte`: a 8 bit binary number, from `0b00000000` to `0b11111111`, or in laymans terms, 0 to 255. This datatype is less common than int and for normal use, you will just use a int. Just remember: _unless you specifically need a byte, EG raw I/O, or cryptography, use a int_\n---\n## Question:\nWhat type would you probably use to store the number 255.",
+  "description": "There are many, **_many_** datatypes in Go, however there are 5 important ones:\n- `bool`: a boolean value, which is true or false.\n- `string`: a string of text.\n- `int`: a signed integer. That is a non decimal number, typicaly between -2,147,483,648 and 2,147,483,647.\n- `float64`: a decimal number with 15 digits max in length.\n- `byte`: a 8 bit binary number, from `0b00000000` to `0b11111111`, or in laymans terms, 0 to 255. This datatype is less common than int and for normal use, you will just use a int. Just remember: _unless you specifically need a byte, EG raw I/O, or cryptography, use a int_\n\n---\n## Question:\nWhat type would you probably use to store the number 255.",
   "starterCode": "",
   "expectedOutput": "",
   "nextLesson": "lesson5.json",

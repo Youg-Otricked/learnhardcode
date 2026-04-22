@@ -1,7 +1,7 @@
 {
     "id": "lesson32.json",
     "title": "Groups",
-    "description": "Groups are rather simple: They are used to quickly and easily add permisions to certain people. Imagine each people needing a copy of a file with specific permissions instead of just making a group for each collection of people. You create a group with the command `groupadd <NAME>` (very creative command name, right?), and you delete it with `groupdel <NAME>` (yeah no its bad). To add a user to a group you use `usermod -aG <USER> <GROUP>` and to change the group of a file/dir, you use `chgrp <GROUP> <FILES>`.\n---\n## Assignment:\nWhat command sequence would you use to create a group developers, add the `main` user to it, then change the group of the `thisfile` file to developers.",
+    "description": "Groups are rather simple: They are used to quickly and easily add permisions to certain people. Imagine each people needing a copy of a file with specific permissions instead of just making a group for each collection of people. You create a group with the command `groupadd <NAME>` (very creative command name, right?), and you delete it with `groupdel <NAME>` (yeah no its bad). To add a user to a group you use `usermod -aG <USER> <GROUP>` and to change the group of a file/dir, you use `chgrp <GROUP> <FILES>`.\n\n---\n## Assignment:\nWhat command sequence would you use to create a group developers, add the `main` user to it, then change the group of the `thisfile` file to developers.",
     "starterCode": "",
     "expectedOutput": "",
     "showButtons": true,

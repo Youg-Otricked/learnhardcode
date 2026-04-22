@@ -1,0 +1,20 @@
+{
+  "id": "stdlib37.json",
+  "title": "C++ - Advanced weird overloads[Type Casting]",
+  "description": "You can also convert type casting functions, using the signature:\n```cpp\noperator <TypeName>() const; // Yes, no return type, it is known by the type you overload!\n// e.g.\noperator int() const;\n```\nConst is there for the same reason as those QOL functions in the fixed size array class: it says \"C++ I don't modify the class when this is called\".\n\n---\n## Question:\nWhat would the type signature for a string conversion overload.",
+  "expectedOutput": "",
+  "starterCode": "",
+  "nextLesson": "stdlib38.json",
+  "previous": "stdlib36.json",
+  "showButtons": true,
+  "rawHarness": false,
+  "runHarness": "",
+  "correct": "b2",
+  "b1t": "const std::string operator std::string();",
+  "b2t": "operator std::string() const;",
+  "b3t": "std::string operator std::string const;",
+  "b4t": "const operator std::string();",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "20"
+}

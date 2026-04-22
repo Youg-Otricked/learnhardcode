@@ -1,7 +1,7 @@
 {
     "id": "lesson16.json",
     "title": "Basic Commands [sudo]",
-    "description": "# sudo\n`sudo` stands for **Super User Do**. It runs a command as the root (admin) user.\n\nRemember that offshore file you locked down? Try reading it:\n```bash\ncat accounts/.offshore.txt\n```\nPermission denied. Now try:\n```bash\nsudo cat accounts/.offshore.txt\n```\nIt works. `sudo` bypasses file permissions because root owns everything.\n\n### Important:\n- `sudo` will ask for YOUR password (not root's)\n- Use it carefully - root can delete anything\n- With great power comes great responsibility\n\n---\n## Assignment:\nRun `whoami` and then `sudo whoami`. Paste both outputs to see the difference.",
+    "description": "# sudo\n`sudo` stands for **Super User Do**. It runs a command as the root (admin) user.\n\nRemember that offshore file you locked down? Try reading it:\n```bash\ncat accounts/.offshore.txt\n```\nPermission denied. Now try:\n```bash\nsudo cat accounts/.offshore.txt\n```\nIt works. `sudo` bypasses file permissions because root owns everything.\n\n### Important:\n- `sudo` will ask for YOUR password (not root's)\n- Use it carefully - root can delete anything\n- With great power comes great responsibility\n\n\n---\n## Assignment:\nRun `whoami` and then `sudo whoami`. Paste both outputs to see the difference.",
     "starterCode": "",
     "expectedOutput": "",
     "mustContain": ["root"],

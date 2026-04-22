@@ -76,7 +76,7 @@
       "number": 12,
       "name": "C++ - Advanced operator overloads",
       "firstLesson": "stdlib35.json",
-      "lessons": ["stdlib35.json", "stdlib36.json"]
+      "lessons": ["stdlib35.json", "stdlib36.json", "stdlib37.json", "stdlib38.json", "stdlib39.json", "stdlib40.json"]
     }
   ]
 }
