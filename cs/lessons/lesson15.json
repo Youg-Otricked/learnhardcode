@@ -1,7 +1,7 @@
 {
     "id": "lesson14.json",
     "title": "Control Flow [Switch (Why break;)]",
-    "description": "## Why break;?\nYou may be thinking 'Why do I need to put break after each switch case?'\nThis is because of something called _**Fallthrough**_. Fallthrough means that switch will keep going to the next case until it hits a break statement. In C#, instead of implicit fallthrough, it Compile Errors on missing break.\n\n---\n## Question:\nWhat would be the output of this switch statement?\n```csharp\nint thing = 124;\nswitch(thing) {\n    case 23:\n        Console.WriteLine(\"Case 1!\");\n        break;\n    case 124:\n        Console.WriteLine(\"Case 2!\");\n    case 200:\n        Console.WriteLine(\"Case 3!\");\n        break;\n}\n```",
+    "description": "## Why break;?\nYou may be thinking 'Why do I need to put break after each switch case?'\nThis is because of something called _**Fallthrough**_. Fallthrough means that switch will keep going to the next case until it hits a break statement. In C#, instead of implicit fallthrough, it Compile Errors on missing break.\n\n\n---\n## Question:\nWhat would be the output of this switch statement?\n```csharp\nint thing = 124;\nswitch(thing) {\n    case 23:\n        Console.WriteLine(\"Case 1!\");\n        break;\n    case 124:\n        Console.WriteLine(\"Case 2!\");\n    case 200:\n        Console.WriteLine(\"Case 3!\");\n        break;\n}\n```",
     "starterCode": "",
     "expectedOutput": "",
     "nextLesson": "lesson15.json",

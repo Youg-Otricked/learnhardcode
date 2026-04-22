@@ -1,7 +1,7 @@
 {
     "id": "lesson18.json",
     "title": "LEA & Arithmetic Shifts",
-    "description": "## LEA - Load Effective Address\n`lea` calculates an address but doesn't read memory. It's used as a fast math trick:\n```asm\nlea rax, [rdi + rdi*2]    ; rax = rdi * 3\nlea rax, [rdi + 8]        ; rax = rdi + 8\nlea rax, [rdi*4 + rbx]    ; rax = rdi*4 + rbx\n```\nNo memory access, just math. Compilers use it everywhere.\n\n## SAL / SAR\nYou know `shl` and `shr`. The arithmetic versions:\n- `sal` - same as `shl` (shift left)\n- `sar` - shift right but preserves the sign bit\n\n```asm\nmov rax, -8\nsar rax, 1     ; rax = -4 (sign preserved)\nshr rax, 1     ; would give a huge positive number!\n```\n\n`sar` is signed division by powers of 2.\n\n---\n## Question:\nWhat does `lea rax, [rdi + rdi*4]` do?",
+    "description": "## LEA - Load Effective Address\n`lea` calculates an address but doesn't read memory. It's used as a fast math trick:\n```asm\nlea rax, [rdi + rdi*2]    ; rax = rdi * 3\nlea rax, [rdi + 8]        ; rax = rdi + 8\nlea rax, [rdi*4 + rbx]    ; rax = rdi*4 + rbx\n```\nNo memory access, just math. Compilers use it everywhere.\n\n## SAL / SAR\nYou know `shl` and `shr`. The arithmetic versions:\n- `sal` - same as `shl` (shift left)\n- `sar` - shift right but preserves the sign bit\n\n```asm\nmov rax, -8\nsar rax, 1     ; rax = -4 (sign preserved)\nshr rax, 1     ; would give a huge positive number!\n```\n\n`sar` is signed division by powers of 2.\n\n\n---\n## Question:\nWhat does `lea rax, [rdi + rdi*4]` do?",
     "starterCode": "",
     "expectedOutput": "",
     "nextLesson": "lesson19.json",

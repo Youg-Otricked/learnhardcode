@@ -1,7 +1,7 @@
 {
     "id": "lesson13.json",
     "title": "Basic Commands [chown]",
-    "description": "# chown\n`chown` stands for `change owner`. It changes who owns a file.\n```bash\nchown user:group filepath\n```\n- `user` - the new owner\n- `group` - the new group\n\nYou need `sudo` to change ownership to another user.\n\n---\n## Assignment:\nLocking permissions isn't enough - you're still the owner. Anyone with `sudo` could just `chmod` it back. Transfer ownership to `root` so even you need sudo to touch it. Plausible deniability.\n\nRun `sudo chown root:root` on the offshore file. Submit in the root of the project.",
+    "description": "# chown\n`chown` stands for `change owner`. It changes who owns a file.\n```bash\nchown user:group filepath\n```\n- `user` - the new owner\n- `group` - the new group\n\nYou need `sudo` to change ownership to another user.\n\n\n---\n## Assignment:\nLocking permissions isn't enough - you're still the owner. Anyone with `sudo` could just `chmod` it back. Transfer ownership to `root` so even you need sudo to touch it. Plausible deniability.\n\nRun `sudo chown root:root` on the offshore file. Submit in the root of the project.",
     "starterCode": "",
     "expectedOutput": "",
     "nextLesson": "lesson14.json",

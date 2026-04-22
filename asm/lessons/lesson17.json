@@ -1,7 +1,7 @@
 {
     "id": "lesson17.json",
     "title": "Functions [Practice - abs]",
-    "description": "## Testing Functions\nFrom now on, some lessons will test your functions automatically. You write the function, the test code calls it for you. Note that if section .text / .data isnt there, don't write it, it is auto appended. If it is their, you probably need to use it.\n\n---\n## Assignment:\nWrite a function called `abs_val` that takes a number in `rdi` and returns its absolute value in `rax`.\n\n- If `rdi` is negative, negate it\n- If `rdi` is positive or zero, return it as-is\n\nHint: `neg rax` flips the sign of rax.",
+    "description": "## Testing Functions\nFrom now on, some lessons will test your functions automatically. You write the function, the test code calls it for you. Note that if section .text / .data isnt there, don't write it, it is auto appended. If it is their, you probably need to use it.\n\n\n---\n## Assignment:\nWrite a function called `abs_val` that takes a number in `rdi` and returns its absolute value in `rax`.\n\n- If `rdi` is negative, negate it\n- If `rdi` is positive or zero, return it as-is\n\nHint: `neg rax` flips the sign of rax.",
     "setupCode": "section .data\n    pass_msg db \"PASS\", 10\n    pass_len equ $ - pass_msg\n    fail_msg db \"FAIL\", 10\n    fail_len equ $ - fail_msg\n\nsection .text\n    global _start\n",
     "starterCode": "abs_val:\n    ; return absolute value of rdi in rax\n    ret\n",
     "expectedOutput": "PASS",

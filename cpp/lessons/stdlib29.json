@@ -1,7 +1,7 @@
 {
   "id": "stdlib29.json",
   "title": "Fixed Size Array - Creation",
-  "description": "You've used arrays before, but now we're making our own! Arrays are just contiguous blocks of memory storing the same datatype, which allows for O(1) (**STUPID FAST**) Read and writes.\n---\n## Assignment:\nRight now, if you look at our class, it is _very_ empty, with just a length (int), and data (T*). Make the constructor, which should take a `int` (size), defaulting to 1 if < 1, and A: Assign length to size and B: Allocate size' T's into data.",
+  "description": "You've used arrays before, but now we're making our own! Arrays are just contiguous blocks of memory storing the same datatype, which allows for O(1) (**STUPID FAST**) Read and writes.\n\n\n---\n## Assignment:\nRight now, if you look at our class, it is _very_ empty, with just a length (int), and data (T*). Make the constructor, which should take a `int` (size), defaulting to 1 if < 1, and A: Assign length to size and B: Allocate size' T's into data.",
   "starterCode": "#include <iostream>\ntemplate <typename T>\nclass FSizeArr {\npublic:\n    int length;\n    T* data;\n    // Write the constructor here!\n};",
   "expectedOutput": "",
   "rawHarness": true,

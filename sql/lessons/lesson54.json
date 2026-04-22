@@ -1,7 +1,7 @@
 {
     "id": "lesson54.json",
     "title": "EXCEPT / INTERSECT",
-    "description": "## EXCEPT\nEXCEPT returns rows from the first query that DON'T appear in the second query. Like UNION's opposite.\n```sql\nSELECT name FROM all_users\nEXCEPT\nSELECT name FROM banned_users;\n```\nThis gives you all users who aren't banned.\n\n## INTERSECT\nINTERSECT returns only rows that appear in BOTH queries.\n```sql\nSELECT name FROM customers\nINTERSECT\nSELECT name FROM employees;\n```\nThis finds people who are both customers and employees.\n\n---\n## Assignment:\nBWS has an `active_staff` table and a `on_vacation` table. Find all staff members who are NOT on vacation. Use EXCEPT. (only select name)",
+    "description": "## EXCEPT\nEXCEPT returns rows from the first query that DON'T appear in the second query. Like UNION's opposite.\n```sql\nSELECT name FROM all_users\nEXCEPT\nSELECT name FROM banned_users;\n```\nThis gives you all users who aren't banned.\n\n## INTERSECT\nINTERSECT returns only rows that appear in BOTH queries.\n```sql\nSELECT name FROM customers\nINTERSECT\nSELECT name FROM employees;\n```\nThis finds people who are both customers and employees.\n\n\n---\n## Assignment:\nBWS has an `active_staff` table and a `on_vacation` table. Find all staff members who are NOT on vacation. Use EXCEPT. (only select name)",
     "setupCode": "CREATE TABLE active_staff (id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE on_vacation (id INTEGER PRIMARY KEY, name TEXT); INSERT INTO active_staff VALUES (1, 'Steve'), (2, 'Bob'), (3, 'Alice'), (4, 'Dave'); INSERT INTO on_vacation VALUES (1, 'Bob'), (2, 'Dave');",
     "starterCode": "-- Find staff not on vacation\n",
     "runHarness": "",

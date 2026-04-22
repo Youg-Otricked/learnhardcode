@@ -1,7 +1,7 @@
 {
   "id": "lesson32.json",
   "title": "Objects",
-  "description": "## Objects\nObjects group related data together with key-value pairs:\n\n```ts\nconst video = {\n    title: \"Cat Falls\",\n    views: 5000,\n    isPublic: true\n};\n```\n\n### Accessing properties:\n```ts\n// Dot notation\nconsole.log(video.title);    // Cat Falls\n\n// Bracket notation\nconsole.log(video[\"title\"]); // Cat Falls\n\n// Bracket notation with a variable\nconst key = \"views\";\nconsole.log(video[key]);     // 5000\n```\n\nBoth work the same. Bracket notation is useful when the key is stored in a variable.\n\n---\n## Assignment:\nCreate a MeTube video object called `video` with:\n- `title`: `\"Steve Gets Scammed\"`\n- `views`: `999999`\n- `likes`: `800000`\n\nPrint the title using dot notation, then print the views using bracket notation.",
+  "description": "## Objects\nObjects group related data together with key-value pairs:\n\n```ts\nconst video = {\n    title: \"Cat Falls\",\n    views: 5000,\n    isPublic: true\n};\n```\n\n### Accessing properties:\n```ts\n// Dot notation\nconsole.log(video.title);    // Cat Falls\n\n// Bracket notation\nconsole.log(video[\"title\"]); // Cat Falls\n\n// Bracket notation with a variable\nconst key = \"views\";\nconsole.log(video[key]);     // 5000\n```\n\nBoth work the same. Bracket notation is useful when the key is stored in a variable.\n\n\n---\n## Assignment:\nCreate a MeTube video object called `video` with:\n- `title`: `\"Steve Gets Scammed\"`\n- `views`: `999999`\n- `likes`: `800000`\n\nPrint the title using dot notation, then print the views using bracket notation.",
   "starterCode": "// Create video object and print\n",
   "expectedOutput": "Steve Gets Scammed\n999999\nVideo exists",
   "nextLesson": "lesson33.json",

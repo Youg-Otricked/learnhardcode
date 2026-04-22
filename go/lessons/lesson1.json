@@ -1,7 +1,7 @@
 {
     "id": "lesson1.json",
     "title": "Welcome to GopherCloud",
-    "description": "## Welcome to GopherCloud!\nYou just got hired as a backend engineer at **GopherCloud**, the fastest growing cloud infrastructure company in the world.\n\nYour first task is simple - fix the startup message that prints when the server boots.\n\n---\n\nChange the code so it prints `GopherCloud server is running!` exactly.",
+    "description": "## Welcome to GopherCloud!\nYou just got hired as a backend engineer at **GopherCloud**, the fastest growing cloud infrastructure company in the world.\n\nYour first task is simple - fix the startup message that prints when the server boots.\n\n\n---\n\nChange the code so it prints `GopherCloud server is running!` exactly.",
     "starterCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"TODO: fix me\")\n}",
     "expectedOutput": "GopherCloud server is running!\n",
     "nextLesson": "lesson2.json",

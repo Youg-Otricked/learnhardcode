@@ -1,7 +1,7 @@
 {
   "id": "lesson5.json",
   "title": "Variables",
-  "description": "Variables store data. That's it. You create a variable with the syntax\n```c\n<type> <name> = <value>;\n// or\n<type> <name>;\n// e.g.\nint x = 12345;\nchar z;\n```\nYou can re-assign to a variable/assign to a variable with `=`. So with our declared-but-not-initialized var `z`, we could do `z = 'h'`.\n---\n## Assignment:\nWe should store commonly used program data in variables. Create 2 variables, os_name, and revision, and assign os_name as `\"BINDOS\"`, and revision to `12`.",
+  "description": "Variables store data. That's it. You create a variable with the syntax\n```c\n<type> <name> = <value>;\n// or\n<type> <name>;\n// e.g.\nint x = 12345;\nchar z;\n```\nYou can re-assign to a variable/assign to a variable with `=`. So with our declared-but-not-initialized var `z`, we could do `z = 'h'`.\n\n---\n## Assignment:\nWe should store commonly used program data in variables. Create 2 variables, os_name, and revision, and assign os_name as `\"BINDOS\"`, and revision to `12`.",
   "starterCode": "#include <stdio.h>\n\nint main() {\n    // create your vars here.\n    // don't touch below this line\n    printf(\"%s %d\", os_name, revision);\n}",
   "expectedOutput": "BINDOS 12",
   "nextLesson": "lesson6.json",

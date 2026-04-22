@@ -1,7 +1,7 @@
 {
     "id": "lesson34.json",
     "title": "Quoting vs Globbing",
-    "description": "By default, the shell expands glob patterns before running a command.\n\nBut if you use quotes, the pattern is treated as literal text instead.\n\nExamples:\n- `ls *.txt` expands and lists matching files\n- `ls \"*.txt\"` does NOT expand, it looks for a file literally named *.txt\n\nThis is very important when working with special characters.\n\n---\n## Assignment:\nWhich command will NOT expand the glob pattern?",
+    "description": "By default, the shell expands glob patterns before running a command.\n\nBut if you use quotes, the pattern is treated as literal text instead.\n\nExamples:\n- `ls *.txt` expands and lists matching files\n- `ls \"*.txt\"` does NOT expand, it looks for a file literally named *.txt\n\nThis is very important when working with special characters.\n\n\n---\n## Assignment:\nWhich command will NOT expand the glob pattern?",
     "starterCode": "",
     "expectedOutput": "",
     "showButtons": true,

@@ -1,7 +1,7 @@
 {
     "id": "lesson18.json",
     "title": "Loops [for]",
-    "description": "## for loop\nRust's `for` loop iterates over a range:\n\n```rust\nfor i in 0..5 {\n    println!(\"{}\", i);\n}\n// 0, 1, 2, 3, 4\n```\n\n`0..5` means 0 up to but NOT including 5.\n\nTo include the end value, use `..=`:\n```rust\nfor i in 1..=5 {\n    println!(\"{}\", i);\n}\n// 1, 2, 3, 4, 5\n```\n\n---\n## Assignment:\nVerdigris OS runs a boot sequence. Use a `for` loop to print `Boot step X` for steps 1 through 5.",
+    "description": "## for loop\nRust's `for` loop iterates over a range:\n\n```rust\nfor i in 0..5 {\n    println!(\"{}\", i);\n}\n// 0, 1, 2, 3, 4\n```\n\n`0..5` means 0 up to but NOT including 5.\n\nTo include the end value, use `..=`:\n```rust\nfor i in 1..=5 {\n    println!(\"{}\", i);\n}\n// 1, 2, 3, 4, 5\n```\n\n\n---\n## Assignment:\nVerdigris OS runs a boot sequence. Use a `for` loop to print `Boot step X` for steps 1 through 5.",
     "starterCode": "fn main() {\n    // Write your for loop here\n}",
     "expectedOutput": "Boot step 1\nBoot step 2\nBoot step 3\nBoot step 4\nBoot step 5",
     "nextLesson": "lesson19.json",

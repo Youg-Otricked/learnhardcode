@@ -1,7 +1,7 @@
 {
     "id": "lesson22.json",
     "title": "Arrays",
-    "description": "## Arrays\nArrays store multiple values of the same type. In C#, you declare them with a fixed size:\n\n```csharp\nint[] scores = new int[3];\nscores[0] = 10;\nscores[1] = 20;\nscores[2] = 30;\n```\n\nOr initialize directly:\n```csharp\nint[] scores = {10, 20, 30};\nstring[] names = {\"Alice\", \"Bob\", \"Steve\"};\n```\n\nAccess by index (starts at 0):\n```csharp\nConsole.WriteLine(scores[0]);    // 10\nConsole.WriteLine(names.Length);  // 3\n```\n\n---\n## Assignment:\nChronoShard stores player inventory. Create an array of 4 strings: `\"Sword\"`, `\"Shield\"`, `\"Potion\"`, `\"Map\"`. Print each item using index access.",
+    "description": "## Arrays\nArrays store multiple values of the same type. In C#, you declare them with a fixed size:\n\n```csharp\nint[] scores = new int[3];\nscores[0] = 10;\nscores[1] = 20;\nscores[2] = 30;\n```\n\nOr initialize directly:\n```csharp\nint[] scores = {10, 20, 30};\nstring[] names = {\"Alice\", \"Bob\", \"Steve\"};\n```\n\nAccess by index (starts at 0):\n```csharp\nConsole.WriteLine(scores[0]);    // 10\nConsole.WriteLine(names.Length);  // 3\n```\n\n\n---\n## Assignment:\nChronoShard stores player inventory. Create an array of 4 strings: `\"Sword\"`, `\"Shield\"`, `\"Potion\"`, `\"Map\"`. Print each item using index access.",
     "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            // Create array and print each item\n\n            return 0;\n        }\n    }\n}",
     "expectedOutput": "Sword\nShield\nPotion\nMap",
     "nextLesson": "lesson23.json",

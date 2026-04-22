@@ -1,7 +1,7 @@
 {
     "id": "lesson59.json",
     "title": "Workflow [Backups]",
-    "description": "## Backups\nDatabases crash. Servers die. People run DELETE without WHERE. Backups save you.\n\n### Common strategies:\n- **Full backup**: Copy the entire database periodically\n- **Incremental backup**: Only back up what changed since last backup\n- **Point-in-time recovery**: Replay transaction logs to restore to any moment\n\nIn SQLite:\n```bash\nsqlite3 mydb.db '.backup backup.db'\n```\n\nIn PostgreSQL:\n```bash\npg_dump mydb > backup.sql\n```\n\nThe golden rule: **If you don't have backups, you don't have data.**\n\n---\n## Question:\nSteve ran `DELETE FROM customers;` without a WHERE clause. What saves BWS?",
+    "description": "## Backups\nDatabases crash. Servers die. People run DELETE without WHERE. Backups save you.\n\n### Common strategies:\n- **Full backup**: Copy the entire database periodically\n- **Incremental backup**: Only back up what changed since last backup\n- **Point-in-time recovery**: Replay transaction logs to restore to any moment\n\nIn SQLite:\n```bash\nsqlite3 mydb.db '.backup backup.db'\n```\n\nIn PostgreSQL:\n```bash\npg_dump mydb > backup.sql\n```\n\nThe golden rule: **If you don't have backups, you don't have data.**\n\n\n---\n## Question:\nSteve ran `DELETE FROM customers;` without a WHERE clause. What saves BWS?",
     "starterCode": "",
     "expectedOutput": "",
     "nextLesson": "lesson60.json",

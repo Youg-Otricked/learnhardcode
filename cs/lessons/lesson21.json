@@ -1,7 +1,7 @@
 {
     "id": "lesson21.json",
     "title": "Loops [Do While]",
-    "description": "## Do While\nA `do while` loop runs the code FIRST, then checks the condition. It always runs at least once.\n\n```csharp\nint i = 0;\ndo {\n    Console.WriteLine(i);\n    i++;\n} while (i < 3);\n// 0\n// 1\n// 2\n```\n\nCompare with `while`:\n- `while` - checks THEN runs (might run 0 times)\n- `do while` - runs THEN checks (always runs at least once)\n\n---\n## Assignment:\nChronoShard retries connecting to a server. Starting with `attempts` at 0, use a do-while loop to print `Connecting...` and increment attempts. Stop when attempts reaches 4. After the loop, print `Connected!`.",
+    "description": "## Do While\nA `do while` loop runs the code FIRST, then checks the condition. It always runs at least once.\n\n```csharp\nint i = 0;\ndo {\n    Console.WriteLine(i);\n    i++;\n} while (i < 3);\n// 0\n// 1\n// 2\n```\n\nCompare with `while`:\n- `while` - checks THEN runs (might run 0 times)\n- `do while` - runs THEN checks (always runs at least once)\n\n\n---\n## Assignment:\nChronoShard retries connecting to a server. Starting with `attempts` at 0, use a do-while loop to print `Connecting...` and increment attempts. Stop when attempts reaches 4. After the loop, print `Connected!`.",
     "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            int attempts = 0;\n            // Do while loop here\n\n            return 0;\n        }\n    }\n}",
     "expectedOutput": "Connecting...\nConnecting...\nConnecting...\nConnecting...\nConnected!",
     "nextLesson": "lesson22.json",

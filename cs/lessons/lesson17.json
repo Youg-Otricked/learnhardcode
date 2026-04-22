@@ -1,7 +1,7 @@
 {
     "id": "lesson17.json",
     "title": "Operators [Logic]",
-    "description": "## Logic Operators\nC# has the standard logic operators:\n\n- `&&` - AND (both must be true)\n- `||` - OR (at least one must be true)\n- `!` - NOT (flips true to false)\n\n```csharp\nbool a = true;\nbool b = false;\nConsole.WriteLine(a && b);  // False\nConsole.WriteLine(a || b);  // True\nConsole.WriteLine(!a);      // False\n```\n\nComparison operators: `==`, `!=`, `>`, `<`, `>=`, `<=`\n\n```csharp\nint x = 10;\nConsole.WriteLine(x > 5 && x < 20);  // True\n```\n\n---\n## Assignment:\nChronoShard checks if a player can enter a dungeon. A player can enter if their `level` is at least 10 AND their `health` is above 0. Print the result.",
+    "description": "## Logic Operators\nC# has the standard logic operators:\n\n- `&&` - AND (both must be true)\n- `||` - OR (at least one must be true)\n- `!` - NOT (flips true to false)\n\n```csharp\nbool a = true;\nbool b = false;\nConsole.WriteLine(a && b);  // False\nConsole.WriteLine(a || b);  // True\nConsole.WriteLine(!a);      // False\n```\n\nComparison operators: `==`, `!=`, `>`, `<`, `>=`, `<=`\n\n```csharp\nint x = 10;\nConsole.WriteLine(x > 5 && x < 20);  // True\n```\n\n\n---\n## Assignment:\nChronoShard checks if a player can enter a dungeon. A player can enter if their `level` is at least 10 AND their `health` is above 0. Print the result.",
     "starterCode": "using System;\n\nnamespace Chronoshard.Core\n{\n    class Program\n    {\n        public static int Main(string[] args)\n        {\n            int level = 12;\n            int health = 80;\n            // Print whether the player can enter\n\n            return 0;\n        }\n    }\n}",
     "expectedOutput": "True",
     "nextLesson": "lesson18.json",

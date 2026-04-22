@@ -1,7 +1,7 @@
 {
     "id": "lesson40.json",
     "title": "Text editors",
-    "description": "Time for you to finally set up a _real_ local development environment. Few devs actually codes in their terminal, they just install a IDE which is just a text editor with some QOL stuff and a terminal. This is where VSCode comes in. It is a fairly small text editor and is the most popular with devs today.\nA few other good GUI edtiors are:\n- [IntelliJ IDEA](https://www.jetbrains.com/idea/)\n- [Zed](https://zed.dev)\nAnd some good terminal editors are\n- [Emacs](https://www.gnu.org/software/emacs/)\n- [Vim](https://www.vim.org)\n---\n## Assignment:\nIf you don't already have a editor you like, install [VSCode Here](https://code.visualstudio.com)",
+    "description": "Time for you to finally set up a _real_ local development environment. Few devs actually codes in their terminal, they just install a IDE which is just a text editor with some QOL stuff and a terminal. This is where VSCode comes in. It is a fairly small text editor and is the most popular with devs today.\nA few other good GUI edtiors are:\n- [IntelliJ IDEA](https://www.jetbrains.com/idea/)\n- [Zed](https://zed.dev)\nAnd some good terminal editors are\n- [Emacs](https://www.gnu.org/software/emacs/)\n- [Vim](https://www.vim.org)\n\n---\n## Assignment:\nIf you don't already have a editor you like, install [VSCode Here](https://code.visualstudio.com)",
     "starterCode": "",
     "expectedOutput": "",
     "showButtons": true,

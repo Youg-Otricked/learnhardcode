@@ -1,7 +1,7 @@
 {
   "id": "lesson7.json",
   "title": "Variables [f64]",
-  "description": "You may be thinking \"Hey... what if we need a decimal!\" For this, we need another datatype: f64, which stores a 14-digit accurate floating point number.\n---\n## Assignment:\nMake a immutible variable, pi, whose value is `3.1415926535897`",
+  "description": "You may be thinking \"Hey... what if we need a decimal!\" For this, we need another datatype: f64, which stores a 14-digit accurate floating point number.\n\n---\n## Assignment:\nMake a immutible variable, pi, whose value is `3.1415926535897`",
   "starterCode": "fn main() {\n   // Don't touch above this line.\n    // Make the variable here.\n    // Don't touch below this line.\n    println!(\"{}\",pi);\n}",
   "expectedOutput": "3.1415926535897",
   "mustContain": "",

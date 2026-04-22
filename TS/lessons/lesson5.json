@@ -1,7 +1,7 @@
 {
   "id": "lesson5.json",
   "title": "Binops [+, -, *, /, %",
-  "description": "In TypeScript there are 5 mathmatical binary operators (that means take 2 inputs), +, -, *, /, and %. +, -, *, and / are addition subtraction multiplication and division, what you would expect. Then, there is %. % Stands for modulus. It outputs the _remainder_ of a division.\n---\n## Assignment:\nMeTube needs some video analytics. Fix the calculations so the output matches.",
+  "description": "In TypeScript there are 5 mathmatical binary operators (that means take 2 inputs), +, -, *, /, and %. +, -, *, and / are addition subtraction multiplication and division, what you would expect. Then, there is %. % Stands for modulus. It outputs the _remainder_ of a division.\n\n---\n## Assignment:\nMeTube needs some video analytics. Fix the calculations so the output matches.",
   "starterCode": "const totalViews: number = 10000;\nconst days: number = 30;\nconst avgViews: number = totalViews + days;\nconst totalMinutes: number = 4500;\nconst videosWatched: number = 150;\nconst avgLength: number = totalMinutes * videosWatched;\nconst leftoverVideos: number = videosWatched / 7;\n\nconsole.log(\"Avg daily views: \" + avgViews);\nconsole.log(\"Avg video length: \" + avgLength);\nconsole.log(\"Leftover videos after weekly batches: \" + leftoverVideos);",
   "expectedOutput": "Avg daily views: 333.3333333333333\nAvg video length: 30\nLeftover videos after weekly batches: 3",
   "nextLesson": "lesson6.json",

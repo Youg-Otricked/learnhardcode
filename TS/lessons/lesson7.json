@@ -1,7 +1,7 @@
 {
   "id": "lesson7.json",
   "title": "Template literals",
-  "description": "## Template Literals\nInstead of ugly string concatenation with `+`, TypeScript has template literals using backticks.\n```ts\nconst name: string = \"MeTube\";\nconsole.log(`Welcome to ${name}!`);\n```\nMuch cleaner than `\"Welcome to \" + name + \"!\"`\n---\n## Assignment:\nRefactor the ugly concatenation to use template literals.",
+  "description": "## Template Literals\nInstead of ugly string concatenation with `+`, TypeScript has template literals using backticks.\n```ts\nconst name: string = \"MeTube\";\nconsole.log(`Welcome to ${name}!`);\n```\nMuch cleaner than `\"Welcome to \" + name + \"!\"`\n\n---\n## Assignment:\nRefactor the ugly concatenation to use template literals.",
   "starterCode": "const channel: string = \"TechWithSteve\";\nconst subs: number = 54000;\nconst verified: boolean = true;\n\nconsole.log(channel + \" has \" + subs + \" subscribers. Verified: \" + verified);",
   "expectedOutput": "TechWithSteve has 54000 subscribers. Verified: true",
   "nextLesson": "lesson8.json",

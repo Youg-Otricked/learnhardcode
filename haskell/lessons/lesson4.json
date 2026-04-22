@@ -1,7 +1,7 @@
 {
     "id": "lesson4.json",
     "title": "Types",
-    "description": "## Types\nTypes are what Haskell is. Haskell would be NOTHING without types. There are a few core types in Haskell:\n- Int: A whole number\n- Double: A decimal number.\n- Word: A non-negative whole number\n- Bool: True or False\n- Char: A single character wrapped in ''\n- String: A string of text wrapped in \"\"\n(): `()` represents nothing meaningfull\n- IO: A special type that represents actions which interact with the outside world. It wraps another type, like `IO String` or `IO Int`, meaning \"a result produced by a side effect.\"\n---\n## Question:\nWhat type would hold \"True\"",
+    "description": "## Types\nTypes are what Haskell is. Haskell would be NOTHING without types. There are a few core types in Haskell:\n- Int: A whole number\n- Double: A decimal number.\n- Word: A non-negative whole number\n- Bool: True or False\n- Char: A single character wrapped in ''\n- String: A string of text wrapped in \"\"\n(): `()` represents nothing meaningfull\n- IO: A special type that represents actions which interact with the outside world. It wraps another type, like `IO String` or `IO Int`, meaning \"a result produced by a side effect.\"\n\n---\n## Question:\nWhat type would hold \"True\"",
     "starterCode": "",
     "expectedOutput": "",
     "nextLesson": "lesson5.json",

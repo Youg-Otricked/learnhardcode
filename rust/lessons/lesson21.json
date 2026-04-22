@@ -1,7 +1,7 @@
 {
     "id": "lesson21.json",
     "title": "Strings and Printing vars.",
-    "description": "## Strings\nThere is one more datatype in rust, &str. &str is a string of text, such as `\"Hello, World!\"`.\n---\n## Assignment:\nMake a simple function that takes a &str and prints it called `print_str`.",
+    "description": "## Strings\nThere is one more datatype in rust, &str. &str is a string of text, such as `\"Hello, World!\"`.\n\n---\n## Assignment:\nMake a simple function that takes a &str and prints it called `print_str`.",
     "starterCode": "// Write print_str here\n\n",
     "expectedOutput": "Hello, World!",
     "rawHarness": true,

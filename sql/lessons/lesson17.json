@@ -1,7 +1,7 @@
 {
     "id": "lesson17.json",
     "title": "DELETE",
-    "description": "## DELETE\n`UPDATE` has a counterpart: `DELETE`. DELETE lets you delete existing rows in a table. The syntax is:\n```sql\nDELETE FROM table_name\n    WHERE condition;\n```\nSimilar, right? And yet again, **WARNING:** If you forget the `WHERE` clause, it deletes EVERY row. That's bad.\n---\n## Assignment:\nBWS found a whole slew of apps by one person using a fake country to bypass payment! Delete all rows from deployments where region is equal to 'chameritan'",
+    "description": "## DELETE\n`UPDATE` has a counterpart: `DELETE`. DELETE lets you delete existing rows in a table. The syntax is:\n```sql\nDELETE FROM table_name\n    WHERE condition;\n```\nSimilar, right? And yet again, **WARNING:** If you forget the `WHERE` clause, it deletes EVERY row. That's bad.\n\n---\n## Assignment:\nBWS found a whole slew of apps by one person using a fake country to bypass payment! Delete all rows from deployments where region is equal to 'chameritan'",
     "setupCode": "CREATE TABLE deployments (id INTEGER PRIMARY KEY AUTOINCREMENT, app TEXT NOT NULL, status TEXT DEFAULT 'pending', region TEXT); INSERT INTO deployments (app, status, region) VALUES ('BWS-API', 'not-on-fire-anymore', 'us-east'), ('Lol', 'Vibe-Coded', 'chameritan'), ('Bread tracker', 'made with butter on rye', 'gm'), ('Byby resources', '2 TBs lol', 'chameritan');",
     "starterCode": "-- Write your Delete here.\n",
     "runHarness": "SELECT * FROM deployments ORDER BY id ASC;",

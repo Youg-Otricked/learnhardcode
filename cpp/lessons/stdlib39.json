@@ -1,0 +1,18 @@
+{
+  "id": "stdlib39.json",
+  "title": "C++ - Advanced weird overloads[(please don't)&/->*/,]",
+  "description": "Yes. You read the title correctly. Yes, you can overload the ',' character.\n\n---\n## Signatures:\n```cpp\nT* operator&(); // Address of\nR& operator->*(S b); // Pointer-To-Member\nR& operator,(const T& rhs); // Comma (yes, comma)\n```\n\n---\n## Why?\nLet me list from lease _please, don't_, and why.\n| Operator | For what purpose? |\n| -------- | ------------------ | --- |\n| `->*` | Used for Pointer-To-Member access (Explained next) |\n| `&` | Replaces default addres of. Don't. Just don't. |\n| `,` | Uses for weird confusing nonsense C++, e.g: (Look at example). REALLY Please Don't. |\n\nExamples\n---\n## Operator->*\n```cpp\n// Default ->*:\nstruct Thing {\n    int x = 1234;\n    int z = 123;\n};\nint main() {\n    // &Thing::x generates an \"Offset\" (e.g., \"the variable at byte 0\").\n    // We store this blueprint in 'memberPtr'. Note it doesn't have a value yet.\nint Thing::*memberPtr = &Thing::x; // We use :: because it is a member of Thing (it adds a member inside thing) and points to Thing::x.\nThing* thingy = new Thing();\n    // The ->* operator combines the INSTANCE (thingy) with the BLUEPRINT (memberPtr).\n    // It's like saying: \"Go to the 'thingy' address and look at the 'x' offset.\"\nint value = thingy->*memberPtr; // 1234\n}\n// With a operator->*\n#include <iostream>\nstruct Player {\n    int health = 100;\n    int mana = 50;\n};\ntemplate <typename T>\nclass SmartPtr {\n    T* ptr;\npublic:\n    SmartPtr(T* p) : ptr(p) {}\n    ~SmartPtr() { delete ptr; }\n    T* operator->() { return ptr; }\n    // It takes the \"offset\" (mem) and applies it to the internal raw pointer\n    template <typename R>\n    R& operator->*(R T::*mem) {\n        return ptr->*mem; \n    }\n};\nint main() {\nSmartPtr<Player> hero(new Player());\n    int Player::*statPtr = &Player::mana;\n    // Without the overload, this line would be a compiler error.\n    int value = hero->*statPtr; \n    std::cout << \"Mana is: \" << value << '\\n'; // Prints 50\n}\n```\n```cpp\n// Operator comma\n#include <iostream>\n#include <vector>\nstruct Pack {\n    std::vector<int> numbers;\n    // It takes 'this' on the left and an 'int' on the right\n    Pack& operator,(int val) {\n        numbers.push_back(val);\n        return *this; // Return itself so we can keep adding commas\n    }\n};\nint main() {\n    Pack p;\n    // This looks like magic, but it's just calling operator, repeatedly\n    p, 10, 20, 30, 40;\n    for (int n : p.numbers) {\n        std::cout << n << \" \"; // Prints 10 20 30 40\n    }\n}\n```\nJust remember. You probably will never need to use this. You probably shouldn't ever use this. You are not allowed to ever use this. You are not allowed to switch to Rust anymore.\n\n---\n## Question:\nThere is no question to emphasize that you WILL AND SHOULD NEVER USE THIS.",
+  "expectedOutput": "",
+  "starterCode": "",
+  "nextLesson": "stdlib40.json",
+  "previous": "stdlib38.json",
+  "showButtons": true,
+  "correct": "b1",
+  "b1t": "Continue",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "20"
+}

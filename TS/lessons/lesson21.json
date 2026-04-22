@@ -1,7 +1,7 @@
 {
   "id": "lesson21.json",
   "title": "Functions [Writing]",
-  "description": "## Writing Functions\nNow you write one. The syntax:\n```ts\nfunction name(param: type): returnType {\n    return value;\n}\n```\n\n---\n## Assignment:\nMeTube needs a like ratio calculator. Write a function called `likeRatio` that takes `likes` (number) and `total` (number) and returns `likes / total`. Print the result of calling it with 80 and 100.",
+  "description": "## Writing Functions\nNow you write one. The syntax:\n```ts\nfunction name(param: type): returnType {\n    return value;\n}\n```\n\n\n---\n## Assignment:\nMeTube needs a like ratio calculator. Write a function called `likeRatio` that takes `likes` (number) and `total` (number) and returns `likes / total`. Print the result of calling it with 80 and 100.",
   "starterCode": "// Write likeRatio and call it\n",
   "expectedOutput": "0.8",
   "nextLesson": "lesson22.json",

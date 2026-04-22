@@ -1,7 +1,7 @@
 {
     "id": "lesson22.json",
     "title": "Advanced SELECT [Aggregate Functions]",
-    "description": "## Aggregate Functions\nYou already know `COUNT(*)`. Here are the rest:\n\n- `SUM(column)` - adds up all values\n- `AVG(column)` - average of all values\n- `MIN(column)` - smallest value\n- `MAX(column)` - largest value\n\nYou can use them with or without GROUP BY:\n```sql\n-- total across everything\nSELECT SUM(size) FROM buckets;\n\n-- total per group\nSELECT type, SUM(size) FROM buckets GROUP BY type;\n```\n---\n## Assignment:\nBWS needs server stats. Query the servers table and show the total cpu_cores, average ram_gb, minimum uptime, and maximum uptime across all servers.",
+    "description": "## Aggregate Functions\nYou already know `COUNT(*)`. Here are the rest:\n\n- `SUM(column)` - adds up all values\n- `AVG(column)` - average of all values\n- `MIN(column)` - smallest value\n- `MAX(column)` - largest value\n\nYou can use them with or without GROUP BY:\n```sql\n-- total across everything\nSELECT SUM(size) FROM buckets;\n\n-- total per group\nSELECT type, SUM(size) FROM buckets GROUP BY type;\n```\n\n---\n## Assignment:\nBWS needs server stats. Query the servers table and show the total cpu_cores, average ram_gb, minimum uptime, and maximum uptime across all servers.",
     "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, ram_gb REAL, uptime REAL); INSERT INTO servers VALUES (1, 'prod-1', 8, 32.0, 99.9), (2, 'prod-2', 16, 64.0, 95.5), (3, 'staging', 4, 16.0, 88.2), (4, 'dev', 2, 8.0, 12.0);",
     "starterCode": "-- Get total CPU, avg RAM, min uptime, max uptime\n",
     "runHarness": "",

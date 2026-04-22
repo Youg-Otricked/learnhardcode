@@ -1,7 +1,7 @@
 {
   "id": "lesson2.json",
   "title": "Entry Point and Program Structure",
-  "description": "## Program Structure\nAll programs in C have a entry point. All statements in C end with a ;. Note that `#include` and `int main() {}` are not statements.\n## The Entry Point\nThe Entry Point is where your program starts. In C, that is the `main` function. Functions are a later concept, but just remember that the main function is this:\n```c\nint main() {\n    // Code goes here\n    return 0;\n}\n```\nNote that preproccessers (lines starting in #) don't go in main.\n---\n### Assignment:\nOut project is at critical condition: Somebody let a python dev in our C code base. Put the code back in `main`.",
+  "description": "## Program Structure\nAll programs in C have a entry point. All statements in C end with a ;. Note that `#include` and `int main() {}` are not statements.\n## The Entry Point\nThe Entry Point is where your program starts. In C, that is the `main` function. Functions are a later concept, but just remember that the main function is this:\n```c\nint main() {\n    // Code goes here\n    return 0;\n}\n```\nNote that preproccessers (lines starting in #) don't go in main.\n\n---\n### Assignment:\nOut project is at critical condition: Somebody let a python dev in our C code base. Put the code back in `main`.",
   "starterCode": "#include <stdio.h>\nprintf(\"Booting BINDOS 12\");",
   "expectedOutput": "Booting BINDOS 12\n",
   "nextLesson": "lesson3.json",

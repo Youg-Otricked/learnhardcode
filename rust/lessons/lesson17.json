@@ -1,7 +1,7 @@
 {
     "id": "lesson17.json",
     "title": "Loops [while]",
-    "description": "## Loops\nSometimes you need code to run more than once. A `while` loop repeats as long as its condition is true:\n\n```rust\nlet mut i: i32 = 0;\nwhile i < 3 {\n    println!(\"{}\", i);\n    i += 1;\n}\n// 0\n// 1\n// 2\n```\n\n### How it works:\n1. Check the condition (`i < 3`)\n2. If true, run the code inside `{}`\n3. Go back to step 1\n4. If false, skip the loop and continue\n\nThe variable must be `mut` since we're changing it each loop.\n\n**Without `i += 1`, the loop runs forever!**\n\n---\n## Assignment:\nVerdigris OS retries connecting to a network. Starting with `attempts` at 0, print `Connecting...` while attempts is less than 3. Increment attempts each time. After the loop, print `Connected!`.",
+    "description": "## Loops\nSometimes you need code to run more than once. A `while` loop repeats as long as its condition is true:\n\n```rust\nlet mut i: i32 = 0;\nwhile i < 3 {\n    println!(\"{}\", i);\n    i += 1;\n}\n// 0\n// 1\n// 2\n```\n\n### How it works:\n1. Check the condition (`i < 3`)\n2. If true, run the code inside `{}`\n3. Go back to step 1\n4. If false, skip the loop and continue\n\nThe variable must be `mut` since we're changing it each loop.\n\n**Without `i += 1`, the loop runs forever!**\n\n\n---\n## Assignment:\nVerdigris OS retries connecting to a network. Starting with `attempts` at 0, print `Connecting...` while attempts is less than 3. Increment attempts each time. After the loop, print `Connected!`.",
     "starterCode": "fn main() {\n    let mut attempts: i32 = 0;\n    // Write your while loop here\n}",
     "expectedOutput": "Connecting...\nConnecting...\nConnecting...\nConnected!",
     "nextLesson": "lesson18.json",

@@ -1,7 +1,7 @@
 {
     "id": "lesson21.json",
     "title": "Environment Variables [env, export]",
-    "description": "# Environment Variables\nEnvironment variables are key-value pairs available to all programs in your shell.\n\n```bash\nenv                        # list all env vars\necho $HOME                 # print one\nexport MY_VAR=\"hello\"      # create one\necho $MY_VAR               # hello\n```\n\nImportant ones:\n- `$HOME` - your home directory\n- `$PATH` - where the shell looks for programs\n- `$USER` - your username\n\n`export` makes the variable available to child processes. Without `export`, it only exists in the current shell.\n\n---\n## Assignment:\nCreate an environment variable called `CITYBANK_STATUS` and set it to `under_investigation`. Then echo it. Paste the output.",
+    "description": "# Environment Variables\nEnvironment variables are key-value pairs available to all programs in your shell.\n\n```bash\nenv                        # list all env vars\necho $HOME                 # print one\nexport MY_VAR=\"hello\"      # create one\necho $MY_VAR               # hello\n```\n\nImportant ones:\n- `$HOME` - your home directory\n- `$PATH` - where the shell looks for programs\n- `$USER` - your username\n\n`export` makes the variable available to child processes. Without `export`, it only exists in the current shell.\n\n\n---\n## Assignment:\nCreate an environment variable called `CITYBANK_STATUS` and set it to `under_investigation`. Then echo it. Paste the output.",
     "starterCode": "",
     "expectedOutput": "",
     "mustContain": ["under_investigation"],

@@ -1,7 +1,7 @@
 {
     "id": "lesson58.json",
     "title": "Workflow [Migrations]",
-    "description": "## Migrations\nIn production, you can't just DROP a table and recreate it - there's real data in there. Migrations are versioned SQL scripts that modify your schema safely.\n\nA migration has two parts:\n- **Up**: Apply the change\n- **Down**: Undo the change\n\n```sql\n-- Migration 001 UP\nALTER TABLE users ADD COLUMN email TEXT;\n\n-- Migration 001 DOWN\nALTER TABLE users DROP COLUMN email;\n```\n\nTools like Flyway, Alembic, and Drizzle manage migrations automatically, tracking which ones have been applied.\n\n---\n## Question:\nWhy use migrations instead of manually running ALTER TABLE in production?",
+    "description": "## Migrations\nIn production, you can't just DROP a table and recreate it - there's real data in there. Migrations are versioned SQL scripts that modify your schema safely.\n\nA migration has two parts:\n- **Up**: Apply the change\n- **Down**: Undo the change\n\n```sql\n-- Migration 001 UP\nALTER TABLE users ADD COLUMN email TEXT;\n\n-- Migration 001 DOWN\nALTER TABLE users DROP COLUMN email;\n```\n\nTools like Flyway, Alembic, and Drizzle manage migrations automatically, tracking which ones have been applied.\n\n\n---\n## Question:\nWhy use migrations instead of manually running ALTER TABLE in production?",
     "starterCode": "",
     "expectedOutput": "",
     "nextLesson": "lesson59.json",

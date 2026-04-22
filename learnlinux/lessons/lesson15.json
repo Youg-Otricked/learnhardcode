@@ -1,7 +1,7 @@
 {
     "id": "lesson15.json",
     "title": "Pipes [|]",
-    "description": "# Pipes\nPipes (`|`) send the output of one command as input to another.\n```bash\ncat file.txt | grep \"word\"\n```\nThis reads the file, then searches it. You can chain as many as you want:\n```bash\ncat file.txt | grep \"word\" | wc -l\n```\nThis counts how many lines contain \"word\".\n\n---\n## Assignment:\nHow deep does Citybank's corruption go? Pipe `cat accounts/savings.txt` into `grep \"Steve\" -A 5` to see what they're doing to Steve's account. Paste the output.",
+    "description": "# Pipes\nPipes (`|`) send the output of one command as input to another.\n```bash\ncat file.txt | grep \"word\"\n```\nThis reads the file, then searches it. You can chain as many as you want:\n```bash\ncat file.txt | grep \"word\" | wc -l\n```\nThis counts how many lines contain \"word\".\n\n\n---\n## Assignment:\nHow deep does Citybank's corruption go? Pipe `cat accounts/savings.txt` into `grep \"Steve\" -A 5` to see what they're doing to Steve's account. Paste the output.",
     "starterCode": "",
     "expectedOutput": "",
     "mustContain": ["Steve", "3.47"],

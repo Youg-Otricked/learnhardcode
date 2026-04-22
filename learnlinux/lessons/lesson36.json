@@ -1,7 +1,7 @@
 {
     "id": "lesson36.json",
     "title": "Directory permissions",
-    "description": "You know all the `chmod` stuff on files, but directories behave differently.\n\n## Directory Permissions\nDirectories use the same `r`, `w`, and `x` permissions, but they mean different things:\n\n- `r` (read): lets you list files in the directory (`ls`)\n- `w` (write): lets you create, delete, or rename files\n- `x` (execute): lets you enter the directory and access files inside it\n\n### Important Rule:\nEven if you have `w`, you cannot actually modify files unless you also have `x`.\n---\n## Question:\nIn practice, what can't the owner, group and others do in a directory with permission 736?\n###### _(Answers are in the order: Owner / Group / Others)_",
+    "description": "You know all the `chmod` stuff on files, but directories behave differently.\n\n## Directory Permissions\nDirectories use the same `r`, `w`, and `x` permissions, but they mean different things:\n\n- `r` (read): lets you list files in the directory (`ls`)\n- `w` (write): lets you create, delete, or rename files\n- `x` (execute): lets you enter the directory and access files inside it\n\n### Important Rule:\nEven if you have `w`, you cannot actually modify files unless you also have `x`.\n\n---\n## Question:\nIn practice, what can't the owner, group and others do in a directory with permission 736?\n###### _(Answers are in the order: Owner / Group / Others)_",
     "starterCode": "",
     "expectedOutput": "",
     "showButtons": true,

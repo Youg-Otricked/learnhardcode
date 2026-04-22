@@ -1,7 +1,7 @@
 {
   "id": "lesson8.json",
   "title": "Variables [bool]",
-  "description": "Now, there is one more VERY important datatype. Bool. it stores true or false, and that is it.\n---\n## Assignment:\nMake two booleans, segfaulted and aborted, and set sefaulted to false and aborted to true.",
+  "description": "Now, there is one more VERY important datatype. Bool. it stores true or false, and that is it.\n\n---\n## Assignment:\nMake two booleans, segfaulted and aborted, and set sefaulted to false and aborted to true.",
   "starterCode": "fn main() {\n   // Don't touch above this line.\n    // Make the variable here.\n    // Don't touch below this line.\n    println!(\"{}, {}\", segfaulted, aborted);\n}",
   "expectedOutput": "false, true",
   "mustContain": "",
