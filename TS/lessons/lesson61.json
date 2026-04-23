@@ -1,0 +1,14 @@
+{
+  "id": "lesson61.json",
+  "title": "Async",
+  "description": "In case you were wondering (or were confused by last lessons \"hint\" challenge), you can call functions with `await` to immediatly `await` the returned promise, because it's just a value, and puting a value in a variable doesn't change that it's still a value. It's the same value right after call, it doesn't need to cool off like cookies.\n\n---\n`await` can be used instead of `.then()`. `async` simplifies or replaces the entire `new Promise` nonsense when you use it. You make a function `async` by putting `async` before `function`.\n> You can only use `await` in the top level and async functions.\n\n---\n## new Promise\n```ts\nfunction doSomthing(): Promise<number> {\n  return new Promise<number>((resolve) => {\n    doSomthingWithServer().then((data) => {\n      resolve(data);\n    }\n  });\n}\n```\n> You can also make Async big arrow functions by putting async before the big arrow func def, or pass a normal function to a function-taking-function, you can do `function (args) {},` as the argument, and make that `async`.\n```ts\nasync function doSomthing() {\nreturn /* the await is optional when returning from a async function */ doSomthingWithServer();\n}\n\n---\n## Assignment\nMake the long `updateVideo` function `async` to avoid `new Promise`. (You're gonna need to wrap the setTimeout in a awaited promise, because you can't return values returned in a setTimeout.)",
+  "starterCode": "function updateVideo(currentStatus: string, timeUploaded: number, videoName: string): Promise<string> {\n  return new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      if (currentStatus === \"In draft\") {\n        resolve(`Succesfully updated video ${videoName}`);\n      } else if (currentStatus === \"Published\" && timeUploaded < 100) {\n        reject(`Video ${videoName} hasn't been uploaded long enough to update.`);\n      } else {\n        resolve(`Published video ${videoName} updated.`);\n      }\n    }, 500);\n  });\n}\n// Make me async!",
+  "expectedOutput": "Test 1:\nIs updateVideo async?\nPass\nTest 2:\nDoes it still work?\nPass",
+  "nextLesson": "lesson62.json",
+  "previous": "lesson60.json",
+  "rawHarness": true,
+  "runHarness": "console.log(`Test 1:\nIs updateVideo async?\n${Object.prototype.toString.call(updateVideo).includes('Async') ? 'Pass' : 'Fail'}`);\nconst value = await updateVideo(\"In draft\", 0, \"Tester\");\nconsole.log(`Test 2:\nDoes it still work?\n${value == 'Succesfully updated video Tester' ? 'Pass' : 'Fail'}`);",
+  "showButtons": false,
+  "difficulty": "medium",
+  "xp": "20"
+}

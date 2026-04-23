@@ -1,0 +1,15 @@
+{
+  "id": "lesson59.json",
+  "title": "Why Promises?",
+  "description": "Promises are the cleanest and newest (not only) way to handle the situation of needing to ask a server somthing, which is typically done with a [HTTP Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods), using TypeScripts [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) API. (Later course), which returns a promise.\nAlmost every time you use a promise it will be for I/O (when our code needs to interact with the outside world).\nCommon examples of I/O?\n- HTTP requests. (I and O)\n- Reading Files. (I)\n- Using Bluetooth (I and 0)\n- Printing to Console (O)\n\n---\n## Question:\nPromises are the only way to write Async code in TypeScript.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson60.json",
+  "previous": "lesson58.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "True",
+  "b2t": "False",
+  "difficulty": "basic",
+  "xp": "20"
+}
