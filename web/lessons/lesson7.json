@@ -1,0 +1,58 @@
+{
+    "id": "lesson7.json",
+    "title": "Text specialization",
+    "description": "There are 4 main text specialization elements in HTML: `b`, `i`, `u`, and `s`. `b` makes text bold, `i` makes text italic, `u` underlines text, and `s` makes text strikethrough.\n\n---\n## Assignment:\nMake the error code's 500 bold, underline the error description (not the :), and make the Please try again later italic.",
+    "starterTS": "// We'll get to TS soon.",
+    "starterCss": "body {\n    background-color: #000000;\n    color: #ffffff;\n} /* You will understand this soon, don't worry. */",
+    "starterHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Googol:500. That's an error.</title>\n</head>\n<body>\n  <h1>500: Internal Server Error</h1>\n  <hr>\n  <p>The server was unable to complete your request. Please try again later.</p>\n</body>\n</html>",
+    "reqElems": [
+        {
+            "type": "element",
+            "label": "h1",
+            "children": 2
+        },
+        {
+            "type": "element",
+            "label": "b",
+            "value": "500",
+            "depth": 3
+        },
+        {
+            "type": "text",
+            "value": ":",
+            "depth": 3
+        },
+        {
+            "type": "element",
+            "label": "u",
+            "value": "Internal Server Error",
+            "depth": 3
+        },
+        {
+            "type": "element",
+            "label": "p"
+        },
+        {
+            "type": "text",
+            "value": "The server was unable to complete your request.",
+            "depth": 3
+        },
+        {
+            "type": "element",
+            "label": "i",
+            "value": "Please try again later.",
+            "depth": 3
+        }
+    ],
+    "nextLesson": "lesson8.json",
+    "previous": "lesson6.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "10"
+}
