@@ -1,0 +1,26 @@
+{
+    "id": "lesson6.json",
+    "title": "Title",
+    "description": "Title is the title of your webpage, and goes in the `head` section. _Simple!_\n\n---\n## Assignment:\nTitle the page `Googol:500. That's an error.`",
+    "starterTS": "// We'll get to TS soon.",
+    "starterCss": "body {\n    background-color: #000000;\n    color: #ffffff;\n} /* You will understand this soon, don't worry. */",
+    "starterHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>500: Internal Server Error</h1>\n  <hr>\n  <p>The server was unable to complete your request. Please try again later.</p>\n</body>\n</html>",
+    "reqElems": [
+        {
+            "type": "element",
+            "label": "title",
+            "value": "Googol:500. That's an error."
+        }
+    ],
+    "nextLesson": "lesson7.json",
+    "previous": "lesson5.json",
+    "showButtons": false,
+    "correct": "",
+    "b1t": "",
+    "b2t": "",
+    "b3t": "",
+    "b4t": "",
+    "mode": "editor",
+    "difficulty": "easiest",
+    "xp": "10"
+}

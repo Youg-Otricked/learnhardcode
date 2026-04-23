@@ -1,0 +1,58 @@
+{
+  "id": "lesson7.json",
+  "title": "Text specialization - Special meaning",
+  "description": "Some HTML elements have meaning beyond whats visible. There are 4 elements, which all look the EXACT same as their b/u/i/s counterparts, but carry special meaning, and a search engine may use to find pages.\n\n| Element  | Equivelent to | Why different?                                       |\n| -------- | ------------- | ---------------------------------------------------- |\n| `strong` | `b`           | Ment to draw attention to somthing                   |\n| `em`     | `i`           | Ment to show emphasis                                |\n| `del`    | `s`           | Ment to show text is deleted and replaced with `ins` |\n| `ins`    | `u`           | Ment to show `del` text is replaced with this        |\n\n---\n## Assignment:\nReplace the text specialization tags _other than `u`_ with the meaningful counterparts.",
+  "starterTS": "// We'll get to TS soon.",
+  "starterCss": "body {\n    background-color: #000000;\n    color: #ffffff;\n} /* You will understand this soon, don't worry. */",
+  "starterHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Googol:500. That's an error.</title>\n</head>\n<body>\n  <h1><b>500</b>: <u>Internal Server Error</u></h1>\n  <hr>\n  <p>The server was unable to complete your request. <i>Please try again later.</i></p>\n</body>\n</html>",
+  "reqElems": [
+    {
+      "type": "element",
+      "label": "h1",
+      "children": 2
+    },
+    {
+      "type": "element",
+      "label": "strong",
+      "value": "500",
+      "depth": 3
+    },
+    {
+      "type": "text",
+      "value": ":",
+      "depth": 3
+    },
+    {
+      "type": "element",
+      "label": "u",
+      "value": "Internal Server Error",
+      "depth": 3
+    },
+    {
+      "type": "element",
+      "label": "p"
+    },
+    {
+      "type": "text",
+      "value": "The server was unable to complete your request.",
+      "depth": 3
+    },
+    {
+      "type": "element",
+      "label": "em",
+      "value": "Please try again later.",
+      "depth": 3
+    }
+  ],
+  "nextLesson": "lesson8.json",
+  "previous": "lesson6.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "easiest",
+  "xp": "10"
+}

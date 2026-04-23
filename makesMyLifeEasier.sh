@@ -14,7 +14,7 @@ fi;
 MD_FILE_PATH=$1
 JSON_FILE_PATH=$2
 if [[ -f $MD_FILE_PATH && -f $JSON_FILE_PATH ]]; then
-    jq --argfile md "$MD_FILE_PATH" \
-    '.description = $md' \
-    "$JSON_FILE_PATH" > tmp.json && mv tmp.json "$JSON_FILE_PATH"
+    jq --rawfile md "$MD_FILE_PATH" \
+        '.description = $md' \
+        "$JSON_FILE_PATH" > tmp.json && mv tmp.json "$JSON_FILE_PATH"
 fi;
