@@ -1,0 +1,15 @@
+{
+  "id": "lesson60.json",
+  "title": "Await",
+  "description": "[`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) _awaits_ a `Promise`'s resolve. Once the promise resolves it retrns the resolved value. It's just a more coherent `.then()`.\n\n## Example:\n---\n\n### .then version\n```ts\npromise.then((promised) => {\n  console.log(promised);\n};\n```\n### await version\n```ts\nconst promised = await promise;\nconsole.log(promised);\n```\n\n---\n> I Recommend using `await` over `.then()` (when possible) because it allows cleaner line by line code.\n\n## Handling Rejects\n---\n`await` just throws errors on rejects. _Try Catch anybody?_\n\n---\n## Assignment:\nThe `updateVideo` sig is the same as last code lesson.\nOn line 1, call updateVideo with `In draft`, 0, and `Tester`\nOn line 2, await the returned promise and store it in `value`.",
+  "starterCode": "// Write the code here\n// Don't touch below this line.\nconsole.log(value);",
+  "expectedOutput": "Succesfully updated video Tester",
+  "nextLesson": "lesson61.json",
+  "previous": "lesson59.json",
+  "rawHarness": true,
+  "runHarness": "function updateVideo(currentStatus: string, timeUploaded: number, videoName: string): Promise<string> {\n  return new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      if (currentStatus === \"In draft\") {\n        resolve(`Succesfully updated video ${videoName}`);\n      } else if (currentStatus === \"Published\" && timeUploaded < 100) {\n        reject(`Video ${videoName} hasn't been uploaded long enough to update.`);\n      } else {\n        resolve(`Published video ${videoName} updated.`);\n      }\n    }, 500);\n  });\n}",
+  "showButtons": false,
+  "hint": "For a extra challenge, try combining both lines by awaiting the output of updateVideo.",
+  "difficulty": "medium",
+  "xp": "20"
+}

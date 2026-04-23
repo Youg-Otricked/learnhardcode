@@ -58,7 +58,7 @@
       "number": 10,
       "name": "Promises",
       "firstLesson": "lesson56.json",
-      "lessons": ["lesson56.json", "lesson57.json", "lesson58.json"]
+      "lessons": ["lesson56.json", "lesson57.json", "lesson58.json", "lesson59.json", "lesson60.json", "lesson61.json", "lesson62.json"]
     }
   ]
 }

@@ -691,3 +691,14 @@ table tbody tr {
 table tbody tr:nth-of-type(even) {
   background-color: var(--panel-alt);
 }
+
+blockquote {
+    background-color: var(--panel);
+    border-left: 4px solid var(--accent);
+    color: var(--output-text);
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
