@@ -1,0 +1,18 @@
+{
+  "id": "lesson4.json",
+  "title": "Command Syntax and The Manual",
+  "description": "Througout this course, commands will be shown with the syntax\n```bash\ncommand other-command-parts <required argument> [optional argument]\n```\nwhere things in <> are required, things in [] are optional, ... means can be repeated, and | means one but not both, so in grep, so\n```bash\nuseradd [ -u <UID> | -o ] [ -g <GID> ] [ -G <<GROUP1>,<GROUP2>...> ] <username>\n```\nMeans that you may -u or -o is optional, but you may only choose one, if you pass -u you must pass UID, -g is optional, and must be passed iwht GID, and if you pass -G(optional), then you must pass a any length comma seperated list of groups, and username is required.\n\n---\n## The manual\nIn git, you can read the manual with `git help <thing>`, so to get help on git you could run `git help git`.\nq quits the manual, j goes down k goes up d goes half a page down and u goes half a page up, `/<term>` searches up term, and n/N goes to next/previous result.\n\n---\nSearch for authors then answer: Who made git.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson5.json",
+  "previous": "lesson3.json",
+  "showButtons": true,
+  "correct": "b3",
+  "b1t": "Everyone",
+  "b2t": "Bjarne Stroustrup",
+  "b3t": "Linus Torvalds",
+  "b4t": "Junio C Hamano",
+  "mode": "editor",
+  "difficulty": "easiest",
+  "xp": "10"
+}

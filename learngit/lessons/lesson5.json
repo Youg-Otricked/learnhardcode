@@ -1,0 +1,14 @@
+{
+  "id": "lesson5.json",
+  "title": "Config",
+  "description": "We need to make git store your information instead of default data, because git tracks who did what.\nGit has global and repo scope config.\n\n---\n## Assignment:\nSet your identity! Fist check if it's already set.\n```bash\ngit config get user.name\ngit config get user.email\n```\nIf they arn't, then set them using `config set`. Use the same email and username as your github account (if you don't have one, make one [here](https://github.com))\n```bash\ngit config set --global user.name \"github_username\"\ngit config set --global user.email \"email@example.com\"\n```\nFinally, set a git default branch (later explained). Run:\n```bash\ngit config set --global init.defaultBranch master\n```\n> Right now, we are using `master`, the git default, but in like 40-50 lessons, we are going to switch to `main` which is the git_hub_ default.\n\n---\nCheck if it worked.\nYour ~/.gitconfig stores your . . . git config. Read it\n```bash\ncat ~/.gitconfig\n```\nRun the lesson commands.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson6.json",
+  "previous": "lesson4.json",
+  "showButtons": false,
+  "mode": "cli",
+  "difficulty": "easiest",
+  "runHarness": "676beb49",
+  "xp": "10"
+}
