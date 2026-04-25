@@ -123,7 +123,7 @@ window.copytext = function(elementId) {
     const text = element.textContent;
     
     navigator.clipboard.writeText(text).then(() => {
-        const originalText = `lhc ${runHarnessFile} ${elementId == 'submit-command' ? '-s' : ''}`
+        const originalText = `lhc run ${runHarnessFile} ${elementId == 'submit-command' ? '-s' : ''}`
         
         element.textContent = 'Copied!';
         
