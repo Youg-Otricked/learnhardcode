@@ -1,8 +1,8 @@
 
 {
   "id": "lesson26.json",
-  "title": "Switch",
-  "description": "In C++, There is another type of control flow, it is called a switch statment. A switch is equivelent to a long chain of if els if..... else. How you write switch is:\n switch(variable) {\n    case valuea:\n        code\n        break;\n    case valueb:\n        code\n        break;\n    ...\n    default:\n        code\n        break;\n}. Each case is equivelent to a if/else fi statment, and the default is eqquivelent to an else. In the lesson, your challenge is to write a switch statment on var s that prints a for 1, b for 2, and c for 3, and d for all other values. Do not put a \\n after each value",
+  "title": "Ternary & Switch",
+  "description": "In C++, There are 2 more types of control flow, the first being called a switch statement. A switch is equivelent to a long chain of if else if..... else. How you write switch is:\n switch(variable) {\n    case valuea:\n        code\n        break;\n    case valueb:\n        code\n        break;\n    ...\n    default:\n        code\n        break;\n}. Each case is equivelent to a if/else fi statment, and the default is eqquivelent to an else.\n\n---\n## Ternary\nA ternary is just a shorthand for if else. You write `condition ? trueval : falseval`, so `1 > 2 ? \"a\" : \"b\"` would be `b`.\n\n---\n## Assignment:\nWrite a switch statement on var s that prints a for 1, b for 2, and c for 3, and d for all other values. Do not put a \\n after each value",
   "starterCode": "#include <iostream>\n\nint main() {\n    int sar[5] = {1, 2, 3, 6, 99};\n    for (auto s : sar) {\n        //Don't touch above this line.\n        //Write your switch statement here.\n        //Don't touch below this line\n    }\n    return 0;\n}",
   "expectedOutput": "abcdd",
   "mustContain": "",   

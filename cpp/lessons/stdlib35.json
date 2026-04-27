@@ -3,7 +3,7 @@
   "title": "C++ - Advanced weird overloads[()]",
   "description": "In C++, we have somthing called _functors_. A functor is a class that behaves like a function. To do this; we use the `()` overload. Yes, you are not going insane: Those are parenthesis.\n\n\n---\n\n## Signature\n\n```cpp\n<anything> operator( )(<arglist>) {\n    ...\n}\n```\nHonestly, rather simple. The purpose of functors is for a function to have a continuous state, which in a language like python you would use generators or closures for.\n\n\n---\n## Assignment:\nFinish the operator( ) function: It should take a `char`(the operator) and a `int`(the value). It should switch on operator, and on `+`, `+=` the value to acc, for `-` `-=`, `*` `*=`, `/` `/=`, and for `=` assign acc the value.",
   "expectedOutput": "Test 1:\nPass",
-  "starterCode": "#include <iostream>\nclass Acc {\n    public:\n        int acc = 0;\n        Acc() {}\n        // write your operator( ) here\n}",
+  "starterCode": "#include <iostream>\nclass Acc {\n    public:\n        int acc = 0;\n        Acc() {}\n        // write your operator( ) here\n};",
   "nextLesson": "stdlib36.json",
   "previous": "stdlib34.json",
   "showButtons": false,
