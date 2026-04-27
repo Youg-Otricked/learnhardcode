@@ -77,6 +77,12 @@
       "name": "C++ - Advanced operator overloads",
       "firstLesson": "stdlib35.json",
       "lessons": ["stdlib35.json", "stdlib36.json", "stdlib37.json", "stdlib38.json", "stdlib39.json", "stdlib40.json"]
+    },
+    {
+      "number": 13,
+      "name": "DSA - Datastructures - Vector",
+      "firstLesson": "stdlib41.json",
+      "lessons": ["stdlib41.json"]
     }
   ]
 }
