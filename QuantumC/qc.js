@@ -29,8 +29,8 @@ var QuantumC = (() => {
   // Note: We use a typeof check here instead of optional chaining using
   // globalThis because older browsers might not have globalThis defined.
   var currentNodeVersion = typeof process !== "undefined" && process.versions?.node ? humanReadableVersionToPacked(process.versions.node) : TARGET_NOT_SUPPORTED;
-  if (currentNodeVersion < 16e4) {
-    throw new Error(`This emscripten-generated code requires node v${packedVersionToHumanReadable(16e4)} (detected v${packedVersionToHumanReadable(currentNodeVersion)})`);
+  if (currentNodeVersion < 180300) {
+    throw new Error(`This emscripten-generated code requires node v${packedVersionToHumanReadable(180300)} (detected v${packedVersionToHumanReadable(currentNodeVersion)})`);
   }
   var userAgent = typeof navigator !== "undefined" && navigator.userAgent;
   if (!userAgent) {
@@ -81,7 +81,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpt_9ky41z.js
+// include: /tmp/tmpwxmgp5mn.js
 if (!Module["expectedDataFileDownloads"]) Module["expectedDataFileDownloads"] = 0;
 
 Module["expectedDataFileDownloads"]++;
@@ -208,23 +208,23 @@ Module["expectedDataFileDownloads"]++;
   });
 })();
 
-// end include: /tmp/tmpt_9ky41z.js
-// include: /tmp/tmpm378tbq3.js
+// end include: /tmp/tmpwxmgp5mn.js
+// include: /tmp/tmpan_u7945.js
 // All the pre-js content up to here must remain later on, we need to run
 // it.
 if ((typeof ENVIRONMENT_IS_WASM_WORKER != "undefined" && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != "undefined" && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != "undefined" && ENVIRONMENT_IS_AUDIO_WORKLET)) Module["preRun"] = [];
 
 var necessaryPreJSTasks = Module["preRun"].slice();
 
-// end include: /tmp/tmpm378tbq3.js
-// include: /tmp/tmpfoq9hkjf.js
+// end include: /tmp/tmpan_u7945.js
+// include: /tmp/tmp2ej__6fr.js
 if (!Module["preRun"]) throw "Module.preRun should exist because file support used it; did a pre-js delete it?";
 
 necessaryPreJSTasks.forEach(task => {
   if (Module["preRun"].indexOf(task) < 0) throw "All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?";
 });
 
-// end include: /tmp/tmpfoq9hkjf.js
+// end include: /tmp/tmp2ej__6fr.js
 var arguments_ = [];
 
 var thisProgram = "./this.program";
@@ -360,7 +360,7 @@ var NODEFS = "NODEFS is no longer included by default; build with -lnodefs.js";
 
 // perform assertions in shell.js after we set up out() and err(), as otherwise
 // if an assertion fails it cannot print the message
-assert(!ENVIRONMENT_IS_SHELL, "shell environment detected but not enabled at build time.  Add `shell` to `-sENVIRONMENT` to enable.");
+assert(!ENVIRONMENT_IS_SHELL, "shell environment detected but not enabled at build time (add `shell` to `-sENVIRONMENT` to enable)");
 
 // end include: shell.js
 // include: preamble.js
@@ -662,7 +662,6 @@ function postRun() {
 
 /**
  * @param {string|number=} what
- * @noreturn
  */ function abort(what) {
   Module["onAbort"]?.(what);
   what = `Aborted(${what})`;
@@ -2311,7 +2310,7 @@ var FS = {
     if (!PATH.isAbs(path)) {
       path = FS.cwd() + "/" + path;
     }
-    // limit max consecutive symlinks to 40 (SYMLOOP_MAX).
+    // limit max consecutive symlinks to SYMLOOP_MAX.
     linkloop: for (var nlinks = 0; nlinks < 40; nlinks++) {
       // split the absolute path
       var parts = path.split("/").filter(p => !!p);
@@ -2596,7 +2595,14 @@ var FS = {
     var arg = setattr ? stream : node;
     setattr ??= node.node_ops.setattr;
     FS.checkOpExists(setattr, 63);
-    setattr(arg, attr);
+    try {
+      setattr(arg, attr);
+    } catch (e) {
+      if (e instanceof RangeError) {
+        throw new FS.ErrnoError(22);
+      }
+      throw e;
+    }
   },
   chrdev_stream_ops: {
     open(stream) {
@@ -3839,6 +3845,7 @@ var FS = {
 };
 
 var SYSCALLS = {
+  currentUmask: 18,
   calculateAt(dirfd, path, allowEmpty) {
     if (PATH.isAbs(path)) {
       return path;
@@ -3972,7 +3979,8 @@ function ___syscall_fcntl64(fd, cmd, varargs) {
      case 4:
       {
         var arg = syscallGetVarargI();
-        stream.flags |= arg;
+        var mask = 289792;
+        stream.flags = (stream.flags & ~mask) | (arg & mask);
         return 0;
       }
 
@@ -4137,6 +4145,9 @@ function ___syscall_openat(dirfd, path, flags, varargs) {
     path = SYSCALLS.getStr(path);
     path = SYSCALLS.calculateAt(dirfd, path);
     var mode = varargs ? syscallGetVarargI() : 0;
+    if (flags & 64) {
+      mode &= ~SYSCALLS.currentUmask;
+    }
     return FS.open(path, flags, mode).fd;
   } catch (e) {
     if (typeof FS == "undefined" || !(e.name === "ErrnoError")) throw e;
@@ -4147,7 +4158,7 @@ function ___syscall_openat(dirfd, path, flags, varargs) {
 var __abort_js = () => abort("native code called abort()");
 
 var stringToUTF8 = (str, outPtr, maxBytesToWrite) => {
-  assert(typeof maxBytesToWrite == "number", "stringToUTF8(str, outPtr, maxBytesToWrite) is missing the third parameter that specifies the length of the output buffer!");
+  assert(typeof maxBytesToWrite == "number", "stringToUTF8 requires a third parameter that specifies the length of the output buffer");
   return stringToUTF8Array(str, HEAPU8, outPtr, maxBytesToWrite);
 };
 
@@ -4316,7 +4327,6 @@ var getExecutableName = () => thisProgram || "./this.program";
 var getEnvStrings = () => {
   if (!getEnvStrings.strings) {
     // Default values.
-    // Browser language detection #8751
     var lang = (globalThis.navigator?.language ?? "C").replace("-", "_") + ".UTF-8";
     var env = {
       "USER": "web_user",
@@ -4372,7 +4382,7 @@ var runtimeKeepaliveCounter = 0;
 
 var keepRuntimeAlive = () => noExitRuntime || runtimeKeepaliveCounter > 0;
 
-/** @noreturn */ var _proc_exit = code => {
+var _proc_exit = code => {
   EXITSTATUS = code;
   if (!keepRuntimeAlive()) {
     Module["onExit"]?.(code);
@@ -4440,7 +4450,7 @@ function _fd_read(fd, iov, iovcnt, pnum) {
 function _fd_seek(fd, offset, whence, newOffset) {
   offset = bigintToI53Checked(offset);
   try {
-    if (isNaN(offset)) return 61;
+    if (isNaN(offset)) return 22;
     var stream = SYSCALLS.getStreamFromFD(fd);
     FS.llseek(stream, offset, whence);
     HEAP64[SAFE_HEAP_INDEX(HEAP64, ((newOffset) >> 3), "storing")] = BigInt(stream.position);
@@ -4505,7 +4515,7 @@ var getWasmTableEntry = funcPtr => {
   if (!func) {
     /** @suppress {checkTypes} */ wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr);
   }
-  /** @suppress {checkTypes} */ assert(wasmTable.get(funcPtr) == func, "JavaScript-side Wasm function table mirror is out of date!");
+  /** @suppress {checkTypes} */ assert(wasmTable.get(funcPtr) == func, "table mirror is out of date");
   return func;
 };
 
@@ -4553,7 +4563,7 @@ var writeArrayToMemory = (array, buffer) => {
   var func = getCFunc(ident);
   var cArgs = [];
   var stack = 0;
-  assert(returnType !== "array", 'Return type should not be "array".');
+  assert(returnType !== "array", 'return type should not be "array"');
   if (args) {
     for (var i = 0; i < args.length; i++) {
       var converter = toC[argTypes[i]];
@@ -4685,6 +4695,10 @@ var _run_quantum_code = Module["_run_quantum_code"] = makeInvalidEarlyAccess("_r
 
 var _fflush = makeInvalidEarlyAccess("_fflush");
 
+var _emscripten_stack_get_end = makeInvalidEarlyAccess("_emscripten_stack_get_end");
+
+var _emscripten_stack_get_base = makeInvalidEarlyAccess("_emscripten_stack_get_base");
+
 var _strerror = makeInvalidEarlyAccess("_strerror");
 
 var _free = makeInvalidEarlyAccess("_free");
@@ -4700,10 +4714,6 @@ var __emscripten_tempret_set = makeInvalidEarlyAccess("__emscripten_tempret_set"
 var _emscripten_stack_init = makeInvalidEarlyAccess("_emscripten_stack_init");
 
 var _emscripten_stack_get_free = makeInvalidEarlyAccess("_emscripten_stack_get_free");
-
-var _emscripten_stack_get_base = makeInvalidEarlyAccess("_emscripten_stack_get_base");
-
-var _emscripten_stack_get_end = makeInvalidEarlyAccess("_emscripten_stack_get_end");
 
 var __emscripten_stack_restore = makeInvalidEarlyAccess("__emscripten_stack_restore");
 
@@ -4734,6 +4744,8 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports["__main_argc_argv"] != "undefined", "missing Wasm export: __main_argc_argv");
   assert(typeof wasmExports["run_quantum_code"] != "undefined", "missing Wasm export: run_quantum_code");
   assert(typeof wasmExports["fflush"] != "undefined", "missing Wasm export: fflush");
+  assert(typeof wasmExports["emscripten_stack_get_end"] != "undefined", "missing Wasm export: emscripten_stack_get_end");
+  assert(typeof wasmExports["emscripten_stack_get_base"] != "undefined", "missing Wasm export: emscripten_stack_get_base");
   assert(typeof wasmExports["strerror"] != "undefined", "missing Wasm export: strerror");
   assert(typeof wasmExports["free"] != "undefined", "missing Wasm export: free");
   assert(typeof wasmExports["emscripten_get_sbrk_ptr"] != "undefined", "missing Wasm export: emscripten_get_sbrk_ptr");
@@ -4742,8 +4754,6 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports["_emscripten_tempret_set"] != "undefined", "missing Wasm export: _emscripten_tempret_set");
   assert(typeof wasmExports["emscripten_stack_init"] != "undefined", "missing Wasm export: emscripten_stack_init");
   assert(typeof wasmExports["emscripten_stack_get_free"] != "undefined", "missing Wasm export: emscripten_stack_get_free");
-  assert(typeof wasmExports["emscripten_stack_get_base"] != "undefined", "missing Wasm export: emscripten_stack_get_base");
-  assert(typeof wasmExports["emscripten_stack_get_end"] != "undefined", "missing Wasm export: emscripten_stack_get_end");
   assert(typeof wasmExports["_emscripten_stack_restore"] != "undefined", "missing Wasm export: _emscripten_stack_restore");
   assert(typeof wasmExports["_emscripten_stack_alloc"] != "undefined", "missing Wasm export: _emscripten_stack_alloc");
   assert(typeof wasmExports["emscripten_stack_get_current"] != "undefined", "missing Wasm export: emscripten_stack_get_current");
@@ -4758,6 +4768,8 @@ function assignWasmExports(wasmExports) {
   _main = createExportWrapper("__main_argc_argv", 2);
   _run_quantum_code = Module["_run_quantum_code"] = createExportWrapper("run_quantum_code", 1);
   _fflush = createExportWrapper("fflush", 1);
+  _emscripten_stack_get_end = wasmExports["emscripten_stack_get_end"];
+  _emscripten_stack_get_base = wasmExports["emscripten_stack_get_base"];
   _strerror = createExportWrapper("strerror", 1);
   _free = createExportWrapper("free", 1);
   _emscripten_get_sbrk_ptr = wasmExports["emscripten_get_sbrk_ptr"];
@@ -4766,8 +4778,6 @@ function assignWasmExports(wasmExports) {
   __emscripten_tempret_set = createExportWrapper("_emscripten_tempret_set", 1);
   _emscripten_stack_init = wasmExports["emscripten_stack_init"];
   _emscripten_stack_get_free = wasmExports["emscripten_stack_get_free"];
-  _emscripten_stack_get_base = wasmExports["emscripten_stack_get_base"];
-  _emscripten_stack_get_end = wasmExports["emscripten_stack_get_end"];
   __emscripten_stack_restore = wasmExports["_emscripten_stack_restore"];
   __emscripten_stack_alloc = wasmExports["_emscripten_stack_alloc"];
   _emscripten_stack_get_current = wasmExports["emscripten_stack_get_current"];
