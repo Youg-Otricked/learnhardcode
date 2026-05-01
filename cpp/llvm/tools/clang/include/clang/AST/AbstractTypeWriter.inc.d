@@ -1,0 +1,1 @@
+tools/clang/include/clang/AST/AbstractTypeWriter.inc: /home/luca/learnhardcode/cpp/emception/upstream/llvm-project/clang/include/clang/AST/PropertiesBase.td /home/luca/learnhardcode/cpp/emception/upstream/llvm-project/clang/include/clang/Basic/ASTNode.td /home/luca/learnhardcode/cpp/emception/upstream/llvm-project/clang/include/clang/Basic/TypeNodes.td

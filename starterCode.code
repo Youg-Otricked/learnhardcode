@@ -1,0 +1,53 @@
+#include <iostream> // for the test harness
+#include <string>
+#include <initializer_list>
+#include <algorithm>
+template <typename T, int S = 1>
+class DynamArr {
+private:
+    T* value;
+    int max_length;
+public:
+    int length;
+    DynamArr(std::initializer_list<T> init) {
+        this->length = init.size();
+        this->max_length = (S > 1 ? S : init.size()) * 2;
+        this->value = new T[this->max_length];
+        std::copy(init.begin(), init.end(), this->value);
+    }
+    DynamArr() {
+        this->length = 0;
+        this->max_length = (S > 1 ? S : 1) * 2;
+        this->value = new T[this->max_length];
+    }
+    T& operator[](size_t index) {
+        return this->value[index];
+    }
+    const T& operator[](size_t index) const {
+        return this->value[index];
+    }
+    const T back() const {
+        return this->value[this->length - 1];
+    }
+    const T front() const {
+        return this->value[0];
+    }
+    const T* data() const {
+        return this->value;
+    }
+    ~DynamArr() {
+        delete[] this->value;
+        this->value = nullptr;
+    }
+    void push(T val) {
+        if (length >= max_length) {
+            max_length *= 2;
+            T* old = this->value;
+            this->value = new T[this->max_length];
+            std::copy(old, old + this->length, this->value);
+            delete[] old;
+            old = nullptr;
+        }
+        this->value[this->length++] = val;
+    }
+};

@@ -1,0 +1,10 @@
+# ninja log v5
+2	161	1777514034343036008	_deps/upstream_quickjspp-build/quickjs/CMakeFiles/quickjs.dir/cutils.c.o	2930eb7f14f86c2e
+1	257	1777514034436197857	_deps/upstream_quickjspp-build/quickjs/CMakeFiles/quickjs.dir/libunicode.c.o	2ef45d126055c6db
+1	265	1777514034455150684	_deps/upstream_quickjspp-build/quickjs/CMakeFiles/quickjs.dir/libregexp.c.o	e35b450a07ee3c4f
+2	318	1777514034509561318	_deps/upstream_quickjspp-build/quickjs/CMakeFiles/quickjs.dir/quickjs-libc.c.o	8ecf67414607cb69
+1	836	1777514035026745175	_deps/upstream_quickjspp-build/quickjs/CMakeFiles/quickjs.dir/libbf.c.o	3ff30dcb63bc46db
+0	1862	1777514036046775542	CMakeFiles/quicknode.dir/main.cpp.o	4d23bf05d2c3bcf5
+0	4503	1777514038690854256	_deps/upstream_quickjspp-build/quickjs/CMakeFiles/quickjs.dir/quickjs.c.o	bb27a940ed52a749
+4503	4606	1777514038763623697	_deps/upstream_quickjspp-build/quickjs/libquickjs.a	3392ee4bff1e957c
+4606	15433	1777514049629507724	quicknode.mjs	2d286bcee478b4ef

@@ -1,0 +1,37 @@
+int _pass = 0;
+int _fail = 0;
+void _test(int num, int got, int expected) {
+    bool passed = got == expected;
+    std::cout << \"---------------------\\n\";
+    std::cout << \"Test \" << num << \":\\n\";
+    std::cout << (passed ? \"Pass\" : \"Fail\") << \"\\n\";
+    if (passed) _pass++; else _fail++;
+}
+int main() {
+    DynamArr<int, 1> tester;
+    tester.push(21);
+    tester.push(-1);
+    _test(1, -1, tester[1]);
+    tester.pop();
+    try {
+        tester[1];
+        _test(2, 1, 2);
+    } catch (std::string s) {
+        _test(2, 1, (s == "Unable to access out-of-bounds index" ? 1 : 0));
+    } catch (...) {
+        _test(2, 1, 2);
+    }
+    _test(3, 1, tester.length);
+    try {
+        tester.pop();
+        tester.pop();
+        _test(4, 1, 2);
+    } catch (std::string s) {
+        _test(4, 1, (s == "Cannot pop a empty vector" ? 1 : 0));
+    } catch (...) {
+        _test(4, 1, 2);
+    }
+    std::cout << "---------------------\n";
+    std::cout << _pass << " passed, " << _fail << " failed\n";
+    return 0;
+}

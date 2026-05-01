@@ -1,0 +1,28 @@
+# Config file
+.emscripten
+.emscripten_backup
+
+# Emsdk generated version info
+.emsdk_version
+
+# vim/emacs temporary/backup files
+*~
+*.swp
+
+# Compiled python files
+*.pyc
+
+# Default emscripten cache
+/cache
+
+# Ignore only the root node_modules, but not any further down the path
+/node_modules/
+
+# Python coverage tool output
+.coverage
+.coverage.*
+tools/coverage/
+htmlcov/
+coverage.xml
+
+.DS_Store

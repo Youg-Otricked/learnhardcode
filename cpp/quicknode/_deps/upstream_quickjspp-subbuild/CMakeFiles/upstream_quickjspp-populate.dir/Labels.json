@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/CMakeFiles/upstream_quickjspp-populate"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/CMakeFiles/upstream_quickjspp-populate.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/CMakeFiles/upstream_quickjspp-populate-complete.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/upstream_quickjspp-populate-prefix/src/upstream_quickjspp-populate-stamp/upstream_quickjspp-populate-install.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/upstream_quickjspp-populate-prefix/src/upstream_quickjspp-populate-stamp/upstream_quickjspp-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/upstream_quickjspp-populate-prefix/src/upstream_quickjspp-populate-stamp/upstream_quickjspp-populate-download.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/upstream_quickjspp-populate-prefix/src/upstream_quickjspp-populate-stamp/upstream_quickjspp-populate-update.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/upstream_quickjspp-populate-prefix/src/upstream_quickjspp-populate-stamp/upstream_quickjspp-populate-patch.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/upstream_quickjspp-populate-prefix/src/upstream_quickjspp-populate-stamp/upstream_quickjspp-populate-configure.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/upstream_quickjspp-populate-prefix/src/upstream_quickjspp-populate-stamp/upstream_quickjspp-populate-build.rule"
+		},
+		{
+			"file" : "/home/luca/learnhardcode/cpp/emception/build/quicknode/_deps/upstream_quickjspp-subbuild/upstream_quickjspp-populate-prefix/src/upstream_quickjspp-populate-stamp/upstream_quickjspp-populate-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"upstream_quickjspp-populate"
+		],
+		"name" : "upstream_quickjspp-populate"
+	}
+}

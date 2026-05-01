@@ -1,72 +1,99 @@
-class WorkerAPI {
-  constructor() {
-    this.nextResponseId = 0;
-    this.responseCBs = new Map();
-    this.worker = new Worker('worker.js');
-    const channel = new MessageChannel();
-    this.port = channel.port1;
-    this.port.onmessage = this.onmessage.bind(this);
-
-    const remotePort = channel.port2;
-    this.worker.postMessage({ id: 'constructor', data: remotePort }, [remotePort]);
-
-    this.onWrite = null;
+let inputEl, titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, showButtons, mustContain;
+let lastRunOutput = '';
+import Emception from "./emception.js"; let compiler = null;
+let currentRunner = null;
+async function ensureCompiler() {
+  if (!compiler) {
+    compiler = new Emception();
+    await compiler.init();
   }
-
-  setShowTiming(value) {
-    this.port.postMessage({ id: 'setShowTiming', data: value });
-  }
-
-  terminate() {
-    this.worker.terminate();
-  }
-
-  async runAsync(id, options) {
-    const responseId = this.nextResponseId++;
-    const responsePromise = new Promise((resolve, reject) => {
-      this.responseCBs.set(responseId, { resolve, reject });
-    });
-    this.port.postMessage({ id, responseId, data: options });
-    return await responsePromise;
-  }
-
-  async compileToAssembly(options) {
-    return this.runAsync('compileToAssembly', options);
-  }
-
-  async compileTo6502(options) {
-    return this.runAsync('compileTo6502', options);
-  }
-
-  compileLinkRun(contents) {
-    this.port.postMessage({ id: 'compileLinkRun', data: contents });
-  }
-
-  postCanvas(offscreenCanvas) {
-    this.port.postMessage({ id: 'postCanvas', data: offscreenCanvas }, [offscreenCanvas]);
-  }
-
-  onmessage(event) {
-    switch (event.data.id) {
-      case 'write':
-        if (this.onWrite) this.onWrite(event.data.data);
-        break;
-
-      case 'runAsync': {
-        const responseId = event.data.responseId;
-        const promise = this.responseCBs.get(responseId);
-        if (promise) {
-          this.responseCBs.delete(responseId);
-          promise.resolve(event.data.data);
-        }
-        break;
+  return compiler;
+}
+async function compileCpp(code) {
+  outEl.textContent = "Initializing Emception Compiler...\n";
+  const id = Date.now();
+  try {
+    const comp = await ensureCompiler();
+    await comp.fileSystem.writeFile("/working/main.cpp", code);
+    outEl.textContent = "Compiling...\n";
+    const result = await comp.run("em++ -std=c++20 -sNO_FILESYSTEM=0 -sENVIRONMENT=worker -sUSE_WEBGL2=0 -sSTRICT=1 -fexceptions -sEXIT_RUNTIME=1 -O2 main.cpp -o main.js -sSINGLE_FILE=1");
+    if (result.returncode === 0) {
+      outEl.textContent = "Compiled!\n\n";
+      const jsCode = await comp.fileSystem.readFile("/working/main.js", { encoding: "utf8" });
+      if (currentRunner) {
+        currentRunner.terminate();
       }
+      currentRunner = new Worker("./workerJS.js");
+      const output = [];
+      currentRunner.onmessage = (e) => {
+        const { type, data, run } = e.data;
+        if (run !== id) return;
+        if (type === "log") {
+          output.push(data);
+          lastRunOutput = output.join('\n');
+          outEl.textContent = lastRunOutput;
+        }
+        if (type === "error") {
+          outEl.textContent = 'Runtime Error: ' + data;
+          outEl.className = 'error';
+        }
+      };
+      const glue = `
+        var window = self;
+        var document = {
+            createElement: (type) => {
+                if (type === "canvas") {
+                    return {
+                        getContext: () => ({
+                            fill: () => {},
+                            fillRect: () => {},
+                            clearRect: () => {},
+                            getImageData: () => ({data: []}),
+                            putImageData: () => {},
+                            createImageData: () => ({data: []}),
+                            setTransform: () => {},
+                            drawImage: () => {},
+                            save: () => {},
+                            restore: () => {},
+                            beginPath: () => {},
+                            moveTo: () => {},
+                            lineTo: () => {},
+                            closePath: () => {},
+                            stroke: () => {},
+                            translate: () => {},
+                            scale: () => {},
+                            rotate: () => {},
+                            arc: () => {},
+                            fill: () => {},
+                        }),
+                        addEventListener: () => {},
+                        style: {},
+                        width: 0,
+                        height: 0
+                    };
+                }
+                return {};
+            },
+            location: self.location,
+            getElementsByTagName: () => [],
+            getElementById: () => null
+        };
+        var Module = {
+          print: (t) => console.log(t),
+          printErr: (t) => console.log("ERR: " + t),
+          canvas: document.createElement("canvas")
+        };
+      `;
+      console.log("Sending binary to runner...");
+      currentRunner.postMessage({ code: glue + jsCode, run: id });
+    } else {
+      outEl.textContent = "Compilation Error:\n" + result.stderr;
     }
+  } catch (err) {
+    outEl.textContent = "System Error: " + err.message;
+    console.error(err);
   }
 }
-
-
-
 // ========== Lesson + editor + UI logic ==========
 const worker = new Worker("../api/endpoint.js");
 let checkResultBtn;
@@ -75,12 +102,10 @@ let api;
 let useSolution = false;
 let editor;             
 let currentLesson = null;
-let lastRunOutput = '';
 let actual = "";
 let nextLessonId = null;
 let submitHarnessFile, runHarnessFile; 
 let buttons = document.getElementsByClassName('ans');
-let titleEl, descEl, outEl, runBtn, checkBtn, nextBtn, prevBtn, showButtons, mustContain;
 let correct = null;
 let setupCode = "";
 let prevLessonId = null;
@@ -264,23 +289,6 @@ async function setupLogic() {
   outEl   = document.getElementById('out');
   hintBody = document.querySelector(".hint-body");
   streakEl = document.getElementById('streak');
-  
-  api = new WorkerAPI();
-  api.onWrite = (text) => {
-    lastRunOutput += text;
-    const lines = lastRunOutput
-      .split('\n')
-      .map(line => line.replace(/\x1b\[[0-9;]*m/g, ''));
-    const firstUserLineIndex = lines.findIndex(line => 
-      !line.match(/^[>#]/)
-    );
-    const filteredLines = firstUserLineIndex >= 0 
-      ? lines.slice(firstUserLineIndex)
-      : [];
-    
-    outEl.textContent = filteredLines.join('\n');
-  };
-
   loadStreak();
   let params = new URLSearchParams(location.search);
   let lessonFileFromUrl = params.get('lesson');
@@ -321,7 +329,7 @@ async function setupLogic() {
       }
     }
     try {
-      api.compileLinkRun(fullSource); // fire-and-forget
+      compileCpp(fullSource);
     } catch (err) {
       outEl.textContent += '\nError: ' + err.message + '\n';
     }
@@ -550,23 +558,21 @@ window.addEventListener('pagehide', () => {
 
   localStorage.setItem('saved_code_cpp', JSON.stringify(data));
 });
-document.addEventListener('DOMContentLoaded', () => {
-  if (mode == 'editor') {
-    require.config({
-      paths: { 'vs': 'https://unpkg.com/monaco-editor@0.45.0/min/vs' }
+if (mode == 'editor') {
+  require.config({
+    paths: { 'vs': 'https://unpkg.com/monaco-editor@0.45.0/min/vs' }
+  });
+  require(['vs/editor/editor.main'], () => {
+    editor = monaco.editor.create(document.getElementById('editor'), {
+      value: '',
+      language: 'cpp',
+      theme: 'vs-dark',
+      automaticLayout: true,
     });
-    require(['vs/editor/editor.main'], () => {
-      editor = monaco.editor.create(document.getElementById('editor'), {
-        value: '',
-        language: 'cpp',
-        theme: 'vs-dark',
-        automaticLayout: true,
-      });
 
-      setupLogic();
-    });
-  }
-});
+    setupLogic();
+  });
+}
 
 window.btn = function(bn) {
   if (bn === correct) {

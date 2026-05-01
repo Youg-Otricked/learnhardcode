@@ -4,17 +4,25 @@ if [[ $# -eq 1 && $1 == "version" ]]; then
     exit 241
 fi;
 if [[ $# -eq 1 && $1 == "help" ]]; then
-    echo "I guess i forgot a basic script and can't read bash anymore. mmle <md file> <json file>"
+    echo "I guess i forgot a basic script and can't read bash anymore. mmle < run | starter | submit | text > <file> <json file>"
     exit 230
 fi;
-if [ $# -lt 2 ]; then
-    echo "Please pass 2 arguments"
+if [ $# -lt 3 ]; then
+    echo "Please pass 3 arguments"
     exit 1
 fi;
-MD_FILE_PATH=$1
-JSON_FILE_PATH=$2
-if [[ -f $MD_FILE_PATH && -f $JSON_FILE_PATH ]]; then
-    jq --rawfile md "$MD_FILE_PATH" \
-        '.description = $md' \
-        "$JSON_FILE_PATH" > tmp.json && mv tmp.json "$JSON_FILE_PATH"
-fi;
+TYPE=$1
+JSON_FILE_PATH=$3
+FIELD=""
+case "$TYPE" in
+  text) FIELD=".description" ;;
+  starter) FIELD=".starterCode" ;;
+  run) FIELD=".runHarness" ;;
+  submit) FIELD=".submitHarness" ;;
+  *) echo "Invalid type"; exit 1 ;;
+esac
+
+jq --rawfile md "$2" \
+   "$FIELD = \$md" \
+   "$JSON_FILE_PATH" > tmp.json && mv tmp.json "$JSON_FILE_PATH"
+
