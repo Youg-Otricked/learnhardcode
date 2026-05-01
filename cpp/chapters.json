@@ -82,7 +82,7 @@
       "number": 13,
       "name": "DSA - Datastructures - Vector",
       "firstLesson": "stdlib41.json",
-      "lessons": ["stdlib41.json"]
+      "lessons": ["stdlib41.json", "stdlib42.json"]
     }
   ]
 }
