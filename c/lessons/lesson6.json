@@ -1,0 +1,18 @@
+{
+  "id": "lesson6.json",
+  "title": "Variables",
+  "description": "What if you assign a number greater than 2147483647 or less than -2147483648 to a `int`?\nThat is called a _integer overflow_. That means that your data cannot be stored where you tried to assign it to. In some compilers, it errors, and in others, it wraps around. This is obvously very bad. In the situation\n```c\nint x = 2147483647;\n```\nIf you added 1 to it\n```c\nx++;\n```\nThen, this would happen:\n```\nprintf(\"%d\", x);\n```\n> -2147483648\n> > Obviously not good.\n\n---\n## Question\nWhat would be the result if you did -2147483648 - 10.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson7.json",
+  "previous": "lesson5.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "-2147483649",
+  "b2t": "2147483647",
+  "b3t": "0",
+  "b4t": "Segmentation Fault",
+  "mode": "editor",
+  "difficulty": "easiest",
+  "xp": "13"
+}
