@@ -1,5 +1,5 @@
 import BoxProcess from "./BoxProcess.mjs";
-import BinaryenBoxModule from "./binaryen-box.mjs";
+import BinaryenBoxModule from "./emception/binaryen/binaryen-box.mjs";
 
 export default class BinaryenBoxProcess extends BoxProcess {
     constructor(opts) {

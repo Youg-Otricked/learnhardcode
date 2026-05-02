@@ -1,6 +1,16 @@
-// No imports at the top!
 export default {
-    "cpython": "./packages/cpython.pack",
-    "emscripten": "https://cdn.jsdelivr.net/gh/Youg-Otricked/learnhardcode@1.0.0/cpp/packages/emscripten.pack",
-    "wasm": "./packages/wasm.pack"
+    "cpython": "packs/cpython.pack",
+    "emscripten": [
+        "./packs/emscripten.pack.part.00",
+        "./packs/emscripten.pack.part.01",
+        "./packs/emscripten.pack.part.02",
+        "./packs/emscripten.pack.part.03",
+        "./packs/emscripten.pack.part.04",
+        "./packs/emscripten.pack.part.05",
+        "./packs/emscripten.pack.part.06",
+        "./packs/emscripten.pack.part.07",
+        "./packs/emscripten.pack.part.08",
+        "./packs/emscripten.pack.part.09"
+    ],
+    "wasm": "packs/wasm.pack",
 };

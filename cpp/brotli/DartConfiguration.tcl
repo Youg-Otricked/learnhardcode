@@ -11,7 +11,7 @@ BuildDirectory: /home/luca/learnhardcode/cpp/emception/build/brotli
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: 9201d24c4fcc
+Site: 730c77d33bd3
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Emscripten-em++

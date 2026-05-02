@@ -1,0 +1,18 @@
+{
+  "id": "stdlib43.json",
+  "title": "C++ - Bugs VS Errors",
+  "description": "Fun Fact - The first bug was a **real bug** that got stuck and died in a vaccum tube!\n\n---\n## Bugs VS Errors:\nYou may naturally jump to \"Avoid anything that causes code to fail\". That's not _fully_ true.\nBugs _should_ be avoided. A bug is something in code that is caused by _bad code and is the developers fault._ Think invalid syntax, a double free, or a divide by zero. \nErrors _are not neccesarily something to avoid_. A error is something code produces due to bad _user input_. Compilers like the C++ compiler create **errors** when you have _bugs_ in your code. A server reponding to a bad request is a _error_. \nA bug is a flaw in the machine's logic. An error is the machine telling you it can't do what you asked.\n\n---\n## Question:\nA user typed a invalid input: What should you do?",
+  "expectedOutput": "",
+  "starterCode": "",
+  "nextLesson": "stdlib44.json",
+  "previous": "stdlib42.json",
+  "showButtons": true,
+  "correct": "b3",
+  "b1t": "Create a bug",
+  "b2t": "Silently Segfault",
+  "b3t": "Throw a Error",
+  "b4t": "Try and treat it as valid",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "20"
+}

@@ -1,5 +1,5 @@
 import BoxProcess from "./BoxProcess.mjs";
-import LlvmBoxModule from "./llvm-box.mjs";
+import LlvmBoxModule from "./emception/llvm/llvm-box.mjs";
 
 const tool_mapping = {
     "clang++": "clang",

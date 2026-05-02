@@ -3,8 +3,8 @@ The host system is: Linux - 6.19.14+deb14-amd64 - x86_64
 Performing C++ SOURCE FILE Test LLVM_LIBSTDCXX_MIN succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_cb9ac && [1/2] Building CXX object CMakeFiles/cmTC_cb9ac.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_cb9ac.js
+Run Build Command(s):/usr/bin/ninja cmTC_c4cd7 && [1/2] Building CXX object CMakeFiles/cmTC_c4cd7.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_c4cd7.js
 cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/libGL.a... (this will be cached in "/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libGL.a" for subsequent builds)
 system_libs:INFO: compiled 3 inputs
 cache:INFO:  - ok
@@ -53,8 +53,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test LLVM_LIBSTDCXX_SOFT_ERROR succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_ab6eb && [1/2] Building CXX object CMakeFiles/cmTC_ab6eb.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_ab6eb.js
+Run Build Command(s):/usr/bin/ninja cmTC_b59f7 && [1/2] Building CXX object CMakeFiles/cmTC_b59f7.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_b59f7.js
 
 
 Source file was:
@@ -70,144 +70,144 @@ int main() { return 0; }
 Determining if the include file dlfcn.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8492e && [1/2] Building C object CMakeFiles/cmTC_8492e.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_8492e.js
+Run Build Command(s):/usr/bin/ninja cmTC_def2c && [1/2] Building C object CMakeFiles/cmTC_def2c.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_def2c.js
 
 
 
 Determining if the include file errno.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_41d11 && [1/2] Building C object CMakeFiles/cmTC_41d11.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_41d11.js
+Run Build Command(s):/usr/bin/ninja cmTC_04904 && [1/2] Building C object CMakeFiles/cmTC_04904.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_04904.js
 
 
 
 Determining if the include file fcntl.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_cb0d7 && [1/2] Building C object CMakeFiles/cmTC_cb0d7.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_cb0d7.js
+Run Build Command(s):/usr/bin/ninja cmTC_389bb && [1/2] Building C object CMakeFiles/cmTC_389bb.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_389bb.js
 
 
 
 Determining if the include file link.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_a7281 && [1/2] Building C object CMakeFiles/cmTC_a7281.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_a7281.js
+Run Build Command(s):/usr/bin/ninja cmTC_eb3b3 && [1/2] Building C object CMakeFiles/cmTC_eb3b3.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_eb3b3.js
 
 
 
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b53bb && [1/2] Building C object CMakeFiles/cmTC_b53bb.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_b53bb.js
+Run Build Command(s):/usr/bin/ninja cmTC_35375 && [1/2] Building C object CMakeFiles/cmTC_35375.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_35375.js
 
 
 
 Determining if the include file signal.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9925a && [1/2] Building C object CMakeFiles/cmTC_9925a.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_9925a.js
+Run Build Command(s):/usr/bin/ninja cmTC_6e9c3 && [1/2] Building C object CMakeFiles/cmTC_6e9c3.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_6e9c3.js
 
 
 
 Determining if the include file sys/ioctl.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_64a30 && [1/2] Building C object CMakeFiles/cmTC_64a30.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_64a30.js
+Run Build Command(s):/usr/bin/ninja cmTC_a152e && [1/2] Building C object CMakeFiles/cmTC_a152e.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_a152e.js
 
 
 
 Determining if the include file sys/mman.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_02cc7 && [1/2] Building C object CMakeFiles/cmTC_02cc7.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_02cc7.js
+Run Build Command(s):/usr/bin/ninja cmTC_0a3fe && [1/2] Building C object CMakeFiles/cmTC_0a3fe.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_0a3fe.js
 
 
 
 Determining if the include file sys/param.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e9548 && [1/2] Building C object CMakeFiles/cmTC_e9548.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_e9548.js
+Run Build Command(s):/usr/bin/ninja cmTC_7095c && [1/2] Building C object CMakeFiles/cmTC_7095c.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_7095c.js
 
 
 
 Determining if the include file sys/resource.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_689b9 && [1/2] Building C object CMakeFiles/cmTC_689b9.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_689b9.js
+Run Build Command(s):/usr/bin/ninja cmTC_f8e2f && [1/2] Building C object CMakeFiles/cmTC_f8e2f.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_f8e2f.js
 
 
 
 Determining if the include file sys/stat.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_966d1 && [1/2] Building C object CMakeFiles/cmTC_966d1.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_966d1.js
+Run Build Command(s):/usr/bin/ninja cmTC_8046f && [1/2] Building C object CMakeFiles/cmTC_8046f.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_8046f.js
 
 
 
 Determining if the include file sys/time.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e8b59 && [1/2] Building C object CMakeFiles/cmTC_e8b59.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_e8b59.js
+Run Build Command(s):/usr/bin/ninja cmTC_92f70 && [1/2] Building C object CMakeFiles/cmTC_92f70.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_92f70.js
 
 
 
 Determining if the include file sys/types.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_49bac && [1/2] Building C object CMakeFiles/cmTC_49bac.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_49bac.js
+Run Build Command(s):/usr/bin/ninja cmTC_cb228 && [1/2] Building C object CMakeFiles/cmTC_cb228.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_cb228.js
 
 
 
 Determining if the include file sysexits.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_ff243 && [1/2] Building C object CMakeFiles/cmTC_ff243.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_ff243.js
+Run Build Command(s):/usr/bin/ninja cmTC_5c93e && [1/2] Building C object CMakeFiles/cmTC_5c93e.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_5c93e.js
 
 
 
 Determining if the include file termios.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_24d54 && [1/2] Building C object CMakeFiles/cmTC_24d54.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_24d54.js
+Run Build Command(s):/usr/bin/ninja cmTC_7ca88 && [1/2] Building C object CMakeFiles/cmTC_7ca88.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_7ca88.js
 
 
 
 Determining if the include file unistd.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c4770 && [1/2] Building C object CMakeFiles/cmTC_c4770.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_c4770.js
+Run Build Command(s):/usr/bin/ninja cmTC_ab7e0 && [1/2] Building C object CMakeFiles/cmTC_ab7e0.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_ab7e0.js
 
 
 
 Determining if the include file fenv.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e99fc && [1/2] Building C object CMakeFiles/cmTC_e99fc.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_e99fc.js
+Run Build Command(s):/usr/bin/ninja cmTC_15910 && [1/2] Building C object CMakeFiles/cmTC_15910.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_15910.js
 
 
 
 Determining if the FE_ALL_EXCEPT exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b1b1d && [1/2] Building C object CMakeFiles/cmTC_b1b1d.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_b1b1d.js
+Run Build Command(s):/usr/bin/ninja cmTC_69f20 && [1/2] Building C object CMakeFiles/cmTC_69f20.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_69f20.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -227,10 +227,10 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_058de && [1/2] Building C object CMakeFiles/cmTC_058de.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_058de.js
+Run Build Command(s):/usr/bin/ninja cmTC_1f526 && [1/2] Building C object CMakeFiles/cmTC_1f526.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_1f526.js
 wasm-ld: warning: function signature mismatch: pthread_create
->>> defined as () -> i32 in CMakeFiles/cmTC_058de.dir/CheckFunctionExists.c.o
+>>> defined as () -> i32 in CMakeFiles/cmTC_1f526.dir/CheckFunctionExists.c.o
 >>> defined as (i32, i32, i32, i32) -> i32 in /emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libc.a(library_pthread_stub.o)
 
 
@@ -238,10 +238,10 @@ wasm-ld: warning: function signature mismatch: pthread_create
 Determining if the function pthread_rwlock_init exists in the pthread passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_a7697 && [1/2] Building C object CMakeFiles/cmTC_a7697.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_a7697.js
+Run Build Command(s):/usr/bin/ninja cmTC_c961e && [1/2] Building C object CMakeFiles/cmTC_c961e.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_c961e.js
 wasm-ld: warning: function signature mismatch: pthread_rwlock_init
->>> defined as () -> i32 in CMakeFiles/cmTC_a7697.dir/CheckFunctionExists.c.o
+>>> defined as () -> i32 in CMakeFiles/cmTC_c961e.dir/CheckFunctionExists.c.o
 >>> defined as (i32, i32) -> i32 in /emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libc.a(library_pthread_stub.o)
 
 
@@ -249,10 +249,10 @@ wasm-ld: warning: function signature mismatch: pthread_rwlock_init
 Determining if the function pthread_mutex_lock exists in the pthread passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_395a4 && [1/2] Building C object CMakeFiles/cmTC_395a4.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_395a4.js
+Run Build Command(s):/usr/bin/ninja cmTC_154d8 && [1/2] Building C object CMakeFiles/cmTC_154d8.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_154d8.js
 wasm-ld: warning: function signature mismatch: pthread_mutex_lock
->>> defined as () -> i32 in CMakeFiles/cmTC_395a4.dir/CheckFunctionExists.c.o
+>>> defined as () -> i32 in CMakeFiles/cmTC_154d8.dir/CheckFunctionExists.c.o
 >>> defined as (i32) -> i32 in /emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libc.a(library_pthread_stub.o)
 
 
@@ -260,10 +260,10 @@ wasm-ld: warning: function signature mismatch: pthread_mutex_lock
 Determining if the function dlopen exists in the dl passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_43a91 && [1/2] Building C object CMakeFiles/cmTC_43a91.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_43a91.js
+Run Build Command(s):/usr/bin/ninja cmTC_e8d90 && [1/2] Building C object CMakeFiles/cmTC_e8d90.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_e8d90.js
 wasm-ld: warning: function signature mismatch: dlopen
->>> defined as () -> i32 in CMakeFiles/cmTC_43a91.dir/CheckFunctionExists.c.o
+>>> defined as () -> i32 in CMakeFiles/cmTC_e8d90.dir/CheckFunctionExists.c.o
 >>> defined as (i32, i32) -> i32 in /emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libc.a(dynlink.o)
 
 
@@ -271,10 +271,10 @@ wasm-ld: warning: function signature mismatch: dlopen
 Determining if the function clock_gettime exists in the rt passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_cc10d && [1/2] Building C object CMakeFiles/cmTC_cc10d.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_cc10d.js
+Run Build Command(s):/usr/bin/ninja cmTC_194a6 && [1/2] Building C object CMakeFiles/cmTC_194a6.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_194a6.js
 wasm-ld: warning: function signature mismatch: clock_gettime
->>> defined as () -> i32 in CMakeFiles/cmTC_cc10d.dir/CheckFunctionExists.c.o
+>>> defined as () -> i32 in CMakeFiles/cmTC_194a6.dir/CheckFunctionExists.c.o
 >>> defined as (i32, i32) -> i32 in /emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libc.a(emscripten_time.o)
 
 
@@ -282,8 +282,8 @@ wasm-ld: warning: function signature mismatch: clock_gettime
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_4412e && [1/2] Building C object CMakeFiles/cmTC_4412e.dir/src.c.o
-[2/2] Linking C executable cmTC_4412e.js
+Run Build Command(s):/usr/bin/ninja cmTC_70e54 && [1/2] Building C object CMakeFiles/cmTC_70e54.dir/src.c.o
+[2/2] Linking C executable cmTC_70e54.js
 
 
 Source file was:
@@ -309,8 +309,8 @@ int main(void)
 Performing C SOURCE FILE Test C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_fa959 && [1/2] Building C object CMakeFiles/cmTC_fa959.dir/src.c.o
-[2/2] Linking C executable cmTC_fa959.js
+Run Build Command(s):/usr/bin/ninja cmTC_b9236 && [1/2] Building C object CMakeFiles/cmTC_b9236.dir/src.c.o
+[2/2] Linking C executable cmTC_b9236.js
 
 
 Source file was:
@@ -318,8 +318,8 @@ int main(void) { return 0; }
 Determining if the _Unwind_Backtrace exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_77063 && [1/2] Building C object CMakeFiles/cmTC_77063.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_77063.js
+Run Build Command(s):/usr/bin/ninja cmTC_6aa6e && [1/2] Building C object CMakeFiles/cmTC_6aa6e.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_6aa6e.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -339,8 +339,8 @@ int main(int argc, char** argv)
 Determining if the getpagesize exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9de2d && [1/2] Building C object CMakeFiles/cmTC_9de2d.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_9de2d.js
+Run Build Command(s):/usr/bin/ninja cmTC_1fb01 && [1/2] Building C object CMakeFiles/cmTC_1fb01.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_1fb01.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -360,8 +360,8 @@ int main(int argc, char** argv)
 Determining if the sysconf exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b9c51 && [1/2] Building C object CMakeFiles/cmTC_b9c51.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_b9c51.js
+Run Build Command(s):/usr/bin/ninja cmTC_7691d && [1/2] Building C object CMakeFiles/cmTC_7691d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_7691d.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -381,8 +381,8 @@ int main(int argc, char** argv)
 Determining if the getrusage exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b8f33 && [1/2] Building C object CMakeFiles/cmTC_b8f33.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_b8f33.js
+Run Build Command(s):/usr/bin/ninja cmTC_5e3cc && [1/2] Building C object CMakeFiles/cmTC_5e3cc.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_5e3cc.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -402,8 +402,8 @@ int main(int argc, char** argv)
 Determining if the setrlimit exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_746c4 && [1/2] Building C object CMakeFiles/cmTC_746c4.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_746c4.js
+Run Build Command(s):/usr/bin/ninja cmTC_77853 && [1/2] Building C object CMakeFiles/cmTC_77853.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_77853.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -423,8 +423,8 @@ int main(int argc, char** argv)
 Determining if the isatty exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_eb3dd && [1/2] Building C object CMakeFiles/cmTC_eb3dd.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_eb3dd.js
+Run Build Command(s):/usr/bin/ninja cmTC_6a4f8 && [1/2] Building C object CMakeFiles/cmTC_6a4f8.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_6a4f8.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -444,8 +444,8 @@ int main(int argc, char** argv)
 Determining if the futimens exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_edcee && [1/2] Building C object CMakeFiles/cmTC_edcee.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_edcee.js
+Run Build Command(s):/usr/bin/ninja cmTC_d74e2 && [1/2] Building C object CMakeFiles/cmTC_d74e2.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_d74e2.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -465,8 +465,8 @@ int main(int argc, char** argv)
 Determining if the sigaltstack exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_57595 && [1/2] Building C object CMakeFiles/cmTC_57595.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_57595.js
+Run Build Command(s):/usr/bin/ninja cmTC_acd73 && [1/2] Building C object CMakeFiles/cmTC_acd73.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_acd73.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -486,8 +486,8 @@ int main(int argc, char** argv)
 Determining if the lseek64 exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b5f05 && [1/2] Building C object CMakeFiles/cmTC_b5f05.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_b5f05.js
+Run Build Command(s):/usr/bin/ninja cmTC_c9c0f && [1/2] Building C object CMakeFiles/cmTC_c9c0f.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_c9c0f.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -508,8 +508,8 @@ int main(int argc, char** argv)
 Determining if the mallinfo exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_26d6a && [1/2] Building C object CMakeFiles/cmTC_26d6a.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_26d6a.js
+Run Build Command(s):/usr/bin/ninja cmTC_aac03 && [1/2] Building C object CMakeFiles/cmTC_aac03.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_aac03.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -529,8 +529,8 @@ int main(int argc, char** argv)
 Determining if the getrlimit exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_abea5 && [1/2] Building C object CMakeFiles/cmTC_abea5.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_abea5.js
+Run Build Command(s):/usr/bin/ninja cmTC_5bd3b && [1/2] Building C object CMakeFiles/cmTC_5bd3b.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_5bd3b.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -552,8 +552,8 @@ int main(int argc, char** argv)
 Determining if the posix_spawn exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_47d32 && [1/2] Building C object CMakeFiles/cmTC_47d32.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_47d32.js
+Run Build Command(s):/usr/bin/ninja cmTC_19dc5 && [1/2] Building C object CMakeFiles/cmTC_19dc5.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_19dc5.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -573,8 +573,8 @@ int main(int argc, char** argv)
 Determining if the pread exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_cb508 && [1/2] Building C object CMakeFiles/cmTC_cb508.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_cb508.js
+Run Build Command(s):/usr/bin/ninja cmTC_b672d && [1/2] Building C object CMakeFiles/cmTC_b672d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_b672d.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -594,8 +594,8 @@ int main(int argc, char** argv)
 Determining if the sbrk exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_3bd1e && [1/2] Building C object CMakeFiles/cmTC_3bd1e.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_3bd1e.js
+Run Build Command(s):/usr/bin/ninja cmTC_6d5e0 && [1/2] Building C object CMakeFiles/cmTC_6d5e0.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_6d5e0.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -615,8 +615,8 @@ int main(int argc, char** argv)
 Determining if the strerror exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_ebd6d && [1/2] Building C object CMakeFiles/cmTC_ebd6d.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_ebd6d.js
+Run Build Command(s):/usr/bin/ninja cmTC_f8d75 && [1/2] Building C object CMakeFiles/cmTC_f8d75.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_f8d75.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -636,8 +636,8 @@ int main(int argc, char** argv)
 Determining if the strerror_r exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b5633 && [1/2] Building C object CMakeFiles/cmTC_b5633.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_b5633.js
+Run Build Command(s):/usr/bin/ninja cmTC_79ae1 && [1/2] Building C object CMakeFiles/cmTC_79ae1.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_79ae1.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -657,8 +657,8 @@ int main(int argc, char** argv)
 Determining if the setenv exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_d02a0 && [1/2] Building C object CMakeFiles/cmTC_d02a0.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_d02a0.js
+Run Build Command(s):/usr/bin/ninja cmTC_dc5b1 && [1/2] Building C object CMakeFiles/cmTC_dc5b1.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_dc5b1.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -678,8 +678,8 @@ int main(int argc, char** argv)
 Determining if the dlopen exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_54892 && [1/2] Building C object CMakeFiles/cmTC_54892.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_54892.js
+Run Build Command(s):/usr/bin/ninja cmTC_9a24b && [1/2] Building C object CMakeFiles/cmTC_9a24b.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_9a24b.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -699,8 +699,8 @@ int main(int argc, char** argv)
 Determining if the dladdr exist passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_97862 && [1/2] Building C object CMakeFiles/cmTC_97862.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_97862.js
+Run Build Command(s):/usr/bin/ninja cmTC_c1d77 && [1/2] Building C object CMakeFiles/cmTC_c1d77.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_c1d77.js
 
 
 File /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -720,8 +720,8 @@ int main(int argc, char** argv)
 Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_MTIM_TV_NSEC succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_99c18 && [1/2] Building C object CMakeFiles/cmTC_99c18.dir/src.c.o
-[2/2] Linking C executable cmTC_99c18.js
+Run Build Command(s):/usr/bin/ninja cmTC_e5f43 && [1/2] Building C object CMakeFiles/cmTC_e5f43.dir/src.c.o
+[2/2] Linking C executable cmTC_e5f43.js
 
 
 Source file was:
@@ -738,8 +738,8 @@ int main()
 Performing C++ SOURCE FILE Test HAVE_CXX_ATOMICS_WITHOUT_LIB succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e8405 && [1/2] Building CXX object CMakeFiles/cmTC_e8405.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_e8405.js
+Run Build Command(s):/usr/bin/ninja cmTC_85921 && [1/2] Building CXX object CMakeFiles/cmTC_85921.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_85921.js
 
 
 Source file was:
@@ -757,8 +757,8 @@ int main() {
 Performing C++ SOURCE FILE Test HAVE_CXX_ATOMICS64_WITHOUT_LIB succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_72460 && [1/2] Building CXX object CMakeFiles/cmTC_72460.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_72460.js
+Run Build Command(s):/usr/bin/ninja cmTC_4f5b9 && [1/2] Building CXX object CMakeFiles/cmTC_4f5b9.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_4f5b9.js
 
 
 Source file was:
@@ -775,8 +775,8 @@ int main() {
 Performing C++ SOURCE FILE Test LLVM_HAS_ATOMICS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7d6de && [1/2] Building CXX object CMakeFiles/cmTC_7d6de.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_7d6de.js
+Run Build Command(s):/usr/bin/ninja cmTC_38357 && [1/2] Building CXX object CMakeFiles/cmTC_38357.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_38357.js
 
 
 Source file was:
@@ -804,8 +804,8 @@ int main() {
 Performing C++ SOURCE FILE Test SUPPORTS_VARIADIC_MACROS_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_15421 && [1/2] Building CXX object CMakeFiles/cmTC_15421.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_15421.js
+Run Build Command(s):/usr/bin/ninja cmTC_357d9 && [1/2] Building CXX object CMakeFiles/cmTC_357d9.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_357d9.js
 
 
 Source file was:
@@ -813,8 +813,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test SUPPORTS_GNU_ZERO_VARIADIC_MACRO_ARGUMENTS_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_afa1e && [1/2] Building CXX object CMakeFiles/cmTC_afa1e.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_afa1e.js
+Run Build Command(s):/usr/bin/ninja cmTC_deddb && [1/2] Building CXX object CMakeFiles/cmTC_deddb.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_deddb.js
 
 
 Source file was:
@@ -822,8 +822,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_FPIC succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_0ed60 && [1/2] Building C object CMakeFiles/cmTC_0ed60.dir/src.c.o
-[2/2] Linking C executable cmTC_0ed60.js
+Run Build Command(s):/usr/bin/ninja cmTC_9e0e6 && [1/2] Building C object CMakeFiles/cmTC_9e0e6.dir/src.c.o
+[2/2] Linking C executable cmTC_9e0e6.js
 
 
 Source file was:
@@ -831,8 +831,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_FPIC succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_2dfb8 && [1/2] Building CXX object CMakeFiles/cmTC_2dfb8.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_2dfb8.js
+Run Build Command(s):/usr/bin/ninja cmTC_08553 && [1/2] Building CXX object CMakeFiles/cmTC_08553.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_08553.js
 
 
 Source file was:
@@ -840,8 +840,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c5032 && [1/2] Building CXX object CMakeFiles/cmTC_c5032.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_c5032.js
+Run Build Command(s):/usr/bin/ninja cmTC_ca11c && [1/2] Building CXX object CMakeFiles/cmTC_ca11c.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_ca11c.js
 
 
 Source file was:
@@ -849,8 +849,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_WERROR_DATE_TIME succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c315e && [1/2] Building C object CMakeFiles/cmTC_c315e.dir/src.c.o
-[2/2] Linking C executable cmTC_c315e.js
+Run Build Command(s):/usr/bin/ninja cmTC_cb378 && [1/2] Building C object CMakeFiles/cmTC_cb378.dir/src.c.o
+[2/2] Linking C executable cmTC_cb378.js
 
 
 Source file was:
@@ -858,8 +858,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_WERROR_DATE_TIME succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e0185 && [1/2] Building CXX object CMakeFiles/cmTC_e0185.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_e0185.js
+Run Build Command(s):/usr/bin/ninja cmTC_68d50 && [1/2] Building CXX object CMakeFiles/cmTC_68d50.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_68d50.js
 
 
 Source file was:
@@ -867,8 +867,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9ce2e && [1/2] Building CXX object CMakeFiles/cmTC_9ce2e.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_9ce2e.js
+Run Build Command(s):/usr/bin/ninja cmTC_b2ff6 && [1/2] Building CXX object CMakeFiles/cmTC_b2ff6.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_b2ff6.js
 
 
 Source file was:
@@ -876,8 +876,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_75843 && [1/2] Building CXX object CMakeFiles/cmTC_75843.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_75843.js
+Run Build Command(s):/usr/bin/ninja cmTC_f3d06 && [1/2] Building CXX object CMakeFiles/cmTC_f3d06.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_f3d06.js
 
 
 Source file was:
@@ -885,8 +885,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_CXX98_COMPAT_EXTRA_SEMI_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5325f && [1/2] Building C object CMakeFiles/cmTC_5325f.dir/src.c.o
-[2/2] Linking C executable cmTC_5325f.js
+Run Build Command(s):/usr/bin/ninja cmTC_caa29 && [1/2] Building C object CMakeFiles/cmTC_caa29.dir/src.c.o
+[2/2] Linking C executable cmTC_caa29.js
 
 
 Source file was:
@@ -894,8 +894,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_CXX98_COMPAT_EXTRA_SEMI_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_6eecc && [1/2] Building CXX object CMakeFiles/cmTC_6eecc.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_6eecc.js
+Run Build Command(s):/usr/bin/ninja cmTC_b273d && [1/2] Building CXX object CMakeFiles/cmTC_b273d.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_b273d.js
 
 
 Source file was:
@@ -903,8 +903,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c73cd && [1/2] Building C object CMakeFiles/cmTC_c73cd.dir/src.c.o
-[2/2] Linking C executable cmTC_c73cd.js
+Run Build Command(s):/usr/bin/ninja cmTC_e888c && [1/2] Building C object CMakeFiles/cmTC_e888c.dir/src.c.o
+[2/2] Linking C executable cmTC_e888c.js
 
 
 Source file was:
@@ -912,8 +912,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e2625 && [1/2] Building CXX object CMakeFiles/cmTC_e2625.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_e2625.js
+Run Build Command(s):/usr/bin/ninja cmTC_271a9 && [1/2] Building CXX object CMakeFiles/cmTC_271a9.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_271a9.js
 
 
 Source file was:
@@ -921,8 +921,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_a1d18 && [1/2] Building C object CMakeFiles/cmTC_a1d18.dir/src.c.o
-[2/2] Linking C executable cmTC_a1d18.js
+Run Build Command(s):/usr/bin/ninja cmTC_b70b9 && [1/2] Building C object CMakeFiles/cmTC_b70b9.dir/src.c.o
+[2/2] Linking C executable cmTC_b70b9.js
 
 
 Source file was:
@@ -930,8 +930,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_ba20c && [1/2] Building CXX object CMakeFiles/cmTC_ba20c.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_ba20c.js
+Run Build Command(s):/usr/bin/ninja cmTC_d068a && [1/2] Building CXX object CMakeFiles/cmTC_d068a.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_d068a.js
 
 
 Source file was:
@@ -939,8 +939,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_NOEXCEPT_TYPE_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7bd06 && [1/2] Building CXX object CMakeFiles/cmTC_7bd06.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_7bd06.js
+Run Build Command(s):/usr/bin/ninja cmTC_2299c && [1/2] Building CXX object CMakeFiles/cmTC_2299c.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_2299c.js
 
 
 Source file was:
@@ -948,8 +948,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_54a16 && [1/2] Building CXX object CMakeFiles/cmTC_54a16.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_54a16.js
+Run Build Command(s):/usr/bin/ninja cmTC_9ddb1 && [1/2] Building CXX object CMakeFiles/cmTC_9ddb1.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_9ddb1.js
 
 
 Source file was:
@@ -959,8 +959,8 @@ class f {};
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_2ac4c && [1/2] Building CXX object CMakeFiles/cmTC_2ac4c.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_2ac4c.js
+Run Build Command(s):/usr/bin/ninja cmTC_e0385 && [1/2] Building CXX object CMakeFiles/cmTC_e0385.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_e0385.js
 
 
 Source file was:
@@ -968,7 +968,7 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_77b37 && [1/2] Building CXX object CMakeFiles/cmTC_77b37.dir/src.cxx.o
+Run Build Command(s):/usr/bin/ninja cmTC_28365 && [1/2] Building CXX object CMakeFiles/cmTC_28365.dir/src.cxx.o
 src.cxx:1:7: warning: 'base' has virtual functions but non-virtual destructor [-Wnon-virtual-dtor]
 class base {public: virtual void anchor();};
       ^
@@ -976,7 +976,7 @@ src.cxx:2:38: warning: 'derived' has virtual functions but non-virtual destructo
                                class derived : base {public: void anchor() final;};
                                      ^
 2 warnings generated.
-[2/2] Linking CXX executable cmTC_77b37.js
+[2/2] Linking CXX executable cmTC_28365.js
 
 
 Source file was:
@@ -986,8 +986,8 @@ class base {public: virtual void anchor();};
 Performing C SOURCE FILE Test C_SUPPORTS_STRING_CONVERSION_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e2f60 && [1/2] Building C object CMakeFiles/cmTC_e2f60.dir/src.c.o
-[2/2] Linking C executable cmTC_e2f60.js
+Run Build Command(s):/usr/bin/ninja cmTC_a6f3a && [1/2] Building C object CMakeFiles/cmTC_a6f3a.dir/src.c.o
+[2/2] Linking C executable cmTC_a6f3a.js
 
 
 Source file was:
@@ -995,8 +995,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_STRING_CONVERSION_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_642ca && [1/2] Building CXX object CMakeFiles/cmTC_642ca.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_642ca.js
+Run Build Command(s):/usr/bin/ninja cmTC_75ee3 && [1/2] Building CXX object CMakeFiles/cmTC_75ee3.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_75ee3.js
 
 
 Source file was:
@@ -1004,8 +1004,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_MISLEADING_INDENTATION_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_1f0cb && [1/2] Building C object CMakeFiles/cmTC_1f0cb.dir/src.c.o
-[2/2] Linking C executable cmTC_1f0cb.js
+Run Build Command(s):/usr/bin/ninja cmTC_2b2ee && [1/2] Building C object CMakeFiles/cmTC_2b2ee.dir/src.c.o
+[2/2] Linking C executable cmTC_2b2ee.js
 
 
 Source file was:
@@ -1013,8 +1013,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_MISLEADING_INDENTATION_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_0943c && [1/2] Building CXX object CMakeFiles/cmTC_0943c.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_0943c.js
+Run Build Command(s):/usr/bin/ninja cmTC_aac12 && [1/2] Building CXX object CMakeFiles/cmTC_aac12.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_aac12.js
 
 
 Source file was:
@@ -1022,8 +1022,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_dd34d && [1/2] Building C object CMakeFiles/cmTC_dd34d.dir/src.c.o
-[2/2] Linking C executable cmTC_dd34d.js
+Run Build Command(s):/usr/bin/ninja cmTC_08663 && [1/2] Building C object CMakeFiles/cmTC_08663.dir/src.c.o
+[2/2] Linking C executable cmTC_08663.js
 
 
 Source file was:
@@ -1031,8 +1031,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_51e31 && [1/2] Building CXX object CMakeFiles/cmTC_51e31.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_51e31.js
+Run Build Command(s):/usr/bin/ninja cmTC_34053 && [1/2] Building CXX object CMakeFiles/cmTC_34053.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_34053.js
 
 
 Source file was:
@@ -1040,8 +1040,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test LINKER_SUPPORTS_COLOR_DIAGNOSTICS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9f81e && [1/2] Building CXX object CMakeFiles/cmTC_9f81e.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_9f81e.js
+Run Build Command(s):/usr/bin/ninja cmTC_77d7b && [1/2] Building CXX object CMakeFiles/cmTC_77d7b.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_77d7b.js
 
 
 Source file was:
@@ -1049,8 +1049,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_FNO_FUNCTION_SECTIONS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_fb69e && [1/2] Building C object CMakeFiles/cmTC_fb69e.dir/src.c.o
-[2/2] Linking C executable cmTC_fb69e.js
+Run Build Command(s):/usr/bin/ninja cmTC_715d7 && [1/2] Building C object CMakeFiles/cmTC_715d7.dir/src.c.o
+[2/2] Linking C executable cmTC_715d7.js
 
 
 Source file was:
@@ -1058,8 +1058,8 @@ int main(void) { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_FFUNCTION_SECTIONS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_24c45 && [1/2] Building C object CMakeFiles/cmTC_24c45.dir/src.c.o
-[2/2] Linking C executable cmTC_24c45.js
+Run Build Command(s):/usr/bin/ninja cmTC_964f5 && [1/2] Building C object CMakeFiles/cmTC_964f5.dir/src.c.o
+[2/2] Linking C executable cmTC_964f5.js
 
 
 Source file was:
@@ -1067,8 +1067,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_FFUNCTION_SECTIONS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_47e40 && [1/2] Building CXX object CMakeFiles/cmTC_47e40.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_47e40.js
+Run Build Command(s):/usr/bin/ninja cmTC_c5280 && [1/2] Building CXX object CMakeFiles/cmTC_c5280.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_c5280.js
 
 
 Source file was:
@@ -1076,8 +1076,8 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_FDATA_SECTIONS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c79c5 && [1/2] Building C object CMakeFiles/cmTC_c79c5.dir/src.c.o
-[2/2] Linking C executable cmTC_c79c5.js
+Run Build Command(s):/usr/bin/ninja cmTC_93e4f && [1/2] Building C object CMakeFiles/cmTC_93e4f.dir/src.c.o
+[2/2] Linking C executable cmTC_93e4f.js
 
 
 Source file was:
@@ -1085,8 +1085,8 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_FDATA_SECTIONS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_2ceb0 && [1/2] Building CXX object CMakeFiles/cmTC_2ceb0.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_2ceb0.js
+Run Build Command(s):/usr/bin/ninja cmTC_b8b60 && [1/2] Building CXX object CMakeFiles/cmTC_b8b60.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_b8b60.js
 
 
 Source file was:
@@ -1094,8 +1094,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAS_WERROR_GLOBAL_CTORS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_bc9d8 && [1/2] Building CXX object CMakeFiles/cmTC_bc9d8.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_bc9d8.js
+Run Build Command(s):/usr/bin/ninja cmTC_db197 && [1/2] Building CXX object CMakeFiles/cmTC_db197.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_db197.js
 
 
 Source file was:
@@ -1103,16 +1103,16 @@ int main() { return 0; }
 Determining if the include file sys/resource.h exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_2fc31 && [1/2] Building C object CMakeFiles/cmTC_2fc31.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_2fc31.js
+Run Build Command(s):/usr/bin/ninja cmTC_6dea4 && [1/2] Building C object CMakeFiles/cmTC_6dea4.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_6dea4.js
 
 
 
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_NO_NESTED_ANON_TYPES_FLAG succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_29d85 && [1/2] Building CXX object CMakeFiles/cmTC_29d85.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_29d85.js
+Run Build Command(s):/usr/bin/ninja cmTC_611b0 && [1/2] Building CXX object CMakeFiles/cmTC_611b0.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_611b0.js
 
 
 Source file was:
@@ -1120,10 +1120,10 @@ int main() { return 0; }
 Determining if the function shm_open exists in the rt passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f2725 && [1/2] Building C object CMakeFiles/cmTC_f2725.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_f2725.js
+Run Build Command(s):/usr/bin/ninja cmTC_ad494 && [1/2] Building C object CMakeFiles/cmTC_ad494.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_ad494.js
 wasm-ld: warning: function signature mismatch: shm_open
->>> defined as () -> i32 in CMakeFiles/cmTC_f2725.dir/CheckFunctionExists.c.o
+>>> defined as () -> i32 in CMakeFiles/cmTC_ad494.dir/CheckFunctionExists.c.o
 >>> defined as (i32, i32, i32) -> i32 in /emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libc.a(shm_open.o)
 
 
@@ -1131,8 +1131,8 @@ wasm-ld: warning: function signature mismatch: shm_open
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_STD_CXX11 succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_99915 && [1/2] Building CXX object CMakeFiles/cmTC_99915.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_99915.js
+Run Build Command(s):/usr/bin/ninja cmTC_ca10a && [1/2] Building CXX object CMakeFiles/cmTC_ca10a.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_ca10a.js
 
 
 Source file was:
@@ -1140,8 +1140,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WALL succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_15744 && [1/2] Building CXX object CMakeFiles/cmTC_15744.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_15744.js
+Run Build Command(s):/usr/bin/ninja cmTC_ea31c && [1/2] Building CXX object CMakeFiles/cmTC_ea31c.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_ea31c.js
 
 
 Source file was:
@@ -1149,8 +1149,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WEXTRA succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_cf160 && [1/2] Building CXX object CMakeFiles/cmTC_cf160.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_cf160.js
+Run Build Command(s):/usr/bin/ninja cmTC_86927 && [1/2] Building CXX object CMakeFiles/cmTC_86927.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_86927.js
 
 
 Source file was:
@@ -1158,8 +1158,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSHADOW succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5f228 && [1/2] Building CXX object CMakeFiles/cmTC_5f228.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_5f228.js
+Run Build Command(s):/usr/bin/ninja cmTC_5e740 && [1/2] Building CXX object CMakeFiles/cmTC_5e740.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_5e740.js
 
 
 Source file was:
@@ -1167,8 +1167,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSUGGEST_OVERRIDE succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_1b9b8 && [1/2] Building CXX object CMakeFiles/cmTC_1b9b8.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_1b9b8.js
+Run Build Command(s):/usr/bin/ninja cmTC_91678 && [1/2] Building CXX object CMakeFiles/cmTC_91678.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_91678.js
 
 
 Source file was:
@@ -1176,8 +1176,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_PEDANTIC succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_1bc1b && [1/2] Building CXX object CMakeFiles/cmTC_1bc1b.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_1bc1b.js
+Run Build Command(s):/usr/bin/ninja cmTC_8f170 && [1/2] Building CXX object CMakeFiles/cmTC_8f170.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_8f170.js
 
 
 Source file was:
@@ -1185,8 +1185,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_PEDANTIC_ERRORS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f8265 && [1/2] Building CXX object CMakeFiles/cmTC_f8265.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_f8265.js
+Run Build Command(s):/usr/bin/ninja cmTC_42401 && [1/2] Building CXX object CMakeFiles/cmTC_42401.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_42401.js
 
 
 Source file was:
@@ -1194,8 +1194,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32 succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_16cf4 && [1/2] Building CXX object CMakeFiles/cmTC_16cf4.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_16cf4.js
+Run Build Command(s):/usr/bin/ninja cmTC_848ec && [1/2] Building CXX object CMakeFiles/cmTC_848ec.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_848ec.js
 
 
 Source file was:
@@ -1203,8 +1203,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_FSTRICT_ALIASING succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_161c2 && [1/2] Building CXX object CMakeFiles/cmTC_161c2.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_161c2.js
+Run Build Command(s):/usr/bin/ninja cmTC_092ad && [1/2] Building CXX object CMakeFiles/cmTC_092ad.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_092ad.js
 
 
 Source file was:
@@ -1212,8 +1212,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_69f52 && [1/2] Building CXX object CMakeFiles/cmTC_69f52.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_69f52.js
+Run Build Command(s):/usr/bin/ninja cmTC_492c2 && [1/2] Building CXX object CMakeFiles/cmTC_492c2.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_492c2.js
 
 
 Source file was:
@@ -1221,8 +1221,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_FNO_EXCEPTIONS succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_71e30 && [1/2] Building CXX object CMakeFiles/cmTC_71e30.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_71e30.js
+Run Build Command(s):/usr/bin/ninja cmTC_18738 && [1/2] Building CXX object CMakeFiles/cmTC_18738.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_18738.js
 
 
 Source file was:
@@ -1230,8 +1230,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSTRICT_ALIASING succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_96249 && [1/2] Building CXX object CMakeFiles/cmTC_96249.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_96249.js
+Run Build Command(s):/usr/bin/ninja cmTC_b574e && [1/2] Building CXX object CMakeFiles/cmTC_b574e.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_b574e.js
 
 
 Source file was:
@@ -1239,8 +1239,8 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WTHREAD_SAFETY succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b8dbc && [1/2] Building CXX object CMakeFiles/cmTC_b8dbc.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_b8dbc.js
+Run Build Command(s):/usr/bin/ninja cmTC_da507 && [1/2] Building CXX object CMakeFiles/cmTC_da507.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_da507.js
 
 
 Source file was:

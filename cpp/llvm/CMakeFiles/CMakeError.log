@@ -61,14 +61,14 @@ emcc: error: no input files
 Determining if the include file malloc/malloc.h exists failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_25c7d && [1/2] Building C object CMakeFiles/cmTC_25c7d.dir/CheckIncludeFile.c.o
-FAILED: CMakeFiles/cmTC_25c7d.dir/CheckIncludeFile.c.o 
-/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_25c7d.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
+Run Build Command(s):/usr/bin/ninja cmTC_cc942 && [1/2] Building C object CMakeFiles/cmTC_cc942.dir/CheckIncludeFile.c.o
+FAILED: CMakeFiles/cmTC_cc942.dir/CheckIncludeFile.c.o 
+/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_cc942.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
 CheckIncludeFile.c:1:10: fatal error: 'malloc/malloc.h' file not found
 #include <malloc/malloc.h>
          ^~~~~~~~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckIncludeFile.c -o CMakeFiles/cmTC_25c7d.dir/CheckIncludeFile.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckIncludeFile.c -o CMakeFiles/cmTC_cc942.dir/CheckIncludeFile.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -76,14 +76,14 @@ ninja: build stopped: subcommand failed.
 Determining if the include file valgrind/valgrind.h exists failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f6b2f && [1/2] Building C object CMakeFiles/cmTC_f6b2f.dir/CheckIncludeFile.c.o
-FAILED: CMakeFiles/cmTC_f6b2f.dir/CheckIncludeFile.c.o 
-/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_f6b2f.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
+Run Build Command(s):/usr/bin/ninja cmTC_4e893 && [1/2] Building C object CMakeFiles/cmTC_4e893.dir/CheckIncludeFile.c.o
+FAILED: CMakeFiles/cmTC_4e893.dir/CheckIncludeFile.c.o 
+/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_4e893.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
 CheckIncludeFile.c:1:10: fatal error: 'valgrind/valgrind.h' file not found
 #include <valgrind/valgrind.h>
          ^~~~~~~~~~~~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckIncludeFile.c -o CMakeFiles/cmTC_f6b2f.dir/CheckIncludeFile.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckIncludeFile.c -o CMakeFiles/cmTC_4e893.dir/CheckIncludeFile.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -91,14 +91,14 @@ ninja: build stopped: subcommand failed.
 Determining if the FE_INEXACT exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_701ea && [1/2] Building C object CMakeFiles/cmTC_701ea.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_701ea.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_701ea.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_17952 && [1/2] Building C object CMakeFiles/cmTC_17952.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_17952.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_17952.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:8:19: error: use of undeclared identifier 'FE_INEXACT'
   return ((int*)(&FE_INEXACT))[argc];
                   ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_701ea.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_17952.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -119,14 +119,14 @@ int main(int argc, char** argv)
 Determining if the include file mach/mach.h exists failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_3594f && [1/2] Building C object CMakeFiles/cmTC_3594f.dir/CheckIncludeFile.c.o
-FAILED: CMakeFiles/cmTC_3594f.dir/CheckIncludeFile.c.o 
-/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_3594f.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
+Run Build Command(s):/usr/bin/ninja cmTC_6476e && [1/2] Building C object CMakeFiles/cmTC_6476e.dir/CheckIncludeFile.c.o
+FAILED: CMakeFiles/cmTC_6476e.dir/CheckIncludeFile.c.o 
+/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_6476e.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
 CheckIncludeFile.c:1:10: fatal error: 'mach/mach.h' file not found
 #include <mach/mach.h>
          ^~~~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckIncludeFile.c -o CMakeFiles/cmTC_3594f.dir/CheckIncludeFile.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckIncludeFile.c -o CMakeFiles/cmTC_6476e.dir/CheckIncludeFile.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -134,14 +134,14 @@ ninja: build stopped: subcommand failed.
 Determining if the include file CrashReporterClient.h exists failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_1cb48 && [1/2] Building C object CMakeFiles/cmTC_1cb48.dir/CheckIncludeFile.c.o
-FAILED: CMakeFiles/cmTC_1cb48.dir/CheckIncludeFile.c.o 
-/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_1cb48.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
+Run Build Command(s):/usr/bin/ninja cmTC_79c19 && [1/2] Building C object CMakeFiles/cmTC_79c19.dir/CheckIncludeFile.c.o
+FAILED: CMakeFiles/cmTC_79c19.dir/CheckIncludeFile.c.o 
+/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_79c19.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
 CheckIncludeFile.c:1:10: fatal error: 'CrashReporterClient.h' file not found
 #include <CrashReporterClient.h>
          ^~~~~~~~~~~~~~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckIncludeFile.c -o CMakeFiles/cmTC_1cb48.dir/CheckIncludeFile.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckIncludeFile.c -o CMakeFiles/cmTC_79c19.dir/CheckIncludeFile.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -149,12 +149,12 @@ ninja: build stopped: subcommand failed.
 Determining if the function pfm_initialize exists in the pfm failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_80bf2 && [1/2] Building C object CMakeFiles/cmTC_80bf2.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_80bf2.js
-FAILED: cmTC_80bf2.js 
-: && /emsdk/upstream/emscripten/emcc -DCHECK_FUNCTION_EXISTS=pfm_initialize -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_80bf2.dir/CheckFunctionExists.c.o  -o cmTC_80bf2.js  -lpfm  -lm && :
+Run Build Command(s):/usr/bin/ninja cmTC_d2027 && [1/2] Building C object CMakeFiles/cmTC_d2027.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_d2027.js
+FAILED: cmTC_d2027.js 
+: && /emsdk/upstream/emscripten/emcc -DCHECK_FUNCTION_EXISTS=pfm_initialize -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_d2027.dir/CheckFunctionExists.c.o  -o cmTC_d2027.js  -lpfm  -lm && :
 wasm-ld: error: unable to find library -lpfm
-emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_80bf2.wasm CMakeFiles/cmTC_80bf2.dir/CheckFunctionExists.c.o -lpfm -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpjoxwli20.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_d2027.wasm CMakeFiles/cmTC_d2027.dir/CheckFunctionExists.c.o -lpfm -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpcuedtts2.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -162,12 +162,12 @@ ninja: build stopped: subcommand failed.
 Determining if the function xar_open exists in the xar failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_04e85 && [1/2] Building C object CMakeFiles/cmTC_04e85.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_04e85.js
-FAILED: cmTC_04e85.js 
-: && /emsdk/upstream/emscripten/emcc -DCHECK_FUNCTION_EXISTS=xar_open -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_04e85.dir/CheckFunctionExists.c.o  -o cmTC_04e85.js  -lxar  -lm && :
+Run Build Command(s):/usr/bin/ninja cmTC_1ca0c && [1/2] Building C object CMakeFiles/cmTC_1ca0c.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_1ca0c.js
+FAILED: cmTC_1ca0c.js 
+: && /emsdk/upstream/emscripten/emcc -DCHECK_FUNCTION_EXISTS=xar_open -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_1ca0c.dir/CheckFunctionExists.c.o  -o cmTC_1ca0c.js  -lxar  -lm && :
 wasm-ld: error: unable to find library -lxar
-emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_04e85.wasm CMakeFiles/cmTC_04e85.dir/CheckFunctionExists.c.o -lxar -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmp6l74_nwa.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_1ca0c.wasm CMakeFiles/cmTC_1ca0c.dir/CheckFunctionExists.c.o -lxar -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmp4ais4r23.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -175,9 +175,9 @@ ninja: build stopped: subcommand failed.
 Determining if the arc4random exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c3505 && [1/2] Building C object CMakeFiles/cmTC_c3505.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_c3505.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_c3505.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_e6c02 && [1/2] Building C object CMakeFiles/cmTC_e6c02.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_e6c02.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_e6c02.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:8:19: error: use of undeclared identifier 'arc4random'; did you mean 'srandom'?
   return ((int*)(&arc4random))[argc];
                   ^~~~~~~~~~
@@ -186,7 +186,7 @@ CheckSymbolExists.c:8:19: error: use of undeclared identifier 'arc4random'; did 
 void srandom (unsigned int);
      ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_c3505.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_e6c02.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -207,14 +207,14 @@ int main(int argc, char** argv)
 Determining if the backtrace exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7b106 && [1/2] Building C object CMakeFiles/cmTC_7b106.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_7b106.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_7b106.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_52858 && [1/2] Building C object CMakeFiles/cmTC_52858.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_52858.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -O3 -DNDEBUG -o CMakeFiles/cmTC_52858.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: 'execinfo.h' file not found
 #include <execinfo.h>
          ^~~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_7b106.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_52858.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -235,12 +235,12 @@ int main(int argc, char** argv)
 Determining if the __register_frame exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8b655 && [1/2] Building C object CMakeFiles/cmTC_8b655.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_8b655.js
-FAILED: cmTC_8b655.js 
-: && /emsdk/upstream/emscripten/emcc -Werror=unguarded-availability-new -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_8b655.dir/CheckSymbolExists.c.o  -o cmTC_8b655.js  -lm && :
-wasm-ld: error: CMakeFiles/cmTC_8b655.dir/CheckSymbolExists.c.o: undefined symbol: __register_frame
-emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_8b655.wasm CMakeFiles/cmTC_8b655.dir/CheckSymbolExists.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpudfy6_hw.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
+Run Build Command(s):/usr/bin/ninja cmTC_6a72a && [1/2] Building C object CMakeFiles/cmTC_6a72a.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_6a72a.js
+FAILED: cmTC_6a72a.js 
+: && /emsdk/upstream/emscripten/emcc -Werror=unguarded-availability-new -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_6a72a.dir/CheckSymbolExists.c.o  -o cmTC_6a72a.js  -lm && :
+wasm-ld: error: CMakeFiles/cmTC_6a72a.dir/CheckSymbolExists.c.o: undefined symbol: __register_frame
+emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_6a72a.wasm CMakeFiles/cmTC_6a72a.dir/CheckSymbolExists.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmph1d51zws.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -261,12 +261,12 @@ int main(int argc, char** argv)
 Determining if the __deregister_frame exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_aaf1e && [1/2] Building C object CMakeFiles/cmTC_aaf1e.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_aaf1e.js
-FAILED: cmTC_aaf1e.js 
-: && /emsdk/upstream/emscripten/emcc -Werror=unguarded-availability-new -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_aaf1e.dir/CheckSymbolExists.c.o  -o cmTC_aaf1e.js  -lm && :
-wasm-ld: error: CMakeFiles/cmTC_aaf1e.dir/CheckSymbolExists.c.o: undefined symbol: __deregister_frame
-emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_aaf1e.wasm CMakeFiles/cmTC_aaf1e.dir/CheckSymbolExists.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpor7_8aox.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
+Run Build Command(s):/usr/bin/ninja cmTC_84272 && [1/2] Building C object CMakeFiles/cmTC_84272.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_84272.js
+FAILED: cmTC_84272.js 
+: && /emsdk/upstream/emscripten/emcc -Werror=unguarded-availability-new -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_84272.dir/CheckSymbolExists.c.o  -o cmTC_84272.js  -lm && :
+wasm-ld: error: CMakeFiles/cmTC_84272.dir/CheckSymbolExists.c.o: undefined symbol: __deregister_frame
+emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_84272.wasm CMakeFiles/cmTC_84272.dir/CheckSymbolExists.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpko7mglet.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -287,12 +287,12 @@ int main(int argc, char** argv)
 Determining if the __unw_add_dynamic_fde exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_09143 && [1/2] Building C object CMakeFiles/cmTC_09143.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_09143.js
-FAILED: cmTC_09143.js 
-: && /emsdk/upstream/emscripten/emcc -Werror=unguarded-availability-new -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_09143.dir/CheckSymbolExists.c.o  -o cmTC_09143.js  -lm && :
-wasm-ld: error: CMakeFiles/cmTC_09143.dir/CheckSymbolExists.c.o: undefined symbol: __unw_add_dynamic_fde
-emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_09143.wasm CMakeFiles/cmTC_09143.dir/CheckSymbolExists.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpf0l2emf_.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
+Run Build Command(s):/usr/bin/ninja cmTC_78d92 && [1/2] Building C object CMakeFiles/cmTC_78d92.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_78d92.js
+FAILED: cmTC_78d92.js 
+: && /emsdk/upstream/emscripten/emcc -Werror=unguarded-availability-new -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_78d92.dir/CheckSymbolExists.c.o  -o cmTC_78d92.js  -lm && :
+wasm-ld: error: CMakeFiles/cmTC_78d92.dir/CheckSymbolExists.c.o: undefined symbol: __unw_add_dynamic_fde
+emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_78d92.wasm CMakeFiles/cmTC_78d92.dir/CheckSymbolExists.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmp7d7jqesi.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -313,12 +313,12 @@ int main(int argc, char** argv)
 Determining if the futimes exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_d1183 && [1/2] Building C object CMakeFiles/cmTC_d1183.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_d1183.js
-FAILED: cmTC_d1183.js 
-: && /emsdk/upstream/emscripten/emcc -Werror=unguarded-availability-new -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_d1183.dir/CheckSymbolExists.c.o  -o cmTC_d1183.js  -lm && :
-wasm-ld: error: CMakeFiles/cmTC_d1183.dir/CheckSymbolExists.c.o: undefined symbol: futimes
-emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_d1183.wasm CMakeFiles/cmTC_d1183.dir/CheckSymbolExists.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpz725xbrd.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
+Run Build Command(s):/usr/bin/ninja cmTC_748a9 && [1/2] Building C object CMakeFiles/cmTC_748a9.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_748a9.js
+FAILED: cmTC_748a9.js 
+: && /emsdk/upstream/emscripten/emcc -Werror=unguarded-availability-new -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js CMakeFiles/cmTC_748a9.dir/CheckSymbolExists.c.o  -o cmTC_748a9.js  -lm && :
+wasm-ld: error: CMakeFiles/cmTC_748a9.dir/CheckSymbolExists.c.o: undefined symbol: futimes
+emcc: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_748a9.wasm CMakeFiles/cmTC_748a9.dir/CheckSymbolExists.c.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpcw94clul.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -339,14 +339,14 @@ int main(int argc, char** argv)
 Determining if the mallctl exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_af874 && [1/2] Building C object CMakeFiles/cmTC_af874.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_af874.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_af874.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_c76b0 && [1/2] Building C object CMakeFiles/cmTC_c76b0.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_c76b0.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_c76b0.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: 'malloc_np.h' file not found
 #include <malloc_np.h>
          ^~~~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_af874.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_c76b0.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -367,9 +367,9 @@ int main(int argc, char** argv)
 Determining if the mallinfo2 exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_56000 && [1/2] Building C object CMakeFiles/cmTC_56000.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_56000.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_56000.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_ad6df && [1/2] Building C object CMakeFiles/cmTC_ad6df.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_ad6df.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_ad6df.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:8:19: error: use of undeclared identifier 'mallinfo2'; did you mean 'mallinfo'?
   return ((int*)(&mallinfo2))[argc];
                   ^~~~~~~~~
@@ -378,7 +378,7 @@ CheckSymbolExists.c:8:19: error: use of undeclared identifier 'mallinfo2'; did y
 extern struct mallinfo mallinfo(void);
                        ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_56000.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_ad6df.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -399,14 +399,14 @@ int main(int argc, char** argv)
 Determining if the malloc_zone_statistics exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b1a53 && [1/2] Building C object CMakeFiles/cmTC_b1a53.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_b1a53.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_b1a53.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_9baca && [1/2] Building C object CMakeFiles/cmTC_9baca.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_9baca.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_9baca.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: 'malloc/malloc.h' file not found
 #include <malloc/malloc.h>
          ^~~~~~~~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_b1a53.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_9baca.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -427,14 +427,14 @@ int main(int argc, char** argv)
 Determining if the strerror_s exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7dfc2 && [1/2] Building C object CMakeFiles/cmTC_7dfc2.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_7dfc2.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_7dfc2.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_de7e7 && [1/2] Building C object CMakeFiles/cmTC_de7e7.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_de7e7.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_de7e7.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:8:19: error: use of undeclared identifier 'strerror_s'
   return ((int*)(&strerror_s))[argc];
                   ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_7dfc2.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_de7e7.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -455,14 +455,14 @@ int main(int argc, char** argv)
 Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_545a8 && [1/2] Building C object CMakeFiles/cmTC_545a8.dir/src.c.o
-FAILED: CMakeFiles/cmTC_545a8.dir/src.c.o 
-/emsdk/upstream/emscripten/emcc   -DHAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC  -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_545a8.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_6625f && [1/2] Building C object CMakeFiles/cmTC_6625f.dir/src.c.o
+FAILED: CMakeFiles/cmTC_6625f.dir/src.c.o 
+/emsdk/upstream/emscripten/emcc   -DHAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC  -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_6625f.dir/src.c.o   -c src.c
 src.c:7:36: error: no member named 'st_mtimespec' in 'struct stat'
   (void)sizeof(((struct stat *)0)->st_mtimespec.tv_nsec);
                ~~~~~~~~~~~~~~~~~~  ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -DHAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC -Werror=unguarded-availability-new -O3 -DNDEBUG -c src.c -o CMakeFiles/cmTC_545a8.dir/src.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -DHAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC -Werror=unguarded-availability-new -O3 -DNDEBUG -c src.c -o CMakeFiles/cmTC_6625f.dir/src.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -480,14 +480,14 @@ int main()
 Determining if the __GLIBC__ exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9586f && [1/2] Building C object CMakeFiles/cmTC_9586f.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_9586f.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_9586f.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_f2f11 && [1/2] Building C object CMakeFiles/cmTC_f2f11.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_f2f11.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_f2f11.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:8:19: error: use of undeclared identifier '__GLIBC__'
   return ((int*)(&__GLIBC__))[argc];
                   ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_9586f.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_f2f11.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -508,14 +508,14 @@ int main(int argc, char** argv)
 Determining if the pthread_getname_np exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f40f0 && [1/2] Building C object CMakeFiles/cmTC_f40f0.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_f40f0.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_f40f0.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_5e3bb && [1/2] Building C object CMakeFiles/cmTC_5e3bb.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_5e3bb.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_5e3bb.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:8:19: error: use of undeclared identifier 'pthread_getname_np'
   return ((int*)(&pthread_getname_np))[argc];
                   ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_f40f0.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_5e3bb.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -536,14 +536,14 @@ int main(int argc, char** argv)
 Determining if the pthread_setname_np exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_48d95 && [1/2] Building C object CMakeFiles/cmTC_48d95.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_48d95.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_48d95.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_b3d66 && [1/2] Building C object CMakeFiles/cmTC_b3d66.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_b3d66.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_b3d66.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:8:19: error: use of undeclared identifier 'pthread_setname_np'
   return ((int*)(&pthread_setname_np))[argc];
                   ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_48d95.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_b3d66.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -564,14 +564,14 @@ int main(int argc, char** argv)
 Determining if the proc_pid_rusage exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_afc3f && [1/2] Building C object CMakeFiles/cmTC_afc3f.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_afc3f.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_afc3f.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_8e680 && [1/2] Building C object CMakeFiles/cmTC_8e680.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_8e680.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_8e680.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: 'libproc.h' file not found
 #include <libproc.h>
          ^~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_afc3f.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_8e680.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -592,11 +592,11 @@ int main(int argc, char** argv)
 Performing C SOURCE FILE Test C_SUPPORTS_FNO_SEMANTIC_INTERPOSITION failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_1d748 && [1/2] Building C object CMakeFiles/cmTC_1d748.dir/src.c.o
-FAILED: CMakeFiles/cmTC_1d748.dir/src.c.o 
-/emsdk/upstream/emscripten/emcc   -fPIC -DC_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -Werror=unguarded-availability-new -O3 -DNDEBUG   -Werror -fno-semantic-interposition -o CMakeFiles/cmTC_1d748.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_5d0b8 && [1/2] Building C object CMakeFiles/cmTC_5d0b8.dir/src.c.o
+FAILED: CMakeFiles/cmTC_5d0b8.dir/src.c.o 
+/emsdk/upstream/emscripten/emcc   -fPIC -DC_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -Werror=unguarded-availability-new -O3 -DNDEBUG   -Werror -fno-semantic-interposition -o CMakeFiles/cmTC_5d0b8.dir/src.c.o   -c src.c
 clang-16: error: argument unused during compilation: '-fno-semantic-interposition' [-Werror,-Wunused-command-line-argument]
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -fPIC -DC_SUPPORTS_FNO_SEMANTIC_INTERPOSITION -Werror=unguarded-availability-new -O3 -DNDEBUG -Werror -fno-semantic-interposition -c src.c -o CMakeFiles/cmTC_1d748.dir/src.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -fPIC -DC_SUPPORTS_FNO_SEMANTIC_INTERPOSITION -Werror=unguarded-availability-new -O3 -DNDEBUG -Werror -fno-semantic-interposition -c src.c -o CMakeFiles/cmTC_5d0b8.dir/src.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -605,11 +605,11 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_ccfad && [1/2] Building CXX object CMakeFiles/cmTC_ccfad.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_ccfad.dir/src.cxx.o 
-/emsdk/upstream/emscripten/em++    -Dwait4=__syscall_wait4 -fPIC -DCXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -Werror=unguarded-availability-new -O3 -DNDEBUG   -Werror -fno-semantic-interposition -std=c++17 -o CMakeFiles/cmTC_ccfad.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_4d8d7 && [1/2] Building CXX object CMakeFiles/cmTC_4d8d7.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_4d8d7.dir/src.cxx.o 
+/emsdk/upstream/emscripten/em++    -Dwait4=__syscall_wait4 -fPIC -DCXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -Werror=unguarded-availability-new -O3 -DNDEBUG   -Werror -fno-semantic-interposition -std=c++17 -o CMakeFiles/cmTC_4d8d7.dir/src.cxx.o -c src.cxx
 clang-16: error: argument unused during compilation: '-fno-semantic-interposition' [-Werror,-Wunused-command-line-argument]
-em++: error: '/emsdk/upstream/bin/clang++ -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Dwait4=__syscall_wait4 -fPIC -DCXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION -Werror=unguarded-availability-new -O3 -DNDEBUG -Werror -fno-semantic-interposition -std=c++17 -c src.cxx -o CMakeFiles/cmTC_ccfad.dir/src.cxx.o' failed (returned 1)
+em++: error: '/emsdk/upstream/bin/clang++ -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Dwait4=__syscall_wait4 -fPIC -DCXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION -Werror=unguarded-availability-new -O3 -DNDEBUG -Werror -fno-semantic-interposition -std=c++17 -c src.cxx -o CMakeFiles/cmTC_4d8d7.dir/src.cxx.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -618,10 +618,10 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_CLASS_MEMACCESS_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_15b6a && [1/2] Building CXX object CMakeFiles/cmTC_15b6a.dir/src.cxx.o
+Run Build Command(s):/usr/bin/ninja cmTC_9659c && [1/2] Building CXX object CMakeFiles/cmTC_9659c.dir/src.cxx.o
 warning: unknown warning option '-Wclass-memaccess'; did you mean '-Wclass-varargs'? [-Wunknown-warning-option]
 1 warning generated.
-[2/2] Linking CXX executable cmTC_15b6a.js
+[2/2] Linking CXX executable cmTC_9659c.js
 
 
 Source file was:
@@ -629,15 +629,15 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_WCOMMENT_ALLOWS_LINE_WRAP failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_6023a && [1/2] Building C object CMakeFiles/cmTC_6023a.dir/src.c.o
-FAILED: CMakeFiles/cmTC_6023a.dir/src.c.o 
-/emsdk/upstream/emscripten/emcc   -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -DC_WCOMMENT_ALLOWS_LINE_WRAP  -Werror=unguarded-availability-new -Werror -Wcomment -O3 -DNDEBUG -o CMakeFiles/cmTC_6023a.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_4548c && [1/2] Building C object CMakeFiles/cmTC_4548c.dir/src.c.o
+FAILED: CMakeFiles/cmTC_4548c.dir/src.c.o 
+/emsdk/upstream/emscripten/emcc   -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -DC_WCOMMENT_ALLOWS_LINE_WRAP  -Werror=unguarded-availability-new -Werror -Wcomment -O3 -DNDEBUG -o CMakeFiles/cmTC_4548c.dir/src.c.o   -c src.c
 src.c:3:9: error: a function declaration without a prototype is deprecated in all versions of C [-Werror,-Wstrict-prototypes]
 int main() {return 0;}
         ^
          void
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -DC_WCOMMENT_ALLOWS_LINE_WRAP -Werror=unguarded-availability-new -Werror -Wcomment -O3 -DNDEBUG -c src.c -o CMakeFiles/cmTC_6023a.dir/src.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -DC_WCOMMENT_ALLOWS_LINE_WRAP -Werror=unguarded-availability-new -Werror -Wcomment -O3 -DNDEBUG -c src.c -o CMakeFiles/cmTC_4548c.dir/src.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -648,14 +648,14 @@ int main() {return 0;}
 Determining if the os_signpost_interval_begin exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5822f && [1/2] Building C object CMakeFiles/cmTC_5822f.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_5822f.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections  -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_5822f.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_c6e2f && [1/2] Building C object CMakeFiles/cmTC_c6e2f.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_c6e2f.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections  -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_c6e2f.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: 'os/signpost.h' file not found
 #include <os/signpost.h>
          ^~~~~~~~~~~~~~~
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_5822f.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_c6e2f.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -676,9 +676,9 @@ int main(int argc, char** argv)
 Performing C++ SOURCE FILE Test LLVM_HAS_NOGLOBAL_CTOR_MUTEX failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_6edd9 && [1/2] Building CXX object CMakeFiles/cmTC_6edd9.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_6edd9.dir/src.cxx.o 
-/emsdk/upstream/emscripten/em++    -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -Werror=global-constructors -DLLVM_HAS_NOGLOBAL_CTOR_MUTEX  -Werror=unguarded-availability-new -O3 -DNDEBUG   -std=c++17 -o CMakeFiles/cmTC_6edd9.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_95aec && [1/2] Building CXX object CMakeFiles/cmTC_95aec.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_95aec.dir/src.cxx.o 
+/emsdk/upstream/emscripten/em++    -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -Werror=global-constructors -DLLVM_HAS_NOGLOBAL_CTOR_MUTEX  -Werror=unguarded-availability-new -O3 -DNDEBUG   -std=c++17 -o CMakeFiles/cmTC_95aec.dir/src.cxx.o -c src.cxx
 src.cxx:3:21: error: declaration requires a global destructor [-Werror,-Wglobal-constructors]
   static std::mutex TestGlobalCtorDtor;
                     ^
@@ -686,7 +686,7 @@ src.cxx:4:31: error: declaration requires a global destructor [-Werror,-Wglobal-
   static std::recursive_mutex TestGlobalCtorDtor2;
                               ^
 2 errors generated.
-em++: error: '/emsdk/upstream/bin/clang++ -target wasm32-unknown-emscripten -fignore-exceptions -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -Werror=global-constructors -DLLVM_HAS_NOGLOBAL_CTOR_MUTEX -Werror=unguarded-availability-new -O3 -DNDEBUG -std=c++17 -c src.cxx -o CMakeFiles/cmTC_6edd9.dir/src.cxx.o' failed (returned 1)
+em++: error: '/emsdk/upstream/bin/clang++ -target wasm32-unknown-emscripten -fignore-exceptions -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -Werror=global-constructors -DLLVM_HAS_NOGLOBAL_CTOR_MUTEX -Werror=unguarded-availability-new -O3 -DNDEBUG -std=c++17 -c src.cxx -o CMakeFiles/cmTC_95aec.dir/src.cxx.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -700,14 +700,14 @@ Source file was:
 Determining if the __x86_64__ exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_6120b && [1/2] Building C object CMakeFiles/cmTC_6120b.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_6120b.dir/CheckSymbolExists.c.o 
-/emsdk/upstream/emscripten/emcc   -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections  -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_6120b.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_684f6 && [1/2] Building C object CMakeFiles/cmTC_684f6.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_684f6.dir/CheckSymbolExists.c.o 
+/emsdk/upstream/emscripten/emcc   -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections  -Werror=unguarded-availability-new -O3 -DNDEBUG -o CMakeFiles/cmTC_684f6.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:7:19: error: use of undeclared identifier '__x86_64__'
   return ((int*)(&__x86_64__))[argc];
                   ^
 1 error generated.
-emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_6120b.dir/CheckSymbolExists.c.o' failed (returned 1)
+emcc: error: '/emsdk/upstream/bin/clang -target wasm32-unknown-emscripten -fignore-exceptions -fvisibility=default -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -Werror=implicit-function-declaration -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -fPIC -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -Werror=unguarded-availability-new -O3 -DNDEBUG -c CheckSymbolExists.c -o CMakeFiles/cmTC_684f6.dir/CheckSymbolExists.c.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -727,12 +727,12 @@ int main(int argc, char** argv)
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WD654 failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7dd71 && [1/2] Building CXX object CMakeFiles/cmTC_7dd71.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_7dd71.dir/src.cxx.o 
-/emsdk/upstream/emscripten/em++    -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -fno-exceptions  -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654  -Werror=unguarded-availability-new -wd654 -O3 -DNDEBUG   -wd654 -std=c++17 -o CMakeFiles/cmTC_7dd71.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_41519 && [1/2] Building CXX object CMakeFiles/cmTC_41519.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_41519.dir/src.cxx.o 
+/emsdk/upstream/emscripten/em++    -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -fno-exceptions  -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654  -Werror=unguarded-availability-new -wd654 -O3 -DNDEBUG   -wd654 -std=c++17 -o CMakeFiles/cmTC_41519.dir/src.cxx.o -c src.cxx
 clang-16: error: unknown argument: '-wd654'
 clang-16: error: unknown argument: '-wd654'
-em++: error: '/emsdk/upstream/bin/clang++ -target wasm32-unknown-emscripten -fignore-exceptions -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -std=c++11 -Wall -Wextra -Wshadow -Wsuggest-override -pedantic -pedantic-errors -Wshorten-64-to-32 -fstrict-aliasing -Wno-deprecated-declarations -fno-exceptions -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654 -Werror=unguarded-availability-new -wd654 -O3 -DNDEBUG -wd654 -std=c++17 -c src.cxx -o CMakeFiles/cmTC_7dd71.dir/src.cxx.o' failed (returned 1)
+em++: error: '/emsdk/upstream/bin/clang++ -target wasm32-unknown-emscripten -fignore-exceptions -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -DEMSCRIPTEN -I/emsdk/upstream/emscripten/cache/sysroot/include/SDL --sysroot=/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections -std=c++11 -Wall -Wextra -Wshadow -Wsuggest-override -pedantic -pedantic-errors -Wshorten-64-to-32 -fstrict-aliasing -Wno-deprecated-declarations -fno-exceptions -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654 -Werror=unguarded-availability-new -wd654 -O3 -DNDEBUG -wd654 -std=c++17 -c src.cxx -o CMakeFiles/cmTC_41519.dir/src.cxx.o' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 
@@ -741,17 +741,17 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_COVERAGE failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_0b506 && [1/2] Building CXX object CMakeFiles/cmTC_0b506.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_0b506.js
-FAILED: cmTC_0b506.js 
-: && /emsdk/upstream/emscripten/em++  -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -fno-exceptions  -Wstrict-aliasing  -Wthread-safety -DHAVE_CXX_FLAG_COVERAGE  -Werror=unguarded-availability-new --coverage -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js -Wl,--color-diagnostics CMakeFiles/cmTC_0b506.dir/src.cxx.o  -o cmTC_0b506.js  -lm && :
-wasm-ld: error: CMakeFiles/cmTC_0b506.dir/src.cxx.o: undefined symbol: llvm_gcda_start_file
-wasm-ld: error: CMakeFiles/cmTC_0b506.dir/src.cxx.o: undefined symbol: llvm_gcda_emit_function
-wasm-ld: error: CMakeFiles/cmTC_0b506.dir/src.cxx.o: undefined symbol: llvm_gcda_emit_arcs
-wasm-ld: error: CMakeFiles/cmTC_0b506.dir/src.cxx.o: undefined symbol: llvm_gcda_summary_info
-wasm-ld: error: CMakeFiles/cmTC_0b506.dir/src.cxx.o: undefined symbol: llvm_gcda_end_file
-wasm-ld: error: CMakeFiles/cmTC_0b506.dir/src.cxx.o: undefined symbol: llvm_gcov_init
-em++: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_0b506.wasm --color-diagnostics CMakeFiles/cmTC_0b506.dir/src.cxx.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpe8upv0av.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
+Run Build Command(s):/usr/bin/ninja cmTC_5839c && [1/2] Building CXX object CMakeFiles/cmTC_5839c.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_5839c.js
+FAILED: cmTC_5839c.js 
+: && /emsdk/upstream/emscripten/em++  -Dwait4=__syscall_wait4 -fPIC -fvisibility-inlines-hidden -Werror=date-time -Werror=unguarded-availability-new -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wmissing-field-initializers -pedantic -Wno-long-long -Wc++98-compat-extra-semi -Wimplicit-fallthrough -Wcovered-switch-default -Wno-noexcept-type -Wnon-virtual-dtor -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wstring-conversion -Wmisleading-indentation -Wctad-maybe-unsupported -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -fno-exceptions  -Wstrict-aliasing  -Wthread-safety -DHAVE_CXX_FLAG_COVERAGE  -Werror=unguarded-availability-new --coverage -O3 -DNDEBUG  -s LLD_REPORT_UNDEFINED=1         -s ALLOW_MEMORY_GROWTH=1         -s EXPORTED_FUNCTIONS=_main,_free,_malloc         -s EXPORTED_RUNTIME_METHODS=FS,PROXYFS,ERRNO_CODES,allocateUTF8         -lproxyfs.js         --js-library=/home/luca/learnhardcode/cpp/emception/emlib/fsroot.js -Wl,--color-diagnostics CMakeFiles/cmTC_5839c.dir/src.cxx.o  -o cmTC_5839c.js  -lm && :
+wasm-ld: error: CMakeFiles/cmTC_5839c.dir/src.cxx.o: undefined symbol: llvm_gcda_start_file
+wasm-ld: error: CMakeFiles/cmTC_5839c.dir/src.cxx.o: undefined symbol: llvm_gcda_emit_function
+wasm-ld: error: CMakeFiles/cmTC_5839c.dir/src.cxx.o: undefined symbol: llvm_gcda_emit_arcs
+wasm-ld: error: CMakeFiles/cmTC_5839c.dir/src.cxx.o: undefined symbol: llvm_gcda_summary_info
+wasm-ld: error: CMakeFiles/cmTC_5839c.dir/src.cxx.o: undefined symbol: llvm_gcda_end_file
+wasm-ld: error: CMakeFiles/cmTC_5839c.dir/src.cxx.o: undefined symbol: llvm_gcov_init
+em++: error: '/emsdk/upstream/bin/wasm-ld -o cmTC_5839c.wasm --color-diagnostics CMakeFiles/cmTC_5839c.dir/src.cxx.o -L/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten -lGL -lal -lhtml5 -lstubs -lnoexit -lc -ldlmalloc -lcompiler_rt -lc++-noexcept -lc++abi-noexcept -lsockets -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr --allow-undefined-file=/tmp/tmpvvkpc8ju.undefined --strip-debug --export-if-defined=main --export-if-defined=free --export-if-defined=malloc --export-if-defined=__start_em_asm --export-if-defined=__stop_em_asm --export-if-defined=__start_em_lib_deps --export-if-defined=__stop_em_lib_deps --export-if-defined=__start_em_js --export-if-defined=__stop_em_js --export-if-defined=__main_argc_argv --export=stackSave --export=stackRestore --export=stackAlloc --export=__wasm_call_ctors --export=__errno_location --export=__get_temp_ret --export=__set_temp_ret --export-table -z stack-size=5242880 --initial-memory=16777216 --no-entry --max-memory=2147483648 --global-base=1024' failed (returned 1)
 ninja: build stopped: subcommand failed.
 
 

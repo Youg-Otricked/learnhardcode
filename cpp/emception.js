@@ -50,9 +50,11 @@ class Emception {
         fileSystem.symlink("/lazy/emscripten", "/emscripten");
         fileSystem.symlink("/lazy/cpython", "/usr/local/lib");
         fileSystem.symlink("/lazy/wasm", "/wasm");
-
         await Promise.all(preloads.map((preload) => fileSystem.preloadLazy(`/lazy/${preload}`)));
-
+        if (!fileSystem.exists("/wasm/llvm-box.wasm")) {
+            console.error("CRITICAL: llvm-box.wasm not found in virtual FS!");
+            console.log("Contents of /wasm:", fileSystem.FS.readdir("/wasm"));
+        }
         fileSystem.mkdirTree("/working");
 
         fileSystem.mkdirTree("/usr/bin");

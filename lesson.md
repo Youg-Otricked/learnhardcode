@@ -1,38 +1,12 @@
-Pop should be WAY simpler than Push.
+Fun Fact - The first bug was a **real bug** that got stuck and died in a vaccum tube!
 
 ---
-
-## Errors
-
-In C++, you can _intentionally make your own errors_. Remember, bugs = bad, errors do not. Bugs are unintended mistakes in **your code**, but errors are just responses to **others bad input or code**. In C++, you can make a error using the `throw` statement, which just throws out the object as an error.
-
-When code throws an error, it's not all over. In C++ you can _catch runtime errors_ using `try catch` blocks.
-
-```cpp
-#include <iostream>
-#include "myFile"
-int main() {
-  try {
-    someForeignFunction();
-  } catch (string c) {
-    std::cout << c;
-    return 1;
-  } catch (...) {
-    std::cout << "Unknown error"
-    return 1;
-  }
-}
-```
-
-In the above code, if any code in the `try` block (in our case, `someForeignFunction`) throws an error, the catch blocks catch it. The catch block with `string c` will catch thrown strings, and the `...` catch block catches _anything_.
+## Bugs VS Errors:
+You may naturally jump to "Avoid anything that causes code to fail". That's not _fully_ true.
+Bugs _should_ be avoided. A bug is something in code that is caused by _bad code and is the developers fault._ Think invalid syntax, a double free, or a divide by zero. 
+Errors _are not neccesarily something to avoid_. A error is something code produces due to bad _user input_. Compilers like the C++ compiler create **errors** when you have _bugs_ in your code. A server reponding to a bad request is a _error_. 
+A bug is a flaw in the machine's logic. An error is the machine telling you it can't do what you asked.
 
 ---
-
-## Assignment:
-
-Make the pop method!
-
-- [ ] Make the operator[] throw the error "Unable to access out-of-bounds index" (casted as a string) if index is less than length - 1.
-- [ ] Make the `void pop()` method:
-  - [ ] If length is < 1 throw "Cannot pop a empty vector" (casted as a string).
-  - [ ] Otherwise, subtract one from length.
+## Question:
+A user typed a invalid input: What should you do?

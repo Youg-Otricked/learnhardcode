@@ -3,7 +3,18 @@ import WasmPackageModule from "./wasm-package/wasm-package.mjs";
 import createLazyFolder, { doFetch } from "./createLazyFolder.mjs"
 import Thenable from "./Thenable.mjs";
 import BrotliProcess from "./BrotliProcess.mjs";
-
+async function doFetchCombined(urls) {
+    const promises = urls.map(async (url) => {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status} when fetching ${url}`);
+        return res.arrayBuffer();
+    });
+    const buffers = await Promise.all(promises);
+    const blob = new Blob(buffers);
+    const arrayBuffer = await blob.arrayBuffer();
+    
+    return new Uint8Array(arrayBuffer);
+}
 export default class FileSystem extends EmProcess {
     _brotli = null;
     _cache = null;
@@ -36,19 +47,23 @@ export default class FileSystem extends EmProcess {
         }
     }
 
-    #cachedDownload(url, async = false) {
+    #cachedDownload(urlOrUrls, async = false) {
         const cache = this._cache;
-        const hash = btoa(url).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
-        const ext = url.replace(/^.*?(\.[^\.]+)?$/, "$1");
+        const identifier = Array.isArray(urlOrUrls) ? urlOrUrls.join(",") : urlOrUrls;
+        const hash = btoa(identifier).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
+        const ext = Array.isArray(urlOrUrls) ? ".pack" : urlOrUrls.replace(/^.*?(\.[^\.]+)?$/, "$1");
         const cache_file = `${cache}/${hash}${ext}`;
         if (this.exists(cache_file)) return new Thenable(cache_file);
-        return new Thenable(doFetch(url, async)).then((data) => {
+        const downloader = Array.isArray(urlOrUrls) 
+            ? doFetchCombined(urlOrUrls) 
+            : doFetch(urlOrUrls, async);
+
+        return new Thenable(downloader).then((data) => {
             this.writeFile(cache_file, data);
             this.push();
             return cache_file;
         });
     }
-
     #ignorePermissions(f) {
         const { ignorePermissions } = this.FS;
         this.FS.ignorePermissions = true;

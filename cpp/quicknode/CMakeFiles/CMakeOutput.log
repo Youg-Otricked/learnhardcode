@@ -3,8 +3,8 @@ The host system is: Linux - 6.19.14+deb14-amd64 - x86_64
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/quicknode/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_2844f && [1/2] Building C object CMakeFiles/cmTC_2844f.dir/src.c.o
-[2/2] Linking C executable cmTC_2844f.js
+Run Build Command(s):/usr/bin/ninja cmTC_652b1 && [1/2] Building C object CMakeFiles/cmTC_652b1.dir/src.c.o
+[2/2] Linking C executable cmTC_652b1.js
 cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/libc++abi-debug.a... (this will be cached in "/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/libc++abi-debug.a" for subsequent builds)
 system_libs:INFO: compiled 15 inputs
 cache:INFO:  - ok

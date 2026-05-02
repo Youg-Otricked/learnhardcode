@@ -1,9 +1,9 @@
 Determining if the include file malloc/malloc.h exists failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_4e7ae && [1/2] Building C object CMakeFiles/cmTC_4e7ae.dir/CheckIncludeFile.c.o
-FAILED: CMakeFiles/cmTC_4e7ae.dir/CheckIncludeFile.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_4e7ae.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
+Run Build Command(s):/usr/bin/ninja cmTC_4cda6 && [1/2] Building C object CMakeFiles/cmTC_4cda6.dir/CheckIncludeFile.c.o
+FAILED: CMakeFiles/cmTC_4cda6.dir/CheckIncludeFile.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_4cda6.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
 CheckIncludeFile.c:1:10: fatal error: malloc/malloc.h: No such file or directory
     1 | #include <malloc/malloc.h>
       |          ^~~~~~~~~~~~~~~~~
@@ -15,9 +15,9 @@ ninja: build stopped: subcommand failed.
 Determining if the include file valgrind/valgrind.h exists failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_55437 && [1/2] Building C object CMakeFiles/cmTC_55437.dir/CheckIncludeFile.c.o
-FAILED: CMakeFiles/cmTC_55437.dir/CheckIncludeFile.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_55437.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
+Run Build Command(s):/usr/bin/ninja cmTC_d47e3 && [1/2] Building C object CMakeFiles/cmTC_d47e3.dir/CheckIncludeFile.c.o
+FAILED: CMakeFiles/cmTC_d47e3.dir/CheckIncludeFile.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_d47e3.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
 CheckIncludeFile.c:1:10: fatal error: valgrind/valgrind.h: No such file or directory
     1 | #include <valgrind/valgrind.h>
       |          ^~~~~~~~~~~~~~~~~~~~~
@@ -29,9 +29,9 @@ ninja: build stopped: subcommand failed.
 Determining if the include file mach/mach.h exists failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5079c && [1/2] Building C object CMakeFiles/cmTC_5079c.dir/CheckIncludeFile.c.o
-FAILED: CMakeFiles/cmTC_5079c.dir/CheckIncludeFile.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_5079c.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
+Run Build Command(s):/usr/bin/ninja cmTC_8241b && [1/2] Building C object CMakeFiles/cmTC_8241b.dir/CheckIncludeFile.c.o
+FAILED: CMakeFiles/cmTC_8241b.dir/CheckIncludeFile.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_8241b.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
 CheckIncludeFile.c:1:10: fatal error: mach/mach.h: No such file or directory
     1 | #include <mach/mach.h>
       |          ^~~~~~~~~~~~~
@@ -43,9 +43,9 @@ ninja: build stopped: subcommand failed.
 Determining if the include file CrashReporterClient.h exists failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_64149 && [1/2] Building C object CMakeFiles/cmTC_64149.dir/CheckIncludeFile.c.o
-FAILED: CMakeFiles/cmTC_64149.dir/CheckIncludeFile.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_64149.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
+Run Build Command(s):/usr/bin/ninja cmTC_535b0 && [1/2] Building C object CMakeFiles/cmTC_535b0.dir/CheckIncludeFile.c.o
+FAILED: CMakeFiles/cmTC_535b0.dir/CheckIncludeFile.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_535b0.dir/CheckIncludeFile.c.o   -c CheckIncludeFile.c
 CheckIncludeFile.c:1:10: fatal error: CrashReporterClient.h: No such file or directory
     1 | #include <CrashReporterClient.h>
       |          ^~~~~~~~~~~~~~~~~~~~~~~
@@ -57,10 +57,10 @@ ninja: build stopped: subcommand failed.
 Determining if the function pfm_initialize exists in the pfm failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8ae72 && [1/2] Building C object CMakeFiles/cmTC_8ae72.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_8ae72
-FAILED: cmTC_8ae72 
-: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pfm_initialize -O3 -DNDEBUG   CMakeFiles/cmTC_8ae72.dir/CheckFunctionExists.c.o  -o cmTC_8ae72  -lpfm  -lm && :
+Run Build Command(s):/usr/bin/ninja cmTC_82fd0 && [1/2] Building C object CMakeFiles/cmTC_82fd0.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_82fd0
+FAILED: cmTC_82fd0 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pfm_initialize -O3 -DNDEBUG   CMakeFiles/cmTC_82fd0.dir/CheckFunctionExists.c.o  -o cmTC_82fd0  -lpfm  -lm && :
 /usr/bin/ld: cannot find -lpfm
 collect2: error: ld returned 1 exit status
 ninja: build stopped: subcommand failed.
@@ -70,11 +70,11 @@ ninja: build stopped: subcommand failed.
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f5bfb && [1/2] Building C object CMakeFiles/cmTC_f5bfb.dir/src.c.o
-[2/2] Linking C executable cmTC_f5bfb
-FAILED: cmTC_f5bfb 
-: && /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD -O3 -DNDEBUG   CMakeFiles/cmTC_f5bfb.dir/src.c.o  -o cmTC_f5bfb  -lm && :
-/usr/bin/ld: CMakeFiles/cmTC_f5bfb.dir/src.c.o: in function `main':
+Run Build Command(s):/usr/bin/ninja cmTC_17552 && [1/2] Building C object CMakeFiles/cmTC_17552.dir/src.c.o
+[2/2] Linking C executable cmTC_17552
+FAILED: cmTC_17552 
+: && /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD -O3 -DNDEBUG   CMakeFiles/cmTC_17552.dir/src.c.o  -o cmTC_17552  -lm && :
+/usr/bin/ld: CMakeFiles/cmTC_17552.dir/src.c.o: in function `main':
 src.c:(.text.startup+0x29): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text.startup+0x32): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text.startup+0x3d): undefined reference to `pthread_join'
@@ -105,10 +105,10 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_6e3e1 && [1/2] Building C object CMakeFiles/cmTC_6e3e1.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_6e3e1
-FAILED: cmTC_6e3e1 
-: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create -O3 -DNDEBUG   CMakeFiles/cmTC_6e3e1.dir/CheckFunctionExists.c.o  -o cmTC_6e3e1  -lpthreads  -lm && :
+Run Build Command(s):/usr/bin/ninja cmTC_ba069 && [1/2] Building C object CMakeFiles/cmTC_ba069.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_ba069
+FAILED: cmTC_ba069 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create -O3 -DNDEBUG   CMakeFiles/cmTC_ba069.dir/CheckFunctionExists.c.o  -o cmTC_ba069  -lpthreads  -lm && :
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
 ninja: build stopped: subcommand failed.
@@ -118,10 +118,10 @@ ninja: build stopped: subcommand failed.
 Determining if the function xar_open exists in the xar failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_55b20 && [1/2] Building C object CMakeFiles/cmTC_55b20.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_55b20
-FAILED: cmTC_55b20 
-: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=xar_open -O3 -DNDEBUG   CMakeFiles/cmTC_55b20.dir/CheckFunctionExists.c.o  -o cmTC_55b20  -lxar  -lm && :
+Run Build Command(s):/usr/bin/ninja cmTC_a8543 && [1/2] Building C object CMakeFiles/cmTC_a8543.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_a8543
+FAILED: cmTC_a8543 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=xar_open -O3 -DNDEBUG   CMakeFiles/cmTC_a8543.dir/CheckFunctionExists.c.o  -o cmTC_a8543  -lxar  -lm && :
 /usr/bin/ld: cannot find -lxar
 collect2: error: ld returned 1 exit status
 ninja: build stopped: subcommand failed.
@@ -131,9 +131,9 @@ ninja: build stopped: subcommand failed.
 Determining if the arc4random exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9f8a8 && [1/2] Building C object CMakeFiles/cmTC_9f8a8.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_9f8a8.dir/CheckSymbolExists.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_9f8a8.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_79439 && [1/2] Building C object CMakeFiles/cmTC_79439.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_79439.dir/CheckSymbolExists.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_79439.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c: In function 'main':
 CheckSymbolExists.c:8:19: error: 'arc4random' undeclared (first use in this function); did you mean 'srandom'?
     8 |   return ((int*)(&arc4random))[argc];
@@ -160,9 +160,9 @@ int main(int argc, char** argv)
 Performing C SOURCE FILE Test C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_a3b5e && [1/2] Building C object CMakeFiles/cmTC_a3b5e.dir/src.c.o
-FAILED: CMakeFiles/cmTC_a3b5e.dir/src.c.o 
-/usr/bin/cc   -DC_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW -O3 -DNDEBUG   -Werror=unguarded-availability-new -o CMakeFiles/cmTC_a3b5e.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_e0b24 && [1/2] Building C object CMakeFiles/cmTC_e0b24.dir/src.c.o
+FAILED: CMakeFiles/cmTC_e0b24.dir/src.c.o 
+/usr/bin/cc   -DC_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW -O3 -DNDEBUG   -Werror=unguarded-availability-new -o CMakeFiles/cmTC_e0b24.dir/src.c.o   -c src.c
 cc1: error: '-Werror=unguarded-availability-new': no option -Wunguarded-availability-new
 ninja: build stopped: subcommand failed.
 
@@ -172,11 +172,11 @@ int main(void) { return 0; }
 Determining if the __unw_add_dynamic_fde exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_13126 && [1/2] Building C object CMakeFiles/cmTC_13126.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_13126
-FAILED: cmTC_13126 
-: && /usr/bin/cc -O3 -DNDEBUG   CMakeFiles/cmTC_13126.dir/CheckSymbolExists.c.o  -o cmTC_13126  -lm && :
-/usr/bin/ld: CMakeFiles/cmTC_13126.dir/CheckSymbolExists.c.o: in function `main':
+Run Build Command(s):/usr/bin/ninja cmTC_158bd && [1/2] Building C object CMakeFiles/cmTC_158bd.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_158bd
+FAILED: cmTC_158bd 
+: && /usr/bin/cc -O3 -DNDEBUG   CMakeFiles/cmTC_158bd.dir/CheckSymbolExists.c.o  -o cmTC_158bd  -lm && :
+/usr/bin/ld: CMakeFiles/cmTC_158bd.dir/CheckSymbolExists.c.o: in function `main':
 CheckSymbolExists.c:(.text.startup+0x7): undefined reference to `__unw_add_dynamic_fde'
 collect2: error: ld returned 1 exit status
 ninja: build stopped: subcommand failed.
@@ -199,9 +199,9 @@ int main(int argc, char** argv)
 Determining if the mallctl exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5011a && [1/2] Building C object CMakeFiles/cmTC_5011a.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_5011a.dir/CheckSymbolExists.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_5011a.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_78471 && [1/2] Building C object CMakeFiles/cmTC_78471.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_78471.dir/CheckSymbolExists.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_78471.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: malloc_np.h: No such file or directory
     2 | #include <malloc_np.h>
       |          ^~~~~~~~~~~~~
@@ -226,9 +226,9 @@ int main(int argc, char** argv)
 Determining if the mallinfo2 exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8e02e && [1/2] Building C object CMakeFiles/cmTC_8e02e.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_8e02e.dir/CheckSymbolExists.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_8e02e.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_23a02 && [1/2] Building C object CMakeFiles/cmTC_23a02.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_23a02.dir/CheckSymbolExists.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_23a02.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c: In function 'main':
 CheckSymbolExists.c:8:19: error: 'mallinfo2' undeclared (first use in this function); did you mean 'mallinfo'?
     8 |   return ((int*)(&mallinfo2))[argc];
@@ -255,9 +255,9 @@ int main(int argc, char** argv)
 Determining if the malloc_zone_statistics exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_bce11 && [1/2] Building C object CMakeFiles/cmTC_bce11.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_bce11.dir/CheckSymbolExists.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_bce11.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_4dc84 && [1/2] Building C object CMakeFiles/cmTC_4dc84.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_4dc84.dir/CheckSymbolExists.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_4dc84.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: malloc/malloc.h: No such file or directory
     2 | #include <malloc/malloc.h>
       |          ^~~~~~~~~~~~~~~~~
@@ -282,9 +282,9 @@ int main(int argc, char** argv)
 Determining if the strerror_s exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_fc60f && [1/2] Building C object CMakeFiles/cmTC_fc60f.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_fc60f.dir/CheckSymbolExists.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_fc60f.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_0dde0 && [1/2] Building C object CMakeFiles/cmTC_0dde0.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_0dde0.dir/CheckSymbolExists.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_0dde0.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c: In function 'main':
 CheckSymbolExists.c:8:19: error: 'strerror_s' undeclared (first use in this function); did you mean 'strerror_l'?
     8 |   return ((int*)(&strerror_s))[argc];
@@ -311,9 +311,9 @@ int main(int argc, char** argv)
 Determining if the dladdr exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_58e53 && [1/2] Building C object CMakeFiles/cmTC_58e53.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_58e53.dir/CheckSymbolExists.c.o 
-/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_58e53.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_9b154 && [1/2] Building C object CMakeFiles/cmTC_9b154.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_9b154.dir/CheckSymbolExists.c.o 
+/usr/bin/cc   -O3 -DNDEBUG -o CMakeFiles/cmTC_9b154.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c: In function 'main':
 CheckSymbolExists.c:8:19: error: 'dladdr' undeclared (first use in this function)
     8 |   return ((int*)(&dladdr))[argc];
@@ -339,9 +339,9 @@ int main(int argc, char** argv)
 Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_51f56 && [1/2] Building C object CMakeFiles/cmTC_51f56.dir/src.c.o
-FAILED: CMakeFiles/cmTC_51f56.dir/src.c.o 
-/usr/bin/cc   -DHAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC -O3 -DNDEBUG -o CMakeFiles/cmTC_51f56.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_c6922 && [1/2] Building C object CMakeFiles/cmTC_c6922.dir/src.c.o
+FAILED: CMakeFiles/cmTC_c6922.dir/src.c.o 
+/usr/bin/cc   -DHAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC -O3 -DNDEBUG -o CMakeFiles/cmTC_c6922.dir/src.c.o   -c src.c
 src.c: In function 'main':
 src.c:7:34: error: 'struct stat' has no member named 'st_mtimespec'
     7 |   (void)sizeof(((struct stat *)0)->st_mtimespec.tv_nsec);
@@ -363,9 +363,9 @@ int main()
 Determining if the proc_pid_rusage exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_53bcf && [1/2] Building C object CMakeFiles/cmTC_53bcf.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_53bcf.dir/CheckSymbolExists.c.o 
-/usr/bin/cc -D_GNU_SOURCE  -O3 -DNDEBUG -o CMakeFiles/cmTC_53bcf.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_3c3bd && [1/2] Building C object CMakeFiles/cmTC_3c3bd.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_3c3bd.dir/CheckSymbolExists.c.o 
+/usr/bin/cc -D_GNU_SOURCE  -O3 -DNDEBUG -o CMakeFiles/cmTC_3c3bd.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: libproc.h: No such file or directory
     2 | #include <libproc.h>
       |          ^~~~~~~~~~~
@@ -390,9 +390,9 @@ int main(int argc, char** argv)
 Performing C++ SOURCE FILE Test SUPPORTS_GNU_ZERO_VARIADIC_MACRO_ARGUMENTS_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_dc6af && [1/2] Building CXX object CMakeFiles/cmTC_dc6af.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_dc6af.dir/src.cxx.o 
-/usr/bin/c++    -DSUPPORTS_GNU_ZERO_VARIADIC_MACRO_ARGUMENTS_FLAG -O3 -DNDEBUG   -Wgnu-zero-variadic-macro-arguments -std=c++17 -o CMakeFiles/cmTC_dc6af.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_16ad8 && [1/2] Building CXX object CMakeFiles/cmTC_16ad8.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_16ad8.dir/src.cxx.o 
+/usr/bin/c++    -DSUPPORTS_GNU_ZERO_VARIADIC_MACRO_ARGUMENTS_FLAG -O3 -DNDEBUG   -Wgnu-zero-variadic-macro-arguments -std=c++17 -o CMakeFiles/cmTC_16ad8.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-Wgnu-zero-variadic-macro-arguments'
 ninja: build stopped: subcommand failed.
 
@@ -402,9 +402,9 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_bd6a0 && [1/2] Building CXX object CMakeFiles/cmTC_bd6a0.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_bd6a0.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -DCXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW -O3 -DNDEBUG   -Werror -Werror=unguarded-availability-new -std=c++17 -o CMakeFiles/cmTC_bd6a0.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_1a5e4 && [1/2] Building CXX object CMakeFiles/cmTC_1a5e4.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_1a5e4.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -DCXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW -O3 -DNDEBUG   -Werror -Werror=unguarded-availability-new -std=c++17 -o CMakeFiles/cmTC_1a5e4.dir/src.cxx.o -c src.cxx
 cc1plus: error: '-Werror=unguarded-availability-new': no option -Wunguarded-availability-new
 ninja: build stopped: subcommand failed.
 
@@ -414,9 +414,9 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_CXX98_COMPAT_EXTRA_SEMI_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_88fc0 && [1/2] Building C object CMakeFiles/cmTC_88fc0.dir/src.c.o
-FAILED: CMakeFiles/cmTC_88fc0.dir/src.c.o 
-/usr/bin/cc   -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -DC_SUPPORTS_CXX98_COMPAT_EXTRA_SEMI_FLAG -O3 -DNDEBUG   -Werror -Wc++98-compat-extra-semi -o CMakeFiles/cmTC_88fc0.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_c314a && [1/2] Building C object CMakeFiles/cmTC_c314a.dir/src.c.o
+FAILED: CMakeFiles/cmTC_c314a.dir/src.c.o 
+/usr/bin/cc   -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -DC_SUPPORTS_CXX98_COMPAT_EXTRA_SEMI_FLAG -O3 -DNDEBUG   -Werror -Wc++98-compat-extra-semi -o CMakeFiles/cmTC_c314a.dir/src.c.o   -c src.c
 cc: error: unrecognized command line option '-Wc++98-compat-extra-semi'
 ninja: build stopped: subcommand failed.
 
@@ -426,9 +426,9 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_CXX98_COMPAT_EXTRA_SEMI_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9e119 && [1/2] Building CXX object CMakeFiles/cmTC_9e119.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_9e119.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -DCXX_SUPPORTS_CXX98_COMPAT_EXTRA_SEMI_FLAG -O3 -DNDEBUG   -Werror -Wc++98-compat-extra-semi -std=c++17 -o CMakeFiles/cmTC_9e119.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_78ddb && [1/2] Building CXX object CMakeFiles/cmTC_78ddb.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_78ddb.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -DCXX_SUPPORTS_CXX98_COMPAT_EXTRA_SEMI_FLAG -O3 -DNDEBUG   -Werror -Wc++98-compat-extra-semi -std=c++17 -o CMakeFiles/cmTC_78ddb.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-Wc++98-compat-extra-semi'
 ninja: build stopped: subcommand failed.
 
@@ -438,9 +438,9 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_a7a51 && [1/2] Building C object CMakeFiles/cmTC_a7a51.dir/src.c.o
-FAILED: CMakeFiles/cmTC_a7a51.dir/src.c.o 
-/usr/bin/cc   -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -DC_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG -O3 -DNDEBUG   -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_a7a51.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_81083 && [1/2] Building C object CMakeFiles/cmTC_81083.dir/src.c.o
+FAILED: CMakeFiles/cmTC_81083.dir/src.c.o 
+/usr/bin/cc   -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -DC_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG -O3 -DNDEBUG   -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_81083.dir/src.c.o   -c src.c
 cc: error: unrecognized command line option '-Wcovered-switch-default'; did you mean '-Wno-switch-default'?
 ninja: build stopped: subcommand failed.
 
@@ -450,9 +450,9 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_290b8 && [1/2] Building CXX object CMakeFiles/cmTC_290b8.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_290b8.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -DCXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG -O3 -DNDEBUG   -Werror -Wcovered-switch-default -std=c++17 -o CMakeFiles/cmTC_290b8.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_db911 && [1/2] Building CXX object CMakeFiles/cmTC_db911.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_db911.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -DCXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG -O3 -DNDEBUG   -Werror -Wcovered-switch-default -std=c++17 -o CMakeFiles/cmTC_db911.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-Wcovered-switch-default'; did you mean '-Wno-switch-default'?
 ninja: build stopped: subcommand failed.
 
@@ -462,9 +462,9 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_11a20 && [1/2] Building CXX object CMakeFiles/cmTC_11a20.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_11a20.dir/src.cxx.o 
-/usr/bin/c++  -D_GNU_SOURCE  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -DCXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR  -Werror=non-virtual-dtor -O3 -DNDEBUG   -std=c++17 -o CMakeFiles/cmTC_11a20.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_60f7d && [1/2] Building CXX object CMakeFiles/cmTC_60f7d.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_60f7d.dir/src.cxx.o 
+/usr/bin/c++  -D_GNU_SOURCE  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -DCXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR  -Werror=non-virtual-dtor -O3 -DNDEBUG   -std=c++17 -o CMakeFiles/cmTC_60f7d.dir/src.cxx.o -c src.cxx
 src.cxx:2:36: error: 'class base' has virtual functions and accessible non-virtual destructor [-Werror=non-virtual-dtor]
     2 |                              class base {friend f; public: virtual void anchor();protected: ~base();};
       |                                    ^~~~
@@ -479,9 +479,9 @@ class f {};
 Performing C SOURCE FILE Test C_WCOMMENT_ALLOWS_LINE_WRAP failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_15ff7 && [1/2] Building C object CMakeFiles/cmTC_15ff7.dir/src.c.o
-FAILED: CMakeFiles/cmTC_15ff7.dir/src.c.o 
-/usr/bin/cc -D_GNU_SOURCE  -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -DC_WCOMMENT_ALLOWS_LINE_WRAP  -Werror -Wcomment -O3 -DNDEBUG -o CMakeFiles/cmTC_15ff7.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_32896 && [1/2] Building C object CMakeFiles/cmTC_32896.dir/src.c.o
+FAILED: CMakeFiles/cmTC_32896.dir/src.c.o 
+/usr/bin/cc -D_GNU_SOURCE  -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -DC_WCOMMENT_ALLOWS_LINE_WRAP  -Werror -Wcomment -O3 -DNDEBUG -o CMakeFiles/cmTC_32896.dir/src.c.o   -c src.c
 src.c:1:1: error: multi-line comment [-Werror=comment]
     1 | // \
       | ^
@@ -496,9 +496,9 @@ int main() {return 0;}
 Performing C SOURCE FILE Test C_SUPPORTS_STRING_CONVERSION_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_53a0e && [1/2] Building C object CMakeFiles/cmTC_53a0e.dir/src.c.o
-FAILED: CMakeFiles/cmTC_53a0e.dir/src.c.o 
-/usr/bin/cc   -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-comment -DC_SUPPORTS_STRING_CONVERSION_FLAG -O3 -DNDEBUG   -Werror -Wstring-conversion -o CMakeFiles/cmTC_53a0e.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_d9598 && [1/2] Building C object CMakeFiles/cmTC_d9598.dir/src.c.o
+FAILED: CMakeFiles/cmTC_d9598.dir/src.c.o 
+/usr/bin/cc   -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-comment -DC_SUPPORTS_STRING_CONVERSION_FLAG -O3 -DNDEBUG   -Werror -Wstring-conversion -o CMakeFiles/cmTC_d9598.dir/src.c.o   -c src.c
 cc: error: unrecognized command line option '-Wstring-conversion'; did you mean '-Wsign-conversion'?
 ninja: build stopped: subcommand failed.
 
@@ -508,9 +508,9 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_STRING_CONVERSION_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_bb105 && [1/2] Building CXX object CMakeFiles/cmTC_bb105.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_bb105.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -DCXX_SUPPORTS_STRING_CONVERSION_FLAG -O3 -DNDEBUG   -Werror -Wstring-conversion -std=c++17 -o CMakeFiles/cmTC_bb105.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_80087 && [1/2] Building CXX object CMakeFiles/cmTC_80087.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_80087.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -DCXX_SUPPORTS_STRING_CONVERSION_FLAG -O3 -DNDEBUG   -Werror -Wstring-conversion -std=c++17 -o CMakeFiles/cmTC_80087.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-Wstring-conversion'; did you mean '-Wsign-conversion'?
 ninja: build stopped: subcommand failed.
 
@@ -520,9 +520,9 @@ int main() { return 0; }
 Performing C SOURCE FILE Test C_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_882ed && [1/2] Building C object CMakeFiles/cmTC_882ed.dir/src.c.o
-FAILED: CMakeFiles/cmTC_882ed.dir/src.c.o 
-/usr/bin/cc   -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-comment -DC_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG -O3 -DNDEBUG   -Werror -Wctad-maybe-unsupported -o CMakeFiles/cmTC_882ed.dir/src.c.o   -c src.c
+Run Build Command(s):/usr/bin/ninja cmTC_9b12c && [1/2] Building C object CMakeFiles/cmTC_9b12c.dir/src.c.o
+FAILED: CMakeFiles/cmTC_9b12c.dir/src.c.o 
+/usr/bin/cc   -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-comment -DC_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG -O3 -DNDEBUG   -Werror -Wctad-maybe-unsupported -o CMakeFiles/cmTC_9b12c.dir/src.c.o   -c src.c
 cc: error: unrecognized command line option '-Wctad-maybe-unsupported'
 ninja: build stopped: subcommand failed.
 
@@ -532,9 +532,9 @@ int main(void) { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_1fa30 && [1/2] Building CXX object CMakeFiles/cmTC_1fa30.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_1fa30.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -DCXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG -O3 -DNDEBUG   -Werror -Wctad-maybe-unsupported -std=c++17 -o CMakeFiles/cmTC_1fa30.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_c947a && [1/2] Building CXX object CMakeFiles/cmTC_c947a.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_c947a.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -DCXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG -O3 -DNDEBUG   -Werror -Wctad-maybe-unsupported -std=c++17 -o CMakeFiles/cmTC_c947a.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-Wctad-maybe-unsupported'
 ninja: build stopped: subcommand failed.
 
@@ -544,10 +544,10 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test LINKER_SUPPORTS_COLOR_DIAGNOSTICS failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_88751 && [1/2] Building CXX object CMakeFiles/cmTC_88751.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_88751
-FAILED: cmTC_88751 
-: && /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -DLINKER_SUPPORTS_COLOR_DIAGNOSTICS -O3 -DNDEBUG  -Wl,--color-diagnostics CMakeFiles/cmTC_88751.dir/src.cxx.o  -o cmTC_88751  -lm && :
+Run Build Command(s):/usr/bin/ninja cmTC_6102a && [1/2] Building CXX object CMakeFiles/cmTC_6102a.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_6102a
+FAILED: cmTC_6102a 
+: && /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -DLINKER_SUPPORTS_COLOR_DIAGNOSTICS -O3 -DNDEBUG  -Wl,--color-diagnostics CMakeFiles/cmTC_6102a.dir/src.cxx.o  -o cmTC_6102a  -lm && :
 /usr/bin/ld: unrecognized option '--color-diagnostics'
 /usr/bin/ld: use the --help option for usage information
 collect2: error: ld returned 1 exit status
@@ -559,9 +559,9 @@ int main() { return 0; }
 Determining if the os_signpost_interval_begin exist failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9e61c && [1/2] Building C object CMakeFiles/cmTC_9e61c.dir/CheckSymbolExists.c.o
-FAILED: CMakeFiles/cmTC_9e61c.dir/CheckSymbolExists.c.o 
-/usr/bin/cc -D_GNU_SOURCE  -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-comment -fdiagnostics-color -ffunction-sections -fdata-sections  -O3 -DNDEBUG -o CMakeFiles/cmTC_9e61c.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
+Run Build Command(s):/usr/bin/ninja cmTC_f0593 && [1/2] Building C object CMakeFiles/cmTC_f0593.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_f0593.dir/CheckSymbolExists.c.o 
+/usr/bin/cc -D_GNU_SOURCE  -fPIC -fno-semantic-interposition -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-comment -fdiagnostics-color -ffunction-sections -fdata-sections  -O3 -DNDEBUG -o CMakeFiles/cmTC_f0593.dir/CheckSymbolExists.c.o   -c CheckSymbolExists.c
 CheckSymbolExists.c:2:10: fatal error: os/signpost.h: No such file or directory
     2 | #include <os/signpost.h>
       |          ^~~~~~~~~~~~~~~
@@ -586,9 +586,9 @@ int main(int argc, char** argv)
 Performing C++ SOURCE FILE Test HAS_WERROR_GLOBAL_CTORS failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_a1385 && [1/2] Building CXX object CMakeFiles/cmTC_a1385.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_a1385.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -DHAS_WERROR_GLOBAL_CTORS -O3 -DNDEBUG   -Werror=global-constructors -std=c++17 -o CMakeFiles/cmTC_a1385.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_b15d4 && [1/2] Building CXX object CMakeFiles/cmTC_b15d4.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_b15d4.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -DHAS_WERROR_GLOBAL_CTORS -O3 -DNDEBUG   -Werror=global-constructors -std=c++17 -o CMakeFiles/cmTC_b15d4.dir/src.cxx.o -c src.cxx
 cc1plus: error: '-Werror=global-constructors': no option -Wglobal-constructors
 ninja: build stopped: subcommand failed.
 
@@ -598,9 +598,9 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test CXX_SUPPORTS_NO_NESTED_ANON_TYPES_FLAG failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_1d6fa && [1/2] Building CXX object CMakeFiles/cmTC_1d6fa.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_1d6fa.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-aliasing -DCXX_SUPPORTS_NO_NESTED_ANON_TYPES_FLAG -O3 -DNDEBUG   -Werror -Wnested-anon-types -std=c++17 -o CMakeFiles/cmTC_1d6fa.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_a5f20 && [1/2] Building CXX object CMakeFiles/cmTC_a5f20.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_a5f20.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections -fno-common -Woverloaded-virtual -fno-strict-aliasing -DCXX_SUPPORTS_NO_NESTED_ANON_TYPES_FLAG -O3 -DNDEBUG   -Werror -Wnested-anon-types -std=c++17 -o CMakeFiles/cmTC_a5f20.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-Wnested-anon-types'
 ninja: build stopped: subcommand failed.
 
@@ -610,9 +610,9 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32 failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b46ce && [1/2] Building CXX object CMakeFiles/cmTC_b46ce.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_b46ce.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -Wshorten-64-to-32 -O3 -DNDEBUG   -Wshorten-64-to-32 -std=c++17 -o CMakeFiles/cmTC_b46ce.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_ecf49 && [1/2] Building CXX object CMakeFiles/cmTC_ecf49.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_ecf49.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -Wshorten-64-to-32 -O3 -DNDEBUG   -Wshorten-64-to-32 -std=c++17 -o CMakeFiles/cmTC_ecf49.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-Wshorten-64-to-32'
 c++: error: unrecognized command line option '-Wshorten-64-to-32'
 ninja: build stopped: subcommand failed.
@@ -623,9 +623,9 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WD654 failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_3f4f8 && [1/2] Building CXX object CMakeFiles/cmTC_3f4f8.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_3f4f8.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -fno-exceptions  -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654  -wd654 -O3 -DNDEBUG   -wd654 -std=c++17 -o CMakeFiles/cmTC_3f4f8.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_06d65 && [1/2] Building CXX object CMakeFiles/cmTC_06d65.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_06d65.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -fno-exceptions  -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654  -wd654 -O3 -DNDEBUG   -wd654 -std=c++17 -o CMakeFiles/cmTC_06d65.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-wd654'
 c++: error: unrecognized command line option '-wd654'
 ninja: build stopped: subcommand failed.
@@ -636,9 +636,9 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WTHREAD_SAFETY failed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/llvm-native/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b6c86 && [1/2] Building CXX object CMakeFiles/cmTC_b6c86.dir/src.cxx.o
-FAILED: CMakeFiles/cmTC_b6c86.dir/src.cxx.o 
-/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -fno-exceptions  -Wstrict-aliasing -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -Wthread-safety -O3 -DNDEBUG   -Wthread-safety -std=c++17 -o CMakeFiles/cmTC_b6c86.dir/src.cxx.o -c src.cxx
+Run Build Command(s):/usr/bin/ninja cmTC_37f61 && [1/2] Building CXX object CMakeFiles/cmTC_37f61.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_37f61.dir/src.cxx.o 
+/usr/bin/c++    -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -pedantic -Wno-long-long -Wimplicit-fallthrough -Wno-maybe-uninitialized -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -fdiagnostics-color -ffunction-sections -fdata-sections  -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -fno-exceptions  -Wstrict-aliasing -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -Wthread-safety -O3 -DNDEBUG   -Wthread-safety -std=c++17 -o CMakeFiles/cmTC_37f61.dir/src.cxx.o -c src.cxx
 c++: error: unrecognized command line option '-Wthread-safety'
 c++: error: unrecognized command line option '-Wthread-safety'
 ninja: build stopped: subcommand failed.

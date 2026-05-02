@@ -3,8 +3,8 @@ The host system is: Linux - 6.19.14+deb14-amd64 - x86_64
 Performing C SOURCE FILE Test BROTLI_EMSCRIPTEN succeeded with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/brotli/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_9fac0 && [1/2] Building C object CMakeFiles/cmTC_9fac0.dir/src.c.o
-[2/2] Linking C executable cmTC_9fac0.js
+Run Build Command(s):/usr/bin/ninja cmTC_332c4 && [1/2] Building C object CMakeFiles/cmTC_332c4.dir/src.c.o
+[2/2] Linking C executable cmTC_332c4.js
 cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libstubs-debug.a... (this will be cached in "/emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/lto/libstubs-debug.a" for subsequent builds)
 system_libs:INFO: compiled 2 inputs
 cache:INFO:  - ok
@@ -23,7 +23,7 @@ Source file was:
 Determining if the function log2 exists passed with the following output:
 Change Dir: /home/luca/learnhardcode/cpp/emception/build/brotli/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8c01d && [1/2] Building C object CMakeFiles/cmTC_8c01d.dir/CheckFunctionExists.c.o
+Run Build Command(s):/usr/bin/ninja cmTC_5b9b8 && [1/2] Building C object CMakeFiles/cmTC_5b9b8.dir/CheckFunctionExists.c.o
 /usr/share/cmake-3.16/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'log2' [-Wincompatible-library-redeclaration]
   CHECK_FUNCTION_EXISTS(void);
   ^
@@ -35,7 +35,7 @@ Run Build Command(s):/usr/bin/ninja cmTC_8c01d && [1/2] Building C object CMakeF
 #define CHECK_FUNCTION_EXISTS log2
                               ^
 1 warning generated.
-[2/2] Linking C executable cmTC_8c01d.js
+[2/2] Linking C executable cmTC_5b9b8.js
 wasm-ld: warning: function signature mismatch: log2
 >>> defined as () -> i32 in lto.tmp
 >>> defined as (f64) -> f64 in /emsdk/upstream/emscripten/cache/sysroot/lib/wasm32-emscripten/lto/libc-debug.a(log2.o)
