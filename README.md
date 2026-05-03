@@ -8,7 +8,7 @@ Each course is expected to reach around 60–120 lessons.**_
 ## Motivation
 I could not find a SINGLE in browser course for learning C++, and C# that was free, with no ridiculouse 'oh you can do 1 lesson every 7 days' limits, so I made this.
 ## Quick Start
-## Just open the site at [https://learnhardcode.dpdns.org/](https://learnhardcode.dpdns.org/) If you install the files, run uncache.py and open localhost:9000/
+## Just open the site at [https://learnhardcode.dpdns.org/](https://learnhardcode.dpdns.org/) If you install the files, run server.py and open localhost:8000/
 ## Usage(bugs with chrome cache)
  If you get errors on correct lessons, open dev tools, and hard refresh(ctrl+shift+r) until hello.js says "hello.js?v=XXX" in the networktab. Also, go to dev tools, and in storage clear cache storage. That will guarantee to fix it.
 
@@ -29,9 +29,9 @@ _**Yet another note: WIP doesn't mean that it's not on the site, it means the ed
 - Haskell: WIP
 - Web: WIP
 - Fortran: WIP
+- Zig: WIP
 ## Planned Courses
 - Objective C (probably not)
-- Zig
 - Guided Projects/Guided Course Projects (EG Compilers, OS, System Design), Docker, Kubernetes, RabbitMQ, Redis (Local Dev Courses)
 - Elixir
 - OCaml

@@ -22,6 +22,6 @@ class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     allow_reuse_address = True
 
 with ThreadingTCPServer(("", PORT), CORSHandler) as httpd:
-    print(f"🚀 Quantum C Server active on port {PORT}")
+    print(f"Server active on port {PORT}")
     print(f"Root directory: {os.getcwd()}")
     httpd.serve_forever()
