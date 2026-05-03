@@ -1,13 +1,25 @@
-We created the file, but you saw it was untracked, right?
-We stage files in git using the [git add](https://git-scm.com/docs/git-add) command.
-Git add uses the synatx `git add <path-to-files-you-want-to-stage>`
+There are 8 other important operators in haskell. _Remember that operators are just functions_.
+- Mathamatical operators
+  * `+`: Adds two numbers together
+  * `-`: Subtracts two numbers from eachother
+  * `*`: Multiplies two numbers with eachother 
+  * `/`: Divides with a floating point result
+  * `div`: Divides with a integer result
+- Logical operators
+  * `&&`: If both sides are True then True
+  * `||`: If either side is True then True
+  * `not`: If the operand is False then True and if True then false.
+ 
+The logical precedancy is:
+`not` -> `&&` -> `||`
+So not happens then && then ||
 Example:
-```
-git add text.txt
+```haskell
+(True && False || not True)
+-- False 
 ```
 
+
 ---
-## Assignment
-1. [ ] Add `runthrough.md` to the staging area
-2. [ ] Retest `git status`. It should show it as Staged!
-Submit the lesson in the project root directory.
+## Assignment:
+What is the output of `not (True && False || True) && (False || True && not False) || not (False && (True || False))` (sorry how complex it is)

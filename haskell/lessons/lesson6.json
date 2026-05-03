@@ -1,0 +1,14 @@
+{
+  "id": "lesson6.json",
+  "title": "Lists",
+  "description": "Lists are a . . . list of elements. The list type is just a type surrounded by [ ]. A string is just a `[Char]`, and `++` is just the list concatenation operator.\nThere is one more special list operator: `:` (cons). The cons operator is used like this: `<elem> : <list>`. If we have a int list, x we could do `10 : x`.\n\n---\n## Function \"pattern matching\"\nA function can have multiple definitions, and Haskell chooses the one that matches the input. Let's say that we have a function, isEmpty:\n```haskell\nisEmpty :: [Integer] -> Bool\n```\nThen we could do\n```haskell\nisEmpty [] = True;\nisEmpty x = False;\n```\nWe could also do this:\n```haskell\nisZero :: Integer -> Bool\nisZero 0 = True\nisZero x = False\n```\n\n---\n## : in arguments\nTo get the first element in a list as a argument, you can do this;\n```haskell\n<funcname> (<name>:<list>) ....\n```\nThen `<name>` would be the first element, and `<list>` would be the rest. _The first element will not be part of the other list_\n\n---\n## Assignment\n\nCreate the appendFirst function. It should take a int list, and if it's empty return a empty list, and otherwise return the list with the first element added to the end.",
+  "starterCode": "-- Write appendFirst here",
+  "expectedOutput": "[1,2,3,4,1]",
+  "rawHarness": true,
+  "runHarness": "main :: IO ()\nmain = do\n    putStrLn (show (appendFirst [1, 2, 3, 4]))",
+  "nextLesson": "lesson7.json",
+  "previous": "lesson5.json",
+  "showButtons": false,
+  "difficulty": "easiest",
+  "xp": "12"
+}

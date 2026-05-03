@@ -1,0 +1,15 @@
+{
+  "id": "lesson7.json",
+  "title": "Operators",
+  "description": "There are 8 other important operators in haskell. _Remember that operators are just functions_.\n- Mathamatical operators\n  * `+`: Adds two numbers together\n  * `-`: Subtracts two numbers from eachother\n  * `*`: Multiplies two numbers with eachother \n  * `/`: Divides with a floating point result\n  * `div`: Divides with a integer result\n- Logical operators\n  * `&&`: If both sides are True then True\n  * `||`: If either side is True then True\n  * `not`: If the operand is False then True and if True then false.\n \nThe logical precedancy is:\n`not` -> `&&` -> `||`\nSo not happens then && then ||\nExample:\n```haskell\n(True && False || not True)\n-- False \n```\n\n\n---\n## Assignment:\nWhat is the output of `not (True && False || True) && (False || True && not False) || not (False && (True || False))` (sorry how complex it is)",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson8.json",
+  "previous": "lesson6.json",
+  "showButtons": true,
+  "correct": "b1",
+  "b1t": "True",
+  "b2t": "False",
+  "difficulty": "medium",
+  "xp": "20"
+}
