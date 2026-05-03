@@ -1,0 +1,14 @@
+{
+  "id": "lesson6.json",
+  "title": "Status",
+  "description": "In Git, there are various states your files can be in. Importantly,\n- `untracked`: Not being traked by Git, e.g. you just created it and haven't done anything to it, or it's not part of a repo.\n- `staged`: Marked for inclusion in next git commit.\n- `commited`: Saved in your repo's history.\n\nThe `git status` command shows the current state of all files in your current repo.\n\n---\n## Assignment:\n1. [ ] Create a file in the `basicGuide` directory, `runthrough.md` and put the following content in it:\n```md\n# Steps for new issues:\n```\n> The `.md` extention means its a _markdown_ file, which is commonly used to write docs. This lesson is written in markdown\n\n2. [ ] Save the file, then run\n```bash\ngit status\n```\nRun and submit the tests in the root directory.\n\n---\n<details>\n  <summary>Having Trouble?</summary>\n  <p>This course is in english (obviously.) If you arn't in english, you can set it like this:</p>\n  <code>export LANG=en_US.UTF-8</code>\n  <p>You might need to install the language pack for your system, e.g. <code>sudo apt-get install language-pack-en</code> for Ubuntu.</p>\n</details>\n\n",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson7.json",
+  "previous": "lesson5.json",
+  "showButtons": false,
+  "mode": "cli",
+  "difficulty": "easiest",
+  "runHarness": "686becdc",
+  "xp": "10"
+}

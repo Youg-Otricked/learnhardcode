@@ -1,19 +1,28 @@
-What if you assign a number greater than 2147483647 or less than -2147483648 to a `int`?
-That is called a _integer overflow_. That means that your data cannot be stored where you tried to assign it to. In some compilers, it errors, and in others, it wraps around. This is obvously very bad. In the situation
-```c
-int x = 2147483647;
-```
-If you added 1 to it
-```c
-x++;
-```
-Then, this would happen:
-```
-printf("%d", x);
-```
-> -2147483648
-> > Obviously not good.
+In Git, there are various states your files can be in. Importantly,
+- `untracked`: Not being traked by Git, e.g. you just created it and haven't done anything to it, or it's not part of a repo.
+- `staged`: Marked for inclusion in next git commit.
+- `commited`: Saved in your repo's history.
+
+The `git status` command shows the current state of all files in your current repo.
 
 ---
-## Question
-What would be the result if you did -2147483648 - 10.
+## Assignment:
+1. [ ] Create a file in the `basicGuide` directory, `runthrough.md` and put the following content in it:
+```md
+# Steps for new issues:
+```
+> The `.md` extention means its a _markdown_ file, which is commonly used to write docs. This lesson is written in markdown
+2. [ ] Save the file, then run
+```bash
+git status
+```
+Run and submit the tests in the root directory.
+
+---
+<details>
+  <summary>Having Trouble?</summary>
+  <p>This course is in english (obviously.) If you arn't in english, you can set it like this:</p>
+  <code>export LANG=en_US.UTF-8</code>
+  <p>You might need to install the language pack for your system, e.g. <code>sudo apt-get install language-pack-en</code> for Ubuntu.</p>
+</details>
+

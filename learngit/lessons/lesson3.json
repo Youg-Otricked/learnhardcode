@@ -1,7 +1,7 @@
 {
   "id": "lesson3.json",
   "title": "Git Init, and final setup",
-  "description": "FINALY ALMOST DONE!\nBefore starting, make the setup script executable and run it:\n```bash\nchmod +x scripts/setup.sh\n./scripts/setup.sh\n```\nThis script removes any existing Git history so you can start fresh.\n\n---\n## git init\n`git init` creates a new Git repository in your current directory.\nThis allows Git to start tracking changes in your project.\n\n---\n## Assignment\nNavigate to the project files, initialize the git repository, and submit your work from the project root directory.",
+  "description": "FINALY ALMOST DONE!\nBefore starting, make the setup script executable and run it:\n```bash\nchmod +x scripts/setup.sh\n./scripts/setup.sh\n```\nThis script removes any existing Git history so you can start fresh.\n\n---\n## git init\n`git init` creates a new Git repository in your current directory. A repository (or `repo`) is just one project. You should have 1 repo per project you work on.\nThis allows Git to start tracking changes in your project.\n\n---\n## Assignment\nNavigate to the project files, initialize the git repository, and submit your work from the project root directory.",
   "starterCode": "",
   "expectedOutput": "",
   "nextLesson": "lesson4.json",
