@@ -1,0 +1,18 @@
+{
+  "id": "lesson2.json",
+  "title": "Printing to console.",
+  "description": "Programs need to do somthing. _Duh_. The most common form of that is printing to console. To print to console in fortran, you use the following syntax:\n```fortran\nprint *, \"<text you want to print>\"\n```\ne.g.\n```fortran\nprint *, \"Hello, World!\"\n```\n\n---\n## Assignment:\nMake the code print \"Preforming Withdrawal\"",
+  "starterCode": "program capital\nend program",
+  "expectedOutput": "Preforming Withdrawal",
+  "nextLesson": "lesson3.json",
+  "previous": "lesson1.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "difficulty": "easiest",
+  "mode": "editor",
+  "xp": "10"
+}
