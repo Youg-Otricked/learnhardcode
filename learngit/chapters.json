@@ -4,7 +4,19 @@
       "number": 1,
       "name": "Start",
       "firstLesson": "lesson1.json",
-      "lessons": ["lesson1.json"]
+      "lessons": ["lesson1.json", "lesson2.json", "lesson3.json"]
+    },
+    {
+      "number": 2,
+      "name": "Config",
+      "firstLesson": "lesson4.json",
+      "lessons": ["lesson4.json", "lesson5.json"]
+    },
+    {
+      "number": 3,
+      "name": "Basics",
+      "firstLesson": "lesson6.json",
+      "lessons": ["lesson6.json", "lesson7.json"]
     }
   ]
 }

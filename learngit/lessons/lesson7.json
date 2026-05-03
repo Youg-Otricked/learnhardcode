@@ -1,0 +1,14 @@
+{
+  "id": "lesson7.json",
+  "title": "Stage",
+  "description": "We created the file, but you saw it was untracked, right?\nWe stage files in git using the [git add](https://git-scm.com/docs/git-add) command.\nGit add uses the synatx `git add <path-to-files-you-want-to-stage>`\nExample:\n```\ngit add text.txt\n```\n\n---\n## Assignment\n1. [ ] Add `runthrough.md` to the staging area\n2. [ ] Retest `git status`. It should show it as Staged!\nSubmit the lesson in the project root directory.\n\n---\n## Bonus\nYou can quickly add all new/changed files with the -A flag.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson8.json",
+  "previous": "lesson6.json",
+  "showButtons": false,
+  "mode": "cli",
+  "difficulty": "easiest",
+  "runHarness": "696bee6f",
+  "xp": "10"
+}
