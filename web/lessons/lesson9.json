@@ -1,0 +1,43 @@
+{
+  "id": "lesson9.json",
+  "title": "Attributes & Hyperlink",
+  "description": "\n\n### Attributes\nAttributes allow other things, such as the core HTML engine or TypeScript/CSS to actually see places in your code.\nAttributes are key value pairs inside the opening tag of a element. To add a attribute in a element you put `attributename=\"value\"`.\n### a\nThe `a` tag creates a hyperlink to another website. It uses the following syntax:\n```html\n<a href=\"link\">Clickable Text To Link Here</a>\n```\nThe href attribute should be assigned the link you want to go to, e.g.\n```html\n<p>Store code <a href=\"https://github.com\">here</a></p>\n```\n\n---\n## Assignment\nAfter all the current page text, add a paragraph containing the text `Find more info about why this might happen `, and a `<a>` _inside the `p`_ pointing to `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500`, and the text `here`",
+  "starterTS": "// We'll get to TS soon.",
+  "starterCss": "body {\n    background-color: #000000;\n    color: #ffffff;\n} /* You will understand this soon, don't worry. */",
+  "starterHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Googol:500. That's an error.</title>\n</head>\n<body>\n  <h1><strong>500</strong>: <u>Internal Server Error</u></h1>\n  <hr>\n  <p>The server was unable to complete your request. <em>Please try again later.</em></p>\n</body>\n</html>",
+  "reqElems": [
+    {
+      "type": "element",
+      "label": "p",
+      "children": 1,
+      "depth": 2
+    },
+    {
+        "type": "text",
+        "value": "Find more info about why this might happen",
+        "depth": 3
+    },
+    {
+        "type": "element",
+        "label": "a",
+        "attributes": {
+            "raw": {
+                "href": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500"
+            }
+        },
+        "value": "here",
+        "depth": 3
+    }
+  ],
+  "nextLesson": "lesson10.json",
+  "previous": "lesson8.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "basic",
+  "xp": "20"
+}

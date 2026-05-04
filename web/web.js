@@ -1,3 +1,4 @@
+// prettier.io MY GOAT
 const worker = new Worker("../api/endpoint.js");
 let htmleditor = null;
 let csseditor = null;
@@ -40,26 +41,28 @@ function loadStreak() {
   updateStreakUI();
 }
 function showEditor(editorType) {
-    document.getElementById("tseditor").style.display = "none";
-    document.getElementById("csseditor").style.display = "none";
-    document.getElementById("htmleditor").style.display = "none";
-    document.getElementById("previeweditor").style.display = "none";
-    const activeContainer = document.getElementById(`${editorType}editor`);
-    activeContainer.style.display = "block";
-    switch (editorType) {
-        case "ts":
-            tseditor.layout();
-            break;
-        case "css":
-            csseditor.layout();
-            break;
-        case "html":
-            htmleditor.layout();
-            break;
-        case "preview":
-            langButtons.querySelectorAll(".langBtn").forEach(b => b.classList.remove("active"));
-            break;
-    }
+  document.getElementById("tseditor").style.display = "none";
+  document.getElementById("csseditor").style.display = "none";
+  document.getElementById("htmleditor").style.display = "none";
+  document.getElementById("previeweditor").style.display = "none";
+  const activeContainer = document.getElementById(`${editorType}editor`);
+  activeContainer.style.display = "block";
+  switch (editorType) {
+    case "ts":
+      tseditor.layout();
+      break;
+    case "css":
+      csseditor.layout();
+      break;
+    case "html":
+      htmleditor.layout();
+      break;
+    case "preview":
+      langButtons
+        .querySelectorAll(".langBtn")
+        .forEach((b) => b.classList.remove("active"));
+      break;
+  }
 }
 function saveStreak() {
   localStorage.setItem("web_streak", String(lessonsInRow));
@@ -87,55 +90,83 @@ function updateLevelUI() {
 }
 let tree = null;
 function htmlToJson(htmlString) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, "text/html");
-    const rootNode = doc.documentElement; 
-    return translateNode(rootNode);
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlString, "text/html");
+  const rootNode = doc.documentElement;
+  return translateNode(rootNode);
+}
+const defaultStyleCache = new Map();
+function getDefaultStyles(tagName) {
+  if (defaultStyleCache.has(tagName)) return defaultStyleCache.get(tagName);
+  const el = document.createElement(tagName);
+  el.style.all = "initial";
+  document.body.appendChild(el);
+  const styles = window.getComputedStyle(el);
+  const snapshot = {};
+  for (let i = 0; i < styles.length; i++) {
+    const prop = styles[i];
+    snapshot[prop] = styles.getPropertyValue(prop);
+  }
+  document.body.removeChild(el);
+  defaultStyleCache.set(tagName, snapshot);
+  return snapshot;
 }
 function getStyles(node) {
-    const styles = window.getComputedStyle(node);
-    const plainStyles = {};
-    for (let i = 0; i < styles.length; i++) {
-        const key = styles[i];
-        plainStyles[key] = styles.getPropertyValue(key);
+  const computed = window.getComputedStyle(node);
+  const defaultStyles = getDefaultStyles(node.tagName.toLowerCase());
+  const diff = {};
+  for (const prop of computed) {
+    const val = computed.getPropertyValue(prop);
+    const def = defaultStyles[prop] ?? "";
+    if (val !== def) {
+      diff[prop] = val;
     }
-    return plainStyles;
+  }
+  return diff;
 }
 function translateNode(node) {
-    if (node.nodeType === 3) { 
-        const text = node.textContent.trim();
-        return text ? { type: "text", value: text } : null;
+  if (node.nodeType === 3) {
+    const text = node.textContent.trim();
+    return text ? { type: "text", value: text } : null;
+  }
+  if (node.nodeType === 1) {
+    const tagName = node.tagName.toLowerCase();
+    const rawAttrs = {};
+    for (let attr of node.attributes) {
+      rawAttrs[attr.name] = attr.value;
     }
-    if (node.nodeType === 1) {
-        const tagName = node.tagName.toLowerCase();
-        const rawAttrs = {};
-        for (let attr of node.attributes) { rawAttrs[attr.name] = attr.value; }
-        
-        const b = node.getBoundingClientRect();
-        const rect = { top: b.top, left: b.left, width: b.width, height: b.height };
-        const hasTagChildren = node.childNodes?.length > 1 || (node.childNodes && node.childNodes.length > 0 && node.childNodes[0].nodeType !== 3);
-        return {
-            type: tagName === 'html' ? "container" : "element",
-            label: tagName,
-            attributes: {
-                id: node.id ? node.id : null,
-                classes: Array.from(node.classList),
-                raw: rawAttrs
-            },
-            children: hasTagChildren ? Array.from(node.childNodes)
-                .map(child => translateNode(child))
-                .filter(c => c !== null) : [],
-            value: hasTagChildren ? "" : node.innerText.trim(),
-            computedStyle: getStyles(node),
-            rect: rect
-        };
-    }
-    return null;
+
+    const b = node.getBoundingClientRect();
+    const rect = { top: b.top, left: b.left, width: b.width, height: b.height };
+    const hasTagChildren =
+      node.childNodes?.length > 1 ||
+      (node.childNodes &&
+        node.childNodes.length > 0 &&
+        node.childNodes[0].nodeType !== 3);
+    return {
+      type: tagName === "html" ? "container" : "element",
+      label: tagName,
+      attributes: {
+        id: node.id ? node.id : null,
+        classes: Array.from(node.classList),
+        raw: rawAttrs,
+      },
+      children: hasTagChildren
+        ? Array.from(node.childNodes)
+            .map((child) => translateNode(child))
+            .filter((c) => c !== null)
+        : [],
+      value: hasTagChildren ? "" : node.innerText.trim(),
+      computedStyle: getStyles(node),
+      rect: rect,
+    };
+  }
+  return null;
 }
-let currinst = '';
+let currinst = "";
 function runWeb() {
-    outEl.textContent = '';
-    const reporterScript = `
+  outEl.textContent = "";
+  const reporterScript = `
     (function() {
         const sendMessage = (type, args) => {
         window.parent.postMessage({
@@ -163,47 +194,49 @@ function runWeb() {
         };
     })();
     `;
-    const parser = new DOMParser();
-    const userHTML = htmleditor.getValue();
-    const doc = parser.parseFromString(userHTML, "text/html");
-    const spy = doc.createElement("script");
-    spy.textContent = reporterScript;
-    doc.head.prepend(spy); 
-    
-    const styleLink = doc.querySelector('link[href="style.css"]');
-    if (styleLink) {
-        const styleTag = doc.createElement("style");
-        styleTag.textContent = csseditor.getValue();
-        styleLink.replaceWith(styleTag);
-    }
-    const scriptTag = doc.querySelector('script[src="index.js"]');
-    if (scriptTag) {
-        const newScript = doc.createElement("script");
-        newScript.textContent = ts.transpileModule(tseditor.getValue(), {
-            compilerOptions: {
-                target: ts.ScriptTarget.ES2020,
-                strict: true,
-                module: ts.ModuleKind.ESNext,
-                noImplicitAny: true,
-                removeComments: true,
-            },
-        }).outputText;
-        scriptTag.replaceWith(newScript);
-    }
-    if (previeweditor.src.startsWith('blob:')) {
-        URL.revokeObjectURL(previeweditor.src);
-    }
+  const parser = new DOMParser();
+  const userHTML = htmleditor.getValue();
+  const doc = parser.parseFromString(userHTML, "text/html");
+  const spy = doc.createElement("script");
+  spy.textContent = reporterScript;
+  doc.head.prepend(spy);
 
-    const blob = new Blob([doc.documentElement.outerHTML], { type: "text/html" });
-    previeweditor.src = URL.createObjectURL(blob);
-    tree = htmlToJson(userHTML);
-    console.log(JSON.stringify(tree, null, 2));
-    showEditor("preview");
+  const styleLink = doc.querySelector('link[href="style.css"]');
+  if (styleLink) {
+    const styleTag = doc.createElement("style");
+    styleTag.textContent = csseditor.getValue();
+    styleLink.replaceWith(styleTag);
+  }
+  const scriptTag = doc.querySelector('script[src="index.js"]');
+  if (scriptTag) {
+    const newScript = doc.createElement("script");
+    newScript.textContent = ts.transpileModule(tseditor.getValue(), {
+      compilerOptions: {
+        target: ts.ScriptTarget.ES2020,
+        strict: true,
+        module: ts.ModuleKind.ESNext,
+        noImplicitAny: true,
+        removeComments: true,
+      },
+    }).outputText;
+    scriptTag.replaceWith(newScript);
+  }
+  if (previeweditor.src.startsWith("blob:")) {
+    URL.revokeObjectURL(previeweditor.src);
+  }
+
+  const blob = new Blob([doc.documentElement.outerHTML], { type: "text/html" });
+  previeweditor.src = URL.createObjectURL(blob);
+  tree = htmlToJson(userHTML);
+  console.log(JSON.stringify(tree, null, 2));
+  showEditor("preview");
 }
 async function simulateEvent(eventData) {
   const iframeDoc = previeweditor.contentDocument;
-  const target = iframeDoc.getElementById(eventData.id) || iframeDoc.querySelector(eventData.class);
-  
+  const target =
+    iframeDoc.getElementById(eventData.id) ||
+    iframeDoc.querySelector(eventData.class);
+
   if (!target) {
     console.error("Target not found for event:", eventData.event);
     return;
@@ -211,24 +244,22 @@ async function simulateEvent(eventData) {
 
   let event;
   const type = eventData.event.toLowerCase();
-  if (['click', 'mousedown', 'mouseup', 'mouseover'].includes(type)) {
+  if (["click", "mousedown", "mouseup", "mouseover"].includes(type)) {
     event = new MouseEvent(type, {
       bubbles: eventData.bubbles || true,
       cancelable: eventData.cancelable || true,
-      view: window
+      view: window,
     });
-  }
-  else if (['keydown', 'keyup', 'keypress'].includes(type)) {
+  } else if (["keydown", "keyup", "keypress"].includes(type)) {
     event = new KeyboardEvent(type, {
-      key: eventData.key || 'Enter',
-      code: eventData.keyCode || 'Enter',
-      bubbles: true
+      key: eventData.key || "Enter",
+      code: eventData.keyCode || "Enter",
+      bubbles: true,
     });
-  }
-  else {
+  } else {
     event = new Event(type, {
       bubbles: eventData.bubbles || true,
-      cancelable: eventData.cancelable || true
+      cancelable: eventData.cancelable || true,
     });
   }
 
@@ -237,23 +268,23 @@ async function simulateEvent(eventData) {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const liveHTML = iframeDoc.documentElement.outerHTML;
-        tree = htmlToJson(liveHTML); 
+        tree = htmlToJson(liveHTML);
         resolve(null);
       });
     });
   });
 }
-window.addEventListener('message', (event) => {
-    const outEl = document.getElementById("output");
-    if (event.data.type === 'console') {
-        const { method, args } = event.data;
-        const message = args.join(' ');
-        lastRunOutput += `[${method.toUpperCase()}] ${message}\n`;
-        const line = document.createElement('div');
-        line.textContent = `[${method.toUpperCase()}] ${message}`;
-        if (method === 'error') line.style.color = 'var(--error)';
-        outEl.appendChild(line);
-    }
+window.addEventListener("message", (event) => {
+  const outEl = document.getElementById("output");
+  if (event.data.type === "console") {
+    const { method, args } = event.data;
+    const message = args.join(" ");
+    lastRunOutput += `[${method.toUpperCase()}] ${message}\n`;
+    const line = document.createElement("div");
+    line.textContent = `[${method.toUpperCase()}] ${message}`;
+    if (method === "error") line.style.color = "var(--error)";
+    outEl.appendChild(line);
+  }
 });
 function getCompletedLessons() {
   const stored = localStorage.getItem("web_completed_lessons");
@@ -315,11 +346,25 @@ function getClasses(currElem = null, ret = []) {
 
   return ret;
 }
+function matchChildren(node, reqChildren) {
+  const children = node.children || [];
+  let j = 0;
+
+  for (let i = 0; i < children.length && j < reqChildren.length; i++) {
+    if (isMatch(children[i], reqChildren[j])) {
+      j++;
+    }
+  }
+
+  return j === reqChildren.length;
+}
 function isMatch(node, req) {
   if (req.type && node.type !== req.type) return false;
   if (req.label && node.label !== req.label) return false;
   if (req.attributes) {
-    if (req.attributes.id && node.attributes.id !== req.attributes.id) return false;
+    if (!node.attributes) return false;
+    if (req.attributes.id && node.attributes.id !== req.attributes.id)
+      return false;
     if (req.attributes.classes) {
       const studentClasses = new Set(node.attributes.classes || []);
       for (const cls of req.attributes.classes) {
@@ -332,9 +377,15 @@ function isMatch(node, req) {
       }
     }
   }
+  
   if (req.children !== undefined) {
-    const elementCount = node.children.filter(c => c.type === 'element').length;
-    if (elementCount !== req.children) return false;
+    const elementChildren = node.children.filter(c => c.type === "element");
+    if (typeof req.children === "number") {
+      if (elementChildren.length !== req.children) return false;
+    }
+    if (Array.isArray(req.children)) {
+      if (!matchChildren(node, req.children)) return false;
+    }
   }
   if (req.value && node.value.trim() !== req.value.trim()) return false;
   if (req.computedStyle) {
@@ -394,48 +445,52 @@ function isMatch(node, req) {
   }
 }
   */
-function checkElemMatches(req, node, depth = 0) {
-  if (!node) return false;
-
-  if (req.depth !== undefined && depth > req.depth) {
-    return false;
-  }
-  const depthMatches = (req.depth === undefined || depth === req.depth);
-  if (depthMatches && isMatch(node, req)) {
-    return true;
-  }
-  
-  if (node.children) {
-    for (const child of node.children) {
-      if (child && checkElemMatches(req, child, depth + 1)) return true;
-    }
-  }
-
-  return false;
-}
 function checkTreeMatches() {
   const existingIds = new Set(getIds());
   const existingClasses = new Set(getClasses());
+
   if (reqIds) {
-    for (const reqId of reqIds) {
-      if (!existingIds.includes(reqId)) return false;
+    for (const id of reqIds) {
+      if (!existingIds.has(id)) return false;
     }
   }
+
   if (reqClasses) {
-    for (const reqClass of reqClasses) {
-      if (!existingClasses.includes(reqClass)) return false;
+    for (const cls of reqClasses) {
+      if (!existingClasses.has(cls)) return false;
     }
   }
-  console.log(JSON.stringify(reqElems))
-  if (reqElems) {
-    for (const reqElem of reqElems) {
-      if (!checkElemMatches(reqElem, tree)) return false;
+
+  if (!reqElems || reqElems.length === 0) return true;
+  let i = 0;
+
+  function dfs(node) {
+    
+    if (!node || i >= reqElems.length) return;
+
+    if (isMatch(node, reqElems[i])) {
+      i++;
+      if (i >= reqElems.length) return;
+    }
+
+    for (const child of node.children || []) {
+      dfs(child);
+      if (i >= reqElems.length) return;
     }
   }
-  return true;
+
+  dfs(tree);
+  return i === reqElems.length;
 }
 function submitCheck() {
-  if (!currentLesson || (!currentLesson.expectedOutput && !mustContain && !currentLesson.reqIds && !currentLesson.reqClasses && !currentLesson.reqElems)) {
+  if (
+    !currentLesson ||
+    (!currentLesson.expectedOutput &&
+      !mustContain &&
+      !currentLesson.reqIds &&
+      !currentLesson.reqClasses &&
+      !currentLesson.reqElems)
+  ) {
     outEl.textContent += "\nNo expectedOutput defined for this lesson.\n";
     return;
   }
@@ -461,11 +516,13 @@ function submitCheck() {
       expected = currentLesson.expectedOutput.trim();
       passed = actual === expected;
     }
-  } else if (mode === 'cli') { 
-    const cli = localStorage.getItem('cli_success');
-    const [status, hash] = cli.split(':');
-    passed = status === 'PASS' && hash === runHarnessFile;
-    if (passed) { worker.postMessage("stop");}
+  } else if (mode === "cli") {
+    const cli = localStorage.getItem("cli_success");
+    const [status, hash] = cli.split(":");
+    passed = status === "PASS" && hash === runHarnessFile;
+    if (passed) {
+      worker.postMessage("stop");
+    }
   } else {
     passed = true;
     const cleanedLines = lastRunOutput
@@ -556,14 +613,14 @@ function submitCheck() {
   }
 }
 worker.onmessage = (e) => {
-    console.log("WORKER MSG:", e.data);
-    localStorage.setItem("cli_success", e.data.success);
-    if (mode === 'cli') {
-        if (currentLesson) {
-          submitCheck();
-          localStorage.removeItem("cli_success");
-        }
+  console.log("WORKER MSG:", e.data);
+  localStorage.setItem("cli_success", e.data.success);
+  if (mode === "cli") {
+    if (currentLesson) {
+      submitCheck();
+      localStorage.removeItem("cli_success");
     }
+  }
 };
 document.addEventListener("beforeunload", () => {
   let studentTs = tseditor.getValue();
@@ -573,7 +630,7 @@ document.addEventListener("beforeunload", () => {
     lesson: currentLesson.id || "",
     ts: studentTs,
     css: studentCss,
-    html: studentHtml
+    html: studentHtml,
   };
 
   localStorage.setItem("saved_code_web", JSON.stringify(data));
@@ -586,14 +643,16 @@ window.addEventListener("pagehide", () => {
     lesson: currentLesson.id || "",
     ts: studentTs,
     css: studentCss,
-    html: studentHtml
+    html: studentHtml,
   };
 
   localStorage.setItem("saved_code_web", JSON.stringify(data));
 });
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("langBtn")) {
-    langButtons.querySelectorAll(".langBtn").forEach(b => b.classList.remove("active"));
+    langButtons
+      .querySelectorAll(".langBtn")
+      .forEach((b) => b.classList.remove("active"));
     e.target.classList.add("active");
     showEditor(e.target.id);
   }
@@ -607,7 +666,7 @@ async function runWithSuite(suiteFile) {
     lesson: currentLesson.id || "",
     ts: studentTs,
     css: studentCss,
-    html: studentHtml
+    html: studentHtml,
   };
 
   localStorage.setItem("saved_code_web", JSON.stringify(data));
@@ -620,7 +679,7 @@ async function runWithSuite(suiteFile) {
   }
 }
 
-window.btn = function(bn) {
+window.btn = function (bn) {
   if (bn === correct) {
     const alreadyCompleted = isLessonCompleted(currentLesson.id);
     outEl.textContent += "\n[PASS] Output matches expected.\n";
@@ -665,7 +724,7 @@ window.btn = function(bn) {
     updateStreakUI();
     alert("Incorrect");
   }
-}
+};
 async function loadLesson(lessonFile) {
   const path = "lessons/" + lessonFile;
   const res = await fetch(path);
@@ -676,16 +735,22 @@ async function loadLesson(lessonFile) {
   titleEl.textContent = lesson.title || "";
   descEl.innerHTML = marked.parse(lesson.description || "");
   if (htmleditor && csseditor && tseditor) {
-    htmleditor.setValue(lesson.starterHtml|| "");
+    htmleditor.setValue(lesson.starterHtml || "");
     csseditor.setValue(lesson.starterCss || "");
-    tseditor.setValue(lesson.starterTs|| "");
+    tseditor.setValue(lesson.starterTs || "");
     const saved = localStorage.getItem("saved_code_web");
 
     if (saved) {
       try {
         const data = JSON.parse(saved);
 
-        if (data?.lesson === lesson.id || !lesson.id && typeof data.html === "string" && typeof data.css === "string" && typeof data.ts === "string") {
+        if (
+          data?.lesson === lesson.id ||
+          (!lesson.id &&
+            typeof data.html === "string" &&
+            typeof data.css === "string" &&
+            typeof data.ts === "string")
+        ) {
           htmleditor.setValue(data.html);
           csseditor.setValue(data.css);
           tseditor.setValue(data.ts);
@@ -864,7 +929,7 @@ document.addEventListener("DOMContentLoaded", () => {
       value: "// ts sample",
       language: "typescript",
       theme: "vs-dark",
-      tabSize: 2
+      tabSize: 2,
     });
     tseditor.addCommand(
       monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
@@ -877,7 +942,7 @@ document.addEventListener("DOMContentLoaded", () => {
       value: "/*css sample*/",
       language: "css",
       theme: "vs-dark",
-      tabSize: 4
+      tabSize: 4,
     });
     csseditor.addCommand(
       monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,

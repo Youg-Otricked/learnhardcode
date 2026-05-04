@@ -1,5 +1,5 @@
 {
-  "id": "lesson7.json",
+  "id": "lesson8.json",
   "title": "Text specialization - Special meaning",
   "description": "Some HTML elements have meaning beyond whats visible. There are 4 elements, which all look the EXACT same as their b/u/i/s counterparts, but carry special meaning, and a search engine may use to find pages.\n\n| Element  | Equivelent to | Why different?                                       |\n| -------- | ------------- | ---------------------------------------------------- |\n| `strong` | `b`           | Ment to draw attention to somthing                   |\n| `em`     | `i`           | Ment to show emphasis                                |\n| `del`    | `s`           | Ment to show text is deleted and replaced with `ins` |\n| `ins`    | `u`           | Ment to show `del` text is replaced with this        |\n\n---\n## Assignment:\nReplace the text specialization tags _other than `u`_ with the meaningful counterparts.",
   "starterTS": "// We'll get to TS soon.",
@@ -44,8 +44,8 @@
       "depth": 3
     }
   ],
-  "nextLesson": "lesson8.json",
-  "previous": "lesson6.json",
+  "nextLesson": "lesson9.json",
+  "previous": "lesson7.json",
   "showButtons": false,
   "correct": "",
   "b1t": "",

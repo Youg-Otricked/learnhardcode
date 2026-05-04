@@ -8,7 +8,15 @@
     "reqElems": [
         {
             "type": "element",
+            "label": "h1"
+        },
+        {
+            "type": "element",
             "label": "hr"
+        },
+        {
+            "type": "element",
+            "label": "p"
         }
     ],
     "nextLesson": "lesson6.json",
