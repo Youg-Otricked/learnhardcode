@@ -8,3 +8,4 @@ cobol/
 elixir/
 ocaml/
 **/emscripten.pack
+# apparantly i need to change tsuff for it to work.
