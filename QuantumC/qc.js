@@ -81,7 +81,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmp_2prvfuk.js
+// include: /tmp/tmpjb61p342.js
 if (!Module["expectedDataFileDownloads"]) Module["expectedDataFileDownloads"] = 0;
 
 Module["expectedDataFileDownloads"]++;
@@ -202,29 +202,29 @@ Module["expectedDataFileDownloads"]++;
     "files": [ {
       "filename": "/stdlib.qc",
       "start": 0,
-      "end": 11561
+      "end": 11905
     } ],
-    "remote_package_size": 11561
+    "remote_package_size": 11905
   });
 })();
 
-// end include: /tmp/tmp_2prvfuk.js
-// include: /tmp/tmpcbpg2m1_.js
+// end include: /tmp/tmpjb61p342.js
+// include: /tmp/tmpgo0m6usw.js
 // All the pre-js content up to here must remain later on, we need to run
 // it.
 if ((typeof ENVIRONMENT_IS_WASM_WORKER != "undefined" && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != "undefined" && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != "undefined" && ENVIRONMENT_IS_AUDIO_WORKLET)) Module["preRun"] = [];
 
 var necessaryPreJSTasks = Module["preRun"].slice();
 
-// end include: /tmp/tmpcbpg2m1_.js
-// include: /tmp/tmphkmnnd88.js
+// end include: /tmp/tmpgo0m6usw.js
+// include: /tmp/tmp_raa3b3e.js
 if (!Module["preRun"]) throw "Module.preRun should exist because file support used it; did a pre-js delete it?";
 
 necessaryPreJSTasks.forEach(task => {
   if (Module["preRun"].indexOf(task) < 0) throw "All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?";
 });
 
-// end include: /tmp/tmphkmnnd88.js
+// end include: /tmp/tmp_raa3b3e.js
 var arguments_ = [];
 
 var thisProgram = "./this.program";
@@ -4695,17 +4695,17 @@ var _run_quantum_code = Module["_run_quantum_code"] = makeInvalidEarlyAccess("_r
 
 var _fflush = makeInvalidEarlyAccess("_fflush");
 
+var _free = makeInvalidEarlyAccess("_free");
+
 var _emscripten_stack_get_end = makeInvalidEarlyAccess("_emscripten_stack_get_end");
 
 var _emscripten_stack_get_base = makeInvalidEarlyAccess("_emscripten_stack_get_base");
 
 var _strerror = makeInvalidEarlyAccess("_strerror");
 
-var _free = makeInvalidEarlyAccess("_free");
+var _sbrk = makeInvalidEarlyAccess("_sbrk");
 
 var _emscripten_get_sbrk_ptr = makeInvalidEarlyAccess("_emscripten_get_sbrk_ptr");
-
-var _sbrk = makeInvalidEarlyAccess("_sbrk");
 
 var _setThrew = makeInvalidEarlyAccess("_setThrew");
 
@@ -4744,12 +4744,12 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports["__main_argc_argv"] != "undefined", "missing Wasm export: __main_argc_argv");
   assert(typeof wasmExports["run_quantum_code"] != "undefined", "missing Wasm export: run_quantum_code");
   assert(typeof wasmExports["fflush"] != "undefined", "missing Wasm export: fflush");
+  assert(typeof wasmExports["free"] != "undefined", "missing Wasm export: free");
   assert(typeof wasmExports["emscripten_stack_get_end"] != "undefined", "missing Wasm export: emscripten_stack_get_end");
   assert(typeof wasmExports["emscripten_stack_get_base"] != "undefined", "missing Wasm export: emscripten_stack_get_base");
   assert(typeof wasmExports["strerror"] != "undefined", "missing Wasm export: strerror");
-  assert(typeof wasmExports["free"] != "undefined", "missing Wasm export: free");
-  assert(typeof wasmExports["emscripten_get_sbrk_ptr"] != "undefined", "missing Wasm export: emscripten_get_sbrk_ptr");
   assert(typeof wasmExports["sbrk"] != "undefined", "missing Wasm export: sbrk");
+  assert(typeof wasmExports["emscripten_get_sbrk_ptr"] != "undefined", "missing Wasm export: emscripten_get_sbrk_ptr");
   assert(typeof wasmExports["setThrew"] != "undefined", "missing Wasm export: setThrew");
   assert(typeof wasmExports["_emscripten_tempret_set"] != "undefined", "missing Wasm export: _emscripten_tempret_set");
   assert(typeof wasmExports["emscripten_stack_init"] != "undefined", "missing Wasm export: emscripten_stack_init");
@@ -4768,12 +4768,12 @@ function assignWasmExports(wasmExports) {
   _main = createExportWrapper("__main_argc_argv", 2);
   _run_quantum_code = Module["_run_quantum_code"] = createExportWrapper("run_quantum_code", 1);
   _fflush = createExportWrapper("fflush", 1);
+  _free = createExportWrapper("free", 1);
   _emscripten_stack_get_end = wasmExports["emscripten_stack_get_end"];
   _emscripten_stack_get_base = wasmExports["emscripten_stack_get_base"];
   _strerror = createExportWrapper("strerror", 1);
-  _free = createExportWrapper("free", 1);
-  _emscripten_get_sbrk_ptr = wasmExports["emscripten_get_sbrk_ptr"];
   _sbrk = createExportWrapper("sbrk", 1);
+  _emscripten_get_sbrk_ptr = wasmExports["emscripten_get_sbrk_ptr"];
   _setThrew = createExportWrapper("setThrew", 2);
   __emscripten_tempret_set = createExportWrapper("_emscripten_tempret_set", 1);
   _emscripten_stack_init = wasmExports["emscripten_stack_init"];
