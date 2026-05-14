@@ -81,7 +81,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpptublhvb.js
+// include: /tmp/tmp8g0ek7yf.js
 if (!Module["expectedDataFileDownloads"]) Module["expectedDataFileDownloads"] = 0;
 
 Module["expectedDataFileDownloads"]++;
@@ -202,29 +202,29 @@ Module["expectedDataFileDownloads"]++;
     "files": [ {
       "filename": "/stdlib.qc",
       "start": 0,
-      "end": 11905
+      "end": 11794
     } ],
-    "remote_package_size": 11905
+    "remote_package_size": 11794
   });
 })();
 
-// end include: /tmp/tmpptublhvb.js
-// include: /tmp/tmpkztaedcg.js
+// end include: /tmp/tmp8g0ek7yf.js
+// include: /tmp/tmphxulkci7.js
 // All the pre-js content up to here must remain later on, we need to run
 // it.
 if ((typeof ENVIRONMENT_IS_WASM_WORKER != "undefined" && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != "undefined" && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != "undefined" && ENVIRONMENT_IS_AUDIO_WORKLET)) Module["preRun"] = [];
 
 var necessaryPreJSTasks = Module["preRun"].slice();
 
-// end include: /tmp/tmpkztaedcg.js
-// include: /tmp/tmpe0lbj7a1.js
+// end include: /tmp/tmphxulkci7.js
+// include: /tmp/tmpl39f7fsc.js
 if (!Module["preRun"]) throw "Module.preRun should exist because file support used it; did a pre-js delete it?";
 
 necessaryPreJSTasks.forEach(task => {
   if (Module["preRun"].indexOf(task) < 0) throw "All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?";
 });
 
-// end include: /tmp/tmpe0lbj7a1.js
+// end include: /tmp/tmpl39f7fsc.js
 var arguments_ = [];
 
 var thisProgram = "./this.program";
@@ -4831,12 +4831,15 @@ var wasmImports = {
   /** @export */ invoke_iii,
   /** @export */ invoke_iiii,
   /** @export */ invoke_iiiii,
+  /** @export */ invoke_iiiiid,
   /** @export */ invoke_iiiiii,
   /** @export */ invoke_iiiiiii,
   /** @export */ invoke_iiiiiiii,
   /** @export */ invoke_iiiiiiiiiii,
   /** @export */ invoke_iiiiiiiiiiii,
   /** @export */ invoke_iiiiiiiiiiiii,
+  /** @export */ invoke_iiiiij,
+  /** @export */ invoke_iiiiijj,
   /** @export */ invoke_iij,
   /** @export */ invoke_iijj,
   /** @export */ invoke_ji,
@@ -5075,18 +5078,6 @@ function invoke_iijj(index, a1, a2, a3) {
   }
 }
 
-function invoke_ji(index, a1) {
-  var sp = stackSave();
-  try {
-    return getWasmTableEntry(index)(a1);
-  } catch (e) {
-    stackRestore(sp);
-    if (!(e instanceof EmscriptenEH)) throw e;
-    _setThrew(1, 0);
-    return 0n;
-  }
-}
-
 function invoke_iif(index, a1, a2) {
   var sp = stackSave();
   try {
@@ -5106,6 +5097,18 @@ function invoke_iid(index, a1, a2) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
     _setThrew(1, 0);
+  }
+}
+
+function invoke_ji(index, a1) {
+  var sp = stackSave();
+  try {
+    return getWasmTableEntry(index)(a1);
+  } catch (e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+    return 0n;
   }
 }
 
@@ -5225,6 +5228,39 @@ function invoke_viiidi(index, a1, a2, a3, a4, a5) {
   var sp = stackSave();
   try {
     getWasmTableEntry(index)(a1, a2, a3, a4, a5);
+  } catch (e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
+function invoke_iiiiij(index, a1, a2, a3, a4, a5) {
+  var sp = stackSave();
+  try {
+    return getWasmTableEntry(index)(a1, a2, a3, a4, a5);
+  } catch (e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
+function invoke_iiiiid(index, a1, a2, a3, a4, a5) {
+  var sp = stackSave();
+  try {
+    return getWasmTableEntry(index)(a1, a2, a3, a4, a5);
+  } catch (e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
+function invoke_iiiiijj(index, a1, a2, a3, a4, a5, a6) {
+  var sp = stackSave();
+  try {
+    return getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6);
   } catch (e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
