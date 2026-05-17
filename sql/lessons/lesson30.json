@@ -1,7 +1,7 @@
 {
     "id": "lesson30.json",
     "title": "Select [IN]",
-    "description": "## IN\nInstead of writing multiple OR conditions:\n```sql\nSELECT * FROM users\nWHERE name = 'tom' OR name = 'paul' OR name = 'steve';\n```\nYou can use `IN`:\n```sql\nSELECT * FROM users\nWHERE name IN('tom', 'paul', 'steve');\n```\nSame result, way cleaner. You can also use `NOT IN` to exclude values.\n\n\n---\n## Assignment:\nBWS needs to find all servers that are either 'running' or 'on fire'. Use IN.",
+    "description": "## IN\nInstead of writing multiple OR conditions:\n```sql\nSELECT * FROM users\nWHERE name = 'tom' OR name = 'paul' OR name = 'steve';\n```\nYou can use `IN`:\n```sql\nSELECT * FROM users\nWHERE name IN('tom', 'paul', 'steve');\n```\nSame result, way cleaner. You can also use `NOT IN` to exclude values.\n\n\n---\n## Assignment:\nBWS needs to find all servers that have status 'running' or 'on fire'. Use IN.",
     "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, status TEXT); INSERT INTO servers VALUES (1, 'prod-1', 8, 'running'), (2, 'prod-2', 16, 'running'), (3, 'staging-1', 4, 'stopped'), (4, 'dev-box', 2, 'on fire'), (5, 'mystery-box', 8, 'pending');",
     "starterCode": "-- Find servers that are running or on fire\n",
     "runHarness": "",

@@ -1,7 +1,7 @@
 {
     "id": "lesson36.json",
     "title": "Advanced SELECT [JOIN (RIGHT)]",
-    "description": "## RIGHT JOIN\nRIGHT JOIN is the mirror of LEFT JOIN. It keeps ALL rows from the RIGHT table, even if there's no match in the left table.\n```sql\nSELECT users.name, deployments.app\nFROM deployments\nRIGHT JOIN users\n    ON deployments.user_id = users.id;\n```\n\nIn practice, you can always rewrite a RIGHT JOIN as a LEFT JOIN by swapping the table order. Most developers just use LEFT JOIN.\n\n\n---\n## Assignment:\nUsing a RIGHT JOIN, show all usernames and their invoices amounts. Users with no invoices should still appear.",
+    "description": "## RIGHT JOIN\nRIGHT JOIN is the mirror of LEFT JOIN. It keeps ALL rows from the RIGHT table, even if there's no match in the left table.\n```sql\nSELECT users.name, deployments.app\nFROM deployments\nRIGHT JOIN users\n    ON deployments.user_id = users.id;\n```\n\nIn practice, you can always rewrite a RIGHT JOIN as a LEFT JOIN by swapping the table order. Most developers just use LEFT JOIN.\n\n\n---\n## Assignment:\nUsing a RIGHT JOIN, show all usernames(users.name) and their invoices amounts(invoices.amount). Users with no invoices should still appear. (users have a id field and invoices have a user_id field)",
     "setupCode": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE invoices (id INTEGER PRIMARY KEY, user_id INTEGER, amount REAL); INSERT INTO users VALUES (1, 'Steve'), (2, 'Bob'), (3, 'Alice'); INSERT INTO invoices VALUES (1, 1, 3.47), (2, 1, 0.99), (3, 2, 1500.00);",
     "starterCode": "-- Right join invoices with users\n",
     "runHarness": "",

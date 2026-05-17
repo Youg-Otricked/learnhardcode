@@ -1,7 +1,7 @@
 {
     "id": "lesson24.json",
     "title": "Advanced SELECT [BETWEEN]",
-    "description": "## BETWEEN\nInstead of writing:\n```sql\nSELECT * FROM servers WHERE uptime >= 50 AND uptime <= 99;\n```\nYou can write:\n```sql\nSELECT * FROM servers WHERE uptime BETWEEN 50 AND 99;\n```\nSame result, cleaner syntax. BETWEEN is inclusive on both ends.\n\n\n---\n## Assignment:\nBWS needs to find servers with moderate uptime. Select all servers where uptime is between 40 and 96.",
+    "description": "## BETWEEN\nInstead of writing:\n```sql\nSELECT * FROM servers WHERE uptime >= 50 AND uptime <= 99;\n```\nYou can write:\n```sql\nSELECT * FROM servers WHERE uptime BETWEEN 50 AND 99;\n```\nSame result, cleaner syntax. BETWEEN is inclusive on both ends.\n\n\n---\n## Assignment:\nBWS needs to find servers with moderate uptime. Select the uptime of all servers where uptime is between 40 and 96.",
     "setupCode": "CREATE TABLE servers (id INTEGER PRIMARY KEY, name TEXT, cpu_cores INTEGER, ram_gb REAL, uptime REAL); INSERT INTO servers VALUES (1, 'prod-1', 8, 32.0, 99.9), (2, 'prod-2', 8, 64.0, 95.5), (3, 'staging', 4, 16.0, 88.2), (4, 'dev', 2, 8.0, 12.0), (5, 'test', 4, 16.0, 45.0);",
     "starterCode": "-- Find servers with uptime between 40 and 96\n",
     "runHarness": "",
