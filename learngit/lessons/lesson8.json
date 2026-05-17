@@ -1,0 +1,17 @@
+{
+  "id": "lesson8.json",
+  "title": "50%",
+  "description": "You have now learned most of git. Kinda. You have learned at least 50% of git _you will actually use._ 60% of your workflow will end up being\n- `git status`\n- `git add`\n- `git commit`\nIt's basically all you use as a solo dev. Another 5% is pushing to remotes (like github), another 35% is collaboration with other devs, and the final 10% is rolling back (somthing you hopefully never need to do)\n\n---\n## Question:\nWhat command adds to staging area?",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson9.json",
+  "previous": "lesson7.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "status",
+  "b2t": "add",
+  "b3t": "commit",
+  "b4t": "version",
+  "difficulty": "easiest",
+  "xp": "10"
+}

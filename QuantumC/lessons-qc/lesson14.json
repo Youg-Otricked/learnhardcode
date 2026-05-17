@@ -1,7 +1,7 @@
 {
     "id": "lesson14.json",
     "title": "Control Flow [switch]",
-    "description": "## switch\nWhen you have many conditions on the same value, use `switch` instead of chaining `else if`:\n\n```qc\nswitch (x) {\n    case 1:\n        println(\"One\");\n        break;\n    case 2:\n        println(\"Two\");\n        break;\n    default:\n        println(\"Other\");\n}\n```\n\n- Each `case` checks a value\n- `break` stops fallthrough\n- `default` catches everything else\n\n\n---\n## Assignment:\nTechQ maps qubit states. Given `state`:\n- 0 -> print `Ground`\n- 1 -> print `Excited`\n- 2 -> print `Superposition`\n- anything else -> print `Unknown`",
+    "description": "## switch\nWhen you have many conditions on the same value, use `switch` instead of chaining `else if`:\n\n```qc\nswitch (x) {\n    case 1:\n        qout(\"One\");\n        break;\n    case 2:\n        qout(\"Two\");\n        break;\n    default:\n        qout(\"Other\");\n}\n```\n\n- Each `case` checks a value\n- `break` stops fallthrough\n- `default` catches everything else\n\n\n---\n## Assignment:\nTechQ maps qubit states. Given `state`:\n- 0 -> print `Ground`\n- 1 -> print `Excited`\n- 2 -> print `Superposition`\n- anything else -> print `Unknown`",
     "starterCode": "int main() {\n    int state = 2;\n    // Write your switch here\n    return 0;\n}",
     "expectedOutput": "Superposition",
     "nextLesson": "lesson15.json",

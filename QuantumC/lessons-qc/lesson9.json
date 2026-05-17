@@ -1,7 +1,7 @@
 {
     "id": "lesson9.json",
     "title": "Operators [Arithmetic]",
-    "description": "## Arithmetic\nQuantumC has standard math operators:\n- `+` addition\n- `-` subtraction\n- `*` multiplication\n- `/` division\n- `%` modulo\n- `**` power (unique to QuantumC!)\n\n```qc\nint a = 10;\nint b = 3;\nprintln(a + b);  // 13\nprintln(a ** 2); // 100\n```\n\n\n---\n## Assignment:\nTechQ calculates qubit states. Given `qubits` = 5, print:\n1. Total possible states (2 ** qubits)\n2. States divided by 4\n3. Remainder when divided by 3",
+    "description": "## Arithmetic\nQuantumC has standard math operators:\n- `+` addition\n- `-` subtraction\n- `*` multiplication\n- `/` division\n- `%` modulo\n- `^*` power (unique to QuantumC!)\n\n```qc\nint a = 10;\nint b = 3;\nqout(\"%i\", a + b);  // 13\nqout(\"%i\", a ^* 2); // 100\n```\n\n\n---\n## Assignment:\nTechQ calculates qubit states. Given `qubits` = 5, print:\n1. Total possible states (2 ** qubits)\n2. States divided by 4\n3. Remainder when divided by 3",
     "starterCode": "int main() {\n    int qubits = 5;\n    // Print the three calculations\n    return 0;\n}",
     "expectedOutput": "32\n8\n2",
     "nextLesson": "lesson10.json",

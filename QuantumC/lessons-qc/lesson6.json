@@ -1,7 +1,7 @@
 {
   "id": "lesson6.json",
   "title": "More datatypes",
-  "description": "###### You are on part 1/3 of this lesson.\n\n---\nThe text on the right shows all the other datatypes. Read it then answer the question:\n\n---\n## Question:\nWhat is a valid value for a float.",
+  "description": "###### You are on part 1/3 of this lesson.\n\n---\nThe text on the right shows all the other datatypes.\nTo print variables, you use _formaters_ in qout.\nFormaters just tell QuantumC the type of data you want to print. Formaters are values in the format %<formater>, and you put them in the string and pass aditional arguments to qout AFTER the string (seperated by commas), such as this: `int aInt = 1234; qout(\"integer %i\", aInt); // prints integer 1234`. (read along with the datatypes example)\n| Type | Formater |\n| ---- | -------- |\n| Int | `%i` |\n| Float | `%f` |\n| Double | `&d` |\n| Char | `%c` |\n| String | `%s` |\n| Bool | `%b` |\n| QBool | `%q` |\nRead the code then answer the question:\n\n---\n## Question:\nWhat is a valid value for a float.",
   "starterCode": "// THIS IS A NON-RUNNING DEMO.\nbool flag; // Stores true or false\nfloat f_pi; // Stores a 7 digit decimal number. Float numbers end with 'f', such as 3.141592f\ndouble pi; // Stores a 14 digit decimal number.\nchar c; // Stores any single character, including things like newlines (\\n), tabs (\\t), and unicode (4 digit)\nstring s; // Stores a string of text.\nqbool quantum; // Stores qtrue, qfalse, none, or both.",
   "expectedOutput": "",
   "mustContain": "",

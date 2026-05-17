@@ -1,8 +1,8 @@
 {
   "id": "lesson1.json",
   "title": "Hello, Quantum C!",
-  "description": "Welcome to **Quantum C**.\n\nIn this course, you will be making a custom quantum computer simulator, called `TechQ`. This course will teach you eveything about QuantumC, but for now:\n\n### Assignment:\nChange the text in the `std::qout` statement to print to console \"Starting VM\". Ignore the << '\\n' bit",
-  "starterCode": "int main() {\n    std::qout << \"HELLO!\" << '\\n';\n    return 0;\n}\n",
+  "description": "Welcome to **Quantum C**.\n\nIn this course, you will be making a custom quantum computer simulator, called `TechQ`. This course will teach you eveything about QuantumC, but for now:\n\n### Assignment:\nChange the text in the `qout` statement to print to console \"Starting VM\". \\n bit",
+  "starterCode": "int main() {\n    qout(\"HELLO!\\n\");\n    return 0;\n}\n",
   "expectedOutput": "Starting VM\n",
   "mustContain": "",
   "nextLesson": "lesson2.json",
@@ -16,7 +16,7 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "Just change the string between `std::qout << ` and ` << '\\n'` so it matches exactly.",
+  "hint": "Just change the string between `qout(` and `);` so it matches exactly.",
   "difficulty": "easiest",
   "xp": "10"
 }

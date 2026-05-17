@@ -1,7 +1,7 @@
 {
     "id": "lesson13.json",
     "title": "Control Flow [else if]",
-    "description": "## else if\nWhat if you have more than two options? Chain conditions with `else if`:\n\n```qc\nint x = 15;\nif (x > 20) {\n    println(\"High\");\n} else if (x > 10) {\n    println(\"Medium\");\n} else {\n    println(\"Low\");\n}\n// prints: Medium\n```\n\nConditions are checked top to bottom. The first one that's true runs, the rest are skipped. `else` at the end catches everything else.\n\nYou can chain as many `else if` blocks as you want.\n\n\n---\n## Assignment:\nTechQ rates qubit coherence. Given `coherence`:\n- Above 90 -> print `Excellent`\n- Above 60 -> print `Stable`\n- Above 30 -> print `Degraded`\n- Otherwise -> print `Decoherent`",
+    "description": "## else if\nWhat if you have more than two options? Chain conditions with `else if`:\n\n```qc\nint x = 15;\nif (x > 20) {\n    qout(\"High\");\n} else if (x > 10) {\n    qout(\"Medium\");\n} else {\n    qout(\"Low\");\n}\n// prints: Medium\n```\n\nConditions are checked top to bottom. The first one that's true runs, the rest are skipped. `else` at the end catches everything else.\n\nYou can chain as many `else if` blocks as you want.\n\n\n---\n## Assignment:\nTechQ rates qubit coherence. Given `coherence`:\n- Above 90 -> print `Excellent`\n- Above 60 -> print `Stable`\n- Above 30 -> print `Degraded`\n- Otherwise -> print `Decoherent`",
     "starterCode": "int main() {\n    int coherence = 45;\n    // Write your if/else if/else here\n    return 0;\n}",
     "expectedOutput": "Degraded",
     "nextLesson": "lesson14.json",

@@ -1,7 +1,7 @@
 {
   "id": "lesson3.json",
   "title": "QOut",
-  "description": "All programs need Input and Output. Otherwise how do you know they do anything? In Quantum C: you output to console with somthing called `std::qout`. All you do is type: \n```cpp\nstd::qout << \"Text you want to output\";\n```\n\n---\nYou can also output an aditional newline after (basically the enter key) by typing another ` << ` followed by the text '\\n'. \\n is somthing called an _Escape Sequence_. A Escape sequence is a special series of characters that starts with a backslash that represents a character. Exmples:\n- \\n: Newline.\n- \\\\: A backslash.\n- \\t: a tab.\nThese are how you print special characters.\n\n---\nSomebody working on `TechQ` accidently made a _bit_ of a \"oopsy\". By that, I mean he deleted the entire main function. He is now _seeking other options_. Anyways.\n## Assignment:\n**Fix it.** By that i mean make the main function right to console \"Welcome to the TechQ VM\" followed by a newline.",
+  "description": "All programs need Input and Output. Otherwise how do you know they do anything? In Quantum C: you output to console with somthing called `qout`. All you do is type: \n```cpp\nqout(\"Text you want to output\");\nNote the first argument of qout **must** be a _constant_ string (not a var or f string)\n```\n\n---\nYou can also output an aditional newline after (basically the enter key) by typing the text '\\n'. \\n is somthing called an _Escape Sequence_. A Escape sequence is a special series of characters that starts with a backslash that represents a character. Exmples:\n- \\n: Newline.\n- \\\\: A backslash.\n- \\t: a tab.\nThese are how you print special characters.\n\n---\nSomebody working on `TechQ` accidently made a _bit_ of a \"oopsy\". By that, I mean he deleted the entire main function. He is now _seeking other options_. Anyways.\n## Assignment:\n**Fix it.** By that i mean make the main function right to console \"Welcome to the TechQ VM\" followed by a newline.",
   "starterCode": "int main() {\n    return 0;\n}",
   "expectedOutput": "Welcome to the TechQ VM\n",
   "mustContain": "",
@@ -16,7 +16,6 @@
   "runHarness": "",
   "submitHarness": "",
   "solution": "",
-  "hint": "remember that to print a new series in general, not just escape sequences, you type ` << ` followed by the escape sequence (wraped in single quotes) or your text (wrapped in double quotes)",
   "difficulty": "easiest",
   "xp": "10"
 }
