@@ -1,27 +1,20 @@
-Now that we know some plumbing, it's time to get fermilliar with some terms.
-- `tree`: git's way of storing directorys
-- `blob`: git's way of storing a file
-
-Here's somthing simmilar to what you should have gotten after inspecting that last commit:
-```bash
-> git cat-file -p <hash>
-tree <gobldy gook commit hash>
-author Youg-Otricked <my email> 1779073286 -0700
-committer Youg-Otricked <my email> 1779073286 -0700
-
-A: add runthrough.md
-```
-We get:
-- The `tree` object
-- The `author`
-- The `commiter`
-- The message
-
-However we don't get those darned contents!
+Just a quick reminder
+- `git log` (--no-pager, or q to exit, hjkl or arrow keys to move around)
+- `git cat-file -p <hash>`
+> `log` is porcelain and `cat-file` is plumbing. You use `log` more than `cat-file`, but we use `cat-file` in this course to show the innerworkings of git.
 
 ---
 ## Assignment:
-1. Use `cat-file -p` AGAIN, but this time with the hash of the tree object instead of the commit hash. You should now see a `blob` object with it's own hash.
-> I recommend storing the commit hashes you make in this course in a file (not in the git tracked directory) for easy access.
-2. Use `git cat-file -p` on the `blob`s hash. You should finally get it's contents!
-3. Run that command again, but redirect the output to a temp file, `/tmp/blobfile.txt`
+1. Create the second file, this time called `commonIssues.md` in the `basicGuide` directory, with the content
+```markdown
+# Most Common Issues:
+
+- No Wifi
+- Page won't load
+- App takes forever to open
+- Mouse stopped working
+```
+2. Save stage and commit it, and give it any commit message you want, as long as it starts with `B:`, e.g. `B: add common issues`
+3. Use `cat-file` to look at the content of the commit you just made. _You should see a new field, parent!_
+
+Submit the cli tests _in the root of the project_
