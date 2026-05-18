@@ -1,0 +1,14 @@
+{
+  "id": "lesson17.json",
+  "title": "Storing Files",
+  "description": "\nGit stores the ENTIRE copy of the file, not just the changed content. So why isn't git painfully slow?\n\n### Optimizations\nWhile git _does_ store entire file copies, it _also_ does have some preformance optimizations (obviously).\n1. Git **compresses** and **packs** files to store them more efficiently.\n2. Git deduplicates files, meaning that if a file doesn't change between x and y commit, it only stores 1 copy.\n\n---\n## Assignment:\n1. Use `git cat-file -p` to view the hash of the `blob` for the commonIssues.md file you made last lesson. Save it in the notes I said to make a few lessons ago for the commit hashes.\n2. Create two new files in your project, one in the realIssues and one in the fakeIssues, with the following content:\n`fakeIssues/mouse_stopped.md`:\n```markdown\n## Mouse stopped working:\n\nSteps:\n- Unplug mouse\n- Plug into other port.\n- Done!\n```\n`realIssues/app_broken.md`:\n```markdown\n## An app refuses to open:\n\nSteps:\n- If on Linux or MacOS:\n- - Run `ps -a`\n- - If process for app exists:\n- - - Run `kill <proc number>`\n- - Else:\n- - - Turn off and back on computer\n- Else if on Windows:\n- - Press `Ctrl + Shift + Esc`\n- - If app is in task manager:\n- - - Press it then press end process\n- - Else:\n- - - Turn off and back on computer\n- Else:\n- - No. No weird OSes. No OpenBSD\n- Done!\n```\n3. Stage and commit the files in one commit, message starting with `C:`, e.g. `C: add a few issues`\n4. Use the `cat-file` command to view the hash of the `blob` for the commonIssues.md file again. You should see it's the same, because we didn't change it!\n\nRun the cli command from the repo root.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson18.json",
+  "previous": "lesson16.json",
+  "showButtons": false,
+  "mode": "cli",
+  "runHarness": "4ce3b75a",
+  "difficulty": "easiest",
+  "xp": "13"
+}
