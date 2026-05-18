@@ -1,0 +1,15 @@
+{
+  "id": "lesson14.json",
+  "title": "LIES",
+  "description": "> WHY DOES IT STILL LOOK LIKE NONSENSE. THIS COURSE LIED TO ME\n  ★☆☆☆☆\n\nWAIT! before you go to yelp, listen. The `xxd` output was just the compressed bytes! Git has a plumbing command to get us the output.\n```bash\ngit cat-file -p <hash>\n```\n\n---\n## Assignment:\n1. Use `git cat-file` to get the last commit contents (`-p` means pretty print)\n2. Once again, redirect the output to a temp file\n```bash\ncatfile-command-here > /tmp/catfileout.txt\n```",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson15.json",
+  "previous": "lesson13.json",
+  "showButtons": false,
+  "hint": "Use `git log -n 1` to get your last commit SHA",
+  "mode": "cli",
+  "runHarness": "48e3b10e",
+  "difficulty": "easiest",
+  "xp": "10"
+}

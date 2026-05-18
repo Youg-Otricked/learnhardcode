@@ -1,0 +1,18 @@
+{
+  "id": "lesson12.json",
+  "title": "Plumbing",
+  "description": "Their are 2 types of commands in git: `porcelain`, and `plumbing`. Porcelain commands are commands you interactive with, such as add, commit, and status. Plumbing commands are low level, such as `hash-object`, `cat-file`, and `ls-tree`. Sounds like nonsense? Good.\n> \"We live on a placid island of ignorance in the midst of black seas of infinity, and it was not meant that we should voyage far.\"\n> > H. P. Lovecraft\n\nHowever, we sure like voyaging as deap as possible.\nFor the previous 10 lessons, we have covered a lot of the porcelain commands, but to attempt to satiate the insatiatable beasts that are our brains, it would be fun to check out the plumbing of this porcelain, wouldn't it?\n\n---\n![It's all files? Always has been.](https://i.imgflip.com/as202e.jpg)\n\nALL the data in a git repo is just stored in the `.git` directory. All your commits, your branches, your tags, everything. As I said.\nGit is made up of objects, which are in the `.git/objects` directory. A commit is a object.\n\n---\n## Assignment:\n1. Use `git log -n 5` to find your commit hash again.\n2. Use `ls -l .git/objects` to get the content of your .git/objects dir.\n3. Look for a directory that matches the first two characters of your commit hash.\n4. `Use ls -al .git/objects/<the two chars that match>/` to list the contents of that directory. You should see a file whose name is the rest of the hash. Use the full path for the question.\n\n---\n## Question:\nWhich of these options most closely matches the produced path format?",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson13.json",
+  "previous": "lesson11.json",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": ".git/objects/88fd36539d541969a4cbcbe00e3d38734635601c",
+  "b2t": ".git/objects/88/fd36539d541969a4cbcbe00e3d38734635601c",
+  "b3t": ".git/objects/88/fd365",
+  "b4t": ".git/objects/commits/88/fd36539d541969a4cbcbe00e3d38734635601c",
+  "mode": "editor",
+  "difficulty": "easiest",
+  "xp": "10"
+}

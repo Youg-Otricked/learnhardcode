@@ -1,17 +1,14 @@
 {
   "id": "lesson8.json",
-  "title": "50%",
-  "description": "You have now learned most of git. Kinda. You have learned at least 50% of git _you will actually use._ 60% of your workflow will end up being\n- `git status`\n- `git add`\n- `git commit`\nIt's basically all you use as a solo dev. Another 5% is pushing to remotes (like github), another 35% is collaboration with other devs, and the final 10% is rolling back (somthing you hopefully never need to do)\n\n---\n## Question:\nWhat command adds to staging area?",
+  "title": "Commit",
+  "description": "After staging a file in git, we can commit it.\nA commit is just a point in time in the files history. It's how you save state in a repo, and how Git keeps track of changes. A commit comes with a message about what was changed.\nHere is how you would commit all staged files:\n```bash\ngit commit -m \"Your commit message here\"\n```\n\n---\n## Assignment:\n1. Commit `runthrough.md` with the message `A: add runthrough.md`\n(Note you wouldn't normally letter commits, this is just for the course to allow easy identification.)\n2. Run `git status` again and see the file is no longer staged.\nRun and submit in the root directory.",
   "starterCode": "",
   "expectedOutput": "",
   "nextLesson": "lesson9.json",
   "previous": "lesson7.json",
-  "showButtons": true,
-  "correct": "b2",
-  "b1t": "status",
-  "b2t": "add",
-  "b3t": "commit",
-  "b4t": "version",
+  "showButtons": false,
+  "mode": "cli",
+  "runHarness": "6e6bf64e",
   "difficulty": "easiest",
   "xp": "10"
 }

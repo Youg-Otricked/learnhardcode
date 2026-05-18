@@ -1,14 +1,17 @@
 {
   "id": "lesson9.json",
-  "title": "log",
-  "description": "Git repos are just a list of commits that represent the entire (yes, _entire_. The entire directory) at x point in time.\nThe `git log` command shows your git commit history. This is where the _version control_ part of the version control system comes in. It lets you see the who, when and what of each commit.\n\n## Commit Hashes\nCommits get a unique string to differentiate them. These are called commit hashes. A commit hash is typically a very long string of hex (base 16, 0123456789abcdef). One from one of my repos is \n```txt\n88fd36539d541969a4cbcbe00e3d38734635601c\n```\nLuckly, we don't need the full hash. In git, we only _need_ to use the first 7 characters, so in this case `88fd365`.\n\n---\n## Assignment:\nFirst, run `git log`. Notice that (if the log is long enough) it starts a \"pager\", which is just a interactive menu you scroll up and down in and close with `q`.\nNow, run it again, but with the `-n` and `--no-pager` flag. The `--no-pager` removes the pager. The `-n` uses synatx `-n <number>`, and it will make log only show the <number> latest commits.\nRun and submit the tests.",
+  "title": "50%",
+  "description": "You have now learned most of git. Kinda. You have learned at least 50% of git _you will actually use._ 60% of your workflow will end up being\n- `git status`\n- `git add`\n- `git commit`\nIt's basically all you use as a solo dev. Another 5% is pushing to remotes (like github), another 35% is collaboration with other devs, and the final 10% is rolling back (somthing you hopefully never need to do)\n\n---\n## Question:\nWhat command adds to staging area?",
   "starterCode": "",
   "expectedOutput": "",
   "nextLesson": "lesson10.json",
   "previous": "lesson8.json",
-  "showButtons": false,
-  "mode": "cli",
-  "runCommand": "6f6bf7e1",
+  "showButtons": true,
+  "correct": "b2",
+  "b1t": "status",
+  "b2t": "add",
+  "b3t": "commit",
+  "b4t": "version",
   "difficulty": "easiest",
   "xp": "10"
 }

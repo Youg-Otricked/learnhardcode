@@ -1,20 +1,27 @@
-Their are 2 types of commands in git: `porcelain`, and `plumbing`. Porcelain commands are commands you interactive with, such as add, commit, and status. Plumbing commands are low level, such as `hash-object`, `cat-file`, and `ls-tree`. Sounds like nonsense? Good.
-> "We live on a placid island of ignorance in the midst of black seas of infinity, and it was not meant that we should voyage far."
-> > H. P. Lovecraft
+Now that we know some plumbing, it's time to get fermilliar with some terms.
+- `tree`: git's way of storing directorys
+- `blob`: git's way of storing a file
 
-However, we sure like voyaging as deap as possible.
-For the previous 10 lessons, we have covered a lot of the porcelain commands, but to attempt to satiate the insatiatable beasts that are our brains, it would be fun to check out the plumbing of this porcelain, wouldn't it?
+Here's somthing simmilar to what you should have gotten after inspecting that last commit:
+```bash
+> git cat-file -p <hash>
+tree <gobldy gook commit hash>
+author Youg-Otricked <my email> 1779073286 -0700
+committer Youg-Otricked <my email> 1779073286 -0700
 
----
-![It's all files? Always has been.](https://imgflip.com/i/as202e)
+A: add runthrough.md
+```
+We get:
+- The `tree` object
+- The `author`
+- The `commiter`
+- The message
 
-ALL the data in a git repo is just stored in the `.git` directory. All your commits, your branches, your tags, everything. As I said.
-Git is made up of objects, which are in the `.git/objects` directory. A commit is a object.
+However we don't get those darned contents!
 
 ---
 ## Assignment:
-1. Use `git log -n 5` to find your commit hash again.
-2. Use `ls -l .git/objects` to get the content of your .git/objects dir.
-3. Look for a directory that matches the first two characters of your commit hash.
-4. `Use ls -al .git/objects/<the two chars that match>/` to list the contents of that directory. You should see a file whose name is the rest of the hash. Use the full path for the question.
-
+1. Use `cat-file -p` AGAIN, but this time with the hash of the tree object instead of the commit hash. You should now see a `blob` object with it's own hash.
+> I recommend storing the commit hashes you make in this course in a file (not in the git tracked directory) for easy access.
+2. Use `git cat-file -p` on the `blob`s hash. You should finally get it's contents!
+3. Run that command again, but redirect the output to a temp file, `/tmp/blobfile.txt`

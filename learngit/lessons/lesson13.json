@@ -1,0 +1,14 @@
+{
+  "id": "lesson13.json",
+  "title": "Obj File",
+  "description": "\nThat file object is looking MIGHTY suspicious. Let's check it out...\n\n---\n## Assignment:\n1. Try to `cat` the file you used to find the previous lessons answer (cat will try to interpet the contents as text)...\n```bash\ncat path/to/that/file/from/previously\n```\n\nNo luck... The content is in raw bytes!\n2. Try using `xxd` on it. XXD will print the binary contents in hex format!\n```bash\nxxd path/to/that/file/from/previously\n```\n<details>\n    <summary>You may need to install XXD. If so:</summary>\n    <details><summary>APT (Ubuntu/Debian...):</summary><code>sudo apt install xxd</code></details>\n    <details><summary>Pacman (Arch):</summary><code>sudo pacman -S vim\n</code><p>Yes, that's vim. XXD is bundled with vim on pacman.</p></details>\n    <details><summary>Brew (Mac):</summary><p>XXD should be preinstalled. If not install the full xcode bundle.</p><code>xcode-select --install\n</code></details> \n</details>\n\n3. Do it again, but redirect it to a temp file for the tests.\n```bash\nxxd path/to/that/file/from/previously > /tmp/commit_object_hex.txt\n```\n\nRun and Submit.",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson14.json",
+  "previous": "lesson12.json",
+  "showButtons": false,
+  "mode": "cli",
+  "runHarness": "49e3b2a1",
+  "difficulty": "easiest",
+  "xp": "10"
+}
