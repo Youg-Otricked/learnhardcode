@@ -1,18 +1,20 @@
+Their are 2 types of commands in git: `porcelain`, and `plumbing`. Porcelain commands are commands you interactive with, such as add, commit, and status. Plumbing commands are low level, such as `hash-object`, `cat-file`, and `ls-tree`. Sounds like nonsense? Good.
+> "We live on a placid island of ignorance in the midst of black seas of infinity, and it was not meant that we should voyage far."
+> > H. P. Lovecraft
 
-
-### Attributes
-Atrributes allow other things, such as the core HTML engine or TypeScript/CSS to actually see places in your code.
-Attributes are key value pairs inside the opening tag of a element. To add a attribute in a element you put `attributename="value"`.
-### a
-The `a` tag creates a hyperlink to another website. It uses the following syntax:
-```html
-<a href="link">Clickable Text To Link Here</a>
-```
-The href attribute should be assigned the link you want to go to, e.g.
-```html
-<p>Store code <a href="github.com">here</a></p>
-```
+However, we sure like voyaging as deap as possible.
+For the previous 10 lessons, we have covered a lot of the porcelain commands, but to attempt to satiate the insatiatable beasts that are our brains, it would be fun to check out the plumbing of this porcelain, wouldn't it?
 
 ---
-## Assignment
-After all the current page text, add a paragraph containing the text `Find more info about why this might happen `, and a `<a>` _inside the `p`_ pointing to `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500`, and the text `here`
+![It's all files? Always has been.](https://imgflip.com/i/as202e)
+
+ALL the data in a git repo is just stored in the `.git` directory. All your commits, your branches, your tags, everything. As I said.
+Git is made up of objects, which are in the `.git/objects` directory. A commit is a object.
+
+---
+## Assignment:
+1. Use `git log -n 5` to find your commit hash again.
+2. Use `ls -l .git/objects` to get the content of your .git/objects dir.
+3. Look for a directory that matches the first two characters of your commit hash.
+4. `Use ls -al .git/objects/<the two chars that match>/` to list the contents of that directory. You should see a file whose name is the rest of the hash. Use the full path for the question.
+

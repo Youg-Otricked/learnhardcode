@@ -1,0 +1,18 @@
+{
+  "id": "lesson10.json",
+  "title": "More on Hashes",
+  "description": "\nRemember that hash from the last lesson?\n\n```txt\n88fd36539d541969a4cbcbe00e3d38734635601c\n```\nEven if you had the EXACT same code in your repo and commited it, you still would (almost) be gauranteed a different hash. That is becuase while your hash is corely based around the code in your repo, it isn't _exclusivly_ based around it. Other factors include:\n- The commit message\n- The authors name and email\n- The date/time\n- Previous commits\nBasically, hashes are unique 99.999999999% of the time. While it is possible for SHA to generate the same hash, it isn't somthing you can accidently do, and not somthing to worry about. Just so you know, you have a higher chance of getting struck by lighting. And winning the lottery. At the same time.\n\n(note, SHA-1 is the hash used to generate hashes by git. Only important for you right now becuase sometimes we refer to git hashes as SHA's).\n\n---\n## Question:\nWhat doesn't effect a commit hash?",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson11.json",
+  "previous": "lesson9.json",
+  "showButtons": true,
+  "correct": "b4",
+  "b1t": "Your email and name",
+  "b2t": "The time and date",
+  "b3t": "Previous commits",
+  "b4t": "Your linux distro",
+  "mode": "editor",
+  "difficulty": "easiest",
+  "xp": "10"
+}
