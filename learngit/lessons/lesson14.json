@@ -9,7 +9,7 @@
   "showButtons": false,
   "hint": "Use `git log -n 1` to get your last commit SHA",
   "mode": "cli",
-  "runHarness": "48e3b10e",
+  "runHarness": "7f65b7fce15ae6de",
   "difficulty": "easiest",
   "xp": "10"
 }
