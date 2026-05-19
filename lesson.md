@@ -1,33 +1,47 @@
-Git stores info about authors when you're making a commit, so you can see who made a change (and repremand them for vibe coded ai-slop). Git checks your global configuration for the email and name you want. You can update it like this:
-```bash
-git config set --global user.name "Me"
-git config set --global user.email "me@gmail.com"
+All code in zig starts in the `main` function.
+```zig
+pub fn main(init: std.process.Init) !void {
+    // Code starts here.
+}
 ```
-> This course uses `git version` of at least 2.46.0. See the 2nd lesson for install instructions.
-> In earlier git versions, the config command uses different flags, which still work but give deprecation warnings.
+To break this down:
+- `pub fn`: This makes a function external things (such as the compiler) can access. Ignore functions for now.
+- `main`: This titles the function main.
+- `init: std.process.Init`: This defines the init argument, which allows you to print to stdout.
+- `!void`: This means the function can produce an error, and returns nothing useful.
+- `{`: This starts the function's' code block.
+- `}`: This ends the function's code block.
 
-Let's split up that command:
-- `git config`: The config command for git.
-- `set`: Set subcommand
-- `--global`: This stores it _globaly_ in your ~/.gitconfig file. The inverse, `--local` is only for the current repo.
-- `user`: The `user` section.
-- `name`: The `name` key in the section.
-- `"Me"`: The value to be set
+Your code starts on the first line of the main function.
+
+---
+## Output
+
+Now, it's time to learn output. Yes, you saw the horrifying
+```zig
+try std.Io.File.stdout().writeStreamingAll(init.io, "Hello, World!\n");
+```
+That however, is a later thing. That writes to stdout, where user output goes, but we can also write to stderr, where errors go. Wanna see that?
+```zig
+std.debug.print("Hello, World!\n");
+```
+Yup. Simpler.
+To print you need to do two things: A: import `std`.
+At the top of your file, put:
+```zig
+const std = @import("std");
+```
+This allows you to use things from the standard library, and use it as `std`
+To print, you use the std.debug.print method:
+```zig
+std.debug.print("Text goes here");
+```
 
 ---
 ## Assignment:
-You can store _**any**_ data in your git config. Only certain keys are _used_, but you still can use any section and key.
+We are starting to make a simple doc/improvments program! Make the program print the following:
 
-_Locally_ set the following keys:
-
-- `getapp.version`: `0.1.2`
-- `getapp.users`: `0`
-
-Git has a command to see config
-```bash
-git config list --local #--global for global only
 ```
-Or you can just read the local file
-```bash
-cat .git/config
+Max line length is now 160 (not 80!), but uses 2 punch cards per line.
+Allcaps is no longer used. Now it's all nocaps!
 ```
