@@ -1,46 +1,33 @@
+Git stores info about authors when you're making a commit, so you can see who made a change (and repremand them for vibe coded ai-slop). Git checks your global configuration for the email and name you want. You can update it like this:
+```bash
+git config set --global user.name "Me"
+git config set --global user.email "me@gmail.com"
+```
+> This course uses `git version` of at least 2.46.0. See the 2nd lesson for install instructions.
+> In earlier git versions, the config command uses different flags, which still work but give deprecation warnings.
 
-Git stores the ENTIRE copy of the file, not just the changed content. So why isn't git painfully slow?
-
-### Optimizations
-While git _does_ store entire file copies, it _also_ does have some preformance optimizations (obviously).
-1. Git **compresses** and **packs** files to store them more efficiently.
-2. Git deduplicates files, meaning that if a file doesn't change between x and y commit, it only stores 1 copy.
+Let's split up that command:
+- `git config`: The config command for git.
+- `set`: Set subcommand
+- `--global`: This stores it _globaly_ in your ~/.gitconfig file. The inverse, `--local` is only for the current repo.
+- `user`: The `user` section.
+- `name`: The `name` key in the section.
+- `"Me"`: The value to be set
 
 ---
 ## Assignment:
-1. Use `git cat-file -p` to view the hash of the `blob` for the commonIssues.md file you made last lesson. Save it in the notes I said to make a few lessons ago for the commit hashes.
-2. Create two new files in your project, one in the realIssues and one in the fakeIssues, with the following content:
-`fakeIssues/mouse_stopped.md`:
-```markdown
-## Mouse stopped working:
+You can store _**any**_ data in your git config. Only certain keys are _used_, but you still can use any section and key.
 
-Steps:
-- Unplug mouse
-- Plug into other port.
-- Done!
+_Locally_ set the following keys:
+
+- `getapp.version`: `0.1.2`
+- `getapp.users`: `0`
+
+Git has a command to see config
+```bash
+git config list --local #--global for global only
 ```
-`realIssues/app_broken.md`:
-```markdown
-## An app refuses to open:
-
-Steps:
-- If on Linux or MacOS:
-- - Run `ps -a`
-- - If process for app exists:
-- - - Run `kill <proc number>`
-- - Else:
-- - - Turn off and back on computer
-- Else if on Windows:
-- - Press `Ctrl + Shift + Esc`
-- - If app is in task manager:
-- - - Press it then press end process
-- - Else:
-- - - Turn off and back on computer
-- Else:
-- - No. No weird OSes. No OpenBSD
-- Done!
+Or you can just read the local file
+```bash
+cat .git/config
 ```
-3. Stage and commit the files in one commit, message starting with `C:`, e.g. `C: add a few issues`
-4. Use the `cat-file` command to view the hash of the `blob` for the commonIssues.md file again. You should see it's the same, because we didn't change it!
-
-Run the cli command from the repo root.

@@ -22,7 +22,13 @@
       "number": 4,
       "name": "Internals",
       "firstLesson": "lesson10.json",
-      "lessons": ["lesson10.json", "lesson11.json"]
+      "lessons": ["lesson10.json", "lesson11.json", "lesson12.json", "lesson13.json", "lesson14.json", "lesson15.json", "lesson16.json", "lesson17.json"]
+    },
+    {
+      "number": 5,
+      "name": "Config",
+      "firstLesson": "lesson18.json",
+      "lessons": ["lesson18.json"]
     }
   ]
 }

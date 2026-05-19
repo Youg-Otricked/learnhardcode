@@ -1,0 +1,14 @@
+{
+  "id": "lesson18.json",
+  "title": "Config",
+  "description": "Git stores info about authors when you're making a commit, so you can see who made a change (and repremand them for vibe coded ai-slop). Git checks your global configuration for the email and name you want. You can update it like this:\n```bash\ngit config set --global user.name \"Me\"\ngit config set --global user.email \"me@gmail.com\"\n```\n> This course uses `git version` of at least 2.46.0. See the 2nd lesson for install instructions.\n> In earlier git versions, the config command uses different flags, which still work but give deprecation warnings.\n\nLet's split up that command:\n- `git config`: The config command for git.\n- `set`: Set subcommand\n- `--global`: This stores it _globaly_ in your ~/.gitconfig file. The inverse, `--local` is only for the current repo.\n- `user`: The `user` section.\n- `name`: The `name` key in the section.\n- `\"Me\"`: The value to be set\n\n---\n## Assignment:\nYou can store _**any**_ data in your git config. Only certain keys are _used_, but you still can use any section and key.\n\n_Locally_ set the following keys:\n\n- `getapp.version`: `0.1.2`\n- `getapp.users`: `0`\n\nGit has a command to see config\n```bash\ngit config list --local #--global for global only\n```\nOr you can just read the local file\n```bash\ncat .git/config\n```",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson19.json",
+  "previous": "lesson17.json",
+  "showButtons": false,
+  "mode": "cli",
+  "runHarness": "3fe3a2e3",
+  "difficulty": "easiest",
+  "xp": "13"
+}
