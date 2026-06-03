@@ -81,7 +81,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpp_oahw9c.js
+// include: /tmp/tmpf65sfl5v.js
 if (!Module["expectedDataFileDownloads"]) Module["expectedDataFileDownloads"] = 0;
 
 Module["expectedDataFileDownloads"]++;
@@ -208,23 +208,23 @@ Module["expectedDataFileDownloads"]++;
   });
 })();
 
-// end include: /tmp/tmpp_oahw9c.js
-// include: /tmp/tmp0wk8y3n2.js
+// end include: /tmp/tmpf65sfl5v.js
+// include: /tmp/tmpfxy1ni7p.js
 // All the pre-js content up to here must remain later on, we need to run
 // it.
 if ((typeof ENVIRONMENT_IS_WASM_WORKER != "undefined" && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != "undefined" && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != "undefined" && ENVIRONMENT_IS_AUDIO_WORKLET)) Module["preRun"] = [];
 
 var necessaryPreJSTasks = Module["preRun"].slice();
 
-// end include: /tmp/tmp0wk8y3n2.js
-// include: /tmp/tmpl1759jqc.js
+// end include: /tmp/tmpfxy1ni7p.js
+// include: /tmp/tmprg7i6dpv.js
 if (!Module["preRun"]) throw "Module.preRun should exist because file support used it; did a pre-js delete it?";
 
 necessaryPreJSTasks.forEach(task => {
   if (Module["preRun"].indexOf(task) < 0) throw "All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?";
 });
 
-// end include: /tmp/tmpl1759jqc.js
+// end include: /tmp/tmprg7i6dpv.js
 var arguments_ = [];
 
 var thisProgram = "./this.program";
@@ -4862,6 +4862,9 @@ var wasmImports = {
   /** @export */ invoke_viiiiiii,
   /** @export */ invoke_viiiiiiiiii,
   /** @export */ invoke_viiiiiiiiiiiiiii,
+  /** @export */ invoke_viiiji,
+  /** @export */ invoke_viijii,
+  /** @export */ invoke_viijji,
   /** @export */ invoke_viijjiiii,
   /** @export */ invoke_vij,
   /** @export */ llvm_eh_typeid_for: _llvm_eh_typeid_for,
@@ -5139,6 +5142,39 @@ function invoke_vid(index, a1, a2) {
   var sp = stackSave();
   try {
     getWasmTableEntry(index)(a1, a2);
+  } catch (e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
+function invoke_viijji(index, a1, a2, a3, a4, a5) {
+  var sp = stackSave();
+  try {
+    getWasmTableEntry(index)(a1, a2, a3, a4, a5);
+  } catch (e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
+function invoke_viijii(index, a1, a2, a3, a4, a5) {
+  var sp = stackSave();
+  try {
+    getWasmTableEntry(index)(a1, a2, a3, a4, a5);
+  } catch (e) {
+    stackRestore(sp);
+    if (!(e instanceof EmscriptenEH)) throw e;
+    _setThrew(1, 0);
+  }
+}
+
+function invoke_viiiji(index, a1, a2, a3, a4, a5) {
+  var sp = stackSave();
+  try {
+    getWasmTableEntry(index)(a1, a2, a3, a4, a5);
   } catch (e) {
     stackRestore(sp);
     if (!(e instanceof EmscriptenEH)) throw e;
