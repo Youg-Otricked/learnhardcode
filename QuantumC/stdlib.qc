@@ -94,7 +94,7 @@ namespace Utils {
         }
         return fin;
     }
-    void sleep(long int crr) {
+    void sleep(int crr) {
         crr += time();
         while (time() < crr) {
             for (int i = 0; i < 5000; i++) {}
@@ -123,12 +123,12 @@ namespace Math {
         return a;
     }
     Number sqrt(Number val) {
-        return to_double(val) ^* 0.5;
+        return to_double(val) #^ 0.5;
     }
     Number root(Number val, Number power) {
         double base = to_double(val);
         double exp  = 1.0 / to_double(power);
-        return base ^* exp;
+        return base #^ exp;
     }
     type Floating = float | double;
     int ceil(Floating a) {
@@ -251,8 +251,8 @@ namespace UnitTest {
                     qout("==============================\n");
                 }
                 
-                qout(f"Failed: {this.Failed}\n");
-                qout(f"Passed: {this.Passed}\n");
+                qout("%s", f"Failed: {this.Failed}\n");
+                qout("%s", f"Passed: {this.Passed}\n");
 
                 qout("==============================\n");
                 if (this.Failed > 0) {
@@ -390,5 +390,14 @@ namespace Collections {
             collection[n - 1 - i] = temp;
         }
         return collection;
+    }
+}
+namespace OSInterop {
+    void system(string command) {
+        flush();
+        inline(R("
+        mov rdi, $0r
+        call system
+        "), command, "~{rdi}");
     }
 }
