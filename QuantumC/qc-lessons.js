@@ -20,6 +20,15 @@ let mode = "";
 let checkResultBtn = null;
 let rawHarness = false;
 let setupCode = "";
+import Emception from "../cpp/emception.js"; let compiler = null;
+let currentRunner = null;
+async function ensureCompiler() {
+  if (!compiler) {
+    compiler = new Emception();
+    await compiler.init();
+  }
+  return compiler;
+}
 function loadStreak() {
     const raw = localStorage.getItem('qc_streak');
     lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
@@ -57,20 +66,33 @@ function runQC(code) {
     lastRunOutput = '';
     outEl.className = '';
     try {
-        const result = QuantumModule.ccall(
-            'run_quantum_code',
-            'string',
-            ['string'],
-            [code]
-        );
-        lastRunOutput = result || '';
+        const status = QuantumModule.ccall('run_quantum_compiler', 'string', ['string'], [code]);
+        if (status === "Success") {
+            const oPtr = QuantumModule._get_wasm_ptr();
+            const oSize = QuantumModule._get_wasm_size();
+            const oBytes = new Uint8Array(QuantumModule.HEAPU8.buffer, oPtr, oSize);
+            const comp = await ensureCompiler();
+            await comp.fileSystem.writeFile("/working/main.o", oBytes);
+            outEl.textContent = "Linking with Emception...\n";
+            const result = await comp.run(
+                "em++ /working/main.o -o /working/main.js " +
+                "-sSINGLE_FILE=1 -sENVIRONMENT=worker -sNO_FILESYSTEM=0 -O2"
+            );
+            if (result.returncode === 0) {
+                const jsCode = await comp.fileSystem.readFile("/working/main.js", { encoding: "utf8" });
+                runInWorker(jsCode);          
+            } else {
+                outEl.textContent = "Linking Error:\n" + result.stderr;
+            }
+        }
+        lastRunOutput = status || '';
         outEl.textContent += lastRunOutput;
-        if (result.includes('QC-') || result.includes('Runtime Error:')) {
+        if (result.includes('QC-') || result.includes('Error:')) {
             outEl.className = 'error';
         } else {
             outEl.className = 'success';
+            
         }
-        lastRunOutput = result.split("Program exited with code:")[0];
     } catch (err) {
         lastRunOutput = 'Runtime Error: ' + err.message;
         outEl.textContent += lastRunOutput;
@@ -505,8 +527,7 @@ async function setupLogic() {
 }
 
 require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' } });
-document.addEventListener('DOMContentLoaded', () => {
-    require(['vs/editor/editor.main'], function() {
+require(['vs/editor/editor.main'], function() {
         monaco.languages.register({ id: 'qc' });
 
         monaco.languages.setMonarchTokensProvider('qc', {
@@ -576,10 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         editor = monaco.editor.create(document.getElementById('editor'), {
-            value: `int main() {
-    println("Hello, World!");
-    return 0;
-}`,
+            value: ``,
             language: 'qc',  
             theme: 'qcTheme',
             automaticLayout: true,
@@ -609,4 +627,3 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Failed to load Quantum C:', err);
         
     });
-});
