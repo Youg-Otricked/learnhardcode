@@ -1,0 +1,21 @@
+{
+  "id": "stdlib44.json",
+  "title": "DSA - Stack - Starter",
+  "description": "A stack is a FILO (First in Last Out) collection. It's called a stack because it behaves like a stack of objects.\n```psuedocode\n# psuedocode\nstack<int> mystack = [1, 2, 3, 4]\nmystack.push(3)\n# mystack is now [1, 2, 3, 4, 3]\nint res = mystack.pop()\n# res = 3\n# mystack = [1, 2, 3, 4]\n```\n\n## Assignment:\nImplement a basic stack!\nStacks are much easier than the other datastructures, becuase they don't even need you to make indexing.\n\n### Steps:\n\n\n- [ ] Make the \"push\" method\n    - [ ] Add the element to the vector storing current data\n- [ ] Make the \"top\" method\n    - [ ] Return a _reference_ to the last element\n- [ ] Make the \"size\" method\n    - [ ] Return the amount of elements in the stack\n- [ ] Make the \"pop\" method\n    - [ ] Remove the final element of the internal vector and return it\n",
+  "expectedOutput": "",
+  "starterCode": "#include <iostream>\n#include <initializer_list>\n#include <vector>\ntemplate <typename T>\nclass Stack {\n    private:\n        std::vector<T> data;\n    public:\n        Stack(std::initializer_list<T> elements) {\n            this->data = elements;\n        }\n        int size() {\n            // todo\n        }\n        void push(T elem) {\n            // todo\n        }\n        T& top() {\n            // todo \n        }\n        T pop() {\n            // todo \n        }\n};\n\n",
+  "nextLesson": "stdlib45.json",
+  "previous": "stdlib43.json",
+  "showButtons": false,
+  "correct": "nobns",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "",
+  "difficulty": "beginner",
+  "xp": "20",
+  "rawHarness": true,
+  "mustContain": "--\n4 passed, 0 failed",
+  "runHarness": "int _pass = 0;\nint _fail = 0;\nvoid _test(int num, int got, int expected) {\n    bool passed = got == expected;\n    std::cout << \"---------------------\\n\";\n    std::cout << \"Test \" << num << \":\\n\";\n    std::cout << (passed ? \"Pass\\n\" : \"Fail\\n\") << \"\\n\";\n    if (passed) _pass++; else _fail++;\n}\n\nint main() {\n    Stack<int> tester1 = {1, 2, 3};\n    tester1.push(91);\n    _test(1, 91, tester1.top());\n    tester1.top() = 12;\n    _test(1, 12, tester1.top());\n    _test(1, 12, tester1.pop());\n    _test(1, 3, tester1.top());\n    std::cout << \"---------------------\\n\";\n    std::cout << _pass << \" passed, \" << _fail << \" failed\\n\";\n    return 0;\n}\n\n"
+}
