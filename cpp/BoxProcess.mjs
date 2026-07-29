@@ -1,4 +1,4 @@
-import EmProcess from "./EmProcess.mjs";
+import EmProcess from "../cpp/EmProcess.mjs";
 
 export default class BoxProcess extends EmProcess {
     #tool_mapping = {};

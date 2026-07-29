@@ -1,5 +1,5 @@
-import EmProcess from "./EmProcess.mjs";
-import QuickNodeModule from "./quicknode/quicknode.mjs";
+import EmProcess from "../cpp/EmProcess.mjs";
+import QuickNodeModule from "../cpp/quicknode/quicknode.mjs";
 
 export default class QuickNodeProcess extends EmProcess {
     constructor(opts) {

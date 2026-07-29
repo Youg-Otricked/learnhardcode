@@ -17,7 +17,7 @@ class CORSHandler(http.server.SimpleHTTPRequestHandler):
             return "application/wasm"
         return super().guess_type(path)
 
-PORT = 8000
+PORT = 8080
 class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     allow_reuse_address = True
 

@@ -1,4 +1,5 @@
 const worker = new Worker("../api/endpoint.js");
+let jsworker = null;
 let QuantumModule = null;
 let editor = null;
 let currentLesson = null;
@@ -21,20 +22,26 @@ let checkResultBtn = null;
 let rawHarness = false;
 let setupCode = "";
 import Emception from "../cpp/emception.js"; let compiler = null;
-let currentRunner = null;
 async function ensureCompiler() {
   if (!compiler) {
     compiler = new Emception();
     await compiler.init();
   }
-  return compiler;
+}
+let ready = false;
+ensureCompiler().then(() => {
+    ready = true;
+});
+async function waitForReady() {
+    while (!ready) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+    }
 }
 function loadStreak() {
     const raw = localStorage.getItem('qc_streak');
     lessonsInRow = raw ? (parseInt(raw, 10) || 0) : 0;
     updateStreakUI();
 }
-
 function saveStreak() {
     localStorage.setItem('qc_streak', String(lessonsInRow));
 }
@@ -57,47 +64,117 @@ function updateLevelUI() {
   document.getElementById("levelProg").value = localStorage.getItem('user_xp');
   document.getElementById("levelProg").max = localStorage.getItem('level_xp_cap');
 }
-function runQC(code) {
-    if (!QuantumModule) {
-        outEl.textContent += '\nWASM module still loading...\n';
-        return;
-    }
-    outEl.textContent = 'Running...\n';
-    lastRunOutput = '';
-    outEl.className = '';
+let currentRun = 0;
+async function runQC(code) {
+  if (!QuantumModule) {
+    outEl.textContent += "\nWASM module still loading...\n";
+    return;
+  }
+  if (!ready) {
+    outEl.textContent += "\nLinker still loading...\n";
+    await waitForReady();
+  }
+  outEl.textContent = "";
+  lastRunOutput = "";
+  outEl.className = "";
+  try {
     try {
-        const status = QuantumModule.ccall('run_quantum_compiler', 'string', ['string'], [code]);
-        if (status === "Success") {
-            const oPtr = QuantumModule._get_wasm_ptr();
-            const oSize = QuantumModule._get_wasm_size();
-            const oBytes = new Uint8Array(QuantumModule.HEAPU8.buffer, oPtr, oSize);
-            const comp = await ensureCompiler();
-            await comp.fileSystem.writeFile("/working/main.o", oBytes);
-            outEl.textContent = "Linking with Emception...\n";
-            const result = await comp.run(
-                "em++ /working/main.o -o /working/main.js " +
-                "-sSINGLE_FILE=1 -sENVIRONMENT=worker -sNO_FILESYSTEM=0 -O2"
-            );
-            if (result.returncode === 0) {
-                const jsCode = await comp.fileSystem.readFile("/working/main.js", { encoding: "utf8" });
-                runInWorker(jsCode);          
-            } else {
-                outEl.textContent = "Linking Error:\n" + result.stderr;
-            }
-        }
-        lastRunOutput = status || '';
-        outEl.textContent += lastRunOutput;
-        if (result.includes('QC-') || result.includes('Error:')) {
-            outEl.className = 'error';
-        } else {
-            outEl.className = 'success';
-            
-        }
-    } catch (err) {
-        lastRunOutput = 'Runtime Error: ' + err.message;
-        outEl.textContent += lastRunOutput;
-        outEl.className = 'error';
+      QuantumModule.FS.mkdir("/working");
+    } catch (_) {}
+    outEl.textContent = "Running...\n";
+    const runtimeResponse = await fetch("./runtime.o");
+    if (!runtimeResponse.ok) {
+      throw new Error("Could not load runtime.o");
     }
+    const runtimeBytes = new Uint8Array(
+      await runtimeResponse.arrayBuffer()
+    );
+    compiler.fileSystem.FS.writeFile(
+      "/working/runtime.o",
+      runtimeBytes
+    );
+    const status = QuantumModule.ccall(
+      "run_quantumc_code",
+      "string",
+      ["string"],
+      [code]
+    );
+    if (status !== "Success") {
+      lastRunOutput = status || "Compilation failed";
+      outEl.textContent += lastRunOutput;
+      outEl.className = "error";
+      return;
+    }
+    const programObject = QuantumModule.FS.readFile("/working/a.o");
+    compiler.fileSystem.FS.writeFile(
+      "/working/a.o",
+      programObject
+    );
+    outEl.textContent = "Linking object file...\n";
+    const linkResult = await compiler.run(
+  "em++ /working/a.o /working/runtime.o " +
+  "-sWASM_BIGINT=1 " +
+  "-sSINGLE_FILE=1 " +
+  "-sENVIRONMENT=worker " +
+  "-sEXPORTED_FUNCTIONS=['_main'] " +
+  "-sNO_EXIT_RUNTIME=1 " +
+  "-mreference-types " +
+  "-mmultivalue " +
+  "-mbulk-memory " +
+  "-O0 " +
+  "-o /working/a.js"
+);
+    console.log("link result:", linkResult);
+    if (linkResult.returncode !== 0) {
+      lastRunOutput = "Link Error:\n" + (linkResult.stderr || "");
+      outEl.textContent += lastRunOutput;
+      outEl.className = "error";
+      return;
+    }
+    const wasmBytes = await compiler.fileSystem.readFile(
+      "/working/a.wasm"
+    );
+    const finalWasm = await compiler.fileSystem.readFile("/working/a.wasm");
+
+const start = 800;
+const end = 900;
+
+console.log(
+  Array.from(finalWasm.slice(start, end), b =>
+    b.toString(16).padStart(2, "0")
+  ).join(" ")
+);
+    outEl.textContent = "Starting program...\n";
+    const jsworker = new Worker("../cpp/workerJS.js", {
+      type: "module",
+    });
+    jsworker.onmessage = (event) => {
+      const { type, data } = event.data;
+      if (type === "log") {
+        console.log(data);
+        outEl.textContent += `${data}\n`;
+      }
+      if (type === "error") {
+        console.error(data);
+        outEl.textContent += `Runtime Error: ${data}\n`;
+        outEl.className = "error";
+      }
+      if (type === "done") {
+        outEl.className = "success";
+      }
+    };
+    const jsBytes = await compiler.fileSystem.readFile("/working/a.js");
+    const jsCode = new TextDecoder().decode(jsBytes);
+    jsworker.postMessage({
+      code: jsCode,
+      run: currentRun,
+    });
+  } catch (err) {
+    console.error("full runtime error:", err);
+    lastRunOutput = `Runtime Error: ${err.message}`;
+    outEl.textContent += lastRunOutput;
+    outEl.className = "error";
+  }
 }
 function getCompletedLessons() {
   const stored = localStorage.getItem('qc_completed_lessons');
@@ -298,7 +375,7 @@ async function runWithSuite(suiteFile, label) {
     }
     fullSource = studentSource;
 
-    runQC(fullSource);
+    await runQC(fullSource);
 }
 
 window.btn = function(bn) {

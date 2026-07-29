@@ -1,0 +1,14 @@
+{
+  "id": "lesson19.json",
+  "title": "Config - Get",
+  "description": "Now, we have used list to see all your config values. Get gets one specific value.\nThink of list like\n```bash\ncat $(ls .)\n```\nand get like\n```bash\ncat <thing>\n```\n```git\ngit config get <key>\n```\nKeys are still in that format from a few lessons ago, <namespace>.<key>\n\n---\n## Assignment:\n\nOur lone investor wants to see how epically we wasted his money!\nUse `get` to get the `getapp.users` key from your local config.\n\n",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson20.json",
+  "previous": "lesson18.json",
+  "showButtons": false,
+  "mode": "cli",
+  "runHarness": "800017ddac21deaf",
+  "difficulty": "easiest",
+  "xp": "13"
+}

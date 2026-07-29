@@ -1,5 +1,5 @@
-import Process from "./Process.mjs";
-import AsyncInitializable from "./AsyncInitializable.mjs";
+import Process from "../cpp/Process.mjs";
+import AsyncInitializable from "../cpp/AsyncInitializable.mjs";
 
 export default class EmProcess extends AsyncInitializable(Process) {
     _module = null;

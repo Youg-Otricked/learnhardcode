@@ -1,11 +1,11 @@
-import FileSystem from "./FileSystem.mjs";
+import FileSystem from "../cpp/FileSystem.mjs";
 
-import LlvmBoxProcess from "./LlvmBoxProcess.mjs";
-import BinaryenBoxProcess from "./BinaryenBoxProcess.mjs";
-import Python3Process from "./Python3Process.mjs";
-import NodeProcess from "./QuickNodeProcess.mjs";
+import LlvmBoxProcess from "../cpp/LlvmBoxProcess.mjs";
+import BinaryenBoxProcess from "../cpp/BinaryenBoxProcess.mjs";
+import Python3Process from "../cpp/Python3Process.mjs";
+import NodeProcess from "../cpp/QuickNodeProcess.mjs";
 
-import packs from "./packs.mjs";
+import packs from "../cpp/packs.mjs";
 
 const tools_info = {
     "/usr/bin/clang":                    "llvm-box",
@@ -95,6 +95,7 @@ class Emception {
             this.fileSystem.unlink("/emscripten/cache/cache.lock");
         }
         if (args.length == 1) args = args[0].split(/ +/);
+        
         return this._run_process_impl([
             `/emscripten/${args[0]}.py`,
             ...args.slice(1)

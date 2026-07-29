@@ -22,4 +22,7 @@ export default (BaseClass = Base) => class AsyncInitializable extends BaseClass 
             await f();
         }
     }
+    async callInit() {
+        this.#init();
+    }
 };

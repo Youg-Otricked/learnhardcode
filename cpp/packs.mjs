@@ -1,16 +1,16 @@
 export default {
-    "cpython": "packs/cpython.pack",
+    "cpython": "../cpp/packs/cpython.pack",
     "emscripten": [
-        "./packs/emscripten.pack.part.00",
-        "./packs/emscripten.pack.part.01",
-        "./packs/emscripten.pack.part.02",
-        "./packs/emscripten.pack.part.03",
-        "./packs/emscripten.pack.part.04",
-        "./packs/emscripten.pack.part.05",
-        "./packs/emscripten.pack.part.06",
-        "./packs/emscripten.pack.part.07",
-        "./packs/emscripten.pack.part.08",
-        "./packs/emscripten.pack.part.09"
+        "../cpp/packs/emscripten.pack.part.00",
+        "../cpp/packs/emscripten.pack.part.01",
+        "../cpp/packs/emscripten.pack.part.02",
+        "../cpp/packs/emscripten.pack.part.03",
+        "../cpp/packs/emscripten.pack.part.04",
+        "../cpp/packs/emscripten.pack.part.05",
+        "../cpp/packs/emscripten.pack.part.06",
+        "../cpp/packs/emscripten.pack.part.07",
+        "../cpp/packs/emscripten.pack.part.08",
+        "../cpp/packs/emscripten.pack.part.09"
     ],
-    "wasm": "packs/wasm.pack",
+    "wasm": "../cpp/packs/wasm.pack",
 };

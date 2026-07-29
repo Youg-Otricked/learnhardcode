@@ -1,8 +1,8 @@
-import EmProcess from "./EmProcess.mjs";
-import WasmPackageModule from "./wasm-package/wasm-package.mjs";
-import createLazyFolder, { doFetch } from "./createLazyFolder.mjs"
-import Thenable from "./Thenable.mjs";
-import BrotliProcess from "./BrotliProcess.mjs";
+import EmProcess from "../cpp/EmProcess.mjs";
+import WasmPackageModule from "../cpp/wasm-package/wasm-package.mjs";
+import createLazyFolder, { doFetch } from "../cpp/createLazyFolder.mjs"
+import Thenable from "../cpp/Thenable.mjs";
+import BrotliProcess from "../cpp/BrotliProcess.mjs";
 async function doFetchCombined(urls) {
     const promises = urls.map(async (url) => {
         const res = await fetch(url);
