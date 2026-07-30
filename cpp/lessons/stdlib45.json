@@ -1,0 +1,18 @@
+{
+  "id": "stdlib43.json",
+  "title": "C++ - Bugs VS Errors",
+  "description": "The rule of 5 is a simple rule in C++ which states the following:\nIf you define any of the 5 following methods:\n```\n~Buffer();\nBuffer(const Buffer&);\nBuffer& operator=(const Buffer&);\nBuffer(Buffer&&);\nBuffer& operator=(Buffer&&);\n```\nYou really should consider define the rest of them. You may think \"But I dont wan to write 5 methods just to write a destructor!\nThat's why `= default` exists. It just tells the compiler to use the default implementation.\n```\n~Buffer() {\n    ...\n}\nBuffer(const Buffer&) = default;\nBuffer& operator=(const Buffer&) = default;\nBuffer(Buffer&&) = default;\nBuffer& operator=(Buffer&&) = default;\n```\n\n## Question:\n\nWhich of these methods is _not_ part of the rule of 5?\n",
+  "expectedOutput": "",
+  "starterCode": "",
+  "nextLesson": "stdlib44.json",
+  "previous": "stdlib42.json",
+  "showButtons": true,
+  "correct": "b1",
+  "b1t": "MyClass()",
+  "b2t": "~MyClass()",
+  "b3t": "MyClass(const MyClass& other)",
+  "b4t": "MyClass(MyClass&& other)",
+  "mode": "editor",
+  "difficulty": "beginner",
+  "xp": "20"
+}

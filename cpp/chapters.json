@@ -88,7 +88,7 @@
       "number": 14,
       "name": "DSA - Datastructures - Stack",
       "firstLesson": "stdlib44.json",
-      "lessons": ["stdlib44.json"]
+      "lessons": ["stdlib44.json", "stdlib45.json"]
     }
   ]
 }
