@@ -28,7 +28,13 @@
       "number": 5,
       "name": "Config",
       "firstLesson": "lesson18.json",
-      "lessons": ["lesson18.json"]
+      "lessons": ["lesson18.json", "lesson19.json", "lesson20.json"]
+    },
+    {
+      "number": 2,
+      "name": "Branches",
+      "firstLesson": "lesson21.json",
+      "lessons": ["lesson21.json"]
     }
   ]
 }

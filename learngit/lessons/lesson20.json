@@ -1,0 +1,14 @@
+{
+  "id": "lesson20.json",
+  "title": "Config - The Rest Of It",
+  "description": "Unsetting keys is kinda important. You do so with `git config unset <the key>`.\nBonus: You can give keys multiple values! You just use `set` with `--append` to add a new value. To delete a full key, not just one, you use `unset --all`.\nBonus Bonus! You can remove a full section with `git config remove-section <section>`\n### Scopes\nThere are 4 scopes to git config:\n- system: `/etc/gitconfig`. Applies to all users on the system.\n- global: `~/.gitconfig`: Applies to you.\n- local: `.git/config`: Applies to this project.\n- worktree: `.git/config.worktree`: Applies to a specific part of your project.\n\nYou rarely use git config. Most of the time, you use `--global`. A much smaller amount of the time you use `--local`, and then you basically never use `--system` or `--worktree`. The smaller scope, the tighter it overrides. So if you have a duplicate key in system and local, the local value takes place, or if you have one in local and one in worktree the one in worktree takes place.\n\n---\n## Assignment:\n\nHe started crying. I think he was happy with how many users we have! Just in case, delete the full getapp section.\n\n",
+  "starterCode": "",
+  "expectedOutput": "",
+  "nextLesson": "lesson21.json",
+  "previous": "lesson19.json",
+  "showButtons": false,
+  "mode": "cli",
+  "runHarness": "a39b40172eaf9285",
+  "difficulty": "easiest",
+  "xp": "13"
+}

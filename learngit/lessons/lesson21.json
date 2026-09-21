@@ -1,0 +1,14 @@
+{
+  "id": "lesson21.json",
+  "title": "Branches - Like a tree?",
+  "description": "No. A branch lets you keep track of changes in your project, or have multiple active changes at once. Branches are core to working with a team. Let's say you have a compiler. Instead of just testing in production like all true men and coding directly on master, you could create a new branch, like `add_generics`, and do your nonsense there, test it there, and then when your done if you think your stuff is good and not gonna explode little tommy, you can `merge` it into master and keep the changes. If you accidently nuked your project, you can just delete the branch and go back to master. Under the hood, branches are just pointers to specific commits, and when you make a new branch it just makes a new pointer to the commit.\n\n---\n## Assignment:\nInput the branch you are currently running on.\n```bash\ngit branch\n```",
+  "starterCode": "",
+  "expectedOutput": "",
+  "mustContain": "master",
+  "nextLesson": "lesson22.json",
+  "previous": "lesson20.json",
+  "showButtons": false,
+  "mode": "text",
+  "difficulty": "easiest",
+  "xp": "13"
+}

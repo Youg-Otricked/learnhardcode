@@ -1,0 +1,32 @@
+{
+  "id": "lesson10.json",
+  "title": "Images",
+  "description": "Image tags let you put... images. In your text. Image tag syntax is as follows:\n```html\n<img src=\"The-URL-To-Your-Image\" alt=\"The-Description-Of-Your-Image As Text (For if the image fails to load)\">\n```\nImg is a self-closing tag. This lesson will conclude our error page.\n## Assignment:\nAll you have to do is after all the text, insert a image of whatever you see fit for a 500 error page, and give it the description \"500 Error Image\"",
+  "starterTS": "// We'll get to TS soon.",
+  "starterCss": "body {\n    background-color: #000000;\n    color: #ffffff;\n} /* You will understand this soon, don't worry. */",
+  "starterHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Googol:500. That's an error.</title>\n</head>\n<body>\n  <h1><strong>500</strong>: <u>Internal Server Error</u></h1>\n  <hr>\n  <p>The server was unable to complete your request. <em>Please try again later.</em></p>\n  <p>Find more info about why this might happen <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/500\">here</a></p>\n</body>\n</html>",
+  "reqElems": [
+    {
+        "type": "element",
+        "label": "img",
+        "attributes": {
+            "raw": {
+                "alt": "500 Error Image"
+            }
+        },
+        "depth": 2
+    }
+  ],
+  "nextLesson": "lesson11.json",
+  "previous": "lesson9.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "basic",
+  "xp": "20"
+}
+

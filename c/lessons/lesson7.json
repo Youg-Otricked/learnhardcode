@@ -1,0 +1,18 @@
+{
+  "id": "lesson7.json",
+  "title": "Computers Pute",
+  "description": "You can do math in C with your standard operators, (+ - * /), then there are a few unique ones: \n1. %: This is _modulus_, which gives the remainder of a division\n2. `+=`/`-=`/`*=`/`/=`/`%=`: If you did an operation on a variable, it would create the value but not assign to it, so `x + 3` would do nothing: so to add 3 to let's say `x`, we would do `x = x + 3`, but that's boring and long. `x += 3` is the same as that.\n3. `++`/`--`: You need to increment/decrement things _a lot._ That's what these are for: `x--` == `x -= 1`.\n\n### Positional Nonsense\nYou can put `++` and `--` in different positions. If you put `++` before the operand, it happens _before_ the rest of the expression, so `y = ++x;` means `y = x + 1` and `x += 1`. Postfix happens _after_, so `y = x++;` makes y the old value of x and x x + 1.\n\n---\n## Assignment:\nWe here at MacroStiff like our OS's and their prices just how they are. High, full of buerocracy, terrible, and filled with bloat! Fix the operation to make the price correct.",
+  "starterCode": "#include<stdio.h>\nint main() {\n    double price = 1.3;\n    int inflation_percent = 100000;\n   int due = price - inflation_percent;\n    // don't touch below this line\n    printf(\"NEW SALE! Bindos 12 is now only $%d! BUY NOW!\", due);\n    return 0;\n}",
+  "expectedOutput": "NEW SALE! Bindos 12 is now only $130000! BUY NOW!",
+  "nextLesson": "lesson8.json",
+  "previous": "lesson6.json",
+  "showButtons": false,
+  "correct": "",
+  "b1t": "",
+  "b2t": "",
+  "b3t": "",
+  "b4t": "",
+  "mode": "editor",
+  "difficulty": "easiest",
+  "xp": "15"
+}
